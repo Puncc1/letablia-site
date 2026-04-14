@@ -1,0 +1,30 @@
+# Dépendances
+node_modules/
+
+# Build CSS généré
+styles/output.css
+
+# Éditeurs
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+npm-debug.log*
+
+# Fichiers locaux Claude Code
+.claude/
+.qodo/
+
+# Variables d'environnement
+.env
+.env.local

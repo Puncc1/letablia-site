@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos — L'établ'IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/output.css">
+  <link rel="stylesheet" href="/assets/silktide-consent-manager.css">
+</head>
+<body class="bg-lin font-body text-ebene">
+
+  <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+  <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
+    <div class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
+
+      <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="/catalogue.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">Systèmes forgés</a>
+        <a href="/a-propos.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">À propos</a>
+        <a href="/faq.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">FAQ</a>
+        <a href="/contact.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">Contact</a>
+      </nav>
+
+      <a href="/catalogue.html"
+         class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90">Voir le catalogue</a>
+
+      <button id="menu-toggle"
+              class="md:hidden flex flex-col gap-[5px] p-1"
+              aria-label="Ouvrir le menu">
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <div id="mobile-menu"
+       class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
+
+    <button id="menu-close"
+            class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none"
+            aria-label="Fermer le menu">&times;</button>
+
+    <nav class="flex flex-col items-center gap-8 mb-10">
+      <a href="/catalogue.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">Systèmes forgés</a>
+      <a href="/a-propos.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">À propos</a>
+      <a href="/faq.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">FAQ</a>
+      <a href="/contact.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">Contact</a>
+    </nav>
+
+    <a href="/catalogue.html"
+       class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]">Voir le catalogue</a>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+  <main>
+
+    <!-- ─────────────────────────────────────── SECTION 1 — HERO ─────────────────────────── -->
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto text-center">
+
+        <h1 class="font-heading font-bold text-[28px] md:text-[36px] text-ebene leading-[1.2] mb-6">
+          L'atelier derrière les systèmes forgés
+        </h1>
+        <p class="font-body text-lg text-ebene leading-[1.6]">
+          L'établ'IA, c'est une conviction simple : les professionnels indépendants méritent les mêmes outils d'automatisation que les grandes entreprises — sans le budget, sans la complexité, sans le jargon. Chaque système forgé est conçu pour résoudre un problème métier précis, testé en conditions réelles, et livré prêt à fonctionner. Pas de promesses vagues. Pas de fonctionnalités inutiles. Un outil qui fait ce qu'il dit, point.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ───────────────────────────────────── SECTION 2 — FONDATEUR ──────────────────────── -->
+    <section class="bg-chene-6 py-20 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+
+        <div class="flex flex-col gap-8 md:flex-row md:gap-12 md:items-start">
+
+          <!-- Colonne gauche — Texte (65%) -->
+          <div class="md:w-[65%]">
+            <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] mb-6">
+              Qui forge ces systèmes ?
+            </h2>
+            <p class="font-body text-lg text-ebene leading-[1.6]">
+              Je m'appelle Raphaël. J'ai 18 ans, je suis en France, et je construis L'établ'IA seul. Mon obsession : que chaque indépendant et chaque petite entreprise puisse automatiser ses tâches répétitives aussi facilement qu'il installe une application sur son téléphone. Je ne suis pas une agence. Je ne suis pas un éditeur de logiciel. Je suis un artisan qui fabrique des outils concrets pour des professionnels concrets. Si un système forgé ne fonctionne pas comme promis, je le corrige ou je vous rembourse. C'est aussi simple que ça.
+            </p>
+          </div>
+
+          <!-- Colonne droite — Photo placeholder (35%) -->
+          <div class="md:w-[35%] border border-pierre rounded-[8px] bg-lin p-6 min-h-[300px] flex items-center justify-center">
+            <p class="font-body text-[14px] text-pierre text-center leading-[1.6]">
+              [Photo du fondateur — à ajouter]
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────────── SECTION 3 — VALEURS ───────────────────────── -->
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+
+        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] text-center mb-12">
+          Ce en quoi on croit
+        </h2>
+
+        <div class="flex flex-col gap-6 md:flex-row md:gap-8">
+
+          <div class="md:flex-1">
+            <h3 class="font-heading font-medium text-xl text-ebene mb-3">Honnêteté radicale</h3>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              On dit ce que le système fait et ce qu'il ne fait pas. Les prérequis sont affichés avant l'achat. Les limites sont documentées.
+            </p>
+          </div>
+
+          <div class="md:flex-1">
+            <h3 class="font-heading font-medium text-xl text-ebene mb-3">Robustesse avant tout</h3>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              Chaque système est testé, documenté et livré avec un guide complet. Pas de version bêta vendue comme un produit fini.
+            </p>
+          </div>
+
+          <div class="md:flex-1">
+            <h3 class="font-heading font-medium text-xl text-ebene mb-3">Accessibilité réelle</h3>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              Si vous savez copier-coller, vous savez utiliser un système forgé. Pas de jargon, pas de prérequis cachés, pas de complexité inutile.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────────── SECTION 4 — CTA ─────────────────────────── -->
+    <section class="bg-chene py-16 px-4 md:py-16">
+      <div class="max-w-[600px] mx-auto text-center">
+
+        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-lin leading-[1.2] mb-6">
+          Découvrez les systèmes forgés
+        </h2>
+        <a href="/catalogue.html"
+           class="block md:inline-block w-full md:w-auto text-center bg-lin text-chene font-semibold text-base rounded-[6px] px-7 py-[14px]">Voir le catalogue</a>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+  <footer class="bg-ebene">
+    <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+
+      <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+
+        <div class="text-center md:text-left">
+          <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+          <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+        </div>
+
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/index.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Accueil</a></li>
+            <li><a href="/catalogue.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Catalogue</a></li>
+            <li><a href="/a-propos.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">À propos</a></li>
+            <li><a href="/faq.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">FAQ</a></li>
+            <li><a href="/contact.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/mentions-legales.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Mentions légales</a></li>
+            <li><a href="mailto:contact@letablia.fr"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">contact@letablia.fr</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
+        <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+  </script>
+
+  <script src="/assets/silktide-consent-manager.js"></script>
+  <script src="/assets/cookie-config.js"></script>
+
+</body>
+</html>

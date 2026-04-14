@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentions légales — L'établ'IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/output.css">
+  <link rel="stylesheet" href="/assets/silktide-consent-manager.css">
+</head>
+<body class="bg-lin font-body text-ebene">
+
+  <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+  <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
+    <div class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
+
+      <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
+
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="/catalogue.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">Systèmes forgés</a>
+        <a href="/a-propos.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">À propos</a>
+        <a href="/faq.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">FAQ</a>
+        <a href="/contact.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">Contact</a>
+      </nav>
+
+      <a href="/catalogue.html"
+         class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90">Voir le catalogue</a>
+
+      <button id="menu-toggle"
+              class="md:hidden flex flex-col gap-[5px] p-1"
+              aria-label="Ouvrir le menu">
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <div id="mobile-menu"
+       class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
+
+    <button id="menu-close"
+            class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none"
+            aria-label="Fermer le menu">&times;</button>
+
+    <nav class="flex flex-col items-center gap-8 mb-10">
+      <a href="/catalogue.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">Systèmes forgés</a>
+      <a href="/a-propos.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">À propos</a>
+      <a href="/faq.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">FAQ</a>
+      <a href="/contact.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">Contact</a>
+    </nav>
+
+    <a href="/catalogue.html"
+       class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]">Voir le catalogue</a>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+  <main>
+
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto">
+
+        <h1 class="font-heading font-bold text-[28px] md:text-[32px] text-ebene leading-[1.2] mb-12">
+          Mentions légales
+        </h1>
+
+        <div class="flex flex-col gap-8">
+
+          <!-- Éditeur -->
+          <div>
+            <h2 class="font-heading font-medium text-xl text-ebene mb-3">Éditeur du site</h2>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              L'établ'IA — Micro-entreprise Raphaël [NOM DE FAMILLE]<br>
+              [ADRESSE COMPLÈTE]<br>
+              SIRET : [À COMPLÉTER]<br>
+              Email : <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition: color 0.2s ease">contact@letablia.fr</a>
+            </p>
+          </div>
+
+          <!-- Hébergement -->
+          <div>
+            <h2 class="font-heading font-medium text-xl text-ebene mb-3">Hébergement</h2>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              Ce site est hébergé par Vercel Inc.<br>
+              440 N Barranca Ave #4133, Covina, CA 91723, États-Unis<br>
+              https://vercel.com
+            </p>
+          </div>
+
+          <!-- Propriété intellectuelle -->
+          <div>
+            <h2 class="font-heading font-medium text-xl text-ebene mb-3">Propriété intellectuelle</h2>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              L'ensemble des contenus du site letablia.fr (textes, images, logo, systèmes forgés) est la propriété exclusive de L'établ'IA, sauf mention contraire. Toute reproduction totale ou partielle sans autorisation est interdite.
+            </p>
+          </div>
+
+          <!-- CGV -->
+          <div>
+            <h2 class="font-heading font-medium text-xl text-ebene mb-3">Conditions générales de vente</h2>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              Les systèmes forgés sont des produits numériques (fichiers JSON + guides PDF) vendus via la plateforme LemonSqueezy. Le paiement est unique, sans abonnement. Garantie satisfait ou remboursé 14 jours calendaires sans justification. Demande par email à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition: color 0.2s ease">contact@letablia.fr</a>. Remboursement intégral sous 5 jours ouvrables. Après 14 jours, aucun remboursement (produit numérique téléchargé). L'établ'IA garantit le bon fonctionnement technique du système forgé tel que décrit sur la fiche produit, dans un environnement n8n conforme aux prérequis indiqués. L'établ'IA ne garantit pas de résultats commerciaux spécifiques.
+            </p>
+          </div>
+
+          <!-- Droit de rétractation -->
+          <div>
+            <h2 class="font-heading font-medium text-xl text-ebene mb-3">Droit de rétractation</h2>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Conformément à l'article L.221-18 du Code de la consommation, vous disposez d'un délai de 14 jours calendaires à compter de l'achat pour exercer votre droit de rétractation, sans avoir à justifier votre décision. Pour les produits numériques téléchargeables, ce droit s'applique sauf si vous avez expressément consenti au début de l'exécution avant l'expiration du délai (case cochée lors de l'achat).
+            </p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-6">
+              Pour exercer ce droit, adressez votre demande par email à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition: color 0.2s ease">contact@letablia.fr</a> en indiquant votre numéro de commande. Vous pouvez également utiliser le bouton ci-dessous.
+            </p>
+            <a
+              href="mailto:contact@letablia.fr?subject=Demande%20de%20r%C3%A9tractation&body=Bonjour%2C%0A%0AJe%20souhaite%20exercer%20mon%20droit%20de%20r%C3%A9tractation%20pour%20la%20commande%20suivante%20%3A%0A%0ANum%C3%A9ro%20de%20commande%20%3A%20%5B%C3%A0%20compl%C3%A9ter%5D%0ANom%20%3A%20%5B%C3%A0%20compl%C3%A9ter%5D%0A%0ACordialement"
+              class="inline-block border border-chene text-chene font-semibold text-base rounded-[6px] px-7 py-[14px] hover:bg-chene-8"
+              style="transition: color 0.2s ease, background-color 0.2s ease">Exercer mon droit de r&#233;tractation</a>
+          </div>
+
+          <!-- Données personnelles -->
+          <div>
+            <h2 class="font-heading font-medium text-xl text-ebene mb-3">Données personnelles</h2>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              L'établ'IA ne collecte aucune donnée personnelle via ce site. Les transactions sont gérées par LemonSqueezy, dont la politique de confidentialité est accessible sur leur site. Les emails envoyés à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition: color 0.2s ease">contact@letablia.fr</a> sont traités uniquement pour répondre à votre demande et ne sont pas partagés avec des tiers.
+            </p>
+          </div>
+
+          <!-- Cookies -->
+          <div>
+            <h2 class="font-heading font-medium text-xl text-ebene mb-3">Cookies</h2>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              Ce site n'utilise aucun cookie publicitaire ni outil de tracking. Des cookies techniques peuvent être déposés par l'hébergeur Vercel pour le bon fonctionnement du site.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+  <footer class="bg-ebene">
+    <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+
+      <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+
+        <div class="text-center md:text-left">
+          <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+          <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+        </div>
+
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/index.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Accueil</a></li>
+            <li><a href="/catalogue.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Catalogue</a></li>
+            <li><a href="/a-propos.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">À propos</a></li>
+            <li><a href="/faq.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">FAQ</a></li>
+            <li><a href="/contact.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/mentions-legales.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Mentions légales</a></li>
+            <li><a href="mailto:contact@letablia.fr" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">contact@letablia.fr</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
+        <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+  </script>
+
+  <script src="/assets/silktide-consent-manager.js"></script>
+  <script src="/assets/cookie-config.js"></script>
+
+</body>
+</html>
