@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/output.css">
-  <link rel="stylesheet" href="/assets/silktide-consent-manager.css">
 </head>
 <body class="bg-lin font-body text-ebene">
 
@@ -107,11 +106,14 @@
             </p>
           </div>
 
-          <!-- Colonne droite — Photo placeholder (35%) -->
-          <div class="md:w-[35%] border border-pierre rounded-[8px] bg-lin p-6 min-h-[300px] flex items-center justify-center">
-            <p class="font-body text-[14px] text-pierre text-center leading-[1.6]">
-              [Photo du fondateur — à ajouter]
-            </p>
+          <!-- Colonne droite — Portrait -->
+          <div class="md:w-[35%] border border-pierre rounded-[8px] bg-lin p-6 min-h-[300px] flex flex-col items-center justify-center" style="position:relative;">
+            <span style="position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:10px;background:#3F6F5B;color:white;padding:2px 6px;text-transform:uppercase;letter-spacing:0.05em;">Artisan</span>
+            <div style="width:80px;height:80px;border-radius:50%;background:#E9DDC8;border:2px solid #B46A3C;display:flex;align-items:center;justify-content:center;margin-bottom:16px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#6B4A2F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <p class="font-body text-[14px] text-chene font-semibold text-center">Raphaël Olivi</p>
+            <p class="font-body text-[13px] text-pierre text-center mt-1" style="font-style:italic;">Fondateur · Artisan numérique</p>
           </div>
 
         </div>
@@ -163,6 +165,13 @@
         <a href="/catalogue.html"
            class="block md:inline-block w-full md:w-auto text-center bg-lin text-chene font-semibold text-base rounded-[6px] px-7 py-[14px]">Voir le catalogue</a>
 
+        <div class="about-cta" style="margin-top:32px; text-align:center;">
+          <a href="/catalogue.html" style="display:inline-block; background:#F6F1E8; color:#3F2D1E; font-weight:600; font-size:1rem; border-radius:6px; padding:14px 28px; text-decoration:none;">Voir les systèmes disponibles →</a>
+          <p style="margin-top:8px; font-size:14px; color:#F6F1E8;">
+            Ou <a href="/faq.html" style="color:#F6F1E8; text-decoration:underline;">faites le diagnostic</a> pour trouver le bon système.
+          </p>
+        </div>
+
       </div>
     </section>
 
@@ -206,6 +215,12 @@
             <li><a href="/mentions-legales.html"
                    class="font-body text-base text-lin hover:text-chene"
                    style="transition: color 0.2s ease">Mentions légales</a></li>
+            <li><a href="/cgv.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">CGV</a></li>
+            <li><a href="/confidentialite.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Confidentialité</a></li>
             <li><a href="mailto:contact@letablia.fr"
                    class="font-body text-base text-lin hover:text-chene"
                    style="transition: color 0.2s ease">contact@letablia.fr</a></li>
@@ -230,8 +245,31 @@
     close.addEventListener('click',  function () { menu.classList.add('hidden'); });
   </script>
 
-  <script src="/assets/silktide-consent-manager.js"></script>
-  <script src="/assets/cookie-config.js"></script>
+
+  <!-- Bannière cookies RGPD -->
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+    <p style="margin:0; font-size:14px;">
+      Ce site utilise des cookies techniques et analytics.
+      <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+    </p>
+    <div style="display:flex; gap:12px;">
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+    </div>
+  </div>
+  <script>
+    function accepterCookies() {
+      localStorage.setItem('cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function refuserCookies() {
+      localStorage.setItem('cookies', 'refused');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    if (localStorage.getItem('cookies')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>

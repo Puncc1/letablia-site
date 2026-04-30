@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/output.css">
-  <link rel="stylesheet" href="/assets/silktide-consent-manager.css">
 </head>
 <body class="bg-lin font-body text-ebene">
 
@@ -187,6 +186,8 @@
           <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
           <ul class="flex flex-col gap-2">
             <li><a href="/mentions-legales.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Mentions légales</a></li>
+            <li><a href="/cgv.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">CGV</a></li>
+            <li><a href="/confidentialite.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Confidentialité</a></li>
             <li><a href="mailto:contact@letablia.fr" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">contact@letablia.fr</a></li>
           </ul>
         </div>
@@ -209,8 +210,31 @@
     close.addEventListener('click',  function () { menu.classList.add('hidden'); });
   </script>
 
-  <script src="/assets/silktide-consent-manager.js"></script>
-  <script src="/assets/cookie-config.js"></script>
+
+  <!-- Bannière cookies RGPD -->
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+    <p style="margin:0; font-size:14px;">
+      Ce site utilise des cookies techniques et analytics.
+      <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+    </p>
+    <div style="display:flex; gap:12px;">
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+    </div>
+  </div>
+  <script>
+    function accepterCookies() {
+      localStorage.setItem('cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function refuserCookies() {
+      localStorage.setItem('cookies', 'refused');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    if (localStorage.getItem('cookies')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
 
 </body>
 </html>

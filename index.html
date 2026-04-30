@@ -11,7 +11,6 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles/output.css" />
-    <link rel="stylesheet" href="/assets/silktide-consent-manager.css" />
   </head>
   <body class="bg-lin font-body text-ebene">
     <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
@@ -362,15 +361,13 @@
               </p>
             </div>
 
-            <!-- Colonne droite — Capture placeholder -->
-            <div
-              class="md:w-1/2 border border-pierre rounded-[8px] bg-lin p-6 min-h-[240px] flex items-center justify-center"
-            >
-              <p
-                class="font-body text-[14px] text-pierre text-center leading-[1.6]"
-              >
-                [Capture de résultat — à insérer avant le lancement]
-              </p>
+            <!-- Colonne droite — Capture à venir -->
+            <div class="capture-frame md:w-1/2 border border-pierre rounded-[8px] bg-lin p-6 min-h-[240px] flex items-center justify-center" style="position:relative;">
+              <span class="capture-stamp" style="position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:10px;background:#3F6F5B;color:white;padding:2px 6px;text-transform:uppercase;">À venir</span>
+              <div class="text-center">
+                <p class="font-body text-[14px] text-pierre leading-[1.6]">Capture à venir</p>
+                <p class="capture-legend" style="font-size:13px;color:#6B4A2F;margin-top:8px;font-style:italic;">Résultat réel du système en production</p>
+              </div>
             </div>
           </div>
 
@@ -623,6 +620,22 @@
               </li>
               <li>
                 <a
+                  href="/cgv.html"
+                  class="font-body text-base text-lin hover:text-chene"
+                  style="transition: color 0.2s ease"
+                  >CGV</a
+                >
+              </li>
+              <li>
+                <a
+                  href="/confidentialite.html"
+                  class="font-body text-base text-lin hover:text-chene"
+                  style="transition: color 0.2s ease"
+                  >Confidentialité</a
+                >
+              </li>
+              <li>
+                <a
                   href="mailto:contact@letablia.fr"
                   class="font-body text-base text-lin hover:text-chene"
                   style="transition: color 0.2s ease"
@@ -642,9 +655,6 @@
       </div>
     </footer>
 
-    <script src="/assets/silktide-consent-manager.js"></script>
-    <script src="/assets/cookie-config.js"></script>
-
     <script>
       var toggle = document.getElementById("menu-toggle");
       var close = document.getElementById("menu-close");
@@ -656,6 +666,31 @@
       close.addEventListener("click", function () {
         menu.classList.add("hidden");
       });
+    </script>
+
+    <!-- Bannière cookies RGPD -->
+    <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+      <p style="margin:0; font-size:14px;">
+        Ce site utilise des cookies techniques et analytics.
+        <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+      </p>
+      <div style="display:flex; gap:12px;">
+        <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
+        <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+      </div>
+    </div>
+    <script>
+      function accepterCookies() {
+        localStorage.setItem('cookies', 'accepted');
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
+      function refuserCookies() {
+        localStorage.setItem('cookies', 'refused');
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
+      if (localStorage.getItem('cookies')) {
+        document.getElementById('cookie-banner').style.display = 'none';
+      }
     </script>
   </body>
 </html>

@@ -28,3 +28,6 @@ npm-debug.log*
 # Variables d'environnement
 .env
 .env.local
+*.bak
+*.bak.*
+.bak/
