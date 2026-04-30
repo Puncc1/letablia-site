@@ -1,0 +1,651 @@
+/* =============================================================
+   DESIGN SYSTEM V3 — L'établ'IA / letablia.fr
+   Fichier : assets/css/design-system.css
+   Toutes les classes sont préfixées v3- pour éviter les collisions
+   avec Tailwind (styles/output.css). Ne pas modifier output.css.
+   ============================================================= */
+
+/* =============================================================
+   1. VARIABLES CSS V3 — PALETTE & TYPOGRAPHIE
+   ============================================================= */
+:root {
+  /* Palette */
+  --v3-color-fond:      #F6F1E8;
+  --v3-color-ivoire:    #FFFCF5;
+  --v3-color-papier:    #E9DDC8;
+  --v3-color-graphite:  #25221D;
+  --v3-color-brun:      #6B4A2F;
+  --v3-color-cuivre:    #B46A3C;
+  --v3-color-vert:      #3F6F5B;
+  --v3-color-ardoise:   #344E5C;
+  --v3-color-brique:    #8C3F32;
+  --v3-color-ocre:      #B88A2E;
+
+  /* Couleurs dérivées */
+  --v3-color-cuivre-dark:   #9B5A2F;
+  --v3-color-brun-alpha-20: rgba(107, 74, 47, 0.2);
+  --v3-color-brun-alpha-10: rgba(107, 74, 47, 0.1);
+  --v3-color-graphite-alpha-08: rgba(37, 34, 29, 0.08);
+
+  /* Typographie — fallbacks système (polices principales chargées via HTML) */
+  --v3-font-titre:  "Zodiak", "Boska", Georgia, "Times New Roman", serif;
+  --v3-font-corps:  "Satoshi", system-ui, -apple-system, sans-serif;
+  --v3-font-mono:   "JetBrains Mono", "Courier New", monospace;
+
+  /* Échelle typographique — mobile-first */
+  --v3-size-h1-mobile:  36px;
+  --v3-size-h1-desktop: 64px;
+  --v3-size-h2-mobile:  28px;
+  --v3-size-h2-desktop: 42px;
+  --v3-size-h3:         24px;
+  --v3-size-corps:      16px;
+  --v3-size-small:      14px;
+  --v3-size-label:      11px;
+
+  /* Espacements */
+  --v3-radius-btn:    6px;
+  --v3-radius-card:   8px;
+  --v3-radius-badge:  4px;
+
+  /* Transitions */
+  --v3-transition-fast: 200ms ease;
+}
+
+/* =============================================================
+   2. PAGE WRAPPER V3 (ne touche pas au body Tailwind)
+   ============================================================= */
+.v3-page {
+  background-color: var(--v3-color-fond);
+  color: var(--v3-color-graphite);
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-corps);
+  line-height: 1.6;
+}
+
+/* =============================================================
+   3. BADGES V3 — 8 variantes
+   ============================================================= */
+
+/* Base badge */
+.v3-badge {
+  font-family: var(--v3-font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 3px 8px;
+  border-radius: var(--v3-radius-badge);
+  display: inline-block;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Prêt à poser — vert */
+.v3-badge--pret {
+  background-color: var(--v3-color-vert);
+  color: var(--v3-color-ivoire);
+}
+
+/* En forge — ocre + texte graphite */
+.v3-badge--forge {
+  background-color: var(--v3-color-ocre);
+  color: var(--v3-color-graphite);
+}
+
+/* Nouveau — cuivre */
+.v3-badge--nouveau {
+  background-color: var(--v3-color-cuivre);
+  color: var(--v3-color-ivoire);
+}
+
+/* Bêta ouverte — ardoise */
+.v3-badge--beta {
+  background-color: var(--v3-color-ardoise);
+  color: var(--v3-color-ivoire);
+}
+
+/* n8n requis — brique */
+.v3-badge--n8n {
+  background-color: var(--v3-color-brique);
+  color: var(--v3-color-ivoire);
+}
+
+/* Gratuit / Sans code — vert */
+.v3-badge--gratuit {
+  background-color: var(--v3-color-vert);
+  color: var(--v3-color-ivoire);
+}
+
+/* Gamme — papier + bordure brun */
+.v3-badge--gamme {
+  background-color: var(--v3-color-papier);
+  color: var(--v3-color-brun);
+  border: 1px solid var(--v3-color-brun);
+}
+
+/* =============================================================
+   4. CARTE PRODUIT V3
+   ============================================================= */
+
+.v3-card {
+  width: 100%;
+  min-height: auto;
+  background-color: var(--v3-color-ivoire);
+  border: 1px solid var(--v3-color-brun-alpha-20);
+  border-radius: var(--v3-radius-card);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--v3-transition-fast),
+              box-shadow var(--v3-transition-fast);
+}
+
+.v3-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--v3-color-graphite-alpha-08);
+}
+
+/* En-tête de carte */
+.v3-card__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+/* Titre */
+.v3-card__title {
+  font-family: var(--v3-font-titre);
+  font-size: 20px;
+  color: var(--v3-color-graphite);
+  line-height: 1.3;
+  margin: 0 0 8px 0;
+}
+
+/* Promesse produit */
+.v3-card__promise {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-corps);
+  color: var(--v3-color-graphite);
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+/* Métadonnées */
+.v3-card__meta {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-small);
+  color: var(--v3-color-brun);
+  line-height: 1.7;
+  margin-bottom: 12px;
+  border-top: 1px solid var(--v3-color-brun-alpha-10);
+  padding-top: 12px;
+}
+
+/* Ce qui est inclus */
+.v3-card__includes {
+  font-family: var(--v3-font-mono);
+  font-size: 12px;
+  color: var(--v3-color-ardoise);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Pied de carte */
+.v3-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
+/* Prix */
+.v3-card__price {
+  font-family: var(--v3-font-titre);
+  font-size: 28px;
+  color: var(--v3-color-cuivre);
+  line-height: 1;
+  font-weight: 700;
+}
+
+/* Micro-réassurance */
+.v3-card__reassurance {
+  font-family: var(--v3-font-corps);
+  font-size: 12px;
+  color: var(--v3-color-brun);
+  line-height: 1.4;
+}
+
+/* Desktop : largeur fixe */
+@media (min-width: 768px) {
+  .v3-card {
+    max-width: 340px;
+    min-height: 420px;
+  }
+}
+
+/* =============================================================
+   5. BOUTONS V3
+   ============================================================= */
+
+/* Bouton primaire — fond cuivre */
+.v3-btn-primary {
+  display: inline-block;
+  background-color: var(--v3-color-cuivre);
+  color: var(--v3-color-ivoire);
+  padding: 14px 28px;
+  border-radius: var(--v3-radius-btn);
+  font-family: var(--v3-font-corps);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--v3-transition-fast),
+              background-color var(--v3-transition-fast),
+              box-shadow var(--v3-transition-fast);
+  text-align: center;
+}
+
+.v3-btn-primary:hover,
+.v3-btn-primary:focus {
+  background-color: var(--v3-color-cuivre-dark);
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px var(--v3-color-graphite-alpha-08);
+  color: var(--v3-color-ivoire);
+  text-decoration: none;
+}
+
+/* Bouton secondaire — bordure graphite */
+.v3-btn-secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--v3-color-graphite);
+  padding: 14px 28px;
+  border-radius: var(--v3-radius-btn);
+  font-family: var(--v3-font-corps);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1;
+  border: 2px solid var(--v3-color-graphite);
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform var(--v3-transition-fast),
+              box-shadow var(--v3-transition-fast);
+  text-align: center;
+}
+
+.v3-btn-secondary:hover,
+.v3-btn-secondary:focus {
+  transform: translateY(1px);
+  box-shadow: 0 2px 6px var(--v3-color-graphite-alpha-08);
+  color: var(--v3-color-graphite);
+  text-decoration: none;
+}
+
+/* Bouton ghost — texte cuivre souligné */
+.v3-btn-ghost {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--v3-color-cuivre);
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid var(--v3-color-cuivre);
+  font-family: var(--v3-font-corps);
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color var(--v3-transition-fast),
+              border-color var(--v3-transition-fast);
+  line-height: 1.4;
+}
+
+.v3-btn-ghost:hover,
+.v3-btn-ghost:focus {
+  color: var(--v3-color-cuivre-dark);
+  border-color: var(--v3-color-cuivre-dark);
+  text-decoration: none;
+}
+
+/* =============================================================
+   6. SECTIONS PHASE 1
+   ============================================================= */
+
+/* --- 6.1 Grille Problèmes --- */
+.v3-problems-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .v3-problems-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+.v3-problem-card {
+  padding: 20px;
+  background-color: var(--v3-color-ivoire);
+  border: 1px solid var(--v3-color-brun-alpha-20);
+  border-radius: 6px;
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-corps);
+  line-height: 1.6;
+  transition: transform var(--v3-transition-fast),
+              border-color var(--v3-transition-fast);
+}
+
+.v3-problem-card:hover {
+  transform: translateY(-1px);
+  border-color: var(--v3-color-cuivre);
+}
+
+/* --- 6.2 Grille Familles --- */
+.v3-families-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .v3-families-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.v3-family-card {
+  padding: 32px;
+  text-align: center;
+  background-color: var(--v3-color-papier);
+  border-radius: var(--v3-radius-card);
+  transition: transform var(--v3-transition-fast);
+}
+
+.v3-family-card:hover {
+  transform: scale(1.02);
+}
+
+.v3-family-card__titre {
+  font-family: var(--v3-font-titre);
+  font-size: 20px;
+  color: var(--v3-color-graphite);
+  margin: 0 0 8px 0;
+}
+
+.v3-family-card__desc {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-small);
+  color: var(--v3-color-brun);
+  margin: 0;
+}
+
+/* --- 6.3 Comment ça marche (how-it-works) --- */
+.v3-how-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.v3-how-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.v3-how-list__numero {
+  font-family: var(--v3-font-titre);
+  font-size: 48px;
+  color: var(--v3-color-cuivre);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 60px;
+}
+
+.v3-how-list__contenu {
+  padding-top: 8px;
+}
+
+.v3-how-list__titre {
+  font-family: var(--v3-font-titre);
+  font-size: 20px;
+  color: var(--v3-color-graphite);
+  margin: 0 0 6px 0;
+}
+
+.v3-how-list__texte {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-corps);
+  color: var(--v3-color-brun);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* --- 6.4 Manifesto --- */
+.v3-manifesto-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.v3-manifesto-list li {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-corps);
+  color: var(--v3-color-graphite);
+  line-height: 1.7;
+  padding-left: 20px;
+  position: relative;
+}
+
+.v3-manifesto-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--v3-color-cuivre);
+  font-weight: 600;
+}
+
+/* --- 6.5 Méthode Forge --- */
+.v3-methode-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.v3-methode-list li {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-corps);
+  color: var(--v3-color-graphite);
+  line-height: 1.7;
+  padding-left: 28px;
+  position: relative;
+}
+
+.v3-methode-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--v3-color-vert);
+  font-weight: 700;
+}
+
+/* Section conteneur générique */
+.v3-section {
+  padding: 48px 16px;
+}
+
+@media (min-width: 768px) {
+  .v3-section {
+    padding: 80px 32px;
+  }
+}
+
+.v3-section__titre {
+  font-family: var(--v3-font-titre);
+  font-size: var(--v3-size-h2-mobile);
+  color: var(--v3-color-graphite);
+  line-height: 1.2;
+  margin: 0 0 16px 0;
+}
+
+@media (min-width: 768px) {
+  .v3-section__titre {
+    font-size: var(--v3-size-h2-desktop);
+  }
+}
+
+.v3-section__sous-titre {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-corps);
+  color: var(--v3-color-brun);
+  line-height: 1.6;
+  margin: 0 0 40px 0;
+  max-width: 600px;
+}
+
+/* =============================================================
+   7. STICKY CTA MOBILE
+   ============================================================= */
+
+.v3-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--v3-color-ivoire);
+  border-top: 1px solid var(--v3-color-brun-alpha-20);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  gap: 12px;
+}
+
+.v3-sticky-cta__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.v3-sticky-cta__nom {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-small);
+  color: var(--v3-color-graphite);
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 160px;
+}
+
+.v3-sticky-cta__prix {
+  font-family: var(--v3-font-titre);
+  font-size: 18px;
+  color: var(--v3-color-cuivre);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.v3-sticky-cta__reassurance {
+  font-family: var(--v3-font-mono);
+  font-size: 10px;
+  color: var(--v3-color-brun);
+  letter-spacing: 0.05em;
+}
+
+/* Masqué sur desktop */
+@media (min-width: 768px) {
+  .v3-sticky-cta {
+    display: none;
+  }
+}
+
+/* =============================================================
+   8. UTILITAIRES V3
+   ============================================================= */
+
+/* Conteneur max-width */
+.v3-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+  .v3-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+/* Filet de séparation */
+.v3-divider {
+  border: none;
+  border-top: 1px solid var(--v3-color-brun-alpha-20);
+  margin: 32px 0;
+}
+
+/* Label section (JetBrains Mono) */
+.v3-label {
+  font-family: var(--v3-font-mono);
+  font-size: var(--v3-size-label);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--v3-color-brun);
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* Grille produits générique */
+.v3-products-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .v3-products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: center;
+  }
+}
+
+/* Texte emphase cuivre */
+.v3-accent {
+  color: var(--v3-color-cuivre);
+}
+
+/* Fond ivoire section */
+.v3-bg-ivoire {
+  background-color: var(--v3-color-ivoire);
+}
+
+/* Fond papier section */
+.v3-bg-papier {
+  background-color: var(--v3-color-papier);
+}
+
+/* Fond fond principal */
+.v3-bg-fond {
+  background-color: var(--v3-color-fond);
+}
