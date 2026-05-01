@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agent de tri email intelligent — L'établ'IA</title>
+  <title>Kit Facturation Électronique 2026 — L'établ'IA</title>
+  <meta name="description" content="Comprendre, vous préparer et être conforme à la réforme facturation électronique sans panique. Guide PDF + checklist + tableur de suivi. 29€.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -54,77 +55,48 @@
     /* ── Limites bloc ── */
     .limite-item { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(140,63,50,0.15); }
     .limite-item:last-child { border-bottom:none; }
+
+    /* ── Capture placeholder ── */
+    .capture-placeholder { border:1px dashed rgba(107,74,47,0.4); background:#FFFCF5; padding:32px 24px; text-align:center; border-radius:6px; color:#6B4A2F; font-style:italic; font-size:14px; min-height:120px; display:flex; align-items:center; justify-content:center; }
   </style>
 </head>
 <body class="bg-lin font-body text-ebene">
 
-  <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+  <!-- HEADER -->
   <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
     <div class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
-
-      <!-- Logo -->
       <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
-
-      <!-- Navigation desktop -->
       <nav class="hidden md:flex items-center gap-8">
-        <a href="/catalogue.html"
-           class="font-body text-base text-ebene hover:text-chene"
-           style="transition: color 0.2s ease">Systèmes forgés</a>
-        <a href="/a-propos.html"
-           class="font-body text-base text-ebene hover:text-chene"
-           style="transition: color 0.2s ease">À propos</a>
-        <a href="/faq.html"
-           class="font-body text-base text-ebene hover:text-chene"
-           style="transition: color 0.2s ease">FAQ</a>
-        <a href="/contact.html"
-           class="font-body text-base text-ebene hover:text-chene"
-           style="transition: color 0.2s ease">Contact</a>
+        <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Systèmes forgés</a>
+        <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">À propos</a>
+        <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">FAQ</a>
+        <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Contact</a>
       </nav>
-
-      <!-- CTA desktop -->
-      <a href="/catalogue.html"
-         class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90">Trouver mon système</a>
-
-      <!-- Bouton hamburger mobile -->
-      <button id="menu-toggle"
-              class="md:hidden flex flex-col gap-[5px] p-1"
-              aria-label="Ouvrir le menu">
+      <a href="/catalogue.html" class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90">Trouver mon système</a>
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="Ouvrir le menu">
         <span class="block w-6 h-[2px] bg-ebene"></span>
         <span class="block w-6 h-[2px] bg-ebene"></span>
         <span class="block w-6 h-[2px] bg-ebene"></span>
       </button>
-
     </div>
   </header>
 
   <!-- Menu mobile plein écran -->
-  <div id="mobile-menu"
-       class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
-    <button id="menu-close"
-            class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none"
-            aria-label="Fermer le menu">&times;</button>
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
+    <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none" aria-label="Fermer le menu">&times;</button>
     <nav class="flex flex-col items-center gap-8 mb-10">
-      <a href="/catalogue.html"
-         class="font-body text-base text-ebene hover:text-chene"
-         style="transition: color 0.2s ease">Systèmes forgés</a>
-      <a href="/a-propos.html"
-         class="font-body text-base text-ebene hover:text-chene"
-         style="transition: color 0.2s ease">À propos</a>
-      <a href="/faq.html"
-         class="font-body text-base text-ebene hover:text-chene"
-         style="transition: color 0.2s ease">FAQ</a>
-      <a href="/contact.html"
-         class="font-body text-base text-ebene hover:text-chene"
-         style="transition: color 0.2s ease">Contact</a>
+      <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Systèmes forgés</a>
+      <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">À propos</a>
+      <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">FAQ</a>
+      <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Contact</a>
     </nav>
-    <a href="/catalogue.html"
-       class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]">Trouver mon système</a>
+    <a href="/catalogue.html" class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]">Trouver mon système</a>
   </div>
 
-  <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+  <!-- MAIN -->
   <main>
 
-    <!-- ─────────────────────────────── BREADCRUMB ───────────────────────────────────── -->
+    <!-- BREADCRUMB -->
     <nav class="bg-lin border-b border-pierre px-4 py-3" aria-label="Fil d'Ariane">
       <div class="max-w-[1200px] mx-auto">
         <ol class="flex flex-wrap items-center gap-2 font-body text-[13px] text-pierre">
@@ -132,74 +104,54 @@
           <li><span class="text-pierre opacity-50">›</span></li>
           <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.2s ease">Produits</a></li>
           <li><span class="text-pierre opacity-50">›</span></li>
-          <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.2s ease">Automatisations</a></li>
+          <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.2s ease">Sécuriser</a></li>
           <li><span class="text-pierre opacity-50">›</span></li>
-          <li class="text-ebene font-semibold">Agent de tri email intelligent</li>
+          <li class="text-ebene font-semibold">Kit Facturation 2026</li>
         </ol>
       </div>
     </nav>
 
-    <!-- ─────────────────────────────── SECTION 1 — HERO PRODUIT ─────────────────────── -->
+    <!-- SECTION 1 — HERO PRODUIT -->
     <section class="bg-lin pt-12 pb-16 px-4 md:pt-16 md:pb-20">
       <div class="max-w-[1200px] mx-auto">
         <div class="flex flex-col gap-10 md:flex-row md:gap-16 md:items-start">
 
-          <!-- Colonne gauche (60%) — Texte -->
+          <!-- Colonne gauche -->
           <div class="md:w-[58%]">
-
-            <!-- Badges gamme + statut -->
             <div class="flex flex-wrap items-center gap-2 mb-5">
-              <span class="badge badge--gamme">Automatisation n8n · Gmail</span>
-              <span class="badge badge--pret">Prêt à installer</span>
-              <span class="badge badge--n8n">N8N REQUIS</span>
+              <span class="badge badge--gamme">Sécuriser · Conformité · Réglementaire</span>
+              <span class="badge badge--pret">PRÊT À POSER</span>
             </div>
-
-            <!-- Titre H1 -->
             <h1 class="font-heading font-bold text-[30px] md:text-[40px] text-ebene leading-[1.2] mb-4">
-              Agent de tri email intelligent
+              Kit Facturation Électronique 2026
             </h1>
-
-            <!-- Promesse -->
             <p class="font-body text-lg text-ebene leading-[1.65] mb-5">
-              Vos emails Gmail sont triés, classés et les demandes récurrentes traitées automatiquement — sans code, sans configuration complexe. Vous récupérez jusqu'à <strong>4 heures par semaine</strong>.
+              Comprenez la réforme, préparez votre entreprise et restez conforme sans panique.
             </p>
-
-            <!-- Pour qui -->
             <p class="font-body text-[14px] text-pierre leading-[1.6] mb-8">
-              Pour les freelances, consultants et TPE qui utilisent Gmail au quotidien et en ont assez de trier leurs emails à la main.
+              Micro-entrepreneurs, TPE, artisans — toute entreprise française concernée par la réforme.
             </p>
-
-            <!-- Prix + CTA -->
             <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
               <div>
-                <p class="font-display text-[38px] text-chene leading-[1.0]">39 €</p>
+                <p class="font-display text-[38px] text-chene leading-[1.0]">29 €</p>
                 <p class="font-body text-[13px] text-pierre mt-1">Paiement unique · sans abonnement</p>
               </div>
               <div class="flex flex-col gap-3">
-                <a href="https://letablia.lemonsqueezy.com/checkout/buy/AGENT-TRI-EMAIL"
+                <a href="https://letablia.lemonsqueezy.com/checkout/buy/KIT-FACTURATION-2026"
                    class="block text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90"
                    style="transition:opacity 0.2s ease">
-                  Installer ce système →
+                  Recevoir le kit →
                 </a>
                 <p class="font-body text-[12px] text-pierre text-center">
                   Guide PDF inclus · Support 30 jours · 14j satisfait ou remboursé
                 </p>
               </div>
             </div>
-
           </div>
 
-          <!-- Colonne droite (42%) — Capture + Fiche technique -->
+          <!-- Colonne droite -->
           <div class="md:w-[42%] flex flex-col gap-6">
-
-            <!-- Capture annotée placeholder -->
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
-              <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; opacity:0.6;">Aperçu du système</span>
-                <div style="border:1px dashed var(--v3-color-brun);background:var(--v3-color-papier);padding:24px;text-align:center;color:var(--v3-color-brun);">
-  <p style="font-style:italic;margin:0;">Aperçu du système — capture annotée à venir</p>
-</div>
-              <span style="font-family:var(--font-mono,monospace); font-size:10px; color:#B46A3C; letter-spacing:0.05em;">VERSION 1.2 · TESTÉ AVRIL 2026</span>
-            </div>
+            <div class="capture-placeholder">Aperçu du système — capture à venir.</div>
 
             <!-- Fiche technique -->
             <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
@@ -207,110 +159,108 @@
                 <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B4A2F; font-weight:600;">Fiche technique</span>
               </div>
               <table class="fiche-technique">
-                <tr><td>Type</td><td>Automatisation n8n</td></tr>
-                <tr><td>Format livré</td><td>JSON + guide PDF + checklist</td></tr>
-                <tr><td>Installation</td><td>15 à 30 minutes</td></tr>
-                <tr><td>Niveau</td><td>Débutant accompagné</td></tr>
-                <tr><td>Outils requis</td><td>n8n (Cloud ou self-hosted), Gmail, Google Sheets</td></tr>
-                <tr><td>Coûts externes</td><td>n8n non inclus (~20 €/mois Cloud)</td></tr>
+                <tr><td>Nom</td><td>Kit Facturation Électronique 2026</td></tr>
+                <tr><td>Type</td><td>Kit documentaire</td></tr>
+                <tr><td>Format livré</td><td>PDF + XLSX + checklist + modèle</td></tr>
+                <tr><td>Temps de lecture</td><td>Environ 1 heure</td></tr>
+                <tr><td>Niveau</td><td>Tous niveaux</td></tr>
+                <tr><td>Outils requis</td><td>Aucun outil technique</td></tr>
+                <tr><td>Coûts externes</td><td>Aucun</td></tr>
                 <tr><td>Support</td><td>30 jours par email</td></tr>
                 <tr><td>Remboursement</td><td>14 jours — satisfait ou remboursé</td></tr>
-                <tr><td>Version</td><td>v1.2</td></tr>
-                <tr><td>Dernier test</td><td>Avril 2026</td></tr>
+                <tr><td>Version</td><td>v1.0</td></tr>
+                <tr><td>Informations vérifiées</td><td>Mai 2026 (impots.gouv.fr)</td></tr>
               </table>
             </div>
-
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ─────────────────────────────── SECTION 2 — LE PROBLÈME ─────────────────────── -->
+    <!-- SECTION 2 — LE PROBLÈME -->
     <section class="bg-chene-6 py-16 px-4 md:py-20">
       <div class="max-w-[760px] mx-auto">
-
         <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Le problème</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-8">
-          Vos emails vous coûtent des heures que vous n'avez pas
+          La réforme approche — et personne ne sait par où commencer
         </h2>
-
         <div class="flex flex-col gap-5">
           <p class="font-body text-lg text-ebene leading-[1.65]">
-            Chaque matin, c'est le même rituel : ouvrir Gmail, faire défiler des dizaines de messages, trier les promotions des demandes clients, les newsletters des relances urgentes. 30 minutes perdues avant d'avoir commencé la vraie journée.
+            Vous avez entendu parler de la réforme de la facturation électronique sans vraiment savoir ce qu'elle change pour vous. Les articles sont contradictoires, les dates ont déjà changé, et les plateformes agréées sont encore peu connues.
           </p>
           <p class="font-body text-base text-ebene leading-[1.65]">
-            Résultat : les emails importants se noient dans la masse. Une relance client passe à la trappe. Un devis urgent reste sans réponse deux jours. Et les mêmes questions reviennent en boucle, auxquelles vous répondez la même chose, encore et encore.
+            Vous craignez de découvrir l'obligation au dernier moment, ou de choisir la mauvaise plateforme. Ce kit vous évite ce risque.
           </p>
           <p class="font-body text-base text-ebene leading-[1.65]">
-            Ce n'est pas un problème d'organisation — c'est un problème de volume. Et la solution n'est pas de "mieux gérer" vos emails. C'est de déléguer le tri à un système automatique.
+            En une heure de lecture, vous savez exactement ce qui vous attend, quand vous devez agir, et comment choisir la plateforme adaptée à votre situation.
           </p>
         </div>
-
       </div>
     </section>
 
-    <!-- ────────────────────────── SECTION 3 — CE QUE FAIT LE SYSTÈME ────────────────── -->
+    <!-- SECTION 3 — CE QUE VOUS TROUVEZ DANS LE KIT -->
     <section class="bg-lin py-16 px-4 md:py-20">
       <div class="max-w-[1200px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Ce que fait le système</p>
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Ce que vous trouvez dans le kit</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-12">
-          Votre agent travaille pendant que vous dormez
+          Sept ressources pour être conforme sans tâtonnement
         </h2>
-
         <div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
 
-          <!-- Fonctionnalité 1 -->
           <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
             <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Détecte chaque nouvel email</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Surveille votre boîte Gmail en continu. Dès qu'un email arrive, le système s'active automatiquement.</p>
+              <p class="font-body font-semibold text-base text-ebene mb-1">Un guide PDF qui explique la réforme en 5 questions claires</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6]">Qui est concerné, quand, pourquoi, comment — sans jargon, avec des exemples concrets pour votre situation.</p>
             </div>
           </div>
 
-          <!-- Fonctionnalité 2 -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg></span>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Classifie intelligemment</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Trie chaque email en catégories définies (demande client, relance, newsletter, administratif, urgent) grâce à une règle de classification configurable.</p>
-            </div>
-          </div>
-
-          <!-- Fonctionnalité 3 -->
           <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></span>
             <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Log dans Google Sheets</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Chaque email traité est enregistré dans un tableau de suivi : expéditeur, objet, catégorie, heure, action effectuée. Votre historique est toujours à portée de main.</p>
+              <p class="font-body font-semibold text-base text-ebene mb-1">Un comparatif des 4 plateformes agréées les plus accessibles</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6]">Tarifs, ergonomie, intégration comptable — pour choisir sans passer des heures à comparer vous-même.</p>
             </div>
           </div>
 
-          <!-- Fonctionnalité 4 -->
           <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H2v10l9.29 9.29c.94.94 2.48.94 3.42 0l6.58-6.58c.94-.94.94-2.48 0-3.42L12 2Z"/><path d="M7 7h.01"/></svg></span>
+            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
             <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Applique les labels Gmail</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Ajoute automatiquement les bons labels Gmail (Urgent, Client, À traiter…) pour que votre boîte soit déjà triée quand vous l'ouvrez.</p>
+              <p class="font-body font-semibold text-base text-ebene mb-1">Une checklist pas-à-pas pour être prêt en septembre 2026</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6]">Toutes les actions à mener, dans le bon ordre, avec la case à cocher une fois chaque étape franchie.</p>
             </div>
           </div>
 
-          <!-- Fonctionnalité 5 -->
           <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; font-size:20px; margin-top:2px;">↩️</span>
+            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
             <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Prépare les réponses types (optionnel)</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Pour les demandes récurrentes identifiées, génère un brouillon de réponse pré-rédigé. Vous relisez, personnalisez et envoyez en 10 secondes.</p>
+              <p class="font-body font-semibold text-base text-ebene mb-1">Une checklist spéciale micro-entrepreneurs (septembre 2027)</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6]">Une version adaptée au calendrier décalé prévu pour les micro-entrepreneurs, avec les spécificités de ce régime.</p>
             </div>
           </div>
 
-          <!-- Fonctionnalité 6 -->
           <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg></span>
+            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
             <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Alertes sur les urgences (optionnel)</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Les emails classifiés "Urgent" peuvent déclencher une alerte (email de notification ou webhook) pour ne jamais manquer l'essentiel.</p>
+              <p class="font-body font-semibold text-base text-ebene mb-1">Un modèle de procédure interne pour votre équipe</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6]">Un document prêt à dupliquer et adapter pour expliquer à vos collaborateurs le nouveau processus de facturation.</p>
+            </div>
+          </div>
+
+          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
+            <div>
+              <p class="font-body font-semibold text-base text-ebene mb-1">Un tableur Excel pour suivre votre mise en conformité</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6]">Suivez vos avancées semaine par semaine : étapes réalisées, dates clés, contacts plateforme, notes.</p>
+            </div>
+          </div>
+
+          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
+            <div>
+              <p class="font-body font-semibold text-base text-ebene mb-1">Une FAQ de 15 questions fréquentes</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6]">Les 15 questions que se posent les entrepreneurs français face à la réforme — avec des réponses directes et actionnables.</p>
             </div>
           </div>
 
@@ -318,15 +268,13 @@
       </div>
     </section>
 
-    <!-- ─────────────────────────── SECTION 4 — CE QUE VOUS RECEVEZ ─────────────────── -->
+    <!-- SECTION 4 — CE QUE VOUS RECEVEZ -->
     <section class="bg-ebene py-16 px-4 md:py-20">
       <div class="max-w-[720px] mx-auto">
-
         <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Ce que vous recevez</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-10">
-          Tout ce qu'il faut pour installer et lancer
+          Tout ce qu'il faut pour que le Kit Facturation 2026 vous soit utile le jour J
         </h2>
-
         <ul class="flex flex-col gap-4">
 
           <li class="flex items-start gap-4">
@@ -334,8 +282,8 @@
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
-              <p class="font-body font-semibold text-base text-lin">Fichier JSON prêt à importer dans n8n</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Le système complet, configuré et testé. Import en deux clics dans n8n.</p>
+              <p class="font-body font-semibold text-base text-lin">guide-facturation-electronique-2026.pdf</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Environ 25 pages. La réforme expliquée simplement, avec exemples et calendrier détaillé.</p>
             </div>
           </li>
 
@@ -344,8 +292,8 @@
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
-              <p class="font-body font-semibold text-base text-lin">Guide PDF illustré pas-à-pas</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Chaque étape d'installation avec des captures annotées. Aucune connaissance technique requise.</p>
+              <p class="font-body font-semibold text-base text-lin">checklist-preparation.pdf</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">2 pages, à imprimer et cocher au fil des étapes. Une version pour septembre 2026, une pour septembre 2027.</p>
             </div>
           </li>
 
@@ -354,8 +302,8 @@
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
-              <p class="font-body font-semibold text-base text-lin">Checklist de prérequis avant installation</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pour vérifier en 5 minutes que tout est en place avant de commencer.</p>
+              <p class="font-body font-semibold text-base text-lin">tableur-suivi-conformite.xlsx</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Tableau de bord pour suivre vos étapes, vos dates et vos contacts plateforme. Compatible Excel et LibreOffice.</p>
             </div>
           </li>
 
@@ -364,8 +312,8 @@
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
-              <p class="font-body font-semibold text-base text-lin">Tableur Google Sheets de suivi</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Le tableau de log pré-configuré, à dupliquer dans votre Drive en un clic.</p>
+              <p class="font-body font-semibold text-base text-lin">modele-procedure-interne.md</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">À dupliquer et adapter pour votre équipe. Décrit le nouveau processus de facturation de A à Z.</p>
             </div>
           </li>
 
@@ -374,8 +322,8 @@
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
-              <p class="font-body font-semibold text-base text-lin">Accès aux mises à jour mineures</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Toute mise à jour de compatibilité (nouvelles versions n8n, Gmail API) vous est envoyée par email.</p>
+              <p class="font-body font-semibold text-base text-lin">Changelog des mises à jour</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Toute évolution réglementaire avant le 1er septembre 2026 est répercutée dans le kit et vous est communiquée par email.</p>
             </div>
           </li>
 
@@ -384,35 +332,22 @@
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
-              <p class="font-body font-semibold text-base text-lin">Support email pendant 30 jours</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Un blocage à l'installation ? Un comportement inattendu ? Réponse sous 48h ouvrées.</p>
-            </div>
-          </li>
-
-          <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-lin">Garantie de remboursement 14 jours</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Si ce système ne vous convient pas, remboursement sans question sous 5 jours ouvrables.</p>
+              <p class="font-body font-semibold text-base text-lin">Support email 30 jours</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Une question sur votre cas spécifique ? Réponse sous 48h ouvrées.</p>
             </div>
           </li>
 
         </ul>
-
       </div>
     </section>
 
-    <!-- ─────────────────────────────── SECTION 5 — AVANT / APRÈS ────────────────────── -->
+    <!-- SECTION 5 — AVANT / APRÈS -->
     <section class="bg-lin py-16 px-4 md:py-20">
       <div class="max-w-[1000px] mx-auto">
-
         <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Avant / Après</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
           Ce que ça change concrètement
         </h2>
-
         <div class="avantapres-grid">
 
           <!-- AVANT -->
@@ -421,23 +356,23 @@
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
-                30 min à trier vos emails chaque matin
+                Vous lisez des articles contradictoires sur la réforme
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
-                Des relances client oubliées dans la masse
+                Vous repoussez la décision faute de visibilité claire
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
-                Les mêmes questions traitées à la main, encore et encore
+                Vous avez peur d'être en infraction au 1er septembre 2026
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
-                Aucun historique des emails traités
+                Vous ne savez pas quelle plateforme choisir ni combien elle coûte
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
-                Stress à l'idée d'un message urgent raté
+                Aucun suivi structuré de vos démarches de mise en conformité
               </li>
             </ul>
           </div>
@@ -455,263 +390,220 @@
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
-                Boîte déjà triée quand vous ouvrez Gmail
+                Vous savez exactement quelles étapes franchir, dans quel ordre
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
-                0 relance oubliée — chaque email est loggé
+                Vous avez choisi votre plateforme avec le comparatif en main
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
-                Brouillons de réponses types prêts en 10 secondes
+                Vous suivez votre conformité semaine par semaine dans le tableur
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
-                Historique complet dans Google Sheets
+                Votre équipe dispose d'une procédure claire et documentée
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
-                Alertes immédiates sur les emails urgents
+                Vous êtes serein face à l'échéance réglementaire
               </li>
             </ul>
           </div>
 
         </div>
-
-        <!-- Chiffre clé -->
-        <div class="mt-12 text-center">
-          <p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0]">4h</p>
-          <p class="font-body text-base text-ebene mt-2">récupérées par semaine — en moyenne</p>
-        </div>
-
       </div>
     </section>
 
-    <!-- ─────────────────────────── SECTION 6 — APERÇU TECHNIQUE ─────────────────────── -->
+    <!-- SECTION 6 — APERÇU DU KIT -->
     <section class="bg-chene-6 py-16 px-4 md:py-20">
       <div class="max-w-[1000px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Aperçu technique</p>
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Aperçu du kit</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
-          Comment fonctionne le système
+          Structure et contenu des documents
         </h2>
 
-        <!-- Schéma de flux -->
+        <!-- Schéma de contenu -->
         <div class="flux-schema mb-12">
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Déclencheur</p>
-            <p class="font-body font-semibold text-[14px] text-ebene mt-1">Nouvel email Gmail reçu</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 1</p>
+            <p class="font-body font-semibold text-[14px] text-ebene mt-1">Lire le guide PDF (~1h)</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Analyse</p>
-            <p class="font-body font-semibold text-[14px] text-ebene mt-1">Classification par règles (expéditeur, mots-clés, objet)</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 2</p>
+            <p class="font-body font-semibold text-[14px] text-ebene mt-1">Cocher la checklist de préparation</p>
           </div>
           <div class="flux-arrow">↓</div>
-          <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; width:100%; max-width:600px;">
+          <div class="flux-node">
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 3</p>
+            <p class="font-body font-semibold text-[14px] text-ebene mt-1">Choisir sa plateforme (comparatif inclus)</p>
+          </div>
+          <div class="flux-arrow">↓</div>
+          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; width:100%; max-width:500px;">
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Action 1</p>
-              <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Label Gmail</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Suivi</p>
+              <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Tableur XLSX</p>
             </div>
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Action 2</p>
-              <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Log Sheets</p>
-            </div>
-            <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Action 3</p>
-              <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Brouillon auto</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Équipe</p>
+              <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Procédure interne</p>
             </div>
           </div>
         </div>
 
-        <!-- Outils connectés -->
-        <div>
-          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] text-center mb-6">Outils connectés</p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
-              <span style="color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
-              <p class="font-body font-semibold text-[14px] text-ebene">Gmail</p>
-            </div>
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
-              <span style="color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg></span>
-              <p class="font-body font-semibold text-[14px] text-ebene">n8n</p>
-            </div>
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
-              <span style="color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
-              <p class="font-body font-semibold text-[14px] text-ebene">Google Sheets</p>
-            </div>
-          </div>
+        <!-- Aperçu visuel placeholder -->
+        <div class="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6">
+          <div class="capture-placeholder">Aperçu du système — capture à venir.</div>
+          <div class="capture-placeholder">Aperçu du système — capture à venir.</div>
         </div>
 
       </div>
     </section>
 
-    <!-- ─────────────────────────── SECTION 7 — INSTALLATION ─────────────────────────── -->
+    <!-- SECTION 7 — UTILISATION -->
     <section class="bg-ebene py-16 px-4 md:py-20">
       <div class="max-w-[1200px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Installation</p>
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Utilisation</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-4">
-          Opérationnel en 4 étapes
+          Opérationnel en 5 étapes
         </h2>
         <p class="font-body text-base text-pierre text-center mb-12 max-w-[600px] mx-auto leading-[1.6]">
-          Le guide PDF illustré vous accompagne à chaque étape. Comptez 15 à 30 minutes.
+          Le Kit Facturation 2026 ne nécessite pas d'installation technique. Vous téléchargez, vous lisez, vous agissez.
         </p>
 
         <div class="flex flex-col gap-8 md:flex-row md:gap-6">
 
           <div class="md:flex-1 text-center md:text-left">
             <p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">1</p>
-            <h3 class="font-heading font-bold text-xl text-lin mb-3">Achetez et téléchargez</h3>
+            <h3 class="font-heading font-bold text-xl text-lin mb-3">Lisez le guide complet</h3>
             <p class="font-body text-[14px] text-pierre leading-[1.6]">
-              Après l'achat, vous recevez par email le fichier JSON + le guide PDF + le tableau Sheets. Téléchargement immédiat.
+              Comptez environ une heure. Vous comprenez la réforme, votre calendrier et les plateformes agréées.
             </p>
           </div>
 
           <div class="md:flex-1 text-center md:text-left">
             <p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">2</p>
-            <h3 class="font-heading font-bold text-xl text-lin mb-3">Importez dans n8n</h3>
+            <h3 class="font-heading font-bold text-xl text-lin mb-3">Cochez la checklist en avance</h3>
             <p class="font-body text-[14px] text-pierre leading-[1.6]">
-              Ouvrez n8n → menu Import → sélectionnez le fichier JSON. Le système apparaît instantanément dans votre espace.
+              Imprimez la checklist adaptée à votre régime (2026 ou 2027) et commencez à cocher les étapes franchies.
             </p>
           </div>
 
           <div class="md:flex-1 text-center md:text-left">
             <p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">3</p>
-            <h3 class="font-heading font-bold text-xl text-lin mb-3">Connectez Gmail + Sheets</h3>
+            <h3 class="font-heading font-bold text-xl text-lin mb-3">Comparez les 4 plateformes</h3>
             <p class="font-body text-[14px] text-pierre leading-[1.6]">
-              Autorisez n8n à accéder à votre compte Gmail et à votre Google Sheets. Le guide vous montre chaque clic à effectuer.
+              Utilisez le comparatif inclus pour choisir la solution adaptée à votre taille et votre budget.
             </p>
           </div>
 
           <div class="md:flex-1 text-center md:text-left">
             <p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">4</p>
-            <h3 class="font-heading font-bold text-xl text-lin mb-3">Activez et testez</h3>
+            <h3 class="font-heading font-bold text-xl text-lin mb-3">Créez votre compte plateforme</h3>
             <p class="font-body text-[14px] text-pierre leading-[1.6]">
-              Cliquez sur "Activer" dans n8n. Envoyez un email test à vous-même. Vérifiez que le label est appliqué et la ligne ajoutée dans Sheets.
+              Inscrivez-vous chez la plateforme choisie. Le guide vous indique les informations à préparer.
+            </p>
+          </div>
+
+          <div class="md:flex-1 text-center md:text-left">
+            <p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">5</p>
+            <h3 class="font-heading font-bold text-xl text-lin mb-3">Suivez votre conformité</h3>
+            <p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Renseignez le tableur de suivi semaine par semaine jusqu'à la date d'obligation.
             </p>
           </div>
 
         </div>
-
       </div>
     </section>
 
-    <!-- ─────────────────────────────── SECTION 8 — PRÉREQUIS ────────────────────────── -->
+    <!-- SECTION 8 — PRÉREQUIS -->
     <section class="bg-lin py-16 px-4 md:py-20">
       <div class="max-w-[720px] mx-auto">
-
         <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ce dont vous avez besoin avant de commencer
         </h2>
-
         <div class="flex flex-col gap-4 mb-8">
 
           <div class="prereq-item">
             <div class="prereq-num">1</div>
             <div>
-              <p class="font-body font-semibold text-base text-ebene">Un espace n8n actif</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">n8n Cloud (~20 €/mois, prêt en 5 min) ou n8n self-hosted sur votre VPS. Ce coût récurrent n'est pas inclus dans le prix du système. <a href="https://n8n.io/cloud" class="text-chene hover:underline" style="transition:color 0.2s ease" target="_blank" rel="noopener">Créer un compte n8n →</a></p>
+              <p class="font-body font-semibold text-base text-ebene">Aucun outil technique requis</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Ce kit est un ensemble de documents lisibles sur n'importe quel appareil. Pas de logiciel spécifique, pas d'abonnement externe.</p>
             </div>
           </div>
 
           <div class="prereq-item">
             <div class="prereq-num">2</div>
             <div>
-              <p class="font-body font-semibold text-base text-ebene">Un compte Gmail actif</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Ce système est conçu exclusivement pour Gmail. Il ne fonctionne pas avec Outlook, Yahoo Mail ou d'autres messageries.</p>
+              <p class="font-body font-semibold text-base text-ebene">Avoir votre numéro SIRET</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Nécessaire pour identifier votre statut d'assujetti et choisir la bonne plateforme. Retrouvable sur votre extrait Kbis ou sur infogreffe.fr.</p>
             </div>
           </div>
 
           <div class="prereq-item">
             <div class="prereq-num">3</div>
             <div>
-              <p class="font-body font-semibold text-base text-ebene">Un compte Google Sheets (Google Drive)</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pour le tableau de suivi des emails. Un compte Google gratuit suffit.</p>
-            </div>
-          </div>
-
-          <div class="prereq-item">
-            <div class="prereq-num">4</div>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene">15 à 30 minutes pour l'installation</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Tout est documenté dans le guide. Pas besoin de coder, pas besoin de connaissances techniques.</p>
+              <p class="font-body font-semibold text-base text-ebene">Connaître votre régime fiscal</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Micro-entrepreneur, réel simplifié ou réel normal — votre régime détermine votre calendrier d'obligation. Consultez votre dernière déclaration ou votre comptable si vous avez un doute.</p>
             </div>
           </div>
 
         </div>
-
-        <!-- Encadré rassurant -->
         <div style="background:#F0F7F4; border-left:3px solid #3F6F5B; border-radius:4px; padding:20px;">
           <p class="font-body text-[14px] text-ebene leading-[1.65]">
-            <strong>Pas besoin de savoir coder.</strong> Pas besoin de comprendre comment fonctionne l'IA. Le guide PDF illustré vous montre chaque étape avec des captures d'écran annotées. Si vous êtes bloqué, le support email est là.
+            <strong>Aucune compétence technique requise.</strong> Ce kit est conçu pour être lu et appliqué par n'importe quel chef d'entreprise, sans passer par un expert. Si vous avez un doute sur votre situation, le support email est là pour vous aider.
           </p>
         </div>
-
       </div>
     </section>
 
-    <!-- ─────────────────────────────── SECTION 9 — LIMITES ──────────────────────────── -->
+    <!-- SECTION 9 — LIMITES -->
     <section class="bg-chene-6 py-16 px-4 md:py-20">
       <div class="max-w-[720px] mx-auto">
-
         <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Limites — à lire honnêtement</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
-          Ce que ce système ne fait pas
+          Ce que ce kit ne fait pas
         </h2>
-
         <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
           <div class="flex flex-col">
 
             <div class="limite-item">
               <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne répond pas automatiquement sans votre validation.</strong> Par choix de sécurité, les réponses sont préparées en brouillon. C'est vous qui envoyez.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Ce kit ne remplace pas l'avis d'un expert-comptable.</strong> Pour les situations complexes (groupes, opérations intracommunautaires, régimes spéciaux), consultez un professionnel.</p>
             </div>
 
             <div class="limite-item">
               <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne remplace pas votre jugement commercial.</strong> Il classe et prépare — les décisions restent les vôtres.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Ce kit ne souscrit pas à votre place chez une plateforme.</strong> Il vous guide dans le choix et la préparation, mais l'inscription est votre démarche.</p>
             </div>
 
             <div class="limite-item">
               <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il nécessite une connexion internet active.</strong> Si n8n est hors ligne, le tri s'arrête. Il reprend à la reconnexion.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Les informations sont vérifiées au 1er mai 2026 et peuvent évoluer.</strong> Consultez impots.gouv.fr pour vous assurer de la validité des informations au moment de votre démarche.</p>
             </div>
 
             <div class="limite-item">
               <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il dépend des limites de l'API Gmail.</strong> Gmail impose des quotas d'appels API (largement suffisants pour un usage pro classique, mais pas pour des milliers d'emails/heure).</p>
-            </div>
-
-            <div class="limite-item">
-              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne fonctionne pas sans n8n.</strong> Ce n'est pas une application autonome — il s'exécute dans votre instance n8n (Cloud ou self-hosted), non incluse dans le prix.</p>
-            </div>
-
-            <div class="limite-item">
-              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il est optimisé pour Gmail uniquement.</strong> Outlook, Hotmail, Yahoo Mail et autres messageries ne sont pas supportés dans cette version.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Ce kit ne couvre pas les cas internationaux complexes.</strong> Si vous facturez majoritairement à l'étranger ou gérez des transactions intracommunautaires multiples, ce kit couvre insuffisamment votre situation.</p>
             </div>
 
           </div>
         </div>
-
         <p class="font-body text-[13px] text-pierre text-center mt-6 leading-[1.6]">
           Ces limites sont affichées par honnêteté. Si vous avez un doute, contactez-nous avant l'achat : <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition:color 0.2s ease">contact@letablia.fr</a>
         </p>
-
       </div>
     </section>
 
-    <!-- ──────────────────── SECTION 10 — FAIT POUR VOUS / PAS FAIT POUR VOUS ──────────── -->
+    <!-- SECTION 10 — FAIT POUR VOUS / PAS FAIT POUR VOUS -->
     <section class="bg-lin py-16 px-4 md:py-20">
       <div class="max-w-[1000px] mx-auto">
-
         <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
-          Ce système est fait pour vous si&hellip;
+          Ce kit est fait pour vous si&hellip;
         </h2>
-
         <div class="flex flex-col gap-8 md:flex-row md:gap-12">
 
           <!-- Fait pour vous -->
@@ -720,23 +612,23 @@
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
-                Vous utilisez Gmail comme messagerie principale de travail
+                Vous êtes micro-entrepreneur en France métropolitaine
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
-                Vous passez plus de 20 minutes par jour à trier vos emails
+                Vous dirigez une TPE ou êtes artisan concerné par la réforme
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
-                Vous avez (ou êtes prêt à créer) un espace n8n Cloud ou self-hosted
+                Vous voulez être en règle pour 2026 ou 2027 sans panique de dernière minute
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
-                Vous recevez régulièrement des emails similaires qui méritent une réponse type
+                Vous n'avez pas de service comptable dédié pour gérer cette transition
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
-                Vous êtes freelance, consultant, artisan ou TPE avec un volume email moyen (20-200 emails/jour)
+                Vous voulez comprendre avant de choisir une plateforme
               </li>
             </ul>
           </div>
@@ -747,95 +639,88 @@
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
-                Vous n'utilisez pas Gmail (Outlook, Hotmail, Yahoo…)
+                Vous êtes un grand groupe avec un service comptable dédié
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
-                Vous voulez une solution qui répond automatiquement sans votre accord
+                Vous opérez majoritairement à l'international (cas complexes)
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
-                Vous refusez de créer un compte n8n ou d'avoir un coût mensuel supplémentaire
+                Vous cherchez un accompagnement personnalisé par un expert-comptable
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
                 <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
-                Vous cherchez un développement sur mesure avec accompagnement personnalisé
-              </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
-                Votre volume email dépasse 500 emails/heure (quotas API Gmail dépassés)
+                Vous avez déjà souscrit à une plateforme et êtes pleinement opérationnel
               </li>
             </ul>
           </div>
 
         </div>
-
       </div>
     </section>
 
-    <!-- ─────────────────────────── SECTION 11 — FAQ PRODUIT ─────────────────────────── -->
+    <!-- SECTION 11 — FAQ PRODUIT -->
     <section class="bg-chene-6 py-16 px-4 md:py-20">
       <div class="max-w-[720px] mx-auto">
-
         <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Questions fréquentes</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Tout ce que vous voulez savoir
         </h2>
-
         <div id="faq-liste" class="flex flex-col">
 
           <!-- Q1 -->
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Est-ce que je dois savoir coder pour installer ce système ?</span>
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Suis-je concerné si je suis micro-entrepreneur ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Non. Ce système est conçu pour être installé sans aucune connaissance en développement. Le guide PDF vous montre chaque étape avec des captures d'écran annotées. Si vous savez copier-coller et cliquer sur des boutons, vous savez installer ce système.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, si vous facturez des professionnels (B2B). La réforme concerne toutes les entreprises françaises assujetties à la TVA dans leurs échanges B2B. Pour les micro-entrepreneurs, la date d'obligation est fixée au 1er septembre 2027 (calendrier décalé). Le kit inclut une checklist dédiée à ce régime.</p>
             </div>
           </div>
 
           <!-- Q2 -->
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Est-ce que n8n est inclus dans le prix ?</span>
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Quelle plateforme me conseillez-vous ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Non. Vous payez 39 € pour le fichier JSON + guide + support. n8n est un outil tiers qui a son propre tarif (~20 €/mois pour la version Cloud). C'est indiqué dans les prérequis. n8n propose une période d'essai gratuite pour tester avant de vous engager.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Le kit n'en recommande pas une en particulier — chaque situation est différente. Le comparatif inclus vous présente les 4 plateformes agréées les plus accessibles, avec leurs tarifs, leurs points forts et leurs limites. Vous choisissez selon votre volume de factures, votre budget et votre logiciel comptable existant.</p>
             </div>
           </div>
 
           <!-- Q3 -->
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Est-ce que mes emails sont lus par une IA externe ?</span>
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Combien coûte une plateforme par mois en moyenne ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Non. Ce système repose sur des règles de classification (mots-clés, expéditeurs, patterns d'objet) — pas sur une IA externe de type GPT. Vos emails ne quittent pas votre instance n8n et votre Google Sheets. Vous gardez le contrôle total de vos données.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Les tarifs varient selon les plateformes et votre volume de factures. Le comparatif inclus dans le kit détaille les grilles tarifaires des 4 plateformes sélectionnées. Certaines proposent des formules gratuites pour un faible volume ; d'autres pratiquent un tarif au forfait mensuel ou à la facture émise.</p>
             </div>
           </div>
 
           <!-- Q4 -->
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que se passe-t-il si je ne reçois pas le fichier après l'achat ?</span>
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que se passe-t-il si je ne suis pas conforme au 1er septembre 2026 ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Vérifiez d'abord vos spams. Si vous ne trouvez rien dans les 15 minutes, écrivez à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline">contact@letablia.fr</a> avec votre numéro de commande — je vous renvoie les fichiers dans l'heure.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Le guide détaille les sanctions prévues par la réglementation. Le non-respect de l'obligation peut entraîner des pénalités fiscales. L'objectif du kit est précisément de vous éviter d'être surpris par cette date. Notez que pour les micro-entrepreneurs, la date est décalée au 1er septembre 2027.</p>
             </div>
           </div>
 
           <!-- Q5 -->
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je personnaliser les catégories de tri ?</span>
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Le kit sera-t-il mis à jour si la réglementation change ?</span>
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le système est livré avec 5 catégories par défaut (demande client, relance, newsletter, administratif, urgent), mais tout est configurable. Le guide explique comment ajouter, modifier ou supprimer des règles — sans coder.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le kit inclut les mises à jour jusqu'au 1er septembre 2026. Si la réglementation évolue avant cette date, vous recevrez la version mise à jour par email. Les informations sont vérifiées au 1er mai 2026 ; consultez impots.gouv.fr pour toute évolution postérieure.</p>
             </div>
           </div>
 
@@ -846,113 +731,94 @@
               <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Si dans les 14 jours suivant votre achat le système ne vous convient pas — pour quelque raison que ce soit — vous êtes remboursé intégralement. Aucune question, aucune justification requise. Un email à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline">contact@letablia.fr</a> suffit. Remboursement sous 5 jours ouvrables.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Si dans les 14 jours suivant votre achat ce kit ne vous convient pas — pour quelque raison que ce soit — vous êtes remboursé intégralement. Aucune question, aucune justification requise. Un email à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline">contact@letablia.fr</a> suffit. Remboursement sous 5 jours ouvrables.</p>
             </div>
           </div>
 
         </div>
-
-        <!-- Lien FAQ complète -->
         <div class="text-center mt-10">
           <p class="font-body text-[14px] text-pierre">D'autres questions ? <a href="/faq.html" class="text-chene hover:underline" style="transition:color 0.2s ease">Consultez la FAQ complète</a> ou <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition:color 0.2s ease">écrivez-nous directement</a>.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- ──────────────────── SECTION 12 — PRODUITS COMPLÉMENTAIRES ───────────────────── -->
+    <!-- SECTION 12 — PRODUITS COMPLÉMENTAIRES -->
     <section class="bg-lin py-16 px-4 md:py-20">
       <div class="max-w-[1200px] mx-auto">
-
         <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">À combiner avec</p>
         <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ces systèmes se complètent bien
         </h2>
-
         <div class="flex flex-col gap-6 md:flex-row md:gap-8">
 
-          <!-- Produit 1 — Relance prospects -->
-          <a href="/produit/relance-prospects/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
-            <span class="badge badge--forge" style="margin-bottom:12px; display:inline-block;">En forge</span>
-            <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Système de relance prospects</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Relancez automatiquement vos prospects inactifs au bon moment, avec le bon message. Ne perdez plus de clients faute de suivi.</p>
+          <!-- Produit 1 — Dashboard Trésorerie TPE -->
+          <a href="/produit/dashboard-tresorerie/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
+            <p class="font-display text-[28px] text-chene leading-[1.0] mb-2">39 €</p>
+            <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Dashboard Trésorerie TPE</h3>
+            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Pour piloter votre trésorerie en parallèle de la conformité.</p>
             <p class="font-body text-[13px] text-chene font-semibold">Voir ce système →</p>
           </a>
 
-          <!-- Produit 2 — Mini CRM Notion -->
-          <a href="/produit/mini-crm-notion/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
-            <span class="badge badge--forge" style="margin-bottom:12px; display:inline-block;">En forge</span>
-            <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Mini CRM Notion</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Un CRM léger dans Notion pour suivre vos prospects et clients. Parfait en complément de l'agent email pour avoir une vue complète de vos contacts.</p>
+          <!-- Produit 2 — Pack Cyber-Hygiène TPE -->
+          <a href="/produit/cyber-hygiene-tpe/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
+            <p class="font-display text-[28px] text-chene leading-[1.0] mb-2">39 €</p>
+            <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Pack Cyber-Hygiène TPE</h3>
+            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Pour sécuriser les bases numériques de votre activité.</p>
             <p class="font-body text-[13px] text-chene font-semibold">Voir ce système →</p>
           </a>
 
-          <!-- Produit 3 — Catalogue -->
+          <!-- Catalogue -->
           <a href="/catalogue.html" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
             <span class="badge badge--pret" style="margin-bottom:12px; display:inline-block;">Disponibles</span>
             <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Voir tous les systèmes forgés</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Automatisations, systèmes prêts à poser, dashboards et guides opérationnels — découvrez l'ensemble du catalogue L'établ'IA.</p>
+            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Automatisations, kits documentaires, dashboards et guides opérationnels — découvrez l'ensemble du catalogue L'établ'IA.</p>
             <p class="font-body text-[13px] text-chene font-semibold">Explorer le catalogue →</p>
           </a>
 
         </div>
-
       </div>
     </section>
 
-    <!-- ─────────────────────────── SECTION 13 — CTA FINAL ───────────────────────────── -->
+    <!-- SECTION 13 — CTA FINAL -->
     <section class="bg-ebene py-20 px-4 md:py-24">
       <div class="max-w-[600px] mx-auto text-center">
-
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B46A3C; margin-bottom:16px;">Prêt à récupérer vos 4 heures ?</p>
-
+        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B46A3C; margin-bottom:16px;">Prêt à aborder la réforme sereinement ?</p>
         <h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
-          Installez votre agent email aujourd'hui
+          Recevoir le Kit Facturation 2026
         </h2>
-
         <p class="font-body text-base text-pierre leading-[1.6] mb-4">
-          Paiement unique. Téléchargement immédiat. Guide PDF inclus. Support 30 jours. Satisfait ou remboursé 14 jours — sans justification.
+          Paiement unique. Téléchargement immédiat. Guide PDF inclus. Mises à jour jusqu'au 1er septembre 2026. Support 30 jours. Satisfait ou remboursé 14 jours — sans justification.
         </p>
-
-        <p class="font-display text-[42px] text-chene leading-[1.0] mb-8">39 € — paiement unique</p>
-
-        <a href="https://letablia.lemonsqueezy.com/checkout/buy/AGENT-TRI-EMAIL"
+        <p class="font-display text-[42px] text-chene leading-[1.0] mb-8">29 € — paiement unique</p>
+        <a href="https://letablia.lemonsqueezy.com/checkout/buy/KIT-FACTURATION-2026"
            class="block md:inline-block w-full md:w-auto text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-8 py-[16px] hover:opacity-90 mb-4"
            style="transition:opacity 0.2s ease">
-          Installer ce système →
+          Recevoir le Kit Facturation 2026 — 29 € →
         </a>
-
         <p class="font-body text-[12px] text-pierre mt-2">
           Paiement sécurisé par LemonSqueezy · Téléchargement immédiat après paiement
         </p>
-
-        <!-- Réassurance en ligne -->
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
-          <span class="font-body text-[13px] text-pierre">✓ Guide PDF inclus</span>
-          <span class="font-body text-[13px] text-pierre">✓ Support 30 jours</span>
-          <span class="font-body text-[13px] text-pierre">✓ 14j satisfait ou remboursé</span>
-          <span class="font-body text-[13px] text-pierre">✓ Mises à jour mineures incluses</span>
+          <span class="font-body text-[13px] text-pierre">Paiement unique</span>
+          <span class="font-body text-[13px] text-pierre">Mises à jour incluses jusqu'au 1er septembre 2026</span>
+          <span class="font-body text-[13px] text-pierre">Support 30 jours</span>
+          <span class="font-body text-[13px] text-pierre">Garantie 14 jours</span>
         </div>
-
       </div>
     </section>
 
   </main>
 
-  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="bg-ebene" style="border-top:1px solid rgba(160,152,137,0.15);">
     <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-
-      <!-- 3 colonnes -->
       <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
 
-        <!-- Colonne 1 — Marque -->
         <div class="text-center md:text-left">
           <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
           <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
         </div>
 
-        <!-- Colonne 2 — Navigation -->
         <div>
           <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
           <ul class="flex flex-col gap-2">
@@ -964,7 +830,6 @@
           </ul>
         </div>
 
-        <!-- Colonne 3 — Informations -->
         <div>
           <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
           <ul class="flex flex-col gap-2">
@@ -976,47 +841,42 @@
         </div>
 
       </div>
-
-      <!-- Séparateur + copyright -->
       <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
         <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
       </div>
-
     </div>
   </footer>
 
-  <!-- ══════════════════ STICKY CTA MOBILE (affiché seulement < 768px) ══════════════════ -->
+  <!-- STICKY CTA MOBILE -->
   <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
     <div>
-      <p class="font-body font-semibold text-[14px] text-lin leading-none">Agent tri email · 39 €</p>
-      <p class="font-body text-[11px] text-pierre mt-1">Guide inclus · 14j remboursé</p>
+      <p class="font-body font-semibold text-[14px] text-lin leading-none">Kit Facturation 2026 · 29 €</p>
+      <p class="font-body text-[11px] text-pierre mt-1">Guide PDF inclus · 14j satisfait</p>
     </div>
-    <a href="https://letablia.lemonsqueezy.com/checkout/buy/AGENT-TRI-EMAIL"
+    <a href="https://letablia.lemonsqueezy.com/checkout/buy/KIT-FACTURATION-2026"
        style="flex-shrink:0; background:#B46A3C; color:#FFFCF5; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
-      Installer →
+      Recevoir le kit →
     </a>
   </div>
 
-  <!-- ══════════════════════════════════ SCRIPTS ══════════════════════════════════════ -->
+  <!-- SCRIPTS -->
   <script>
-    // ── Menu mobile
+    // Menu mobile
     var toggle = document.getElementById('menu-toggle');
     var close  = document.getElementById('menu-close');
     var menu   = document.getElementById('mobile-menu');
     toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
     close.addEventListener('click',  function () { menu.classList.add('hidden'); });
 
-    // ── FAQ accordéon
+    // FAQ accordéon
     document.querySelectorAll('.faq-toggle').forEach(function(btn) {
       btn.addEventListener('click', function() {
         var item = this.closest('.faq-item');
         var isOpen = item.classList.contains('open');
-        // Fermer tous
         document.querySelectorAll('.faq-item').forEach(function(el) {
           el.classList.remove('open');
           el.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
         });
-        // Ouvrir celui-ci si c'était fermé
         if (!isOpen) {
           item.classList.add('open');
           this.setAttribute('aria-expanded', 'true');
@@ -1024,7 +884,7 @@
       });
     });
 
-    // ── Masquer sticky CTA quand le CTA hero est visible
+    // Masquer sticky CTA quand le CTA hero est visible
     (function() {
       var stickyCta = document.getElementById('sticky-cta');
       if (!stickyCta || window.innerWidth >= 768) return;
