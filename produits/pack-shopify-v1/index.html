@@ -105,38 +105,87 @@
 </head>
 <body class="bg-lin font-body text-ebene">
 
-  <!-- HEADER -->
-  <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
-    <div class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
-      <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
-      <nav class="hidden md:flex items-center gap-8">
-        <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">Systèmes forgés</a>
-        <a href="/automatiser/" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">Automatiser</a>
-        <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">À propos</a>
-        <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">FAQ</a>
-        <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">Contact</a>
-      </nav>
-      <a href="#cta-pack" class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[4px] px-5 py-[10px] hover:opacity-90" style="transition:opacity 0.15s ease">Obtenir le pack →</a>
-      <button id="menu-toggle" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="Ouvrir le menu">
-        <span class="block w-6 h-[2px] bg-ebene"></span>
-        <span class="block w-6 h-[2px] bg-ebene"></span>
-        <span class="block w-6 h-[2px] bg-ebene"></span>
+  <!-- HEADER V4 -->
+  <style>
+    /* Remap classes V3 → tokens V4 (Stratégie B) */
+    .bg-lin { background-color: #F6F1E8 !important; }
+    .text-ebene { color: #25221D !important; }
+    .text-pierre { color: #6B4A2F !important; }
+    .text-chene { color: #B46A3C !important; }
+    .border-pierre { border-color: rgba(107,74,47,0.15) !important; }
+    .font-heading, .font-display { font-family: 'Zodiak', Georgia, serif !important; }
+    .font-body { font-family: 'Satoshi', system-ui, sans-serif !important; }
+    /* Nav V4 */
+    .nav-v4-wrap { position: sticky; top: 0; z-index: 50; background: #F6F1E8; border-bottom: 1px solid rgba(107,74,47,0.15); }
+    .nav-v4-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-v4-logo { font-family: 'Zodiak', Georgia, serif; font-weight: 700; font-size: 20px; color: #25221D; text-decoration: none; }
+    .nav-v4-links { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
+    .nav-v4-links a { font-family: 'Satoshi', sans-serif; font-size: 15px; color: #25221D; text-decoration: none; transition: color 150ms ease; }
+    .nav-v4-links a:hover { color: #6B4A2F; }
+    .nav-v4-cta { font-family: 'Satoshi', sans-serif; font-size: 14px; font-weight: 500; background: #B46A3C; color: #FFFCF5; padding: 9px 18px; border-radius: 4px; text-decoration: none; transition: opacity 150ms ease; }
+    .nav-v4-cta:hover { opacity: 0.88; }
+    .nav-v4-dropdown { position: relative; }
+    .nav-v4-dropdown-btn { font-family: 'Satoshi', sans-serif; font-size: 15px; color: #25221D; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px; padding: 0; transition: color 150ms ease; }
+    .nav-v4-dropdown-btn:hover { color: #6B4A2F; }
+    .nav-v4-dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 0; background: #FFFCF5; box-shadow: 0 4px 12px rgba(37,34,29,0.08); border: 1px solid rgba(107,74,47,0.12); border-radius: 4px; padding: 8px 0; min-width: 180px; z-index: 100; }
+    .nav-v4-dropdown:hover .nav-v4-dropdown-menu, .nav-v4-dropdown-menu:hover { display: block; }
+    .nav-v4-dropdown-menu a { display: block; padding: 9px 20px; font-family: 'Satoshi', sans-serif; font-size: 14px; color: #25221D; text-decoration: none; transition: background 100ms ease; }
+    .nav-v4-dropdown-menu a:hover { background: rgba(107,74,47,0.05); color: #6B4A2F; }
+    .nav-v4-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-v4-hamburger span { display: block; width: 22px; height: 2px; background: #25221D; }
+    .mobile-v4-menu { display: none; position: fixed; inset: 0; z-index: 200; background: #F6F1E8; flex-direction: column; padding: 24px; }
+    .mobile-v4-menu.open { display: flex; }
+    .mobile-v4-close { align-self: flex-end; background: none; border: none; font-size: 24px; color: #25221D; cursor: pointer; margin-bottom: 32px; }
+    .mobile-v4-menu nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+    .mobile-v4-menu nav a { font-family: 'Satoshi', sans-serif; font-size: 18px; color: #25221D; text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(107,74,47,0.10); }
+    .mobile-v4-cta { font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 500; background: #B46A3C; color: #FFFCF5; padding: 14px 24px; border-radius: 4px; text-align: center; text-decoration: none; margin-top: 24px; }
+    @media (max-width: 768px) { .nav-v4-links { display: none; } .nav-v4-cta { display: none; } .nav-v4-hamburger { display: flex; } }
+  </style>
+  <header class="nav-v4-wrap">
+    <div class="nav-v4-inner">
+      <a href="/" class="nav-v4-logo">L'établ'IA</a>
+      <ul class="nav-v4-links">
+        <li class="nav-v4-dropdown">
+          <button class="nav-v4-dropdown-btn">
+            Systèmes
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-v4-dropdown-menu">
+            <a href="/automatiser/">Automatiser</a>
+            <a href="/vendre/">Vendre</a>
+            <a href="/piloter/">Piloter</a>
+            <a href="/produire/">Produire</a>
+            <a href="/securiser/">Sécuriser</a>
+          </div>
+        </li>
+        <li><a href="/ressources/">Ressources</a></li>
+        <li><a href="/a-propos.html">À propos</a></li>
+      </ul>
+      <a href="/diagnostic/" class="nav-v4-cta">Trouver mon système →</a>
+      <button class="nav-v4-hamburger" id="hamburger-pack" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-  <!-- Menu mobile plein écran -->
-  <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
-    <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none" aria-label="Fermer le menu">&times;</button>
-    <nav class="flex flex-col items-center gap-8 mb-10">
-      <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">Systèmes forgés</a>
-      <a href="/automatiser/" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">Automatiser</a>
-      <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">À propos</a>
-      <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">FAQ</a>
-      <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene" style="transition:color 0.15s ease">Contact</a>
+  <!-- Menu mobile -->
+  <div class="mobile-v4-menu" id="mobile-menu-pack">
+    <button class="mobile-v4-close" id="mobile-close-pack" aria-label="Fermer">×</button>
+    <nav>
+      <a href="/automatiser/">Automatiser</a>
+      <a href="/vendre/">Vendre</a>
+      <a href="/piloter/">Piloter</a>
+      <a href="/produire/">Produire</a>
+      <a href="/securiser/">Sécuriser</a>
+      <a href="/ressources/">Ressources</a>
+      <a href="/a-propos.html">À propos</a>
     </nav>
-    <a href="#cta-pack" class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[4px] px-5 py-[14px]">Obtenir le pack →</a>
+    <a href="/diagnostic/" class="mobile-v4-cta">Trouver mon système →</a>
   </div>
+  <script>
+    var h2=document.getElementById('hamburger-pack'),m2=document.getElementById('mobile-menu-pack'),c2=document.getElementById('mobile-close-pack');
+    if(h2&&m2){h2.addEventListener('click',function(){m2.classList.add('open');});c2.addEventListener('click',function(){m2.classList.remove('open');});}
+  </script>
 
   <main>
 
@@ -146,7 +195,7 @@
         <ol class="flex flex-wrap items-center gap-2 font-body text-[13px] text-pierre">
           <li><a href="/" class="hover:text-chene" style="transition:color 0.15s ease">Accueil</a></li>
           <li><span class="opacity-50">›</span></li>
-          <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.15s ease">Produits</a></li>
+          <li><a href="/produits/" class="hover:text-chene" style="transition:color 0.15s ease">Produits</a></li>
           <li><span class="opacity-50">›</span></li>
           <li><span class="text-ebene font-semibold">Pack Shopify V1</span></li>
         </ol>
@@ -761,7 +810,7 @@
             <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#B46A3C; font-weight:600;">Voir ce système →</p>
           </a>
 
-          <a href="/catalogue.html" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
+          <a href="/produits/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
             <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; background:#E9DDC8; color:#6B4A2F; padding:4px 10px; border-radius:4px; display:inline-block; margin-bottom:12px;">Disponibles</span>
             <h3 class="font-heading font-bold text-[17px] text-ebene mb-2">Voir tous les systèmes forgés</h3>
             <p class="font-body text-[13px] text-pierre leading-[1.6] mb-4">Automatisations, kits documentaires, dashboards — découvrez le catalogue complet.</p>
@@ -790,7 +839,7 @@
           <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
           <ul class="flex flex-col gap-2">
             <li><a href="/index.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Accueil</a></li>
-            <li><a href="/catalogue.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Catalogue</a></li>
+            <li><a href="/produits/" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Systèmes forgés</a></li>
             <li><a href="/a-propos.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">À propos</a></li>
             <li><a href="/faq.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">FAQ</a></li>
             <li><a href="/contact.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Contact</a></li>
