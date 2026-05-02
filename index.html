@@ -1,782 +1,996 @@
 <!doctype html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>L'établ'IA — Forgé pour votre métier</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/output.css" />
-    <!-- Fontshare : Zodiak + Satoshi -->
-    <link rel="preconnect" href="https://api.fontshare.com" />
-    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
-    <!-- Google Fonts : JetBrains Mono -->
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <!-- Design System V3 -->
-    <link rel="stylesheet" href="/assets/css/design-system.css" />
-  </head>
-  <body class="bg-lin font-body text-ebene">
-    <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
-    <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
-      <div
-        class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between"
-      >
-        <!-- Logo -->
-        <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>L'établ'IA — Systèmes digitaux prêts à poser pour votre TPE/PME</title>
+  <meta name="description" content="Des systèmes d'automatisation, gestion et vente conçus pour les petites entreprises francophones. Installez en quelques heures, sans agence." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://letablia.fr/" />
 
-        <!-- Navigation desktop -->
-        <nav class="hidden md:flex items-center gap-8">
-          <a
-            href="/catalogue.html"
-            class="font-body text-base text-ebene hover:text-chene"
-            style="transition: color 0.2s ease"
-            >Systèmes forgés</a
-          >
-          <a
-            href="/a-propos.html"
-            class="font-body text-base text-ebene hover:text-chene"
-            style="transition: color 0.2s ease"
-            >À propos</a
-          >
-          <a
-            href="/faq.html"
-            class="font-body text-base text-ebene hover:text-chene"
-            style="transition: color 0.2s ease"
-            >FAQ</a
-          >
-          <a
-            href="/contact.html"
-            class="font-body text-base text-ebene hover:text-chene"
-            style="transition: color 0.2s ease"
-            >Contact</a
-          >
-        </nav>
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "L'établ'IA",
+    "url": "https://letablia.fr",
+    "description": "Systèmes digitaux prêts à poser pour TPE/PME francophones",
+    "publisher": {
+      "@type": "Organization",
+      "name": "L'établ'IA",
+      "url": "https://letablia.fr",
+      "email": "contact@letablia.fr"
+    }
+  }
+  </script>
 
-        <!-- CTA desktop -->
-        <a
-          href="/catalogue.html"
-          class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90"
-          >Trouver mon système</a
-        >
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://api.fontshare.com" />
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-        <!-- Bouton hamburger mobile -->
-        <button
-          id="menu-toggle"
-          class="md:hidden flex flex-col gap-[5px] p-1"
-          aria-label="Ouvrir le menu"
-        >
-          <span class="block w-6 h-[2px] bg-ebene"></span>
-          <span class="block w-6 h-[2px] bg-ebene"></span>
-          <span class="block w-6 h-[2px] bg-ebene"></span>
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="styles/output.css" />
+
+  <style>
+    /* ── DESIGN SYSTEM V4 ───────────────────────────── */
+    :root {
+      --papier:     #F6F1E8;
+      --ivoire:     #FFFCF5;
+      --papier-sec: #E9DDC8;
+      --graphite:   #25221D;
+      --brun:       #6B4A2F;
+      --cuivre:     #B46A3C;
+      --vert:       #3F6F5B;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: 'Satoshi', system-ui, sans-serif;
+      background: var(--papier);
+      color: var(--graphite);
+      margin: 0;
+    }
+
+    /* Micro-texture papier */
+    .texture {
+      background-color: var(--papier);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+    }
+
+    /* Typographie */
+    .f-zodiak   { font-family: 'Zodiak', Georgia, serif; }
+    .f-satoshi  { font-family: 'Satoshi', system-ui, sans-serif; }
+    .f-mono     { font-family: 'JetBrains Mono', monospace; }
+
+    /* ── NAV ────────────────────────────────────────── */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--papier);
+      border-bottom: 1px solid rgba(107,74,47,0.15);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: 20px;
+      color: var(--graphite); text-decoration: none;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none; margin: 0; padding: 0;
+    }
+    .nav-links a {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--graphite); text-decoration: none;
+      transition: color 150ms ease;
+    }
+    .nav-links a:hover { color: var(--brun); }
+    .nav-cta {
+      font-family: 'Satoshi', sans-serif; font-size: 14px; font-weight: 500;
+      background: var(--cuivre); color: #FFFCF5;
+      padding: 9px 18px; border-radius: 4px;
+      text-decoration: none; transition: opacity 150ms ease;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+
+    /* Dropdown */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown-btn {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--graphite); background: none; border: none;
+      cursor: pointer; display: flex; align-items: center; gap: 4px;
+      padding: 0; transition: color 150ms ease;
+    }
+    .nav-dropdown-btn:hover { color: var(--brun); }
+    .nav-dropdown-menu {
+      display: none; position: absolute; top: calc(100% + 12px); left: 0;
+      background: var(--ivoire);
+      box-shadow: 0 4px 12px rgba(37,34,29,0.08);
+      border: 1px solid rgba(107,74,47,0.12);
+      border-radius: 4px; padding: 8px 0; min-width: 180px; z-index: 100;
+    }
+    .nav-dropdown:hover .nav-dropdown-menu,
+    .nav-dropdown-menu:hover { display: block; }
+    .nav-dropdown-menu a {
+      display: block; padding: 9px 20px;
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--graphite); text-decoration: none;
+      transition: background 100ms ease;
+    }
+    .nav-dropdown-menu a:hover { background: rgba(107,74,47,0.05); color: var(--brun); }
+
+    /* Hamburger */
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--graphite); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: var(--papier); flex-direction: column;
+      padding: 24px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-close {
+      align-self: flex-end; background: none; border: none;
+      font-size: 24px; color: var(--graphite); cursor: pointer; margin-bottom: 32px;
+    }
+    .mobile-menu nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+    .mobile-menu nav a {
+      font-family: 'Satoshi', sans-serif; font-size: 18px;
+      color: var(--graphite); text-decoration: none;
+      padding: 12px 0; border-bottom: 1px solid rgba(107,74,47,0.10);
+    }
+    .mobile-menu-cta {
+      font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 500;
+      background: var(--cuivre); color: #FFFCF5;
+      padding: 14px 24px; border-radius: 4px; text-align: center;
+      text-decoration: none; margin-top: 24px;
+    }
+
+    /* ── HERO ───────────────────────────────────────── */
+    .hero {
+      padding: 72px 24px 64px;
+    }
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 55fr 45fr;
+      gap: 48px; align-items: center;
+    }
+    .hero-h1 {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: clamp(36px, 5vw, 64px);
+      line-height: 1.08; color: var(--graphite);
+      margin: 0 0 20px;
+    }
+    .hero-body {
+      font-family: 'Satoshi', sans-serif; font-size: 18px;
+      line-height: 1.6; color: var(--graphite);
+      max-width: 480px; margin: 0 0 32px;
+    }
+    .hero-cta-wrap { display: flex; flex-direction: column; gap: 14px; }
+    .btn-cuivre {
+      display: inline-flex; align-items: center;
+      font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 500;
+      background: var(--cuivre); color: #FFFCF5;
+      padding: 14px 28px; border-radius: 4px;
+      text-decoration: none; transition: opacity 150ms ease; align-self: flex-start;
+    }
+    .btn-cuivre:hover { opacity: 0.88; }
+    .hero-link-sec {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--brun); text-decoration: underline;
+    }
+    .hero-link-sec:hover { color: var(--graphite); }
+
+    /* Artefact hero */
+    .hero-artefact {
+      background: var(--ivoire);
+      border: 1px solid rgba(107,74,47,0.20);
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(37,34,29,0.10);
+      transform: rotate(-1deg);
+      padding: 24px;
+      max-width: 340px;
+    }
+    .artefact-badge {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--vert); background: rgba(63,111,91,0.08);
+      border: 1px solid rgba(63,111,91,0.25);
+      padding: 3px 8px; border-radius: 2px;
+      display: inline-block; margin-bottom: 14px;
+    }
+    .artefact-title {
+      font-family: 'Zodiak', serif; font-weight: 700; font-size: 18px;
+      color: var(--graphite); margin: 0 0 4px;
+    }
+    .artefact-version {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: var(--brun); margin: 0 0 16px;
+    }
+    .artefact-table {
+      width: 100%; border-collapse: collapse; margin-bottom: 16px;
+    }
+    .artefact-table tr td {
+      font-family: 'Satoshi', sans-serif; font-size: 13px;
+      padding: 6px 0;
+      border-bottom: 1px solid var(--papier-sec);
+      color: var(--graphite);
+    }
+    .artefact-table tr td:first-child {
+      color: var(--brun); width: 45%;
+    }
+    .artefact-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 14px; border-top: 1px solid var(--papier-sec);
+    }
+    .artefact-prix {
+      font-family: 'Zodiak', serif; font-weight: 700; font-size: 22px;
+      color: var(--graphite);
+    }
+    .artefact-cta {
+      font-family: 'Satoshi', sans-serif; font-size: 13px; font-weight: 500;
+      background: var(--cuivre); color: #FFFCF5;
+      padding: 8px 14px; border-radius: 4px; text-decoration: none;
+    }
+    .artefact-paiement {
+      font-family: 'Satoshi', sans-serif; font-size: 11px;
+      color: rgba(107,74,47,0.65); margin-top: 8px;
+    }
+
+    /* ── BANDEAU PREUVE ─────────────────────────────── */
+    .bandeau-preuve {
+      background: var(--papier-sec);
+      border-top: 1px solid rgba(107,74,47,0.15);
+      border-bottom: 1px solid rgba(107,74,47,0.15);
+      padding: 0 24px;
+    }
+    .bandeau-preuve-inner {
+      max-width: 1200px; margin: 0 auto; height: 44px;
+      display: flex; align-items: center; justify-content: center; gap: 24px;
+      flex-wrap: wrap;
+    }
+    .bandeau-preuve span {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--brun); white-space: nowrap;
+    }
+    .bandeau-sep {
+      font-size: 16px; color: rgba(107,74,47,0.40);
+    }
+
+    /* ── SECTION FAMILLES ───────────────────────────── */
+    .section-familles {
+      background: var(--papier-sec);
+      border-top: 1px solid rgba(107,74,47,0.12);
+      padding: 64px 24px;
+    }
+    .section-title {
+      font-family: 'Zodiak', Georgia, serif; font-weight: 700;
+      font-size: clamp(28px, 3.5vw, 40px);
+      color: var(--graphite); margin: 0 0 12px;
+    }
+    .section-subtitle {
+      font-family: 'Satoshi', sans-serif; font-size: 16px;
+      color: var(--brun); margin: 0 0 40px;
+    }
+    .familles-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+    }
+    .famille-card {
+      background: var(--papier);
+      border: 1px solid rgba(107,74,47,0.15);
+      border-radius: 4px;
+      padding: 24px 20px;
+      transition: box-shadow 150ms ease;
+      cursor: pointer;
+    }
+    .famille-card:hover {
+      box-shadow: 0 2px 8px rgba(37,34,29,0.08);
+    }
+    .famille-icon {
+      width: 28px; height: 28px;
+      color: var(--brun);
+      margin-bottom: 14px;
+    }
+    .famille-titre {
+      font-family: 'Zodiak', serif; font-weight: 700; font-size: 20px;
+      color: var(--graphite); margin: 0 0 8px;
+    }
+    .famille-desc {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--brun); line-height: 1.5; margin: 0 0 12px;
+    }
+    .famille-count {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: rgba(107,74,47,0.70); display: block; margin-bottom: 10px;
+    }
+    .famille-lien {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--cuivre); text-decoration: none;
+    }
+    .famille-lien:hover { text-decoration: underline; }
+
+    /* ── SECTION PRODUITS ───────────────────────────── */
+    .section-produits {
+      background: var(--papier);
+      border-top: 1px solid rgba(107,74,47,0.12);
+      padding: 64px 24px;
+    }
+    .section-header {
+      max-width: 1200px; margin: 0 auto 40px;
+      display: flex; align-items: baseline; justify-content: space-between;
+    }
+    .section-header-link {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--brun); text-decoration: underline;
+    }
+    .produits-grid {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .produit-card {
+      background: var(--ivoire);
+      border: 1px solid rgba(107,74,47,0.15);
+      border-radius: 4px;
+      overflow: hidden;
+      transition: box-shadow 150ms ease;
+    }
+    .produit-card:hover { box-shadow: 0 4px 16px rgba(37,34,29,0.10); }
+    .produit-badge {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--brun); padding: 16px 20px 8px;
+      display: block;
+    }
+    .produit-image {
+      height: 180px; margin: 0 20px;
+      background: var(--papier);
+      border: 1px solid rgba(107,74,47,0.20);
+      border-radius: 2px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden; position: relative;
+    }
+    .produit-image-placeholder {
+      width: 100%; height: 100%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 8px; padding: 16px;
+    }
+    .produit-image-label {
+      font-family: 'JetBrains Mono', monospace; font-size: 10px;
+      color: var(--brun); text-align: center; opacity: 0.6;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .produit-body { padding: 16px 20px; }
+    .produit-titre {
+      font-family: 'Zodiak', serif; font-size: 20px; font-weight: 500;
+      color: var(--graphite); margin: 0 0 8px;
+    }
+    .produit-promesse {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--graphite); line-height: 1.5; margin: 0 0 16px;
+    }
+    .produit-sep { border: none; border-top: 1px solid var(--papier-sec); margin: 0 0 14px; }
+    .produit-footer {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .produit-statut {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      color: var(--vert);
+    }
+    .produit-prix-cta { display: flex; align-items: center; gap: 10px; }
+    .produit-prix {
+      font-family: 'Zodiak', serif; font-weight: 700; font-size: 18px;
+      color: var(--graphite);
+    }
+    .btn-voir {
+      font-family: 'Satoshi', sans-serif; font-size: 13px; font-weight: 500;
+      background: var(--cuivre); color: #FFFCF5;
+      padding: 8px 16px; border-radius: 4px; text-decoration: none;
+      transition: opacity 150ms;
+    }
+    .btn-voir:hover { opacity: 0.88; }
+    .produit-paiement {
+      font-family: 'Satoshi', sans-serif; font-size: 12px;
+      color: rgba(107,74,47,0.65); padding: 8px 20px 16px;
+    }
+    .produits-cta-wrap { max-width: 1200px; margin: 32px auto 0; text-align: center; }
+    .btn-outline {
+      font-family: 'Satoshi', sans-serif; font-size: 15px; font-weight: 500;
+      border: 1.5px solid var(--cuivre); color: var(--cuivre);
+      padding: 12px 28px; border-radius: 4px; text-decoration: none;
+      transition: all 150ms ease; display: inline-block;
+    }
+    .btn-outline:hover { background: var(--cuivre); color: #FFFCF5; }
+
+    /* ── SECTION COMMENT ÇA MARCHE ──────────────────── */
+    .section-process {
+      background: var(--ivoire);
+      border-top: 1px solid rgba(107,74,47,0.12);
+      padding: 64px 24px;
+    }
+    .process-grid {
+      max-width: 1200px; margin: 40px auto 0;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+    }
+    .process-step {
+      padding: 0 40px;
+      border-right: 1px solid rgba(107,74,47,0.10);
+    }
+    .process-step:first-child { padding-left: 0; }
+    .process-step:last-child { border-right: none; }
+    .process-num {
+      font-family: 'Zodiak', serif; font-weight: 700; font-size: 48px;
+      color: var(--papier-sec); line-height: 1; margin: 0 0 16px;
+      position: relative;
+    }
+    .process-icon {
+      width: 32px; height: 32px; color: var(--brun); margin-bottom: 12px;
+    }
+    .process-titre {
+      font-family: 'Zodiak', serif; font-size: 22px; font-weight: 500;
+      color: var(--graphite); margin: 0 0 10px;
+    }
+    .process-corps {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--graphite); line-height: 1.6; margin: 0 0 12px;
+    }
+    .process-duree {
+      font-family: 'JetBrains Mono', monospace; font-size: 12px;
+      color: var(--brun);
+    }
+
+    /* ── SECTION NEWSLETTER ─────────────────────────── */
+    .section-newsletter {
+      background: var(--papier-sec);
+      border-top: 1px solid rgba(107,74,47,0.15);
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .newsletter-inner { max-width: 520px; margin: 0 auto; }
+    .newsletter-h2 {
+      font-family: 'Zodiak', serif; font-weight: 700; font-size: clamp(24px, 3vw, 32px);
+      color: var(--graphite); margin: 0 0 14px;
+    }
+    .newsletter-corps {
+      font-family: 'Satoshi', sans-serif; font-size: 16px;
+      color: var(--graphite); line-height: 1.6; margin: 0 0 28px;
+    }
+    .newsletter-form { display: flex; gap: 8px; justify-content: center; }
+    .newsletter-input {
+      flex: 1; max-width: 300px;
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      background: var(--ivoire); color: var(--graphite);
+      border: 1px solid rgba(107,74,47,0.25); border-radius: 4px;
+      padding: 12px 16px; outline: none;
+      transition: border-color 150ms, box-shadow 150ms;
+    }
+    .newsletter-input:focus {
+      border-color: var(--cuivre);
+      box-shadow: 0 0 0 2px rgba(180,106,60,0.15);
+    }
+    .newsletter-btn {
+      font-family: 'Satoshi', sans-serif; font-size: 15px; font-weight: 500;
+      background: var(--cuivre); color: #FFFCF5;
+      padding: 12px 24px; border-radius: 4px; border: none; cursor: pointer;
+      transition: opacity 150ms;
+    }
+    .newsletter-btn:hover { opacity: 0.88; }
+    .newsletter-rgpd {
+      font-family: 'Satoshi', sans-serif; font-size: 12px;
+      color: var(--brun); margin-top: 14px;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    .footer {
+      background: var(--graphite);
+      padding: 48px 24px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-logo {
+      font-family: 'Zodiak', serif; font-weight: 700; font-size: 22px;
+      color: var(--papier); margin: 0 0 10px; text-decoration: none; display: block;
+    }
+    .footer-tagline {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: rgba(233,221,200,0.80); line-height: 1.6; margin: 0 0 14px;
+    }
+    .footer-email {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--cuivre); text-decoration: none;
+    }
+    .footer-col-titre {
+      font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      color: var(--brun); margin: 0 0 14px; display: block;
+    }
+    .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: rgba(233,221,200,0.70); text-decoration: none;
+      transition: color 150ms;
+    }
+    .footer-links a:hover { color: var(--papier); }
+    .footer-bottom {
+      max-width: 1200px; margin: 32px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(249,241,232,0.08);
+    }
+    .footer-copy {
+      font-family: 'Satoshi', sans-serif; font-size: 12px;
+      color: var(--brun);
+    }
+
+    /* ── STICKY CTA MOBILE ──────────────────────────── */
+    .sticky-cta {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 100;
+      padding: 12px 24px;
+      background: var(--cuivre);
+    }
+    .sticky-cta a {
+      font-family: 'Satoshi', sans-serif; font-size: 15px; font-weight: 500;
+      color: #FFFCF5; text-decoration: none; display: block; text-align: center;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .familles-grid { grid-template-columns: repeat(3, 1fr); }
+      .process-grid { grid-template-columns: 1fr; gap: 32px; }
+      .process-step { border-right: none; padding: 0; border-bottom: 1px solid rgba(107,74,47,0.10); padding-bottom: 28px; }
+      .process-step:last-child { border-bottom: none; padding-bottom: 0; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .hero-artefact { transform: none; max-width: 100%; }
+      .hero-h1 { font-size: 32px; }
+      .hero-body { font-size: 16px; }
+      .btn-cuivre { align-self: stretch; justify-content: center; }
+
+      .bandeau-preuve-inner { height: auto; padding: 12px 0; flex-direction: column; gap: 6px; }
+      .bandeau-sep { display: none; }
+
+      .familles-grid { grid-template-columns: 1fr; }
+      .section-header { flex-direction: column; gap: 12px; }
+      .produits-grid { grid-template-columns: 1fr; }
+
+      .footer-inner { grid-template-columns: 1fr 1fr; }
+
+      .newsletter-form { flex-direction: column; }
+      .newsletter-input { max-width: 100%; }
+
+      .sticky-cta { display: block; }
+    }
+
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .produits-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+<header class="nav-wrap">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">L'établ'IA</a>
+    <ul class="nav-links">
+      <li class="nav-dropdown">
+        <button class="nav-dropdown-btn">
+          Systèmes
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
-      </div>
-    </header>
-
-    <!-- Menu mobile plein écran -->
-    <div
-      id="mobile-menu"
-      class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden"
-    >
-      <!-- Bouton fermeture -->
-      <button
-        id="menu-close"
-        class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none"
-        aria-label="Fermer le menu"
-      >
-        &times;
-      </button>
-
-      <!-- Liens de navigation -->
-      <nav class="flex flex-col items-center gap-8 mb-10">
-        <a
-          href="/catalogue.html"
-          class="font-body text-base text-ebene hover:text-chene"
-          style="transition: color 0.2s ease"
-          >Systèmes forgés</a
-        >
-        <a
-          href="/a-propos.html"
-          class="font-body text-base text-ebene hover:text-chene"
-          style="transition: color 0.2s ease"
-          >À propos</a
-        >
-        <a
-          href="/faq.html"
-          class="font-body text-base text-ebene hover:text-chene"
-          style="transition: color 0.2s ease"
-          >FAQ</a
-        >
-        <a
-          href="/contact.html"
-          class="font-body text-base text-ebene hover:text-chene"
-          style="transition: color 0.2s ease"
-          >Contact</a
-        >
-      </nav>
-
-      <!-- CTA mobile pleine largeur -->
-      <a
-        href="/catalogue.html"
-        class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]"
-        >Trouver mon système</a
-      >
-    </div>
-
-    <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
-    <main>
-      <!-- ─────────────────────────────────── SECTION 1 — HERO ─────────────────────────────── -->
-      <section class="bg-lin py-20 px-4 md:py-20">
-        <div class="max-w-[720px] mx-auto text-center">
-          <!-- Logotype texte -->
-          <p class="font-display text-2xl text-chene mb-1">L'établ'IA</p>
-          <p class="font-display text-xl text-chene mb-8">
-            Forgé pour votre métier
-          </p>
-
-          <!-- Titre H1 -->
-          <h1
-            class="font-heading font-bold text-4xl md:text-[40px] text-ebene leading-[1.2] mb-4"
-          >
-            Des systèmes digitaux prêts à poser<br class="hidden md:block" />
-            pour les petites entreprises.
-          </h1>
-
-          <!-- Sous-titre -->
-          <p class="font-body text-lg text-ebene leading-[1.6] mb-8">
-            Automatisations, IA, systèmes prêts à poser, tableaux de bord et guides opérationnels —
-            conçus pour récupérer du temps sans recruter une agence.
-          </p>
-
-          <!-- CTA principal -->
-          <div class="flex flex-col gap-3 md:flex-row md:justify-center md:gap-4">
-            <a href="/catalogue.html" class="block md:inline-block w-full md:w-auto text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90">Trouver mon système</a>
-            <a href="/catalogue.html" class="block md:inline-block w-full md:w-auto text-center bg-transparent text-ebene border-2 border-ebene font-semibold text-base rounded-[6px] px-7 py-[14px] hover:bg-ebene hover:text-lin" style="transition: all 0.2s ease">Voir les produits</a>
-          </div>
-          <p class="font-body text-[13px] text-pierre leading-[1.6] mt-4">Paiement unique · Guides inclus · Support humain · Produits testés</p>
+        <div class="nav-dropdown-menu">
+          <a href="/automatiser/">⚡ Automatiser</a>
+          <a href="/vendre/">📈 Vendre</a>
+          <a href="/piloter/">📊 Piloter</a>
+          <a href="/produire/">✏️ Produire</a>
+          <a href="/securiser/">🔒 Sécuriser</a>
         </div>
-      </section>
+      </li>
+      <li><a href="/ressources/">Ressources</a></li>
+      <li><a href="/a-propos.html">À propos</a></li>
+    </ul>
+    <a href="/diagnostic/" class="nav-cta">Trouver mon système →</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
 
-      <!-- ──────────────────────────────── SECTION 2 — RÉSULTATS CHIFFRÉS ──────────────────── -->
-      <section class="bg-ebene py-12 px-4 md:py-12">
-        <div class="max-w-[1200px] mx-auto">
-          <div
-            class="flex flex-col gap-6 md:flex-row md:gap-0 md:justify-between"
-          >
-            <!-- Bloc 1 -->
-            <div class="text-center md:flex-1">
-              <p
-                class="font-display text-[36px] md:text-[48px] text-chene leading-[1.0]"
-              >
-                4h
-              </p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-2">
-                récupérées par semaine en moyenne
-              </p>
-            </div>
+<!-- Menu mobile -->
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-close" aria-label="Fermer">×</button>
+  <nav>
+    <a href="/automatiser/">⚡ Automatiser</a>
+    <a href="/vendre/">📈 Vendre</a>
+    <a href="/piloter/">📊 Piloter</a>
+    <a href="/produire/">✏️ Produire</a>
+    <a href="/securiser/">🔒 Sécuriser</a>
+    <a href="/ressources/">Ressources</a>
+    <a href="/a-propos.html">À propos</a>
+  </nav>
+  <a href="/diagnostic/" class="mobile-menu-cta">Trouver mon système →</a>
+</div>
 
-            <!-- Bloc 2 -->
-            <div class="text-center md:flex-1">
-              <p
-                class="font-display text-[36px] md:text-[48px] text-chene leading-[1.0]"
-              >
-                3 étapes
-              </p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-2">
-                pour installer un système forgé
-              </p>
-            </div>
+<main>
 
-            <!-- Bloc 3 -->
-            <div class="text-center md:flex-1">
-              <p
-                class="font-display text-[36px] md:text-[48px] text-chene leading-[1.0]"
-              >
-                14 jours
-              </p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-2">
-                satisfait ou remboursé, sans justification
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ─────────────────── SECTION 2BIS — CHOISISSEZ VOTRE PROBLÈME ──────────────────── -->
-      <section class="bg-lin py-20 px-4 md:py-20">
-        <div class="max-w-[1200px] mx-auto">
-          <h2 class="font-heading font-bold text-3xl md:text-[32px] text-ebene leading-[1.2] text-center mb-3">
-            Quel est votre problème&nbsp;?
-          </h2>
-          <p class="font-body text-lg text-ebene leading-[1.6] text-center mb-12 max-w-[720px] mx-auto">
-            Chaque système forgé répond à une douleur précise. Choisissez celle qui vous parle le plus.
-          </p>
-
-          <div class="v3-problems-grid">
-            <a href="/catalogue.html#agents-ia" class="v3-problem-card">
-              <span class="v3-problem-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
-              Je perds du temps dans mes emails
-            </a>
-            <a href="/catalogue.html#vente-crm" class="v3-problem-card">
-              <span class="v3-problem-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 .18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 7.91a16 16 0 0 0 5.91 5.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 14.92z"/><path d="M14.05 2a9 9 0 0 1 8 7.94"/><path d="M14.05 6A5 5 0 0 1 18 10"/></svg></span>
-              J'oublie mes relances prospects
-            </a>
-            <a href="/catalogue.html#vente-crm" class="v3-problem-card">
-              <span class="v3-problem-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-              Je veux mieux suivre mes clients
-            </a>
-            <a href="/catalogue.html#productivite" class="v3-problem-card">
-              <span class="v3-problem-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" x2="18" y1="20" y2="10"/><line x1="12" x2="12" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="14"/></svg></span>
-              Je veux un tableau de bord simple
-            </a>
-            <a href="/catalogue.html#marketing" class="v3-problem-card">
-              <span class="v3-problem-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
-              Je veux publier plus régulièrement
-            </a>
-            <a href="/catalogue.html#productivite" class="v3-problem-card">
-              <span class="v3-problem-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><path d="m9 15 2 2 4-4"/></svg></span>
-              Je veux me préparer pour 2026
-            </a>
-            <a href="/catalogue.html#agents-ia" class="v3-problem-card">
-              <span class="v3-problem-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg></span>
-              Je veux utiliser l'IA concrètement
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <!-- ────────────────────────────── SECTION 3 — IDENTIFICATION MÉTIER ─────────────────── -->
-      <section id="catalogue" class="bg-lin py-20 px-4 md:py-20">
-        <div class="max-w-[1200px] mx-auto">
-          <!-- En-tête de section -->
-          <h2
-            class="font-heading font-bold text-3xl md:text-[32px] text-ebene leading-[1.2] text-center mb-4"
-          >
-            Forgé pour votre métier
-          </h2>
-          <p
-            class="font-body text-lg text-ebene leading-[1.6] text-center mb-12 max-w-[720px] mx-auto"
-          >
-            Chaque système forgé est conçu pour un métier précis. Trouvez celui
-            qui correspond à votre quotidien.
-          </p>
-
-          <!-- Grille 5 cartes — 6 colonnes virtuelles pour centrer la 2e ligne -->
-          <div class="grid grid-cols-1 gap-4 md:grid-cols-6 md:gap-6">
-            <!-- Carte 1 — Agents IA -->
-            <article
-              class="md:col-span-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col"
-            >
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Agents IA
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Un assistant invisible qui répond, rédige et trie — pendant que
-                vous travaillez.
-              </p>
-              <a
-                href="/catalogue.html#agents-ia"
-                class="font-body font-semibold text-base text-chene hover:underline mt-auto"
-                style="transition: color 0.2s ease"
-                >Mettre mon assistant IA au travail</a
-              >
-            </article>
-
-            <!-- Carte 2 — Marketing & Réseaux sociaux -->
-            <article
-              class="md:col-span-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col"
-            >
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Marketing &amp; Réseaux sociaux
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Vos publications partent à l'heure. Vos séquences email tournent
-                toutes seules.
-              </p>
-              <a
-                href="/catalogue.html#marketing"
-                class="font-body font-semibold text-base text-chene hover:underline mt-auto"
-                style="transition: color 0.2s ease"
-                >Automatiser ma communication</a
-              >
-            </article>
-
-            <!-- Carte 3 — Vente & CRM -->
-            <article
-              class="md:col-span-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col"
-            >
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Vente &amp; CRM
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Zéro relance oubliée. Chaque prospect suivi au bon moment.
-              </p>
-              <a
-                href="/catalogue.html#vente-crm"
-                class="font-body font-semibold text-base text-chene hover:underline mt-auto"
-                style="transition: color 0.2s ease"
-                >Organiser mon suivi commercial</a
-              >
-            </article>
-
-            <!-- Carte 4 — Productivité & Ops (2e ligne, décalée d'1 colonne pour centrer) -->
-            <article
-              class="md:col-span-2 md:col-start-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col"
-            >
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Productivité &amp; Ops
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Les tâches administratives que vous repoussez chaque semaine se
-                font enfin seules.
-              </p>
-              <a
-                href="/catalogue.html#productivite"
-                class="font-body font-semibold text-base text-chene hover:underline mt-auto"
-                style="transition: color 0.2s ease"
-                >Simplifier mes opérations internes</a
-              >
-            </article>
-
-            <!-- Carte 5 — Scraping & Veille -->
-            <article
-              class="md:col-span-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col"
-            >
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Scraping &amp; Veille
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Votre veille tourne en continu. Vous ne lisez que ce qui compte.
-              </p>
-              <a
-                href="/catalogue.html#veille"
-                class="font-body font-semibold text-base text-chene hover:underline mt-auto"
-                style="transition: color 0.2s ease"
-                >Lancer ma veille automatique</a
-              >
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- ──────────────────── SECTION 3BIS — FAMILLES DE SYSTÈMES ──────────────────── -->
-      <section class="py-20 px-4 md:py-20" style="background:#E9DDC8;">
-        <div class="max-w-[1200px] mx-auto">
-          <!-- En-tête -->
-          <h2
-            class="font-heading font-bold text-3xl md:text-[32px] text-ebene leading-[1.2] text-center mb-4"
-          >
-            Les familles de systèmes
-          </h2>
-          <p
-            class="font-body text-lg text-ebene leading-[1.6] text-center mb-12 max-w-[720px] mx-auto"
-          >
-            5&nbsp;gammes de systèmes forgés, chacune centrée sur un enjeu précis.
-            Explorez celle qui vous correspond.
-          </p>
-
-          <!-- Grille 5 familles V3 — taxonomie par verbe métier -->
-          <div class="v3-families-grid">
-
-            <!-- Famille 1 — Automatiser -->
-            <a href="/produits/automatisations/" class="v3-family-card">
-              <span class="v3-family-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
-              <h3 class="v3-family-title">Automatiser</h3>
-              <p class="v3-family-tagline">Emails, relances, SAV, veille, reporting</p>
-            </a>
-
-            <!-- Famille 2 — Vendre -->
-            <a href="/produits/vendre/" class="v3-family-card">
-              <span class="v3-family-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></span>
-              <h3 class="v3-family-title">Vendre</h3>
-              <p class="v3-family-tagline">CRM, prospection, contenu, propositions</p>
-            </a>
-
-            <!-- Famille 3 — Piloter -->
-            <a href="/produits/tableaux-de-bord/" class="v3-family-card">
-              <span class="v3-family-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></span>
-              <h3 class="v3-family-title">Piloter</h3>
-              <p class="v3-family-tagline">Trésorerie, CA, objectifs, marge, temps</p>
-            </a>
-
-            <!-- Famille 4 — Produire -->
-            <a href="/produits/templates/" class="v3-family-card">
-              <span class="v3-family-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg></span>
-              <h3 class="v3-family-title">Produire</h3>
-              <p class="v3-family-tagline">Projets, onboarding, livraison, docs</p>
-            </a>
-
-            <!-- Famille 5 — Sécuriser -->
-            <a href="/produits/guides-formations/" class="v3-family-card">
-              <span class="v3-family-icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
-              <h3 class="v3-family-title">Sécuriser</h3>
-              <p class="v3-family-tagline">Facturation électronique, RGPD léger, cyber</p>
-            </a>
-
-          </div>
-        </div>
-      </section>
-
-      <!-- ─────────────────────────────── SECTION 4 — SCÉNARIO QUOTIDIEN ──────────────────── -->
-      <section class="bg-chene-6 py-20 px-4 md:py-20">
-        <div class="max-w-[720px] mx-auto text-center">
-          <h2
-            class="font-heading font-bold text-[22px] md:text-[32px] text-ebene leading-[1.2] mb-6"
-          >
-            Vous reconnaissez ce lundi matin ?
-          </h2>
-
-          <p class="font-body text-lg text-ebene leading-[1.6] mb-6">
-            Vous ouvrez Gmail. 14 relances à envoyer. Vous copiez-collez les
-            mêmes réponses depuis trois mois. Ensuite, direction Google Sheets
-            pour mettre à jour le tableau de suivi. Puis l'agenda pour
-            reprogrammer les rendez-vous décalés. Il est déjà 11h et vous n'avez
-            pas commencé votre vrai travail.
-          </p>
-
-          <p class="font-body italic text-lg text-chene leading-[1.6]">
-            Et si tout ça se faisait sans vous — avant même que vous ouvriez
-            votre ordinateur ?
-          </p>
-        </div>
-      </section>
-
-      <!-- ──────────────────────────── SECTION 5 — DÉMONSTRATION DE PREUVE ─────────────────── -->
-      <section class="bg-lin py-20 px-4 md:py-20">
-        <div class="max-w-[1200px] mx-auto">
-          <!-- Titre centré -->
-          <h2
-            class="font-heading font-bold text-[22px] md:text-[32px] text-ebene leading-[1.2] text-center mb-12"
-          >
-            Des résultats concrets, pas des promesses
-          </h2>
-
-          <!-- 2 colonnes -->
-          <div class="flex flex-col gap-8 md:flex-row md:gap-12 md:items-start">
-            <!-- Colonne gauche — Texte -->
-            <div class="md:w-1/2">
-              <p class="font-body text-lg text-ebene leading-[1.6]">
-                Chaque système forgé est testé en conditions réelles avant sa
-                mise en vente. Ce que vous voyez ici, c'est ce que le système
-                produit réellement : l'email envoyé, le tableau rempli, la
-                notification reçue.
-              </p>
-            </div>
-
-            <!-- Colonne droite — Capture à venir -->
-            <div class="capture-frame md:w-1/2 border border-pierre rounded-[8px] bg-lin p-6 min-h-[240px] flex items-center justify-center" style="position:relative;">
-              <span class="capture-stamp" style="position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:10px;background:#3F6F5B;color:white;padding:2px 6px;text-transform:uppercase;">À venir</span>
-              <div class="text-center">
-                <p class="font-body text-[14px] text-pierre leading-[1.6]">Capture à venir</p>
-                <p class="capture-legend" style="font-size:13px;color:#6B4A2F;margin-top:8px;font-style:italic;">Résultat réel du système en production</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Indicateurs -->
-          <div
-            class="flex flex-col gap-4 md:flex-row md:justify-center md:gap-8 mt-8"
-          >
-            <p class="font-body font-semibold text-lg text-chene text-center">
-              0 relance oubliée
-            </p>
-            <p class="font-body font-semibold text-lg text-chene text-center">
-              4h récupérées / semaine
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ──────────────────────────────── SECTION 6 — COMMENT ÇA MARCHE ──────────────────── -->
-      <section class="bg-ebene py-20 px-4 md:py-20">
-        <div class="max-w-[1200px] mx-auto">
-          <h2 class="font-heading font-bold text-[22px] md:text-[32px] text-lin leading-[1.2] text-center mb-4">
-            Comment ça fonctionne
-          </h2>
-          <p class="font-body text-lg text-pierre leading-[1.6] text-center mb-12 max-w-[720px] mx-auto">
-            Quatre étapes simples pour installer un système forgé dans votre activité.
-          </p>
-
-          <div class="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-6">
-            <!-- Étape 1 -->
-            <div class="text-center md:text-left md:px-4">
-              <p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">01</p>
-              <h3 class="font-heading font-bold text-xl text-lin mb-3">Choisissez un problème</h3>
-              <p class="font-body text-base text-pierre leading-[1.6]">
-                Parcourez le catalogue par famille ou faites le diagnostic.
-              </p>
-            </div>
-            <!-- Étape 2 -->
-            <div class="text-center md:text-left md:px-4">
-              <p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">02</p>
-              <h3 class="font-heading font-bold text-xl text-lin mb-3">Recevez votre système</h3>
-              <p class="font-body text-base text-pierre leading-[1.6]">
-                Téléchargement immédiat&nbsp;: fichier prêt à poser, guide PDF, captures.
-              </p>
-            </div>
-            <!-- Étape 3 -->
-            <div class="text-center md:text-left md:px-4">
-              <p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">03</p>
-              <h3 class="font-heading font-bold text-xl text-lin mb-3">Suivez le guide</h3>
-              <p class="font-body text-base text-pierre leading-[1.6]">
-                Installation pas-à-pas, 15 à 30 minutes selon le système.
-              </p>
-            </div>
-            <!-- Étape 4 -->
-            <div class="text-center md:text-left md:px-4">
-              <p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">04</p>
-              <h3 class="font-heading font-bold text-xl text-lin mb-3">Ajustez si besoin</h3>
-              <p class="font-body text-base text-pierre leading-[1.6]">
-                Support email pendant 30 jours et FAQ par produit.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ──────────────────────────────────── SECTION 7 — RÉASSURANCE ─────────────────────── -->
-      <section class="bg-lin py-20 px-4 md:py-20">
-        <div class="max-w-[1200px] mx-auto">
-          <h2
-            class="font-heading font-bold text-[22px] md:text-[32px] text-ebene leading-[1.2] text-center mb-12"
-          >
-            Vous n'avez rien à perdre
-          </h2>
-
-          <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-            <!-- Bloc 1 — Garantie -->
-            <div class="bg-chene-6 rounded-[6px] p-6 md:p-6">
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                14 jours pour changer d'avis
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6]">
-                Remboursement intégral, sans justification. Un email suffit.
-              </p>
-            </div>
-
-            <!-- Bloc 2 — Support -->
-            <div class="bg-chene-6 rounded-[6px] p-6 md:p-6">
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Une vraie personne vous répond
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6]">
-                Support par email sous 48 heures. Vous n'êtes pas livré à
-                vous-même.
-              </p>
-            </div>
-
-            <!-- Bloc 3 — Simplicité -->
-            <div class="bg-chene-6 rounded-[6px] p-6 md:p-6">
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Pas besoin de comprendre le moteur pour conduire la voiture
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6]">
-                Si vous savez copier-coller, vous savez installer un système
-                forgé.
-              </p>
-            </div>
-
-            <!-- Bloc 4 — Prix juste -->
-            <div class="bg-chene-6 rounded-[6px] p-6 md:p-6">
-              <h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                29 €, c'est moins d'une heure de prestation
-              </h3>
-              <p class="font-body text-base text-ebene leading-[1.6]">
-                Le système vous en rend quatre par semaine. Rentabilisé en 7
-                jours.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ───────────────────────────────────── SECTION 8 — CTA FINAL ──────────────────────── -->
-      <section class="bg-chene py-16 px-4 md:py-16">
-        <div class="max-w-[600px] mx-auto text-center">
-          <h2
-            class="font-heading font-bold text-[22px] md:text-[32px] text-lin leading-[1.2] mb-4"
-          >
-            Récupérez vos heures perdues
-          </h2>
-          <p
-            class="font-body text-lg leading-[1.6] mb-8"
-            style="color: rgba(244, 240, 234, 0.85)"
-          >
-            Choisissez le système forgé adapté à votre métier. Installation en
-            15 minutes, résultats dès aujourd'hui.
-          </p>
-          <a
-            href="/catalogue.html"
-            class="block md:inline-block w-full md:w-auto text-center bg-lin text-chene font-semibold text-base rounded-[6px] px-7 py-[14px]"
-            >Trouver mon système</a
-          >
-        </div>
-      </section>
-    </main>
-
-    <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
-    <footer class="bg-ebene">
-      <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-        <!-- 3 colonnes -->
-        <div
-          class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between"
-        >
-          <!-- Colonne 1 — Marque -->
-          <div class="text-center md:text-left">
-            <p class="font-display text-[20px] text-lin leading-snug">
-              L'établ'IA
-            </p>
-            <p class="font-display text-[14px] text-pierre mt-1">
-              Forgé pour votre métier
-            </p>
-          </div>
-
-          <!-- Colonne 2 — Navigation -->
-          <div>
-            <p
-              class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4"
-            >
-              Navigation
-            </p>
-            <ul class="flex flex-col gap-2">
-              <li>
-                <a
-                  href="/index.html"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >Accueil</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/catalogue.html"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >Catalogue</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/a-propos.html"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >À propos</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/faq.html"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >FAQ</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/contact.html"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Colonne 3 — Informations -->
-          <div>
-            <p
-              class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4"
-            >
-              Informations
-            </p>
-            <ul class="flex flex-col gap-2">
-              <li>
-                <a
-                  href="/mentions-legales.html"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >Mentions légales</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/cgv.html"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >CGV</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/confidentialite.html"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >Confidentialité</a
-                >
-              </li>
-              <li>
-                <a
-                  href="mailto:contact@letablia.fr"
-                  class="font-body text-base text-lin hover:text-chene"
-                  style="transition: color 0.2s ease"
-                  >contact@letablia.fr</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Séparateur + copyright -->
-        <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
-          <p class="font-body text-[13px] text-pierre mb-3">
-            Produits digitaux pour TPE/PME francophones · Paiement unique · Support humain · Pré-requis affichés avant achat
-          </p>
-          <p class="font-body text-[12px] text-pierre">
-            © 2026 L'établ'IA. Tous droits réservés.
-          </p>
-        </div>
-      </div>
-    </footer>
-
-    <script>
-      var toggle = document.getElementById("menu-toggle");
-      var close = document.getElementById("menu-close");
-      var menu = document.getElementById("mobile-menu");
-
-      toggle.addEventListener("click", function () {
-        menu.classList.remove("hidden");
-      });
-      close.addEventListener("click", function () {
-        menu.classList.add("hidden");
-      });
-    </script>
-
-    <!-- Bannière cookies RGPD -->
-    <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
-      <p style="margin:0; font-size:14px;">
-        Ce site utilise des cookies techniques et analytics.
-        <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
-      </p>
-      <div style="display:flex; gap:12px;">
-        <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
-        <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+<!-- ═══════════════════════════ HERO ══════════════════════════ -->
+<section class="hero texture">
+  <div class="hero-inner">
+    <!-- Colonne gauche -->
+    <div>
+      <h1 class="hero-h1">SYSTÈMES FORGÉS<br>POUR VOTRE<br>ENTREPRISE.</h1>
+      <p class="hero-body">Installez en quelques heures un système qui élimine une tâche répétitive de votre semaine — sans recruter une agence.</p>
+      <div class="hero-cta-wrap">
+        <a href="/diagnostic/" class="btn-cuivre">Trouver mon système →</a>
+        <a href="/produits/" class="hero-link-sec">Voir tous les systèmes</a>
       </div>
     </div>
-    <script>
-      function accepterCookies() {
-        localStorage.setItem('cookies', 'accepted');
-        document.getElementById('cookie-banner').style.display = 'none';
-      }
-      function refuserCookies() {
-        localStorage.setItem('cookies', 'refused');
-        document.getElementById('cookie-banner').style.display = 'none';
-      }
-      if (localStorage.getItem('cookies')) {
-        document.getElementById('cookie-banner').style.display = 'none';
-      }
-    </script>
-  </body>
+
+    <!-- Colonne droite — artefact -->
+    <div style="display:flex;justify-content:center;">
+      <div class="hero-artefact">
+        <span class="artefact-badge">✓ Testé terrain</span>
+        <h2 class="artefact-title">GARDIEN DE STOCK</h2>
+        <p class="artefact-version">v1.2 · Avril 2026</p>
+        <table class="artefact-table">
+          <tr><td>Format</td><td>n8n JSON</td></tr>
+          <tr><td>Niveau</td><td>Sans code</td></tr>
+          <tr><td>Installation</td><td>2–3 heures</td></tr>
+          <tr><td>Support</td><td>30 jours inclus</td></tr>
+        </table>
+        <div class="artefact-footer">
+          <span class="artefact-prix">29 €</span>
+          <a href="/produits/gardien-de-stock/" class="artefact-cta">Voir le système →</a>
+        </div>
+        <p class="artefact-paiement">Paiement unique · Garantie 14j</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═════════════════════ BANDEAU PREUVE ══════════════════════ -->
+<div class="bandeau-preuve">
+  <div class="bandeau-preuve-inner">
+    <span>★★★★★ 4,8/5</span>
+    <span class="bandeau-sep">·</span>
+    <span>400+ entreprises francophones</span>
+    <span class="bandeau-sep">·</span>
+    <span>Mis à jour Avril 2026</span>
+    <span class="bandeau-sep">·</span>
+    <span>13 systèmes disponibles</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════ 5 FAMILLES ════════════════════════ -->
+<section class="section-familles">
+  <div style="max-width:1200px;margin:0 auto;">
+    <h2 class="section-title">Résoudre votre problème,<br>pas maîtriser un outil.</h2>
+    <p class="section-subtitle">Choisissez la famille qui correspond à ce que vous voulez changer dans votre semaine.</p>
+  </div>
+  <div class="familles-grid">
+
+    <!-- Automatiser -->
+    <div class="famille-card">
+      <svg class="famille-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+      </svg>
+      <h3 class="famille-titre">Automatiser</h3>
+      <p class="famille-desc">Éliminer les tâches répétitives de votre semaine.</p>
+      <span class="famille-count">6 systèmes</span>
+      <a href="/automatiser/" class="famille-lien">Voir →</a>
+    </div>
+
+    <!-- Vendre -->
+    <div class="famille-card">
+      <svg class="famille-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+        <polyline points="17 6 23 6 23 12"></polyline>
+      </svg>
+      <h3 class="famille-titre">Vendre</h3>
+      <p class="famille-desc">Développer vos ventes et fidéliser vos clients.</p>
+      <span class="famille-count">6 systèmes</span>
+      <a href="/vendre/" class="famille-lien">Voir →</a>
+    </div>
+
+    <!-- Piloter -->
+    <div class="famille-card">
+      <svg class="famille-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="20" x2="18" y2="10"></line>
+        <line x1="12" y1="20" x2="12" y2="4"></line>
+        <line x1="6" y1="20" x2="6" y2="14"></line>
+      </svg>
+      <h3 class="famille-titre">Piloter</h3>
+      <p class="famille-desc">Visualiser, décider, suivre vos indicateurs clés.</p>
+      <span class="famille-count">3 systèmes</span>
+      <a href="/piloter/" class="famille-lien">Voir →</a>
+    </div>
+
+    <!-- Produire -->
+    <div class="famille-card">
+      <svg class="famille-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"></path>
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+      </svg>
+      <h3 class="famille-titre">Produire</h3>
+      <p class="famille-desc">Créer, rédiger, publier vos contenus et livrables.</p>
+      <span class="famille-count">À venir</span>
+      <a href="/produire/" class="famille-lien">Voir →</a>
+    </div>
+
+    <!-- Sécuriser -->
+    <div class="famille-card">
+      <svg class="famille-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+      </svg>
+      <h3 class="famille-titre">Sécuriser</h3>
+      <p class="famille-desc">Protéger vos données et vous conformer.</p>
+      <span class="famille-count">2 systèmes</span>
+      <a href="/securiser/" class="famille-lien">Voir →</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ PRODUITS VEDETTES ═════════════════════ -->
+<section class="section-produits">
+  <div class="section-header">
+    <h2 class="section-title">Les systèmes les plus posés.</h2>
+    <a href="/produits/" class="section-header-link">Voir tous les systèmes →</a>
+  </div>
+
+  <div class="produits-grid">
+
+    <!-- Carte 1 — Signal de Vente -->
+    <div class="produit-card">
+      <span class="produit-badge">AUTOMATISER</span>
+      <div class="produit-image">
+        <div class="produit-image-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(107,74,47,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+          </svg>
+          <span class="produit-image-label">Workflow n8n<br>Signal de Vente</span>
+        </div>
+      </div>
+      <div class="produit-body">
+        <h3 class="produit-titre">Signal de Vente</h3>
+        <p class="produit-promesse">Détectez automatiquement les prospects chauds de votre CRM et recevez une alerte immédiate.</p>
+        <hr class="produit-sep" />
+        <div class="produit-footer">
+          <span class="produit-statut">● PRÊT À POSER</span>
+          <div class="produit-prix-cta">
+            <span class="produit-prix">Gratuit</span>
+            <a href="/produits/signal-de-vente/" class="btn-voir">Voir →</a>
+          </div>
+        </div>
+      </div>
+      <p class="produit-paiement">Téléchargement immédiat</p>
+    </div>
+
+    <!-- Carte 2 — Gardien de Stock -->
+    <div class="produit-card">
+      <span class="produit-badge">PILOTER</span>
+      <div class="produit-image">
+        <div class="produit-image-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(107,74,47,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="produit-image-label">Dashboard stock<br>Gardien de Stock</span>
+        </div>
+      </div>
+      <div class="produit-body">
+        <h3 class="produit-titre">Gardien de Stock</h3>
+        <p class="produit-promesse">Soyez alerté automatiquement si votre stock descend sous un seuil critique. Zéro rupture.</p>
+        <hr class="produit-sep" />
+        <div class="produit-footer">
+          <span class="produit-statut">● PRÊT À POSER</span>
+          <div class="produit-prix-cta">
+            <span class="produit-prix">29 €</span>
+            <a href="/produits/gardien-de-stock/" class="btn-voir">Voir →</a>
+          </div>
+        </div>
+      </div>
+      <p class="produit-paiement">Paiement unique · Support 30j</p>
+    </div>
+
+    <!-- Carte 3 — Séquenceur Post-Achat -->
+    <div class="produit-card">
+      <span class="produit-badge">AUTOMATISER</span>
+      <div class="produit-image">
+        <div class="produit-image-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="rgba(107,74,47,0.35)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span class="produit-image-label">Séquence email<br>Post-Achat</span>
+        </div>
+      </div>
+      <div class="produit-body">
+        <h3 class="produit-titre">Séquenceur Post-Achat</h3>
+        <p class="produit-promesse">Transformez vos acheteurs en clients fidèles avec une séquence email automatique et personnalisée.</p>
+        <hr class="produit-sep" />
+        <div class="produit-footer">
+          <span class="produit-statut">● PRÊT À POSER</span>
+          <div class="produit-prix-cta">
+            <span class="produit-prix">39 €</span>
+            <a href="/produits/sequenceur-post-achat/" class="btn-voir">Voir →</a>
+          </div>
+        </div>
+      </div>
+      <p class="produit-paiement">Paiement unique · Support 30j</p>
+    </div>
+
+  </div>
+
+  <div class="produits-cta-wrap">
+    <a href="/produits/" class="btn-outline">Voir les 13 systèmes disponibles →</a>
+  </div>
+</section>
+
+<!-- ════════════════════ COMMENT ÇA MARCHE ═══════════════════════ -->
+<section class="section-process">
+  <div style="max-width:1200px;margin:0 auto;">
+    <h2 class="section-title">Installer un système en 3 étapes.</h2>
+    <p class="section-subtitle">Aucun code à écrire. Tout est documenté, testé et prêt.</p>
+  </div>
+  <div class="process-grid">
+
+    <!-- Étape 1 -->
+    <div class="process-step">
+      <div class="process-num">01</div>
+      <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+      <h3 class="process-titre">Choisir</h3>
+      <p class="process-corps">Trouvez le système adapté à votre problème via le catalogue ou le diagnostic.</p>
+      <span class="process-duree">~5 min</span>
+    </div>
+
+    <!-- Étape 2 -->
+    <div class="process-step">
+      <div class="process-num">02</div>
+      <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      <h3 class="process-titre">Télécharger</h3>
+      <p class="process-corps">Recevez le fichier JSON, le guide d'installation et les credentials modèle.</p>
+      <span class="process-duree">Immédiat</span>
+    </div>
+
+    <!-- Étape 3 -->
+    <div class="process-step">
+      <div class="process-num">03</div>
+      <svg class="process-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="3"></circle>
+        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+      </svg>
+      <h3 class="process-titre">Configurer</h3>
+      <p class="process-corps">Suivez le guide pas à pas pour activer votre système en quelques heures.</p>
+      <span class="process-duree">2–4 heures</span>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════ CTA NEWSLETTER ════════════════════════ -->
+<section class="section-newsletter" id="newsletter">
+  <div class="newsletter-inner">
+    <h2 class="newsletter-h2">Restez informé des nouveaux systèmes et mises à jour.</h2>
+    <p class="newsletter-corps">Chaque mois, un email : nouvelles forges, guides pratiques et ressources gratuites.</p>
+    <form class="newsletter-form" onsubmit="return false;">
+      <input class="newsletter-input" type="email" placeholder="votre@email.com" aria-label="Votre email" />
+      <button class="newsletter-btn" type="submit">S'abonner →</button>
+    </form>
+    <p class="newsletter-rgpd">Pas de spam. Désinscription en 1 clic. RGPD conforme.</p>
+  </div>
+</section>
+
+</main>
+
+<!-- ════════════════════════ FOOTER ════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <!-- Colonne 1 — Marque -->
+    <div>
+      <a href="/" class="footer-logo">L'établ'IA</a>
+      <p class="footer-tagline">Des systèmes digitaux prêts à poser dans votre entreprise.</p>
+      <a href="mailto:contact@letablia.fr" class="footer-email">contact@letablia.fr</a>
+    </div>
+
+    <!-- Colonne 2 — Navigation -->
+    <div>
+      <span class="footer-col-titre">Navigation</span>
+      <ul class="footer-links">
+        <li><a href="/automatiser/">Automatiser</a></li>
+        <li><a href="/vendre/">Vendre</a></li>
+        <li><a href="/piloter/">Piloter</a></li>
+        <li><a href="/produire/">Produire</a></li>
+        <li><a href="/securiser/">Sécuriser</a></li>
+        <li><a href="/diagnostic/">Diagnostic</a></li>
+        <li><a href="/ressources/">Ressources</a></li>
+        <li><a href="/a-propos.html">À propos</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 3 — Legal -->
+    <div>
+      <span class="footer-col-titre">Légal</span>
+      <ul class="footer-links">
+        <li><a href="/cgv/">CGV</a></li>
+        <li><a href="/rgpd/">RGPD</a></li>
+        <li><a href="/retractation/">Rétractation</a></li>
+        <li><a href="/mentions-legales.html">Mentions légales</a></li>
+      </ul>
+    </div>
+
+    <!-- Colonne 4 — Contact -->
+    <div>
+      <span class="footer-col-titre">Contact</span>
+      <ul class="footer-links">
+        <li><a href="mailto:contact@letablia.fr">contact@letablia.fr</a></li>
+        <li><a href="/contact.html">Formulaire</a></li>
+        <li><a href="/carnet-de-forge/">Carnet de forge</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 L'établ'IA · Tous droits réservés</p>
+  </div>
+</footer>
+
+<!-- Sticky CTA mobile -->
+<div class="sticky-cta" id="sticky-cta">
+  <a href="/diagnostic/">Trouver mon système →</a>
+</div>
+
+<script>
+// Mobile menu
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileClose = document.getElementById('mobile-close');
+
+hamburger && hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+mobileClose && mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+// Sticky CTA mobile — masquer quand newsletter visible
+const newsletter = document.getElementById('newsletter');
+const stickyCta = document.getElementById('sticky-cta');
+if (newsletter && stickyCta) {
+  const obs = new IntersectionObserver(entries => {
+    stickyCta.style.display = entries[0].isIntersecting ? 'none' : '';
+  }, { threshold: 0.1 });
+  obs.observe(newsletter);
+}
+</script>
+
+</body>
 </html>
