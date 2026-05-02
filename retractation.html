@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Droit de rétractation — L'établ'IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/output.css">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+</head>
+<body class="bg-lin font-body text-ebene">
+
+  <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+  <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
+    <div class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
+      <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Systèmes forgés</a>
+        <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">À propos</a>
+        <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">FAQ</a>
+        <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Contact</a>
+      </nav>
+      <a href="/catalogue.html" class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90">Trouver mon système</a>
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="Ouvrir le menu">
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
+    <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none" aria-label="Fermer le menu">&times;</button>
+    <nav class="flex flex-col items-center gap-8 mb-10">
+      <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Systèmes forgés</a>
+      <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">À propos</a>
+      <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">FAQ</a>
+      <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Contact</a>
+    </nav>
+    <a href="/catalogue.html" class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]">Trouver mon système</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+  <main>
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto">
+
+        <h1 class="font-heading font-bold text-[28px] md:text-[32px] text-ebene leading-[1.2] mb-6">
+          Droit de rétractation
+        </h1>
+        <p class="font-body text-lg text-ebene leading-[1.6] mb-12 text-pierre">
+          Vous avez changé d'avis ? Vous pouvez vous rétracter dans les 14 jours.
+        </p>
+
+        <div class="flex flex-col gap-10">
+
+          <!-- Section 1 -->
+          <div class="bg-chene-8 border border-chene-6 rounded-[8px] p-6">
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">✓ Votre droit de rétractation</h2>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              Conformément à l'article <strong>L.221-18 du Code de la consommation</strong>, vous disposez d'un délai de <strong>14 jours calendaires</strong> à compter de votre achat pour exercer votre droit de rétractation, <strong>sans avoir à justifier votre décision</strong>.
+            </p>
+          </div>
+
+          <!-- Section 2 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Conditions d'application</h2>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Votre droit de rétractation s'applique <strong>sauf</strong> si :
+            </p>
+            <ul class="flex flex-col gap-3 list-disc list-inside">
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous avez expressément consenti au téléchargement du fichier avant la fin du délai de 14 jours (case cochée lors de l'achat)</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous avez utilisé le système forgé dans votre environnement n8n</li>
+            </ul>
+            <p class="font-body text-sm text-pierre leading-[1.6] mt-4">
+              💡 Astuce : Si vous souhaitez conserver votre droit de rétractation, <strong>ne cochez pas la case</strong> lors de l'achat. Vous recevrez votre lien de téléchargement par email, mais le délai ne commence que lorsque vous actionnez le lien.
+            </p>
+          </div>
+
+          <!-- Section 3 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Comment exercer votre droit</h2>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              <strong>Par email :</strong>
+            </p>
+            <div class="bg-lin border border-pierre rounded-[6px] p-4 mb-6">
+              <p class="font-body text-base text-ebene mb-2">
+                Envoyez un email à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition: color 0.2s ease">contact@letablia.fr</a> en indiquant :
+              </p>
+              <ul class="flex flex-col gap-2 list-disc list-inside ml-2">
+                <li class="font-body text-base text-ebene">Votre <strong>numéro de commande</strong> (visible dans votre email de confirmation)</li>
+                <li class="font-body text-base text-ebene">Votre <strong>nom complet</strong></li>
+                <li class="font-body text-base text-ebene">Votre <strong>adresse email</strong> d'achat</li>
+                <li class="font-body text-base text-ebene">Optionnel : Un motif de rétractation</li>
+              </ul>
+            </div>
+
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              <strong>Ou utilisez le bouton ci-dessous :</strong>
+            </p>
+            <a
+              href="mailto:contact@letablia.fr?subject=Exercer mon droit de rétractation&body=Bonjour,%0A%0AJe souhaite exercer mon droit de rétractation pour la commande suivante:%0A%0ANuméro de commande: [À compléter]%0ANom: [À compléter]%0AEmail: [À compléter]%0A%0AMerci"
+              class="inline-block border border-chene text-chene font-semibold text-base rounded-[6px] px-7 py-[14px] hover:bg-chene-8"
+              style="transition: color 0.2s ease, background-color 0.2s ease">
+              Demander ma rétractation
+            </a>
+          </div>
+
+          <!-- Section 4 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Délai de traitement et remboursement</h2>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Une fois votre demande reçue :
+            </p>
+            <div class="flex flex-col gap-3">
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-1">48 heures</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">L'établ'IA confirme votre demande par email</p>
+              </div>
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-1">5 jours ouvrables</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">Remboursement intégral sur votre compte LemonSqueezy ou votre mode de paiement original</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Important : Après 14 jours</h2>
+            <p class="font-body text-base text-ebene leading-[1.6]">
+              Passé le délai de 14 jours, <strong>aucun remboursement n'est possible</strong> car le produit est un fichier numérique téléchargeable. Une fois acheté, vous conservez l'accès au fichier.
+            </p>
+          </div>
+
+          <!-- Section 6 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Questions fréquentes</h2>
+            <div class="flex flex-col gap-4">
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-2">« Je peux me rétracter même si le système fonctionne ? »</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">
+                  Oui. Le droit de rétractation est automatique. Vous n'avez pas à justifier votre raison. Pas de questions, pas d'explications requises.
+                </p>
+              </div>
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-2">« Que se passe-t-il si je télécharge le fichier ? »</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">
+                  Le simple téléchargement ne fait pas perdre votre droit. Vous conservez votre droit tant que vous <strong>n'avez pas coché la case</strong> « J'accepte de commencer le téléchargement immédiatement » lors de l'achat.
+                </p>
+              </div>
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-2">« Je peux demander la rétractation par téléphone ? »</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">
+                  Préférez l'email pour avoir une trace écrite. Vous pouvez aussi appeler et demander un email de confirmation. L'essentiel est de manifester votre volonté dans les 14 jours.
+                </p>
+              </div>
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-2">« Je perds mes données si je me rétracte ? »</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">
+                  L'établ'IA ne conserve aucune donnée de votre système après remboursement. Vos données n8n restent sur vos comptes (Gmail, Notion, etc.) — seul le fichier JSON est supprimé de votre accès.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Besoin d'aide -->
+          <div class="bg-chene-8 border border-chene-6 rounded-[8px] p-6">
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">📧 Besoin d'aide ?</h2>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Si vous avez des questions avant de vous rétracter, contactez-nous. Peut-être pouvons-nous vous aider à résoudre votre problème :
+            </p>
+            <a href="mailto:contact@letablia.fr" class="inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90">
+              contact@letablia.fr
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Dernière mise à jour -->
+        <div class="mt-16 pt-8 border-t border-pierre">
+          <p class="font-body text-sm text-pierre">
+            Dernière mise à jour : 2 mai 2026
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+  <footer class="bg-ebene">
+    <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+      <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+        <div class="text-center md:text-left">
+          <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+          <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+        </div>
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/index.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Accueil</a></li>
+            <li><a href="/catalogue.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Catalogue</a></li>
+            <li><a href="/a-propos.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">À propos</a></li>
+            <li><a href="/faq.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">FAQ</a></li>
+            <li><a href="/contact.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/mentions-legales.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Mentions légales</a></li>
+            <li><a href="/cgv.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">CGV</a></li>
+            <li><a href="/rgpd.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Confidentialité</a></li>
+            <li><a href="mailto:contact@letablia.fr" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">contact@letablia.fr</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
+        <p class="font-body text-[13px] text-pierre mb-3">Produits digitaux pour TPE/PME francophones · Paiement unique · Support humain · Pré-requis affichés avant achat</p>
+        <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+  </script>
+
+  <!-- Bannière cookies RGPD -->
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+    <p style="margin:0; font-size:14px;">
+      Ce site utilise des cookies techniques et analytics.
+      <a href="/rgpd.html" style="color:#B46A3C;">En savoir plus</a>
+    </p>
+    <div style="display:flex; gap:12px;">
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+    </div>
+  </div>
+  <script>
+    function accepterCookies() {
+      localStorage.setItem('cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function refuserCookies() {
+      localStorage.setItem('cookies', 'refused');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    if (localStorage.getItem('cookies')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
