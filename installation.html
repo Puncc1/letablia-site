@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide d'installation — L'établ'IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/output.css">
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+</head>
+<body class="bg-lin font-body text-ebene">
+
+  <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+  <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
+    <div class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
+      <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Systèmes forgés</a>
+        <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">À propos</a>
+        <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">FAQ</a>
+        <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Contact</a>
+      </nav>
+      <a href="/catalogue.html" class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90">Trouver mon système</a>
+      <button id="menu-toggle" class="md:hidden flex flex-col gap-[5px] p-1" aria-label="Ouvrir le menu">
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
+    <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none" aria-label="Fermer le menu">&times;</button>
+    <nav class="flex flex-col items-center gap-8 mb-10">
+      <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Systèmes forgés</a>
+      <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">À propos</a>
+      <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">FAQ</a>
+      <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene" style="transition: color 0.2s ease">Contact</a>
+    </nav>
+    <a href="/catalogue.html" class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]">Trouver mon système</a>
+  </div>
+
+  <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+  <main>
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto">
+
+        <h1 class="font-heading font-bold text-[28px] md:text-[32px] text-ebene leading-[1.2] mb-6">
+          Guide d'installation
+        </h1>
+        <p class="font-body text-lg text-ebene leading-[1.6] mb-12 text-pierre">
+          Installer un système forgé en 5 minutes, sans compétence technique.
+        </p>
+
+        <div class="flex flex-col gap-10">
+
+          <!-- Prérequis -->
+          <div class="bg-chene-8 border border-chene-6 rounded-[8px] p-6">
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-4">⚙️ Avant de commencer</h2>
+            <ul class="flex flex-col gap-2">
+              <li class="font-body text-base text-ebene leading-[1.6]">✓ Un compte n8n (Cloud ou Auto-hébergé). <a href="https://n8n.io" class="text-chene hover:underline" style="transition: color 0.2s ease">Créer un compte gratuit n8n</a></li>
+              <li class="font-body text-base text-ebene leading-[1.6]">✓ Le fichier JSON téléchargé depuis votre email de confirmation</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">✓ Le guide PDF fourni avec votre achat</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">✓ 5 minutes de disponibilité</li>
+            </ul>
+          </div>
+
+          <!-- Étape 1 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Étape 1 : Se connecter à n8n</h2>
+            <ol class="flex flex-col gap-3 list-decimal list-inside">
+              <li class="font-body text-base text-ebene leading-[1.6]">Allez sur <a href="https://app.n8n.cloud" class="text-chene hover:underline" style="transition: color 0.2s ease">app.n8n.cloud</a> (ou votre instance n8n)</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Connectez-vous avec vos identifiants</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous arrivez sur le tableau de bord « Workflows »</li>
+            </ol>
+          </div>
+
+          <!-- Étape 2 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Étape 2 : Importer le fichier JSON</h2>
+            <ol class="flex flex-col gap-3 list-decimal list-inside">
+              <li class="font-body text-base text-ebene leading-[1.6]">Cliquez sur le bouton <strong>« + New »</strong> en haut à gauche</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Sélectionnez <strong>« Import »</strong></li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Téléchargez le fichier JSON reçu par email</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Nommez votre workflow (ex: « Relances clients »)</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Cliquez sur <strong>« Import »</strong></li>
+            </ol>
+          </div>
+
+          <!-- Étape 3 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Étape 3 : Configurer les intégrations</h2>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Votre système forgé peut intégrer plusieurs services (Gmail, Slack, Zapier, etc.). Selon votre système :
+            </p>
+            <ol class="flex flex-col gap-3 list-decimal list-inside">
+              <li class="font-body text-base text-ebene leading-[1.6]">Double-cliquez sur chaque nœud <strong>rouge</strong> (non configuré)</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Connectez votre compte à n8n en cliquant sur <strong>« Authenticate »</strong></li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Autorisez les permissions demandées</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Remplissez les paramètres spécifiques (ex: nom du dossier Dropbox, ID Notion, etc.)</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Sauvegardez chaque modification</li>
+            </ol>
+            <p class="font-body text-sm text-pierre leading-[1.6] mt-3">
+              💡 Conseil : Consultez le guide PDF pour les détails des intégrations spécifiques à votre système.
+            </p>
+          </div>
+
+          <!-- Étape 4 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Étape 4 : Tester le workflow</h2>
+            <ol class="flex flex-col gap-3 list-decimal list-inside">
+              <li class="font-body text-base text-ebene leading-[1.6]">Cliquez sur le bouton <strong>« Test workflow »</strong> en bas à droite</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Vérifiez que tous les nœuds passent au vert</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Si un nœud reste rouge, consultez l'erreur et rectifiez la configuration</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Si tout est au vert, passez à l'étape 5</li>
+            </ol>
+          </div>
+
+          <!-- Étape 5 -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">Étape 5 : Activer et déployer</h2>
+            <ol class="flex flex-col gap-3 list-decimal list-inside">
+              <li class="font-body text-base text-ebene leading-[1.6]">Cliquez sur le bouton <strong>« Save »</strong> en haut</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Cliquez sur le curseur <strong>« Off »</strong> pour <strong>« On »</strong> (activer le workflow)</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Votre système est maintenant actif et s'exécutera selon son calendrier programmé</li>
+            </ol>
+          </div>
+
+          <!-- Problèmes courants -->
+          <div class="bg-chene-8 border border-chene-6 rounded-[8px] p-6">
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-4">⚠️ Problèmes courants</h2>
+            <div class="flex flex-col gap-4">
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-2">« Erreur d'authentification »</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">Vérifiez que vous avez autorisé n8n à accéder à votre compte. Supprimez la connexion et recommencez.</p>
+              </div>
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-2">« Le fichier JSON ne s'importe pas »</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">Vérifiez que le fichier a l'extension <code style="background: #f0f0f0; padding: 2px 6px; border-radius: 3px;">.json</code> et qu'il n'a pas été renommé.</p>
+              </div>
+              <div>
+                <p class="font-heading font-medium text-base text-ebene mb-2">« Le workflow s'arrête avec une erreur »</p>
+                <p class="font-body text-base text-ebene leading-[1.6]">Consultez les logs en cliquant sur la nœud avec le point d'exclamation. Le guide PDF explique les solutions courantes.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Support -->
+          <div>
+            <h2 class="font-heading font-semibold text-lg text-ebene mb-3">📧 Vous êtes bloqué ?</h2>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Notre équipe support répond sous 48 heures. Envoyez vos questions à :
+            </p>
+            <a href="mailto:contact@letablia.fr?subject=Demande de support - Installation"
+               class="inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90">
+              contact@letablia.fr
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Dernière mise à jour -->
+        <div class="mt-16 pt-8 border-t border-pierre">
+          <p class="font-body text-sm text-pierre">
+            Dernière mise à jour : 2 mai 2026
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+  <footer class="bg-ebene">
+    <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+      <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+        <div class="text-center md:text-left">
+          <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+          <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+        </div>
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/index.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Accueil</a></li>
+            <li><a href="/catalogue.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Catalogue</a></li>
+            <li><a href="/a-propos.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">À propos</a></li>
+            <li><a href="/faq.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">FAQ</a></li>
+            <li><a href="/contact.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/mentions-legales.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Mentions légales</a></li>
+            <li><a href="/cgv.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">CGV</a></li>
+            <li><a href="/rgpd.html" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">Confidentialité</a></li>
+            <li><a href="mailto:contact@letablia.fr" class="font-body text-base text-lin hover:text-chene" style="transition: color 0.2s ease">contact@letablia.fr</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
+        <p class="font-body text-[13px] text-pierre mb-3">Produits digitaux pour TPE/PME francophones · Paiement unique · Support humain · Pré-requis affichés avant achat</p>
+        <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+  </script>
+
+  <!-- Bannière cookies RGPD -->
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+    <p style="margin:0; font-size:14px;">
+      Ce site utilise des cookies techniques et analytics.
+      <a href="/rgpd.html" style="color:#B46A3C;">En savoir plus</a>
+    </p>
+    <div style="display:flex; gap:12px;">
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+    </div>
+  </div>
+  <script>
+    function accepterCookies() {
+      localStorage.setItem('cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function refuserCookies() {
+      localStorage.setItem('cookies', 'refused');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    if (localStorage.getItem('cookies')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>
