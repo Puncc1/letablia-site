@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le Carnet du Forgé — L'établ'IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontshare : Zodiak + Satoshi -->
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+    <!-- Google Fonts : JetBrains Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <!-- Design System V3 -->
+    <link rel="stylesheet" href="/assets/css/design-system.css" />
+    <style>
+      /* ─────────────────────────────────────────────────────────
+         Page spécifique — Le Carnet du Forgé
+         ───────────────────────────────────────────────────────── */
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        font-family: 'Satoshi', system-ui, sans-serif;
+        color: #25221D;
+        line-height: 1.6;
+      }
+
+      body {
+        background-color: #F6F1E8;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         HEADER (identique aux autres pages)
+         ───────────────────────────────────────────────────────── */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background-color: #F5F0E8;
+        border-bottom: 1px solid #C5B9A8;
+        height: 72px;
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 1.5rem;
+        color: #8A7560;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .logo:hover {
+        opacity: 0.9;
+      }
+
+      .nav-desktop {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-desktop a {
+        font-size: 1rem;
+        color: #25221D;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .nav-desktop a:hover {
+        color: #8A7560;
+      }
+
+      .cta-desktop {
+        display: none;
+        background-color: #8A7560;
+        color: #F5F0E8;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 10px 1.75rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .cta-desktop:hover {
+        opacity: 0.9;
+      }
+
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
+      }
+
+      .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #25221D;
+      }
+
+      #mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background-color: #F5F0E8;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #mobile-menu.open {
+        display: flex;
+      }
+
+      .menu-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #25221D;
+      }
+
+      @media (min-width: 768px) {
+        .nav-desktop {
+          display: flex;
+        }
+
+        .cta-desktop {
+          display: inline-block;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         MAIN CONTENT
+         ───────────────────────────────────────────────────────── */
+      main {
+        min-height: calc(100vh - 72px);
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      @media (min-width: 768px) {
+        section {
+          padding: 5rem 1rem;
+        }
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 1 — HERO
+         ───────────────────────────────────────────────────────── */
+      .section-hero {
+        background-color: #F6F1E8;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+      }
+
+      @media (min-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.75rem;
+        }
+      }
+
+      .hero-content .subtitle {
+        font-size: 1.125rem;
+        color: #25221D;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .hero-content .description {
+        font-size: 1rem;
+        color: #6B4A2F;
+        margin-bottom: 2.5rem;
+        line-height: 1.7;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 2 — FORMULAIRE EMAIL
+         ───────────────────────────────────────────────────────── */
+      .section-form {
+        background-color: #F6F1E8;
+      }
+
+      .form-container {
+        background-color: #FFFCF5;
+        border: 2px solid #E9DDC8;
+        border-radius: 8px;
+        padding: 2rem 1.5rem;
+        margin-bottom: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        .form-container {
+          padding: 3rem 2rem;
+        }
+      }
+
+      .form-group {
+        margin-bottom: 1.25rem;
+      }
+
+      .form-group label {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: #25221D;
+        margin-bottom: 0.5rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .form-group input[type="email"] {
+        width: 100%;
+        padding: 0.875rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #C5B9A8;
+        border-radius: 6px;
+        font-family: 'Satoshi', system-ui, sans-serif;
+        background-color: #F6F1E8;
+        color: #25221D;
+        transition: border-color 0.2s ease;
+      }
+
+      .form-group input[type="email"]:focus {
+        outline: none;
+        border-color: #B46A3C;
+        background-color: #FFFCF5;
+      }
+
+      .form-group input[type="email"]::placeholder {
+        color: #A09889;
+      }
+
+      .btn-submit {
+        width: 100%;
+        padding: 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        background-color: #B46A3C;
+        color: #FFFCF5;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+        font-family: 'Satoshi', system-ui, sans-serif;
+      }
+
+      .btn-submit:hover {
+        background-color: #A25634;
+      }
+
+      .form-note {
+        font-size: 0.875rem;
+        color: #6B4A2F;
+        margin-top: 1rem;
+        text-align: center;
+        line-height: 1.5;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 3 — CE QUE VOUS APPRENDREZ
+         ───────────────────────────────────────────────────────── */
+      .section-content {
+        background-color: #F6F1E8;
+      }
+
+      .section-content h2 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .section-content h2 {
+          font-size: 2.25rem;
+        }
+      }
+
+      .section-intro {
+        text-align: center;
+        color: #6B4A2F;
+        margin-bottom: 3rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .points-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .points-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+      }
+
+      .point-card {
+        background-color: #FFFCF5;
+        border-left: 4px solid #B46A3C;
+        padding: 1.5rem;
+        border-radius: 4px;
+      }
+
+      .point-card h3 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 1.125rem;
+        color: #6B4A2F;
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+      }
+
+      .point-card p {
+        font-size: 0.975rem;
+        color: #25221D;
+        line-height: 1.6;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 4 — FOOTER CTA
+         ───────────────────────────────────────────────────────── */
+      .section-cta {
+        background-color: #E9DDC8;
+        text-align: center;
+      }
+
+      .section-cta h2 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .cta-text {
+        font-size: 1rem;
+        color: #25221D;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        background-color: #8A7560;
+        color: #F5F0E8;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.875rem 2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #6B4A2F;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         FOOTER
+         ───────────────────────────────────────────────────────── */
+      footer {
+        background-color: #25221D;
+        color: #F5F0E8;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      footer a {
+        color: #B46A3C;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-link {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-divider {
+        height: 1px;
+        background-color: rgba(160, 152, 137, 0.3);
+        margin: 1.5rem 0;
+      }
+
+      .footer-copyright {
+        font-size: 0.85rem;
+        color: #C5B9A8;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+    <header>
+      <div class="header-content">
+        <!-- Logo -->
+        <a href="/" class="logo">L'établ'IA</a>
+
+        <!-- Navigation desktop -->
+        <nav class="nav-desktop">
+          <a href="/catalogue.html">Systèmes forgés</a>
+          <a href="/a-propos.html">À propos</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+
+        <!-- CTA desktop -->
+        <a href="/catalogue.html" class="cta-desktop">Trouver mon système</a>
+
+        <!-- Bouton hamburger mobile -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Menu mobile plein écran -->
+    <div id="mobile-menu">
+      <button class="menu-close" id="menu-close" aria-label="Fermer le menu">×</button>
+      <nav style="display: flex; flex-direction: column; gap: 2rem; text-align: center;">
+        <a href="/catalogue.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">Systèmes forgés</a>
+        <a href="/a-propos.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">À propos</a>
+        <a href="/faq.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">FAQ</a>
+        <a href="/contact.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">Contact</a>
+      </nav>
+      <a href="/catalogue.html" style="display: block; background-color: #8A7560; color: #F5F0E8; font-weight: 600; font-size: 1rem; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; margin-top: 2rem; width: 256px; text-align: center;">Trouver mon système</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+    <main>
+      <!-- ─────────────────────────────────── SECTION 1 — HERO ─────────────────────────────── -->
+      <section class="section-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Le Carnet du Forgé</h1>
+            <p class="subtitle">Le guide pratique pour automatiser votre boutique sans coder</p>
+            <p class="description">
+              Découvrez comment mettre en place des automatisations profitables dans votre activité en seulement 90 minutes. Ce guide détaille les 5 domaines clés où vous pouvez récupérer le plus de temps immédiatement.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────── SECTION 2 — FORMULAIRE ─────────────────────────── -->
+      <section class="section-form">
+        <div class="container">
+          <form class="form-container" method="post" action="#">
+            <div class="form-group">
+              <label for="email">Votre adresse email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="exemple@votreboutique.fr"
+                required
+              />
+            </div>
+            <button type="submit" class="btn-submit">Recevoir le Carnet gratuitement</button>
+            <p class="form-note">
+              Aucun spam. Désinscription en 1 clic. Nous respectons votre confidentialité.
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────── SECTION 3 — CONTENU ─────────────────────────────– -->
+      <section class="section-content">
+        <div class="container">
+          <h2>Ce que vous apprendrez</h2>
+          <p class="section-intro">
+            Un guide complet couvrant les fondamentaux pour automatiser votre métier.
+          </p>
+
+          <div class="points-grid">
+            <!-- Point 1 -->
+            <div class="point-card">
+              <h3>Les 3 types de tâches à automatiser en priorité</h3>
+              <p>
+                Comment identifier les tâches qui vous récupèrent le plus de temps. Nous vous montrons les patterns que nous voyons chez 95% de nos clients — et comment les vôtres s'y inscrivent.
+              </p>
+            </div>
+
+            <!-- Point 2 -->
+            <div class="point-card">
+              <h3>La Méthode Cœur + Adaptateurs expliquée</h3>
+              <p>
+                Comment concevoir une automatisation qui fonctionne avec vos outils sans recoder tout le système à chaque changement. Nous décryptons cette architecture que nous utilisons dans tous nos systèmes.
+              </p>
+            </div>
+
+            <!-- Point 3 -->
+            <div class="point-card">
+              <h3>Les 5 intégrations indispensables pour Shopify/WooCommerce</h3>
+              <p>
+                Email, CRM, analytics, inventaire, facturation. Comment les connecter et quels gains vous en tirez réellement. Pas de technobabble — juste du concret.
+              </p>
+            </div>
+
+            <!-- Point 4 -->
+            <div class="point-card">
+              <h3>Checklist de mise en route en 90 minutes</h3>
+              <p>
+                12 étapes très précises pour installer vos premières automatisations. Chaque étape indique le temps prévu, les pré-requis, et où vous trébuchez habituellement.
+              </p>
+            </div>
+
+            <!-- Point 5 -->
+            <div class="point-card">
+              <h3>Les 7 erreurs à éviter (retours terrain)</h3>
+              <p>
+                De vrais pièges découverts chez nos clients. Celle qui coûte le plus cher ? Automatiser avant d'avoir documenté son processus. Nous vous expliquons pourquoi et comment l'éviter.
+              </p>
+            </div>
+
+            <!-- Bonus -->
+            <div class="point-card">
+              <h3>Bonus : Matrice de priorisation</h3>
+              <p>
+                Un template simple pour évaluer vos tâches sur effort vs impact. Imprimable, réutilisable, qui vous aide à prioriser vos prochains projets d'automatisation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────── SECTION 4 — CTA FINAL ─────────────────────────– -->
+      <section class="section-cta">
+        <div class="container">
+          <h2>Prêt à récupérer vos heures perdues ?</h2>
+          <p class="cta-text">
+            Le Carnet du Forgé vous montrera exactement par où commencer. Téléchargez-le et consultez le dès aujourd'hui.
+          </p>
+          <a href="#" class="btn-primary">Retourner au formulaire</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+    <footer>
+      <div class="footer-content">
+        <p class="footer-link">
+          <a href="/">Accueil</a> ·
+          <a href="/catalogue.html">Catalogue</a> ·
+          <a href="/a-propos.html">À propos</a> ·
+          <a href="/contact.html">Contact</a>
+        </p>
+        <div class="footer-divider"></div>
+        <p class="footer-copyright">
+          © 2026 L'établ'IA. Tous droits réservés. ·
+          <a href="/mentions-legales.html">Mentions légales</a> ·
+          <a href="/confidentialite.html">Confidentialité</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- ──────────────────────────────── SCRIPT MENU MOBILE ─────────────────────────────── -->
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuClose = document.getElementById('menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+      });
+
+      menuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+
+      // Fermer le menu quand on clique sur un lien
+      const menuLinks = mobileMenu.querySelectorAll('a');
+      menuLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+        });
+      });
+    </script>
+  </body>
+</html>
