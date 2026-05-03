@@ -3,16 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Politique de confidentialité de L'établ'IA — Comment nous traitons vos données personnelles." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://letablia.fr/confidentialite/" />
     <title>Politique de confidentialité — L'établ'IA</title>
-    <meta name="description" content="Politique de confidentialité de L'établ'IA — comment vos données sont collectées, utilisées et protégées, conformément au RGPD." />
-    <meta name="robots" content="noindex, follow" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
     <link rel="preconnect" href="https://api.fontshare.com" />
     <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="../assets/css/base.css" />
     <style>
       * {
         margin: 0;
@@ -30,22 +27,33 @@
         background-color: #F6F1E8;
       }
 
-      /* ─────────────────────────────────────────────────────────
-         HEADER
-         ───────────────────────────────────────────────────────── */
+      /* ── VARIABLES ── */
+      :root {
+        --v3-fond: #F6F1E8;
+        --v3-ivoire: #FFFCF5;
+        --v3-papier: #E9DDC8;
+        --v3-graphite: #25221D;
+        --v3-brun: #6B4A2F;
+        --v3-chene: #8A7560;
+        --v3-cuivre: #B46A3C;
+        --v3-vert: #3F6F5B;
+        --v3-pierre: #C5B9A8;
+      }
+
+      /* ── HEADER ── */
       header {
         position: sticky;
         top: 0;
         z-index: 40;
-        background-color: #F5F0E8;
-        border-bottom: 1px solid #C5B9A8;
+        background-color: var(--v3-fond);
+        border-bottom: 1px solid var(--v3-pierre);
         height: 72px;
       }
 
-      .header-content {
+      .header-inner {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 1rem;
+        padding: 0 1.5rem;
         height: 100%;
         display: flex;
         align-items: center;
@@ -53,494 +61,261 @@
       }
 
       .logo {
-        font-family: 'Zodiak', 'Georgia', serif;
+        font-family: 'Zodiak', Georgia, serif;
         font-size: 1.5rem;
-        color: #8A7560;
+        color: var(--v3-chene);
         text-decoration: none;
         font-weight: 700;
       }
 
-      .logo:hover {
-        opacity: 0.9;
-      }
-
-      .nav-desktop {
+      nav {
         display: none;
-        align-items: center;
-        gap: 2rem;
       }
 
-      .nav-desktop a {
+      @media (min-width: 768px) {
+        nav {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+      }
+
+      nav a {
+        font-family: 'Satoshi', sans-serif;
         font-size: 1rem;
-        color: #25221D;
+        color: var(--v3-graphite);
         text-decoration: none;
         transition: color 0.2s ease;
       }
 
-      .nav-desktop a:hover {
-        color: #8A7560;
+      nav a:hover {
+        color: var(--v3-chene);
       }
 
-      .cta-desktop {
+      .cta-nav {
         display: none;
-        background-color: #8A7560;
-        color: #F5F0E8;
+        background-color: var(--v3-chene);
+        color: var(--v3-ivoire) !important;
         font-weight: 600;
-        font-size: 1rem;
-        padding: 10px 1.75rem;
+        padding: 0.625rem 1.25rem;
         border-radius: 6px;
+        font-size: 1rem;
         text-decoration: none;
         transition: opacity 0.2s ease;
       }
 
-      .cta-desktop:hover {
+      .cta-nav:hover {
         opacity: 0.9;
       }
 
+      @media (min-width: 768px) {
+        .cta-nav {
+          display: inline-block;
+        }
+      }
+
+      /* ── MENU HAMBURGER ── */
       .menu-toggle {
         display: flex;
         flex-direction: column;
         gap: 5px;
+        padding: 0.25rem;
         background: none;
         border: none;
         cursor: pointer;
-        padding: 0.25rem;
+      }
+
+      @media (min-width: 768px) {
+        .menu-toggle {
+          display: none;
+        }
       }
 
       .menu-toggle span {
         display: block;
         width: 24px;
         height: 2px;
-        background-color: #25221D;
+        background-color: var(--v3-graphite);
       }
 
-      #mobile-menu {
+      .mobile-menu {
+        display: none;
         position: fixed;
         inset: 0;
+        background-color: var(--v3-fond);
         z-index: 50;
-        background-color: #F5F0E8;
-        display: none;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        gap: 2rem;
       }
 
-      #mobile-menu.open {
+      .mobile-menu.open {
         display: flex;
       }
 
-      .menu-close {
+      .mobile-menu a {
+        font-family: 'Zodiak', Georgia, serif;
+        font-size: 1.5rem;
+        color: var(--v3-graphite);
+        text-decoration: none;
+      }
+
+      .mobile-menu-close {
         position: absolute;
         top: 1.5rem;
-        right: 1rem;
-        font-size: 1.5rem;
+        right: 1.5rem;
         background: none;
         border: none;
+        font-size: 1.5rem;
         cursor: pointer;
-        color: #25221D;
+        color: var(--v3-graphite);
       }
 
-      @media (min-width: 768px) {
-        .nav-desktop {
-          display: flex;
-        }
-
-        .cta-desktop {
-          display: inline-block;
-        }
-
-        .menu-toggle {
-          display: none;
-        }
-      }
-
-      /* ─────────────────────────────────────────────────────────
-         MAIN CONTENT
-         ───────────────────────────────────────────────────────── */
+      /* ── MAIN CONTENT ── */
       main {
-        min-height: calc(100vh - 72px);
-      }
-
-      section {
-        padding: 3rem 1rem;
-      }
-
-      @media (min-width: 768px) {
-        section {
-          padding: 5rem 1rem;
-        }
-      }
-
-      .container {
-        max-width: 800px;
+        max-width: 760px;
         margin: 0 auto;
+        padding: 4rem 1.5rem;
       }
 
-      /* ─────────────────────────────────────────────────────────
-         SECTION HERO
-         ───────────────────────────────────────────────────────── */
-      .section-hero {
-        background-color: #F6F1E8;
-        text-align: center;
-        padding-bottom: 2rem;
-      }
-
-      .hero-content h1 {
-        font-family: 'Zodiak', 'Georgia', serif;
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: #25221D;
-        margin-bottom: 0.75rem;
-        line-height: 1.2;
-      }
-
-      @media (min-width: 768px) {
-        .hero-content h1 {
-          font-size: 2.75rem;
-        }
-      }
-
-      .hero-content .subtitle {
-        font-size: 1.0625rem;
-        color: #6B4A2F;
-        margin-bottom: 0.5rem;
-        line-height: 1.6;
-      }
-
-      .hero-content .last-update {
-        font-size: 0.875rem;
-        color: #A09889;
-      }
-
-      /* ─────────────────────────────────────────────────────────
-         SECTION CONTENU LÉGAL
-         ───────────────────────────────────────────────────────── */
-      .section-legal-content {
-        background-color: #F6F1E8;
-        padding-top: 0;
-      }
-
-      .legal-card {
-        background-color: #FFFCF5;
-        border: 2px solid #E9DDC8;
-        border-radius: 8px;
-        padding: 2rem 1.5rem;
+      .page-label {
+        display: inline-block;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--v3-chene);
+        background-color: var(--v3-papier);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
         margin-bottom: 1.5rem;
       }
 
-      @media (min-width: 768px) {
-        .legal-card {
-          padding: 2.5rem 2.25rem;
-        }
-      }
-
-      .legal-card h2 {
-        font-family: 'Zodiak', 'Georgia', serif;
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #6B4A2F;
-        margin-bottom: 1rem;
-        padding-bottom: 0.625rem;
-        border-bottom: 1px solid #E9DDC8;
-        line-height: 1.3;
-      }
-
-      .legal-card h3 {
-        font-family: 'Zodiak', 'Georgia', serif;
-        font-size: 1.0625rem;
-        font-weight: 700;
-        color: #25221D;
-        margin-top: 1.25rem;
-        margin-bottom: 0.625rem;
-      }
-
-      .legal-card p {
-        font-size: 0.9375rem;
-        color: #25221D;
-        line-height: 1.7;
-        margin-bottom: 0.875rem;
-      }
-
-      .legal-card p:last-child {
-        margin-bottom: 0;
-      }
-
-      .legal-card ul {
-        padding-left: 1.25rem;
-        margin-bottom: 0.875rem;
-      }
-
-      .legal-card ul li {
-        font-size: 0.9375rem;
-        color: #25221D;
-        line-height: 1.7;
-        margin-bottom: 0.375rem;
-      }
-
-      .legal-card ul li strong {
-        color: #25221D;
-      }
-
-      .legal-card .base-legale {
-        display: inline-block;
-        font-size: 0.8125rem;
-        color: #6B4A2F;
-        background-color: #F6F1E8;
-        border: 1px solid #C5B9A8;
-        border-radius: 4px;
-        padding: 0.25rem 0.625rem;
-        margin-top: 0.375rem;
-        margin-bottom: 0.875rem;
-      }
-
-      /* ─── TABLEAUX ─── */
-      .legal-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin-top: 0.875rem;
-        margin-bottom: 0.875rem;
-        font-size: 0.875rem;
-      }
-
-      .legal-table th {
-        background-color: #E9DDC8;
-        color: #25221D;
-        font-weight: 600;
-        padding: 0.625rem 0.75rem;
-        text-align: left;
-        border: 1px solid #C5B9A8;
-        font-size: 0.8125rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-
-      .legal-table td {
-        padding: 0.625rem 0.75rem;
-        border: 1px solid #C5B9A8;
-        color: #25221D;
-        vertical-align: top;
-        line-height: 1.5;
-      }
-
-      .legal-table tr:nth-child(even) td {
-        background-color: #F6F1E8;
-      }
-
-      /* ─── BLOC DROITS RGPD ─── */
-      .droits-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-        margin-top: 0.875rem;
-      }
-
-      @media (min-width: 640px) {
-        .droits-grid {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      .droit-item {
-        background-color: #F6F1E8;
-        border-left: 3px solid #B46A3C;
-        border-radius: 0 4px 4px 0;
-        padding: 0.625rem 0.875rem;
-      }
-
-      .droit-item strong {
-        display: block;
-        font-size: 0.875rem;
-        color: #6B4A2F;
-        margin-bottom: 0.25rem;
-      }
-
-      .droit-item span {
-        font-size: 0.8125rem;
-        color: #25221D;
-        line-height: 1.5;
-      }
-
-      /* ─── BLOC CONTACT RGPD ─── */
-      .contact-rgpd {
-        background-color: #E9DDC8;
-        border-radius: 6px;
-        padding: 1.25rem 1.5rem;
-        margin-top: 1.25rem;
-        text-align: center;
-      }
-
-      .contact-rgpd p {
-        font-size: 0.9375rem;
-        color: #25221D;
+      h1 {
+        font-family: 'Zodiak', Georgia, serif;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        color: var(--v3-graphite);
         margin-bottom: 0.5rem;
+        line-height: 1.2;
       }
 
-      .contact-rgpd a {
-        color: #B46A3C;
-        font-weight: 600;
-        text-decoration: none;
+      .subtitle {
+        color: var(--v3-brun);
+        font-size: 1.05rem;
+        margin-bottom: 3rem;
       }
 
-      .contact-rgpd a:hover {
+      h2 {
+        font-family: 'Zodiak', Georgia, serif;
+        font-size: 1.25rem;
+        color: var(--v3-graphite);
+        margin-top: 2.5rem;
+        margin-bottom: 0.75rem;
+        border-left: 3px solid var(--v3-cuivre);
+        padding-left: 0.75rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: var(--v3-graphite);
+      }
+
+      ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        margin-bottom: 0.4rem;
+        color: var(--v3-graphite);
+      }
+
+      a {
+        color: var(--v3-cuivre);
         text-decoration: underline;
       }
 
-      /* ─── SOUS-TRAITANTS ─── */
-      .soustraitant-list {
-        display: flex;
-        flex-direction: column;
-        gap: 0.875rem;
-        margin-top: 0.875rem;
+      a:hover {
+        color: var(--v3-chene);
       }
 
-      .soustraitant-item {
-        background-color: #F6F1E8;
-        border: 1px solid #C5B9A8;
-        border-radius: 6px;
-        padding: 0.875rem 1.125rem;
+      .last-update {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--v3-pierre);
+        font-size: 0.85rem;
+        color: var(--v3-chene);
       }
 
-      .soustraitant-item strong {
-        font-size: 0.9375rem;
-        color: #25221D;
-      }
-
-      .soustraitant-item p {
-        font-size: 0.875rem;
-        color: #6B4A2F;
-        margin-top: 0.25rem;
-        margin-bottom: 0;
-      }
-
-      .soustraitant-item a {
-        color: #B46A3C;
-        text-decoration: none;
-        font-size: 0.8125rem;
-      }
-
-      .soustraitant-item a:hover {
-        text-decoration: underline;
-      }
-
-      /* ─── COOKIES ─── */
-      .cookie-row {
-        border: 1px solid #C5B9A8;
-        border-radius: 6px;
-        padding: 0.875rem 1.125rem;
-        margin-bottom: 0.75rem;
-        background-color: #F6F1E8;
-      }
-
-      .cookie-row strong {
-        font-size: 0.9375rem;
-        color: #25221D;
-        display: block;
-        margin-bottom: 0.375rem;
-      }
-
-      .cookie-row p {
-        font-size: 0.875rem;
-        color: #6B4A2F;
-        margin-bottom: 0;
-      }
-
-      .badge-actif {
-        display: inline-block;
-        font-size: 0.75rem;
-        background-color: #3F6F5B;
-        color: #FFFCF5;
-        border-radius: 3px;
-        padding: 0.1rem 0.4rem;
-        margin-left: 0.5rem;
-        vertical-align: middle;
-        font-weight: 600;
-      }
-
-      .badge-consentement {
-        display: inline-block;
-        font-size: 0.75rem;
-        background-color: #B46A3C;
-        color: #FFFCF5;
-        border-radius: 3px;
-        padding: 0.1rem 0.4rem;
-        margin-left: 0.5rem;
-        vertical-align: middle;
-        font-weight: 600;
-      }
-
-      /* ─────────────────────────────────────────────────────────
-         SECTION PIED DE PAGE LÉGAL
-         ───────────────────────────────────────────────────────── */
-      .section-legal-footer {
-        background-color: #E9DDC8;
-        text-align: center;
-      }
-
-      .legal-footer-text {
-        font-size: 0.95rem;
-        color: #25221D;
-        line-height: 1.6;
-      }
-
-      .legal-footer-text p {
-        margin-bottom: 0.75rem;
-      }
-
-      /* ─────────────────────────────────────────────────────────
-         FOOTER
-         ───────────────────────────────────────────────────────── */
+      /* ── FOOTER ── */
       footer {
-        background-color: #25221D;
-        color: #F5F0E8;
-        padding: 2rem 1rem;
+        background-color: var(--v3-papier);
+        border-top: 1px solid var(--v3-pierre);
+        padding: 2.5rem 1.5rem;
         text-align: center;
-      }
-
-      footer a {
-        color: #B46A3C;
-        text-decoration: none;
-      }
-
-      footer a:hover {
-        text-decoration: underline;
       }
 
       .footer-content {
         max-width: 1200px;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
       }
 
-      .footer-link {
-        font-size: 0.95rem;
-        margin-bottom: 0.5rem;
+      .footer-logo {
+        font-family: 'Zodiak', Georgia, serif;
+        font-size: 1.25rem;
+        color: var(--v3-chene);
+        text-decoration: none;
       }
 
-      .footer-divider {
-        height: 1px;
-        background-color: rgba(160, 152, 137, 0.3);
-        margin: 1.5rem 0;
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 0.9rem;
       }
 
-      .footer-copyright {
-        font-size: 0.85rem;
-        color: #C5B9A8;
+      .footer-links a {
+        color: var(--v3-brun);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--v3-cuivre);
+      }
+
+      .footer-copy {
+        font-size: 0.8rem;
+        color: var(--v3-chene);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--v3-cuivre);
+        outline-offset: 3px;
       }
     </style>
   </head>
   <body>
-    <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+
+    <!-- ══ HEADER ══ -->
     <header>
-      <div class="header-content">
+      <div class="header-inner">
         <a href="/" class="logo">L'établ'IA</a>
 
-        <nav class="nav-desktop">
+        <nav>
           <a href="/catalogue.html">Systèmes forgés</a>
-          <a href="/a-propos.html">À propos</a>
+          <a href="/a-propos/">À propos</a>
           <a href="/faq.html">FAQ</a>
-          <a href="/contact.html">Contact</a>
+          <a href="/contact/">Contact</a>
         </nav>
 
-        <a href="/catalogue.html" class="cta-desktop">Trouver mon système</a>
+        <a href="/catalogue.html" class="cta-nav">Trouver mon système</a>
 
         <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
           <span></span>
@@ -550,337 +325,119 @@
       </div>
     </header>
 
-    <div id="mobile-menu">
-      <button class="menu-close" id="menu-close" aria-label="Fermer le menu">×</button>
-      <nav style="display: flex; flex-direction: column; gap: 2rem; text-align: center;">
-        <a href="/catalogue.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">Systèmes forgés</a>
-        <a href="/a-propos.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">À propos</a>
-        <a href="/faq.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">FAQ</a>
-        <a href="/contact.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">Contact</a>
-      </nav>
-      <a href="/catalogue.html" style="display: block; background-color: #8A7560; color: #F5F0E8; font-weight: 600; font-size: 1rem; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; margin-top: 2rem; width: 256px; text-align: center;">Trouver mon système</a>
+    <!-- ══ MENU MOBILE ══ -->
+    <div class="mobile-menu" id="mobile-menu">
+      <button class="mobile-menu-close" id="menu-close" aria-label="Fermer le menu">✕</button>
+      <a href="/">Accueil</a>
+      <a href="/catalogue.html">Systèmes forgés</a>
+      <a href="/a-propos/">À propos</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/contact/">Contact</a>
     </div>
 
-    <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+    <!-- ══ CONTENU ══ -->
     <main>
-      <!-- ─────────────────────────────── HERO ─────────────────────────────── -->
-      <section class="section-hero">
-        <div class="container">
-          <div class="hero-content">
-            <h1>Politique de confidentialité</h1>
-            <p class="subtitle">Vos données sont le minimum strict — rien de plus.</p>
-            <p class="last-update">Dernière mise à jour : 26 avril 2026</p>
-          </div>
-        </div>
-      </section>
+      <span class="page-label">Données personnelles</span>
+      <h1>Politique de confidentialité</h1>
+      <p class="subtitle">Comment L'établ'IA collecte, utilise et protège vos données.</p>
 
-      <!-- ─────────────────────────────── CONTENU LÉGAL ─────────────────────────────── -->
-      <section class="section-legal-content">
-        <div class="container">
+      <h2>1. Responsable du traitement</h2>
+      <p>
+        <strong>L'établ'IA</strong> est une micro-entreprise française.<br />
+        Responsable : Raphaël — <a href="mailto:contact@letablia.fr">contact@letablia.fr</a><br />
+        TVA non applicable, art. 293B CGI.
+      </p>
 
-          <!-- 1. Responsable du traitement -->
-          <div class="legal-card">
-            <h2>1. Responsable du traitement</h2>
-            <p>
-              Le responsable du traitement des données personnelles collectées via ce site est :
-            </p>
-            <p>
-              <strong>Raphaël Olivi</strong><br />
-              Micro-entrepreneur<br />
-              Email : <a href="mailto:contact@letablia.fr" style="color: #B46A3C; font-weight: 600; text-decoration: none;">contact@letablia.fr</a>
-            </p>
-            <p>
-              Pour toute question relative à la protection de vos données, vous pouvez écrire à
-              <a href="mailto:contact@letablia.fr" style="color: #B46A3C; font-weight: 600; text-decoration: none;">contact@letablia.fr</a>.
-            </p>
-          </div>
+      <h2>2. Données collectées</h2>
+      <p>Lors de l'utilisation du formulaire de contact, nous collectons :</p>
+      <ul>
+        <li>Votre nom</li>
+        <li>Votre adresse email</li>
+        <li>L'objet de votre demande</li>
+        <li>Votre message</li>
+      </ul>
+      <p>Aucune donnée supplémentaire (adresse postale, téléphone, données de paiement) n'est collectée via ce formulaire.</p>
 
-          <!-- 2. Données collectées -->
-          <div class="legal-card">
-            <h2>2. Données collectées</h2>
-            <p>Nous collectons uniquement les données strictement nécessaires à chaque finalité.</p>
+      <h2>3. Finalité du traitement</h2>
+      <p>Les données transmises via le formulaire de contact sont utilisées exclusivement pour :</p>
+      <ul>
+        <li>Répondre à votre demande ou question</li>
+        <li>Vous accompagner dans le choix d'un système forgé adapté à votre activité</li>
+      </ul>
+      <p>Ces données ne sont pas utilisées à des fins commerciales ou marketing sans votre consentement explicite.</p>
 
-            <h3>Lors d'un achat</h3>
-            <p>Via notre partenaire de paiement <strong>LemonSqueezy</strong> :</p>
-            <ul>
-              <li>Adresse email</li>
-              <li>Prénom</li>
-              <li>Informations de paiement (gérées directement par LemonSqueezy — nous n'y avons pas accès)</li>
-              <li>Numéro de commande</li>
-            </ul>
-            <span class="base-legale">Base légale : exécution du contrat (art. 6.1.b RGPD)</span>
+      <h2>4. Durée de conservation</h2>
+      <p>
+        Les messages reçus sont conservés pendant la durée nécessaire au traitement de votre demande,
+        puis archivés pour une durée maximale de <strong>3 ans</strong> à des fins de référence commerciale,
+        conformément aux recommandations de la CNIL.
+      </p>
 
-            <h3>Lors d'une inscription à la newsletter</h3>
-            <p>Via <strong>Brevo</strong> (ex-Sendinblue) :</p>
-            <ul>
-              <li>Adresse email</li>
-              <li>Prénom (si renseigné)</li>
-            </ul>
-            <span class="base-legale">Base légale : consentement explicite (art. 6.1.a RGPD) — retrait possible à tout moment</span>
+      <h2>5. Destinataires des données</h2>
+      <p>
+        Vos données sont transmises via le service <strong>Formspree</strong>
+        (prestataire tiers, politique de confidentialité disponible sur <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">formspree.io</a>)
+        pour l'acheminement des messages. Aucune autre transmission à des tiers n'est effectuée.
+      </p>
 
-            <h3>Via le formulaire de contact</h3>
-            <ul>
-              <li>Adresse email</li>
-              <li>Objet du message</li>
-              <li>Contenu du message</li>
-            </ul>
-            <span class="base-legale">Base légale : intérêt légitime à répondre à vos demandes (art. 6.1.f RGPD)</span>
-          </div>
+      <h2>6. Vos droits (RGPD)</h2>
+      <p>Conformément au Règlement Général sur la Protection des Données (UE) 2016/679, vous disposez des droits suivants :</p>
+      <ul>
+        <li><strong>Droit d'accès</strong> : obtenir une copie des données vous concernant</li>
+        <li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
+        <li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
+        <li><strong>Droit à la limitation</strong> : limiter le traitement dans certains cas</li>
+        <li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
+      </ul>
+      <p>
+        Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@letablia.fr">contact@letablia.fr</a>.<br />
+        Réponse garantie sous <strong>30 jours</strong>. En cas de litige non résolu, vous pouvez saisir la
+        <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer">CNIL</a>.
+      </p>
 
-          <!-- 3. Finalités -->
-          <div class="legal-card">
-            <h2>3. Finalités du traitement</h2>
-            <p>Vos données ne sont utilisées qu'aux fins décrites ci-dessous. Nous ne procédons à aucun profilage ni à aucune décision automatisée.</p>
+      <h2>7. Cookies et traceurs</h2>
+      <p>
+        Le site letablia.fr n'utilise <strong>aucun cookie de traçage</strong> ou d'analyse de comportement
+        (Google Analytics, Meta Pixel, Hotjar, etc.). Aucun consentement cookie n'est requis à ce stade.
+      </p>
 
-            <table class="legal-table">
-              <thead>
-                <tr>
-                  <th>Données</th>
-                  <th>Finalité</th>
-                  <th>Base légale</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Email + commande (achat)</td>
-                  <td>Livraison du produit, support, facturation</td>
-                  <td>Exécution du contrat</td>
-                </tr>
-                <tr>
-                  <td>Email + prénom (newsletter)</td>
-                  <td>Envoi de communications commerciales</td>
-                  <td>Consentement</td>
-                </tr>
-                <tr>
-                  <td>Email + message (contact)</td>
-                  <td>Réponse à votre demande</td>
-                  <td>Intérêt légitime</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+      <h2>8. Sécurité</h2>
+      <p>
+        Les échanges avec letablia.fr sont protégés par HTTPS (chiffrement TLS).
+        Nous appliquons des mesures raisonnables pour protéger vos données contre tout accès non autorisé.
+      </p>
 
-          <!-- 4. Durée de conservation -->
-          <div class="legal-card">
-            <h2>4. Durée de conservation</h2>
-
-            <table class="legal-table">
-              <thead>
-                <tr>
-                  <th>Type de données</th>
-                  <th>Durée de conservation</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Données d'achat</td>
-                  <td>10 ans (obligation légale comptable)</td>
-                </tr>
-                <tr>
-                  <td>Newsletter</td>
-                  <td>Jusqu'à votre désinscription</td>
-                </tr>
-                <tr>
-                  <td>Messages de contact</td>
-                  <td>3 ans à compter de la dernière interaction</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <!-- 5. Destinataires -->
-          <div class="legal-card">
-            <h2>5. Destinataires des données</h2>
-            <p>
-              Vos données ne sont pas vendues ni cédées à des tiers. Elles sont uniquement transmises
-              à nos sous-traitants dans le cadre strict des finalités décrites ci-dessus.
-            </p>
-
-            <div class="soustraitant-list">
-              <div class="soustraitant-item">
-                <strong>LemonSqueezy</strong>
-                <p>Paiement et livraison — processeur de paiement, responsable TVA européenne, livraison des produits numériques</p>
-                <a href="https://www.lemonsqueezy.com/privacy" target="_blank" rel="noopener noreferrer">lemonsqueezy.com/privacy ↗</a>
-              </div>
-              <div class="soustraitant-item">
-                <strong>Brevo</strong> (anciennement Sendinblue)
-                <p>Routage et envoi des emails transactionnels et newsletters</p>
-                <a href="https://www.brevo.com/legal/privacypolicy" target="_blank" rel="noopener noreferrer">brevo.com/legal/privacypolicy ↗</a>
-              </div>
-              <div class="soustraitant-item">
-                <strong>Hetzner Online GmbH</strong>
-                <p>Hébergement du site letablia.fr — données en UE</p>
-                <a href="https://www.hetzner.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">hetzner.com/legal/privacy-policy ↗</a>
-              </div>
-            </div>
-
-            <p style="margin-top: 1rem; font-size: 0.875rem; color: #6B4A2F;">
-              Ces sous-traitants s'engagent contractuellement à traiter vos données dans le respect du RGPD.
-            </p>
-          </div>
-
-          <!-- 6. Vos droits -->
-          <div class="legal-card">
-            <h2>6. Vos droits (RGPD)</h2>
-            <p>
-              Conformément au Règlement Général sur la Protection des Données, vous disposez
-              des droits suivants sur vos données personnelles :
-            </p>
-
-            <div class="droits-grid">
-              <div class="droit-item">
-                <strong>Droit d'accès</strong>
-                <span>Obtenir une copie de vos données que nous détenons</span>
-              </div>
-              <div class="droit-item">
-                <strong>Droit de rectification</strong>
-                <span>Corriger des données inexactes ou incomplètes</span>
-              </div>
-              <div class="droit-item">
-                <strong>Droit à l'effacement</strong>
-                <span>Demander la suppression de vos données</span>
-              </div>
-              <div class="droit-item">
-                <strong>Droit à la portabilité</strong>
-                <span>Recevoir vos données dans un format structuré</span>
-              </div>
-              <div class="droit-item">
-                <strong>Droit d'opposition</strong>
-                <span>Vous opposer au traitement de vos données</span>
-              </div>
-              <div class="droit-item">
-                <strong>Retrait du consentement</strong>
-                <span>Pour les traitements fondés sur votre consentement (newsletter)</span>
-              </div>
-            </div>
-
-            <div class="contact-rgpd">
-              <p>
-                Pour exercer vos droits, envoyez un email à
-                <a href="mailto:contact@letablia.fr">contact@letablia.fr</a>
-                avec la mention <strong>« Droits RGPD »</strong> dans l'objet.
-              </p>
-              <p style="font-size: 0.875rem; color: #6B4A2F; margin-bottom: 0;">
-                Nous répondons dans un délai de 30 jours.
-              </p>
-            </div>
-
-            <p style="margin-top: 1.25rem; font-size: 0.875rem; color: #6B4A2F;">
-              Si vous estimez que le traitement de vos données ne respecte pas la réglementation,
-              vous pouvez introduire une réclamation auprès de la
-              <strong>CNIL</strong> sur
-              <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style="color: #B46A3C; text-decoration: none;">cnil.fr ↗</a>.
-            </p>
-          </div>
-
-          <!-- 7. Cookies -->
-          <div class="legal-card">
-            <h2>7. Cookies</h2>
-            <p>Ce site utilise des cookies pour assurer son bon fonctionnement et, le cas échéant, analyser l'audience.</p>
-
-            <div class="cookie-row">
-              <strong>Cookies techniques <span class="badge-actif">Toujours actifs</span></strong>
-              <p>Nécessaires au fonctionnement du site. Ils assurent les fonctionnalités essentielles et ne peuvent pas être désactivés.</p>
-            </div>
-
-            <div class="cookie-row">
-              <strong>Cookies d'analyse <span class="badge-consentement">Soumis à consentement</span></strong>
-              <p>Permettent d'analyser la fréquentation du site pour en améliorer l'expérience. Ils ne sont activés qu'avec votre accord explicite via la bannière de consentement.</p>
-            </div>
-
-            <p style="font-size: 0.875rem; color: #6B4A2F; margin-top: 0.875rem;">
-              Vous pouvez modifier vos préférences à tout moment en cliquant sur « Gestion des cookies » en bas de page.
-            </p>
-          </div>
-
-          <!-- 8. Sécurité -->
-          <div class="legal-card">
-            <h2>8. Sécurité des données</h2>
-            <p>
-              Nous mettons en œuvre des mesures techniques appropriées pour protéger vos données
-              contre l'accès non autorisé, la modification, la divulgation ou la destruction.
-            </p>
-            <p>
-              Les données de paiement sont intégralement gérées par LemonSqueezy selon les
-              standards <strong>PCI-DSS</strong> — nous n'avons jamais accès à vos informations bancaires.
-            </p>
-          </div>
-
-          <!-- 9. Modification -->
-          <div class="legal-card">
-            <h2>9. Modification de cette politique</h2>
-            <p>
-              Nous pouvons être amenés à modifier cette politique de confidentialité. En cas de
-              modification substantielle, nous vous en informerons par email si vous êtes abonné
-              à notre newsletter.
-            </p>
-            <p>
-              La version en vigueur est toujours accessible à l'adresse
-              <a href="https://letablia.fr/confidentialite" style="color: #B46A3C; text-decoration: none;">letablia.fr/confidentialite</a>.
-            </p>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- ─────────────────────────────── PIED LÉGAL ─────────────────────────────── -->
-      <section class="section-legal-footer">
-        <div class="container">
-          <div class="legal-footer-text">
-            <p>
-              <strong>L'établ'IA</strong> est une micro-entreprise française.
-            </p>
-            <p>
-              Micro-entrepreneur · TVA non applicable (art. 293B CGI)
-            </p>
-            <p style="margin-top: 1.5rem; font-size: 0.9rem;">
-              <a href="/mentions-legales.html">Mentions légales</a> ·
-              <a href="/cgv.html">CGV</a> ·
-              <a href="/retractation.html">Droit de rétractation</a>
-            </p>
-          </div>
-        </div>
-      </section>
+      <p class="last-update">Dernière mise à jour : mai 2026</p>
     </main>
 
-    <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+    <!-- ══ FOOTER ══ -->
     <footer>
       <div class="footer-content">
-        <p class="footer-link">
-          <a href="/">Accueil</a> ·
-          <a href="/catalogue.html">Catalogue</a> ·
-          <a href="/a-propos.html">À propos</a> ·
-          <a href="/contact.html">Contact</a>
-        </p>
-        <div class="footer-divider"></div>
-        <p class="footer-copyright">
-          © 2026 L'établ'IA. Tous droits réservés. ·
+        <a href="/" class="footer-logo">L'établ'IA</a>
+        <div class="footer-links">
+          <a href="/catalogue.html">Systèmes forgés</a>
+          <a href="/carnet-forge/">Carnet de forge</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/a-propos/">À propos</a>
+          <a href="/contact/">Contact</a>
+        </div>
+        <div class="footer-links">
           <a href="/mentions-legales.html">Mentions légales</a> ·
-          <a href="/confidentialite.html">Confidentialité</a>
-        </p>
+          <a href="/confidentialite/">Confidentialité</a>
+        </div>
+        <p class="footer-copy">© 2026 L'établ'IA — Systèmes forgés pour professionnels francophones</p>
       </div>
     </footer>
 
-    <!-- ──────────────────────────────── SCRIPT MENU MOBILE ─────────────────────────────── -->
     <script>
-      const menuToggle = document.getElementById('menu-toggle');
-      const menuClose = document.getElementById('menu-close');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.add('open');
-      });
-
-      menuClose.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-      });
-
-      const menuLinks = mobileMenu.querySelectorAll('a');
-      menuLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-        });
-      });
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const close = document.getElementById('menu-close');
+      if (toggle && menu && close) {
+        toggle.addEventListener('click', () => menu.classList.add('open'));
+        close.addEventListener('click', () => menu.classList.remove('open'));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+      }
     </script>
   </body>
 </html>
