@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos — L'établ'IA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://api.fontshare.com" />
+    <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        font-family: 'Satoshi', system-ui, sans-serif;
+        color: #25221D;
+        line-height: 1.6;
+      }
+
+      body {
+        background-color: #F6F1E8;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         HEADER
+         ───────────────────────────────────────────────────────── */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background-color: #F5F0E8;
+        border-bottom: 1px solid #C5B9A8;
+        height: 72px;
+      }
+
+      .header-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 1.5rem;
+        color: #8A7560;
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      .logo:hover {
+        opacity: 0.9;
+      }
+
+      .nav-desktop {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .nav-desktop a {
+        font-size: 1rem;
+        color: #25221D;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .nav-desktop a:hover {
+        color: #8A7560;
+      }
+
+      .cta-desktop {
+        display: none;
+        background-color: #8A7560;
+        color: #F5F0E8;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 10px 1.75rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .cta-desktop:hover {
+        opacity: 0.9;
+      }
+
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
+      }
+
+      .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: #25221D;
+      }
+
+      #mobile-menu {
+        position: fixed;
+        inset: 0;
+        z-index: 50;
+        background-color: #F5F0E8;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #mobile-menu.open {
+        display: flex;
+      }
+
+      .menu-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1rem;
+        font-size: 1.5rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #25221D;
+      }
+
+      @media (min-width: 768px) {
+        .nav-desktop {
+          display: flex;
+        }
+
+        .cta-desktop {
+          display: inline-block;
+        }
+
+        .menu-toggle {
+          display: none;
+        }
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         MAIN CONTENT
+         ───────────────────────────────────────────────────────── */
+      main {
+        min-height: calc(100vh - 72px);
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      @media (min-width: 768px) {
+        section {
+          padding: 5rem 1rem;
+        }
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 1 — HERO
+         ───────────────────────────────────────────────────────── */
+      .section-hero {
+        background-color: #F6F1E8;
+        text-align: center;
+      }
+
+      .hero-content h1 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+      }
+
+      @media (min-width: 768px) {
+        .hero-content h1 {
+          font-size: 2.75rem;
+        }
+      }
+
+      .hero-content .subtitle {
+        font-size: 1.125rem;
+        color: #25221D;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 2 — MISSION
+         ───────────────────────────────────────────────────────── */
+      .section-mission {
+        background-color: #E9DDC8;
+      }
+
+      .section-mission h2 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .section-mission h2 {
+          font-size: 2.25rem;
+        }
+      }
+
+      .mission-text {
+        font-size: 1rem;
+        color: #25221D;
+        line-height: 1.7;
+        text-align: center;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 3 — APPROCHE FORGÉE
+         ───────────────────────────────────────────────────────── */
+      .section-approach {
+        background-color: #F6F1E8;
+      }
+
+      .section-approach h2 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 0.5rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .section-approach h2 {
+          font-size: 2.25rem;
+        }
+      }
+
+      .section-intro {
+        text-align: center;
+        color: #6B4A2F;
+        margin-bottom: 3rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .approach-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .approach-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 2rem;
+        }
+      }
+
+      .approach-card {
+        background-color: #FFFCF5;
+        border-left: 4px solid #B46A3C;
+        padding: 1.5rem;
+        border-radius: 4px;
+      }
+
+      .approach-card h3 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 1.125rem;
+        color: #6B4A2F;
+        margin-bottom: 0.75rem;
+        font-weight: 700;
+      }
+
+      .approach-card p {
+        font-size: 0.975rem;
+        color: #25221D;
+        line-height: 1.6;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 4 — ENGAGEMENT
+         ───────────────────────────────────────────────────────── */
+      .section-engagement {
+        background-color: #F6F1E8;
+      }
+
+      .section-engagement h2 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .section-engagement h2 {
+          font-size: 2.25rem;
+        }
+      }
+
+      .engagement-text {
+        background-color: #FFFCF5;
+        border-left: 4px solid #3F6F5B;
+        padding: 1.5rem;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #25221D;
+        line-height: 1.7;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .engagement-text {
+          padding: 2rem;
+        }
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 5 — TRANSPARENCE IA
+         ───────────────────────────────────────────────────────── */
+      .section-transparency {
+        background-color: #E9DDC8;
+      }
+
+      .section-transparency h2 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 2rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      @media (min-width: 768px) {
+        .section-transparency h2 {
+          font-size: 2.25rem;
+        }
+      }
+
+      .transparency-text {
+        font-size: 1rem;
+        color: #25221D;
+        line-height: 1.7;
+        text-align: center;
+        max-width: 640px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         SECTION 6 — CONTACT CTA
+         ───────────────────────────────────────────────────────── */
+      .section-contact-cta {
+        background-color: #F6F1E8;
+        text-align: center;
+      }
+
+      .section-contact-cta h2 {
+        font-family: 'Zodiak', 'Georgia', serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #25221D;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+      }
+
+      .cta-text {
+        font-size: 1rem;
+        color: #25221D;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        background-color: #B46A3C;
+        color: #FFFCF5;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 0.875rem 2rem;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #A25634;
+      }
+
+      /* ─────────────────────────────────────────────────────────
+         FOOTER
+         ───────────────────────────────────────────────────────── */
+      footer {
+        background-color: #25221D;
+        color: #F5F0E8;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      footer a {
+        color: #B46A3C;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        text-decoration: underline;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-link {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-divider {
+        height: 1px;
+        background-color: rgba(160, 152, 137, 0.3);
+        margin: 1.5rem 0;
+      }
+
+      .footer-copyright {
+        font-size: 0.85rem;
+        color: #C5B9A8;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+    <header>
+      <div class="header-content">
+        <a href="/" class="logo">L'établ'IA</a>
+
+        <nav class="nav-desktop">
+          <a href="/catalogue.html">Systèmes forgés</a>
+          <a href="/a-propos.html">À propos</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/contact.html">Contact</a>
+        </nav>
+
+        <a href="/catalogue.html" class="cta-desktop">Trouver mon système</a>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <div id="mobile-menu">
+      <button class="menu-close" id="menu-close" aria-label="Fermer le menu">×</button>
+      <nav style="display: flex; flex-direction: column; gap: 2rem; text-align: center;">
+        <a href="/catalogue.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">Systèmes forgés</a>
+        <a href="/a-propos.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">À propos</a>
+        <a href="/faq.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">FAQ</a>
+        <a href="/contact.html" style="font-size: 1rem; color: #25221D; text-decoration: none;">Contact</a>
+      </nav>
+      <a href="/catalogue.html" style="display: block; background-color: #8A7560; color: #F5F0E8; font-weight: 600; font-size: 1rem; padding: 0.875rem 2rem; border-radius: 6px; text-decoration: none; margin-top: 2rem; width: 256px; text-align: center;">Trouver mon système</a>
+    </div>
+
+    <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+    <main>
+      <!-- ─────────────────────────────────── SECTION 1 — HERO ─────────────────────────────── -->
+      <section class="section-hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>À propos de L'établ'IA</h1>
+            <p class="subtitle">Libérer les professionnels des tâches répétitives</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────── SECTION 2 — MISSION ─────────────────────────────── -->
+      <section class="section-mission">
+        <div class="container">
+          <h2>Notre mission</h2>
+          <p class="mission-text">
+            Libérer les professionnels des tâches répétitives sans les forcer à coder ni à s'abonner à un service mensuel.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────── SECTION 3 — APPROCHE ─────────────────────────────── -->
+      <section class="section-approach">
+        <div class="container">
+          <h2>Notre approche — La Méthode Forgée</h2>
+          <p class="section-intro">
+            Chaque système L'établ'IA repose sur une architecture simple et robuste.
+          </p>
+
+          <div class="approach-grid">
+            <!-- Carte 1 -->
+            <div class="approach-card">
+              <h3>Cœur + Adaptateurs</h3>
+              <p>
+                Chaque système repose sur une architecture cœur + adaptateurs (n8n). Le cœur gère la logique métier. Les adaptateurs se branchent à vos outils (Shopify, Telegram, Google Sheets…). Vous changez d'outil ? On ajoute un adaptateur, pas un nouveau système.
+              </p>
+            </div>
+
+            <!-- Carte 2 -->
+            <div class="approach-card">
+              <h3>Livraison en JSON importable</h3>
+              <p>
+                Pas d'interface SaaS. Pas d'enregistrement sur plateforme. Vous recevez un fichier JSON complet et un guide d'installation. Vous restez propriétaire de votre automatisation.
+              </p>
+            </div>
+
+            <!-- Carte 3 -->
+            <div class="approach-card">
+              <h3>Installation en 90 minutes</h3>
+              <p>
+                Aucun développeur requis. Notre guide détaillé vous montre chaque étape : copier-coller le JSON, connecter vos comptes, tester. Fin prêt à fonctionner après 90 minutes.
+              </p>
+            </div>
+
+            <!-- Carte 4 -->
+            <div class="approach-card">
+              <h3>Paiement unique, zéro abonnement</h3>
+              <p>
+                Vous payez une fois, c'est fini. Aucun frais mensuel, aucune licence perpétuelle. Libre d'ajuster ou d'éteindre quand vous le souhaitez.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────── SECTION 4 — ENGAGEMENT ─────────────────────────────── -->
+      <section class="section-engagement">
+        <div class="container">
+          <h2>Notre engagement</h2>
+          <p class="engagement-text">
+            <strong>Satisfait ou Forgé.</strong> Si le système ne fonctionne pas comme décrit, nous corrigeons ensemble. Pas de remboursement automatique — une vraie résolution. Nous privilégions la correction du problème à sa source. Si résoudre demande du développement supplémentaire, nous discutons ensemble et adaptons.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────── SECTION 5 — TRANSPARENCE ─────────────────────────────– -->
+      <section class="section-transparency">
+        <div class="container">
+          <h2>Transparence sur l'IA</h2>
+          <p class="transparency-text">
+            L'établ'IA utilise des outils d'intelligence artificielle pour concevoir, tester et optimiser ses systèmes. Chaque livrable est vérifié et validé avant livraison. Nous croyons que l'IA est un outil puissant au service des professionnels — utilisé avec discrétion et expertise, jamais comme raccourci.
+          </p>
+        </div>
+      </section>
+
+      <!-- ─────────────────────────────────── SECTION 6 — CONTACT CTA ─────────────────────────– -->
+      <section class="section-contact-cta">
+        <div class="container">
+          <h2>Vous avez des questions ?</h2>
+          <p class="cta-text">
+            Contactez-nous directement. Nous répondons en moins de 48h ouvrables.
+          </p>
+          <a href="/contact.html" class="btn-primary">Nous contacter</a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+    <footer>
+      <div class="footer-content">
+        <p class="footer-link">
+          <a href="/">Accueil</a> ·
+          <a href="/catalogue.html">Catalogue</a> ·
+          <a href="/a-propos.html">À propos</a> ·
+          <a href="/contact.html">Contact</a>
+        </p>
+        <div class="footer-divider"></div>
+        <p class="footer-copyright">
+          © 2026 L'établ'IA. Tous droits réservés. ·
+          <a href="/mentions-legales.html">Mentions légales</a> ·
+          <a href="/confidentialite.html">Confidentialité</a>
+        </p>
+      </div>
+    </footer>
+
+    <!-- ──────────────────────────────── SCRIPT MENU MOBILE ─────────────────────────────── -->
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const menuClose = document.getElementById('menu-close');
+      const mobileMenu = document.getElementById('mobile-menu');
+
+      menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.add('open');
+      });
+
+      menuClose.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+      });
+
+      const menuLinks = mobileMenu.querySelectorAll('a');
+      menuLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+        });
+      });
+    </script>
+  </body>
+</html>
