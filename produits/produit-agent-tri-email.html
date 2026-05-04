@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Agent Tri Email — L'établ'IA</title><meta name="description" content="Trie votre boîte de messagerie selon des règles métier."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/letablia.css"/><link rel="stylesheet" href="../assets/css/search.css"/>
+</head><body>
+<!-- HEADER PARTIAL — replace ../ with "" for root pages or "../" for produits/* -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="../catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="../diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="../a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="../faq.html">FAQ</a>
+      <a data-nav="contact.html" href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../famille-automatiser.html">— Automatiser</a>
+  <a href="../famille-vendre.html">— Vendre</a>
+  <a href="../famille-piloter.html">— Piloter</a>
+  <a href="../famille-produire.html">— Produire</a>
+  <a href="../famille-securiser.html">— Sécuriser</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+<main>
+<section style="padding:24px 0 0;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Accueil</a> <span class="sep"></span> <a href="../catalogue.html">Catalogue</a> <span class="sep"></span> <a href="../famille-automatiser.html">Automatiser</a> <span class="sep"></span> <span class="current">Agent Tri Email</span></div>
+  </div>
+</section>
+
+<section class="produit-hero fam-automatiser" style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:80px" class="prod-grid">
+      <div data-reveal>
+        <div style="display:flex;gap:14px;align-items:center;margin-bottom:24px">
+          <span class="etiquette">№ 11 · Automatiser</span>
+          <span class="cote"><span>Famille</span><span class="cote-line"></span><a href="../famille-automatiser.html" style="color:var(--bronze);text-decoration:none">Automatiser →</a></span>
+        </div>
+        <h1 style="font-size:clamp(2.4rem,5vw,4rem);line-height:1.02">Agent Tri Email</h1>
+        <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.4rem;margin-top:14px;line-height:1.4">Trie votre boîte de messagerie selon des règles métier.</p>
+        
+        <div style="margin-top:48px;padding:24px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center">
+          <div>
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">Prix unique</div>
+            <div style="font-family:var(--ff-display);font-weight:700;font-size:3rem;line-height:1;margin-top:4px">39€<small style="font-family:var(--ff-mono);font-size:.9rem;font-weight:400;color:var(--chene)">HT</small></div>
+            <div style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.9rem;margin-top:4px">— pas d'abonnement</div>
+          </div>
+          <div style="border-left:1px dashed var(--chene-25);padding-left:24px">
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px">
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Code source à vous</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Support 30 jours</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Garantie remboursement</li>
+            </ul>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="../contact.html?p=produit/agent-tri-email" style="white-space:nowrap">Acheter →</a>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;color:var(--ebene-80);font-size:13px">
+          <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;color:var(--chene);text-transform:uppercase">Outils requis</span>
+          <span class="tool" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Messagerie électronique</span>
+        </div>
+      </div>
+      
+      <!-- Fiche d'atelier illustrative -->
+      <div data-reveal data-reveal-delay="1" style="position:relative">
+        <div style="background:var(--parchemin);border:1px solid var(--chene-25);padding:32px;border-radius:var(--r-sm);box-shadow:16px 16px 0 -4px var(--kraft),16px 16px 0 -3px var(--chene-25);transform:rotate(.5deg);position:relative">
+          <div style="position:absolute;top:24px;right:-12px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;color:var(--bronze);border:2px solid var(--bronze);padding:6px 10px;transform:rotate(8deg);background:rgba(255,255,255,.4);text-transform:uppercase">N° 11</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;color:var(--chene);text-transform:uppercase;margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed var(--chene-25);display:flex;justify-content:space-between"><span>Fiche · 2026.11</span><span>Automatiser</span></div>
+          <div style="font-family:var(--ff-display);font-size:2.6rem;color:var(--bronze);margin-bottom:8px;line-height:1">⌬</div>
+          <div style="font-family:var(--ff-display);font-size:1.4rem;font-weight:600;line-height:1.15;margin-bottom:12px">Agent Tri Email</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px">
+            <li style="display:flex;gap:10px;align-items:flex-start;line-height:1.45"><span style="color:var(--chene);margin-top:6px;flex-shrink:0">▸</span>Trie votre boîte de messagerie selon des règles métier.</li><li style="display:flex;gap:10px;align-items:flex-start;line-height:1.45"><span style="color:var(--chene);margin-top:6px;flex-shrink:0">▸</span>Installation guidée — fichiers source, doc pas-à-pas, exemples concrets.</li><li style="display:flex;gap:10px;align-items:flex-start;line-height:1.45"><span style="color:var(--chene);margin-top:6px;flex-shrink:0">▸</span>Code lisible, commenté, modifiable. Vous le possédez vraiment.</li>
+          </ul>
+          <div style="margin-top:24px;padding-top:18px;border-top:1px dashed var(--chene-25);display:flex;justify-content:space-between;align-items:flex-end">
+            <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">Prix d'atelier</span>
+            <span style="font-family:var(--ff-display);font-weight:700;font-size:2rem">39€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Ce qu'il y a dedans -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:48px">
+      <div>
+        <span class="tag-atelier">Ce qu'il y a dans la boîte</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Cinq <em class="editorial">pièces</em>, posées à plat.</h2>
+      </div>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);max-width:36ch;font-size:1.05rem">Quand vous achetez un système, voilà précisément ce que vous recevez par email — fichiers et documentation.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--chene-25);border-left:1px solid var(--chene-25)" class="pieces-grid">
+      <div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 01</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Notice d'installation (PDF)</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">12 pages illustrées. Chaque étape, chaque copie d'écran.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 02</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Fichiers source</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Configuration complète, prête à brancher sur Messagerie électronique.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 03</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Modèles fournis</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Trames, exemples, gabarits — copiez, adaptez, lancez.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 04</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Vidéo de mise en route</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">8 minutes. On vous montre l'installation en direct.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 05</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Garantie 30 jours</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Pas content ? On rembourse, sans poser de questions.</p>
+      </div>
+    </div>
+    <style>@media (max-width:1000px){.pieces-grid{grid-template-columns:repeat(2,1fr) !important}}</style>
+  </div>
+</section>
+
+<!-- Fonctionnement / processus -->
+<section style="padding:96px 0;background:var(--lin)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:56px">
+      <span class="tag-atelier">Comment ça s'installe</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem);max-width:18ch">Quatre étapes. <em class="editorial">Une heure.</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative" class="steps-grid">
+      <div data-reveal data-reveal-delay="0" style="position:relative">
+        <div style="font-family:var(--ff-display);font-size:4rem;color:var(--bronze);line-height:1;font-weight:700;opacity:.5">01</div>
+        <h3 style="font-size:1.3rem;margin:14px 0 10px">Vous achetez</h3>
+        <p style="color:var(--ebene-80);font-size:14px;line-height:1.55;margin:0">Paiement unique. Lien de téléchargement immédiat dans votre boîte mail.</p>
+      </div><div data-reveal data-reveal-delay="1" style="position:relative">
+        <div style="font-family:var(--ff-display);font-size:4rem;color:var(--bronze);line-height:1;font-weight:700;opacity:.5">02</div>
+        <h3 style="font-size:1.3rem;margin:14px 0 10px">Vous lisez la notice</h3>
+        <p style="color:var(--ebene-80);font-size:14px;line-height:1.55;margin:0">12 pages, conçues pour quelqu'un qui n'est pas développeur.</p>
+      </div><div data-reveal data-reveal-delay="2" style="position:relative">
+        <div style="font-family:var(--ff-display);font-size:4rem;color:var(--bronze);line-height:1;font-weight:700;opacity:.5">03</div>
+        <h3 style="font-size:1.3rem;margin:14px 0 10px">Vous installez</h3>
+        <p style="color:var(--ebene-80);font-size:14px;line-height:1.55;margin:0">Vous suivez les étapes — sur Messagerie électronique, en copiant-collant.</p>
+      </div><div data-reveal data-reveal-delay="3" style="position:relative">
+        <div style="font-family:var(--ff-display);font-size:4rem;color:var(--bronze);line-height:1;font-weight:700;opacity:.5">04</div>
+        <h3 style="font-size:1.3rem;margin:14px 0 10px">Ça tourne</h3>
+        <p style="color:var(--ebene-80);font-size:14px;line-height:1.55;margin:0">Le système fait son travail. Vous, vous faites le vôtre.</p>
+      </div>
+    </div>
+    <style>@media (max-width:880px){.steps-grid{grid-template-columns:1fr 1fr !important}}</style>
+  </div>
+</section>
+
+<!-- FAQ produit -->
+<section style="padding:96px 0;background:var(--parchemin);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Questions fréquentes</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Avant d'<em class="editorial">acheter</em>.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>C'est vraiment sans abonnement ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--bronze);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Oui. Vous payez une fois, vous gardez. Aucune carte n'est rebitée. Aucune relance commerciale.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>J'utilise déjà Messagerie électronique, ça marche vraiment ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--bronze);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Le système est conçu pour cet outil-là précisément. La doc indique les versions supportées.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Je ne suis pas développeur, c'est pour moi ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--bronze);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Si vous savez naviguer dans une interface web et copier-coller, c'est fait pour vous. Sinon, on peut installer pour 49 € de plus (option à demander).</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Et si ça ne marche pas chez moi ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--bronze);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">30 jours pour essayer. Si ça ne convient pas, on rembourse. Sans demander pourquoi.</p>
+      </details>
+    </div>
+    <style>details[open] summary span:last-child{transform:rotate(45deg)}summary::-webkit-details-marker{display:none}</style>
+  </div>
+</section>
+
+<!-- Related -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:32px">
+      <div>
+        <span class="tag-atelier">Sur le même établi</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Vous aimerez aussi.</h2>
+      </div>
+      <a class="btn-link" href="../catalogue.html">Voir tout le catalogue →</a>
+    </div>
+    <div class="etabli-board">
+      <a class="card-produit fam-automatiser" href="gardien-de-stock.html">
+          <div class="num">№ 01 · Automatiser</div>
+          <h3>Gardien de Stock</h3>
+          <div class="blurb">Surveille votre stock et alerte avant rupture.</div>
+          <div class="meta"><div class="price">29€</div><div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div></div>
+        </a><a class="card-produit fam-automatiser" href="sequenceur-post-achat.html">
+          <div class="num">№ 02 · Automatiser</div>
+          <h3>Séquenceur Post-Achat</h3>
+          <div class="blurb">Email de remerciement et suivi automatique après chaque commande.</div>
+          <div class="meta"><div class="price">29€</div><div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div></div>
+        </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:96px 0;background:var(--encre);color:var(--lin);text-align:center">
+  <div class="container-narrow">
+    <h2 style="color:var(--lin);font-size:clamp(2rem,4vw,3.4rem);line-height:1.05">Vous voulez ce système.<br/><em style="font-family:var(--ff-display);font-style:italic;color:var(--bronze)">Voici la suite.</em></h2>
+    <p style="color:var(--pierre);font-size:1.1rem;margin:24px auto 32px;max-width:46ch">Achat en un clic. Lien de téléchargement immédiat. Support email 30 jours inclus.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-mousse" href="../contact.html?p=produit/agent-tri-email">Acheter Agent Tri Email — 39€</a>
+      <a class="btn btn-ghost" style="color:var(--lin);border-color:var(--lin)" href="../diagnostic.html">Faire le diagnostic d'abord</a>
+    </div>
+  </div>
+</section>
+</main><footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2024</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en région lyonnaise.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue (11)</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2024–2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script>fetch('../assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+</body></html>

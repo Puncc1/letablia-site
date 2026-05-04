@@ -1,740 +1,391 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"/><!-- Typographies V4 -->
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Catalogue complet — L'établ'IA · 11 systèmes forgés pour professionnels francophones</title>
-<meta content="Le catalogue complet des 11 systèmes forgés L'établ'IA. Filtrez par famille, par outil, par prix. Pour professionnels francophones." name="description"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<!-- Design System V3 -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Catalogue — L'établ'IA</title>
+<meta name="description" content="L'intégralité de l'atelier : 11 systèmes numériques, 3 packs, paiement unique." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/letablia.css" />
+<link rel="stylesheet" href="assets/css/search.css" />
 <style>
-      /* ─────────────────────────────────────────────────────────
-         SURCHARGES PAGE MENTIONS LÉGALES
-         ───────────────────────────────────────────────────────── */
-
-      html, body {
-        font-family: 'Inter', system-ui, sans-serif;
-        color: #2C2825;
-        line-height: 1.6;
-      }
-
-      body {
-        background-color: #F2EDE8;
-      }
-
-      /* ── HEADER ── */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        background-color: #F5F0E8;
-        border-bottom: 1px solid #C5B9A8;
-        height: 72px;
-      }
-
-      .header-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        font-family: 'Playfair Display', 'Georgia', serif;
-        font-size: 1.5rem;
-        color: #8A7560;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .logo:hover { opacity: 0.9; }
-
-      .nav-desktop {
-        display: none;
-        align-items: center;
-        gap: 2rem;
-      }
-
-      .nav-desktop a {
-        font-size: 1rem;
-        color: #2C2825;
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .nav-desktop a:hover { color: #8A7560; }
-
-      .cta-desktop {
-        display: none;
-        background-color: #8A7560;
-        color: #F5F0E8;
-        font-weight: 600;
-        font-size: 1rem;
-        padding: 10px 1.75rem;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: opacity 0.2s ease;
-      }
-
-      .cta-desktop:hover { opacity: 0.9; }
-
-      .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.25rem;
-        min-width: 44px;
-        min-height: 44px;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .menu-toggle span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background-color: #2C2825;
-      }
-
-      #mobile-menu {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        background-color: #F5F0E8;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #mobile-menu.open { display: flex; }
-
-      .menu-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1rem;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #2C2825;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      @media (min-width: 768px) {
-        .nav-desktop  { display: flex; }
-        .cta-desktop  { display: inline-block; }
-        .menu-toggle  { display: none; }
-        #mobile-menu  { display: none !important; }
-      }
-
-      /* ── MAIN ── */
-      main { min-height: calc(100vh - 72px); }
-
-      section { padding: 3rem 1rem; }
-
-      @media (min-width: 768px) {
-        section { padding: 5rem 1rem; }
-      }
-
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      /* ── HERO ── */
-      .section-hero {
-        background-color: #F2EDE8;
-        text-align: center;
-        padding-bottom: 2rem;
-      }
-
-      .section-hero h1 {
-        font-family: 'Playfair Display', 'Georgia', serif;
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: #2C2825;
-        margin-bottom: 0.5rem;
-        line-height: 1.2;
-      }
-
-      @media (min-width: 768px) {
-        .section-hero h1 { font-size: 2.75rem; }
-      }
-
-      .section-hero .subtitle {
-        font-size: 1rem;
-        color: #8A7560;
-        margin-bottom: 0;
-      }
-
-      .breadcrumb {
-        font-size: 0.875rem;
-        color: #A09889;
-        margin-bottom: 1rem;
-      }
-
-      .breadcrumb a {
-        color: #8A7560;
-        text-decoration: none;
-      }
-
-      .breadcrumb a:hover { text-decoration: underline; }
-
-      /* ── CONTENU LÉGAL ── */
-      .section-legal-content {
-        background-color: #F2EDE8;
-        padding-top: 1rem;
-      }
-
-      .legal-block {
-        background-color: #FAF7F2;
-        border: 1px solid #E9DDC8;
-        border-left: 4px solid #8A7560;
-        border-radius: 6px;
-        padding: 1.75rem 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .legal-block h2 {
-        font-family: 'Playfair Display', 'Georgia', serif;
-        font-size: 1.125rem;
-        font-weight: 700;
-        color: #2C2825;
-        margin-bottom: 0.875rem;
-        line-height: 1.3;
-      }
-
-      .legal-block p {
-        font-size: 0.975rem;
-        color: #2C2825;
-        line-height: 1.7;
-        margin-bottom: 0.75rem;
-      }
-
-      .legal-block p:last-child { margin-bottom: 0; }
-
-      .legal-block a {
-        color: #8A7560;
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .legal-block a:hover { text-decoration: underline; }
-
-      .info-line {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-        font-size: 0.975rem;
-        color: #2C2825;
-        line-height: 1.7;
-      }
-
-      @media (min-width: 640px) {
-        .info-line { flex-direction: row; gap: 0.5rem; }
-        .info-label {
-          flex-shrink: 0;
-          min-width: 160px;
-          color: #8A7560;
-          font-weight: 600;
-        }
-      }
-
-      .info-label {
-        color: #8A7560;
-        font-weight: 600;
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-
-      .retractation-btn {
-        display: inline-block;
-        border: 2px solid #8A7560;
-        color: #8A7560;
-        font-weight: 600;
-        font-size: 0.975rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: background-color 0.2s ease, color 0.2s ease;
-        margin-top: 1rem;
-      }
-
-      .retractation-btn:hover {
-        background-color: #8A7560;
-        color: #FAF7F2;
-        text-decoration: none;
-      }
-
-      .mise-a-jour {
-        font-size: 0.85rem;
-        color: #A09889;
-        text-align: right;
-        margin-bottom: 2rem;
-      }
-
-      /* ── SECTION FOOTER LÉGAL ── */
-      .section-footer-legal {
-        background-color: #E9DDC8;
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-
-      .section-footer-legal p {
-        font-size: 0.95rem;
-        color: #2C2825;
-        line-height: 1.6;
-        margin-bottom: 0.5rem;
-      }
-
-      .section-footer-legal a {
-        color: #8A7560;
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      .section-footer-legal a:hover { text-decoration: underline; }
-
-      /* ── FOOTER ── */
-      footer {
-        background-color: #2C2825;
-        color: #F5F0E8;
-        padding: 2rem 1rem;
-        text-align: center;
-      }
-
-      footer a { color: #8A7560; text-decoration: none; }
-      footer a:hover { text-decoration: underline; }
-
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .footer-link {
-        font-size: 0.95rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-divider {
-        height: 1px;
-        background-color: rgba(160, 152, 137, 0.3);
-        margin: 1.5rem 0;
-      }
-
-      .footer-copyright {
-        font-size: 0.85rem;
-        color: #C5B9A8;
-      }
-    </style>
-<link href="/assets/css/cookies.css" rel="stylesheet"/>
-<link href="/styles/output.css" rel="stylesheet"/>
+.chip{
+  background:transparent;border:1px solid var(--chene-25);
+  padding:8px 14px;border-radius:99px;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;
+  color:var(--ebene);cursor:pointer;text-transform:uppercase;
+  display:inline-flex;align-items:center;
+  transition:background .15s, border .15s, color .15s;
+}
+.chip:hover{background:var(--chene-10);border-color:var(--chene)}
+.chip.active{background:var(--ebene);color:var(--lin);border-color:var(--ebene)}
+.chip.active .fam-dot{filter:brightness(1.3)}
+@media (max-width:880px){.cat-head{grid-template-columns:1fr !important}.packs-grid{grid-template-columns:1fr !important}}
+</style>
 </head>
 <body>
-<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
-<nav class="hidden md:flex items-center gap-7">
-<div class="relative group" data-dropdown="">
-<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
-              Catalogue
-              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-</a>
-<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
-<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
-</div>
-</div>
-</div>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
-</nav>
-<div class="hidden md:flex items-center gap-3">
-<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
-<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
-</div>
-<div class="md:hidden flex items-center gap-2">
-<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
-<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-</button>
-</div>
-</div>
+<!-- HEADER PARTIAL — replace  with "" for root pages or "../" for produits/* -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
-<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
-<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
-<nav class="flex flex-col items-center gap-6 mb-10 text-center">
-<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
-<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
 </div>
-<div class="border-t border-pierre/30 w-32 my-3"></div>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
-</nav>
-<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
 </div>
-<!-- Menu mobile plein écran -->
 
-<main class="bg-lin">
-<section class="py-12 md:py-16">
-<div class="container max-w-[1280px] mx-auto px-4 md:px-8">
-<nav class="font-body text-[13px] text-pierre mb-4">
-<a class="hover:text-chene" href="/">Accueil</a>
-<span class="mx-2">›</span>
-<span class="text-ebene">Catalogue</span>
-</nav>
-<h1 class="font-heading text-[40px] md:text-[56px] text-ebene leading-[1.0] mb-4">Catalogue complet</h1>
-<p class="font-body text-[16px] md:text-[18px] text-pierre leading-[1.6] mb-10 max-w-[760px]">
-<span id="visible-count">11</span> systèmes forgés disponibles. Filtrez par famille, par outil, par prix. Ou cherchez le nom directement.
-          </p>
-<div class="flex flex-col md:flex-row gap-4 mb-8">
-<div class="flex-1 relative">
-<input class="w-full bg-lin border border-pierre rounded-[6px] py-3 px-4 pl-10 font-body text-[15px] text-ebene placeholder-pierre focus:outline-none focus:border-chene transition" id="search-input" placeholder="Cherchez signal, gardien, séquenceur…" type="search"/>
-<span class="absolute left-3 top-1/2 -translate-y-1/2 text-pierre">⌕</span>
-</div>
-<select class="bg-lin border border-pierre rounded-[6px] py-3 px-4 font-body text-[15px] text-ebene focus:outline-none focus:border-chene transition cursor-pointer" id="sort-select">
-<option value="default">Trier par : pertinence</option>
-<option value="price-asc">Prix croissant</option>
-<option value="price-desc">Prix décroissant</option>
-<option value="title-asc">Titre A-Z</option>
-</select>
-<button class="md:hidden bg-mousse text-lin font-semibold rounded-[6px] py-3 px-5" id="filters-toggle">
-              Filtres ▼
-            </button>
-</div>
-<div class="flex flex-col md:flex-row gap-8">
-<aside class="md:w-[260px] md:shrink-0" id="filters"><div class="md:sticky md:top-[88px] bg-lin border border-pierre/30 rounded-[8px] p-5 md:p-6">
-<div class="flex items-center justify-between mb-4">
-<h2 class="font-heading text-[18px] text-ebene">Filtrer</h2>
-<button class="font-body text-[12px] text-pierre hover:text-chene" id="reset-filters">Réinitialiser</button>
-</div>
-<fieldset class="mb-5">
-<legend class="font-mono text-[11px] uppercase tracking-[1px] text-chene mb-2">Famille</legend>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="family" type="checkbox" value="automatisations"/> Automatiser <span class="text-pierre">(3)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="family" type="checkbox" value="vendre"/> Vendre <span class="text-pierre">(3)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="family" type="checkbox" value="tableaux-de-bord"/> Piloter <span class="text-pierre">(1)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="family" type="checkbox" value="modeles"/> Produire <span class="text-pierre">(3)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="family" type="checkbox" value="guides-formations"/> Sécuriser <span class="text-pierre">(1)</span></label>
-</fieldset>
-<fieldset class="mb-5">
-<legend class="font-mono text-[11px] uppercase tracking-[1px] text-chene mb-2">Outil</legend>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="tools" type="checkbox" value="plateforme-ecommerce"/> Plateforme e-commerce <span class="text-pierre">(4)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="tools" type="checkbox" value="tableur"/> Tableur en ligne <span class="text-pierre">(4)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="tools" type="checkbox" value="application-prise-de-note"/> Application de prise de notes <span class="text-pierre">(1)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="tools" type="checkbox" value="service-emailing"/> Service d'emailing <span class="text-pierre">(2)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="tools" type="checkbox" value="messagerie-electronique"/> Messagerie électronique <span class="text-pierre">(2)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="tools" type="checkbox" value="messagerie-instantanee"/> Messagerie instantanée <span class="text-pierre">(2)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="tools" type="checkbox" value="document-imprimable"/> Document imprimable <span class="text-pierre">(3)</span></label>
-</fieldset>
-<fieldset class="mb-5">
-<legend class="font-mono text-[11px] uppercase tracking-[1px] text-chene mb-2">Prix</legend>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="price" data-max="19" data-min="0" type="checkbox" value="low"/> ≤ 19 € <span class="text-pierre">(1)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="price" data-max="49" data-min="20" type="checkbox" value="mid"/> 20 – 49 € <span class="text-pierre">(10)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="price" data-max="9999" data-min="50" type="checkbox" value="high"/> 50 € et + <span class="text-pierre">(0)</span></label>
-</fieldset>
-<fieldset>
-<legend class="font-mono text-[11px] uppercase tracking-[1px] text-chene mb-2">Cible</legend>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="targets" type="checkbox" value="e-commerce"/> E-commerçant <span class="text-pierre">(4)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="targets" type="checkbox" value="freelance"/> Freelance <span class="text-pierre">(5)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="targets" type="checkbox" value="agence"/> Agence <span class="text-pierre">(2)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="targets" type="checkbox" value="formateur"/> Formateur <span class="text-pierre">(1)</span></label>
-<label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input class="filter-cb" data-axis="targets" type="checkbox" value="tpe-generaliste"/> TPE généraliste <span class="text-pierre">(5)</span></label>
-</fieldset>
-</div></aside>
-<div class="flex-1">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="products-grid">
-<a class="product-card pack-card group block bg-lin border-2 border-mousse rounded-[8px] overflow-hidden hover:shadow-md transition" data-family="bundle" data-keywords="pack ecommerce boutique commande stock avis bundle" data-price="49" data-targets="e-commerce" data-title="pack e-commerce complet" data-tools="bundle" href="/packs/e-commerce/">
-<div class="bg-mousse h-[100px] flex items-center justify-center">
-<span class="font-mono text-lin text-[11px] uppercase tracking-[2px]">PACK · ÉCONOMIE 18 €</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-mousse uppercase tracking-[1px] mb-2">Bundle 3 systèmes</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Pack E-commerce Complet</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Tout pour piloter votre boutique en ligne : alerte commandes, surveillance stock, collecte d'avis.</p>
-<div class="flex items-center justify-between">
-<div>
-<span class="font-mono text-[18px] text-mousse font-semibold">49 €</span>
-<span class="font-mono text-[12px] text-pierre line-through ml-2">67 €</span>
-</div>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card pack-card group block bg-lin border-2 border-mousse rounded-[8px] overflow-hidden hover:shadow-md transition" data-family="bundle" data-keywords="pack freelance crm relance email tri bundle" data-price="119" data-targets="freelance agence" data-title="pack freelance solo" data-tools="bundle" href="/packs/freelance/">
-<div class="bg-mousse h-[100px] flex items-center justify-center">
-<span class="font-mono text-lin text-[11px] uppercase tracking-[2px]">PACK · ÉCONOMIE 18 €</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-mousse uppercase tracking-[1px] mb-2">Bundle 3 systèmes</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Pack Freelance Solo</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">L'essentiel pour gérer vos clients, relancer vos prospects et trier vos emails.</p>
-<div class="flex items-center justify-between">
-<div>
-<span class="font-mono text-[18px] text-mousse font-semibold">119 €</span>
-<span class="font-mono text-[12px] text-pierre line-through ml-2">137 €</span>
-</div>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card pack-card group block bg-lin border-2 border-mousse rounded-[8px] overflow-hidden hover:shadow-md transition" data-family="bundle" data-keywords="pack tpe conformite 2026 facturation cyber tresorerie bundle" data-price="99" data-targets="tpe-generaliste" data-title="pack tpe conformité 2026" data-tools="bundle" href="/packs/tpe-conformite/">
-<div class="bg-mousse h-[100px] flex items-center justify-center">
-<span class="font-mono text-lin text-[11px] uppercase tracking-[2px]">PACK · ÉCONOMIE 18 €</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-mousse uppercase tracking-[1px] mb-2">Bundle 3 systèmes</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Pack TPE Conformité 2026</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Mise à niveau TPE 2026 : facturation électronique + cyber + pilotage trésorerie.</p>
-<div class="flex items-center justify-between">
-<div>
-<span class="font-mono text-[18px] text-mousse font-semibold">99 €</span>
-<span class="font-mono text-[12px] text-pierre line-through ml-2">117 €</span>
-</div>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="vendre" data-keywords="alerte commande boutique en ligne notification temps reel" data-price="9" data-targets="e-commerce" data-title="signal de vente" data-tools="plateforme-ecommerce messagerie-instantanee" href="/signal-de-vente/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Plateforme e-commerce · Messagerie instantanée</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Signal de Vente</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Une notification instantanée à chaque commande de votre boutique en ligne.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">9 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="automatisations" data-keywords="stock rupture alerte seuil gestion boutique en ligne" data-price="29" data-targets="e-commerce" data-title="gardien de stock" data-tools="plateforme-ecommerce tableur messagerie-instantanee" href="/gardien-de-stock/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Plateforme e-commerce · Tableur en ligne · Messagerie instantanée</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Gardien de Stock</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Surveille votre stock et alerte avant rupture.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="automatisations" data-keywords="email post achat remerciement suivi sequence automatique" data-price="29" data-targets="e-commerce formateur" data-title="séquenceur post-achat" data-tools="plateforme-ecommerce service-emailing tableur" href="/sequenceur-post-achat/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Plateforme e-commerce · Service d'emailing · Tableur en ligne</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Séquenceur Post-Achat</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Email de remerciement et suivi automatique après chaque commande.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="vendre" data-keywords="avis clients post commande sociale preuve" data-price="29" data-targets="e-commerce" data-title="le collecteur avis" data-tools="plateforme-ecommerce service-emailing" href="/collecteur-avis/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Plateforme e-commerce · Service d'emailing</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Le Collecteur Avis</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Collecte les avis clients après commande, automatiquement.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="modeles" data-keywords="journal carnet bord artisan imprimer freelance" data-price="39" data-targets="freelance tpe-generaliste" data-title="carnet forge" data-tools="document-imprimable" href="/carnet-forge/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">PRODUIRE</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Document imprimable</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Carnet Forge</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Le journal de bord de l'artisan numérique, prêt à imprimer.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="vendre" data-keywords="relance prospects commercial freelance" data-price="49" data-targets="freelance agence" data-title="relance prospects" data-tools="tableur messagerie-electronique" href="/produit/relance-prospects/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Tableur en ligne · Messagerie électronique</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Relance Prospects</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Système qui relance vos prospects automatiquement, avec tact.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">49 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="modeles" data-keywords="crm clients projets freelance agence consultant" data-price="49" data-targets="freelance agence" data-title="mini crm prestataire" data-tools="application-prise-de-note" href="/produit/mini-crm-notion/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">PRODUIRE</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Application de prise de notes</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Mini CRM Prestataire</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">49 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="tableaux-de-bord" data-keywords="tresorerie tpe dashboard finances pilotage" data-price="39" data-targets="tpe-generaliste" data-title="dashboard trésorerie tpe" data-tools="tableur" href="/produit/dashboard-tresorerie/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">PILOTER</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Tableur en ligne</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Dashboard Trésorerie TPE</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Vue claire de votre trésorerie, mise à jour quotidienne.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="guides-formations" data-keywords="cyber securite hygiene tpe audit guides phishing rgpd" data-price="39" data-targets="tpe-generaliste" data-title="pack cyber-hygiène tpe" data-tools="document-imprimable" href="/produit/cyber-hygiene-tpe/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">SÉCURISER</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Document imprimable</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Pack Cyber-Hygiène TPE</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="modeles" data-keywords="facturation electronique 2026 conformite tpe" data-price="39" data-targets="tpe-generaliste freelance" data-title="kit facturation électronique 2026" data-tools="document-imprimable" href="/produit/kit-facturation-2026/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">PRODUIRE</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Document imprimable</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Kit Facturation Électronique 2026</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition" data-family="automatisations" data-keywords="tri email regles automatique inbox zero" data-price="39" data-targets="freelance tpe-generaliste" data-title="agent tri email" data-tools="messagerie-electronique" href="/produit/agent-tri-email/">
-<div class="bg-chene-6 h-[100px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-</div>
-<div class="p-5">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Messagerie électronique</p>
-<h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Agent Tri Email</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Trie votre boîte de messagerie selon des règles métier.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-</div>
-<p class="hidden font-body text-[16px] text-pierre text-center py-16" id="empty-state">
-                Aucun système ne correspond à vos filtres. <button class="text-chene underline" id="reset-filters-empty">Réinitialiser</button>
-</p>
-</div>
-</div>
-</div>
+<main>
+
+<section class="catalogue-hero" style="padding:80px 0 40px;background:var(--lin);border-bottom:1px solid var(--chene-25)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Catalogue</span></div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;margin-top:48px" class="cat-head">
+      <div data-reveal>
+        <span class="tag-atelier">Catalogue · 11 systèmes</span>
+        <h1 style="margin-top:18px">Toute la <em class="editorial">production</em> de l'atelier.</h1>
+      </div>
+      <div data-reveal data-reveal-delay="1">
+        <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.15rem;line-height:1.5">
+          Onze pièces. Cinq familles. Trois packs. Tout est listé ici, dans l'ordre que vous voulez.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- Filtres -->
+<section class="catalogue-filters" style="padding:32px 0;background:var(--parchemin);border-bottom:1px solid var(--chene-25);position:sticky;top:76px;z-index:20" data-reveal>
+  <div class="container">
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+      <div style="display:flex;gap:8px;flex-wrap:wrap" data-filter-group="family">
+        <button class="chip active" data-filter="all">Toutes les familles</button>
+        <button class="chip" data-filter="automatisations"><span class="fam-dot fam-automatiser" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--bronze)"></span>Automatiser</button><button class="chip" data-filter="vendre"><span class="fam-dot fam-vendre" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--cuivre)"></span>Vendre</button><button class="chip" data-filter="tableaux-de-bord"><span class="fam-dot fam-piloter" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--lapis)"></span>Piloter</button><button class="chip" data-filter="modeles"><span class="fam-dot fam-produire" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--argile)"></span>Produire</button><button class="chip" data-filter="guides-formations"><span class="fam-dot fam-securiser" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--sauge)"></span>Sécuriser</button>
+      </div>
+      <div style="display:flex;gap:14px;align-items:center">
+        <select id="sort-select" style="padding:8px 12px;border:1px solid var(--chene-25);background:var(--parchemin);font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;color:var(--ebene);border-radius:4px;text-transform:uppercase">
+          <option value="default">Tri : ordre catalogue</option>
+          <option value="price-asc">Prix croissant</option>
+          <option value="price-desc">Prix décroissant</option>
+          <option value="name">Alphabétique</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tous les produits -->
+<section style="padding:64px 0;background:var(--lin)">
+  <div class="container">
+    <div class="cote" style="margin-bottom:32px"><span data-count>11</span> <span class="cote-line"></span> <span>systèmes affichés</span></div>
+    <div class="etabli-board" data-product-grid>
+      <a class="card-produit fam-vendre" href="produits/signal-de-vente.html">
+    <div class="num">№ 01 · Vendre</div>
+    <h3>Signal de Vente</h3>
+    <div class="blurb">Une notification instantanée à chaque commande de votre boutique en ligne.</div>
+    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Messagerie instantanée</span></div>
+    <div class="meta">
+      <div class="price">9€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-automatiser" href="produits/gardien-de-stock.html">
+    <div class="num">№ 02 · Automatiser</div>
+    <h3>Gardien de Stock</h3>
+    <div class="blurb">Surveille votre stock et alerte avant rupture.</div>
+    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Tableur en ligne</span></div>
+    <div class="meta">
+      <div class="price">29€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-automatiser" href="produits/sequenceur-post-achat.html">
+    <div class="num">№ 03 · Automatiser</div>
+    <h3>Séquenceur Post-Achat</h3>
+    <div class="blurb">Email de remerciement et suivi automatique après chaque commande.</div>
+    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Service d'emailing</span></div>
+    <div class="meta">
+      <div class="price">29€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-vendre" href="produits/collecteur-avis.html">
+    <div class="num">№ 04 · Vendre</div>
+    <h3>Le Collecteur Avis</h3>
+    <div class="blurb">Collecte les avis clients après commande, automatiquement.</div>
+    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Service d'emailing</span></div>
+    <div class="meta">
+      <div class="price">29€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-produire" href="produits/carnet-forge.html">
+    <div class="num">№ 05 · Produire</div>
+    <h3>Carnet Forge</h3>
+    <div class="blurb">Le journal de bord de l'artisan numérique, prêt à imprimer.</div>
+    <div class="tools"><span class="tool">Document imprimable</span></div>
+    <div class="meta">
+      <div class="price">39€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-vendre" href="produits/produit-relance-prospects.html">
+    <div class="num">№ 06 · Vendre</div>
+    <h3>Relance Prospects</h3>
+    <div class="blurb">Système qui relance vos prospects automatiquement, avec tact.</div>
+    <div class="tools"><span class="tool">Tableur en ligne</span><span class="tool">Messagerie électronique</span></div>
+    <div class="meta">
+      <div class="price">49€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-produire" href="produits/produit-mini-crm-notion.html">
+    <div class="num">№ 07 · Produire</div>
+    <h3>Mini CRM Prestataire</h3>
+    <div class="blurb">Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.</div>
+    <div class="tools"><span class="tool">Application de prise de notes</span></div>
+    <div class="meta">
+      <div class="price">49€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-piloter" href="produits/produit-dashboard-tresorerie.html">
+    <div class="num">№ 08 · Piloter</div>
+    <h3>Dashboard Trésorerie TPE</h3>
+    <div class="blurb">Vue claire de votre trésorerie, mise à jour quotidienne.</div>
+    <div class="tools"><span class="tool">Tableur en ligne</span></div>
+    <div class="meta">
+      <div class="price">39€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-securiser" href="produits/produit-cyber-hygiene-tpe.html">
+    <div class="num">№ 09 · Sécuriser</div>
+    <h3>Pack Cyber-Hygiène TPE</h3>
+    <div class="blurb">Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.</div>
+    <div class="tools"><span class="tool">Document imprimable</span></div>
+    <div class="meta">
+      <div class="price">39€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-produire" href="produits/produit-kit-facturation-2026.html">
+    <div class="num">№ 10 · Produire</div>
+    <h3>Kit Facturation Électronique 2026</h3>
+    <div class="blurb">Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.</div>
+    <div class="tools"><span class="tool">Document imprimable</span></div>
+    <div class="meta">
+      <div class="price">39€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a><a class="card-produit fam-automatiser" href="produits/produit-agent-tri-email.html">
+    <div class="num">№ 11 · Automatiser</div>
+    <h3>Agent Tri Email</h3>
+    <div class="blurb">Trie votre boîte de messagerie selon des règles métier.</div>
+    <div class="tools"><span class="tool">Messagerie électronique</span></div>
+    <div class="meta">
+      <div class="price">39€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a>
+    </div>
+  </div>
+</section>
+
+<!-- Packs -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Bundles · économie −18 €</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Trois <em class="editorial">packs</em> assemblés.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" class="packs-grid">
+      <a class="pack-card" href="packs-e-commerce.html" style="background:var(--parchemin);border:1px solid var(--chene);padding:32px 28px;border-radius:var(--r-md);display:flex;flex-direction:column;gap:18px;text-decoration:none;color:inherit;position:relative;transition:transform .25s, box-shadow .25s">
+          <span style="position:absolute;top:-1px;right:24px;background:var(--ebene);color:var(--lin);padding:6px 12px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase">Économie 18€</span>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em">№ Pack 01 · Bundle 3 systèmes</div>
+          <h3 style="font-size:1.5rem">Pack E-commerce Complet</h3>
+          <p style="color:var(--ebene-80);font-size:14px;line-height:1.5;flex:1">Tout pour piloter votre boutique en ligne : alerte commandes, surveillance stock, collecte d'avis.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;padding:14px 0;border-top:1px dashed var(--chene-25);border-bottom:1px dashed var(--chene-25)">
+            <li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Signal de Vente</span><span style="font-family:var(--ff-mono);color:var(--chene)">9€</span></li><li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Gardien de Stock</span><span style="font-family:var(--ff-mono);color:var(--chene)">29€</span></li><li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Le Collecteur Avis</span><span style="font-family:var(--ff-mono);color:var(--chene)">29€</span></li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end">
+            <div>
+              <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);text-decoration:line-through">au détail 67€</div>
+              <div style="font-family:var(--ff-display);font-weight:700;font-size:2rem;color:var(--ebene);line-height:1">49€</div>
+            </div>
+            <div class="arrow" style="width:36px;height:36px;border-radius:50%;background:var(--chene-10);display:flex;align-items:center;justify-content:center;color:var(--chene)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a><a class="pack-card" href="packs-freelance.html" style="background:var(--parchemin);border:1px solid var(--chene);padding:32px 28px;border-radius:var(--r-md);display:flex;flex-direction:column;gap:18px;text-decoration:none;color:inherit;position:relative;transition:transform .25s, box-shadow .25s">
+          <span style="position:absolute;top:-1px;right:24px;background:var(--ebene);color:var(--lin);padding:6px 12px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase">Économie 18€</span>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em">№ Pack 02 · Bundle 3 systèmes</div>
+          <h3 style="font-size:1.5rem">Pack Freelance Solo</h3>
+          <p style="color:var(--ebene-80);font-size:14px;line-height:1.5;flex:1">L'essentiel pour gérer vos clients, relancer vos prospects et trier vos emails.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;padding:14px 0;border-top:1px dashed var(--chene-25);border-bottom:1px dashed var(--chene-25)">
+            <li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Mini CRM Prestataire</span><span style="font-family:var(--ff-mono);color:var(--chene)">49€</span></li><li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Relance Prospects</span><span style="font-family:var(--ff-mono);color:var(--chene)">49€</span></li><li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Agent Tri Email</span><span style="font-family:var(--ff-mono);color:var(--chene)">39€</span></li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end">
+            <div>
+              <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);text-decoration:line-through">au détail 137€</div>
+              <div style="font-family:var(--ff-display);font-weight:700;font-size:2rem;color:var(--ebene);line-height:1">119€</div>
+            </div>
+            <div class="arrow" style="width:36px;height:36px;border-radius:50%;background:var(--chene-10);display:flex;align-items:center;justify-content:center;color:var(--chene)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a><a class="pack-card" href="packs-tpe-conformite.html" style="background:var(--parchemin);border:1px solid var(--chene);padding:32px 28px;border-radius:var(--r-md);display:flex;flex-direction:column;gap:18px;text-decoration:none;color:inherit;position:relative;transition:transform .25s, box-shadow .25s">
+          <span style="position:absolute;top:-1px;right:24px;background:var(--ebene);color:var(--lin);padding:6px 12px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase">Économie 18€</span>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em">№ Pack 03 · Bundle 3 systèmes</div>
+          <h3 style="font-size:1.5rem">Pack TPE Conformité 2026</h3>
+          <p style="color:var(--ebene-80);font-size:14px;line-height:1.5;flex:1">Mise à niveau TPE 2026 : facturation électronique + cyber + pilotage trésorerie.</p>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;padding:14px 0;border-top:1px dashed var(--chene-25);border-bottom:1px dashed var(--chene-25)">
+            <li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Kit Facturation Électronique 2026</span><span style="font-family:var(--ff-mono);color:var(--chene)">39€</span></li><li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Pack Cyber-Hygiène TPE</span><span style="font-family:var(--ff-mono);color:var(--chene)">39€</span></li><li style="display:flex;justify-content:space-between;font-size:13px;font-family:var(--ff-body)"><span>Dashboard Trésorerie TPE</span><span style="font-family:var(--ff-mono);color:var(--chene)">39€</span></li>
+          </ul>
+          <div style="display:flex;justify-content:space-between;align-items:flex-end">
+            <div>
+              <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);text-decoration:line-through">au détail 117€</div>
+              <div style="font-family:var(--ff-display);font-weight:700;font-size:2rem;color:var(--ebene);line-height:1">99€</div>
+            </div>
+            <div class="arrow" style="width:36px;height:36px;border-radius:50%;background:var(--chene-10);display:flex;align-items:center;justify-content:center;color:var(--chene)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </div>
+          </div>
+        </a>
+    </div>
+  </div>
+</section>
+
 </main>
-<script defer="" src="/assets/js/catalogue-filters.js"></script>
-<footer class="bg-ebene mt-12">
-<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
-<div class="text-center md:text-left">
-<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
-<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
-<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
-</ul>
-</div>
-</div>
-<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
-<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
-</div>
-</div>
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2024</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en région lyonnaise.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2024–2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
 </footer>
-<!-- ── SCRIPT MENU MOBILE ── -->
-<script defer="" src="/assets/js/cookies.js"></script>
-<script defer="" src="/assets/js/burger-menu.js"></script>
-<script defer="" src="/assets/js/search-modal.js"></script>
+
+<script src="assets/js/letablia.js"></script>
+<script>
+fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});
+</script>
+<script>
+(function(){
+  const grid = document.querySelector('[data-product-grid]');
+  const chips = document.querySelectorAll('[data-filter-group="family"] .chip');
+  const sort = document.getElementById('sort-select');
+  const count = document.querySelector('[data-count]');
+  let activeFam = 'all';
+  let activeSort = 'default';
+  function apply(){
+    const cards = [...grid.children];
+    cards.forEach(c=>c.style.display='');
+    const FAMCLS = {automatisations:'automatiser',vendre:'vendre','tableaux-de-bord':'piloter',modeles:'produire','guides-formations':'securiser'};
+    let visible = cards;
+    if(activeFam!=='all'){
+      const cls = 'fam-'+FAMCLS[activeFam];
+      visible = cards.filter(c=>{
+        const ok = c.classList.contains(cls);
+        c.style.display = ok ? '' : 'none';
+        return ok;
+      });
+    }
+    // Sort
+    const getPrice = c => parseInt(c.querySelector('.price').textContent);
+    const getName = c => c.querySelector('h3').textContent;
+    const sorted = [...visible];
+    if(activeSort==='price-asc') sorted.sort((a,b)=>getPrice(a)-getPrice(b));
+    else if(activeSort==='price-desc') sorted.sort((a,b)=>getPrice(b)-getPrice(a));
+    else if(activeSort==='name') sorted.sort((a,b)=>getName(a).localeCompare(getName(b)));
+    sorted.forEach(c=>grid.appendChild(c));
+    count.textContent = visible.length;
+  }
+  chips.forEach(c=>c.addEventListener('click',()=>{
+    chips.forEach(x=>x.classList.remove('active'));
+    c.classList.add('active');
+    activeFam = c.dataset.filter;
+    apply();
+  }));
+  sort.addEventListener('change',()=>{activeSort = sort.value; apply();});
+})();
+</script>
 </body>
 </html>

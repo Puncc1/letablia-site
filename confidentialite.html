@@ -1,500 +1,167 @@
-<!DOCTYPE html>
-
-<html lang="fr">
-<head>
-<meta charset="utf-8"/><!-- Typographies V4 -->
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Politique de confidentialité de L'établ'IA — Comment nous traitons vos données personnelles." name="description"/>
-<meta content="index, follow" name="robots"/>
-<link href="https://letablia.fr/confidentialite/" rel="canonical"/>
-<title>Politique de confidentialité — L'établ'IA</title>
-<style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      html, body {
-        font-family: 'Inter', system-ui, sans-serif;
-        color: #2C2825;
-        line-height: 1.6;
-      }
-
-      body {
-        background-color: #F2EDE8;
-      }
-
-      /* ── VARIABLES ── */
-      :root {
-        --v3-fond: #F2EDE8;
-        --v3-ivoire: #FAF7F2;
-        --v3-papier: #E9DDC8;
-        --v3-graphite: #2C2825;
-        --v3-brun: #8A7560;
-        --v3-chene: #8A7560;
-        --v3-cuivre: #8A7560;
-        --v3-vert: #6B7C5F;
-        --v3-pierre: #C5B9A8;
-      }
-
-      /* ── HEADER ── */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        background-color: var(--v3-fond);
-        border-bottom: 1px solid var(--v3-pierre);
-        height: 72px;
-      }
-
-      .header-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1.5rem;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 1.5rem;
-        color: var(--v3-chene);
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      nav {
-        display: none;
-      }
-
-      @media (min-width: 768px) {
-        nav {
-          display: flex;
-          align-items: center;
-          gap: 2rem;
-        }
-      }
-
-      nav a {
-        font-family: 'Inter', sans-serif;
-        font-size: 1rem;
-        color: var(--v3-graphite);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      nav a:hover {
-        color: var(--v3-chene);
-      }
-
-      .cta-nav {
-        display: none;
-        background-color: var(--v3-chene);
-        color: var(--v3-ivoire) !important;
-        font-weight: 600;
-        padding: 0.625rem 1.25rem;
-        border-radius: 6px;
-        font-size: 1rem;
-        text-decoration: none;
-        transition: opacity 0.2s ease;
-      }
-
-      .cta-nav:hover {
-        opacity: 0.9;
-      }
-
-      @media (min-width: 768px) {
-        .cta-nav {
-          display: inline-block;
-        }
-      }
-
-      /* ── MENU HAMBURGER ── */
-      .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        padding: 0.25rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-      }
-
-      @media (min-width: 768px) {
-        .menu-toggle {
-          display: none;
-        }
-      }
-
-      .menu-toggle span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background-color: var(--v3-graphite);
-      }
-
-      .mobile-menu {
-        display: none;
-        position: fixed;
-        inset: 0;
-        background-color: var(--v3-fond);
-        z-index: 50;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
-      }
-
-      .mobile-menu.open {
-        display: flex;
-      }
-
-      .mobile-menu a {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 1.5rem;
-        color: var(--v3-graphite);
-        text-decoration: none;
-      }
-
-      .mobile-menu-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        background: none;
-        border: none;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--v3-graphite);
-      }
-
-      /* ── MAIN CONTENT ── */
-      main {
-        max-width: 760px;
-        margin: 0 auto;
-        padding: 4rem 1.5rem;
-      }
-
-      .page-label {
-        display: inline-block;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.75rem;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--v3-chene);
-        background-color: var(--v3-papier);
-        padding: 0.25rem 0.75rem;
-        border-radius: 4px;
-        margin-bottom: 1.5rem;
-      }
-
-      h1 {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: clamp(1.75rem, 4vw, 2.5rem);
-        color: var(--v3-graphite);
-        margin-bottom: 0.5rem;
-        line-height: 1.2;
-      }
-
-      .subtitle {
-        color: var(--v3-brun);
-        font-size: 1.05rem;
-        margin-bottom: 3rem;
-      }
-
-      h2 {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 1.25rem;
-        color: var(--v3-graphite);
-        margin-top: 2.5rem;
-        margin-bottom: 0.75rem;
-        border-left: 3px solid var(--v3-cuivre);
-        padding-left: 0.75rem;
-      }
-
-      p {
-        margin-bottom: 1rem;
-        color: var(--v3-graphite);
-      }
-
-      ul {
-        margin-left: 1.5rem;
-        margin-bottom: 1rem;
-      }
-
-      li {
-        margin-bottom: 0.4rem;
-        color: var(--v3-graphite);
-      }
-
-      a {
-        color: var(--v3-cuivre);
-        text-decoration: underline;
-      }
-
-      a:hover {
-        color: var(--v3-chene);
-      }
-
-      .last-update {
-        margin-top: 3rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid var(--v3-pierre);
-        font-size: 0.85rem;
-        color: var(--v3-chene);
-      }
-
-      /* ── FOOTER ── */
-      footer {
-        background-color: var(--v3-papier);
-        border-top: 1px solid var(--v3-pierre);
-        padding: 2.5rem 1.5rem;
-        text-align: center;
-      }
-
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
-      }
-
-      .footer-logo {
-        font-family: 'Playfair Display', Georgia, serif;
-        font-size: 1.25rem;
-        color: var(--v3-chene);
-        text-decoration: none;
-      }
-
-      .footer-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        font-size: 0.9rem;
-      }
-
-      .footer-links a {
-        color: var(--v3-brun);
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .footer-links a:hover {
-        color: var(--v3-cuivre);
-      }
-
-      .footer-copy {
-        font-size: 0.8rem;
-        color: var(--v3-chene);
-      }
-
-      :focus-visible {
-        outline: 2px solid var(--v3-cuivre);
-        outline-offset: 3px;
-      }
-    </style>
-<link href="/assets/css/cookies.css" rel="stylesheet"/>
-<link href="/styles/output.css" rel="stylesheet"/>
-</head>
-<body>
-<!-- ══ HEADER ══ -->
-<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
-<nav class="hidden md:flex items-center gap-7">
-<div class="relative group" data-dropdown="">
-<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
-              Catalogue
-              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-</a>
-<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
-<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
-</div>
-</div>
-</div>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
-</nav>
-<div class="hidden md:flex items-center gap-3">
-<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
-<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
-</div>
-<div class="md:hidden flex items-center gap-2">
-<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
-<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-</button>
-</div>
-</div>
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Confidentialité — L'établ'IA</title><meta name="description" content="Politique de confidentialité — L'établ'IA"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+<!-- HEADER PARTIAL — replace  with "" for root pages or "../" for produits/* -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
-<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
-<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
-<nav class="flex flex-col items-center gap-6 mb-10 text-center">
-<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
-<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
 </div>
-<div class="border-t border-pierre/30 w-32 my-3"></div>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
-</nav>
-<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
 </div>
-<!-- Menu mobile plein écran -->
-
-<!-- ══ MENU MOBILE ══ -->
-<div class="mobile-menu" id="mobile-menu">
-<button aria-label="Fermer le menu" class="mobile-menu-close" id="menu-close">✕</button>
-<a href="/">Accueil</a>
-<a href="/catalogue.html">Systèmes forgés</a>
-<a href="/a-propos/">À propos</a>
-<a href="/faq.html">FAQ</a>
-<a href="/contact/">Contact</a>
-</div>
-<!-- ══ CONTENU ══ -->
 <main>
-<span class="page-label">Données personnelles</span>
-<h1>Politique de confidentialité</h1>
-<p class="subtitle">Comment L'établ'IA collecte, utilise et protège vos données.</p>
-<h2>1. Responsable du traitement</h2>
-<p>
-<strong>L'établ'IA</strong> est une micro-entreprise française.<br/>
-        Responsable : Raphaël — <a href="mailto:contact@letablia.fr">contact@letablia.fr</a><br/>
-        TVA non applicable, art. 293B CGI.
-      </p>
-<h2>2. Données collectées</h2>
-<p>Lors de l'utilisation du formulaire de contact, nous collectons :</p>
-<ul>
-<li>Votre nom</li>
-<li>Votre adresse email</li>
-<li>L'objet de votre demande</li>
-<li>Votre message</li>
-</ul>
-<p>Aucune donnée supplémentaire (adresse postale, téléphone, données de paiement) n'est collectée via ce formulaire.</p>
-<h2>3. Finalité du traitement</h2>
-<p>Les données transmises via le formulaire de contact sont utilisées exclusivement pour :</p>
-<ul>
-<li>Répondre à votre demande ou question</li>
-<li>Vous accompagner dans le choix d'un système forgé adapté à votre activité</li>
-</ul>
-<p>Ces données ne sont pas utilisées à des fins commerciales ou marketing sans votre consentement explicite.</p>
-<h2>4. Durée de conservation</h2>
-<p>
-        Les messages reçus sont conservés pendant la durée nécessaire au traitement de votre demande,
-        puis archivés pour une durée maximale de <strong>3 ans</strong> à des fins de référence commerciale,
-        conformément aux recommandations de la CNIL.
-      </p>
-<h2>5. Destinataires des données</h2>
-<p>
-        Vos données sont transmises via le service <strong>Formspree</strong>
-        (prestataire tiers, politique de confidentialité disponible sur <a href="https://formspree.io/legal/privacy-policy" rel="noopener noreferrer" target="_blank">formspree.io</a>)
-        pour l'acheminement des messages. Aucune autre transmission à des tiers n'est effectuée.
-      </p>
-<h2>6. Vos droits (RGPD)</h2>
-<p>Conformément au Règlement Général sur la Protection des Données (UE) 2016/679, vous disposez des droits suivants :</p>
-<ul>
-<li><strong>Droit d'accès</strong> : obtenir une copie des données vous concernant</li>
-<li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
-<li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
-<li><strong>Droit à la limitation</strong> : limiter le traitement dans certains cas</li>
-<li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
-</ul>
-<p>
-        Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@letablia.fr">contact@letablia.fr</a>.<br/>
-        Réponse garantie sous <strong>30 jours</strong>. En cas de litige non résolu, vous pouvez saisir la
-        <a href="https://www.cnil.fr" rel="noopener noreferrer" target="_blank">CNIL</a>.
-      </p>
-<h2>7. Cookies et traceurs</h2>
-<p>
-        Le site letablia.fr n'utilise <strong>aucun cookie de traçage</strong> ou d'analyse de comportement
-        (Google Analytics, Meta Pixel, Hotjar, etc.). Aucun consentement cookie n'est requis à ce stade.
-      </p>
-<h2>8. Sécurité</h2>
-<p>
-        Les échanges avec letablia.fr sont protégés par HTTPS (chiffrement TLS).
-        Nous appliquons des mesures raisonnables pour protéger vos données contre tout accès non autorisé.
-      </p>
-<p class="last-update">Dernière mise à jour : mai 2026</p>
-</main>
-<!-- ══ FOOTER ══ -->
-<footer class="bg-ebene mt-12">
-<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
-<div class="text-center md:text-left">
-<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
-<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
-<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
-</ul>
-</div>
-</div>
-<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
-<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
-</div>
-</div>
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Politique de confidentialité</span></div>
+  </div>
+</section>
+<section style="padding:64px 0 96px;background:var(--lin)">
+  <div class="container-narrow">
+    <span class="tag-atelier">Mentions · Politique de confidentialité</span>
+    <h1 style="margin:18px 0;font-size:clamp(2.4rem,4.5vw,3.6rem);line-height:1.05">Politique de confidentialité.</h1>
+    <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.15rem;max-width:48ch">Vos données chez nous. Ce qu'on collecte, pourquoi, et comment on les protège — sans jargon RGPD inutile.</p>
+    <div style="margin-top:64px;display:flex;flex-direction:column;gap:48px;font-size:1rem;line-height:1.7;color:var(--ebene)">
+      <section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 01</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Notre politique en deux phrases</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p style='font-family:var(--ff-display);font-style:italic;font-size:1.2rem;color:var(--ebene);line-height:1.5'>On collecte le strict minimum pour vous vendre quelque chose et vous le livrer. On ne revend rien, on ne profile pas, on ne fait pas de tracking publicitaire.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 02</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Ce qu'on collecte</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><ul style='padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px'><li><strong>À l'achat</strong> : email, nom, adresse de facturation, numéro de TVA si renseigné.</li><li><strong>Au paiement</strong> : géré par Stripe, on n'enregistre pas de numéro de carte.</li><li><strong>Sur le site</strong> : aucun cookie tiers, aucun script de tracking publicitaire. Un seul cookie technique pour la session.</li><li><strong>Au support</strong> : votre email et le contenu de vos messages, conservés 12 mois.</li></ul></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 03</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Pourquoi</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Pour exécuter votre commande, vous livrer le produit, vous facturer (obligation légale 10 ans), vous fournir le support inclus, et vous envoyer la newsletter mensuelle si vous y avez consenti.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 04</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Vos droits</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Vous pouvez à tout moment demander : un export de vos données, leur correction, leur suppression (sauf factures, conservées 10 ans par obligation comptable). Écrivez à <a href='mailto:contact@letablia.fr' style='color:var(--chene)'>contact@letablia.fr</a>, on traite sous 7 jours.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 05</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Sous-traitants</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><ul style='padding-left:0;list-style:none;display:flex;flex-direction:column;gap:6px'><li><strong>Stripe</strong> (paiement) — Irlande</li><li><strong>Brevo</strong> (envoi des emails transactionnels) — France</li><li><strong>GitHub Pages</strong> (hébergement) — États-Unis (clauses contractuelles types)</li></ul></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 06</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Cookies</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Un seul cookie technique de session. Aucun cookie publicitaire, aucun cookie tiers, aucune mesure d'audience. Si vous bloquez les cookies, le site fonctionne normalement.</p></div>
+      </section>
+    </div>
+    <p style="margin-top:64px;font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.1em;border-top:1px dashed var(--chene-25);padding-top:24px">Dernière mise à jour : 04 mai 2026</p>
+  </div>
+</section>
+</main><footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2024</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en région lyonnaise.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2024–2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
 </footer>
-<script>
-      const toggle = document.getElementById('menu-toggle');
-      const menu = document.getElementById('mobile-menu');
-      const close = document.getElementById('menu-close');
-      if (toggle && menu && close) {
-        toggle.addEventListener('click', () => menu.classList.add('open'));
-        close.addEventListener('click', () => menu.classList.remove('open'));
-        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
-      }
-    </script>
-<script defer="" src="/assets/js/cookies.js"></script>
-<script defer="" src="/assets/js/burger-menu.js"></script>
-<script defer="" src="/assets/js/search-modal.js"></script>
-</body>
-</html>
+
+<script src="assets/js/letablia.js"></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+</body></html>

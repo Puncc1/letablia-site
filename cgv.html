@@ -1,274 +1,185 @@
-<!DOCTYPE html>
-
-<html lang="fr">
-<head>
-<meta charset="utf-8"/><!-- Typographies V4 -->
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Conditions Générales de Vente — L'établ'IA</title>
-<meta content="Conditions Générales de Vente de L'établ'IA — droit de rétractation, livraison, garanties, propriété intellectuelle." name="description"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<!-- Design System V3 -->
-<link href="/assets/css/cookies.css" rel="stylesheet"/>
-<link href="/styles/output.css" rel="stylesheet"/>
-</head>
-<body>
-<!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
-<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
-<nav class="hidden md:flex items-center gap-7">
-<div class="relative group" data-dropdown="">
-<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
-              Catalogue
-              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-</a>
-<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
-<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
-</div>
-</div>
-</div>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
-</nav>
-<div class="hidden md:flex items-center gap-3">
-<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
-<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
-</div>
-<div class="md:hidden flex items-center gap-2">
-<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
-<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-</button>
-</div>
-</div>
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>CGV — L'établ'IA</title><meta name="description" content="Conditions Générales de Vente — L'établ'IA"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+<!-- HEADER PARTIAL — replace  with "" for root pages or "../" for produits/* -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
-<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
-<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
-<nav class="flex flex-col items-center gap-6 mb-10 text-center">
-<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
-<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
 </div>
-<div class="border-t border-pierre/30 w-32 my-3"></div>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
-</nav>
-<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
 </div>
-<!-- Menu mobile plein écran -->
-
-<!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
 <main>
-<!-- ── HERO ── -->
-<section class="section-hero">
-<div class="container">
-<p class="breadcrumb">
-<a href="/">Accueil</a> › Conditions Générales de Vente
-          </p>
-<h1>Conditions Générales de Vente</h1>
-<p class="subtitle">L'établ'IA — Micro-entrepreneur • Économie numérique</p>
-</div>
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Conditions Générales de Vente</span></div>
+  </div>
 </section>
-<!-- ── CONTENU CGV ── -->
-<section class="section-legal-content">
-<div class="container">
-<p class="mise-a-jour">Dernière mise à jour : 4 mai 2026</p>
-<div class="legal-block">
-<h2>1. Objet et champ d'application</h2>
-<p>Les présentes conditions générales régissent la vente de contenus numériques (systèmes forgés, fichiers de configuration, documentation, guides d'intégration) fournis par L'établ'IA à titre de micro-entrepreneur.</p>
-<p>Ces conditions s'appliquent à tout client personne physique ou morale effectuant un achat sur le site letablia.fr. En procédant à l'achat, vous acceptez l'intégralité de ces conditions.</p>
-</div>
-<div class="legal-block">
-<h2>2. Nature des produits proposés</h2>
-<p>Les produits vendus sur letablia.fr sont des fichiers numériques téléchargeables (systèmes forgés, configurations moteur d'automatisation, guides d'implémentation) destinés à une utilisation professionnelle ou personnelle.</p>
-<p>Ces produits <strong>ne constituent pas un service SaaS</strong> et ne sont pas hébergés sur nos serveurs. Vous en recevez une copie pour usage personnel et non-exclusif.</p>
-</div>
-<div class="legal-block">
-<h2>3. Tarification et taxes</h2>
-<p>Les prix affichés sur le site sont exprimés en euros TTC (toutes taxes comprises). Les taxes applicables (TVA) sont calculées conformément à la réglementation européenne et gérées par notre partenaire de paiement LemonSqueezy, agissant en qualité de prestataire de services de paiement et responsable de la conformité fiscale.</p>
-<p>Le prix exact sera confirmé avant validation finale de votre commande.</p>
-</div>
-<div class="legal-block">
-<h2>4. Commande et validation</h2>
-<p>La commande est effectuée via notre formulaire en ligne. Vous recevrez une confirmation par email à l'adresse fournie lors de la commande.</p>
-<p>L'achat devient effectif dès validation du paiement et délivrance du lien de téléchargement par email.</p>
-</div>
-<div class="legal-block">
-<h2>5. Livraison et accès au produit</h2>
-<p><strong>Modalité de livraison</strong> : accès immédiat par lien de téléchargement envoyé par email automatique.</p>
-<p><strong>Délai</strong> : le lien est envoyé dans les 2 heures suivant la confirmation de paiement. En cas de délai anormal, veuillez contacter <a href="mailto:contact@letablia.fr">contact@letablia.fr</a>.</p>
-<p><strong>Conservation</strong> : le lien reste actif pendant 30 jours. Au-delà, contactez-nous pour un nouvel accès.</p>
-</div>
-<div class="legal-block legal-block-highlight">
-<h2>6. Droit de rétractation et exception pour contenu numérique</h2>
-<p>Conformément à l'article L.221-28, 13° du Code de la consommation, le droit de rétractation s'applique normalement sur 14 jours. <strong>Cependant, une exception légale s'applique au contenu numérique.</strong></p>
-<p>Vous avez le droit de vous rétracter dans un délai de 14 jours à compter de la date d'achat <strong>si et seulement si vous n'avez pas coché la case suivante</strong> :</p>
-<div style="background-color: #EFE8DC; border-left: 4px solid #8A7560; padding: 1rem 1.25rem; margin: 1rem 0; font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; line-height: 1.5;">
-              ☐ Je donne mon accord préalable exprès pour commencer l'exécution du contrat avant l'expiration du délai de rétractation de 14 jours. Je reconnais en conséquence que je ne pourrai pas exercer mon droit de rétractation après que l'accès au contenu numérique m'aura été fourni.
-            </div>
-<p><strong>Résumé légal</strong> :</p>
-<ul>
-<li><strong>Sans cocher la case</strong> : droit de rétractation valide 14 jours (avant téléchargement)</li>
-<li><strong>En cochant la case</strong> : renonciation au droit de rétractation (pas de remboursement après accès au produit)</li>
-</ul>
-<p>Pour exercer votre droit de rétractation avant téléchargement, envoyez un email à <a href="mailto:contact@letablia.fr">contact@letablia.fr</a> avec la mention « Demande de rétractation » dans les 14 jours. Le remboursement sera effectué dans les 14 jours suivant votre demande.</p>
-</div>
-<div class="legal-block">
-<h2>7. Garanties légales</h2>
-<p>L'établ'IA garantit que les produits vendus :</p>
-<ul>
-<li>Sont conformes à leur description publiée sur le site</li>
-<li>Sont exempts de virus ou code malveillant</li>
-<li>Sont compatibles avec moteur d'automatisation dans les versions mentionnées</li>
-</ul>
-<p>Les garanties légales de conformité et relatives aux vices cachés (articles L.217-4 à L.217-13 du Code de la consommation) s'appliquent intégralement.</p>
-</div>
-<div class="legal-block">
-<h2>8. Propriété intellectuelle et restrictions d'usage</h2>
-<p><strong>Licence accordée</strong> : vous recevez une licence personnelle, non-exclusive et incessible permettant l'utilisation du contenu acheté pour vos propres besoins professionnels ou personnels.</p>
-<p><strong>Restrictions explicites</strong> :</p>
-<ul>
-<li>Interdiction de revendre, louer, prêter ou distribuer le produit à tiers</li>
-<li>Interdiction de reproduire le produit au-delà de votre usage personnel</li>
-<li>Interdiction de modifier et republier le produit sous votre nom</li>
-<li>Interdiction d'extraire et d'utiliser le code ou la logique dans des produits commerciaux concurrents</li>
-</ul>
-<p><strong>Propriété</strong> : vous ne devenez propriétaire d'aucun droit de propriété intellectuelle. L'établ'IA conserve tous les droits.</p>
-</div>
-<div class="legal-block">
-<h2>9. Limites de responsabilité</h2>
-<p>Les résultats, bénéfices ou économies mentionnés dans les descriptions produit ou tutoriels sont des estimations basées sur des contextes d'utilisation standards. <strong>Ils ne constituent pas des promesses ou garanties de performance.</strong></p>
-<p>L'établ'IA ne peut être tenue responsable de :</p>
-<ul>
-<li>Modifications des services tiers (moteur d'automatisation, Google, OpenAI, etc.) affectant le fonctionnement des systèmes</li>
-<li>Mauvaise intégration ou mauvais usage du produit</li>
-<li>Perte de données ou interruption d'activité résultant de l'utilisation du produit</li>
-<li>Dommages indirects, pertes d'exploitation ou dommages punitifs</li>
-</ul>
-</div>
-<div class="legal-block">
-<h2>10. Politique de remboursement — « Satisfait ou Forgé »</h2>
-<p>Notre approche : l'artisan corrige d'abord, rembourse en dernier recours. Si vous rencontrez un problème, contactez-nous — nous interviendrons pour ajuster, expliquer ou re-livrer le produit.</p>
-<p>Un remboursement est possible si :</p>
-<ul>
-<li>Vous demandez la rétractation <strong>avant d'avoir téléchargé le produit</strong> ET sans avoir coché la case de consentement préalable</li>
-<li>Ou : la commande n'a pas pu être traitée correctement (erreur de paiement, doublon, etc.)</li>
-<li>Ou : après tentative de correction par notre équipe, le produit ne peut être rendu fonctionnel pour votre cas d'usage documenté</li>
-</ul>
-<p><strong>Processus</strong> : envoyez un email à <a href="mailto:contact@letablia.fr">contact@letablia.fr</a> avec le numéro de commande. Un remboursement sera effectué sous 14 jours via le mode de paiement initial.</p>
-</div>
-<div class="legal-block">
-<h2>11. Compatibilité et versions</h2>
-<p>Les systèmes proposés sont testés et documentés pour :</p>
-<ul>
-<li><strong>moteur d'automatisation</strong> : version stable actuelle et versions n-1 (sauf mention contraire dans la description produit)</li>
-<li><strong>Intégrations tierces</strong> : les APIs utilisées (messagerie électronique, OpenAI, messagerie d'équipe, etc.) à leur version actuelle</li>
-</ul>
-<p>Les évolutions des services tiers peuvent nécessiter des mises à jour du produit. L'établ'IA ne garantit pas une compatibilité perpétuelle.</p>
-</div>
-<div class="legal-block">
-<h2>12. Support et assistance</h2>
-<p>L'établ'IA fournit une assistance technique par email (<a href="mailto:contact@letablia.fr">contact@letablia.fr</a>) pour toute question d'intégration ou d'utilisation du produit acheté. Le délai de réponse est de 48 heures en jours ouvrables.</p>
-<p>Le support technique ne couvre pas les demandes d'intégration personnalisée ou de modifications du produit (consultez notre page de services pour ces besoins).</p>
-</div>
-<div class="legal-block">
-<h2>13. Données personnelles et confidentialité</h2>
-<p>Les données que vous fournissez lors de l'achat (email, prénom, commande) sont traitées conformément à notre <a href="/confidentialite/">Politique de confidentialité</a>. Consultez ce document pour connaître vos droits.</p>
-</div>
-<div class="legal-block">
-<h2>14. Loi applicable et juridiction</h2>
-<p>Les présentes conditions générales sont régies par le droit français.</p>
-<p>Tout litige résultant de l'interprétation ou l'exécution de ces conditions est soumis à la juridiction des tribunaux compétents du lieu du siège de l'établissement.</p>
-<p>Avant engagement de procédure, les parties conviennent de chercher une solution amiable par échange de correspondances.</p>
-</div>
-<div class="legal-block">
-<h2>15. Modification des conditions</h2>
-<p>L'établ'IA se réserve le droit de modifier les présentes conditions à tout moment. Les modifications s'appliquent aux achats futurs. Pour les achats passés, les conditions applicables sont celles qui existaient à la date de commande.</p>
-
-<h2>16. Produits forgés par contributeurs externes</h2>
-<p>Certains systèmes du catalogue L'établ'IA sont produits par des contributeurs externes (artisans francophones validés via notre programme contributeurs). Ces produits sont identifiés par la mention <em>« Forgé par [Nom contributeur] · validé par L'établ'IA »</em> sur leur fiche.</p>
-<p>Pour ces produits :</p>
-<ul>
-<li>L'établ'IA assure la <strong>distribution, le marketing, le support de premier niveau et la facturation</strong> via LemonSqueezy.</li>
-<li>Le contributeur assure la <strong>création, la maintenance technique et le support de second niveau</strong> de son système, sous engagement de réponse sous 72 h ouvrées et de maintien opérationnel 24 mois minimum.</li>
-<li>La politique <strong>« Satisfait ou Forgé »</strong> s'applique : tentative de correction documentée par le contributeur avant tout remboursement.</li>
-<li>L'établ'IA se réserve le droit de retirer un produit du catalogue avec préavis de 30 jours en cas de non-respect de la charte qualité ou de plaintes accumulées non traitées.</li>
-<li>L'acheteur reste protégé par les garanties légales applicables (articles L.217-4 et suivants du Code de la consommation), L'établ'IA agissant comme distributeur autorisé.</li>
-</ul>
-<p>Les conditions du programme contributeurs sont publiées sur <a href="/contributeurs/" class="text-chene hover:underline">letablia.fr/contributeurs</a>.</p>
-
-</div>
-<div class="legal-block" style="text-align: center; margin-top: 3rem;">
-<p><strong>Pour toute question</strong> : <a href="mailto:contact@letablia.fr">contact@letablia.fr</a></p>
-</div>
-</div>
+<section style="padding:64px 0 96px;background:var(--lin)">
+  <div class="container-narrow">
+    <span class="tag-atelier">Mentions · Conditions Générales de Vente</span>
+    <h1 style="margin:18px 0;font-size:clamp(2.4rem,4.5vw,3.6rem);line-height:1.05">Conditions Générales de Vente.</h1>
+    <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.15rem;max-width:48ch">Ce qui se passe quand vous achetez un système chez nous. Lecture rapide — l'essentiel tient en cinq points.</p>
+    <div style="margin-top:64px;display:flex;flex-direction:column;gap:48px;font-size:1rem;line-height:1.7;color:var(--ebene)">
+      <section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 01</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">En résumé</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><ul style='padding:0;list-style:none;display:flex;flex-direction:column;gap:8px'><li>✓ Paiement unique. Vous achetez, vous gardez.</li><li>✓ Vos fichiers sont à vous (licence permissive, pas de revente brute).</li><li>✓ 30 jours pour demander un remboursement, sans justifier.</li><li>✓ Support email inclus 30 jours après l'achat.</li><li>✓ Mises à jour offertes pendant un an.</li></ul></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 02</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Objet</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Les présentes Conditions Générales de Vente régissent les ventes effectuées entre L'établ'IA (le « Vendeur ») et toute personne physique ou morale (le « Client ») achetant un produit numérique sur letablia.fr.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 03</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Produits</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Les produits proposés sont des systèmes numériques téléchargeables : code source, documentation, modèles. Ils sont décrits sur leur fiche dédiée. Aucun produit n'est livré physiquement.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 04</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Prix</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Les prix sont indiqués en euros HT. La TVA française au taux de 20 % s'ajoute pour les particuliers et les entreprises sans numéro de TVA intracommunautaire valide. Les entreprises de l'UE avec un numéro de TVA valide bénéficient de l'autoliquidation.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 05</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Commande et livraison</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>La commande est validée après paiement. Un email contenant le lien de téléchargement est envoyé immédiatement (sous 5 minutes en pratique). Les fichiers restent disponibles pendant 12 mois minimum sur le compte client.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 06</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Droit de rétractation</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>L'article L221-28 du Code de la consommation prévoit que le droit de rétractation ne s'applique pas aux contenus numériques fournis sur un support immatériel dont l'exécution a commencé avec l'accord du consommateur. <strong>Nous renonçons à invoquer cette exception</strong> et offrons une garantie satisfait ou remboursé de 30 jours, sans justification.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 07</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Support et maintenance</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Chaque achat inclut un support email de 30 jours, et l'accès aux mises à jour pendant 12 mois. Au-delà, un support à l'heure peut être souscrit (50 € HT / heure).</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 08</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Responsabilité</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Le Vendeur s'engage à fournir des produits conformes à leur description. Sa responsabilité ne saurait excéder le prix payé pour le produit concerné. Le Client est responsable de l'usage qu'il fait du système et de la sauvegarde de ses propres données.</p></div>
+      </section><section>
+        <div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 09</span>
+          <h2 style="font-size:1.5rem;line-height:1.2;margin:0">Litiges</h2>
+        </div>
+        <div style="padding-left:36px;border-left:1px solid var(--chene-25)"><p>Le droit français s'applique. En cas de litige, une solution amiable sera recherchée avant toute action contentieuse. À défaut, les tribunaux de Lyon seront seuls compétents.</p></div>
+      </section>
+    </div>
+    <p style="margin-top:64px;font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.1em;border-top:1px dashed var(--chene-25);padding-top:24px">Dernière mise à jour : 04 mai 2026</p>
+  </div>
 </section>
-</main>
-<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
-<footer class="bg-ebene mt-12">
-<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
-<div class="text-center md:text-left">
-<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
-<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
-<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
-</ul>
-</div>
-</div>
-<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
-<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
-</div>
-</div>
+</main><footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2024</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en région lyonnaise.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2024–2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
 </footer>
-<!-- ── SCRIPT MENU MOBILE ── -->
-<script defer="" src="/assets/js/cookies.js"></script>
-<script defer="" src="/assets/js/burger-menu.js"></script>
-<script defer="" src="/assets/js/search-modal.js"></script>
-</body>
-</html>
+
+<script src="assets/js/letablia.js"></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+</body></html>

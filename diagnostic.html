@@ -1,253 +1,344 @@
-<!DOCTYPE html>
-
-<html lang="fr">
-<head>
-<meta charset="utf-8"/><!-- Typographies V4 -->
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Diagnostic gratuit — L'établ'IA · Trouvons le système qui vous convient</title>
-<meta content="Conditions Générales de Vente de L'établ'IA — droit de rétractation, livraison, garanties, propriété intellectuelle." name="description"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<!-- Design System V3 -->
-<link href="/assets/css/cookies.css" rel="stylesheet"/>
-<link href="/styles/output.css" rel="stylesheet"/>
-</head>
-<body>
-<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
-<nav class="hidden md:flex items-center gap-7">
-<div class="relative group" data-dropdown="">
-<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
-              Catalogue
-              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-</a>
-<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
-<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
-</div>
-</div>
-</div>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
-</nav>
-<div class="hidden md:flex items-center gap-3">
-<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
-<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
-</div>
-<div class="md:hidden flex items-center gap-2">
-<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
-<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-</button>
-</div>
-</div>
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Diagnostic gratuit — L'établ'IA</title><meta name="description" content="Quatre questions, deux minutes — on vous recommande le bon système."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+<!-- HEADER PARTIAL — replace  with "" for root pages or "../" for produits/* -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
-<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
-<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
-<nav class="flex flex-col items-center gap-6 mb-10 text-center">
-<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
-<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
 </div>
-<div class="border-t border-pierre/30 w-32 my-3"></div>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
-</nav>
-<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
 </div>
-<!-- Menu mobile plein écran -->
-
-<main class="bg-lin">
-<section class="section-hero py-20 md:py-24">
-<div class="container max-w-[760px] mx-auto px-4 md:px-8">
-<p class="font-body text-[14px] text-pierre uppercase tracking-[1px] mb-4">
-<a class="hover:text-chene" href="/">Accueil</a> › Diagnostic
-          </p>
-<h1 class="font-heading text-[42px] md:text-[56px] text-ebene leading-[1.0] mb-6">
-            Trouvons le système qui vous convient.
-          </h1>
-<p class="font-body text-lg md:text-xl text-pierre leading-[1.6]">
-            Un échange court, sans engagement. Vous décrivez votre besoin, je vous dis franchement si l'établ'IA peut vous aider, et lequel de nos systèmes forgés cadre — ou pas.
-          </p>
-</div>
+<main>
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Diagnostic</span></div>
+  </div>
 </section>
-<section class="py-16 md:py-20">
-<div class="container max-w-[760px] mx-auto px-4 md:px-8">
-<div class="bg-chene-6 rounded-[8px] p-8 mb-12">
-<h2 class="font-heading text-[28px] md:text-[32px] text-ebene mb-6">
-              Comment ça marche
-            </h2>
-<ol class="space-y-4">
-<li class="flex gap-4">
-<span class="font-mono text-[18px] text-chene font-semibold shrink-0">1.</span>
-<span class="font-body text-base text-ebene leading-[1.6]">Vous remplissez le formulaire ci-dessous : votre métier, la tâche répétitive, votre stack actuelle, votre volume.</span>
-</li>
-<li class="flex gap-4">
-<span class="font-mono text-[18px] text-chene font-semibold shrink-0">2.</span>
-<span class="font-body text-base text-ebene leading-[1.6]">Je réponds sous 48 h ouvrables : oui je peux et voici lequel, ou non et voici pourquoi.</span>
-</li>
-<li class="flex gap-4">
-<span class="font-mono text-[18px] text-chene font-semibold shrink-0">3.</span>
-<span class="font-body text-base text-ebene leading-[1.6]">Si oui, vous achetez le système ou demandez l'installation accompagnée à 15 €. Pas d'abonnement, pas de devis sur 3 pages.</span>
-</li>
-</ol>
-</div>
-<div class="bg-mousse-10 rounded-[8px] p-8 mb-12">
-<h2 class="font-heading text-[28px] md:text-[32px] text-ebene mb-6">
-              Ce que je vérifie pendant le diagnostic
-            </h2>
-<ul class="space-y-3">
-<li class="font-body text-base text-ebene leading-[1.6]">— Votre tâche est-elle réellement répétable ? (sinon ce n'est pas un système qu'il faut)</li>
-<li class="font-body text-base text-ebene leading-[1.6]">— Avez-vous accès aux services tiers nécessaires (plateforme e-commerce, messagerie électronique, etc.) ?</li>
-<li class="font-body text-base text-ebene leading-[1.6]">— Le volume justifie-t-il l'achat ? (en dessous de 5-10 occurrences par semaine, l'investissement n'est pas amorti)</li>
-<li class="font-body text-base text-ebene leading-[1.6]">— Le cas est-il dans notre catalogue actuel, ou faut-il forger sur mesure ?</li>
-</ul>
-</div>
 
-<!-- Formulaire de diagnostic -->
-<div class="bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8">
-<h2 class="font-heading text-[28px] md:text-[32px] text-ebene mb-6">Formulaire de diagnostic</h2>
-<form id="diagnostic-form" class="space-y-5" novalidate>
+<section style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal>
+      <span class="tag-atelier">Diagnostic gratuit · 2 min</span>
+      <h1 style="margin-top:18px;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05">On vous dit <em class="editorial">précisément</em> ce qu'il vous faut.</h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.3rem;margin-top:14px;max-width:48ch">Quatre questions. Une recommandation. Pas d'email obligatoire — vous repartez avec votre réponse.</p>
+    </div>
 
-  <div>
-    <label for="prenom" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre prénom <span class="text-mousse">*</span></label>
-    <input type="text" id="prenom" name="prenom" required class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition" placeholder="Marie">
+    <div id="diag-app" style="margin-top:64px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:48px;box-shadow:0 24px 48px -24px rgba(44,40,37,.18);position:relative" data-reveal data-reveal-delay="1">
+      <div style="position:absolute;top:-1px;right:-1px;width:64px;height:64px;background:var(--lin);border-left:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);clip-path:polygon(0 0,100% 0,100% 100%)"></div>
+      
+      <!-- Progress -->
+      <div id="diag-progress" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:32px">
+        <span id="diag-step-label" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">Étape 01 / 04</span>
+        <div style="flex:1;margin:0 20px;height:2px;background:var(--chene-15);position:relative;border-radius:1px"><div id="diag-bar" style="position:absolute;left:0;top:0;bottom:0;width:25%;background:var(--mousse);transition:width .3s ease"></div></div>
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">⌬</span>
+      </div>
+
+      <div id="diag-screen"></div>
+
+      <div id="diag-nav" style="margin-top:40px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;align-items:center">
+        <button id="diag-prev" class="btn btn-ghost" style="display:none">← Précédent</button>
+        <span id="diag-help" style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.95rem">Sélectionnez une réponse pour continuer</span>
+        <button id="diag-next" class="btn btn-primary" disabled style="opacity:.5;pointer-events:none">Continuer →</button>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;padding:24px 28px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);display:flex;gap:18px;align-items:flex-start" data-reveal>
+      <div style="font-family:var(--ff-display);font-size:2rem;color:var(--chene);line-height:1">⌘</div>
+      <div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Pourquoi c'est gratuit</div>
+        <p style="margin:0;color:var(--ebene-80);font-size:14px;line-height:1.55">Parce qu'on aime mieux dire « non, ce n'est pas pour vous » dès le départ que perdre votre temps. Le diagnostic ne stocke rien — vos réponses restent dans votre navigateur.</p>
+      </div>
+    </div>
   </div>
-
-  <div>
-    <label for="email" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre email <span class="text-mousse">*</span></label>
-    <input type="email" id="email" name="email" required class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition" placeholder="vous@exemple.fr">
+</section>
+</main><footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2024</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en région lyonnaise.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
   </div>
-
-  <div>
-    <label for="metier" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre métier <span class="text-mousse">*</span></label>
-    <input type="text" id="metier" name="metier" required class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition" placeholder="Coach business, freelance design, e-commerçant…">
+  <div class="le-footer-bottom">
+    <span>© 2024–2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
   </div>
+</footer>
 
-  <div>
-    <label for="tache" class="block font-body font-semibold text-[14px] text-ebene mb-2">La tâche répétitive qui vous mange du temps <span class="text-mousse">*</span></label>
-    <textarea id="tache" name="tache" required rows="4" class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition resize-y" placeholder="Décrivez en quelques phrases la tâche que vous aimeriez automatiser ou structurer."></textarea>
-  </div>
-
-  <div>
-    <label for="stack" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre stack actuelle</label>
-    <input type="text" id="stack" name="stack" class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition" placeholder="Plateforme e-commerce, tableur, prise de notes…">
-  </div>
-
-  <div>
-    <label for="volume" class="block font-body font-semibold text-[14px] text-ebene mb-2">Volume hebdomadaire estimé</label>
-    <select id="volume" name="volume" class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition">
-      <option value="">— Sélectionner —</option>
-      <option value="< 5">Moins de 5 / semaine</option>
-      <option value="5-10">5 à 10 / semaine</option>
-      <option value="10-30">10 à 30 / semaine</option>
-      <option value="30+">Plus de 30 / semaine</option>
-    </select>
-  </div>
-
-  <div>
-    <button type="submit" class="w-full md:w-auto bg-mousse text-lin font-semibold rounded-[6px] px-8 py-[14px] hover:opacity-90 transition">Envoyer le diagnostic</button>
-    <p class="font-body text-[13px] text-pierre mt-3">Réponse sous 48 h ouvrables · Aucun engagement · RGPD respecté</p>
-  </div>
-</form>
+<script src="assets/js/letablia.js"></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
 <script>
-  document.getElementById('diagnostic-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var f = e.target;
-    var prenom = f.prenom.value.trim();
-    var email = f.email.value.trim();
-    var metier = f.metier.value.trim();
-    var tache = f.tache.value.trim();
-    var stack = f.stack.value.trim();
-    var volume = f.volume.value.trim();
-    if(!prenom || !email || !metier || !tache){
-      alert('Merci de remplir les champs obligatoires (prénom, email, métier, tâche).');
+(function(){
+  const QUESTIONS = [
+    {
+      key:'metier',
+      title:"Quel est votre métier principal ?",
+      help:"Votre activité oriente la plupart des recommandations.",
+      options:[
+        {value:'e-commerce', label:"Je vends en ligne", sub:"Boutique e-commerce (Shopify, WooCommerce, etc.)"},
+        {value:'freelance', label:"Je suis indépendant", sub:"Conseil, services, création — solo ou agence"},
+        {value:'tpe-generaliste', label:"Je dirige une TPE", sub:"≤ 10 personnes, tous secteurs"},
+        {value:'autre', label:"Autre / pas encore sûr", sub:"On vous oriente quand même"}
+      ]
+    },
+    {
+      key:'douleur',
+      title:"Qu'est-ce qui vous coûte du temps en ce moment ?",
+      help:"On cherche le caillou dans la chaussure.",
+      options:[
+        {value:'commandes', label:"Suivre les commandes / le stock", sub:"Vérifier en permanence ce qui se passe"},
+        {value:'clients', label:"Relancer / fidéliser les clients", sub:"Avis, emails de suivi, prospection"},
+        {value:'admin', label:"L'administratif / la conformité", sub:"Facturation, trésorerie, sécurité"},
+        {value:'organisation', label:"M'organiser au quotidien", sub:"CRM, emails, documents"}
+      ]
+    },
+    {
+      key:'budget',
+      title:"Quel budget pour cette première pièce ?",
+      help:"Tout est en paiement unique. Pas d'abonnement.",
+      options:[
+        {value:'low', label:"≤ 19 €", sub:"Le micro-système qui résout un truc précis"},
+        {value:'mid', label:"20 – 49 €", sub:"Le standard de l'atelier"},
+        {value:'high', label:"50 € et +", sub:"Un pack complet (3 systèmes, –18€)"},
+        {value:'flex', label:"Pas de contrainte", sub:"Recommandez le plus pertinent"}
+      ]
+    },
+    {
+      key:'urgence',
+      title:"Vous voulez installer ça quand ?",
+      help:"Aucun engagement — c'est juste pour calibrer.",
+      options:[
+        {value:'now', label:"Cette semaine", sub:"J'ai mon mardi soir devant moi"},
+        {value:'soon', label:"Ce mois-ci", sub:"Je planifie, je teste"},
+        {value:'later', label:"Plus tard", sub:"Je regarde, je reviendrai"},
+        {value:'curious', label:"Je découvre", sub:"Pas de calendrier, juste curieux"}
+      ]
+    }
+  ];
+
+  let step = 0;
+  const answers = {};
+  const screen = document.getElementById('diag-screen');
+  const nav = document.getElementById('diag-nav');
+  const prev = document.getElementById('diag-prev');
+  const next = document.getElementById('diag-next');
+  const help = document.getElementById('diag-help');
+  const bar = document.getElementById('diag-bar');
+  const stepLbl = document.getElementById('diag-step-label');
+
+  function renderQ(){
+    const q = QUESTIONS[step];
+    stepLbl.textContent = 'Étape '+String(step+1).padStart(2,'0')+' / 04';
+    bar.style.width = ((step+1)/(QUESTIONS.length+1)*100)+'%';
+    help.textContent = q.help;
+    prev.style.display = step>0 ? '' : 'none';
+    
+    const sel = answers[q.key];
+    next.disabled = !sel;
+    next.style.opacity = sel ? 1 : .5;
+    next.style.pointerEvents = sel ? 'auto' : 'none';
+    next.textContent = step===QUESTIONS.length-1 ? 'Voir la recommandation →' : 'Continuer →';
+
+    screen.innerHTML = `
+      <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;margin-bottom:32px">${q.title}</h2>
+      <div style="display:flex;flex-direction:column;gap:12px">
+        ${q.options.map(o=>`
+          <label class="diag-opt-big" data-value="${o.value}" style="display:flex;align-items:flex-start;gap:14px;padding:18px 20px;background:var(--lin);border:1.5px solid ${sel===o.value?'var(--mousse)':'var(--chene-25)'};border-radius:var(--r-sm);cursor:pointer;transition:border .15s, background .15s;${sel===o.value?'background:var(--mousse-10);':''}">
+            <span style="width:20px;height:20px;border-radius:50%;border:1.5px solid ${sel===o.value?'var(--mousse)':'var(--chene)'};background:${sel===o.value?'var(--mousse)':'transparent'};flex-shrink:0;margin-top:3px;display:flex;align-items:center;justify-content:center">
+              ${sel===o.value?'<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>':''}
+            </span>
+            <div>
+              <div style="font-weight:600;font-size:16px;margin-bottom:4px">${o.label}</div>
+              <div style="color:var(--ebene-80);font-size:13px">${o.sub}</div>
+            </div>
+          </label>
+        `).join('')}
+      </div>
+    `;
+    screen.querySelectorAll('[data-value]').forEach(el=>{
+      el.addEventListener('click',()=>{
+        answers[q.key] = el.dataset.value;
+        renderQ();
+      });
+    });
+  }
+
+  function renderResult(){
+    stepLbl.textContent = 'Recommandation';
+    bar.style.width = '100%';
+    nav.style.display = 'none';
+
+    // Simple decision logic
+    const data = window.LE_DATA;
+    let recoSlugs = [];
+    if(answers.metier === 'e-commerce'){
+      recoSlugs = ['signal-de-vente','gardien-de-stock','collecteur-avis'];
+    } else if(answers.metier === 'freelance'){
+      recoSlugs = ['produit/mini-crm-notion','produit/relance-prospects','produit/agent-tri-email'];
+    } else if(answers.metier === 'tpe-generaliste'){
+      recoSlugs = ['produit/dashboard-tresorerie','produit/cyber-hygiene-tpe','produit/kit-facturation-2026'];
+    } else {
+      recoSlugs = ['signal-de-vente','produit/mini-crm-notion','produit/cyber-hygiene-tpe'];
+    }
+    
+    // Filter by budget if set
+    const buckets = {low:19, mid:49, high:9999};
+    if(answers.budget && buckets[answers.budget]){
+      const max = buckets[answers.budget];
+      const filtered = recoSlugs
+        .map(s=>(data?data.products.find(p=>p.slug===s):null))
+        .filter(p=>p && p.price <= max);
+      if(filtered.length>0) recoSlugs = filtered.map(p=>p.slug);
+    }
+
+    const products = recoSlugs.map(s=>data ? data.products.find(p=>p.slug===s) : null).filter(Boolean);
+    const FAMCLS = {automatisations:'automatiser',vendre:'vendre','tableaux-de-bord':'piloter',modeles:'produire','guides-formations':'securiser'};
+    const FAMLBL = {automatisations:'Automatiser',vendre:'Vendre','tableaux-de-bord':'Piloter',modeles:'Produire','guides-formations':'Sécuriser'};
+    
+    if(products.length === 0){
+      // fallback
+      screen.innerHTML = '<div style="padding:32px 0"><span class="tag-atelier">Honnête</span><h2 style="font-size:2rem;margin:14px 0 14px">On n\'a peut-être pas votre solution.</h2><p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.1rem;margin-bottom:24px">Avec ces réponses, aucune pièce de l\'atelier ne nous semble vraiment pertinente. Préférez écrire un mot — on vous répondra à la main.</p><a class="btn btn-mousse" href="contact.html">Nous écrire →</a></div>';
       return;
     }
-    var subject = 'Diagnostic — ' + metier;
-    var body = 'Bonjour,\n\nJe demande un diagnostic gratuit.\n\n'
-      + '— Prénom : ' + prenom + '\n'
-      + '— Email : ' + email + '\n'
-      + '— Métier : ' + metier + '\n'
-      + '— Tâche répétitive : ' + tache + '\n'
-      + (stack ? '— Stack actuelle : ' + stack + '\n' : '')
-      + (volume ? '— Volume hebdomadaire : ' + volume + '\n' : '')
-      + '\nMerci.';
-    window.location.href = 'mailto:diagnostic@letablia.fr?subject='
-      + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+
+    const profileLabel = {'e-commerce':'E-commerçant','freelance':'Freelance','tpe-generaliste':'TPE généraliste','autre':'Profil mixte'}[answers.metier] || 'Vous';
+
+    screen.innerHTML = `
+      <span class="tag-atelier">Notre recommandation</span>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.6rem);line-height:1.1;margin:14px 0 14px">Pour un <em class="editorial">${profileLabel.toLowerCase()}</em> qui veut ${({commandes:'suivre ses commandes',clients:'relancer ses clients',admin:'mettre l\'administratif au carré',organisation:'s\'organiser'})[answers.douleur]||'avancer'}.</h2>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.1rem;margin-bottom:32px">On vous suggère ${products.length} pièce${products.length>1?'s':''} de l'atelier. Commencez par la première — les autres viendront si elles sont utiles.</p>
+      
+      <div style="display:flex;flex-direction:column;gap:14px">
+        ${products.map((p,i)=>{
+          const fam = FAMCLS[p.family];
+          const lbl = FAMLBL[p.family];
+          return `<a href="produits/${p.slug.replace(/\//g,'-')}.html" class="card-produit fam-${fam}" style="display:grid;grid-template-columns:auto 1fr auto auto;gap:20px;align-items:center;padding:20px 24px">
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ ${String(i+1).padStart(2,'0')}<br/>${lbl}</div>
+            <div>
+              <h3 style="font-size:1.2rem;margin:0 0 4px">${p.title}</h3>
+              <p style="margin:0;color:var(--ebene-80);font-size:13px;line-height:1.45">${p.blurb}</p>
+            </div>
+            <div style="font-family:var(--ff-display);font-weight:700;font-size:1.6rem">${p.price}€</div>
+            <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          </a>`;
+        }).join('')}
+      </div>
+
+      <div style="margin-top:40px;padding:24px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;gap:18px;align-items:flex-start">
+        <div style="font-family:var(--ff-display);font-size:1.6rem;color:var(--chene);line-height:1">⌥</div>
+        <div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px">Pas convaincu ?</div>
+          <p style="margin:0 0 12px;color:var(--ebene-80);font-size:14px;line-height:1.55">Si la recommandation ne vous parle pas, écrivez-nous — on regarde votre cas.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <button onclick="step=0;Object.keys(answers).forEach(k=>delete answers[k]);document.getElementById('diag-nav').style.display='';renderQ()" class="btn btn-ghost" style="padding:10px 16px;font-size:13px">↻ Refaire le diagnostic</button>
+            <a href="contact.html" class="btn-link">Nous écrire →</a>
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  prev.addEventListener('click', ()=>{step=Math.max(0,step-1); renderQ();});
+  next.addEventListener('click', ()=>{
+    if(step < QUESTIONS.length-1){step++; renderQ();}
+    else { renderResult(); }
   });
-</script>
-</div>
-<div class="text-center mt-8">
-<p class="font-body text-[14px] text-pierre">
-              Ou allez voir directement le <a class="text-chene hover:underline" href="/catalogue.html">catalogue complet</a>.
-            </p>
-</div>
-</div>
-</section>
-</main><footer class="bg-ebene mt-12">
-<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
-<div class="text-center md:text-left">
-<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
-<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
-<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
-</ul>
-</div>
-</div>
-<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
-<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
-</div>
-</div>
-</footer>
-<!-- ── SCRIPT MENU MOBILE ── -->
-<script defer="" src="/assets/js/cookies.js"></script>
-<script defer="" src="/assets/js/burger-menu.js"></script>
-<script defer="" src="/assets/js/search-modal.js"></script>
-</body>
-</html>
+
+  // Expose for reset btn
+  window.step = step;
+  window.answers = answers;
+  window.renderQ = renderQ;
+
+  // Wait for data to load
+  function start(){renderQ();}
+  if(window.LE_DATA) start();
+  else setTimeout(start, 300);
+})();
+</script></body></html>

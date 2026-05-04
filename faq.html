@@ -1,251 +1,240 @@
-<!DOCTYPE html>
-
-<html lang="fr">
-<head>
-<meta charset="utf-8"/>
-<!-- Typographies V4 -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>FAQ — L'établ'IA</title>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="/styles/output.css" rel="stylesheet"/>
-<!-- Google Fonts : JetBrains Mono -->
-<!-- Design System V3 -->
-<link href="/assets/css/cookies.css" rel="stylesheet">
-</link></head>
-<body class="bg-lin font-body text-ebene">
-<!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
-<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
-<nav class="hidden md:flex items-center gap-7">
-<div class="relative group" data-dropdown="">
-<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
-              Catalogue
-              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-</a>
-<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
-<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
-</div>
-</div>
-</div>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
-</nav>
-<div class="hidden md:flex items-center gap-3">
-<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
-<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
-</div>
-<div class="md:hidden flex items-center gap-2">
-<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
-<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-</button>
-</div>
-</div>
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>FAQ — L'établ'IA</title><meta name="description" content="Questions fréquentes — achat, installation, support, code, philosophie."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+<!-- HEADER PARTIAL — replace  with "" for root pages or "../" for produits/* -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
 </header>
-<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
-<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
-<nav class="flex flex-col items-center gap-6 mb-10 text-center">
-<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
-<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
 </div>
-<div class="border-t border-pierre/30 w-32 my-3"></div>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
-</nav>
-<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
 </div>
-<!-- Menu mobile plein écran -->
-
-<!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
 <main>
-<!-- ──────────────────────────────────── SECTION 1 — EN-TÊTE ─────────────────────────── -->
-<section class="bg-lin pt-20 pb-12 px-4 md:pt-20 md:pb-12">
-<div class="max-w-[720px] mx-auto text-center">
-<h1 class="font-heading font-bold text-[28px] md:text-[36px] text-ebene leading-[1.2] mb-4">
-          Questions fréquentes
-        </h1>
-<p class="font-body text-lg text-ebene leading-[1.6]">
-          Tout ce que vous devez savoir avant de commander un système forgé.
-        </p>
-</div>
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">FAQ</span></div>
+  </div>
 </section>
-<!-- ─────────────────────────────── SECTION 2 — QUESTIONS-RÉPONSES ───────────────────── -->
-<section class="bg-lin pb-20 px-4 md:pb-20">
-<div class="max-w-[720px] mx-auto">
-<!-- Q1 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            Qu'est-ce qu'un système forgé ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            C'est un outil d'automatisation prêt à l'emploi. Vous recevez un fichier à importer dans moteur d'automatisation (une plateforme d'automatisation européenne) et un guide PDF pas-à-pas. Une fois installé, le système exécute automatiquement les tâches répétitives de votre métier : envoi d'emails, mise à jour de tableaux, suivi de prospects, etc.
-          </p>
-</div>
-<!-- Q2 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            J'ai besoin de compétences techniques ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            Non. Si vous savez copier-coller, vous savez installer un système forgé. Le guide illustré vous accompagne étape par étape. Et si vous bloquez, le support email est là pour vous aider.
-          </p>
-</div>
-<!-- Q3 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            Qu'est-ce que moteur d'automatisation ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            moteur d'automatisation est une plateforme d'automatisation européenne utilisée par plus de 60 000 entreprises. C'est l'outil qui fait tourner les systèmes forgés. Vous avez besoin d'un espace moteur d'automatisation pour utiliser nos produits — soit via moteur d'automatisation Cloud (à partir de 24 €/mois), soit sur votre propre serveur.
-          </p>
-</div>
-<!-- Q4 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            Le prix de moteur d'automatisation est-il inclus ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            Non. L'hébergement moteur d'automatisation est un coût récurrent séparé, comme un abonnement internet. Le prix du système forgé couvre le fichier d'automatisation, le guide d'installation et le support. On affiche ce coût de manière transparente avant l'achat.
-          </p>
-</div>
-<!-- Q5 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            Et si le système ne fonctionne pas ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            Chaque système est testé en conditions réelles avant sa mise en vente. Si malgré tout vous rencontrez un problème, le support email répond sous 48 heures. Et dans tous les cas, vous bénéficiez d'un politique « Satisfait ou Forgé » : on corrige avant de rembourser.
-          </p>
-</div>
-<!-- Q6 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            Comment fonctionne le remboursement ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            Envoyez un email à <a class="text-chene hover:underline" href="mailto:contact@letablia.fr" style="transition: color 0.2s ease">contact@letablia.fr</a> dans les 14 jours suivant votre achat. Aucune justification demandée. Remboursement intégral sous 5 jours ouvrables via LemonSqueezy.
-          </p>
-</div>
-<!-- Q7 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            L'IA va remplacer mon travail ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            Non. Le système exécute les tâches répétitives que vous n'avez pas envie de faire : relances, saisies, mises à jour. Vous restez décisionnaire. Vous gardez la main sur votre métier — le système vous libère du temps pour l'exercer.
-          </p>
-</div>
-<!-- Q8 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            Je peux modifier le système après l'achat ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            Oui. Le fichier JSON est importé dans votre propre espace moteur d'automatisation. Vous pouvez l'adapter, le dupliquer ou le modifier librement. Les personnalisations sur mesure ne sont pas couvertes par le support, mais le guide PDF vous aide à comprendre la structure du système.
-          </p>
-</div>
-<!-- Q9 -->
-<div>
-<p class="font-heading font-medium text-xl text-ebene border-b border-pierre py-4">
-            Comment je reçois mon achat ?
-          </p>
-<p class="font-body text-base text-ebene leading-[1.6] pt-3 pb-6">
-            Immédiatement. Après le paiement sur LemonSqueezy, vous recevez un email avec le lien de téléchargement. Le fichier JSON et le guide PDF sont disponibles tout de suite.
-          </p>
-</div>
-</div>
-</section>
-<!-- ───────────────────────────────────────── SECTION 3 — CTA ────────────────────────── -->
-<section class="bg-chene-6 py-16 px-4 md:py-16">
-<div class="max-w-[600px] mx-auto text-center">
-<h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] mb-6">
-          Vous avez une autre question ?
-        </h2>
-<div class="flex flex-col gap-3 md:flex-row md:justify-center md:gap-4">
-<!-- Bouton secondaire -->
-<a class="font-body font-semibold text-base text-chene border border-chene rounded-[6px] px-7 py-[14px] text-center hover:bg-chene-8 w-full md:w-auto" href="/contact.html" style="transition: color 0.2s ease">Contactez-nous</a>
-<!-- Bouton principal -->
-<a class="font-body font-semibold text-base text-lin bg-chene rounded-[6px] px-7 py-[14px] text-center hover:opacity-90 w-full md:w-auto" href="/catalogue.html">Voir les systèmes forgés</a>
-</div>
-</div>
-</section>
-</main>
-<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
-<footer class="bg-ebene mt-12">
-<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
-<div class="text-center md:text-left">
-<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
-<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
-<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
-</ul>
-</div>
-</div>
-<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
-<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
-</div>
-</div>
-</footer>
-<script>
-    var toggle = document.getElementById('menu-toggle');
-    var close  = document.getElementById('menu-close');
-    var menu   = document.getElementById('mobile-menu');
+<section style="padding:64px 0 96px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Foire aux questions</span>
+      <h1 style="margin:18px 0;font-size:clamp(2.4rem,5vw,4rem);line-height:1.05">Questions <em class="editorial">fréquentes</em>.</h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.2rem;max-width:38ch;margin:14px auto 0">Si la vôtre n'y est pas, écrivez-nous — on lit, on répond, et on ajoute la question si elle revient.</p>
+    </div>
+    
+    <div style="margin-top:64px;display:flex;flex-direction:column;gap:48px">
+      <section data-reveal>
+        <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:24px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 01</span>
+          <h2 style="font-size:1.8rem;line-height:1">Achat & paiement</h2>
+          <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+        </div>
+        <div>
+          <details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>C'est vraiment sans abonnement ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Oui. Vous achetez un système une fois, et vous le gardez. Aucune carte n'est rebitée. Aucune relance commerciale automatique. Vous payez 39 € pour le Carnet Forge ? Vous payez 39 €, point.</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Quels moyens de paiement acceptez-vous ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Carte bancaire (Stripe), virement SEPA pour les commandes pro avec facture, et PayPal en backup. Pour les achats >100 €, on peut faire un échelonné en 3× sans frais.</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Est-ce que je reçois une facture ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Oui, automatique, en PDF, avec votre numéro de TVA si vous l'avez renseigné. La société existe (SIRET dans les mentions légales).</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Et si je veux annuler ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Garantie 30 jours sans poser de questions. Vous écrivez, on rembourse. C'est arrivé deux fois cette année.</p>
+          </details>
+        </div>
+      </section><section data-reveal>
+        <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:24px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 02</span>
+          <h2 style="font-size:1.8rem;line-height:1">Installation & support</h2>
+          <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+        </div>
+        <div>
+          <details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Je ne suis pas développeur, c'est pour moi ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Si vous savez naviguer dans les paramètres de votre boutique en ligne, copier-coller un bout de code, et suivre des instructions illustrées, oui. Si ce n'est pas votre cas, on propose une option « installation à votre place » pour 49 € en plus.</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Combien de temps prend l'installation ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Entre 20 minutes et 1 heure pour la plupart des systèmes. Le plus long, le Pack Cyber-Hygiène, demande environ 2 heures réparties sur quelques jours (audit puis mise en œuvre).</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Vous proposez du support ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">30 jours de support email inclus avec chaque achat. On répond généralement dans la journée ouvrée. Au-delà, on peut prendre des forfaits ponctuels (50 € l'heure).</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Si la plateforme change ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">On maintient nos systèmes à jour pendant un an minimum. Vous recevez les mises à jour par email automatiquement.</p>
+          </details>
+        </div>
+      </section><section data-reveal>
+        <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:24px">
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 03</span>
+          <h2 style="font-size:1.8rem;line-height:1">Le code, l'outil, vous</h2>
+          <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+        </div>
+        <div>
+          <details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Je peux modifier le code ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Oui — c'est même encouragé. Le code est commenté, lisible, et il vous appartient. Si vous l'améliorez, on serait curieux de voir.</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Le code est-il open-source ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Pas complètement. Le code est livré sous une licence permissive (vous l'utilisez, le modifiez, le redistribuez à votre équipe), mais vous ne pouvez pas le revendre tel quel.</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Vous prenez des projets sur mesure ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Rarement. On préfère que les besoins atypiques deviennent des produits du catalogue. Si votre cas est très spécifique, écrivez-nous — on regarde.</p>
+          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
+            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+              <span>Et l'IA dans tout ça ?</span>
+              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
+            </summary>
+            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">On utilise l'IA quand ça résout vraiment un problème — par exemple pour catégoriser des emails, ou rédiger un brouillon. On évite de la coller partout pour faire moderne.</p>
+          </details>
+        </div>
+      </section>
+    </div>
 
-    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
-    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
-  </script>
-<script defer="" src="/assets/js/cookies.js"></script>
-<script defer="" src="/assets/js/burger-menu.js"></script>
-<script defer="" src="/assets/js/search-modal.js"></script>
-</body>
-</html>
+    <div data-reveal style="margin-top:80px;text-align:center;padding:40px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md)">
+      <h3 style="font-size:1.6rem">Votre question n'y est pas ?</h3>
+      <p style="color:var(--ebene-80);max-width:42ch;margin:12px auto 24px">Écrivez-nous. On répond, à la main, dans la journée ouvrée.</p>
+      <a class="btn btn-primary" href="contact.html">Nous écrire →</a>
+    </div>
+  </div>
+</section>
+
+<style>details[open] summary span:last-child{transform:rotate(45deg)}summary::-webkit-details-marker{display:none}</style>
+</main><footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2024</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en région lyonnaise.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2024–2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+</body></html>

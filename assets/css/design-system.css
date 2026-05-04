@@ -1,6 +1,0 @@
-/* ─────────────────────────────────────────────────────────
-   Design System V3 — Alias pour compatibilité arrière
-   Importe base.css qui contient tous les styles partagés
-   ───────────────────────────────────────────────────────── */
-
-@import url('./base.css');

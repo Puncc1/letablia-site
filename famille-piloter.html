@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Famille Piloter — L'établ'IA</title>
+<meta name="description" content="Voir, comprendre, décider. 1 systèmes dans cette famille." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/letablia.css" />
+<link rel="stylesheet" href="assets/css/search.css" />
+
+</head>
+<body>
+<!-- HEADER PARTIAL — replace  with "" for root pages or "../" for produits/* -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<section style="padding:80px 0 40px;background:var(--lin);border-bottom:1px solid var(--chene-25)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <a href="catalogue.html">Catalogue</a> <span class="sep"></span> <span class="current">Piloter</span></div>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:end;margin-top:48px" class="fam-head">
+      <div data-reveal>
+        <span class="tag-atelier" style="color:var(--lapis)">Famille · Piloter</span>
+        <div style="display:flex;align-items:flex-start;gap:24px;margin-top:18px">
+          <div style="font-family:var(--ff-display);font-size:5rem;color:var(--lapis);line-height:.9;font-weight:700">◈</div>
+          <div>
+            <h1 style="font-size:clamp(2.4rem,4.5vw,4rem);line-height:1">Piloter.</h1>
+            <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.3rem;margin-top:10px">— Voir, comprendre, décider.</p>
+          </div>
+        </div>
+      </div>
+      <div data-reveal data-reveal-delay="1">
+        <div style="border-left:1px solid var(--chene-25);padding-left:32px">
+          <p style="color:var(--ebene-80);font-size:1.05rem;line-height:1.65">Voir et décider. 1 système dans cette famille — Dashboard Trésorerie TPE.</p>
+          <div class="cote" style="margin-top:24px"><span>De 39€</span> <span class="cote-line"></span> <span>à 39€</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:64px 0;background:var(--lin)">
+  <div class="container">
+    <div class="cote" style="margin-bottom:32px"><span>1 système</span> <span class="cote-line"></span> <span>famille piloter</span></div>
+    <div class="etabli-board">
+      <a class="card-produit fam-piloter" href="produits/produit-dashboard-tresorerie.html">
+    <div class="num">№ 01 · Piloter</div>
+    <h3>Dashboard Trésorerie TPE</h3>
+    <div class="blurb">Vue claire de votre trésorerie, mise à jour quotidienne.</div>
+    <div class="tools"><span class="tool">Tableur en ligne</span></div>
+    <div class="meta">
+      <div class="price">39€</div>
+      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+    </div>
+  </a>
+    </div>
+  </div>
+</section>
+
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:32px">
+      <div>
+        <span class="tag-atelier">Autres familles</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Voir aussi.</h2>
+      </div>
+      <a class="btn-link" href="catalogue.html">Tout le catalogue →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px" class="other-fam">
+      <a href="famille-automatiser.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--bronze);line-height:1">⌬</div>
+        <h3 style="font-size:1.25rem">Automatiser</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Connecter, déclencher, transmettre.</p>
+      </a><a href="famille-vendre.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--cuivre);line-height:1">◊</div>
+        <h3 style="font-size:1.25rem">Vendre</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Convertir, relancer, fidéliser.</p>
+      </a><a href="famille-produire.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--argile);line-height:1">▣</div>
+        <h3 style="font-size:1.25rem">Produire</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Modèles, trames, gabarits prêts.</p>
+      </a><a href="famille-securiser.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--sauge);line-height:1">△</div>
+        <h3 style="font-size:1.25rem">Sécuriser</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Conformité, cyber, sérénité.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>@media (max-width:880px){.fam-head{grid-template-columns:1fr !important}.other-fam{grid-template-columns:1fr 1fr !important}}</style>
+
+</main>
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2024</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en région lyonnaise.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2024–2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script>
+fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!-- HEADER PARTIAL — replace {{ROOT}} with "" for root pages or "../" for produits/* -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="{{ROOT}}index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="{{ROOT}}catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="{{ROOT}}famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="{{ROOT}}famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="{{ROOT}}famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="{{ROOT}}famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="{{ROOT}}famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="{{ROOT}}catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="{{ROOT}}diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="{{ROOT}}a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="{{ROOT}}faq.html">FAQ</a>
+      <a data-nav="contact.html" href="{{ROOT}}contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="{{ROOT}}diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="{{ROOT}}catalogue.html">Catalogue</a>
+  <a href="{{ROOT}}famille-automatiser.html">— Automatiser</a>
+  <a href="{{ROOT}}famille-vendre.html">— Vendre</a>
+  <a href="{{ROOT}}famille-piloter.html">— Piloter</a>
+  <a href="{{ROOT}}famille-produire.html">— Produire</a>
+  <a href="{{ROOT}}famille-securiser.html">— Sécuriser</a>
+  <a href="{{ROOT}}diagnostic.html">Diagnostic</a>
+  <a href="{{ROOT}}a-propos.html">L'atelier</a>
+  <a href="{{ROOT}}faq.html">FAQ</a>
+  <a href="{{ROOT}}contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>

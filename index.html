@@ -1,600 +1,935 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8"/>
-<!-- Typographies V4 -->
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><!-- Typographies V4 -->
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>L'établ'IA — Forgé pour votre métier</title>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="/styles/output.css" rel="stylesheet"/>
-<!-- Google Fonts : JetBrains Mono -->
-<!-- Design System V3 -->
-<link href="/assets/css/cookies.css" rel="stylesheet"/>
-</head>
-<body class="bg-lin font-body text-ebene">
-<!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
-<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
-<nav class="hidden md:flex items-center gap-7">
-<div class="relative group" data-dropdown="">
-<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
-              Catalogue
-              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
-</a>
-<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
-<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
-</div>
-</div>
-</div>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
-<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
-</nav>
-<div class="hidden md:flex items-center gap-3">
-<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
-<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
-</div>
-<div class="md:hidden flex items-center gap-2">
-<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
-<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
-</button>
-<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-<span class="block w-6 h-[2px] bg-ebene"></span>
-</button>
-</div>
-</div>
-</header>
-<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
-<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
-<nav class="flex flex-col items-center gap-6 mb-10 text-center">
-<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
-<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
-<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
-<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
-<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
-<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
-</div>
-<div class="border-t border-pierre/30 w-32 my-3"></div>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
-<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
-</nav>
-<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
-</div>
-<!-- Menu mobile plein écran -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>L'établ'IA — L'atelier d'artisan numérique</title>
+<meta name="description" content="Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/letablia.css" />
+<link rel="stylesheet" href="assets/css/search.css" />
+<style>
+/* ============ HOME — styles spécifiques ================== */
 
-<!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+/* HERO ----------------------------------------------------- */
+.hero{
+  position:relative;padding:64px 0 96px;
+  background:var(--lin);
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:end;
+}
+.hero-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:48px;padding-bottom:14px;border-bottom:1px solid var(--chene-25);
+}
+.hero-meta .left,.hero-meta .right{
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--chene);
+}
+.hero-meta .center{
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.2em;color:var(--chene);
+  display:flex;gap:10px;align-items:center;
+}
+.hero-meta .center::before,
+.hero-meta .center::after{content:"";width:24px;height:1px;background:var(--chene-25)}
+
+.hero h1{
+  font-size:clamp(3rem,7vw,6rem);line-height:.95;margin-bottom:32px;
+  font-weight:600;
+}
+.hero h1 .hand{
+  font-family:var(--ff-hand);font-weight:500;color:var(--chene);
+  font-size:.9em;display:inline-block;transform:rotate(-2deg);
+}
+.hero h1 em{font-family:var(--ff-display);font-style:italic;color:var(--chene)}
+.hero-lede{
+  font-size:1.2rem;line-height:1.55;color:var(--ebene-80);
+  max-width:48ch;margin-bottom:32px;
+}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-cta .btn{padding:16px 26px}
+.hero-cta .note{
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+  letter-spacing:.08em;
+}
+
+/* Hero illustration : "fiche d'atelier" */
+.fiche-atelier{
+  background:var(--parchemin);
+  border:1px solid var(--chene-25);
+  border-radius:var(--r-sm);
+  padding:32px 28px;
+  position:relative;
+  box-shadow:
+    0 1px 0 var(--chene-25),
+    16px 16px 0 -4px var(--kraft),
+    16px 16px 0 -3px var(--chene-25);
+  transform:rotate(.6deg);
+}
+.fiche-atelier::before{
+  content:"";position:absolute;left:-1px;top:36px;width:14px;height:14px;
+  border-radius:50%;background:var(--lin);
+  border:1px solid var(--chene-25);
+  box-shadow:inset 1px 1px 2px rgba(0,0,0,.1);
+  transform:translateX(-50%);
+}
+.fiche-tampon{
+  position:absolute;top:24px;right:-12px;
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;
+  color:var(--mousse);text-transform:uppercase;
+  border:2px solid var(--mousse);padding:6px 10px;
+  transform:rotate(8deg);
+  background:rgba(255,255,255,.4);
+}
+.fiche-num{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;
+  color:var(--chene);text-transform:uppercase;margin-bottom:18px;
+  padding-bottom:12px;border-bottom:1px dashed var(--chene-25);
+}
+.fiche-titre{
+  font-family:var(--ff-display);font-size:1.6rem;font-weight:600;
+  margin-bottom:8px;line-height:1.15;
+}
+.fiche-soustitre{
+  font-family:var(--ff-display);font-style:italic;color:var(--chene);
+  margin-bottom:24px;font-size:.95rem;
+}
+.fiche-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px}
+.fiche-list li{
+  display:flex;align-items:flex-start;gap:10px;font-size:14px;
+  list-style:none;padding:0;color:var(--ebene);line-height:1.5;
+}
+.fiche-list li::before{
+  content:"";width:6px;height:6px;background:var(--chene);
+  margin-top:8px;flex-shrink:0;
+  clip-path:polygon(50% 0,100% 100%,0 100%);
+}
+.fiche-cote{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  padding-top:18px;border-top:1px dashed var(--chene-25);
+}
+.fiche-cote .label{
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;
+  color:var(--chene);text-transform:uppercase;
+}
+.fiche-cote .price{
+  font-family:var(--ff-display);font-weight:700;font-size:2rem;
+  color:var(--ebene);
+}
+.fiche-cote .price small{
+  font-family:var(--ff-mono);font-size:.7rem;color:var(--chene);
+  font-weight:400;letter-spacing:.08em;display:block;text-align:right;
+}
+
+/* Croquis flottant arrière-plan hero */
+.hero-croquis{
+  position:absolute;right:-80px;top:80px;width:320px;height:320px;
+  opacity:.07;pointer-events:none;
+}
+
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .fiche-atelier{max-width:480px;margin:0 auto}
+}
+
+/* === Marquee maison === */
+.marquee-home .marquee-item{font-size:14px}
+
+/* MANIFESTO ------------------------------------------------- */
+.manifesto{padding:96px 0;background:var(--kraft);position:relative}
+.manifesto::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:var(--encre);
+}
+.manif-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:48px;gap:32px;flex-wrap:wrap;
+}
+.manif-head h2{font-size:clamp(2rem,4vw,3rem);max-width:14ch}
+.manif-head p{
+  font-family:var(--ff-display);font-style:italic;color:var(--chene);
+  font-size:1.1rem;max-width:36ch;
+}
+
+.manif-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid var(--chene-25);
+  border-left:1px solid var(--chene-25);
+}
+.manif-cell{
+  border-right:1px solid var(--chene-25);
+  border-bottom:1px solid var(--chene-25);
+  padding:36px 32px;background:var(--kraft);
+  position:relative;
+}
+.manif-cell .num{
+  position:absolute;top:14px;right:18px;
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+  letter-spacing:.1em;
+}
+.manif-cell h3{
+  font-size:1.4rem;margin-bottom:14px;line-height:1.2;
+}
+.manif-cell p{color:var(--ebene-80);font-size:15px;line-height:1.6}
+.manif-cell .symbol{
+  font-family:var(--ff-display);font-size:2rem;
+  color:var(--chene);margin-bottom:14px;line-height:1;
+}
+@media (max-width:880px){
+  .manif-grid{grid-template-columns:1fr}
+}
+
+/* L'ÉTABLI - sélection produits ------------------------------ */
+.etabli{padding:96px 0;background:var(--lin)}
+.etabli-head{
+  display:grid;grid-template-columns:1fr auto;align-items:end;
+  gap:32px;margin-bottom:56px;
+}
+.etabli-head h2{font-size:clamp(2.2rem,4vw,3.2rem);max-width:18ch}
+.etabli-head h2 em{color:var(--chene);font-style:italic}
+.etabli-head .switcher{
+  display:flex;background:var(--parchemin);border:1px solid var(--chene-25);
+  border-radius:var(--r-sm);padding:4px;
+}
+.etabli-head .switcher button{
+  background:none;border:none;cursor:pointer;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;
+  color:var(--chene);padding:8px 14px;border-radius:3px;
+  text-transform:uppercase;
+}
+.etabli-head .switcher button.active{
+  background:var(--ebene);color:var(--lin);
+}
+.etabli-board{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:18px;
+  position:relative;
+}
+.etabli-board::before,
+.etabli-board::after{
+  content:"";position:absolute;left:0;right:0;height:1px;
+  background:var(--chene-25);
+}
+.etabli-board::before{top:-20px}
+.etabli-board::after{bottom:-20px}
+@media (max-width:1000px){.etabli-board{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.etabli-board{grid-template-columns:1fr}}
+
+.etabli-foot{
+  margin-top:60px;display:flex;justify-content:center;
+}
+
+/* PERSONAS -------------------------------------------------- */
+.personas{padding:96px 0;background:var(--encre);color:var(--lin);position:relative;overflow:hidden}
+.personas::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:3px;
+  background:repeating-linear-gradient(90deg,var(--chene) 0 16px,transparent 16px 32px);
+}
+.personas h2{color:var(--lin);font-size:clamp(2rem,4vw,3rem);max-width:20ch}
+.personas .lede{color:var(--pierre);font-size:1.1rem;max-width:48ch;margin:14px 0 56px}
+.personas-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border-top:1px solid rgba(184,175,166,.2);
+}
+.persona{
+  border-right:1px solid rgba(184,175,166,.2);
+  border-bottom:1px solid rgba(184,175,166,.2);
+  padding:36px 28px;
+  display:flex;flex-direction:column;gap:16px;
+  text-decoration:none;color:var(--lin);position:relative;
+  transition:background .25s;
+}
+.persona:last-child{border-right:none}
+.persona:hover{background:rgba(255,255,255,.03)}
+.persona .num{font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em}
+.persona h3{color:var(--lin);font-size:1.6rem}
+.persona .role{font-family:var(--ff-display);font-style:italic;color:var(--pierre)}
+.persona p{color:var(--pierre);font-size:14px;line-height:1.6;flex:1}
+.persona .arr{
+  width:36px;height:36px;border-radius:50%;
+  background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;
+  align-self:flex-start;margin-top:auto;color:var(--chene);
+  transition:background .2s, transform .25s;
+}
+.persona:hover .arr{background:var(--chene);color:var(--encre);transform:translateX(4px)}
+@media (max-width:880px){
+  .personas-grid{grid-template-columns:1fr}
+  .persona{border-right:none}
+}
+
+/* DIAGNOSTIC TEASER ----------------------------------------- */
+.diag{padding:96px 0;background:var(--kraft-2);position:relative}
+.diag-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+}
+.diag h2{font-size:clamp(2rem,4vw,3rem);max-width:14ch}
+.diag h2 em{color:var(--chene);font-style:italic}
+.diag p{color:var(--ebene-80);font-size:1.1rem;line-height:1.65;margin:18px 0 32px}
+.diag-mockup{
+  background:var(--parchemin);
+  border:1px solid var(--chene-25);
+  padding:28px;border-radius:var(--r-sm);
+  position:relative;
+  box-shadow:0 24px 48px -24px rgba(44,40,37,.25);
+}
+.diag-mockup .ear{
+  position:absolute;top:-1px;right:-1px;width:64px;height:64px;
+  background:var(--lin);
+  border-left:1px solid var(--chene-25);
+  border-bottom:1px solid var(--chene-25);
+  clip-path:polygon(0 0,100% 0,100% 100%);
+}
+.diag-mockup .ear::after{
+  content:"";position:absolute;top:0;right:0;width:64px;height:64px;
+  background:linear-gradient(225deg,transparent 49.5%,var(--chene-25) 50%,transparent 51%);
+}
+.diag-mockup .step{
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+  letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px;
+}
+.diag-mockup h3{font-size:1.4rem;margin-bottom:24px;line-height:1.2}
+.diag-q{
+  display:flex;flex-direction:column;gap:10px;
+}
+.diag-opt{
+  border:1px solid var(--chene-25);padding:14px 16px;
+  border-radius:var(--r-sm);font-size:14px;background:var(--lin);
+  display:flex;align-items:center;gap:12px;cursor:pointer;
+  transition:border .15s, background .15s;
+}
+.diag-opt:hover{border-color:var(--mousse)}
+.diag-opt.checked{border-color:var(--mousse);background:var(--mousse-10)}
+.diag-opt .check{
+  width:18px;height:18px;border:1.5px solid var(--chene);border-radius:3px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.diag-opt.checked .check{background:var(--mousse);border-color:var(--mousse);color:white}
+.diag-mockup .progress{
+  height:3px;background:var(--chene-15);margin-top:18px;border-radius:2px;overflow:hidden;
+}
+.diag-mockup .progress span{display:block;height:100%;background:var(--mousse);width:33%}
+
+@media (max-width:880px){.diag-grid{grid-template-columns:1fr;gap:32px}}
+
+/* TARIFICATION mini-bandeau ---------------------------------- */
+.prix-band{padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-25)}
+.prix-band-grid{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:0;
+  border:1px solid var(--chene-25);
+}
+.prix-cell{
+  padding:32px 28px;border-right:1px solid var(--chene-25);
+  display:flex;flex-direction:column;gap:10px;
+}
+.prix-cell:last-child{border-right:none}
+.prix-cell .label{
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+  letter-spacing:.14em;text-transform:uppercase;
+}
+.prix-cell .val{font-family:var(--ff-display);font-size:2rem;font-weight:600;color:var(--ebene);line-height:1}
+.prix-cell .desc{color:var(--ebene-80);font-size:14px;line-height:1.5}
+.prix-cell.intro{background:var(--parchemin)}
+.prix-cell.intro h3{font-size:1.3rem;margin-bottom:8px}
+@media (max-width:880px){
+  .prix-band-grid{grid-template-columns:1fr 1fr;border-right:1px solid var(--chene-25)}
+  .prix-cell:nth-child(odd){border-right:1px solid var(--chene-25)}
+  .prix-cell:nth-child(even){border-right:none}
+}
+
+/* TÉMOIGNAGES ----------------------------------------------- */
+.temoignages{padding:96px 0;background:var(--parchemin)}
+.temoignages h2{
+  font-size:clamp(2rem,4vw,3rem);max-width:18ch;margin-bottom:14px;
+}
+.temoignages .lede{
+  font-family:var(--ff-display);font-style:italic;color:var(--chene);
+  font-size:1.1rem;margin-bottom:48px;
+}
+.temo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.temo{
+  background:var(--lin);
+  border:1px solid var(--chene-25);
+  padding:28px;border-radius:var(--r-sm);
+  display:flex;flex-direction:column;gap:18px;
+  position:relative;
+}
+.temo::before{
+  content:"\201C";
+  position:absolute;top:-14px;left:18px;
+  font-family:var(--ff-display);font-size:5rem;color:var(--chene);
+  line-height:1;font-weight:700;
+  background:var(--parchemin);padding:0 8px;
+}
+.temo q{
+  quotes:none;font-family:var(--ff-display);font-size:1.05rem;
+  line-height:1.55;color:var(--ebene);font-style:italic;
+}
+.temo q::before,.temo q::after{content:""}
+.temo .who{
+  display:flex;align-items:center;gap:12px;
+  padding-top:18px;border-top:1px dashed var(--chene-25);
+}
+.temo .avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--chene);color:var(--lin);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-display);font-weight:600;font-size:1.1rem;flex-shrink:0;
+}
+.temo .name{font-weight:600;font-size:14px}
+.temo .role{font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.1em}
+@media (max-width:1000px){.temo-grid{grid-template-columns:1fr}}
+
+/* JOURNAL DE BORD ------------------------------------------- */
+.journal{padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)}
+.journal-head{display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:48px}
+.journal-head h2{font-size:clamp(2rem,4vw,3rem);max-width:16ch}
+.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--chene-25)}
+.j-entry{
+  padding:28px 24px;border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);
+  display:flex;flex-direction:column;gap:14px;background:var(--kraft);
+}
+.j-entry:last-child{border-right:none}
+.j-entry .date{
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;
+  display:flex;justify-content:space-between;
+}
+.j-entry .date .tag{color:var(--ebene)}
+.j-entry h3{font-size:1.25rem;line-height:1.25}
+.j-entry p{color:var(--ebene-80);font-size:14px;line-height:1.55}
+@media (max-width:880px){.journal-grid{grid-template-columns:1fr}.j-entry{border-right:none}}
+
+/* CTA FINAL ------------------------------------------------- */
+.cta-final{padding:120px 0;background:var(--encre);color:var(--lin);position:relative;overflow:hidden;text-align:center}
+.cta-final::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:6px;
+  background:repeating-linear-gradient(90deg,var(--chene) 0 16px,transparent 16px 32px);
+}
+.cta-final h2{
+  color:var(--lin);font-size:clamp(2.6rem,6vw,5rem);
+  font-weight:600;line-height:1.05;margin-bottom:24px;
+}
+.cta-final h2 .hand{font-family:var(--ff-hand);color:var(--chene);font-weight:500;font-size:.95em}
+.cta-final p{color:var(--pierre);font-size:1.2rem;max-width:46ch;margin:0 auto 40px}
+.cta-final .btn{font-size:16px;padding:18px 32px}
+.cta-final .signature{
+  margin-top:80px;font-family:var(--ff-hand);font-size:1.6rem;color:var(--chene);
+  display:flex;justify-content:center;align-items:center;gap:14px;
+}
+.cta-final .signature::before,.cta-final .signature::after{
+  content:"";width:40px;height:1px;background:var(--chene-25);
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════ HEADER ════════════════ -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2024</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Search overlay -->
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════ HERO ════════════════ -->
 <main>
-<!-- ─────────────────────────────────── SECTION 1 — HERO ─────────────────────────────── -->
-<section class="bg-lin py-20 px-4 md:py-20">
-<div class="max-w-[720px] mx-auto text-center">
-<!-- Logotype texte -->
-<p class="font-display text-2xl text-chene mb-1">L'établ'IA</p>
-<p class="font-display text-xl text-chene mb-8">
-            Forgé pour votre métier
-          </p>
-<!-- Titre H1 -->
-<h1 class="font-heading font-bold text-4xl md:text-[40px] text-ebene leading-[1.2] mb-4">
-            Des systèmes digitaux prêts à poser<br class="hidden md:block"/>
-            pour les petites entreprises.
-          </h1>
-<!-- Sous-titre -->
-<p class="font-body text-lg text-ebene leading-[1.6] mb-8">
-            Automatisations, IA, systèmes prêts à poser, tableaux de bord et guides opérationnels —
-            conçus pour récupérer du temps sans recruter une agence.
-          </p>
-<!-- CTA principal -->
-<div class="flex flex-col gap-3 md:flex-row md:justify-center md:gap-4">
-<a class="block md:inline-block w-full md:w-auto text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/catalogue.html">Trouver mon système</a>
-<a class="block md:inline-block w-full md:w-auto text-center bg-transparent text-ebene border-2 border-ebene font-semibold text-base rounded-[6px] px-7 py-[14px] hover:bg-ebene hover:text-lin" href="/catalogue.html" style="transition: all 0.2s ease">Voir les produits</a>
-</div>
-<p class="font-body text-[13px] text-pierre leading-[1.6] mt-4">Paiement unique · Guides inclus · Accompagnement personnalisé · Produits testés</p>
-</div>
+<section class="hero">
+  <div class="container">
+    <div class="hero-meta">
+      <span class="left">Atelier № 1 · Région lyonnaise</span>
+      <span class="center">L'établ'<strong style="color:var(--ebene)">IA</strong></span>
+      <span class="right">Édition mai 2026</span>
+    </div>
+
+    <div class="hero-grid">
+      <div data-reveal>
+        <span class="tag-atelier">Manifeste</span>
+        <h1 style="margin-top:24px">
+          Des outils qui <em>tiennent</em>,<br/>
+          <span class="hand">faits à la main</span><br/>
+          pour des gens qui bossent.
+        </h1>
+        <p class="hero-lede">
+          On fabrique des petits systèmes numériques utiles. Un par besoin. 
+          Sans abonnement gonflé, sans onboarding qui dure trois semaines, 
+          sans roadmap qui promet la lune.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="diagnostic.html">
+            Faire un diagnostic — 2 min
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="catalogue.html">Voir l'atelier</a>
+          <span class="note">— ou tapez « / » pour chercher</span>
+        </div>
+      </div>
+
+      <!-- Fiche produit, comme une fiche d'atelier épinglée -->
+      <div data-reveal data-reveal-delay="2">
+        <div class="fiche-atelier">
+          <span class="fiche-tampon">№ 04 · Vendu</span>
+          <div class="fiche-num">
+            <span>Fiche d'atelier · 2026.04</span>
+            <span>Vendre</span>
+          </div>
+          <div class="fiche-titre">Le Collecteur d'Avis</div>
+          <div class="fiche-soustitre">— pour boutique en ligne</div>
+          <ul class="fiche-list">
+            <li>Détecte chaque commande livrée et déclenche l'envoi.</li>
+            <li>Email pré-rédigé, ton calibré, lien direct.</li>
+            <li>Tableau de bord propre, exportable.</li>
+          </ul>
+          <div class="fiche-cote">
+            <div>
+              <span class="label">Prix d'atelier</span>
+              <div style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.85rem;margin-top:4px">paiement unique</div>
+            </div>
+            <div>
+              <div class="price">29 €
+                <small>HT · sans abonnement</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- ──────────────────────────────── SECTION 2 — RÉSULTATS CHIFFRÉS ──────────────────── -->
-<section class="bg-ebene py-12 px-4 md:py-12">
-<div class="max-w-[1200px] mx-auto">
-<div class="flex flex-col gap-6 md:flex-row md:gap-0 md:justify-between">
-<!-- Bloc 1 -->
-<div class="text-center md:flex-1">
-<p class="font-display text-[36px] md:text-[48px] text-chene leading-[1.0]">
-                4h
-              </p>
-<p class="font-body text-[14px] text-pierre leading-[1.6] mt-2">
-                récupérées par semaine en moyenne
-              </p>
+
+<!-- ════════════════ MARQUEE ════════════════ -->
+<div class="marquee marquee-home">
+  <div class="marquee-track">
+    <span class="marquee-item">Faits à la main</span>
+    <span class="marquee-item">Sans abonnement</span>
+    <span class="marquee-item">Code lisible, ouvert</span>
+    <span class="marquee-item">11 systèmes au catalogue</span>
+    <span class="marquee-item">Pour TPE, freelances, e-commerçants</span>
+    <span class="marquee-item">Garantie 30 jours</span>
+    <span class="marquee-item">Faits à la main</span>
+    <span class="marquee-item">Sans abonnement</span>
+    <span class="marquee-item">Code lisible, ouvert</span>
+    <span class="marquee-item">11 systèmes au catalogue</span>
+    <span class="marquee-item">Pour TPE, freelances, e-commerçants</span>
+    <span class="marquee-item">Garantie 30 jours</span>
+  </div>
 </div>
-<!-- Bloc 2 -->
-<div class="text-center md:flex-1">
-<p class="font-display text-[36px] md:text-[48px] text-chene leading-[1.0]">
-                3 étapes
-              </p>
-<p class="font-body text-[14px] text-pierre leading-[1.6] mt-2">
-                pour installer un système forgé
-              </p>
-</div>
-<!-- Bloc 3 -->
-<div class="text-center md:flex-1">
-<p class="font-display text-[36px] md:text-[48px] text-chene leading-[1.0]">
-                14 jours
-              </p>
-<p class="font-body text-[14px] text-pierre leading-[1.6] mt-2">
-                « Satisfait ou Forgé » : on corrige avant de rembourser
-              </p>
-</div>
-</div>
-</div>
+
+<!-- ════════════════ MANIFESTO ════════════════ -->
+<section class="manifesto">
+  <div class="container">
+    <div class="manif-head" data-reveal>
+      <h2>Trois <em class="editorial">règles d'atelier</em>.</h2>
+      <p>On les a écrites au mur, on les lit le matin. C'est le contrat qu'on a avec vous.</p>
+    </div>
+
+    <div class="manif-grid">
+      <div class="manif-cell" data-reveal>
+        <span class="num">№ 01</span>
+        <div class="symbol">⌬</div>
+        <h3>Un outil par besoin.</h3>
+        <p>Pas de plateforme tout-en-un. Vous achetez ce qu'il vous faut, vous l'installez, ça marche. La modularité a un prix : la lisibilité.</p>
+      </div>
+      <div class="manif-cell" data-reveal data-reveal-delay="1">
+        <span class="num">№ 02</span>
+        <div class="symbol">◇</div>
+        <h3>Le code est à vous.</h3>
+        <p>Vous achetez, vous récupérez les fichiers. Pas de hosting captif, pas de clé d'API qui expire chez nous. Vous changez de prestataire ? Vos systèmes restent.</p>
+      </div>
+      <div class="manif-cell" data-reveal data-reveal-delay="2">
+        <span class="num">№ 03</span>
+        <div class="symbol">▲</div>
+        <h3>On dit non, souvent.</h3>
+        <p>Si votre besoin n'est pas notre métier, on le dit. On vous oriente vers quelqu'un de meilleur. Le but n'est pas de vous vendre — c'est de résoudre.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- ─────────────────── SECTION 2BIS — CHOISISSEZ VOTRE PROBLÈME ──────────────────── -->
-<section class="bg-lin py-20 px-4 md:py-20">
-<div class="max-w-[1200px] mx-auto">
-<h2 class="font-heading font-bold text-3xl md:text-[32px] text-ebene leading-[1.2] text-center mb-3">
-            Quel est votre problème ?
-          </h2>
-<p class="font-body text-lg text-ebene leading-[1.6] text-center mb-12 max-w-[720px] mx-auto">
-            Chaque système forgé répond à une douleur précise. Choisissez celle qui vous parle le plus.
-          </p>
-<div class="v3-problems-grid">
-<a class="v3-problem-card" href="/catalogue.html#agents-ia">
-<span class="v3-problem-icon"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="16" rx="2" width="20" x="2" y="4"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
-              Je perds du temps dans mes emails
-            </a>
-<a class="v3-problem-card" href="/catalogue.html#vente-crm">
-<span class="v3-problem-icon"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.07 11a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3 .18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 7.91a16 16 0 0 0 5.91 5.91l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 14.92z"></path><path d="M14.05 2a9 9 0 0 1 8 7.94"></path><path d="M14.05 6A5 5 0 0 1 18 10"></path></svg></span>
-              J'oublie mes relances prospects
-            </a>
-<a class="v3-problem-card" href="/catalogue.html#vente-crm">
-<span class="v3-problem-icon"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
-              Je veux mieux suivre mes clients
-            </a>
-<a class="v3-problem-card" href="/catalogue.html#productivite">
-<span class="v3-problem-icon"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="18" y1="20" y2="10"></line><line x1="12" x2="12" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="14"></line></svg></span>
-              Je veux un tableau de bord simple
-            </a>
-<a class="v3-problem-card" href="/catalogue.html#marketing">
-<span class="v3-problem-icon"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg></span>
-              Je veux publier plus régulièrement
-            </a>
-<a class="v3-problem-card" href="/catalogue.html#productivite">
-<span class="v3-problem-icon"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path><polyline points="14 2 14 8 20 8"></polyline><path d="m9 15 2 2 4-4"></path></svg></span>
-              Je veux me préparer pour 2026
-            </a>
-<a class="v3-problem-card" href="/catalogue.html#agents-ia">
-<span class="v3-problem-icon"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"></path><path d="M5 3v4"></path><path d="M19 17v4"></path><path d="M3 5h4"></path><path d="M17 19h4"></path></svg></span>
-              Je veux utiliser l'IA concrètement
-            </a>
-</div>
-</div>
+
+<!-- ════════════════ ÉTABLI - PRODUITS ════════════════ -->
+<section class="etabli">
+  <div class="container">
+    <div class="etabli-head" data-reveal>
+      <h2>L'<em>établi</em>, ce mois-ci.</h2>
+      <div class="switcher" role="tablist">
+        <button class="active" data-tab="best">Best-sellers</button>
+        <button data-tab="recent">Récents</button>
+        <button data-tab="all">Tout</button>
+      </div>
+    </div>
+
+    <div class="cote" style="margin-bottom:32px">
+      <span>11 systèmes</span>
+      <span class="cote-line"></span>
+      <span>de 9 à 49 €</span>
+      <span class="cote-line"></span>
+      <span>3 packs économiques</span>
+    </div>
+
+    <div class="etabli-board" data-board>
+      <!-- Hydraté par JS -->
+    </div>
+
+    <div class="etabli-foot">
+      <a class="btn btn-ghost" href="catalogue.html">
+        Voir les 11 systèmes
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
 </section>
-<!-- ────────────────────────────── SECTION 3 — IDENTIFICATION MÉTIER ─────────────────── -->
-<section class="bg-lin py-20 px-4 md:py-20" id="catalogue">
-<div class="max-w-[1200px] mx-auto">
-<!-- En-tête de section -->
-<h2 class="font-heading font-bold text-3xl md:text-[32px] text-ebene leading-[1.2] text-center mb-4">
-            Forgé pour votre métier
-          </h2>
-<p class="font-body text-lg text-ebene leading-[1.6] text-center mb-12 max-w-[720px] mx-auto">
-            Chaque système forgé est conçu pour un métier précis. Trouvez celui
-            qui correspond à votre quotidien.
-          </p>
-<!-- Grille 5 cartes — 6 colonnes virtuelles pour centrer la 2e ligne -->
-<div class="grid grid-cols-1 gap-4 md:grid-cols-6 md:gap-6">
-<!-- Carte 1 — IA Métier -->
-<article class="md:col-span-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                IA Métier
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Un assistant invisible qui répond, rédige et trie — pendant que
-                vous travaillez.
-              </p>
-<a class="font-body font-semibold text-base text-chene hover:underline mt-auto" href="/catalogue.html#agents-ia" style="transition: color 0.2s ease">Mettre mon assistant IA au travail</a>
-</article>
-<!-- Carte 2 — Marketing & Réseaux sociaux -->
-<article class="md:col-span-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Marketing &amp; Réseaux sociaux
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Vos publications partent à l'heure. Vos séquences email tournent
-                toutes seules.
-              </p>
-<a class="font-body font-semibold text-base text-chene hover:underline mt-auto" href="/catalogue.html#marketing" style="transition: color 0.2s ease">Automatiser ma communication</a>
-</article>
-<!-- Carte 3 — Vente & CRM -->
-<article class="md:col-span-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Vente &amp; CRM
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Zéro relance oubliée. Chaque prospect suivi au bon moment.
-              </p>
-<a class="font-body font-semibold text-base text-chene hover:underline mt-auto" href="/catalogue.html#vente-crm" style="transition: color 0.2s ease">Organiser mon suivi commercial</a>
-</article>
-<!-- Carte 4 — Productivité & Ops (2e ligne, décalée d'1 colonne pour centrer) -->
-<article class="md:col-span-2 md:col-start-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Productivité &amp; Ops
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Les tâches administratives que vous repoussez chaque semaine se
-                font enfin seules.
-              </p>
-<a class="font-body font-semibold text-base text-chene hover:underline mt-auto" href="/catalogue.html#productivite" style="transition: color 0.2s ease">Simplifier mes opérations internes</a>
-</article>
-<!-- Carte 5 — Scraping & Veille -->
-<article class="md:col-span-2 bg-pierre-10 border border-pierre rounded-[6px] p-6 md:p-6 flex flex-col">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Scraping &amp; Veille
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6] mb-4">
-                Votre veille tourne en continu. Vous ne lisez que ce qui compte.
-              </p>
-<a class="font-body font-semibold text-base text-chene hover:underline mt-auto" href="/catalogue.html#veille" style="transition: color 0.2s ease">Lancer ma veille automatique</a>
-</article>
-</div>
-</div>
+
+<!-- ════════════════ PERSONAS ════════════════ -->
+<section class="personas">
+  <div class="container">
+    <div data-reveal>
+      <span class="tag-atelier" style="color:var(--chene)">Pour qui c'est</span>
+      <h2 style="margin-top:18px">On parle <em class="editorial" style="color:var(--chene)">votre langue</em>, pas celle des SaaS.</h2>
+      <p class="lede">Trois profils, trois étagères. Trouvez la vôtre — ou faites le diagnostic, on vous oriente.</p>
+    </div>
+
+    <div class="personas-grid">
+      <a class="persona" href="famille-vendre.html" data-reveal>
+        <span class="num">№ 01 · Étagère vendre</span>
+        <h3>E-commerçant</h3>
+        <span class="role">— boutique en ligne</span>
+        <p>Vous vendez en ligne, vous voulez voir les commandes en direct, surveiller le stock, collecter des avis. On a quatre systèmes pour vous.</p>
+        <div class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      </a>
+      <a class="persona" href="famille-produire.html" data-reveal data-reveal-delay="1">
+        <span class="num">№ 02 · Étagère produire</span>
+        <h3>Freelance</h3>
+        <span class="role">— solo ou agence</span>
+        <p>CRM léger, relances prospects, tri d'emails. Trois pièces qui s'imbriquent — ou qu'on prend séparément. Pack à 119 € au lieu de 137.</p>
+        <div class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      </a>
+      <a class="persona" href="famille-securiser.html" data-reveal data-reveal-delay="2">
+        <span class="num">№ 03 · Étagère sécuriser</span>
+        <h3>TPE généraliste</h3>
+        <span class="role">— coach, consultant, formateur</span>
+        <p>Trésorerie sous contrôle, facturation électronique 2026, hygiène cyber. Le pack TPE à 99 € fait le tour en une journée.</p>
+        <div class="arr"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      </a>
+    </div>
+  </div>
 </section>
-<!-- SECTION PERSONAS V4 -->
-<section class="py-16 md:py-20 bg-chene-6">
-<div class="max-w-[1200px] mx-auto px-4 md:px-8">
-<div class="text-center mb-12">
-<p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">PAR PROFIL</p>
-<h2 class="font-heading text-[32px] md:text-[44px] text-ebene leading-[1.1]">Vous êtes…</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-<a class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group" href="/catalogue.html?cible=e-commerce">
-<p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">E-COMMERÇANT</p>
-<h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">plateforme e-commerce · plateforme e-commerce</h3>
-<p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">Notification commande, alerte stock, séquence post-achat, collecte d'avis.</p>
-<span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">5 systèmes pour vous →</span>
-</a>
-<a class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group" href="/catalogue.html?cible=freelance">
-<p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">FREELANCE</p>
-<h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Solo · Agence</h3>
-<p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">CRM application de prise de notes, relances prospects, tri d'emails, carnet de bord.</p>
-<span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">4 systèmes pour vous →</span>
-</a>
-<a class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group" href="/catalogue.html?cible=tpe-generaliste">
-<p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">TPE GÉNÉRALISTE</p>
-<h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Coach · Formateur · Consultant</h3>
-<p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">Dashboard trésorerie, kit facturation 2026, pack cyber-hygiène.</p>
-<span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">3 systèmes pour vous →</span>
-</a>
-</div>
-</div>
+
+<!-- ════════════════ DIAGNOSTIC TEASER ════════════════ -->
+<section class="diag">
+  <div class="container">
+    <div class="diag-grid">
+      <div data-reveal>
+        <span class="tag-atelier">Le bon outil</span>
+        <h2 style="margin-top:18px">Vous savez ce qui <em>cloche</em>.<br/>Pas forcément ce qu'il faut.</h2>
+        <p>Quatre questions, deux minutes. On vous renvoie une recommandation — un système, un pack, ou un « non, pas pour vous ». C'est gratuit, sans email obligatoire.</p>
+        <a class="btn btn-mousse" href="diagnostic.html">
+          Faire le diagnostic
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div data-reveal data-reveal-delay="2">
+        <div class="diag-mockup">
+          <div class="ear"></div>
+          <div class="step">Étape 02 / 04</div>
+          <h3>Quel est votre métier principal ?</h3>
+          <div class="diag-q">
+            <label class="diag-opt">
+              <span class="check"></span>
+              Je vends en ligne (boutique e-commerce)
+            </label>
+            <label class="diag-opt checked">
+              <span class="check">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg>
+              </span>
+              Je suis indépendant (services, conseil, création)
+            </label>
+            <label class="diag-opt">
+              <span class="check"></span>
+              Je dirige une TPE (≤ 10 personnes)
+            </label>
+            <label class="diag-opt">
+              <span class="check"></span>
+              Autre / pas encore sûr
+            </label>
+          </div>
+          <div class="progress"><span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- ──────────────────── SECTION 3BIS — FAMILLES DE SYSTÈMES ──────────────────── -->
-<section class="py-20 px-4 md:py-20" style="background:#E9DDC8;">
-<div class="max-w-[1200px] mx-auto">
-<!-- En-tête -->
-<h2 class="font-heading font-bold text-3xl md:text-[32px] text-ebene leading-[1.2] text-center mb-4">
-            Les familles de systèmes
-          </h2>
-<p class="font-body text-lg text-ebene leading-[1.6] text-center mb-12 max-w-[720px] mx-auto">
-            5 gammes de systèmes forgés, chacune centrée sur un enjeu précis.
-            Explorez celle qui vous correspond.
-          </p>
-<!-- Grille 5 familles V3 — taxonomie par verbe métier -->
-<div class="v3-families-grid">
-<!-- Famille 1 — Automatiser -->
-<a class="v3-family-card" href="/produits/automatisations/">
-<span aria-hidden="true" class="v3-family-icon"><svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg></span>
-<h3 class="v3-family-title">Automatiser</h3>
-<p class="v3-family-tagline">Emails, relances, SAV, veille, reporting</p>
-</a>
-<!-- Famille 2 — Vendre -->
-<a class="v3-family-card" href="/produits/vendre/">
-<span aria-hidden="true" class="v3-family-icon"><svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg></span>
-<h3 class="v3-family-title">Vendre</h3>
-<p class="v3-family-tagline">CRM, prospection, contenu, propositions</p>
-</a>
-<!-- Famille 3 — Piloter -->
-<a class="v3-family-card" href="/produits/tableaux-de-bord/">
-<span aria-hidden="true" class="v3-family-icon"><svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg></span>
-<h3 class="v3-family-title">Piloter</h3>
-<p class="v3-family-tagline">Trésorerie, CA, objectifs, marge, temps</p>
-</a>
-<!-- Famille 4 — Produire -->
-<a class="v3-family-card" href="/produits/modeles/">
-<span aria-hidden="true" class="v3-family-icon"><svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg></span>
-<h3 class="v3-family-title">Produire</h3>
-<p class="v3-family-tagline">Projets, onboarding, livraison, docs</p>
-</a>
-<!-- Famille 5 — Sécuriser -->
-<a class="v3-family-card" href="/produits/guides-formations/">
-<span aria-hidden="true" class="v3-family-icon"><svg fill="none" height="36" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="36" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></span>
-<h3 class="v3-family-title">Sécuriser</h3>
-<p class="v3-family-tagline">Facturation électronique, RGPD léger, cyber</p>
-</a>
-</div>
-</div>
+
+<!-- ════════════════ TARIFICATION ════════════════ -->
+<section class="prix-band">
+  <div class="container">
+    <div data-reveal style="margin-bottom:32px">
+      <span class="tag-atelier">Comment on fait payer</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.6rem,3vw,2.4rem);max-width:24ch">Quatre tarifs, pas plus. Tout est marqué sur l'étiquette.</h2>
+    </div>
+    <div class="prix-band-grid" data-reveal>
+      <div class="prix-cell intro">
+        <span class="label">Modèle</span>
+        <h3>Paiement unique</h3>
+        <p class="desc">Vous achetez le système une fois, vous le gardez. Pas d'abonnement, pas de SaaS captif, pas de hausse en silence.</p>
+      </div>
+      <div class="prix-cell">
+        <span class="label">À partir de</span>
+        <span class="val">9 €</span>
+        <span class="desc">Le micro-système (alerte commande)</span>
+      </div>
+      <div class="prix-cell">
+        <span class="label">Le standard</span>
+        <span class="val">29–49 €</span>
+        <span class="desc">Système complet avec doc et support 30 jours</span>
+      </div>
+      <div class="prix-cell">
+        <span class="label">Bundle</span>
+        <span class="val">49–119 €</span>
+        <span class="desc">Pack 3 systèmes, –18 € sur le total</span>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- SECTION BEST-SELLERS V4 -->
-<section class="py-16 md:py-20 bg-lin">
-<div class="max-w-[1200px] mx-auto px-4 md:px-8">
-<div class="text-center mb-12">
-<p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">CES DERNIÈRES SEMAINES</p>
-<h2 class="font-heading text-[32px] md:text-[44px] text-ebene leading-[1.1]">Les plus forgés.</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/signal-de-vente/">
-<div class="bg-chene-6 h-[120px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-</div>
-<div class="p-6">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">PLATEFORME E-COMMERCE · NOTIFICATION</p>
-<h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Signal de Vente</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Une alerte messagerie instantanée à chaque commande plateforme e-commerce. En temps réel.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[20px] text-chene font-semibold">29 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/gardien-de-stock/">
-<div class="bg-chene-6 h-[120px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-</div>
-<div class="p-6">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">PLATEFORME E-COMMERCE · SHEETS</p>
-<h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Gardien de Stock</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Surveille votre stock plateforme e-commerce et alerte avant rupture.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[20px] text-chene font-semibold">29 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/produit/cyber-hygiene-tpe/">
-<div class="bg-chene-6 h-[120px] flex items-center justify-center">
-<span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">SÉCURISER</span>
-</div>
-<div class="p-6">
-<p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">PDF · GUIDES</p>
-<h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Pack Cyber-Hygiène TPE</h3>
-<p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Audit en 20 points + 4 guides pour mettre votre TPE à niveau.</p>
-<div class="flex items-center justify-between">
-<span class="font-mono text-[20px] text-chene font-semibold">39 €</span>
-<span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-</div>
-</div>
-</a>
-</div>
-<div class="text-center mt-10">
-<a class="inline-block bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90 transition" href="/catalogue.html">
-              Voir tout le catalogue →
-            </a>
-</div>
-</div>
+
+<!-- ════════════════ TÉMOIGNAGES ════════════════ -->
+<section class="temoignages">
+  <div class="container">
+    <div data-reveal>
+      <span class="tag-atelier">Ce qu'on nous dit</span>
+      <h2 style="margin-top:14px">On les a aidés. <em class="editorial">Voilà ce qu'il en reste.</em></h2>
+      <p class="lede">Trois retours, trois clients, trois métiers. Pas de notes étoiles, pas de score sur 10 — juste des phrases.</p>
+    </div>
+    <div class="temo-grid">
+      <div class="temo" data-reveal>
+        <q>J'ai installé Signal de Vente un mardi soir. Le mercredi matin j'ai eu ma première notif sur mon téléphone, à 7h12. C'était une petite victoire.</q>
+        <div class="who">
+          <div class="avatar">M</div>
+          <div>
+            <div class="name">Marina L.</div>
+            <div class="role">Boutique de céramique, Lille</div>
+          </div>
+        </div>
+      </div>
+      <div class="temo" data-reveal data-reveal-delay="1">
+        <q>Ce que j'aime, c'est que c'est mon code. Je peux le faire évoluer, le donner à mon développeur. Ce n'est plus un service auquel je m'abonne — c'est un outil que je possède.</q>
+        <div class="who">
+          <div class="avatar">P</div>
+          <div>
+            <div class="name">Paul T.</div>
+            <div class="role">Consultant indépendant, Bordeaux</div>
+          </div>
+        </div>
+      </div>
+      <div class="temo" data-reveal data-reveal-delay="2">
+        <q>Le diagnostic m'a recommandé deux systèmes. J'en avais imaginé cinq. Ils m'ont dit non sur trois. Je les ai pris au sérieux à partir de là.</q>
+        <div class="who">
+          <div class="avatar">C</div>
+          <div>
+            <div class="name">Claire D.</div>
+            <div class="role">TPE conseil RH, Toulouse</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- ─────────────────────────────── SECTION 4 — SCÉNARIO QUOTIDIEN ──────────────────── -->
-<section class="bg-chene-6 py-20 px-4 md:py-20">
-<div class="max-w-[720px] mx-auto text-center">
-<h2 class="font-heading font-bold text-[22px] md:text-[32px] text-ebene leading-[1.2] mb-6">
-            Vous reconnaissez ce lundi matin ?
-          </h2>
-<p class="font-body text-lg text-ebene leading-[1.6] mb-6">
-            Vous ouvrez messagerie électronique. 14 relances à envoyer. Vous copiez-collez les
-            mêmes réponses depuis trois mois. Ensuite, direction tableur
-            pour mettre à jour le tableau de suivi. Puis l'agenda pour
-            reprogrammer les rendez-vous décalés. Il est déjà 11h et vous n'avez
-            pas commencé votre vrai travail.
-          </p>
-<p class="font-body italic text-lg text-chene leading-[1.6]">
-            Et si tout ça se faisait sans vous — avant même que vous ouvriez
-            votre ordinateur ?
-          </p>
-</div>
+
+<!-- ════════════════ JOURNAL DE BORD ════════════════ -->
+<section class="journal">
+  <div class="container">
+    <div class="journal-head" data-reveal>
+      <div>
+        <span class="tag-atelier">Journal de bord</span>
+        <h2 style="margin-top:14px">Carnet de l'atelier.</h2>
+      </div>
+      <a class="btn-link" href="#">Voir tout le journal →</a>
+    </div>
+    <div class="journal-grid">
+      <div class="j-entry" data-reveal>
+        <div class="date"><span>02 mai 2026</span><span class="tag">Nouvel établi</span></div>
+        <h3>Sortie de l'Agent Tri Email</h3>
+        <p>Trie votre boîte selon vos règles métier. On l'a bossé six semaines, c'est notre 11ᵉ système. À 39 €, on est dans la fourchette habituelle.</p>
+      </div>
+      <div class="j-entry" data-reveal data-reveal-delay="1">
+        <div class="date"><span>14 avr. 2026</span><span class="tag">Mise à jour</span></div>
+        <h3>Pack Cyber-Hygiène, refonte v2</h3>
+        <p>On a réécrit l'audit, ajouté la check-list NIS2 et reformulé les guides. Les acheteurs reçoivent la nouvelle version automatiquement.</p>
+      </div>
+      <div class="j-entry" data-reveal data-reveal-delay="2">
+        <div class="date"><span>28 mars 2026</span><span class="tag">Réflexion</span></div>
+        <h3>Pourquoi on n'aura jamais de chatbot.</h3>
+        <p>Petit billet sur les raisons pour lesquelles on préfère un email à un widget qui répond mal. Spoiler : on aime les vrais gens.</p>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- ──────────────────────────── SECTION 5 — DÉMONSTRATION DE PREUVE ─────────────────── -->
-<section class="bg-lin py-20 px-4 md:py-20">
-<div class="max-w-[1200px] mx-auto">
-<!-- Titre centré -->
-<h2 class="font-heading font-bold text-[22px] md:text-[32px] text-ebene leading-[1.2] text-center mb-12">
-            Des résultats concrets, pas des promesses
-          </h2>
-<!-- 2 colonnes -->
-<div class="flex flex-col gap-8 md:flex-row md:gap-12 md:items-start">
-<!-- Colonne gauche — Texte -->
-<div class="md:w-1/2">
-<p class="font-body text-lg text-ebene leading-[1.6]">
-                Chaque système forgé est testé en conditions réelles avant sa
-                mise en vente. Ce que vous voyez ici, c'est ce que le système
-                produit réellement : l'email envoyé, le tableau rempli, la
-                notification reçue.
-              </p>
-</div>
-<!-- Colonne droite — Capture à venir -->
-<div class="capture-frame md:w-1/2 border border-pierre rounded-[8px] bg-lin p-6 min-h-[240px] flex items-center justify-center" style="position:relative;">
-<span class="capture-stamp" style="position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:10px;background:#6B7C5F;color:white;padding:2px 6px;text-transform:uppercase;">À venir</span>
-<div class="text-center">
-<p class="font-body text-[14px] text-pierre leading-[1.6]">Capture à venir</p>
-<p class="capture-legend" style="font-size:13px;color:#8A7560;margin-top:8px;font-style:italic;">Résultat réel du système en production</p>
-</div>
-</div>
-</div>
-<!-- Indicateurs -->
-<div class="flex flex-col gap-4 md:flex-row md:justify-center md:gap-8 mt-8">
-<p class="font-body font-semibold text-lg text-chene text-center">
-              0 relance oubliée
-            </p>
-<p class="font-body font-semibold text-lg text-chene text-center">
-              4h récupérées / semaine
-            </p>
-</div>
-</div>
-</section>
-<!-- ──────────────────────────────── SECTION 6 — COMMENT ÇA MARCHE ──────────────────── -->
-<section class="bg-ebene py-20 px-4 md:py-20">
-<div class="max-w-[1200px] mx-auto">
-<h2 class="font-heading font-bold text-[22px] md:text-[32px] text-lin leading-[1.2] text-center mb-4">
-            Comment ça fonctionne
-          </h2>
-<p class="font-body text-lg text-pierre leading-[1.6] text-center mb-12 max-w-[720px] mx-auto">
-            Quatre étapes simples pour installer un système forgé dans votre activité.
-          </p>
-<div class="grid grid-cols-1 gap-8 md:grid-cols-4 md:gap-6">
-<!-- Étape 1 -->
-<div class="text-center md:text-left md:px-4">
-<p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">01</p>
-<h3 class="font-heading font-bold text-xl text-lin mb-3">Choisissez un problème</h3>
-<p class="font-body text-base text-pierre leading-[1.6]">
-                Parcourez le catalogue par famille ou faites le diagnostic.
-              </p>
-</div>
-<!-- Étape 2 -->
-<div class="text-center md:text-left md:px-4">
-<p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">02</p>
-<h3 class="font-heading font-bold text-xl text-lin mb-3">Recevez votre système</h3>
-<p class="font-body text-base text-pierre leading-[1.6]">
-                Téléchargement immédiat : fichier prêt à poser, guide PDF, captures.
-              </p>
-</div>
-<!-- Étape 3 -->
-<div class="text-center md:text-left md:px-4">
-<p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">03</p>
-<h3 class="font-heading font-bold text-xl text-lin mb-3">Suivez le guide</h3>
-<p class="font-body text-base text-pierre leading-[1.6]">
-                Installation pas-à-pas, 15 à 30 minutes selon le système.
-              </p>
-</div>
-<!-- Étape 4 -->
-<div class="text-center md:text-left md:px-4">
-<p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">04</p>
-<h3 class="font-heading font-bold text-xl text-lin mb-3">Ajustez si besoin</h3>
-<p class="font-body text-base text-pierre leading-[1.6]">
-                Support email pendant 30 jours et FAQ par produit.
-              </p>
-</div>
-</div>
-</div>
-</section>
-<!-- ──────────────────────────────────── SECTION 7 — RÉASSURANCE ─────────────────────── -->
-<section class="bg-lin py-20 px-4 md:py-20">
-<div class="max-w-[1200px] mx-auto">
-<h2 class="font-heading font-bold text-[22px] md:text-[32px] text-ebene leading-[1.2] text-center mb-12">
-            Vous n'avez rien à perdre
-          </h2>
-<div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
-<!-- Bloc 1 — Garantie -->
-<div class="bg-chene-6 rounded-[6px] p-6 md:p-6">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Satisfait ou Forgé
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6]">
-                Si le système ne fonctionne pas comme décrit, nous corrigeons ensemble. Remboursement intégral si la correction n'aboutit pas, sous 14 jours.
-              </p>
-</div>
-<!-- Bloc 2 — Support -->
-<div class="bg-chene-6 rounded-[6px] p-6 md:p-6">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Une vraie personne vous répond
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6]">
-                Support par email sous 48 heures. Vous n'êtes pas livré à
-                vous-même.
-              </p>
-</div>
-<!-- Bloc 3 — Simplicité -->
-<div class="bg-chene-6 rounded-[6px] p-6 md:p-6">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                Pas besoin de comprendre le moteur pour conduire la voiture
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6]">
-                Si vous savez copier-coller, vous savez installer un système
-                forgé.
-              </p>
-</div>
-<!-- Bloc 4 — Prix juste -->
-<div class="bg-chene-6 rounded-[6px] p-6 md:p-6">
-<h3 class="font-heading font-medium text-xl text-ebene mb-3">
-                29 €, c'est moins d'une heure de prestation
-              </h3>
-<p class="font-body text-base text-ebene leading-[1.6]">
-                Le système vous en rend quatre par semaine. Rentabilisé en 7
-                jours.
-              </p>
-</div>
-</div>
-</div>
-</section>
-<!-- ───────────────────────────────────── SECTION 8 — CTA FINAL ──────────────────────── -->
-<section class="bg-chene py-16 px-4 md:py-16">
-<div class="max-w-[600px] mx-auto text-center">
-<h2 class="font-heading font-bold text-[22px] md:text-[32px] text-lin leading-[1.2] mb-4">
-            Récupérez vos heures perdues
-          </h2>
-<p class="font-body text-lg leading-[1.6] mb-8" style="color: rgba(244, 240, 234, 0.85)">
-            Choisissez le système forgé adapté à votre métier. Installation en
-            15 minutes, résultats dès aujourd'hui.
-          </p>
-<a class="block md:inline-block w-full md:w-auto text-center bg-lin text-chene font-semibold text-base rounded-[6px] px-7 py-[14px]" href="/catalogue.html">Trouver mon système</a>
-</div>
+
+<!-- ════════════════ CTA FINAL ════════════════ -->
+<section class="cta-final">
+  <div class="container-narrow">
+    <h2>
+      Vous avez un <span class="hand">caillou</span> dans la chaussure.<br/>
+      On a peut-être l'<em class="editorial" style="color:var(--chene)">outil</em>.
+    </h2>
+    <p>Deux minutes pour un diagnostic. Cinq minutes pour comprendre ce qu'on vend. Une heure pour installer un système. Une fois. Pour de bon.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-mousse" href="diagnostic.html">Faire le diagnostic gratuit</a>
+      <a class="btn btn-ghost" style="color:var(--lin);border-color:var(--lin)" href="catalogue.html">Parcourir l'atelier</a>
+    </div>
+    <div class="signature">L'établ'IA — atelier d'artisan numérique</div>
+  </div>
 </section>
 </main>
-<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
-<footer class="bg-ebene mt-12">
-<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
-<div class="text-center md:text-left">
-<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
-<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
-</ul>
-</div>
-<div>
-<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
-<ul class="flex flex-col gap-2">
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
-<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
-<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
-</ul>
-</div>
-</div>
-<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
-<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
-<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
-</div>
-</div>
+
+<!-- ════════════════ FOOTER ════════════════ -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2024</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en région lyonnaise.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2024–2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
 </footer>
-<script defer="" src="/assets/js/cookies.js"></script>
-<script defer="" src="/assets/js/burger-menu.js"></script>
-<script defer="" src="/assets/js/search-modal.js"></script>
+
+<script src="assets/js/letablia.js"></script>
+<script>
+// Charge les données et hydrate l'établi
+fetch('assets/data/products.json').then(r=>r.json()).then(data=>{
+  window.LE_DATA = data;
+  const board = document.querySelector('[data-board]');
+  const switcher = document.querySelectorAll('[data-tab]');
+
+  function render(filter){
+    let items;
+    if(filter==='best'){
+      items = data.best_sellers.map(s=>data.products.find(p=>p.slug===s)).filter(Boolean);
+      // Add le pack vedette
+    } else if(filter==='recent'){
+      items = data.products.slice(-4).reverse();
+    } else {
+      items = data.products.slice(0,8);
+    }
+    items = items.slice(0,4);
+    board.innerHTML = items.map((p,i)=>{
+      const fam = LE.famClass(p.family);
+      const num = String(i+1).padStart(2,'0');
+      return `<a class="card-produit fam-${fam}" href="produits/${LE.slugFile(p)}">
+        <div class="num">№ ${num} · ${LE.famLabel(p.family)}</div>
+        <h3>${p.title}</h3>
+        <div class="blurb">${p.blurb}</div>
+        <div class="tools">${(p.tools||[]).slice(0,2).map(t=>`<span class="tool">${(data.tools.find(x=>x.slug===t)||{}).label||t}</span>`).join('')}</div>
+        <div class="meta">
+          <div class="price">${p.price}€</div>
+          <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>`;
+    }).join('');
+    // Re-observe new reveal targets if any (none added here)
+  }
+
+  switcher.forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      switcher.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      render(btn.dataset.tab);
+    });
+  });
+  render('best');
+});
+</script>
 </body>
 </html>
