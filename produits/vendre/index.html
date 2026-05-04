@@ -7,8 +7,8 @@
     
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vendre — L'établ'IA · 3 systèmes forgés</title>
-    <meta name="description" content="Systèmes forgés pour convertir et fidéliser — relances, séquences post-achat, collecte d'avis, CRM." />
+    <title>Vendre — L'établ'IA · Systèmes forgés pour professionnels francophones</title>
+    <meta name="description" content="Systèmes forgés qui aident à convertir et fidéliser — relances, séquences, CRM." />
 
     
     
@@ -353,167 +353,87 @@
       <link rel="stylesheet" href="/assets/css/cookies.css" />
   </head>
 <body>
-<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-      <div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-        <!-- Logo -->
-        <a href="/" class="font-display text-2xl text-chene whitespace-nowrap">L'établ'IA</a>
+<header>
+      <div class="header-content">
+        <a href="/" class="logo">L'établ'IA</a>
 
-        <!-- Navigation desktop -->
-        <nav class="hidden md:flex items-center gap-7">
-          <!-- Dropdown Catalogue -->
-          <div class="relative group">
-            <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition">
-              Catalogue
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="opacity-60 group-hover:opacity-100"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <!-- Menu dropdown -->
-            <div class="absolute top-full left-0 mt-2 w-[240px] bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition pointer-events-none group-hover:pointer-events-auto">
-              <a href="/produits/automatisations/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">⚡ Automatiser</a>
-              <a href="/produits/vendre/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">📈 Vendre</a>
-              <a href="/produits/tableaux-de-bord/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">◯ Piloter</a>
-              <a href="/produits/modeles/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">◇ Produire</a>
-              <a href="/produits/guides-formations/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">▣ Sécuriser</a>
-              <div class="border-t border-pierre/20 my-1"></div>
-              <a href="/catalogue.html" class="block px-4 py-2 font-body text-[14px] text-chene hover:bg-chene-6 transition font-semibold">Voir tout le catalogue →</a>
-            </div>
-          </div>
-
-          <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene transition">À propos</a>
-          <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene transition">FAQ</a>
-          <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene transition">Contact</a>
+        <nav class="nav-desktop">
+          <a href="/catalogue.html">Systèmes forgés</a>
+          <a href="/a-propos.html">À propos</a>
+          <a href="/faq.html">FAQ</a>
+          <a href="/contact.html">Contact</a>
         </nav>
 
-        <!-- Search + CTA desktop -->
-        <div class="hidden md:flex items-center gap-3">
-          <button id="search-trigger" aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <a href="/diagnostic.html" class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap">Diagnostic gratuit</a>
-        </div>
+        <a href="/catalogue.html" class="cta-desktop">Trouver mon système</a>
 
-        <!-- Mobile : search + burger -->
-        <div class="md:hidden flex items-center gap-2">
-          <button id="search-trigger-mobile" data-search-trigger aria-label="Rechercher" class="text-pierre p-2">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <button id="menu-toggle" class="flex flex-col gap-[5px] p-1" aria-label="Ouvrir le menu">
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-          </button>
-        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
-<div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" style="display: none;">
-      <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" aria-label="Fermer le menu">&times;</button>
-      <nav class="flex flex-col items-center gap-6 mb-10 text-center">
-        <a href="/catalogue.html" class="font-heading text-2xl text-ebene hover:text-chene">Catalogue</a>
-        <div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-          <a href="/produits/automatisations/" class="hover:text-chene">⚡ Automatiser</a>
-          <a href="/produits/vendre/" class="hover:text-chene">📈 Vendre</a>
-          <a href="/produits/tableaux-de-bord/" class="hover:text-chene">◯ Piloter</a>
-          <a href="/produits/modeles/" class="hover:text-chene">◇ Produire</a>
-          <a href="/produits/guides-formations/" class="hover:text-chene">▣ Sécuriser</a>
-        </div>
     <main class="bg-lin">
-      <section class="py-16 md:py-24 bg-chene-6">
-        <div class="container max-w-[1100px] mx-auto px-4 md:px-8">
-
-          <nav class="font-body text-[13px] text-pierre mb-6">
-            <a href="/" class="hover:text-chene">Accueil</a>
-            <span class="mx-2">›</span>
-            <a href="/catalogue.html" class="hover:text-chene">Catalogue</a>
-            <span class="mx-2">›</span>
-            <span class="text-ebene">Vendre</span>
-          </nav>
-
-          <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-4">FAMILLE</p>
-          <h1 class="font-heading text-[48px] md:text-[72px] text-ebene leading-[1.0] mb-6">Vendre.</h1>
-          <p class="font-body text-[18px] md:text-[22px] text-ebene leading-[1.5] mb-6 max-w-[720px]">
-            Cette famille rassemble les systèmes qui agissent sur le cycle de vente : relancer les prospects qui ne répondent pas, garder un fil avec les clients après l'achat, capturer les avis et les transformer en preuve sociale.
+      <section class="section-hero py-20 md:py-24">
+        <div class="container max-w-[1000px] mx-auto px-4 md:px-8">
+          <p class="font-body text-[14px] text-pierre uppercase tracking-[1px] mb-4">
+            <a href="/" class="hover:text-chene">Accueil</a> &rsaquo; <a href="/catalogue.html" class="hover:text-chene">Catalogue</a> &rsaquo; Vendre
           </p>
-          <p class="font-mono text-[13px] text-pierre">
-            3 systèmes · prix 29–49 €
+          <h1 class="font-heading text-[42px] md:text-[64px] text-ebene leading-[1.0] mb-6">
+            Vendre
+          </h1>
+          <p class="font-body text-lg md:text-xl text-pierre leading-[1.6] max-w-[760px]">
+            Cette famille rassemble les systèmes qui agissent sur le cycle de vente : relancer les prospects qui ne répondent pas, garder un fil avec les clients après l'achat, capturer les avis et les transformer en ventes.
           </p>
         </div>
       </section>
 
       <section class="py-16 md:py-20">
-        <div class="container max-w-[760px] mx-auto px-4 md:px-8">
-          <h2 class="font-heading text-[28px] md:text-[36px] text-ebene mb-6">Comment on les forge.</h2>
-          <p class="font-body text-[16px] md:text-[17px] text-ebene leading-[1.7]">Le cycle de vente n'est jamais linéaire. Un prospect peut répondre 3 semaines après le premier email. Un client peut redonner un avis 2 mois après sa commande. Ces systèmes ne forcent rien : ils relancent au bon moment, avec tact.</p><p class='font-body text-[16px] md:text-[17px] text-ebene leading-[1.7] mt-4'>Ni spam, ni harcèlement. Compteur d'envoi limité, statut « Relancé Max » automatique au bout de 3 tentatives, désinscription en 1 clic.</p>
-        </div>
-      </section>
-
-      <section class="py-12 md:py-16 border-t border-pierre/30">
-        <div class="container max-w-[1280px] mx-auto px-4 md:px-8">
-          <h2 class="font-heading text-[28px] md:text-[36px] text-ebene mb-8">
-            Les 3 systèmes de cette famille
-          </h2>
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="container max-w-[1200px] mx-auto px-4 md:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             
-        <a href="/signal-de-vente/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">SHOPIFY · TELEGRAM</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Signal de Vente</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Une alerte Telegram à chaque commande Shopify. En temps réel.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/collecteur-avis/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">SHOPIFY · BREVO</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Le Collecteur Avis</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Collecte les avis clients après commande, automatiquement.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/produit/relance-prospects/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">GOOGLE-SHEETS · GMAIL</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Relance Prospects</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Système qui relance vos prospects automatiquement, avec tact.</p>
+          <a href="/produit/relance-prospects/" class="block bg-lin border border-pierre-30 rounded-[8px] p-6 hover:border-chene transition">
+            <h3 class="font-heading text-[24px] text-ebene mb-2">Relance Prospects</h3>
+            <p class="font-body text-base text-pierre leading-[1.6] mb-4">Système qui relance vos prospects automatiquement, avec tact.</p>
             <div class="flex items-center justify-between">
               <span class="font-mono text-[18px] text-chene font-semibold">49 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
+              <span class="font-body text-[14px] text-mousse">Voir le système →</span>
             </div>
-          </div>
-        </a>
-    
+          </a>
+          <a href="/produit/mini-crm-notion/" class="block bg-lin border border-pierre-30 rounded-[8px] p-6 hover:border-chene transition">
+            <h3 class="font-heading text-[24px] text-ebene mb-2">Mini CRM Notion</h3>
+            <p class="font-body text-base text-pierre leading-[1.6] mb-4">Un CRM léger, prêt à l'emploi, dans votre Notion.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
+              <span class="font-body text-[14px] text-mousse">Voir le système →</span>
+            </div>
+          </a>
+          <a href="/collecteur-avis/" class="block bg-lin border border-pierre-30 rounded-[8px] p-6 hover:border-chene transition">
+            <h3 class="font-heading text-[24px] text-ebene mb-2">Le Collecteur Avis</h3>
+            <p class="font-body text-base text-pierre leading-[1.6] mb-4">Collecte les avis clients après commande, automatiquement.</p>
+            <div class="flex items-center justify-between">
+              <span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
+              <span class="font-body text-[14px] text-mousse">Voir le système →</span>
+            </div>
+          </a>
           </div>
         </div>
       </section>
 
       <section class="py-16 md:py-20 bg-chene-6">
-        <div class="container max-w-[900px] mx-auto px-4 md:px-8 text-center">
-          <h2 class="font-heading text-[24px] md:text-[28px] text-ebene mb-6">Vous explorez aussi…</h2>
-          <div class="flex flex-wrap justify-center gap-3">
-            <a href="/produits/automatisations/" class="inline-flex items-center gap-2 bg-lin border border-pierre/30 rounded-[20px] px-4 py-2 font-body text-[14px] text-ebene hover:border-chene hover:text-chene transition"><span>⚡</span> Automatiser →</a><a href="/produits/tableaux-de-bord/" class="inline-flex items-center gap-2 bg-lin border border-pierre/30 rounded-[20px] px-4 py-2 font-body text-[14px] text-ebene hover:border-chene hover:text-chene transition"><span>◯</span> Piloter →</a><a href="/produits/modeles/" class="inline-flex items-center gap-2 bg-lin border border-pierre/30 rounded-[20px] px-4 py-2 font-body text-[14px] text-ebene hover:border-chene hover:text-chene transition"><span>◇</span> Produire →</a><a href="/produits/guides-formations/" class="inline-flex items-center gap-2 bg-lin border border-pierre/30 rounded-[20px] px-4 py-2 font-body text-[14px] text-ebene hover:border-chene hover:text-chene transition"><span>▣</span> Sécuriser →</a>
-          </div>
-          <p class="mt-8 font-body text-[14px] text-pierre">
-            Ou allez voir directement le <a href="/catalogue.html" class="text-chene hover:underline">catalogue complet</a>.
+        <div class="container max-w-[760px] mx-auto px-4 md:px-8 text-center">
+          <h2 class="font-heading text-[32px] md:text-[40px] text-ebene mb-6">
+            Vous ne trouvez pas votre cas ?
+          </h2>
+          <p class="font-body text-lg text-pierre leading-[1.6] mb-8">
+            On forge sur mesure si la demande est claire. Écrivez à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline">contact@letablia.fr</a>, on regarde ensemble si on peut faire.
           </p>
+          <a href="/contact.html" class="inline-block bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90 transition">
+            Nous écrire
+          </a>
         </div>
       </section>
-    </main>
-    <footer>
+    </main><footer>
       <div class="footer-content">
         <p class="footer-link">
           <a href="/">Accueil</a> ·
@@ -545,8 +465,7 @@
       });
     </script>
       <script src="/assets/js/cookies.js" defer></script>
-      <script src="/assets/js/burger-menu.js" defer></script>
-      <script src="/assets/js/search-modal.js" defer></script>
   
+      <script src="/assets/js/burger-menu.js" defer></script>
   </body>
 </html>

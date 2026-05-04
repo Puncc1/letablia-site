@@ -1,776 +1,672 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" /><!-- Typographies V4 -->
-    
+<head>
+  <meta charset="UTF-8">
+    <!-- Typographies V4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Catalogue complet — L'établ'IA · 11 systèmes forgés pour professionnels francophones</title>
-    <meta name="description" content="Le catalogue complet des 11 systèmes forgés L'établ'IA. Filtrez par famille, par outil, par prix. Pour professionnels francophones." />
-
-    
-    
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    
-
-<!-- Design System V3 -->
-    <link rel="stylesheet" href="/assets/css/base.css" />
-
-    <style>
-      /* ─────────────────────────────────────────────────────────
-         SURCHARGES PAGE MENTIONS LÉGALES
-         ───────────────────────────────────────────────────────── */
-
-      html, body {
-        font-family: 'Inter', system-ui, sans-serif;
-        color: #2C2825;
-        line-height: 1.6;
-      }
-
-      body {
-        background-color: #F2EDE8;
-      }
-
-      /* ── HEADER ── */
-      header {
-        position: sticky;
-        top: 0;
-        z-index: 40;
-        background-color: #F5F0E8;
-        border-bottom: 1px solid #C5B9A8;
-        height: 72px;
-      }
-
-      .header-content {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 1rem;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-      }
-
-      .logo {
-        font-family: 'Playfair Display', 'Georgia', serif;
-        font-size: 1.5rem;
-        color: #8A7560;
-        text-decoration: none;
-        font-weight: 700;
-      }
-
-      .logo:hover { opacity: 0.9; }
-
-      .nav-desktop {
-        display: none;
-        align-items: center;
-        gap: 2rem;
-      }
-
-      .nav-desktop a {
-        font-size: 1rem;
-        color: #2C2825;
-        text-decoration: none;
-        transition: color 0.2s ease;
-      }
-
-      .nav-desktop a:hover { color: #8A7560; }
-
-      .cta-desktop {
-        display: none;
-        background-color: #8A7560;
-        color: #F5F0E8;
-        font-weight: 600;
-        font-size: 1rem;
-        padding: 10px 1.75rem;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: opacity 0.2s ease;
-      }
-
-      .cta-desktop:hover { opacity: 0.9; }
-
-      .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        gap: 5px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.25rem;
-        min-width: 44px;
-        min-height: 44px;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .menu-toggle span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background-color: #2C2825;
-      }
-
-      #mobile-menu {
-        position: fixed;
-        inset: 0;
-        z-index: 50;
-        background-color: #F5F0E8;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      #mobile-menu.open { display: flex; }
-
-      .menu-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1rem;
-        font-size: 1.5rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        color: #2C2825;
-        width: 44px;
-        height: 44px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      @media (min-width: 768px) {
-        .nav-desktop  { display: flex; }
-        .cta-desktop  { display: inline-block; }
-        .menu-toggle  { display: none; }
-        #mobile-menu  { display: none !important; }
-      }
-
-      /* ── MAIN ── */
-      main { min-height: calc(100vh - 72px); }
-
-      section { padding: 3rem 1rem; }
-
-      @media (min-width: 768px) {
-        section { padding: 5rem 1rem; }
-      }
-
-      .container {
-        max-width: 900px;
-        margin: 0 auto;
-      }
-
-      /* ── HERO ── */
-      .section-hero {
-        background-color: #F2EDE8;
-        text-align: center;
-        padding-bottom: 2rem;
-      }
-
-      .section-hero h1 {
-        font-family: 'Playfair Display', 'Georgia', serif;
-        font-size: 2.25rem;
-        font-weight: 700;
-        color: #2C2825;
-        margin-bottom: 0.5rem;
-        line-height: 1.2;
-      }
-
-      @media (min-width: 768px) {
-        .section-hero h1 { font-size: 2.75rem; }
-      }
-
-      .section-hero .subtitle {
-        font-size: 1rem;
-        color: #8A7560;
-        margin-bottom: 0;
-      }
-
-      .breadcrumb {
-        font-size: 0.875rem;
-        color: #A09889;
-        margin-bottom: 1rem;
-      }
-
-      .breadcrumb a {
-        color: #8A7560;
-        text-decoration: none;
-      }
-
-      .breadcrumb a:hover { text-decoration: underline; }
-
-      /* ── CONTENU LÉGAL ── */
-      .section-legal-content {
-        background-color: #F2EDE8;
-        padding-top: 1rem;
-      }
-
-      .legal-block {
-        background-color: #FAF7F2;
-        border: 1px solid #E9DDC8;
-        border-left: 4px solid #8A7560;
-        border-radius: 6px;
-        padding: 1.75rem 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .legal-block h2 {
-        font-family: 'Playfair Display', 'Georgia', serif;
-        font-size: 1.125rem;
-        font-weight: 700;
-        color: #2C2825;
-        margin-bottom: 0.875rem;
-        line-height: 1.3;
-      }
-
-      .legal-block p {
-        font-size: 0.975rem;
-        color: #2C2825;
-        line-height: 1.7;
-        margin-bottom: 0.75rem;
-      }
-
-      .legal-block p:last-child { margin-bottom: 0; }
-
-      .legal-block a {
-        color: #8A7560;
-        text-decoration: none;
-        font-weight: 600;
-      }
-
-      .legal-block a:hover { text-decoration: underline; }
-
-      .info-line {
-        display: flex;
-        flex-direction: column;
-        gap: 0.25rem;
-        font-size: 0.975rem;
-        color: #2C2825;
-        line-height: 1.7;
-      }
-
-      @media (min-width: 640px) {
-        .info-line { flex-direction: row; gap: 0.5rem; }
-        .info-label {
-          flex-shrink: 0;
-          min-width: 160px;
-          color: #8A7560;
-          font-weight: 600;
-        }
-      }
-
-      .info-label {
-        color: #8A7560;
-        font-weight: 600;
-        font-size: 0.875rem;
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-
-      .retractation-btn {
-        display: inline-block;
-        border: 2px solid #8A7560;
-        color: #8A7560;
-        font-weight: 600;
-        font-size: 0.975rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 6px;
-        text-decoration: none;
-        transition: background-color 0.2s ease, color 0.2s ease;
-        margin-top: 1rem;
-      }
-
-      .retractation-btn:hover {
-        background-color: #8A7560;
-        color: #FAF7F2;
-        text-decoration: none;
-      }
-
-      .mise-a-jour {
-        font-size: 0.85rem;
-        color: #A09889;
-        text-align: right;
-        margin-bottom: 2rem;
-      }
-
-      /* ── SECTION FOOTER LÉGAL ── */
-      .section-footer-legal {
-        background-color: #E9DDC8;
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-
-      .section-footer-legal p {
-        font-size: 0.95rem;
-        color: #2C2825;
-        line-height: 1.6;
-        margin-bottom: 0.5rem;
-      }
-
-      .section-footer-legal a {
-        color: #8A7560;
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      .section-footer-legal a:hover { text-decoration: underline; }
-
-      /* ── FOOTER ── */
-      footer {
-        background-color: #2C2825;
-        color: #F5F0E8;
-        padding: 2rem 1rem;
-        text-align: center;
-      }
-
-      footer a { color: #8A7560; text-decoration: none; }
-      footer a:hover { text-decoration: underline; }
-
-      .footer-content {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .footer-link {
-        font-size: 0.95rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .footer-divider {
-        height: 1px;
-        background-color: rgba(160, 152, 137, 0.3);
-        margin: 1.5rem 0;
-      }
-
-      .footer-copyright {
-        font-size: 0.85rem;
-        color: #C5B9A8;
-      }
-    </style>
-      <link rel="stylesheet" href="/assets/css/cookies.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catalogue — L'établ'IA</title>
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <link rel="stylesheet" href="styles/output.css">
+  
+  
+  
+  <!-- Google Fonts : JetBrains Mono -->
+  
+  <!-- Design System V3 -->
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+    <link rel="stylesheet" href="/assets/css/cookies.css" />
   </head>
-<body>
-<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-      <div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-        <!-- Logo -->
-        <a href="/" class="font-display text-2xl text-chene whitespace-nowrap">L'établ'IA</a>
+<body class="bg-lin font-body text-ebene">
 
-        <!-- Navigation desktop -->
-        <nav class="hidden md:flex items-center gap-7">
-          <!-- Dropdown Catalogue -->
-          <div class="relative group">
-            <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition">
-              Catalogue
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="opacity-60 group-hover:opacity-100"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <!-- Menu dropdown -->
-            <div class="absolute top-full left-0 mt-2 w-[240px] bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition pointer-events-none group-hover:pointer-events-auto">
-              <a href="/produits/automatisations/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">⚡ Automatiser</a>
-              <a href="/produits/vendre/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">📈 Vendre</a>
-              <a href="/produits/tableaux-de-bord/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">◯ Piloter</a>
-              <a href="/produits/modeles/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">◇ Produire</a>
-              <a href="/produits/guides-formations/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">▣ Sécuriser</a>
-              <div class="border-t border-pierre/20 my-1"></div>
-              <a href="/catalogue.html" class="block px-4 py-2 font-body text-[14px] text-chene hover:bg-chene-6 transition font-semibold">Voir tout le catalogue →</a>
-            </div>
-          </div>
+  <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+  <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
+    <div class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
 
-          <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene transition">À propos</a>
-          <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene transition">FAQ</a>
-          <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene transition">Contact</a>
-        </nav>
+      <!-- Logo -->
+      <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
 
-        <!-- Search + CTA desktop -->
-        <div class="hidden md:flex items-center gap-3">
-          <button id="search-trigger" aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <a href="/diagnostic.html" class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap">Diagnostic gratuit</a>
-        </div>
-
-        <!-- Mobile : search + burger -->
-        <div class="md:hidden flex items-center gap-2">
-          <button id="search-trigger-mobile" data-search-trigger aria-label="Rechercher" class="text-pierre p-2">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <button id="menu-toggle" class="flex flex-col gap-[5px] p-1" aria-label="Ouvrir le menu">
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-          </button>
-        </div>
-      </div>
-    </header>
-
-    <!-- Menu mobile plein écran -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" style="display: none;">
-      <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" aria-label="Fermer le menu">&times;</button>
-      <nav class="flex flex-col items-center gap-6 mb-10 text-center">
-        <a href="/catalogue.html" class="font-heading text-2xl text-ebene hover:text-chene">Catalogue</a>
-        <div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-          <a href="/produits/automatisations/" class="hover:text-chene">⚡ Automatiser</a>
-          <a href="/produits/vendre/" class="hover:text-chene">📈 Vendre</a>
-          <a href="/produits/tableaux-de-bord/" class="hover:text-chene">◯ Piloter</a>
-          <a href="/produits/modeles/" class="hover:text-chene">◇ Produire</a>
-          <a href="/produits/guides-formations/" class="hover:text-chene">▣ Sécuriser</a>
-        </div>
-        <div class="border-t border-pierre/30 w-32 my-3"></div>
-        <a href="/a-propos.html" class="font-body text-lg text-ebene hover:text-chene">À propos</a>
-        <a href="/faq.html" class="font-body text-lg text-ebene hover:text-chene">FAQ</a>
-        <a href="/contact.html" class="font-body text-lg text-ebene hover:text-chene">Contact</a>
+      <!-- Navigation desktop -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="/catalogue.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">Systèmes forgés</a>
+        <a href="/a-propos.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">À propos</a>
+        <a href="/faq.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">FAQ</a>
+        <a href="/contact.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">Contact</a>
       </nav>
-      <a href="/diagnostic.html" class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90">Diagnostic gratuit</a>
+
+      <!-- CTA desktop -->
+      <a href="/catalogue.html"
+         class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90">Trouver mon système</a>
+
+      <!-- Bouton hamburger mobile -->
+      <button id="menu-toggle"
+              class="md:hidden flex flex-col gap-[5px] p-1"
+              aria-label="Ouvrir le menu">
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+      </button>
+
     </div>
-    <main class="bg-lin">
-      <section class="py-12 md:py-16">
-        <div class="container max-w-[1280px] mx-auto px-4 md:px-8">
+  </header>
 
-          <nav class="font-body text-[13px] text-pierre mb-4">
-            <a href="/" class="hover:text-chene">Accueil</a>
-            <span class="mx-2">›</span>
-            <span class="text-ebene">Catalogue</span>
-          </nav>
+  <!-- Menu mobile plein écran -->
+  <div id="mobile-menu"
+       class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
 
-          <h1 class="font-heading text-[40px] md:text-[56px] text-ebene leading-[1.0] mb-4">Catalogue complet</h1>
-          <p class="font-body text-[16px] md:text-[18px] text-pierre leading-[1.6] mb-10 max-w-[760px]">
-            <span id="visible-count">11</span> systèmes forgés disponibles. Filtrez par famille, par outil, par prix. Ou cherchez le nom directement.
-          </p>
+    <!-- Bouton fermeture -->
+    <button id="menu-close"
+            class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none"
+            aria-label="Fermer le menu">&times;</button>
 
-          <div class="flex flex-col md:flex-row gap-4 mb-8">
-            <div class="flex-1 relative">
-              <input id="search-input" type="search" placeholder="Cherchez signal, gardien, séquenceur…" class="w-full bg-lin border border-pierre rounded-[6px] py-3 px-4 pl-10 font-body text-[15px] text-ebene placeholder-pierre focus:outline-none focus:border-chene transition" />
-              <span class="absolute left-3 top-1/2 -translate-y-1/2 text-pierre">⌕</span>
+    <!-- Liens de navigation -->
+    <nav class="flex flex-col items-center gap-8 mb-10">
+      <a href="/catalogue.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">Systèmes forgés</a>
+      <a href="/a-propos.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">À propos</a>
+      <a href="/faq.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">FAQ</a>
+      <a href="/contact.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">Contact</a>
+    </nav>
+
+    <!-- CTA mobile pleine largeur -->
+    <a href="/catalogue.html"
+       class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]">Trouver mon système</a>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+  <main>
+
+    <!-- ─────────────────────────────── SECTION 1 — EN-TÊTE CATALOGUE ───────────────────── -->
+    <section class="bg-lin pt-20 pb-12 px-4 md:pt-20 md:pb-12">
+      <div class="max-w-[720px] mx-auto text-center">
+
+        <h1 class="font-heading font-bold text-[28px] md:text-[36px] text-ebene leading-[1.2] mb-4">
+          Les systèmes forgés
+        </h1>
+        <p class="font-body text-lg text-ebene leading-[1.6]">
+          Des outils d'automatisation clé en main, classés par besoin métier. Chaque système est livré avec son guide d'installation pas-à-pas.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────── SECTION 8 — BUNDLES ─────────────────────────── -->
+    <section class="bg-ebene py-20 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+
+        <!-- En-tête centré -->
+        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-lin leading-[1.2] text-center mb-4">
+          Les packs complets
+        </h2>
+        <p class="font-body text-base text-pierre leading-[1.6] text-center mb-12 max-w-[720px] mx-auto">
+          Combinez plusieurs systèmes forgés et économisez. Support prioritaire et visio de démarrage inclus.
+        </p>
+
+        <!-- 2 cartes bundle -->
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+
+          <!-- Carte 1 — Pack Indépendant -->
+          <div class="bg-ebene-80 border border-chene rounded-[8px] p-6 flex flex-col">
+            <h3 class="font-heading font-bold text-[22px] text-lin leading-[1.2] mb-3">Pack Indépendant</h3>
+            <ul class="flex flex-col gap-[6px] mb-5">
+              <li class="font-body text-base text-pierre leading-[1.6]">— Agent de tri email intelligent</li>
+              <li class="font-body text-base text-pierre leading-[1.6]">— Relance automatique de prospects</li>
+              <li class="font-body text-base text-pierre leading-[1.6]">— Suivi de pipeline commercial</li>
+            </ul>
+            <div class="mt-auto">
+              <p class="font-display text-[32px] text-chene leading-[1.0] mb-1">89 €</p>
+              <p class="font-body text-[13px] text-pierre mb-5">Paiement unique · Visio de démarrage incluse · Support 60 jours</p>
+              <a href="https://letablia.lemonsqueezy.com/checkout/buy/PACK-INDEPENDANT"
+                 class="block w-full text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px]">Choisir ce pack</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Brevo (gratuit jusqu'à 300 emails/jour) · Aucun abonnement L'établ'IA.
+              </p>
             </div>
-            <select id="sort-select" class="bg-lin border border-pierre rounded-[6px] py-3 px-4 font-body text-[15px] text-ebene focus:outline-none focus:border-chene transition cursor-pointer">
-              <option value="default">Trier par : pertinence</option>
-              <option value="price-asc">Prix croissant</option>
-              <option value="price-desc">Prix décroissant</option>
-              <option value="title-asc">Titre A-Z</option>
-            </select>
-            <button id="filters-toggle" class="md:hidden bg-mousse text-lin font-semibold rounded-[6px] py-3 px-5">
-              Filtres ▼
-            </button>
           </div>
 
-          <div class="flex flex-col md:flex-row gap-8">
-            
-      <aside id="filters" class="md:w-[260px] md:shrink-0">
-        <div class="md:sticky md:top-[88px] bg-lin border border-pierre/30 rounded-[8px] p-5 md:p-6">
-          <div class="flex items-center justify-between mb-4">
-            <h2 class="font-heading text-[18px] text-ebene">Filtrer</h2>
-            <button id="reset-filters" class="font-body text-[12px] text-pierre hover:text-chene">Réinitialiser</button>
-          </div>
-
-          <fieldset class="mb-5">
-            <legend class="font-mono text-[11px] uppercase tracking-[1px] text-chene mb-2">Famille</legend>
-            <label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="family" value="automatisations"> Automatiser <span class="text-pierre">(3)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="family" value="vendre"> Vendre <span class="text-pierre">(3)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="family" value="tableaux-de-bord"> Piloter <span class="text-pierre">(1)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="family" value="modeles"> Produire <span class="text-pierre">(3)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="family" value="guides-formations"> Sécuriser <span class="text-pierre">(1)</span></label>
-          </fieldset>
-
-          <fieldset class="mb-5">
-            <legend class="font-mono text-[11px] uppercase tracking-[1px] text-chene mb-2">Outil</legend>
-            <label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="tools" value="shopify"> Shopify <span class="text-pierre">(4)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="tools" value="notion"> Notion <span class="text-pierre">(1)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="tools" value="google-sheets"> Google Sheets <span class="text-pierre">(4)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="tools" value="gmail"> Gmail <span class="text-pierre">(2)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="tools" value="brevo"> Brevo <span class="text-pierre">(2)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="tools" value="telegram"> Telegram <span class="text-pierre">(2)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="tools" value="pdf"> PDF (sans outil) <span class="text-pierre">(3)</span></label>
-          </fieldset>
-
-          <fieldset class="mb-5">
-            <legend class="font-mono text-[11px] uppercase tracking-[1px] text-chene mb-2">Prix</legend>
-            <label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="price" value="low" data-min="0" data-max="29"> ≤ 29 € <span class="text-pierre">(6)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="price" value="mid" data-min="30" data-max="49"> 30 - 49 € <span class="text-pierre">(5)</span></label><label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="price" value="high" data-min="50" data-max="9999"> 50 € et + <span class="text-pierre">(0)</span></label>
-          </fieldset>
-
-          <fieldset>
-            <legend class="font-mono text-[11px] uppercase tracking-[1px] text-chene mb-2">Cible</legend>
-            <label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="targets" value="e-commerce"> E-commerçant <span class="text-pierre">(4)</span></label>
-            <label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="targets" value="freelance"> Freelance <span class="text-pierre">(5)</span></label>
-            <label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="targets" value="agence"> Agence <span class="text-pierre">(2)</span></label>
-            <label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="targets" value="formateur"> Formateur <span class="text-pierre">(1)</span></label>
-            <label class="flex items-center gap-2 mb-1 font-body text-[14px] text-ebene cursor-pointer"><input type="checkbox" class="filter-cb" data-axis="targets" value="tpe-generaliste"> TPE généraliste <span class="text-pierre">(5)</span></label>
-          </fieldset>
-        </div>
-      </aside>
-
-
-            <div class="flex-1">
-              <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                
-        <a href="/signal-de-vente/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="vendre"
-           data-tools="shopify telegram"
-           data-targets="e-commerce"
-           data-price="29"
-           data-title="signal de vente"
-           data-keywords="alerte commande shopify telegram notification temps reel ecommerce">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Shopify · Telegram</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Signal de Vente</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Une alerte Telegram à chaque commande Shopify. En temps réel.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/gardien-de-stock/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="automatisations"
-           data-tools="shopify google-sheets telegram"
-           data-targets="e-commerce"
-           data-price="29"
-           data-title="gardien de stock"
-           data-keywords="stock shopify rupture alerte seuil sheets gestion">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Shopify · Google Sheets</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Gardien de Stock</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Surveille votre stock Shopify et alerte avant rupture.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/sequenceur-post-achat/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="automatisations"
-           data-tools="shopify brevo google-sheets"
-           data-targets="e-commerce formateur"
-           data-price="29"
-           data-title="séquenceur post-achat"
-           data-keywords="email post achat remerciement suivi sequence brevo automatique">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Shopify · Brevo</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Séquenceur Post-Achat</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Email de remerciement et suivi automatique après chaque commande.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/collecteur-avis/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="vendre"
-           data-tools="shopify brevo"
-           data-targets="e-commerce"
-           data-price="29"
-           data-title="le collecteur avis"
-           data-keywords="avis clients shopify post commande sociale preuve">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Shopify · Brevo</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Le Collecteur Avis</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Collecte les avis clients après commande, automatiquement.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/carnet-forge/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="modeles"
-           data-tools="pdf"
-           data-targets="freelance tpe-generaliste"
-           data-price="19"
-           data-title="carnet forge"
-           data-keywords="journal carnet bord artisan pdf imprimer freelance">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">PRODUIRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">PDF (sans outil)</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Carnet Forge</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Le journal de bord de l'artisan numérique, prêt à imprimer.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">19 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/produit/relance-prospects/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="vendre"
-           data-tools="google-sheets gmail"
-           data-targets="freelance agence"
-           data-price="49"
-           data-title="relance prospects"
-           data-keywords="relance prospects sheets gmail commercial freelance">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Google Sheets · Gmail</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Relance Prospects</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Système qui relance vos prospects automatiquement, avec tact.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">49 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/produit/mini-crm-notion/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="modeles"
-           data-tools="notion"
-           data-targets="freelance agence"
-           data-price="39"
-           data-title="mini crm notion"
-           data-keywords="crm notion clients projets freelance agence consultant">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">PRODUIRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Notion</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Mini CRM Notion</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Un CRM léger, prêt à l'emploi, dans votre Notion.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/produit/dashboard-tresorerie/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="tableaux-de-bord"
-           data-tools="google-sheets"
-           data-targets="tpe-generaliste"
-           data-price="39"
-           data-title="dashboard trésorerie tpe"
-           data-keywords="tresorerie tpe sheets dashboard finances pilotage">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">PILOTER</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Google Sheets</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Dashboard Trésorerie TPE</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Vue claire de votre trésorerie, mise à jour quotidienne.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/produit/cyber-hygiene-tpe/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="guides-formations"
-           data-tools="pdf"
-           data-targets="tpe-generaliste"
-           data-price="39"
-           data-title="pack cyber-hygiène tpe"
-           data-keywords="cyber securite hygiene tpe audit guides phishing rgpd">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">SÉCURISER</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">PDF (sans outil)</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Pack Cyber-Hygiène TPE</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">39 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/produit/kit-facturation-2026/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="modeles"
-           data-tools="pdf"
-           data-targets="tpe-generaliste freelance"
-           data-price="49"
-           data-title="kit facturation électronique 2026"
-           data-keywords="facturation electronique 2026 conformite tpe pdf">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">PRODUIRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">PDF (sans outil)</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Kit Facturation Électronique 2026</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">49 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/produit/agent-tri-email/" class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
-           data-family="automatisations"
-           data-tools="gmail"
-           data-targets="freelance tpe-generaliste"
-           data-price="29"
-           data-title="agent tri email"
-           data-keywords="tri email gmail regles automatique inbox zero">
-          <div class="bg-chene-6 h-[100px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">Gmail</p>
-            <h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]">Agent Tri Email</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.5] mb-4">Trie votre boîte Gmail selon des règles métier.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[18px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-              </div>
-              <p id="empty-state" class="hidden font-body text-[16px] text-pierre text-center py-16">
-                Aucun système ne correspond à vos filtres. <button id="reset-filters-empty" class="text-chene underline">Réinitialiser</button>
+          <!-- Carte 2 — Pack TPE -->
+          <div class="bg-ebene-80 border border-chene rounded-[8px] p-6 flex flex-col">
+            <h3 class="font-heading font-bold text-[22px] text-lin leading-[1.2] mb-3">Pack TPE</h3>
+            <ul class="flex flex-col gap-[6px] mb-5">
+              <li class="font-body text-base text-pierre leading-[1.6]">— Agent de tri email intelligent</li>
+              <li class="font-body text-base text-pierre leading-[1.6]">— Planificateur de posts LinkedIn</li>
+              <li class="font-body text-base text-pierre leading-[1.6]">— Séquence email de bienvenue automatique</li>
+              <li class="font-body text-base text-pierre leading-[1.6]">— Relance automatique de prospects</li>
+              <li class="font-body text-base text-pierre leading-[1.6]">— Suivi de pipeline commercial</li>
+            </ul>
+            <div class="mt-auto">
+              <p class="font-display text-[32px] text-chene leading-[1.0] mb-1">149 €</p>
+              <p class="font-body text-[13px] text-pierre mb-5">Paiement unique · Visio de démarrage incluse · Support 60 jours</p>
+              <a href="https://letablia.lemonsqueezy.com/checkout/buy/PACK-TPE"
+                 class="block w-full text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px]">Choisir ce pack</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Brevo (gratuit jusqu'à 300 emails/jour) · LinkedIn (gratuit) · Aucun abonnement L'établ'IA.
               </p>
             </div>
           </div>
 
         </div>
-      </section>
-    </main>
-
-    <script src="/assets/js/catalogue-filters.js" defer></script>
-<footer>
-      <div class="footer-content">
-        <p class="footer-link">
-          <a href="/">Accueil</a> ·
-          <a href="/catalogue.html">Catalogue</a> ·
-          <a href="/a-propos.html">À propos</a> ·
-          <a href="/faq.html">FAQ</a> ·
-          <a href="/contact.html">Contact</a>
-        </p>
-        <div class="footer-divider"></div>
-        <p class="footer-copyright">
-          © 2026 L'établ'IA. Tous droits réservés. ·
-          <a href="/mentions-legales/">Mentions légales</a> ·
-          <a href="/confidentialite/">Confidentialité</a>
-        </p>
       </div>
-    </footer>
+    </section>
 
-    <!-- ── SCRIPT MENU MOBILE ── -->
-    <script>
-      const menuToggle = document.getElementById('menu-toggle');
-      const menuClose  = document.getElementById('menu-close');
-      const mobileMenu = document.getElementById('mobile-menu');
+    <!-- ──────────────────────────────── SECTION 2 — AGENTS IA ───────────────────────────── -->
+    <section id="agents-ia" class="bg-lin py-12 px-4 md:py-12">
+      <div class="max-w-[1200px] mx-auto">
 
-      menuToggle.addEventListener('click', () => mobileMenu.classList.add('open'));
-      menuClose.addEventListener('click',  () => mobileMenu.classList.remove('open'));
+        <!-- En-tête de catégorie -->
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] mb-2">IA Métier</p>
+        <h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] mb-2">IA Métier</h2>
+        <p class="font-body text-base text-pierre leading-[1.6] mb-3">
+          Un assistant invisible qui répond, rédige et trie — pendant que vous travaillez.
+        </p>
+        <!-- Séparateur 60px -->
+        <div class="w-[60px] h-px bg-pierre mb-8"></div>
 
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-      });
-    </script>
-      <script src="/assets/js/cookies.js" defer></script>
+        <!-- Grille — 3 colonnes virtuelles, 2 cartes -->
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+
+          <!-- Carte 1 — Agent de tri email -->
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Agent de tri email intelligent</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">freelances, consultants</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Vos emails sont triés, classés et les réponses types envoyées automatiquement. Vous ne traitez que ceux qui comptent.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">39 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=agent-tri-email"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Brevo (gratuit jusqu'à 300 emails/jour) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+          <!-- Carte 2 — Agent de rédaction -->
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Agent de rédaction de contenu</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">indépendants, créateurs de contenu</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Donnez-lui un sujet : il rédige, met en forme et prépare la publication. Vous relisez et publiez.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">29 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=agent-redaction-contenu"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────── SECTION 3 — MARKETING & RÉSEAUX SOCIAUX ─────────────── -->
+    <section id="marketing" class="bg-chene-6 py-12 px-4 md:py-12">
+      <div class="max-w-[1200px] mx-auto">
+
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] mb-2">Vendre et Communiquer</p>
+        <h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] mb-2">Vendre et Communiquer</h2>
+        <p class="font-body text-base text-pierre leading-[1.6] mb-3">
+          Vos publications partent à l'heure. Vos séquences email tournent toutes seules.
+        </p>
+        <div class="w-[60px] h-px bg-pierre mb-8"></div>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Planificateur de posts LinkedIn</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">freelances, consultants B2B</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Rédigez vos posts une fois par mois. Le système les publie au bon moment, chaque semaine.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">29 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=planificateur-linkedin"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · LinkedIn (gratuit) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Séquence email de bienvenue automatique</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">TPE, formateurs</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Chaque nouveau contact reçoit votre séquence de 5 emails sans que vous leviez le petit doigt.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">39 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=sequence-email-bienvenue"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Brevo (gratuit jusqu'à 300 emails/jour) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────────── SECTION 4 — VENTE & CRM ───────────────────────── -->
+    <section id="vente-crm" class="bg-lin py-12 px-4 md:py-12">
+      <div class="max-w-[1200px] mx-auto">
+
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] mb-2">Suivre et Relancer</p>
+        <h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] mb-2">Suivre et Relancer</h2>
+        <p class="font-body text-base text-pierre leading-[1.6] mb-3">
+          Zéro relance oubliée. Chaque prospect suivi au bon moment.
+        </p>
+        <div class="w-[60px] h-px bg-pierre mb-8"></div>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Relance automatique de prospects</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">freelances commerciaux, agences</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Vos prospects reçoivent la bonne relance au bon moment. Vous ne ratez plus aucune opportunité.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">39 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=relance-prospects"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Brevo (gratuit jusqu'à 300 emails/jour) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Suivi de pipeline commercial</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">freelances B2B, petites agences</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Votre tableau de bord se met à jour tout seul. Vous voyez en un coup d'œil où en est chaque affaire.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">29 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=suivi-pipeline"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────── SECTION 5 — PRODUCTIVITÉ & OPS ─────────────────── -->
+    <section id="productivite" class="bg-chene-6 py-12 px-4 md:py-12">
+      <div class="max-w-[1200px] mx-auto">
+
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] mb-2">Produire et Organiser</p>
+        <h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] mb-2">Produire et Organiser</h2>
+        <p class="font-body text-base text-pierre leading-[1.6] mb-3">
+          Les tâches administratives que vous repoussez chaque semaine se font enfin seules.
+        </p>
+        <div class="w-[60px] h-px bg-pierre mb-8"></div>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Générateur de comptes-rendus de réunion</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">consultants, formateurs</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Envoyez vos notes vocales. Le système produit un compte-rendu structuré et l'envoie aux participants.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">29 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=generateur-cr-reunion"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Brevo (gratuit jusqu'à 300 emails/jour) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Synchronisation agenda-CRM</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">freelances multi-clients</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Vos rendez-vous sont automatiquement liés à vos fiches client. Plus de double saisie.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">29 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=sync-agenda-crm"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Calendrier (Google, Outlook, gratuit) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────── SECTION 6 — SCRAPING & VEILLE ───────────────────── -->
+    <section id="veille" class="bg-lin py-12 px-4 md:py-12">
+      <div class="max-w-[1200px] mx-auto">
+
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] mb-2">Observer et Décider</p>
+        <h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] mb-2">Observer et Décider</h2>
+        <p class="font-body text-base text-pierre leading-[1.6] mb-3">
+          Votre veille tourne en continu. Vous ne lisez que ce qui compte.
+        </p>
+        <div class="w-[60px] h-px bg-pierre mb-8"></div>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Veille concurrentielle automatisée</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">consultants stratégie, e-commerçants</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Recevez chaque matin un résumé des mouvements de vos concurrents. Sans ouvrir un seul site.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">39 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=veille-concurrentielle"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Brevo (gratuit jusqu'à 300 emails/jour) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Extracteur d'annonces immobilières</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">agents immobiliers, investisseurs</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Les nouvelles annonces correspondant à vos critères arrivent directement dans votre tableau de bord.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">39 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="/contact.html?produit=extracteur-annonces"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Scraping (gratuit) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ────────────────────────────── SECTION 7 — SHOPIFY & E-COMMERCE ───────────────────── -->
+    <section id="shopify" class="bg-chene-6 py-12 px-4 md:py-12">
+      <div class="max-w-[1200px] mx-auto">
+
+        <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] mb-2">Shopify &amp; E-commerce</p>
+        <h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] mb-2">Shopify &amp; E-commerce</h2>
+        <p class="font-body text-base text-pierre leading-[1.6] mb-3">
+          Votre boutique vous alerte. Vos clients sont suivis. Vous ne manquez plus rien.
+        </p>
+        <div class="w-[60px] h-px bg-pierre mb-8"></div>
+
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6">
+
+          <!-- Carte 1 — Signal de Vente (gratuit) -->
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--gratuit">GRATUIT</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Signal de Vente</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">e-commerçants Shopify</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Recevez une alerte Telegram instantanée à chaque nouvelle commande Shopify. Restez informé, où que vous soyez.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">Gratuit</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Téléchargement immédiat · Guide PDF inclus</p>
+              <a href="https://letablia.lemonsqueezy.com/checkout/buy/signal-de-vente"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Obtenir gratuitement &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Telegram (gratuit) · Shopify (gratuit webhook) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+          <!-- Carte 2 — Gardien de Stock -->
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Gardien de Stock</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">e-commerçants Shopify</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Surveillez vos stocks Shopify automatiquement. Soyez alerté sur Telegram dès qu'un produit passe sous votre seuil défini.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">29 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="https://letablia.lemonsqueezy.com/checkout/buy/gardien-de-stock"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Telegram (gratuit) · Shopify (Pro requis pour API) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+          <!-- Carte 3 — Séquenceur Post-Achat -->
+          <article class="bg-lin border border-pierre rounded-[8px] p-6 flex flex-col">
+            <div class="flex flex-wrap gap-2 mb-3">
+              <span class="v3-badge v3-badge--n8n">N8N REQUIS</span>
+              <span class="v3-badge v3-badge--pret">PRÊT À INSTALLER</span>
+            </div>
+            <h3 class="font-heading font-medium text-xl text-ebene mb-2">Séquenceur Post-Achat</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-2 italic">Idéal pour : <span class="font-medium not-italic">e-commerçants Shopify</span></p>
+            <p class="font-body text-base text-ebene leading-[1.6] mb-4">
+              Envoyez automatiquement une séquence d'emails après chaque achat Shopify. Fidélisez vos acheteurs sans y penser.
+            </p>
+            <div class="mt-auto">
+              <p class="font-display text-2xl text-chene leading-[1.0] mb-1">39 €</p>
+              <p class="font-body text-[13px] text-pierre mb-4">Paiement unique · Guide PDF inclus</p>
+              <a href="https://letablia.lemonsqueezy.com/checkout/buy/sequenceur-post-achat"
+                 class="font-body font-semibold text-base text-chene hover:underline"
+                 style="transition: color 0.2s ease">Voir ce système &#8594;</a>
+              <p class="font-body text-[11px] text-pierre mt-4 pt-4 border-t border-pierre">
+                <strong>Coûts tiers :</strong> n8n (gratuit en auto-hébergé, ~20€/mois cloud) · Brevo (gratuit jusqu'à 300 emails/jour) · Shopify (gratuit webhook) · Aucun abonnement L'établ'IA.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+  <footer class="bg-ebene">
+    <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+
+      <!-- 3 colonnes -->
+      <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+
+        <!-- Colonne 1 — Marque -->
+        <div class="text-center md:text-left">
+          <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+          <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+        </div>
+
+        <!-- Colonne 2 — Navigation -->
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/index.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Accueil</a></li>
+            <li><a href="/catalogue.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Catalogue</a></li>
+            <li><a href="/a-propos.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">À propos</a></li>
+            <li><a href="/faq.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">FAQ</a></li>
+            <li><a href="/contact.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 — Informations -->
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/mentions-legales.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Mentions légales</a></li>
+            <li><a href="/cgv.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">CGV</a></li>
+            <li><a href="/confidentialite.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Confidentialité</a></li>
+            <li><a href="mailto:contact@letablia.fr"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">contact@letablia.fr</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Séparateur + copyright -->
+      <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
+        <p class="font-body text-[13px] text-pierre mb-3">Produits digitaux pour TPE/PME francophones · Paiement unique · Accompagnement personnalisé · Pré-requis affichés avant achat</p>
+        <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+  </script>
+
+  <!-- Bannière cookies RGPD -->
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; color:#F2EDE8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+    <p style="margin:0; font-size:14px;">
+      Ce site utilise des cookies techniques et analytics.
+      <a href="/mentions-legales.html" style="color:#8A7560;">En savoir plus</a>
+    </p>
+    <div style="display:flex; gap:12px;">
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F2EDE8; color:#F2EDE8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#8A7560; border:none; color:#FAF7F2; padding:6px 12px; cursor:pointer;">Accepter</button>
+    </div>
+  </div>
+  <script>
+    function accepterCookies() {
+      localStorage.setItem('cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function refuserCookies() {
+      localStorage.setItem('cookies', 'refused');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    if (localStorage.getItem('cookies')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+
+    <script src="/assets/js/cookies.js" defer></script>
       <script src="/assets/js/burger-menu.js" defer></script>
-  
-      <script src="/assets/js/search-modal.js" defer></script>
   </body>
 </html>

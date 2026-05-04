@@ -26,76 +26,109 @@
   </head>
   <body class="bg-lin font-body text-ebene">
     <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
-    <header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-      <div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
+    <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
+      <div
+        class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between"
+      >
         <!-- Logo -->
-        <a href="/" class="font-display text-2xl text-chene whitespace-nowrap">L'établ'IA</a>
+        <a href="/" class="font-display text-2xl text-chene">L'établ'IA</a>
 
         <!-- Navigation desktop -->
-        <nav class="hidden md:flex items-center gap-7">
-          <!-- Dropdown Catalogue -->
-          <div class="relative group">
-            <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition">
-              Catalogue
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="opacity-60 group-hover:opacity-100"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <!-- Menu dropdown -->
-            <div class="absolute top-full left-0 mt-2 w-[240px] bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition pointer-events-none group-hover:pointer-events-auto">
-              <a href="/produits/automatisations/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">⚡ Automatiser</a>
-              <a href="/produits/vendre/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">📈 Vendre</a>
-              <a href="/produits/tableaux-de-bord/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">◯ Piloter</a>
-              <a href="/produits/modeles/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">◇ Produire</a>
-              <a href="/produits/guides-formations/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">▣ Sécuriser</a>
-              <div class="border-t border-pierre/20 my-1"></div>
-              <a href="/catalogue.html" class="block px-4 py-2 font-body text-[14px] text-chene hover:bg-chene-6 transition font-semibold">Voir tout le catalogue →</a>
-            </div>
-          </div>
-
-          <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene transition">À propos</a>
-          <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene transition">FAQ</a>
-          <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene transition">Contact</a>
+        <nav class="hidden md:flex items-center gap-8">
+          <a
+            href="/catalogue.html"
+            class="font-body text-base text-ebene hover:text-chene"
+            style="transition: color 0.2s ease"
+            >Systèmes forgés</a
+          >
+          <a
+            href="/a-propos.html"
+            class="font-body text-base text-ebene hover:text-chene"
+            style="transition: color 0.2s ease"
+            >À propos</a
+          >
+          <a
+            href="/faq.html"
+            class="font-body text-base text-ebene hover:text-chene"
+            style="transition: color 0.2s ease"
+            >FAQ</a
+          >
+          <a
+            href="/contact.html"
+            class="font-body text-base text-ebene hover:text-chene"
+            style="transition: color 0.2s ease"
+            >Contact</a
+          >
         </nav>
 
-        <!-- Search + CTA desktop -->
-        <div class="hidden md:flex items-center gap-3">
-          <button id="search-trigger" aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <a href="/diagnostic.html" class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap">Diagnostic gratuit</a>
-        </div>
+        <!-- CTA desktop -->
+        <a
+          href="/catalogue.html"
+          class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90"
+          >Trouver mon système</a
+        >
 
-        <!-- Mobile : search + burger -->
-        <div class="md:hidden flex items-center gap-2">
-          <button id="search-trigger-mobile" data-search-trigger aria-label="Rechercher" class="text-pierre p-2">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <button id="menu-toggle" class="flex flex-col gap-[5px] p-1" aria-label="Ouvrir le menu">
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-          </button>
-        </div>
+        <!-- Bouton hamburger mobile -->
+        <button
+          id="menu-toggle"
+          class="md:hidden flex flex-col gap-[5px] p-1"
+          aria-label="Ouvrir le menu"
+        >
+          <span class="block w-6 h-[2px] bg-ebene"></span>
+          <span class="block w-6 h-[2px] bg-ebene"></span>
+          <span class="block w-6 h-[2px] bg-ebene"></span>
+        </button>
       </div>
     </header>
 
     <!-- Menu mobile plein écran -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" style="display: none;">
-      <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" aria-label="Fermer le menu">&times;</button>
-      <nav class="flex flex-col items-center gap-6 mb-10 text-center">
-        <a href="/catalogue.html" class="font-heading text-2xl text-ebene hover:text-chene">Catalogue</a>
-        <div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-          <a href="/produits/automatisations/" class="hover:text-chene">⚡ Automatiser</a>
-          <a href="/produits/vendre/" class="hover:text-chene">📈 Vendre</a>
-          <a href="/produits/tableaux-de-bord/" class="hover:text-chene">◯ Piloter</a>
-          <a href="/produits/modeles/" class="hover:text-chene">◇ Produire</a>
-          <a href="/produits/guides-formations/" class="hover:text-chene">▣ Sécuriser</a>
-        </div>
-        <div class="border-t border-pierre/30 w-32 my-3"></div>
-        <a href="/a-propos.html" class="font-body text-lg text-ebene hover:text-chene">À propos</a>
-        <a href="/faq.html" class="font-body text-lg text-ebene hover:text-chene">FAQ</a>
-        <a href="/contact.html" class="font-body text-lg text-ebene hover:text-chene">Contact</a>
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden"
+    >
+      <!-- Bouton fermeture -->
+      <button
+        id="menu-close"
+        class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none"
+        aria-label="Fermer le menu"
+      >
+        &times;
+      </button>
+
+      <!-- Liens de navigation -->
+      <nav class="flex flex-col items-center gap-8 mb-10">
+        <a
+          href="/catalogue.html"
+          class="font-body text-base text-ebene hover:text-chene"
+          style="transition: color 0.2s ease"
+          >Systèmes forgés</a
+        >
+        <a
+          href="/a-propos.html"
+          class="font-body text-base text-ebene hover:text-chene"
+          style="transition: color 0.2s ease"
+          >À propos</a
+        >
+        <a
+          href="/faq.html"
+          class="font-body text-base text-ebene hover:text-chene"
+          style="transition: color 0.2s ease"
+          >FAQ</a
+        >
+        <a
+          href="/contact.html"
+          class="font-body text-base text-ebene hover:text-chene"
+          style="transition: color 0.2s ease"
+          >Contact</a
+        >
       </nav>
-      <a href="/diagnostic.html" class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90">Diagnostic gratuit</a>
+
+      <!-- CTA mobile pleine largeur -->
+      <a
+        href="/catalogue.html"
+        class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]"
+        >Trouver mon système</a
+      >
     </div>
 
     <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
@@ -334,39 +367,6 @@
         </div>
       </section>
 
-      <!-- SECTION PERSONAS V4 -->
-      <section class="py-16 md:py-20 bg-chene-6">
-        <div class="max-w-[1200px] mx-auto px-4 md:px-8">
-          <div class="text-center mb-12">
-            <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">PAR PROFIL</p>
-            <h2 class="font-heading text-[32px] md:text-[44px] text-ebene leading-[1.1]">Vous êtes&hellip;</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <a href="/catalogue.html?cible=e-commerce" class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group">
-              <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">E-COMMERÇANT</p>
-              <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Shopify · WooCommerce</h3>
-              <p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">Notification commande, alerte stock, séquence post-achat, collecte d'avis.</p>
-              <span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">5 systèmes pour vous →</span>
-            </a>
-
-            <a href="/catalogue.html?cible=freelance" class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group">
-              <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">FREELANCE</p>
-              <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Solo · Agence</h3>
-              <p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">CRM Notion, relances prospects, tri d'emails, carnet de bord.</p>
-              <span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">4 systèmes pour vous →</span>
-            </a>
-
-            <a href="/catalogue.html?cible=tpe-generaliste" class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group">
-              <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">TPE GÉNÉRALISTE</p>
-              <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Coach · Formateur · Consultant</h3>
-              <p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">Dashboard trésorerie, kit facturation 2026, pack cyber-hygiène.</p>
-              <span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">3 systèmes pour vous →</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <!-- ──────────────────── SECTION 3BIS — FAMILLES DE SYSTÈMES ──────────────────── -->
       <section class="py-20 px-4 md:py-20" style="background:#E9DDC8;">
         <div class="max-w-[1200px] mx-auto">
@@ -424,70 +424,6 @@
           </div>
         </div>
       </section>
-
-<!-- SECTION BEST-SELLERS V4 -->
-      <section class="py-16 md:py-20 bg-lin">
-        <div class="max-w-[1200px] mx-auto px-4 md:px-8">
-          <div class="text-center mb-12">
-            <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">CES DERNIÈRES SEMAINES</p>
-            <h2 class="font-heading text-[32px] md:text-[44px] text-ebene leading-[1.1]">Les plus forgés.</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="/signal-de-vente/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-              <div class="bg-chene-6 h-[120px] flex items-center justify-center">
-                <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-              </div>
-              <div class="p-6">
-                <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">SHOPIFY · TELEGRAM</p>
-                <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Signal de Vente</h3>
-                <p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Une alerte Telegram à chaque commande Shopify. En temps réel.</p>
-                <div class="flex items-center justify-between">
-                  <span class="font-mono text-[20px] text-chene font-semibold">29 €</span>
-                  <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-                </div>
-              </div>
-            </a>
-
-            <a href="/gardien-de-stock/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-              <div class="bg-chene-6 h-[120px] flex items-center justify-center">
-                <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-              </div>
-              <div class="p-6">
-                <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">SHOPIFY · SHEETS</p>
-                <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Gardien de Stock</h3>
-                <p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Surveille votre stock Shopify et alerte avant rupture.</p>
-                <div class="flex items-center justify-between">
-                  <span class="font-mono text-[20px] text-chene font-semibold">29 €</span>
-                  <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-                </div>
-              </div>
-            </a>
-
-            <a href="/produit/cyber-hygiene-tpe/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-              <div class="bg-chene-6 h-[120px] flex items-center justify-center">
-                <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">SÉCURISER</span>
-              </div>
-              <div class="p-6">
-                <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">PDF · GUIDES</p>
-                <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Pack Cyber-Hygiène TPE</h3>
-                <p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Audit en 20 points + 4 guides pour mettre votre TPE à niveau.</p>
-                <div class="flex items-center justify-between">
-                  <span class="font-mono text-[20px] text-chene font-semibold">39 €</span>
-                  <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="text-center mt-10">
-            <a href="/catalogue.html" class="inline-block bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90 transition">
-              Voir tout le catalogue →
-            </a>
-          </div>
-        </div>
-      </section>
-
 
       <!-- ─────────────────────────────── SECTION 4 — SCÉNARIO QUOTIDIEN ──────────────────── -->
       <section class="bg-chene-6 py-20 px-4 md:py-20">
@@ -849,6 +785,5 @@
     </script>
       <script src="/assets/js/cookies.js" defer></script>
       <script src="/assets/js/burger-menu.js" defer></script>
-      <script src="/assets/js/search-modal.js" defer></script>
   </body>
 </html>
