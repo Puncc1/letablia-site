@@ -2,17 +2,21 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+    <!-- Typographies V4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pack Cyber-Hygiène TPE — L'établ'IA</title>
   <meta name="description" content="Protéger les bases numériques de votre activité en une demi-journée. Audit 20 points, guide mots de passe, plan sauvegarde 3-2-1, procédures. 39€.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <!-- Fontshare : Zodiak + Satoshi -->
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  
+  
+  
+  
   <!-- Google Fonts : JetBrains Mono -->
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="/styles/output.css">
   <link rel="stylesheet" href="/assets/css/design-system.css">
   <style>
@@ -30,8 +34,8 @@
 
     /* ── Schéma flux ── */
     .flux-schema { display:flex; flex-direction:column; gap:0; align-items:center; }
-    .flux-node { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
-    .flux-arrow { color:#B46A3C; font-size:22px; line-height:1; margin:4px 0; }
+    .flux-node { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
+    .flux-arrow { color:#8A7560; font-size:22px; line-height:1; margin:4px 0; }
 
     /* ── Sticky CTA mobile ── */
     #sticky-cta { display:none; }
@@ -42,21 +46,22 @@
     .fiche-technique tr { border-bottom:1px solid rgba(107,74,47,0.15); }
     .fiche-technique tr:last-child { border-bottom:none; }
     .fiche-technique td { padding:10px 12px; font-size:14px; line-height:1.5; vertical-align:top; }
-    .fiche-technique td:first-child { color:#6B4A2F; font-weight:600; white-space:nowrap; width:45%; }
+    .fiche-technique td:first-child { color:#8A7560; font-weight:600; white-space:nowrap; width:45%; }
 
     /* ── Cross-sell cards ── */
-    .crosssell-card { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
+    .crosssell-card { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
     .crosssell-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,34,29,0.08); }
 
     /* ── Prérequis bloc ── */
-    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
-    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#8C3F32; color:#FFFCF5; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
+    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#8C3F32; color:#FAF7F2; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
 
     /* ── Limites bloc ── */
     .limite-item { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(140,63,50,0.15); }
     .limite-item:last-child { border-bottom:none; }
   </style>
-</head>
+    <link rel="stylesheet" href="/assets/css/cookies.css" />
+  </head>
 <body class="bg-lin font-body text-ebene">
 
   <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
@@ -193,18 +198,18 @@
           <div class="md:w-[42%] flex flex-col gap-6">
 
             <!-- Aperçu placeholder -->
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
-              <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; opacity:0.6;">Aperçu du pack</span>
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+              <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; opacity:0.6;">Aperçu du pack</span>
               <div style="border:1px dashed var(--v3-color-brun);background:var(--v3-color-papier);padding:24px;text-align:center;color:var(--v3-color-brun);">
                 <p style="font-style:italic;margin:0;">Aperçu des documents — capture annotée à venir</p>
               </div>
-              <span style="font-family:var(--font-mono,monospace); font-size:10px; color:#B46A3C; letter-spacing:0.05em;">VERSION 1.0 · TESTÉ MAI 2026</span>
+              <span style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; letter-spacing:0.05em;">VERSION 1.0 · TESTÉ MAI 2026</span>
             </div>
 
             <!-- Fiche technique -->
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
               <div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
-                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B4A2F; font-weight:600;">Fiche technique</span>
+                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600;">Fiche technique</span>
               </div>
               <table class="fiche-technique">
                 <tr><td>Type</td><td>Pack documentaire</td></tr>
@@ -261,7 +266,7 @@
         <div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
 
           <!-- Livrable 1 -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Audit cyber en 20 points</p>
@@ -270,7 +275,7 @@
           </div>
 
           <!-- Livrable 2 -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="11" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Guide mots de passe + MFA</p>
@@ -279,7 +284,7 @@
           </div>
 
           <!-- Livrable 3 -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Plan de sauvegarde 3-2-1</p>
@@ -288,7 +293,7 @@
           </div>
 
           <!-- Livrable 4 -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Guide anti-phishing</p>
@@ -297,7 +302,7 @@
           </div>
 
           <!-- Livrable 5 -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Procédure départ collaborateur</p>
@@ -306,7 +311,7 @@
           </div>
 
           <!-- Livrable 6 -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Registre des accès (xlsx)</p>
@@ -315,7 +320,7 @@
           </div>
 
           <!-- Livrable 7 — pleine largeur sur md -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;" class="md:col-span-2">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;" class="md:col-span-2">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Ressources officielles MesServicesCyber</p>
@@ -339,7 +344,7 @@
         <ul class="flex flex-col gap-4">
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -349,7 +354,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -359,7 +364,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -369,7 +374,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -379,7 +384,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -389,7 +394,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -399,7 +404,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -425,7 +430,7 @@
         <div class="avantapres-grid">
 
           <!-- AVANT -->
-          <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
+          <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
             <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
@@ -450,28 +455,28 @@
           <!-- Flèche -->
           <div class="avantapres-arrow flex flex-col items-center justify-center">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#B46A3C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#8A7560" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
           <!-- APRÈS -->
-          <div style="background:#FFFCF5; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">Après</p>
+          <div style="background:#FAF7F2; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">Après</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Audit 20 points complété — vous savez exactement où vous en êtes
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Gestionnaire de mots de passe en place, MFA activé sur les outils critiques
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Plan sauvegarde 3-2-1 documenté et appliqué
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Procédure départ documentée — plus aucun accès fantôme
               </li>
             </ul>
@@ -500,32 +505,32 @@
         <!-- Schéma de flux -->
         <div class="flux-schema mb-12">
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 1</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 1</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Réaliser l'audit 20 points</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 2</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 2</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Identifier les priorités à traiter</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; width:100%; max-width:600px;">
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Action A</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Action A</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Mots de passe + MFA</p>
             </div>
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Action B</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Action B</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Sauvegarde 3-2-1</p>
             </div>
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Action C</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Action C</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Procédures équipe</p>
             </div>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Résultat</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Résultat</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Registre d'accès à jour · Procédures documentées</p>
           </div>
         </div>
@@ -534,15 +539,15 @@
         <div>
           <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] text-center mb-6">Basé sur les recommandations de</p>
           <div class="flex flex-wrap justify-center gap-4">
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
               <span style="color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
               <p class="font-body font-semibold text-[14px] text-ebene">ANSSI</p>
             </div>
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
               <span style="color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></span>
               <p class="font-body font-semibold text-[14px] text-ebene">MesServicesCyber</p>
             </div>
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
               <span style="color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></span>
               <p class="font-body font-semibold text-[14px] text-ebene">Cybermalveillance.gouv.fr</p>
             </div>
@@ -641,7 +646,7 @@
         </div>
 
         <!-- Encadré rassurant -->
-        <div style="background:#F0F7F4; border-left:3px solid #3F6F5B; border-radius:4px; padding:20px;">
+        <div style="background:#F0F7F4; border-left:3px solid #6B7C5F; border-radius:4px; padding:20px;">
           <p class="font-body text-[14px] text-ebene leading-[1.65]">
             <strong>Aucune connaissance en cybersécurité requise.</strong> Ce pack est conçu pour les dirigeants de TPE, pas pour les techniciens. Chaque concept est expliqué simplement. Si vous avez un doute, le support email est là pendant 30 jours.
           </p>
@@ -659,7 +664,7 @@
           Ce que ce pack ne fait pas
         </h2>
 
-        <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
+        <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
           <div class="flex flex-col">
 
             <div class="limite-item">
@@ -704,26 +709,26 @@
 
           <!-- Fait pour vous -->
           <div class="md:w-1/2">
-            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous êtes dirigeant de TPE, indépendant ou artisan qui gère des données clients
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous n'avez pas de responsable informatique dédié en interne
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous savez que votre sécurité numérique est insuffisante, sans savoir par où commencer
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous avez ou avez eu des salariés ou prestataires avec accès à vos systèmes
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous voulez être en mesure de répondre à un client ou partenaire qui vous demande vos pratiques de sécurité
               </li>
             </ul>
@@ -772,7 +777,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Doit-on tout faire en une seule fois ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Non. Le pack est conçu pour être utilisé à votre rythme. L'idéal est de commencer par l'audit 20 points (environ 45 minutes) pour identifier vos priorités, puis d'appliquer les guides dans l'ordre qui vous convient. Beaucoup de clients finissent le pack en 2 à 3 sessions.</p>
@@ -783,7 +788,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Mon comptable ou mon assistante a-t-il aussi besoin de ce pack ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Ce pack est conçu pour la personne qui pilote la sécurité dans votre structure (souvent le dirigeant). Certains documents, comme le guide anti-phishing, sont pensés pour être partagés avec toute l'équipe. Une seule licence suffit — vous pouvez en diffuser les contenus en interne librement.</p>
@@ -794,7 +799,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Le RGPD est-il couvert par ce pack ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Partiellement. Ce pack couvre la sécurité technique des données (mots de passe, sauvegardes, accès) qui contribue à votre conformité RGPD. Le registre des accès est d'ailleurs souvent exigé en cas de contrôle CNIL. En revanche, la mise en conformité RGPD complète (politique de confidentialité, registre de traitements, DPO) relève d'un accompagnement juridique dédié.</p>
@@ -805,7 +810,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Les mises à jour sont-elles incluses ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Les mises à jour mineures (correction d'erreurs, actualisation des recommandations officielles) vous sont envoyées par email sans frais supplémentaire. En cas d'évolution majeure du contexte réglementaire ou technique, une nouvelle version peut faire l'objet d'une mise à jour payante — vous en serez informé en priorité à tarif préférentiel.</p>
@@ -816,7 +821,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Y a-t-il un support si je suis bloqué sur un point ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Pendant 30 jours après l'achat, vous pouvez écrire à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline">contact@letablia.fr</a> pour toute question sur l'utilisation du pack. Réponse sous 48h ouvrées. Ce support porte sur l'utilisation des documents fournis, pas sur une prestation de conseil cybersécurité personnalisée.</p>
@@ -877,7 +882,7 @@
     <section class="bg-ebene py-20 px-4 md:py-24">
       <div class="max-w-[600px] mx-auto text-center">
 
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B46A3C; margin-bottom:16px;">Prêt à sécuriser vos bases en une demi-journée ?</p>
+        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; margin-bottom:16px;">Prêt à sécuriser vos bases en une demi-journée ?</p>
 
         <h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
           Obtenez le Pack Cyber-Hygiène TPE
@@ -959,13 +964,13 @@
   </footer>
 
   <!-- ══════════════════ STICKY CTA MOBILE (affiché seulement < 768px) ══════════════════ -->
-  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
+  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
     <div>
       <p class="font-body font-semibold text-[14px] text-lin leading-none">Pack Cyber-Hygiène · 39 €</p>
       <p class="font-body text-[11px] text-pierre mt-1">6 PDF + tableur · 14j Satisfait ou Forgé</p>
     </div>
     <a href="https://letablia.lemonsqueezy.com/checkout/buy/CYBER-HYGIENE-TPE"
-       style="flex-shrink:0; background:#B46A3C; color:#FFFCF5; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
+       style="flex-shrink:0; background:#8A7560; color:#FAF7F2; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
       Obtenir →
     </a>
   </div>
@@ -1011,14 +1016,14 @@
   </script>
 
   <!-- Bannière cookies RGPD -->
-  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; color:#F2EDE8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
     <p style="margin:0; font-size:14px;">
       Ce site utilise des cookies techniques et analytics.
-      <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+      <a href="/mentions-legales.html" style="color:#8A7560;">En savoir plus</a>
     </p>
     <div style="display:flex; gap:12px;">
-      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
-      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F2EDE8; color:#F2EDE8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#8A7560; border:none; color:#FAF7F2; padding:6px 12px; cursor:pointer;">Accepter</button>
     </div>
   </div>
   <script>
@@ -1035,5 +1040,6 @@
     }
   </script>
 
-</body>
+    <script src="/assets/js/cookies.js" defer></script>
+  </body>
 </html>

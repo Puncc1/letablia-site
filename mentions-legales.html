@@ -2,20 +2,25 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+    <!-- Typographies V4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mentions légales — L'établ'IA</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="styles/output.css">
-  <!-- Fontshare : Zodiak + Satoshi -->
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  
+  
+  
   <!-- Google Fonts : JetBrains Mono -->
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <!-- Design System V3 -->
   <link rel="stylesheet" href="/assets/css/design-system.css">
-</head>
+    <link rel="stylesheet" href="/assets/css/cookies.css" />
+  </head>
 <body class="bg-lin font-body text-ebene">
 
   <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
@@ -202,7 +207,7 @@
       </div>
 
       <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
-        <p class="font-body text-[13px] text-pierre mb-3">Produits digitaux pour TPE/PME francophones · Paiement unique · Support humain · Pré-requis affichés avant achat</p>
+        <p class="font-body text-[13px] text-pierre mb-3">Produits digitaux pour TPE/PME francophones · Paiement unique · Accompagnement personnalisé · Pré-requis affichés avant achat</p>
         <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
       </div>
 
@@ -218,16 +223,15 @@
     close.addEventListener('click',  function () { menu.classList.add('hidden'); });
   </script>
 
-
   <!-- Bannière cookies RGPD -->
-  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; color:#F2EDE8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
     <p style="margin:0; font-size:14px;">
       Ce site utilise des cookies techniques et analytics.
-      <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+      <a href="/mentions-legales.html" style="color:#8A7560;">En savoir plus</a>
     </p>
     <div style="display:flex; gap:12px;">
-      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
-      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F2EDE8; color:#F2EDE8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#8A7560; border:none; color:#FAF7F2; padding:6px 12px; cursor:pointer;">Accepter</button>
     </div>
   </div>
   <script>
@@ -244,5 +248,6 @@
     }
   </script>
 
-</body>
+    <script src="/assets/js/cookies.js" defer></script>
+  </body>
 </html>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://letablia.fr/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://letablia.fr/catalogue.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://letablia.fr/a-propos.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/contact.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/diagnostic.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/faq.html</loc><priority>0.7</priority><changefreq>monthly</changefreq></url>
+  <!-- Pages catégories produits -->
+  <url><loc>https://letablia.fr/produits/automatisations/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produits/vendre/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produits/tableaux-de-bord/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produits/templates/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produits/guides-formations/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/cgv.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://letablia.fr/mentions-legales.html</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <url><loc>https://letablia.fr/confidentialite/</loc><priority>0.5</priority><changefreq>yearly</changefreq></url>
+  <!-- Produits -->
+  <url><loc>https://letablia.fr/signal-de-vente/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/gardien-de-stock/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/sequenceur-post-achat/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/collecteur-avis/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/carnet-forge/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produit/relance-prospects/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produit/cyber-hygiene-tpe/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produit/dashboard-tresorerie/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produit/kit-facturation-2026/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produit/mini-crm-notion/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+  <url><loc>https://letablia.fr/produit/agent-tri-email/</loc><priority>0.8</priority><changefreq>monthly</changefreq></url>
+</urlset>

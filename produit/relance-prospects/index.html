@@ -2,17 +2,21 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+    <!-- Typographies V4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Système de Relance Prospects — L'établ'IA</title>
-  <meta name="description" content="Envoyez automatiquement 3 emails de relance à chaque prospect au bon moment. Workflow n8n prêt à brancher sur Gmail + Google Sheets. 49€ paiement unique.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="Envoyez automatiquement 3 emails de relance à chaque prospect au bon moment. Système forgé n8n prêt à brancher sur Gmail + Google Sheets. 49€ paiement unique.">
+  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <!-- Fontshare : Zodiak + Satoshi -->
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  
+  
+  
+  
   <!-- Google Fonts : JetBrains Mono -->
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="/styles/output.css">
   <link rel="stylesheet" href="/assets/css/design-system.css">
   <style>
@@ -30,8 +34,8 @@
 
     /* ── Schéma flux ── */
     .flux-schema { display:flex; flex-direction:column; gap:0; align-items:center; }
-    .flux-node { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
-    .flux-arrow { color:#B46A3C; font-size:22px; line-height:1; margin:4px 0; }
+    .flux-node { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
+    .flux-arrow { color:#8A7560; font-size:22px; line-height:1; margin:4px 0; }
 
     /* ── Sticky CTA mobile ── */
     #sticky-cta { display:none; }
@@ -42,27 +46,28 @@
     .fiche-technique tr { border-bottom:1px solid rgba(107,74,47,0.15); }
     .fiche-technique tr:last-child { border-bottom:none; }
     .fiche-technique td { padding:10px 12px; font-size:14px; line-height:1.5; vertical-align:top; }
-    .fiche-technique td:first-child { color:#6B4A2F; font-weight:600; white-space:nowrap; width:45%; }
+    .fiche-technique td:first-child { color:#8A7560; font-weight:600; white-space:nowrap; width:45%; }
 
     /* ── Cross-sell cards ── */
-    .crosssell-card { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
+    .crosssell-card { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
     .crosssell-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,34,29,0.08); }
 
     /* ── Prérequis bloc ── */
-    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
-    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#B46A3C; color:#FFFCF5; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
+    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#8A7560; color:#FAF7F2; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
 
     /* ── Limites bloc ── */
     .limite-item { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(140,63,50,0.15); }
     .limite-item:last-child { border-bottom:none; }
 
     /* ── Capture placeholder ── */
-    .capture-placeholder { border:1px dashed rgba(107,74,47,0.4); background:#FFFCF5; padding:32px 24px; text-align:center; border-radius:6px; color:#6B4A2F; font-style:italic; font-size:14px; min-height:120px; display:flex; align-items:center; justify-content:center; }
+    .capture-placeholder { border:1px dashed rgba(107,74,47,0.4); background:#FAF7F2; padding:32px 24px; text-align:center; border-radius:6px; color:#8A7560; font-style:italic; font-size:14px; min-height:120px; display:flex; align-items:center; justify-content:center; }
 
     /* ── Badge cuivre ── */
-    .badge--cuivre { background:#B46A3C; color:#FFFCF5; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:4px; }
+    .badge--cuivre { background:#8A7560; color:#FAF7F2; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:4px; }
   </style>
-</head>
+    <link rel="stylesheet" href="/assets/css/cookies.css" />
+  </head>
 <body class="bg-lin font-body text-ebene">
 
   <!-- HEADER -->
@@ -146,7 +151,7 @@
                   Obtenir le système →
                 </a>
                 <p class="font-body text-[12px] text-pierre text-center">
-                  Workflow JSON inclus · Support 30 jours · 14j Satisfait ou Forgé
+                  Système forgé JSON inclus · Support 30 jours · 14j Satisfait ou Forgé
                 </p>
               </div>
             </div>
@@ -157,13 +162,13 @@
             <div class="capture-placeholder">Aperçu du système — capture à venir.</div>
 
             <!-- Fiche technique -->
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
               <div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
-                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B4A2F; font-weight:600;">Fiche technique</span>
+                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600;">Fiche technique</span>
               </div>
               <table class="fiche-technique">
                 <tr><td>Nom</td><td>Système de Relance Prospects</td></tr>
-                <tr><td>Type</td><td>Workflow automation (n8n)</td></tr>
+                <tr><td>Type</td><td>Système forgé automation (n8n)</td></tr>
                 <tr><td>Format livré</td><td>JSON n8n + guide + 3 templates email</td></tr>
                 <tr><td>Installation</td><td>25 à 40 minutes</td></tr>
                 <tr><td>Niveau</td><td>Débutant (suit un guide)</td></tr>
@@ -210,48 +215,48 @@
         </h2>
         <div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B46A3C;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Le système forgé n8n JSON — prêt à importer</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Un fichier <code>relance-prospects.json</code> à charger en un clic dans n8n. Déclencheur horaire, lecture Sheets, filtre automatique, envoi Gmail, mise à jour statut, alerte Telegram.</p>
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B46A3C;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Un guide d'installation pas à pas (25–40 min)</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Chaque étape détaillée : importation, connexion Gmail OAuth2, connexion Sheets, configuration des variables. Zéro compétence technique requise.</p>
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B46A3C;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">3 templates email de relance prêts à personnaliser</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Relance J+3 (prise de contact douce), J+7 (rappel valeur), J+14 (dernière tentative). À adapter à votre ton et votre secteur en 10 minutes.</p>
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B46A3C;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Le tableau Google Sheets de suivi (modèle prêt)</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Un fichier <code>tableau-relances.xlsx</code> avec les colonnes exactes attendues par le système forgé : nom, email, statut, date prochaine relance, compteur. Dupliquez et remplissez.</p>
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B46A3C;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Notifications Telegram en temps réel (optionnel)</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Recevez un message sur votre téléphone à chaque relance envoyée et quand un prospect atteint 3 relances sans réponse. Le guide explique comment créer un bot Telegram en 5 minutes.</p>
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B46A3C;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Limite automatique à 3 relances par prospect</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Le système forgé compte les relances envoyées. Passé 3, il bascule automatiquement le statut sur "Relancé Max" et vous alerte — sans jamais harceler un contact.</p>
@@ -272,7 +277,7 @@
         <ul class="flex flex-col gap-4">
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#B46A3C; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -282,7 +287,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#B46A3C; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -292,7 +297,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#B46A3C; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -302,7 +307,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#B46A3C; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -312,7 +317,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#B46A3C; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -335,7 +340,7 @@
         <div class="avantapres-grid">
 
           <!-- AVANT -->
-          <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
+          <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
             <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
@@ -364,32 +369,32 @@
           <!-- Flèche -->
           <div class="avantapres-arrow flex flex-col items-center justify-center">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#B46A3C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#8A7560" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
           <!-- APRÈS -->
-          <div style="background:#FFFCF5; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">Après</p>
+          <div style="background:#FAF7F2; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">Après</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Le système vérifie toutes les heures et relance au bon moment
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Chaque prospect reçoit ses 3 relances à J+3, J+7, J+14
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Google Sheets se met à jour automatiquement après chaque envoi
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Telegram vous notifie à chaque relance envoyée
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Vous vous concentrez sur convertir — pas sur rappeler qui relancer
               </li>
             </ul>
@@ -410,28 +415,28 @@
         <!-- Schéma de flux -->
         <div class="flux-schema mb-12">
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Déclencheur</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Déclencheur</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Toutes les heures (Cron)</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Source</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Source</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Google Sheets — liste prospects</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Filtre</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Filtre</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Statut "À relancer" + date &lt;= aujourd'hui</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Condition</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Condition</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Relances envoyées &lt; 3 ?</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; width:100%; max-width:500px;">
             <div class="flux-node" style="min-width:0; border-color:rgba(63,111,91,0.4);">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#3F6F5B; text-transform:uppercase; letter-spacing:0.06em;">Oui → Relance</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B7C5F; text-transform:uppercase; letter-spacing:0.06em;">Oui → Relance</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Gmail envoie l'email · Sheets mis à jour · Telegram notifié</p>
             </div>
             <div class="flux-node" style="min-width:0; border-color:rgba(140,63,50,0.4);">
@@ -467,7 +472,7 @@
             <p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">1</p>
             <h3 class="font-heading font-bold text-xl text-lin mb-3">Importez le système forgé dans n8n</h3>
             <p class="font-body text-[14px] text-pierre leading-[1.6]">
-              Menu › Workflows › Import from file. Sélectionnez <code>relance-prospects.json</code>. Le système apparaît à l'écran.
+              Menu › Système forgés › Import from file. Sélectionnez <code>relance-prospects.json</code>. Le système apparaît à l'écran.
             </p>
           </div>
 
@@ -510,7 +515,7 @@
     <!-- SECTION 8 — PRÉREQUIS -->
     <section class="bg-lin py-16 px-4 md:py-20">
       <div class="max-w-[720px] mx-auto">
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B46A3C; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
+        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ce dont vous avez besoin avant de commencer
         </h2>
@@ -543,25 +548,25 @@
         </div>
 
         <!-- Coûts tiers -->
-        <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px 24px; margin-bottom:16px;">
-          <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#B46A3C; font-weight:600; margin-bottom:10px;">Coûts tiers récurrents estimés</p>
+        <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px 24px; margin-bottom:16px;">
+          <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; font-weight:600; margin-bottom:10px;">Coûts tiers récurrents estimés</p>
           <ul class="flex flex-col gap-2">
             <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.5]">
-              <span style="color:#6B4A2F; flex-shrink:0; margin-top:2px;">·</span>
+              <span style="color:#8A7560; flex-shrink:0; margin-top:2px;">·</span>
               <span><strong>n8n Cloud :</strong> ~20€/mois (plan Starter) — ou 0€ si self-hosted sur votre VPS.</span>
             </li>
             <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.5]">
-              <span style="color:#6B4A2F; flex-shrink:0; margin-top:2px;">·</span>
+              <span style="color:#8A7560; flex-shrink:0; margin-top:2px;">·</span>
               <span><strong>Gmail + Sheets :</strong> gratuit (compte Google personnel ou Workspace déjà existant).</span>
             </li>
             <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.5]">
-              <span style="color:#6B4A2F; flex-shrink:0; margin-top:2px;">·</span>
+              <span style="color:#8A7560; flex-shrink:0; margin-top:2px;">·</span>
               <span><strong>Variante Make :</strong> 9€/mois (plan Core Make/Integromat) — si vous préférez Make à n8n.</span>
             </li>
           </ul>
         </div>
 
-        <div style="background:#F0F7F4; border-left:3px solid #3F6F5B; border-radius:4px; padding:20px;">
+        <div style="background:#F0F7F4; border-left:3px solid #6B7C5F; border-radius:4px; padding:20px;">
           <p class="font-body text-[14px] text-ebene leading-[1.65]">
             <strong>Aucune compétence en programmation requise.</strong> Si vous savez naviguer dans un interface web et copier-coller des valeurs, vous installez ce système. Le support email est là si vous bloquez quelque part.
           </p>
@@ -576,7 +581,7 @@
         <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ce que ce système ne fait pas
         </h2>
-        <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
+        <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
           <div class="flex flex-col">
 
             <div class="limite-item">
@@ -617,26 +622,26 @@
 
           <!-- Fait pour vous -->
           <div class="md:w-1/2">
-            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous êtes freelance ou indépendant avec un portefeuille de prospects actifs
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous suivez déjà vos prospects dans un tableur (ou vous souhaitez commencer)
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous envoyez vos emails depuis Gmail
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous avez moins de 500 prospects actifs à relancer simultanément
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous voulez un outil simple, pas un CRM avec 50 fonctions dont vous n'avez pas besoin
               </li>
             </ul>
@@ -682,7 +687,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Je n'ai jamais utilisé n8n. Est-ce que je peux quand même installer ce système ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, le guide d'installation a été conçu pour des personnes sans expérience n8n. Vous suivez les étapes dans l'ordre, vous copiez-collez les valeurs demandées, vous cliquez où le guide vous indique. Si c'est votre premier contact avec n8n, comptez 40 minutes plutôt que 25. En cas de blocage, le support email répond sous 48h.</p>
@@ -693,7 +698,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Dois-je payer n8n en plus des 49€ ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, n8n est un outil tiers. Les 49€ couvrent le système forgé JSON + les guides + les modèles + le support — pas l'abonnement n8n lui-même. Vous pouvez utiliser n8n Cloud (~20€/mois) ou héberger n8n gratuitement sur votre propre serveur (VPS). Le guide couvre les deux options.</p>
@@ -704,7 +709,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Comment le système sait quand relancer chaque prospect ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Chaque prospect a une colonne "date_prochaine_relance" dans le Google Sheet. Le système forgé vérifie toutes les heures si cette date est atteinte ou dépassée. Après chaque envoi, il calcule automatiquement la prochaine date (J+3, J+7, J+14 par défaut — modifiable dans le système forgé).</p>
@@ -715,7 +720,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que se passe-t-il si un prospect répond entre deux relances ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Il vous suffit de changer le statut de ce prospect dans le Google Sheet ("Répondu", "Gagné", "Perdu" — à vous de choisir). Le système forgé filtre uniquement les prospects avec le statut "À relancer". Un statut différent stop automatiquement les relances.</p>
@@ -726,7 +731,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je modifier les intervalles J+3, J+7, J+14 ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le guide d'installation vous montre exactement où trouver ces valeurs dans le système forgé et comment les modifier. Vous pouvez utiliser J+1, J+5, J+21 ou tout autre intervalle qui correspond à votre cycle de vente.</p>
@@ -737,7 +742,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que couvre exactement la garantie 14 jours ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Si ce système forgé ne fonctionne pas comme promis dans les 14 jours suivant votre achat, je le <strong>corrige</strong>. Si la correction n'aboutit pas, je vous <strong>rembourse intégralement</strong> sous 5 jours ouvrables. Un email à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline">contact@letablia.fr</a> suffit. C'est aussi simple que ça.</p>
@@ -769,7 +774,7 @@
           </a>
 
           <!-- Produit 2 — Pack Contenu LinkedIn -->
-          <a href="/produit/pack-contenu-linkedin/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
+          <a href="/catalogue.html" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
             <p class="font-display text-[28px] text-chene leading-[1.0] mb-2">59 €</p>
             <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Pack Contenu LinkedIn</h3>
             <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Pour alimenter votre prospection avec un contenu régulier qui attire les bons prospects avant même qu'ils vous contactent.</p>
@@ -791,12 +796,12 @@
     <!-- SECTION 13 — CTA FINAL -->
     <section class="bg-ebene py-20 px-4 md:py-24">
       <div class="max-w-[600px] mx-auto text-center">
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B46A3C; margin-bottom:16px;">Prêt à automatiser vos relances ?</p>
+        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; margin-bottom:16px;">Prêt à automatiser vos relances ?</p>
         <h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
           Obtenir le Système de Relance Prospects
         </h2>
         <p class="font-body text-base text-pierre leading-[1.6] mb-4">
-          Paiement unique. Téléchargement immédiat. Workflow JSON + guide d'installation + 3 templates email + tableau Sheets. Support 30 jours. Satisfait ou Forgé — 14 jours.
+          Paiement unique. Téléchargement immédiat. Système forgé JSON + guide d'installation + 3 templates email + tableau Sheets. Support 30 jours. Satisfait ou Forgé — 14 jours.
         </p>
         <p class="font-display text-[42px] text-chene leading-[1.0] mb-8">49 € — paiement unique</p>
         <a href="https://letablia.lemonsqueezy.com/checkout/buy/RELANCE-PROSPECTS"
@@ -809,7 +814,7 @@
         </p>
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
           <span class="font-body text-[13px] text-pierre">Paiement unique</span>
-          <span class="font-body text-[13px] text-pierre">Workflow JSON inclus</span>
+          <span class="font-body text-[13px] text-pierre">Système forgé JSON inclus</span>
           <span class="font-body text-[13px] text-pierre">Support 30 jours</span>
           <span class="font-body text-[13px] text-pierre">Garantie 14 jours</span>
         </div>
@@ -857,13 +862,13 @@
   </footer>
 
   <!-- STICKY CTA MOBILE -->
-  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
+  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
     <div>
       <p class="font-body font-semibold text-[14px] text-lin leading-none">Relance Prospects · 49 €</p>
-      <p class="font-body text-[11px] text-pierre mt-1">Workflow n8n · 14j satisfait</p>
+      <p class="font-body text-[11px] text-pierre mt-1">Système forgé n8n · 14j satisfait</p>
     </div>
     <a href="https://letablia.lemonsqueezy.com/checkout/buy/RELANCE-PROSPECTS"
-       style="flex-shrink:0; background:#B46A3C; color:#FFFCF5; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
+       style="flex-shrink:0; background:#8A7560; color:#FAF7F2; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
       Obtenir le système →
     </a>
   </div>
@@ -907,14 +912,14 @@
   </script>
 
   <!-- Bannière cookies RGPD -->
-  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; color:#F2EDE8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
     <p style="margin:0; font-size:14px;">
       Ce site utilise des cookies techniques et analytics.
-      <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+      <a href="/mentions-legales.html" style="color:#8A7560;">En savoir plus</a>
     </p>
     <div style="display:flex; gap:12px;">
-      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
-      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F2EDE8; color:#F2EDE8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#8A7560; border:none; color:#FAF7F2; padding:6px 12px; cursor:pointer;">Accepter</button>
     </div>
   </div>
   <script>
@@ -931,5 +936,6 @@
     }
   </script>
 
-</body>
+    <script src="/assets/js/cookies.js" defer></script>
+  </body>
 </html>

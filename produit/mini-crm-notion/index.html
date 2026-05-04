@@ -2,17 +2,21 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+    <!-- Typographies V4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mini CRM Prestataire (Notion) — L'établ'IA</title>
-  <meta name="description" content="Un seul endroit pour vos clients, projets, relances et suivis. Template Notion clé-en-main pour freelances, consultants, coachs et agences solo. 49€.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <meta name="description" content="Un seul endroit pour vos clients, projets, relances et suivis. Modèle Notion clé-en-main pour freelances, consultants, coachs et agences solo. 49€.">
+  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <!-- Fontshare : Zodiak + Satoshi -->
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  
+  
+  
+  
   <!-- Google Fonts : JetBrains Mono -->
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="/styles/output.css">
   <link rel="stylesheet" href="/assets/css/design-system.css">
   <style>
@@ -30,8 +34,8 @@
 
     /* ── Schéma flux ── */
     .flux-schema { display:flex; flex-direction:column; gap:0; align-items:center; }
-    .flux-node { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
-    .flux-arrow { color:#B46A3C; font-size:22px; line-height:1; margin:4px 0; }
+    .flux-node { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
+    .flux-arrow { color:#8A7560; font-size:22px; line-height:1; margin:4px 0; }
 
     /* ── Sticky CTA mobile ── */
     #sticky-cta { display:none; }
@@ -42,15 +46,15 @@
     .fiche-technique tr { border-bottom:1px solid rgba(107,74,47,0.15); }
     .fiche-technique tr:last-child { border-bottom:none; }
     .fiche-technique td { padding:10px 12px; font-size:14px; line-height:1.5; vertical-align:top; }
-    .fiche-technique td:first-child { color:#6B4A2F; font-weight:600; white-space:nowrap; width:45%; }
+    .fiche-technique td:first-child { color:#8A7560; font-weight:600; white-space:nowrap; width:45%; }
 
     /* ── Cross-sell cards ── */
-    .crosssell-card { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
+    .crosssell-card { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
     .crosssell-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,34,29,0.08); }
 
     /* ── Prérequis bloc ── */
-    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
-    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#3F6F5B; color:#FFFCF5; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
+    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#6B7C5F; color:#FAF7F2; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
 
     /* ── Limites bloc ── */
     .limite-item { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(140,63,50,0.15); }
@@ -59,10 +63,11 @@
     /* ── Schéma bases de données ── */
     .db-schema { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; max-width:520px; margin:0 auto; }
     @media (max-width:767px) { .db-schema { grid-template-columns:1fr; } }
-    .db-node { background:#FFFCF5; border:2px solid rgba(63,111,91,0.3); border-radius:8px; padding:16px; text-align:center; }
-    .db-node-main { border-color:#3F6F5B; border-width:2px; }
+    .db-node { background:#FAF7F2; border:2px solid rgba(63,111,91,0.3); border-radius:8px; padding:16px; text-align:center; }
+    .db-node-main { border-color:#6B7C5F; border-width:2px; }
   </style>
-</head>
+    <link rel="stylesheet" href="/assets/css/cookies.css" />
+  </head>
 <body class="bg-lin font-body text-ebene">
 
   <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
@@ -139,7 +144,7 @@
           <li><span class="text-pierre opacity-50">›</span></li>
           <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.2s ease">Produits</a></li>
           <li><span class="text-pierre opacity-50">›</span></li>
-          <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.2s ease">Templates</a></li>
+          <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.2s ease">Modèles</a></li>
           <li><span class="text-pierre opacity-50">›</span></li>
           <li class="text-ebene font-semibold">Mini CRM Prestataire — Notion</li>
         </ol>
@@ -156,7 +161,7 @@
 
             <!-- Badges gamme + statut -->
             <div class="flex flex-wrap items-center gap-2 mb-5">
-              <span class="badge badge--gamme">Vendre · Template · Notion</span>
+              <span class="badge badge--gamme">Vendre · Modèle · Notion</span>
               <span class="badge badge--pret">Prêt à utiliser</span>
             </div>
 
@@ -185,10 +190,10 @@
                 <a href="https://letablia.lemonsqueezy.com/checkout/buy/MINI-CRM-NOTION"
                    class="block text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90"
                    style="transition:opacity 0.2s ease">
-                  Obtenir ce template →
+                  Obtenir ce modèle →
                 </a>
                 <p class="font-body text-[12px] text-pierre text-center">
-                  Template Notion · Installation 15 min · Support 30 jours · 14j Satisfait ou Forgé
+                  Modèle Notion · Installation 15 min · Support 30 jours · 14j Satisfait ou Forgé
                 </p>
               </div>
             </div>
@@ -199,21 +204,21 @@
           <div class="md:w-[42%] flex flex-col gap-6">
 
             <!-- Aperçu placeholder -->
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
-              <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; opacity:0.6;">Aperçu du template</span>
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+              <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; opacity:0.6;">Aperçu du template</span>
               <div style="border:1px dashed var(--v3-color-brun);background:var(--v3-color-papier);padding:24px;text-align:center;color:var(--v3-color-brun);">
                 <p style="font-style:italic;margin:0;">Capture du dashboard Notion — à venir</p>
               </div>
-              <span style="font-family:var(--font-mono,monospace); font-size:10px; color:#3F6F5B; letter-spacing:0.05em;">VERSION 1.0 · TESTÉ MAI 2026</span>
+              <span style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B7C5F; letter-spacing:0.05em;">VERSION 1.0 · TESTÉ MAI 2026</span>
             </div>
 
             <!-- Fiche technique -->
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
               <div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
-                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B4A2F; font-weight:600;">Fiche technique</span>
+                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600;">Fiche technique</span>
               </div>
               <table class="fiche-technique">
-                <tr><td>Type</td><td>Template Notion (duplication URL)</td></tr>
+                <tr><td>Type</td><td>Modèle Notion (duplication URL)</td></tr>
                 <tr><td>Format livré</td><td>Lien de duplication Notion + guide PDF</td></tr>
                 <tr><td>Installation</td><td>10 à 15 minutes</td></tr>
                 <tr><td>Niveau</td><td>Débutant Notion — aucun prérequis technique</td></tr>
@@ -248,7 +253,7 @@
             Ce n'est pas un problème d'organisation personnelle — c'est un problème d'outillage. Un CRM traditionnel (HubSpot, Salesforce) est trop lourd, trop cher, et conçu pour des équipes de 10 personnes. Un simple fichier Excel ne suffit plus dès que vous avez 5 clients actifs.
           </p>
           <p class="font-body text-base text-ebene leading-[1.65]">
-            Il vous faut quelque chose de léger, structuré, et que vous pouvez adapter à votre façon de travailler. C'est exactement ce que ce template Notion fournit.
+            Il vous faut quelque chose de léger, structuré, et que vous pouvez adapter à votre façon de travailler. C'est exactement ce que ce modèle Notion fournit.
           </p>
         </div>
 
@@ -267,8 +272,8 @@
         <div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
 
           <!-- Base 1 — Clients -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#3F6F5B; font-size:24px; line-height:1;">👥</span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">👥</span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Base Clients — 17 champs</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Répertoire central de tous vos clients et prospects. Statut, contact, secteur, CA cumulé, prochaine relance. 3 vues : table complète, prospects actifs, galerie visuelle.</p>
@@ -276,8 +281,8 @@
           </div>
 
           <!-- Base 2 — Projets -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#3F6F5B; font-size:24px; line-height:1;">🗂️</span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">🗂️</span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Base Projets — Kanban + Calendrier</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Toutes vos missions en cours. Budget, deadline, avancement automatique, détection des retards. 4 vues dont Kanban par statut et vue "À facturer" pour ne rater aucune facturation.</p>
@@ -285,8 +290,8 @@
           </div>
 
           <!-- Base 3 — Tâches -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#3F6F5B; font-size:24px; line-height:1;">✅</span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">✅</span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Base Tâches — vue "Mes tâches du jour"</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Gestion opérationnelle par projet. Vue du jour filtrée sur l'urgent, Kanban par statut, calendrier des échéances. Votre to-do reliée directement à vos clients.</p>
@@ -294,8 +299,8 @@
           </div>
 
           <!-- Base 4 — Relances -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#3F6F5B; font-size:24px; line-height:1;">📧</span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">📧</span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Base Relances — plus aucune relance oubliée</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Devis sans réponse, factures impayées, suivis post-livraison. Alerte automatique si une relance est en retard. Vue "Relances cette semaine" pour commencer chaque lundi matin.</p>
@@ -303,8 +308,8 @@
           </div>
 
           <!-- Dashboard -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#3F6F5B; font-size:24px; line-height:1;">📊</span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">📊</span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Dashboard principal — vision d'ensemble</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Une page centrale qui agrège tout : urgences du jour, projets en cours (Kanban), relances de la semaine, et section "À facturer". Votre cockpit d'activité en un coup d'œil.</p>
@@ -312,8 +317,8 @@
           </div>
 
           <!-- Modèles email — pleine largeur -->
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#3F6F5B; font-size:24px; line-height:1;">✉️</span>
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+            <span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">✉️</span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">3 modèles email — prêts à personnaliser</p>
               <p class="font-body text-[14px] text-pierre leading-[1.6]">Email de suivi projet, relance facture, proposition commerciale. Rédigés avec les formules qui fonctionnent — personnalisez les variables et envoyez en 2 minutes.</p>
@@ -336,17 +341,17 @@
         <ul class="flex flex-col gap-4">
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
-              <p class="font-body font-semibold text-base text-lin">Template Notion — lien de duplication instantané</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Un clic pour copier le template dans votre espace Notion. Les 4 bases de données et toutes les vues sont déjà configurées.</p>
+              <p class="font-body font-semibold text-base text-lin">Modèle Notion — lien de duplication instantané</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Un clic pour copier le modèle dans votre espace Notion. Les 4 bases de données et toutes les vues sont déjà configurées.</p>
             </div>
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -356,17 +361,17 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
               <p class="font-body font-semibold text-base text-lin">5 clients et projets exemples pré-remplis</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pas de page blanche. Le template arrive avec des données fictives pour comprendre immédiatement comment tout s'articule — à supprimer ou conserver comme référence.</p>
+              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pas de page blanche. Le modèle arrive avec des données fictives pour comprendre immédiatement comment tout s'articule — à supprimer ou conserver comme référence.</p>
             </div>
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -376,7 +381,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -402,7 +407,7 @@
         <div class="avantapres-grid">
 
           <!-- AVANT -->
-          <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
+          <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
             <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
@@ -427,28 +432,28 @@
           <!-- Flèche -->
           <div class="avantapres-arrow flex flex-col items-center justify-center">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#B46A3C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#8A7560" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
           <!-- APRÈS -->
-          <div style="background:#FFFCF5; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">Après</p>
+          <div style="background:#FAF7F2; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">Après</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Tout centralisé dans un espace unique — clients, projets, tâches, relances
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Relances planifiées, alerte automatique si en retard
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Vue "À facturer" : plus aucun projet terminé non facturé
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 CA par client en un coup d'œil, planning visible sur calendrier
               </li>
             </ul>
@@ -477,32 +482,32 @@
         <!-- Schéma de flux -->
         <div class="flux-schema mb-12">
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 1</p>
-            <p class="font-body font-semibold text-[14px] text-ebene mt-1">Dupliquer le template dans Notion</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 1</p>
+            <p class="font-body font-semibold text-[14px] text-ebene mt-1">Dupliquer le modèle dans Notion</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 2</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 2</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Ajouter vos clients et projets en cours</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; width:100%; max-width:600px;">
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Vue A</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Vue A</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Dashboard — urgences</p>
             </div>
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Vue B</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Vue B</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Kanban — projets</p>
             </div>
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Vue C</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Vue C</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Relances semaine</p>
             </div>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Résultat</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Résultat</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Vision complète · Rien d'oublié · 15 min/jour de pilotage</p>
           </div>
         </div>
@@ -556,7 +561,7 @@
             <p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">1</p>
             <h3 class="font-heading font-bold text-xl text-lin mb-3">Dupliquez</h3>
             <p class="font-body text-[14px] text-pierre leading-[1.6]">
-              Cliquez sur le lien de duplication reçu par email. Le template apparaît dans votre espace Notion avec toutes les bases et vues déjà configurées.
+              Cliquez sur le lien de duplication reçu par email. Le modèle apparaît dans votre espace Notion avec toutes les bases et vues déjà configurées.
             </p>
           </div>
 
@@ -593,7 +598,7 @@
     <section class="bg-lin py-16 px-4 md:py-20">
       <div class="max-w-[720px] mx-auto">
 
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#3F6F5B; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
+        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ce dont vous avez besoin pour commencer
         </h2>
@@ -627,7 +632,7 @@
         </div>
 
         <!-- Encadré rassurant -->
-        <div style="background:#F0F7F4; border-left:3px solid #3F6F5B; border-radius:4px; padding:20px;">
+        <div style="background:#F0F7F4; border-left:3px solid #6B7C5F; border-radius:4px; padding:20px;">
           <p class="font-body text-[14px] text-ebene leading-[1.65]">
             <strong>Notion est gratuit pour les indépendants.</strong> Le plan "Free" de Notion (0€/mois) inclut tout ce qu'il faut pour ce CRM : bases de données illimitées, relations entre bases, formules, vues Kanban et calendrier. Aucun abonnement supplémentaire requis pour un usage solo.
           </p>
@@ -642,15 +647,15 @@
 
         <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Limites — à lire honnêtement</p>
         <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
-          Ce que ce template ne fait pas
+          Ce que ce modèle ne fait pas
         </h2>
 
-        <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
+        <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
           <div class="flex flex-col">
 
             <div class="limite-item">
               <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il nécessite un compte Notion — payant si usage en équipe.</strong> Ce template fonctionne en solo sur le plan gratuit Notion. Si vous souhaitez que plusieurs personnes modifient les données simultanément, le plan Notion Plus (10€/mois) sera nécessaire.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il nécessite un compte Notion — payant si usage en équipe.</strong> Ce modèle fonctionne en solo sur le plan gratuit Notion. Si vous souhaitez que plusieurs personnes modifient les données simultanément, le plan Notion Plus (10€/mois) sera nécessaire.</p>
             </div>
 
             <div class="limite-item">
@@ -660,12 +665,12 @@
 
             <div class="limite-item">
               <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Template Notion uniquement — variante Airtable en préparation.</strong> Ce CRM est conçu pour Notion. Si vous préférez Airtable, une version adaptée est prévue en Phase 3. Contactez-nous pour être informé en priorité.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Modèle Notion uniquement — variante Airtable en préparation.</strong> Ce CRM est conçu pour Notion. Si vous préférez Airtable, une version adaptée est prévue en Phase 3. Contactez-nous pour être informé en priorité.</p>
             </div>
 
             <div class="limite-item">
               <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne remplace pas un CRM complet pour équipes.</strong> Ce template est conçu pour les indépendants et petites structures (1 à 3 personnes). Si vous avez une équipe commerciale de 5+ personnes avec pipeline complexe et intégrations multiples, HubSpot ou Pipedrive seront plus adaptés.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne remplace pas un CRM complet pour équipes.</strong> Ce modèle est conçu pour les indépendants et petites structures (1 à 3 personnes). Si vous avez une équipe commerciale de 5+ personnes avec pipeline complexe et intégrations multiples, HubSpot ou Pipedrive seront plus adaptés.</p>
             </div>
 
           </div>
@@ -683,33 +688,33 @@
       <div class="max-w-[1000px] mx-auto">
 
         <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
-          Ce template est fait pour vous si&hellip;
+          Ce modèle est fait pour vous si&hellip;
         </h2>
 
         <div class="flex flex-col gap-8 md:flex-row md:gap-12">
 
           <!-- Fait pour vous -->
           <div class="md:w-1/2">
-            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous êtes freelance, consultant, coach, formateur ou agence solo (1 à 3 personnes)
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous gérez 3 à 20 clients actifs et avez du mal à tout suivre
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous avez déjà raté une relance, oublié de facturer ou perdu le fil d'un projet
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous voulez un outil simple à adapter à votre façon de travailler — sans formation
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous êtes déjà sur Notion ou prêt à l'utiliser (plan gratuit)
               </li>
             </ul>
@@ -758,18 +763,18 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Je n'ai jamais utilisé Notion. Est-ce que je vais m'en sortir ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, sans hésitation. Le template est accompagné d'un guide PDF pas-à-pas avec captures d'écran pour chaque étape. La duplication prend littéralement 1 clic. Le reste (créer un compte Notion, dupliquer le template, supprimer les exemples et ajouter vos données) est expliqué de façon très simple. Si vous êtes vraiment bloqué, le support email est là pendant 30 jours.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, sans hésitation. Le modèle est accompagné d'un guide PDF pas-à-pas avec captures d'écran pour chaque étape. La duplication prend littéralement 1 clic. Le reste (créer un compte Notion, dupliquer le template, supprimer les exemples et ajouter vos données) est expliqué de façon très simple. Si vous êtes vraiment bloqué, le support email est là pendant 30 jours.</p>
             </div>
           </div>
 
           <!-- Q2 -->
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je adapter le template à mon activité spécifique ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je adapter le modèle à mon activité spécifique ?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Absolument. C'est l'avantage de Notion : tout est modifiable. Vous pouvez renommer les colonnes, ajouter de nouveaux statuts (ex: adapter les statuts Projets à votre terminologie), créer de nouvelles vues filtrées, et ajouter des champs propres à votre activité. Le guide inclut des recommandations de personnalisation pour 5 profils : développeur freelance, consultant, coach, agence solo et formateur.</p>
@@ -780,7 +785,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je partager des informations avec mes clients depuis ce CRM ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, en lecture seule. Notion permet de partager une page ou une vue en mode "lecture seule" via un lien public — sans que votre client ait besoin d'un compte Notion. Vous pouvez par exemple partager la vue Kanban d'un projet pour que votre client suive l'avancement en temps réel. En revanche, pour qu'un client puisse modifier des données (co-édition), un plan payant Notion est nécessaire.</p>
@@ -791,7 +796,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Comment les relances fonctionnent-elles concrètement ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Vous créez une entrée dans la base Relances avec un client, un type (devis, facture, suivi…) et une date prévue. La vue "Relances cette semaine" filtre automatiquement tout ce qui doit être fait avant la fin de la semaine. Une formule "Alerte retard" s'active si la date est dépassée et que la relance est encore en statut "À envoyer". Vous cliquez sur le modèle email correspondant, personnalisez les variables, et envoyez depuis votre messagerie habituelle.</p>
@@ -801,11 +806,11 @@
           <!-- Q5 -->
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Les mises à jour du template sont-elles incluses ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Les mises à jour du modèle sont-elles incluses ?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Les corrections et améliorations mineures vous sont communiquées par email sans frais. En cas d'évolution majeure du template (nouvelle base de données, nouvelles fonctionnalités), vous serez informé en priorité. Note : les mises à jour Notion ne cassent généralement pas les templates existants — votre CRM restera fonctionnel quelle que soit la version de Notion.</p>
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Les corrections et améliorations mineures vous sont communiquées par email sans frais. En cas d'évolution majeure du modèle (nouvelle base de données, nouvelles fonctionnalités), vous serez informé en priorité. Note : les mises à jour Notion ne cassent généralement pas les templates existants — votre CRM restera fonctionnel quelle que soit la version de Notion.</p>
             </div>
           </div>
 
@@ -813,7 +818,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">J'utilise déjà un fichier Excel pour suivre mes clients. Comment migrer ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Notion permet d'importer un CSV directement dans une base de données. Si votre fichier Excel a une colonne par type d'info (nom, email, téléphone…), vous pouvez exporter en CSV et importer en quelques clics. Le guide d'installation inclut une section dédiée à la migration depuis un fichier existant. Pour un petit nombre de clients (&lt;20), la saisie manuelle est souvent plus rapide et garantit une meilleure qualité de données.</p>
@@ -874,14 +879,14 @@
     <section class="bg-ebene py-20 px-4 md:py-24">
       <div class="max-w-[600px] mx-auto text-center">
 
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B46A3C; margin-bottom:16px;">Prêt à centraliser toute votre activité client ?</p>
+        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; margin-bottom:16px;">Prêt à centraliser toute votre activité client ?</p>
 
         <h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
           Obtenez le Mini CRM Prestataire — Notion
         </h2>
 
         <p class="font-body text-base text-pierre leading-[1.6] mb-4">
-          Paiement unique. Duplication instantanée. Template Notion + guide PDF + exemples pré-remplis + 3 modèles email. Support 30 jours. Satisfait ou Forgé — 14 jours.
+          Paiement unique. Duplication instantanée. Modèle Notion + guide PDF + exemples pré-remplis + 3 modèles email. Support 30 jours. Satisfait ou Forgé — 14 jours.
         </p>
 
         <p class="font-display text-[42px] text-chene leading-[1.0] mb-8">49 € — paiement unique</p>
@@ -889,7 +894,7 @@
         <a href="https://letablia.lemonsqueezy.com/checkout/buy/MINI-CRM-NOTION"
            class="block md:inline-block w-full md:w-auto text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-8 py-[16px] hover:opacity-90 mb-4"
            style="transition:opacity 0.2s ease">
-          Obtenir ce template →
+          Obtenir ce modèle →
         </a>
 
         <p class="font-body text-[12px] text-pierre mt-2">
@@ -898,7 +903,7 @@
 
         <!-- Réassurance en ligne -->
         <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
-          <span class="font-body text-[13px] text-pierre">✓ Template Notion + guide PDF</span>
+          <span class="font-body text-[13px] text-pierre">✓ Modèle Notion + guide PDF</span>
           <span class="font-body text-[13px] text-pierre">✓ Support 30 jours</span>
           <span class="font-body text-[13px] text-pierre">✓ 14j Satisfait ou Forgé</span>
           <span class="font-body text-[13px] text-pierre">✓ Notion gratuit suffit</span>
@@ -956,13 +961,13 @@
   </footer>
 
   <!-- ══════════════════ STICKY CTA MOBILE (affiché seulement < 768px) ══════════════════ -->
-  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
+  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
     <div>
       <p class="font-body font-semibold text-[14px] text-lin leading-none">Mini CRM Notion · 49 €</p>
-      <p class="font-body text-[11px] text-pierre mt-1">Template Notion · 14j Satisfait ou Forgé</p>
+      <p class="font-body text-[11px] text-pierre mt-1">Modèle Notion · 14j Satisfait ou Forgé</p>
     </div>
     <a href="https://letablia.lemonsqueezy.com/checkout/buy/MINI-CRM-NOTION"
-       style="flex-shrink:0; background:#3F6F5B; color:#FFFCF5; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
+       style="flex-shrink:0; background:#6B7C5F; color:#FAF7F2; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
       Obtenir →
     </a>
   </div>
@@ -1008,14 +1013,14 @@
   </script>
 
   <!-- Bannière cookies RGPD -->
-  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; color:#F2EDE8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
     <p style="margin:0; font-size:14px;">
       Ce site utilise des cookies techniques et analytics.
-      <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+      <a href="/mentions-legales.html" style="color:#8A7560;">En savoir plus</a>
     </p>
     <div style="display:flex; gap:12px;">
-      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
-      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F2EDE8; color:#F2EDE8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#8A7560; border:none; color:#FAF7F2; padding:6px 12px; cursor:pointer;">Accepter</button>
     </div>
   </div>
   <script>
@@ -1032,5 +1037,6 @@
     }
   </script>
 
-</body>
+    <script src="/assets/js/cookies.js" defer></script>
+  </body>
 </html>

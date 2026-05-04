@@ -1,0 +1,71 @@
+/* Bannière cookies L'établ'IA V4 */
+#cookies-banner {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+  background: #2C2825;  /* Ébène V4 */
+  color: #F2EDE8;       /* Lin V4 */
+  padding: 1.25rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(44, 40, 37, 0.18);
+  z-index: 9999;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+#cookies-banner .cb-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  #cookies-banner .cb-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+#cookies-banner p {
+  margin: 0;
+  flex: 1;
+}
+#cookies-banner a {
+  color: #B8AFA6;  /* Pierre V4 */
+  text-decoration: underline;
+}
+#cookies-banner a:hover {
+  color: #F2EDE8;
+}
+#cookies-banner .cb-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.cb-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+.cb-btn-primary {
+  background: #6B7C5F;  /* Mousse V4 */
+  color: #F2EDE8;
+}
+.cb-btn-primary:hover {
+  background: #8A7560;  /* Chêne V4 */
+}
+.cb-btn-secondary {
+  background: transparent;
+  color: #F2EDE8;
+  border: 1px solid #B8AFA6;
+}
+.cb-btn-secondary:hover {
+  background: rgba(184, 175, 166, 0.1);
+}

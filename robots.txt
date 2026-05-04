@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /assets/cookies/
+Disallow: /*.bak*
+
+Sitemap: https://letablia.fr/sitemap.xml

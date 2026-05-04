@@ -2,17 +2,21 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
+    <!-- Typographies V4 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kit Facturation Électronique 2026 — L'établ'IA</title>
   <meta name="description" content="Comprendre, vous préparer et être conforme à la réforme facturation électronique sans panique. Guide PDF + checklist + tableur de suivi. 29€.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
+  
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  <!-- Fontshare : Zodiak + Satoshi -->
-  <link rel="preconnect" href="https://api.fontshare.com">
-  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  
+  
+  
+  
   <!-- Google Fonts : JetBrains Mono -->
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="/styles/output.css">
   <link rel="stylesheet" href="/assets/css/design-system.css">
   <style>
@@ -30,8 +34,8 @@
 
     /* ── Schéma flux ── */
     .flux-schema { display:flex; flex-direction:column; gap:0; align-items:center; }
-    .flux-node { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
-    .flux-arrow { color:#B46A3C; font-size:22px; line-height:1; margin:4px 0; }
+    .flux-node { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
+    .flux-arrow { color:#8A7560; font-size:22px; line-height:1; margin:4px 0; }
 
     /* ── Sticky CTA mobile ── */
     #sticky-cta { display:none; }
@@ -42,24 +46,25 @@
     .fiche-technique tr { border-bottom:1px solid rgba(107,74,47,0.15); }
     .fiche-technique tr:last-child { border-bottom:none; }
     .fiche-technique td { padding:10px 12px; font-size:14px; line-height:1.5; vertical-align:top; }
-    .fiche-technique td:first-child { color:#6B4A2F; font-weight:600; white-space:nowrap; width:45%; }
+    .fiche-technique td:first-child { color:#8A7560; font-weight:600; white-space:nowrap; width:45%; }
 
     /* ── Cross-sell cards ── */
-    .crosssell-card { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
+    .crosssell-card { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
     .crosssell-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,34,29,0.08); }
 
     /* ── Prérequis bloc ── */
-    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
-    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#8C3F32; color:#FFFCF5; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
+    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#8C3F32; color:#FAF7F2; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
 
     /* ── Limites bloc ── */
     .limite-item { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(140,63,50,0.15); }
     .limite-item:last-child { border-bottom:none; }
 
     /* ── Capture placeholder ── */
-    .capture-placeholder { border:1px dashed rgba(107,74,47,0.4); background:#FFFCF5; padding:32px 24px; text-align:center; border-radius:6px; color:#6B4A2F; font-style:italic; font-size:14px; min-height:120px; display:flex; align-items:center; justify-content:center; }
+    .capture-placeholder { border:1px dashed rgba(107,74,47,0.4); background:#FAF7F2; padding:32px 24px; text-align:center; border-radius:6px; color:#8A7560; font-style:italic; font-size:14px; min-height:120px; display:flex; align-items:center; justify-content:center; }
   </style>
-</head>
+    <link rel="stylesheet" href="/assets/css/cookies.css" />
+  </head>
 <body class="bg-lin font-body text-ebene">
 
   <!-- HEADER -->
@@ -154,9 +159,9 @@
             <div class="capture-placeholder">Aperçu du système — capture à venir.</div>
 
             <!-- Fiche technique -->
-            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
+            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
               <div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
-                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B4A2F; font-weight:600;">Fiche technique</span>
+                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600;">Fiche technique</span>
               </div>
               <table class="fiche-technique">
                 <tr><td>Nom</td><td>Kit Facturation Électronique 2026</td></tr>
@@ -208,7 +213,7 @@
         </h2>
         <div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Un guide PDF qui explique la réforme en 5 questions claires</p>
@@ -216,7 +221,7 @@
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Un comparatif des 4 plateformes agréées les plus accessibles</p>
@@ -224,7 +229,7 @@
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Une checklist pas-à-pas pour être prêt en septembre 2026</p>
@@ -232,7 +237,7 @@
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Une checklist spéciale micro-entrepreneurs (septembre 2027)</p>
@@ -240,7 +245,7 @@
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Un modèle de procédure interne pour votre équipe</p>
@@ -248,7 +253,7 @@
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Un tableur Excel pour suivre votre mise en conformité</p>
@@ -256,7 +261,7 @@
             </div>
           </div>
 
-          <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
             <span style="flex-shrink:0; margin-top:2px; color:currentColor;"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
             <div>
               <p class="font-body font-semibold text-base text-ebene mb-1">Une FAQ de 15 questions fréquentes</p>
@@ -278,7 +283,7 @@
         <ul class="flex flex-col gap-4">
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -288,7 +293,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -298,7 +303,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -308,7 +313,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -318,7 +323,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -328,7 +333,7 @@
           </li>
 
           <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#3F6F5B; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
             <div>
@@ -351,7 +356,7 @@
         <div class="avantapres-grid">
 
           <!-- AVANT -->
-          <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
+          <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
             <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
@@ -380,32 +385,32 @@
           <!-- Flèche -->
           <div class="avantapres-arrow flex flex-col items-center justify-center">
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#B46A3C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#8A7560" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
 
           <!-- APRÈS -->
-          <div style="background:#FFFCF5; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">Après</p>
+          <div style="background:#FAF7F2; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">Après</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Vous savez exactement quelles étapes franchir, dans quel ordre
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Vous avez choisi votre plateforme avec le comparatif en main
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Vous suivez votre conformité semaine par semaine dans le tableur
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Votre équipe dispose d'une procédure claire et documentée
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Vous êtes serein face à l'échéance réglementaire
               </li>
             </ul>
@@ -426,27 +431,27 @@
         <!-- Schéma de contenu -->
         <div class="flux-schema mb-12">
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 1</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 1</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Lire le guide PDF (~1h)</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 2</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 2</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Cocher la checklist de préparation</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div class="flux-node">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.08em;">Étape 3</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 3</p>
             <p class="font-body font-semibold text-[14px] text-ebene mt-1">Choisir sa plateforme (comparatif inclus)</p>
           </div>
           <div class="flux-arrow">↓</div>
           <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; width:100%; max-width:500px;">
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Suivi</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Suivi</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Tableur XLSX</p>
             </div>
             <div class="flux-node" style="min-width:0;">
-              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B4A2F; text-transform:uppercase; letter-spacing:0.06em;">Équipe</p>
+              <p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Équipe</p>
               <p class="font-body text-[13px] text-ebene mt-1 font-semibold">Procédure interne</p>
             </div>
           </div>
@@ -552,7 +557,7 @@
           </div>
 
         </div>
-        <div style="background:#F0F7F4; border-left:3px solid #3F6F5B; border-radius:4px; padding:20px;">
+        <div style="background:#F0F7F4; border-left:3px solid #6B7C5F; border-radius:4px; padding:20px;">
           <p class="font-body text-[14px] text-ebene leading-[1.65]">
             <strong>Aucune compétence technique requise.</strong> Ce kit est conçu pour être lu et appliqué par n'importe quel chef d'entreprise, sans passer par un expert. Si vous avez un doute sur votre situation, le support email est là pour vous aider.
           </p>
@@ -567,7 +572,7 @@
         <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ce que ce kit ne fait pas
         </h2>
-        <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
+        <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
           <div class="flex flex-col">
 
             <div class="limite-item">
@@ -608,26 +613,26 @@
 
           <!-- Fait pour vous -->
           <div class="md:w-1/2">
-            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
+            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
             <ul class="flex flex-col gap-3">
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous êtes micro-entrepreneur en France métropolitaine
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous dirigez une TPE ou êtes artisan concerné par la réforme
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous voulez être en règle pour 2026 ou 2027 sans panique de dernière minute
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous n'avez pas de service comptable dédié pour gérer cette transition
               </li>
               <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#3F6F5B; flex-shrink:0; margin-top:2px;">●</span>
+                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous voulez comprendre avant de choisir une plateforme
               </li>
             </ul>
@@ -673,7 +678,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Suis-je concerné si je suis micro-entrepreneur ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, si vous facturez des professionnels (B2B). La réforme concerne toutes les entreprises françaises assujetties à la TVA dans leurs échanges B2B. Pour les micro-entrepreneurs, la date d'obligation est fixée au 1er septembre 2027 (calendrier décalé). Le kit inclut une checklist dédiée à ce régime.</p>
@@ -684,7 +689,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Quelle plateforme me conseillez-vous ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Le kit n'en recommande pas une en particulier — chaque situation est différente. Le comparatif inclus vous présente les 4 plateformes agréées les plus accessibles, avec leurs tarifs, leurs points forts et leurs limites. Vous choisissez selon votre volume de factures, votre budget et votre logiciel comptable existant.</p>
@@ -695,7 +700,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Combien coûte une plateforme par mois en moyenne ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Les tarifs varient selon les plateformes et votre volume de factures. Le comparatif inclus dans le kit détaille les grilles tarifaires des 4 plateformes sélectionnées. Certaines proposent des formules gratuites pour un faible volume ; d'autres pratiquent un tarif au forfait mensuel ou à la facture émise.</p>
@@ -706,7 +711,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que se passe-t-il si je ne suis pas conforme au 1er septembre 2026 ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Le guide détaille les sanctions prévues par la réglementation. Le non-respect de l'obligation peut entraîner des pénalités fiscales. L'objectif du kit est précisément de vous éviter d'être surpris par cette date. Notez que pour les micro-entrepreneurs, la date est décalée au 1er septembre 2027.</p>
@@ -717,7 +722,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Le kit sera-t-il mis à jour si la réglementation change ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le kit inclut les mises à jour jusqu'au 1er septembre 2026. Si la réglementation évolue avant cette date, vous recevrez la version mise à jour par email. Les informations sont vérifiées au 1er mai 2026 ; consultez impots.gouv.fr pour toute évolution postérieure.</p>
@@ -728,7 +733,7 @@
           <div class="faq-item">
             <button class="faq-toggle" aria-expanded="false">
               <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que couvre exactement la garantie 14 jours ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </button>
             <div class="faq-body">
               <p class="font-body text-[14px] text-ebene leading-[1.65]">Si ce système forgé ne fonctionne pas comme promis dans les 14 jours suivant votre achat, je le <strong>corrige</strong>. Si la correction n'aboutit pas, je vous <strong>rembourse intégralement</strong> sous 5 jours ouvrables. Un email à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline">contact@letablia.fr</a> suffit. C'est aussi simple que ça.</p>
@@ -782,7 +787,7 @@
     <!-- SECTION 13 — CTA FINAL -->
     <section class="bg-ebene py-20 px-4 md:py-24">
       <div class="max-w-[600px] mx-auto text-center">
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B46A3C; margin-bottom:16px;">Prêt à aborder la réforme sereinement ?</p>
+        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; margin-bottom:16px;">Prêt à aborder la réforme sereinement ?</p>
         <h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
           Recevoir le Kit Facturation 2026
         </h2>
@@ -848,13 +853,13 @@
   </footer>
 
   <!-- STICKY CTA MOBILE -->
-  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
+  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
     <div>
       <p class="font-body font-semibold text-[14px] text-lin leading-none">Kit Facturation 2026 · 29 €</p>
       <p class="font-body text-[11px] text-pierre mt-1">Guide PDF inclus · 14j satisfait</p>
     </div>
     <a href="https://letablia.lemonsqueezy.com/checkout/buy/KIT-FACTURATION-2026"
-       style="flex-shrink:0; background:#B46A3C; color:#FFFCF5; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
+       style="flex-shrink:0; background:#8A7560; color:#FAF7F2; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
       Recevoir le kit →
     </a>
   </div>
@@ -898,14 +903,14 @@
   </script>
 
   <!-- Bannière cookies RGPD -->
-  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; color:#F2EDE8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
     <p style="margin:0; font-size:14px;">
       Ce site utilise des cookies techniques et analytics.
-      <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+      <a href="/mentions-legales.html" style="color:#8A7560;">En savoir plus</a>
     </p>
     <div style="display:flex; gap:12px;">
-      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
-      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F2EDE8; color:#F2EDE8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#8A7560; border:none; color:#FAF7F2; padding:6px 12px; cursor:pointer;">Accepter</button>
     </div>
   </div>
   <script>
@@ -922,5 +927,6 @@
     }
   </script>
 
-</body>
+    <script src="/assets/js/cookies.js" defer></script>
+  </body>
 </html>

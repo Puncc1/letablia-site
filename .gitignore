@@ -31,3 +31,9 @@ npm-debug.log*
 *.bak
 *.bak.*
 .bak/
+
+# Fichiers backup migrations
+*.bak-v3-to-v4-*
+*.bak-vocab-*
+*.bak-cgv-link-*
+

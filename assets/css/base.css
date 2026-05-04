@@ -9,14 +9,14 @@
 
 :root {
   /* Palette V3 — Artisan */
-  --v3-color-fond: #F6F1E8;
-  --v3-color-ivoire: #FFFCF5;
+  --v3-color-fond: #F2EDE8;
+  --v3-color-ivoire: #FAF7F2;
   --v3-color-papier: #E9DDC8;
-  --v3-color-graphite: #25221D;
-  --v3-color-brun: #6B4A2F;
-  --v3-color-cuivre: #B46A3C;
-  --v3-color-vert: #3F6F5B;
-  --v3-color-ardoise: #344E5C;
+  --v3-color-graphite: #2C2825;
+  --v3-color-brun: #8A7560;
+  --v3-color-cuivre: #8A7560;
+  --v3-color-vert: #6B7C5F;
+  --v3-color-ardoise: #6B7C5F;
   --v3-color-brique: #8C3F32;
   --v3-color-ocre: #B88A2E;
 
@@ -29,8 +29,8 @@
   --blanc: #FFFFFF;
 
   /* Typographies */
-  --font-titre: 'Zodiak', 'Georgia', 'Times New Roman', serif;
-  --font-corps: 'Satoshi', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-titre: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+  --font-corps: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Espacement et dimensions */
