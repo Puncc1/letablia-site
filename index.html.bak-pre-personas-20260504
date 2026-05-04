@@ -334,39 +334,6 @@
         </div>
       </section>
 
-      <!-- SECTION PERSONAS V4 -->
-      <section class="py-16 md:py-20 bg-chene-6">
-        <div class="max-w-[1200px] mx-auto px-4 md:px-8">
-          <div class="text-center mb-12">
-            <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">PAR PROFIL</p>
-            <h2 class="font-heading text-[32px] md:text-[44px] text-ebene leading-[1.1]">Vous êtes&hellip;</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-            <a href="/catalogue.html?cible=e-commerce" class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group">
-              <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">E-COMMERÇANT</p>
-              <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Shopify · WooCommerce</h3>
-              <p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">Notification commande, alerte stock, séquence post-achat, collecte d'avis.</p>
-              <span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">5 systèmes pour vous →</span>
-            </a>
-
-            <a href="/catalogue.html?cible=freelance" class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group">
-              <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">FREELANCE</p>
-              <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Solo · Agence</h3>
-              <p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">CRM Notion, relances prospects, tri d'emails, carnet de bord.</p>
-              <span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">4 systèmes pour vous →</span>
-            </a>
-
-            <a href="/catalogue.html?cible=tpe-generaliste" class="block bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8 hover:border-chene transition group">
-              <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">TPE GÉNÉRALISTE</p>
-              <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Coach · Formateur · Consultant</h3>
-              <p class="font-body text-[15px] text-pierre leading-[1.6] mb-5">Dashboard trésorerie, kit facturation 2026, pack cyber-hygiène.</p>
-              <span class="font-body text-[14px] text-mousse group-hover:underline font-semibold">3 systèmes pour vous →</span>
-            </a>
-          </div>
-        </div>
-      </section>
-
       <!-- ──────────────────── SECTION 3BIS — FAMILLES DE SYSTÈMES ──────────────────── -->
       <section class="py-20 px-4 md:py-20" style="background:#E9DDC8;">
         <div class="max-w-[1200px] mx-auto">
@@ -424,70 +391,6 @@
           </div>
         </div>
       </section>
-
-<!-- SECTION BEST-SELLERS V4 -->
-      <section class="py-16 md:py-20 bg-lin">
-        <div class="max-w-[1200px] mx-auto px-4 md:px-8">
-          <div class="text-center mb-12">
-            <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">CES DERNIÈRES SEMAINES</p>
-            <h2 class="font-heading text-[32px] md:text-[44px] text-ebene leading-[1.1]">Les plus forgés.</h2>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <a href="/signal-de-vente/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-              <div class="bg-chene-6 h-[120px] flex items-center justify-center">
-                <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">VENDRE</span>
-              </div>
-              <div class="p-6">
-                <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">SHOPIFY · TELEGRAM</p>
-                <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Signal de Vente</h3>
-                <p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Une alerte Telegram à chaque commande Shopify. En temps réel.</p>
-                <div class="flex items-center justify-between">
-                  <span class="font-mono text-[20px] text-chene font-semibold">29 €</span>
-                  <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-                </div>
-              </div>
-            </a>
-
-            <a href="/gardien-de-stock/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-              <div class="bg-chene-6 h-[120px] flex items-center justify-center">
-                <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">AUTOMATISER</span>
-              </div>
-              <div class="p-6">
-                <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">SHOPIFY · SHEETS</p>
-                <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Gardien de Stock</h3>
-                <p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Surveille votre stock Shopify et alerte avant rupture.</p>
-                <div class="flex items-center justify-between">
-                  <span class="font-mono text-[20px] text-chene font-semibold">29 €</span>
-                  <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-                </div>
-              </div>
-            </a>
-
-            <a href="/produit/cyber-hygiene-tpe/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-              <div class="bg-chene-6 h-[120px] flex items-center justify-center">
-                <span class="font-mono text-chene text-[11px] uppercase tracking-[2px]">SÉCURISER</span>
-              </div>
-              <div class="p-6">
-                <p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2">PDF · GUIDES</p>
-                <h3 class="font-heading text-[24px] text-ebene mb-3 leading-[1.2]">Pack Cyber-Hygiène TPE</h3>
-                <p class="font-body text-[14px] text-pierre leading-[1.5] mb-5">Audit en 20 points + 4 guides pour mettre votre TPE à niveau.</p>
-                <div class="flex items-center justify-between">
-                  <span class="font-mono text-[20px] text-chene font-semibold">39 €</span>
-                  <span class="font-body text-[14px] text-mousse group-hover:underline">Voir →</span>
-                </div>
-              </div>
-            </a>
-          </div>
-
-          <div class="text-center mt-10">
-            <a href="/catalogue.html" class="inline-block bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90 transition">
-              Voir tout le catalogue →
-            </a>
-          </div>
-        </div>
-      </section>
-
 
       <!-- ─────────────────────────────── SECTION 4 — SCÉNARIO QUOTIDIEN ──────────────────── -->
       <section class="bg-chene-6 py-20 px-4 md:py-20">

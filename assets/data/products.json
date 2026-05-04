@@ -1,0 +1,189 @@
+{
+  "version": "1.0",
+  "updated": "2026-05-04",
+  "families": [
+    {"slug": "automatisations", "title": "Automatiser", "verb": "Brancher des services entre eux", "icon": "lightning"},
+    {"slug": "vendre", "title": "Vendre", "verb": "Convertir et fidéliser", "icon": "trending"},
+    {"slug": "tableaux-de-bord", "title": "Piloter", "verb": "Voir et décider", "icon": "compass"},
+    {"slug": "modeles", "title": "Produire", "verb": "Modèles et trames", "icon": "layers"},
+    {"slug": "guides-formations", "title": "Sécuriser", "verb": "Cyber et conformité", "icon": "shield"}
+  ],
+  "products": [
+    {
+      "slug": "signal-de-vente",
+      "url": "/signal-de-vente/",
+      "title": "Signal de Vente",
+      "family": "vendre",
+      "tools": ["shopify", "telegram"],
+      "price": 29,
+      "targets": ["e-commerce"],
+      "blurb": "Une alerte Telegram à chaque commande Shopify. En temps réel.",
+      "keywords": "alerte commande shopify telegram notification temps reel ecommerce",
+      "icon": "bell"
+    },
+    {
+      "slug": "gardien-de-stock",
+      "url": "/gardien-de-stock/",
+      "title": "Gardien de Stock",
+      "family": "automatisations",
+      "tools": ["shopify", "google-sheets", "telegram"],
+      "price": 29,
+      "targets": ["e-commerce"],
+      "blurb": "Surveille votre stock Shopify et alerte avant rupture.",
+      "keywords": "stock shopify rupture alerte seuil sheets gestion",
+      "icon": "package"
+    },
+    {
+      "slug": "sequenceur-post-achat",
+      "url": "/sequenceur-post-achat/",
+      "title": "Séquenceur Post-Achat",
+      "family": "automatisations",
+      "tools": ["shopify", "brevo", "google-sheets"],
+      "price": 29,
+      "targets": ["e-commerce", "formateur"],
+      "blurb": "Email de remerciement et suivi automatique après chaque commande.",
+      "keywords": "email post achat remerciement suivi sequence brevo automatique",
+      "icon": "mail"
+    },
+    {
+      "slug": "collecteur-avis",
+      "url": "/collecteur-avis/",
+      "title": "Le Collecteur Avis",
+      "family": "vendre",
+      "tools": ["shopify", "brevo"],
+      "price": 29,
+      "targets": ["e-commerce"],
+      "blurb": "Collecte les avis clients après commande, automatiquement.",
+      "keywords": "avis clients shopify post commande sociale preuve",
+      "icon": "star"
+    },
+    {
+      "slug": "carnet-forge",
+      "url": "/carnet-forge/",
+      "title": "Carnet Forge",
+      "family": "modeles",
+      "tools": ["pdf"],
+      "price": 19,
+      "targets": ["freelance", "tpe-generaliste"],
+      "blurb": "Le journal de bord de l'artisan numérique, prêt à imprimer.",
+      "keywords": "journal carnet bord artisan pdf imprimer freelance",
+      "icon": "book"
+    },
+    {
+      "slug": "produit/relance-prospects",
+      "url": "/produit/relance-prospects/",
+      "title": "Relance Prospects",
+      "family": "vendre",
+      "tools": ["google-sheets", "gmail"],
+      "price": 49,
+      "targets": ["freelance", "agence"],
+      "blurb": "Système qui relance vos prospects automatiquement, avec tact.",
+      "keywords": "relance prospects sheets gmail commercial freelance",
+      "icon": "users"
+    },
+    {
+      "slug": "produit/mini-crm-notion",
+      "url": "/produit/mini-crm-notion/",
+      "title": "Mini CRM Notion",
+      "family": "modeles",
+      "tools": ["notion"],
+      "price": 39,
+      "targets": ["freelance", "agence"],
+      "blurb": "Un CRM léger, prêt à l'emploi, dans votre Notion.",
+      "keywords": "crm notion clients projets freelance agence consultant",
+      "icon": "layout"
+    },
+    {
+      "slug": "produit/dashboard-tresorerie",
+      "url": "/produit/dashboard-tresorerie/",
+      "title": "Dashboard Trésorerie TPE",
+      "family": "tableaux-de-bord",
+      "tools": ["google-sheets"],
+      "price": 39,
+      "targets": ["tpe-generaliste"],
+      "blurb": "Vue claire de votre trésorerie, mise à jour quotidienne.",
+      "keywords": "tresorerie tpe sheets dashboard finances pilotage",
+      "icon": "chart"
+    },
+    {
+      "slug": "produit/cyber-hygiene-tpe",
+      "url": "/produit/cyber-hygiene-tpe/",
+      "title": "Pack Cyber-Hygiène TPE",
+      "family": "guides-formations",
+      "tools": ["pdf"],
+      "price": 39,
+      "targets": ["tpe-generaliste"],
+      "blurb": "Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.",
+      "keywords": "cyber securite hygiene tpe audit guides phishing rgpd",
+      "icon": "shield"
+    },
+    {
+      "slug": "produit/kit-facturation-2026",
+      "url": "/produit/kit-facturation-2026/",
+      "title": "Kit Facturation Électronique 2026",
+      "family": "modeles",
+      "tools": ["pdf"],
+      "price": 49,
+      "targets": ["tpe-generaliste", "freelance"],
+      "blurb": "Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.",
+      "keywords": "facturation electronique 2026 conformite tpe pdf",
+      "icon": "file-text"
+    },
+    {
+      "slug": "produit/agent-tri-email",
+      "url": "/produit/agent-tri-email/",
+      "title": "Agent Tri Email",
+      "family": "automatisations",
+      "tools": ["gmail"],
+      "price": 29,
+      "targets": ["freelance", "tpe-generaliste"],
+      "blurb": "Trie votre boîte Gmail selon des règles métier.",
+      "keywords": "tri email gmail regles automatique inbox zero",
+      "icon": "mail"
+    },
+    {
+      "slug": "best-sellers",
+      "_meta": "ids des best-sellers à afficher en home (par ordre)",
+      "list": ["signal-de-vente", "gardien-de-stock", "produit/cyber-hygiene-tpe"]
+    }
+  ],
+  "personas": [
+    {
+      "slug": "e-commerce",
+      "title": "E-commerçant",
+      "subtitle": "Shopify · WooCommerce",
+      "blurb": "Notification commande, alerte stock, séquence post-achat, collecte d'avis.",
+      "filter": {"targets": ["e-commerce"]}
+    },
+    {
+      "slug": "freelance",
+      "title": "Freelance",
+      "subtitle": "Solo · Agence",
+      "blurb": "CRM Notion, relances prospects, tri d'emails.",
+      "filter": {"targets": ["freelance"]}
+    },
+    {
+      "slug": "formateur",
+      "title": "Formateur",
+      "subtitle": "Coach · Auteur",
+      "blurb": "Séquences post-achat, dashboard trésorerie, collecte d'avis.",
+      "filter": {"targets": ["formateur", "tpe-generaliste"]}
+    }
+  ],
+  "tools": [
+    {"slug": "shopify", "label": "Shopify"},
+    {"slug": "woocommerce", "label": "WooCommerce"},
+    {"slug": "n8n", "label": "n8n"},
+    {"slug": "notion", "label": "Notion"},
+    {"slug": "google-sheets", "label": "Google Sheets"},
+    {"slug": "gmail", "label": "Gmail"},
+    {"slug": "brevo", "label": "Brevo"},
+    {"slug": "telegram", "label": "Telegram"},
+    {"slug": "pdf", "label": "PDF (sans outil)"}
+  ],
+  "price_buckets": [
+    {"slug": "low", "label": "≤ 29 €", "min": 0, "max": 29},
+    {"slug": "mid", "label": "30 - 49 €", "min": 30, "max": 49},
+    {"slug": "high", "label": "50 € et +", "min": 50, "max": 9999}
+  ]
+}
