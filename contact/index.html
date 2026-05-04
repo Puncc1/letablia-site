@@ -479,7 +479,7 @@
     </header>
 
     <!-- Menu mobile plein écran -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" style="display: none;">
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" >
       <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" aria-label="Fermer le menu">&times;</button>
       <nav class="flex flex-col items-center gap-6 mb-10 text-center">
         <a href="/catalogue.html" class="font-heading text-2xl text-ebene hover:text-chene">Catalogue</a>
@@ -641,26 +641,7 @@
     </footer>
 
     <!-- ──────────────────────────────── SCRIPT MENU MOBILE ─────────────────────────────── -->
-    <script>
-      const menuToggle = document.getElementById('menu-toggle');
-      const menuClose = document.getElementById('menu-close');
-      const mobileMenu = document.getElementById('mobile-menu');
-
-      menuToggle.addEventListener('click', () => {
-        mobileMenu.classList.add('open');
-      });
-
-      menuClose.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-      });
-
-      const menuLinks = mobileMenu.querySelectorAll('a');
-      menuLinks.forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('open');
-        });
-      });
-    </script>
+    
       <script src="/assets/js/cookies.js" defer></script>
       <script src="/assets/js/burger-menu.js" defer></script>
       <script src="/assets/js/search-modal.js" defer></script>
