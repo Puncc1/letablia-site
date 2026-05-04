@@ -5,14 +5,305 @@
 <meta charset="utf-8"/><!-- Typographies V4 -->
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Diagnostic gratuit — L'établ'IA · Trouvons le système qui vous convient</title>
-<meta content="Conditions Générales de Vente de L'établ'IA — droit de rétractation, livraison, garanties, propriété intellectuelle." name="description"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<!-- Design System V3 -->
+<meta content="Politique de confidentialité de L'établ'IA — Comment nous traitons vos données personnelles." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="https://letablia.fr/confidentialite/" rel="canonical"/>
+<title>Politique de confidentialité — L'établ'IA</title>
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html, body {
+        font-family: 'Inter', system-ui, sans-serif;
+        color: #2C2825;
+        line-height: 1.6;
+      }
+
+      body {
+        background-color: #F2EDE8;
+      }
+
+      /* ── VARIABLES ── */
+      :root {
+        --v3-fond: #F2EDE8;
+        --v3-ivoire: #FAF7F2;
+        --v3-papier: #E9DDC8;
+        --v3-graphite: #2C2825;
+        --v3-brun: #8A7560;
+        --v3-chene: #8A7560;
+        --v3-cuivre: #8A7560;
+        --v3-vert: #6B7C5F;
+        --v3-pierre: #C5B9A8;
+      }
+
+      /* ── HEADER ── */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background-color: var(--v3-fond);
+        border-bottom: 1px solid var(--v3-pierre);
+        height: 72px;
+      }
+
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .logo {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.5rem;
+        color: var(--v3-chene);
+        text-decoration: none;
+        font-weight: 700;
+      }
+
+      nav {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        nav {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+      }
+
+      nav a {
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        color: var(--v3-graphite);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      nav a:hover {
+        color: var(--v3-chene);
+      }
+
+      .cta-nav {
+        display: none;
+        background-color: var(--v3-chene);
+        color: var(--v3-ivoire) !important;
+        font-weight: 600;
+        padding: 0.625rem 1.25rem;
+        border-radius: 6px;
+        font-size: 1rem;
+        text-decoration: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .cta-nav:hover {
+        opacity: 0.9;
+      }
+
+      @media (min-width: 768px) {
+        .cta-nav {
+          display: inline-block;
+        }
+      }
+
+      /* ── MENU HAMBURGER ── */
+      .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 0.25rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      @media (min-width: 768px) {
+        .menu-toggle {
+          display: none;
+        }
+      }
+
+      .menu-toggle span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background-color: var(--v3-graphite);
+      }
+
+      .mobile-menu {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background-color: var(--v3-fond);
+        z-index: 50;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+      }
+
+      .mobile-menu.open {
+        display: flex;
+      }
+
+      .mobile-menu a {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.5rem;
+        color: var(--v3-graphite);
+        text-decoration: none;
+      }
+
+      .mobile-menu-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--v3-graphite);
+      }
+
+      /* ── MAIN CONTENT ── */
+      main {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+      }
+
+      .page-label {
+        display: inline-block;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 0.75rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--v3-chene);
+        background-color: var(--v3-papier);
+        padding: 0.25rem 0.75rem;
+        border-radius: 4px;
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        color: var(--v3-graphite);
+        margin-bottom: 0.5rem;
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        color: var(--v3-brun);
+        font-size: 1.05rem;
+        margin-bottom: 3rem;
+      }
+
+      h2 {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.25rem;
+        color: var(--v3-graphite);
+        margin-top: 2.5rem;
+        margin-bottom: 0.75rem;
+        border-left: 3px solid var(--v3-cuivre);
+        padding-left: 0.75rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        color: var(--v3-graphite);
+      }
+
+      ul {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      li {
+        margin-bottom: 0.4rem;
+        color: var(--v3-graphite);
+      }
+
+      a {
+        color: var(--v3-cuivre);
+        text-decoration: underline;
+      }
+
+      a:hover {
+        color: var(--v3-chene);
+      }
+
+      .last-update {
+        margin-top: 3rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--v3-pierre);
+        font-size: 0.85rem;
+        color: var(--v3-chene);
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        background-color: var(--v3-papier);
+        border-top: 1px solid var(--v3-pierre);
+        padding: 2.5rem 1.5rem;
+        text-align: center;
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 1.25rem;
+        color: var(--v3-chene);
+        text-decoration: none;
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .footer-links a {
+        color: var(--v3-brun);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--v3-cuivre);
+      }
+
+      .footer-copy {
+        font-size: 0.8rem;
+        color: var(--v3-chene);
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--v3-cuivre);
+        outline-offset: 3px;
+      }
+    </style>
 <link href="/assets/css/cookies.css" rel="stylesheet"/>
 <link href="/styles/output.css" rel="stylesheet"/>
 </head>
 <body>
+<!-- ══ HEADER ══ -->
 <header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
 <div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
 <a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
@@ -74,135 +365,82 @@
 </div>
 <!-- Menu mobile plein écran -->
 
-<main class="bg-lin">
-<section class="section-hero py-20 md:py-24">
-<div class="container max-w-[760px] mx-auto px-4 md:px-8">
-<p class="font-body text-[14px] text-pierre uppercase tracking-[1px] mb-4">
-<a class="hover:text-chene" href="/">Accueil</a> › Diagnostic
-          </p>
-<h1 class="font-heading text-[42px] md:text-[56px] text-ebene leading-[1.0] mb-6">
-            Trouvons le système qui vous convient.
-          </h1>
-<p class="font-body text-lg md:text-xl text-pierre leading-[1.6]">
-            Un échange court, sans engagement. Vous décrivez votre besoin, je vous dis franchement si l'établ'IA peut vous aider, et lequel de nos systèmes forgés cadre — ou pas.
-          </p>
+<!-- ══ MENU MOBILE ══ -->
+<div class="mobile-menu" id="mobile-menu">
+<button aria-label="Fermer le menu" class="mobile-menu-close" id="menu-close">✕</button>
+<a href="/">Accueil</a>
+<a href="/catalogue.html">Systèmes forgés</a>
+<a href="/a-propos/">À propos</a>
+<a href="/faq.html">FAQ</a>
+<a href="/contact/">Contact</a>
 </div>
-</section>
-<section class="py-16 md:py-20">
-<div class="container max-w-[760px] mx-auto px-4 md:px-8">
-<div class="bg-chene-6 rounded-[8px] p-8 mb-12">
-<h2 class="font-heading text-[28px] md:text-[32px] text-ebene mb-6">
-              Comment ça marche
-            </h2>
-<ol class="space-y-4">
-<li class="flex gap-4">
-<span class="font-mono text-[18px] text-chene font-semibold shrink-0">1.</span>
-<span class="font-body text-base text-ebene leading-[1.6]">Vous remplissez le formulaire ci-dessous : votre métier, la tâche répétitive, votre stack actuelle, votre volume.</span>
-</li>
-<li class="flex gap-4">
-<span class="font-mono text-[18px] text-chene font-semibold shrink-0">2.</span>
-<span class="font-body text-base text-ebene leading-[1.6]">Je réponds sous 48 h ouvrables : oui je peux et voici lequel, ou non et voici pourquoi.</span>
-</li>
-<li class="flex gap-4">
-<span class="font-mono text-[18px] text-chene font-semibold shrink-0">3.</span>
-<span class="font-body text-base text-ebene leading-[1.6]">Si oui, vous achetez le système ou demandez l'installation accompagnée à 15 €. Pas d'abonnement, pas de devis sur 3 pages.</span>
-</li>
-</ol>
-</div>
-<div class="bg-mousse-10 rounded-[8px] p-8 mb-12">
-<h2 class="font-heading text-[28px] md:text-[32px] text-ebene mb-6">
-              Ce que je vérifie pendant le diagnostic
-            </h2>
-<ul class="space-y-3">
-<li class="font-body text-base text-ebene leading-[1.6]">— Votre tâche est-elle réellement répétable ? (sinon ce n'est pas un système qu'il faut)</li>
-<li class="font-body text-base text-ebene leading-[1.6]">— Avez-vous accès aux services tiers nécessaires (plateforme e-commerce, messagerie électronique, etc.) ?</li>
-<li class="font-body text-base text-ebene leading-[1.6]">— Le volume justifie-t-il l'achat ? (en dessous de 5-10 occurrences par semaine, l'investissement n'est pas amorti)</li>
-<li class="font-body text-base text-ebene leading-[1.6]">— Le cas est-il dans notre catalogue actuel, ou faut-il forger sur mesure ?</li>
+<!-- ══ CONTENU ══ -->
+<main>
+<span class="page-label">Données personnelles</span>
+<h1>Politique de confidentialité</h1>
+<p class="subtitle">Comment L'établ'IA collecte, utilise et protège vos données.</p>
+<h2>1. Responsable du traitement</h2>
+<p>
+<strong>L'établ'IA</strong> est une micro-entreprise française.<br/>
+        Responsable : Raphaël — <a href="mailto:contact@letablia.fr">contact@letablia.fr</a><br/>
+        TVA non applicable, art. 293B CGI.
+      </p>
+<h2>2. Données collectées</h2>
+<p>Lors de l'utilisation du formulaire de contact, nous collectons :</p>
+<ul>
+<li>Votre nom</li>
+<li>Votre adresse email</li>
+<li>L'objet de votre demande</li>
+<li>Votre message</li>
 </ul>
-</div>
-
-<!-- Formulaire de diagnostic -->
-<div class="bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8">
-<h2 class="font-heading text-[28px] md:text-[32px] text-ebene mb-6">Formulaire de diagnostic</h2>
-<form id="diagnostic-form" class="space-y-5" novalidate>
-
-  <div>
-    <label for="prenom" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre prénom <span class="text-mousse">*</span></label>
-    <input type="text" id="prenom" name="prenom" required class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition" placeholder="Marie">
-  </div>
-
-  <div>
-    <label for="email" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre email <span class="text-mousse">*</span></label>
-    <input type="email" id="email" name="email" required class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition" placeholder="vous@exemple.fr">
-  </div>
-
-  <div>
-    <label for="metier" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre métier <span class="text-mousse">*</span></label>
-    <input type="text" id="metier" name="metier" required class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition" placeholder="Coach business, freelance design, e-commerçant…">
-  </div>
-
-  <div>
-    <label for="tache" class="block font-body font-semibold text-[14px] text-ebene mb-2">La tâche répétitive qui vous mange du temps <span class="text-mousse">*</span></label>
-    <textarea id="tache" name="tache" required rows="4" class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition resize-y" placeholder="Décrivez en quelques phrases la tâche que vous aimeriez automatiser ou structurer."></textarea>
-  </div>
-
-  <div>
-    <label for="stack" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre stack actuelle</label>
-    <input type="text" id="stack" name="stack" class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition" placeholder="Plateforme e-commerce, tableur, prise de notes…">
-  </div>
-
-  <div>
-    <label for="volume" class="block font-body font-semibold text-[14px] text-ebene mb-2">Volume hebdomadaire estimé</label>
-    <select id="volume" name="volume" class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition">
-      <option value="">— Sélectionner —</option>
-      <option value="< 5">Moins de 5 / semaine</option>
-      <option value="5-10">5 à 10 / semaine</option>
-      <option value="10-30">10 à 30 / semaine</option>
-      <option value="30+">Plus de 30 / semaine</option>
-    </select>
-  </div>
-
-  <div>
-    <button type="submit" class="w-full md:w-auto bg-mousse text-lin font-semibold rounded-[6px] px-8 py-[14px] hover:opacity-90 transition">Envoyer le diagnostic</button>
-    <p class="font-body text-[13px] text-pierre mt-3">Réponse sous 48 h ouvrables · Aucun engagement · RGPD respecté</p>
-  </div>
-</form>
-<script>
-  document.getElementById('diagnostic-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var f = e.target;
-    var prenom = f.prenom.value.trim();
-    var email = f.email.value.trim();
-    var metier = f.metier.value.trim();
-    var tache = f.tache.value.trim();
-    var stack = f.stack.value.trim();
-    var volume = f.volume.value.trim();
-    if(!prenom || !email || !metier || !tache){
-      alert('Merci de remplir les champs obligatoires (prénom, email, métier, tâche).');
-      return;
-    }
-    var subject = 'Diagnostic — ' + metier;
-    var body = 'Bonjour,\n\nJe demande un diagnostic gratuit.\n\n'
-      + '— Prénom : ' + prenom + '\n'
-      + '— Email : ' + email + '\n'
-      + '— Métier : ' + metier + '\n'
-      + '— Tâche répétitive : ' + tache + '\n'
-      + (stack ? '— Stack actuelle : ' + stack + '\n' : '')
-      + (volume ? '— Volume hebdomadaire : ' + volume + '\n' : '')
-      + '\nMerci.';
-    window.location.href = 'mailto:diagnostic@letablia.fr?subject='
-      + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
-</script>
-</div>
-<div class="text-center mt-8">
-<p class="font-body text-[14px] text-pierre">
-              Ou allez voir directement le <a class="text-chene hover:underline" href="/catalogue.html">catalogue complet</a>.
-            </p>
-</div>
-</div>
-</section>
-</main><footer class="bg-ebene mt-12">
+<p>Aucune donnée supplémentaire (adresse postale, téléphone, données de paiement) n'est collectée via ce formulaire.</p>
+<h2>3. Finalité du traitement</h2>
+<p>Les données transmises via le formulaire de contact sont utilisées exclusivement pour :</p>
+<ul>
+<li>Répondre à votre demande ou question</li>
+<li>Vous accompagner dans le choix d'un système forgé adapté à votre activité</li>
+</ul>
+<p>Ces données ne sont pas utilisées à des fins commerciales ou marketing sans votre consentement explicite.</p>
+<h2>4. Durée de conservation</h2>
+<p>
+        Les messages reçus sont conservés pendant la durée nécessaire au traitement de votre demande,
+        puis archivés pour une durée maximale de <strong>3 ans</strong> à des fins de référence commerciale,
+        conformément aux recommandations de la CNIL.
+      </p>
+<h2>5. Destinataires des données</h2>
+<p>
+        Vos données sont transmises via le service <strong>Formspree</strong>
+        (prestataire tiers, politique de confidentialité disponible sur <a href="https://formspree.io/legal/privacy-policy" rel="noopener noreferrer" target="_blank">formspree.io</a>)
+        pour l'acheminement des messages. Aucune autre transmission à des tiers n'est effectuée.
+      </p>
+<h2>6. Vos droits (RGPD)</h2>
+<p>Conformément au Règlement Général sur la Protection des Données (UE) 2016/679, vous disposez des droits suivants :</p>
+<ul>
+<li><strong>Droit d'accès</strong> : obtenir une copie des données vous concernant</li>
+<li><strong>Droit de rectification</strong> : corriger des données inexactes</li>
+<li><strong>Droit à l'effacement</strong> : demander la suppression de vos données</li>
+<li><strong>Droit à la limitation</strong> : limiter le traitement dans certains cas</li>
+<li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
+</ul>
+<p>
+        Pour exercer ces droits, contactez-nous à : <a href="mailto:contact@letablia.fr">contact@letablia.fr</a>.<br/>
+        Réponse garantie sous <strong>30 jours</strong>. En cas de litige non résolu, vous pouvez saisir la
+        <a href="https://www.cnil.fr" rel="noopener noreferrer" target="_blank">CNIL</a>.
+      </p>
+<h2>7. Cookies et traceurs</h2>
+<p>
+        Le site letablia.fr n'utilise <strong>aucun cookie de traçage</strong> ou d'analyse de comportement
+        (Google Analytics, Meta Pixel, Hotjar, etc.). Aucun consentement cookie n'est requis à ce stade.
+      </p>
+<h2>8. Sécurité</h2>
+<p>
+        Les échanges avec letablia.fr sont protégés par HTTPS (chiffrement TLS).
+        Nous appliquons des mesures raisonnables pour protéger vos données contre tout accès non autorisé.
+      </p>
+<p class="last-update">Dernière mise à jour : mai 2026</p>
+</main>
+<!-- ══ FOOTER ══ -->
+<footer class="bg-ebene mt-12">
 <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
 <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
 <div class="text-center md:text-left">
@@ -245,7 +483,16 @@
 </div>
 </div>
 </footer>
-<!-- ── SCRIPT MENU MOBILE ── -->
+<script>
+      const toggle = document.getElementById('menu-toggle');
+      const menu = document.getElementById('mobile-menu');
+      const close = document.getElementById('menu-close');
+      if (toggle && menu && close) {
+        toggle.addEventListener('click', () => menu.classList.add('open'));
+        close.addEventListener('click', () => menu.classList.remove('open'));
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('open')));
+      }
+    </script>
 <script defer="" src="/assets/js/cookies.js"></script>
 <script defer="" src="/assets/js/burger-menu.js"></script>
 <script defer="" src="/assets/js/search-modal.js"></script>

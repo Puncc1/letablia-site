@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Personas et cibles — L'établ'IA · Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chene:#8A7560; --pierre:#B8AFA6; --mousse:#6B7C5F;
+  --lin:#F2EDE8; --ebene:#2C2825;
+}
+*{box-sizing:border-box}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--lin); color:var(--ebene); margin:0; line-height:1.6;
+}
+.container{max-width:920px;margin:0 auto;padding:32px 24px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--ebene);letter-spacing:-0.02em}
+h1{font-size:2.4rem;border-bottom:3px solid var(--chene);padding-bottom:12px;margin-top:0}
+h2{font-size:1.8rem;margin-top:40px;color:var(--chene)}
+h3{font-size:1.3rem;margin-top:28px}
+code,pre{font-family:'JetBrains Mono',Consolas,monospace;font-size:0.92em}
+pre{background:#fffbf5;border-left:4px solid var(--chene);padding:14px 18px;overflow-x:auto;border-radius:4px}
+code{background:rgba(138,117,96,0.10);padding:2px 6px;border-radius:3px}
+pre code{background:transparent;padding:0}
+table{border-collapse:collapse;width:100%;margin:16px 0;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(44,40,37,0.08)}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--pierre);vertical-align:top}
+th{background:var(--chene);color:var(--lin);font-weight:600;font-size:0.92em;text-transform:uppercase;letter-spacing:0.05em}
+tr:last-child td{border-bottom:none}
+.swatch{display:inline-block;width:18px;height:18px;border-radius:4px;vertical-align:middle;margin-right:8px;border:1px solid rgba(0,0,0,0.1)}
+nav.toc{background:#fff;border:1px solid var(--pierre);border-radius:6px;padding:18px 24px;margin-bottom:24px}
+nav.toc ul{margin:8px 0 0 0;padding-left:20px}
+nav.toc li{margin:4px 0}
+nav.toc a{color:var(--chene);text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+.tag{display:inline-block;background:var(--mousse);color:var(--lin);padding:2px 10px;border-radius:99px;font-size:0.78em;margin-right:6px;text-transform:uppercase;letter-spacing:0.05em}
+.callout{background:rgba(107,124,95,0.10);border-left:4px solid var(--mousse);padding:12px 18px;margin:18px 0;border-radius:4px}
+.callout strong{color:var(--mousse)}
+.warning{background:rgba(140,63,50,0.08);border-left:4px solid #8C3F32;padding:12px 18px;margin:18px 0;border-radius:4px}
+ul,ol{padding-left:24px}
+li{margin:4px 0}
+hr{border:none;border-top:1px solid var(--pierre);margin:32px 0}
+.back{display:inline-block;margin-bottom:16px;color:var(--mousse);text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+.product-card-preview{display:inline-block;width:280px;border:1px solid var(--pierre);border-radius:8px;overflow:hidden;margin:8px;background:#fff;vertical-align:top}
+.product-card-preview .ribbon{background:rgba(138,117,96,0.06);height:60px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.15em;color:var(--chene)}
+.product-card-preview .body{padding:16px}
+.product-card-preview h4{font-family:'Playfair Display',serif;font-size:1.2em;margin:0 0 6px}
+.product-card-preview .blurb{color:var(--pierre);font-size:0.88em;margin:0 0 10px}
+.product-card-preview .price{font-family:'JetBrains Mono',monospace;color:var(--chene);font-weight:700}
+</style>
+</head><body>
+<div class="container">
+<a class="back" href="index.html">← Retour à l'index</a>
+<h1>06 · Personas et cibles</h1>
+
+<h2>3 personas mis en avant sur la home</h2>
+<table>
+<tr><th>Titre</th><th>Sous-titre</th><th>Description</th><th>URL filtre catalogue</th></tr>
+<tr><td><strong>E-commerçant</strong></td><td>Plateforme de boutique en ligne</td><td>Notification commande, alerte stock, séquence post-achat, collecte d'avis.</td><td><code>?cible=e-commerce</code></td></tr>
+<tr><td><strong>Freelance</strong></td><td>Solo · Agence</td><td>CRM, relances prospects, tri d'emails.</td><td><code>?cible=freelance</code></td></tr>
+<tr><td><strong>TPE généraliste</strong></td><td>Coach · Formateur · Consultant</td><td>Dashboard trésorerie, kit facturation 2026, pack cyber-hygiène.</td><td><code>?cible=formateur</code></td></tr>
+</table>
+
+<h2>Détail par persona</h2>
+
+<h3>1. E-commerçant</h3>
+<ul>
+<li>Possède une boutique en ligne (plateforme e-commerce)</li>
+<li>Volume : 10 commandes / semaine minimum pour rentabilité</li>
+<li>Outils typiques : plateforme e-commerce + tableur + messagerie instantanée + service d'emailing</li>
+<li><strong>Produits ciblés</strong> : Signal de Vente, Gardien de Stock, Séquenceur Post-Achat, Le Collecteur Avis</li>
+<li><strong>Pack recommandé</strong> : Pack E-commerce Complet (49 €, économie 18 €)</li>
+</ul>
+
+<h3>2. Freelance / Solo / Agence</h3>
+<ul>
+<li>Travail commercial : prospection, devis, suivi, facturation</li>
+<li>Stack légère : tableur, application de prise de notes, messagerie électronique</li>
+<li>Frein principal : pas de temps pour relancer manuellement les prospects</li>
+<li><strong>Produits ciblés</strong> : Mini CRM Prestataire, Relance Prospects, Agent Tri Email, Carnet Forge</li>
+<li><strong>Pack recommandé</strong> : Pack Freelance Solo (119 €, économie 18 €)</li>
+</ul>
+
+<h3>3. TPE généraliste / Coach / Formateur / Consultant</h3>
+<ul>
+<li>Activité de service avec besoin de pilotage trésorerie</li>
+<li>Échéance facturation électronique 2026 (obligatoire en France)</li>
+<li>Besoin cyber-hygiène : phishing, sauvegardes, MFA</li>
+<li><strong>Produits ciblés</strong> : Dashboard Trésorerie TPE, Kit Facturation Électronique 2026, Pack Cyber-Hygiène TPE</li>
+<li><strong>Pack recommandé</strong> : Pack TPE Conformité 2026 (99 €, économie 18 €)</li>
+</ul>
+
+<h2>Cibles techniques (data-targets)</h2>
+<table>
+<tr><th>Slug</th><th>Label visible</th><th>Nombre de produits</th></tr>
+<tr><td><code>e-commerce</code></td><td>E-commerçant</td><td>4 produits + 1 pack</td></tr>
+<tr><td><code>freelance</code></td><td>Freelance</td><td>5 produits + 1 pack</td></tr>
+<tr><td><code>agence</code></td><td>Agence</td><td>2 produits</td></tr>
+<tr><td><code>formateur</code></td><td>Formateur</td><td>1 produit</td></tr>
+<tr><td><code>tpe-generaliste</code></td><td>TPE généraliste</td><td>5 produits + 1 pack</td></tr>
+</table>
+
+</div></body></html>

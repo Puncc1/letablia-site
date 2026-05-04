@@ -124,7 +124,9 @@
 <!-- Formulaire de diagnostic -->
 <div class="bg-lin border border-pierre/30 rounded-[8px] p-6 md:p-8">
 <h2 class="font-heading text-[28px] md:text-[32px] text-ebene mb-6">Formulaire de diagnostic</h2>
-<form id="diagnostic-form" class="space-y-5" novalidate>
+<form action="https://formspree.io/f/diagnostic" method="POST" class="space-y-5" novalidate>
+  <input type="hidden" name="_subject" value="Diagnostic — nouveau">
+  <input type="hidden" name="_format" value="plain">
 
   <div>
     <label for="prenom" class="block font-body font-semibold text-[14px] text-ebene mb-2">Votre prénom <span class="text-mousse">*</span></label>
@@ -167,33 +169,6 @@
     <p class="font-body text-[13px] text-pierre mt-3">Réponse sous 48 h ouvrables · Aucun engagement · RGPD respecté</p>
   </div>
 </form>
-<script>
-  document.getElementById('diagnostic-form').addEventListener('submit', function(e){
-    e.preventDefault();
-    var f = e.target;
-    var prenom = f.prenom.value.trim();
-    var email = f.email.value.trim();
-    var metier = f.metier.value.trim();
-    var tache = f.tache.value.trim();
-    var stack = f.stack.value.trim();
-    var volume = f.volume.value.trim();
-    if(!prenom || !email || !metier || !tache){
-      alert('Merci de remplir les champs obligatoires (prénom, email, métier, tâche).');
-      return;
-    }
-    var subject = 'Diagnostic — ' + metier;
-    var body = 'Bonjour,\n\nJe demande un diagnostic gratuit.\n\n'
-      + '— Prénom : ' + prenom + '\n'
-      + '— Email : ' + email + '\n'
-      + '— Métier : ' + metier + '\n'
-      + '— Tâche répétitive : ' + tache + '\n'
-      + (stack ? '— Stack actuelle : ' + stack + '\n' : '')
-      + (volume ? '— Volume hebdomadaire : ' + volume + '\n' : '')
-      + '\nMerci.';
-    window.location.href = 'mailto:diagnostic@letablia.fr?subject='
-      + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-  });
-</script>
 </div>
 <div class="text-center mt-8">
 <p class="font-body text-[14px] text-pierre">

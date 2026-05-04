@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<!-- Typographies V4 -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mini CRM Prestataire (application de prise de notes) — L'établ'IA</title>
+<meta content="Un seul endroit pour vos clients, projets, relances et suivis. Modèle application de prise de notes clé-en-main pour freelances, consultants, coachs et agences solo. 49€." name="description"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Google Fonts : JetBrains Mono -->
+<link href="/styles/output.css" rel="stylesheet"/>
+<style>
+    /* ── FAQ accordéon ── */
+    .faq-item { border-bottom: 1px solid rgba(107,74,47,0.15); }
+    .faq-toggle { width:100%; text-align:left; background:transparent; border:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding: 20px 0; gap: 16px; }
+    .faq-chevron { flex-shrink:0; transition: transform 0.25s ease; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-body { display:none; padding-bottom:20px; }
+    .faq-item.open .faq-body { display:block; }
+
+    /* ── Avant / Après ── */
+    .avantapres-grid { display:grid; grid-template-columns:1fr auto 1fr; gap:24px; align-items:start; }
+    @media (max-width:767px) { .avantapres-grid { grid-template-columns:1fr; } .avantapres-arrow { display:none; } }
+
+    /* ── Schéma flux ── */
+    .flux-schema { display:flex; flex-direction:column; gap:0; align-items:center; }
+    .flux-node { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
+    .flux-arrow { color:#8A7560; font-size:22px; line-height:1; margin:4px 0; }
+
+    /* ── Sticky CTA mobile ── */
+    #sticky-cta { display:none; }
+    @media (max-width:767px) { #sticky-cta { display:flex; } }
+
+    /* ── Fiche technique table ── */
+    .fiche-technique { width:100%; border-collapse:collapse; }
+    .fiche-technique tr { border-bottom:1px solid rgba(107,74,47,0.15); }
+    .fiche-technique tr:last-child { border-bottom:none; }
+    .fiche-technique td { padding:10px 12px; font-size:14px; line-height:1.5; vertical-align:top; }
+    .fiche-technique td:first-child { color:#8A7560; font-weight:600; white-space:nowrap; width:45%; }
+
+    /* ── Cross-sell cards ── */
+    .crosssell-card { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
+    .crosssell-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,34,29,0.08); }
+
+    /* ── Prérequis bloc ── */
+    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
+    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#6B7C5F; color:#FAF7F2; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+
+    /* ── Limites bloc ── */
+    .limite-item { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(140,63,50,0.15); }
+    .limite-item:last-child { border-bottom:none; }
+
+    /* ── Schéma bases de données ── */
+    .db-schema { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; max-width:520px; margin:0 auto; }
+    @media (max-width:767px) { .db-schema { grid-template-columns:1fr; } }
+    .db-node { background:#FAF7F2; border:2px solid rgba(63,111,91,0.3); border-radius:8px; padding:16px; text-align:center; }
+    .db-node-main { border-color:#6B7C5F; border-width:2px; }
+  </style>
+<link href="/assets/css/cookies.css" rel="stylesheet">
+</link></head>
+<body class="bg-lin font-body text-ebene">
+<!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
+<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
+<nav class="hidden md:flex items-center gap-7">
+<div class="relative group" data-dropdown="">
+<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
+              Catalogue
+              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
+<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+</div>
+</div>
+</div>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
+</nav>
+<div class="hidden md:flex items-center gap-3">
+<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
+<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</button>
+<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
+</div>
+<div class="md:hidden flex items-center gap-2">
+<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
+<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</button>
+<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
+<span class="block w-6 h-[2px] bg-ebene"></span>
+<span class="block w-6 h-[2px] bg-ebene"></span>
+<span class="block w-6 h-[2px] bg-ebene"></span>
+</button>
+</div>
+</div>
+</header>
+<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
+<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
+<nav class="flex flex-col items-center gap-6 mb-10 text-center">
+<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
+<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
+<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
+<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
+<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
+<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
+<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+</div>
+<div class="border-t border-pierre/30 w-32 my-3"></div>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
+</nav>
+<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+</div>
+<div class="breadcrumb-v4 bg-lin border-b border-pierre/30">
+<div class="max-w-[1200px] mx-auto px-4 md:px-8 py-3">
+<nav class="font-body text-[13px] text-pierre">
+<a class="hover:text-chene" href="/">Accueil</a>
+<span class="mx-2">›</span>
+<a class="hover:text-chene" href="/catalogue.html">Catalogue</a>
+<span class="mx-2">›</span>
+<a class="hover:text-chene" href="/produits/modeles/">Produire</a>
+<span class="mx-2">›</span>
+<span class="text-ebene">Mini CRM application de prise de notes</span>
+</nav>
+</div>
+</div>
+<!-- Menu mobile plein écran -->
+
+<!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+<main>
+<!-- ─────────────────────────────── BREADCRUMB ───────────────────────────────────── -->
+<nav aria-label="Fil d'Ariane" class="bg-lin border-b border-pierre px-4 py-3">
+<div class="max-w-[1200px] mx-auto">
+<ol class="flex flex-wrap items-center gap-2 font-body text-[13px] text-pierre">
+<li><a class="hover:text-chene" href="/" style="transition:color 0.2s ease">Accueil</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li><a class="hover:text-chene" href="/catalogue.html" style="transition:color 0.2s ease">Produits</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li><a class="hover:text-chene" href="/catalogue.html" style="transition:color 0.2s ease">Modèles</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li class="text-ebene font-semibold">Mini CRM Prestataire — application de prise de notes</li>
+</ol>
+</div>
+</nav>
+<!-- ─────────────────────────────── SECTION 1 — HERO PRODUIT ─────────────────────── -->
+<section class="bg-lin pt-12 pb-16 px-4 md:pt-16 md:pb-20">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-10 md:flex-row md:gap-16 md:items-start">
+<!-- Colonne gauche (60%) — Texte -->
+<div class="md:w-[58%]">
+<!-- Badges gamme + statut -->
+<div class="flex flex-wrap items-center gap-2 mb-5">
+<span class="badge badge--gamme">Vendre · Modèle · application de prise de notes</span>
+<span class="badge badge--pret">Prêt à utiliser</span>
+</div>
+<!-- Titre H1 -->
+<h1 class="font-heading font-bold text-[30px] md:text-[40px] text-ebene leading-[1.2] mb-4">
+              Mini CRM Prestataire — application de prise de notes
+            </h1>
+<!-- Promesse -->
+<p class="font-body text-lg text-ebene leading-[1.65] mb-5">
+              Un seul endroit pour vos clients, projets, relances et suivis. Fini les emails perdus, les devis oubliés et les clients dispersés dans trois fichiers tableur.
+            </p>
+<!-- Pour qui -->
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-8">
+              Pour les freelances, consultants, coachs, formateurs et agences solo qui veulent centraliser leur activité client sans complexité ni abonnement mensuel.
+            </p>
+<!-- Prix + CTA -->
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+<div>
+<p class="font-display text-[38px] text-chene leading-[1.0]">49 €</p>
+<p class="font-body text-[13px] text-pierre mt-1">Paiement unique · sans abonnement</p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="block text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90" href="https://letablia.lemonsqueezy.com/checkout/buy/MINI-CRM-PRISE DE NOTES" style="transition:opacity 0.2s ease">
+                  Obtenir ce modèle →
+                </a>
+<p class="font-body text-[12px] text-pierre text-center">
+                  Modèle application de prise de notes · Installation 15 min · Support 30 jours · 14j Satisfait ou Forgé
+                </p>
+</div>
+</div>
+</div>
+<!-- Colonne droite (42%) — Aperçu + Fiche technique -->
+<div class="md:w-[42%] flex flex-col gap-6">
+<!-- Aperçu placeholder -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+<span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; opacity:0.6;">Aperçu du modèle</span>
+<div style="border:1px dashed #8A7560;background:#F2EDE8;padding:24px;text-align:center;color:#8A7560;">
+<p style="font-style:italic;margin:0;">Capture du dashboard application de prise de notes — à venir</p>
+</div>
+<span style="font-family:var(--font-mono,monospace); font-size:10px; color:#6B7C5F; letter-spacing:0.05em;">VERSION 1.0 · TESTÉ MAI 2026</span>
+</div>
+<!-- Fiche technique -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
+<div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
+<span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600;">Fiche technique</span>
+</div>
+<table class="fiche-technique">
+<tr><td>Type</td><td>Modèle application de prise de notes (duplication URL)</td></tr>
+<tr><td>Format livré</td><td>Lien de duplication application de prise de notes + guide PDF</td></tr>
+<tr><td>Installation</td><td>10 à 15 minutes</td></tr>
+<tr><td>Niveau</td><td>Débutant application de prise de notes — aucun prérequis technique</td></tr>
+<tr><td>Prérequis</td><td>Compte application de prise de notes gratuit (usage solo)</td></tr>
+<tr><td>Coûts externes</td><td>Aucun (application de prise de notes gratuit pour usage solo)</td></tr>
+<tr><td>Support</td><td>30 jours par email</td></tr>
+<tr><td>Garantie</td><td>Satisfait ou Forgé — 14 jours</td></tr>
+<tr><td>Version</td><td>v1.0</td></tr>
+<tr><td>Dernier test</td><td>Mai 2026</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────────── SECTION 2 — LE PROBLÈME ─────────────────────── -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[760px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Le problème</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-8">
+          Vos clients et projets sont dispersés partout — et ça vous coûte des affaires
+        </h2>
+<div class="flex flex-col gap-5">
+<p class="font-body text-lg text-ebene leading-[1.65]">
+            En tant qu'indépendant, vous jonglezdéjà entre plusieurs casquettes. Résultat : les infos clients s'accumulent dans les emails, les notes de téléphone, un fichier tableur quelque part, un post-it collé sur l'écran. Vous oubliez de relancer un prospect, vous ratez une facturation, vous ne savez plus où en est tel projet.
+          </p>
+<p class="font-body text-base text-ebene leading-[1.65]">
+            Ce n'est pas un problème d'organisation personnelle — c'est un problème d'outillage. Un CRM traditionnel (CRM, CRM) est trop lourd, trop cher, et conçu pour des équipes de 10 personnes. Un simple fichier tableur ne suffit plus dès que vous avez 5 clients actifs.
+          </p>
+<p class="font-body text-base text-ebene leading-[1.65]">
+            Il vous faut quelque chose de léger, structuré, et que vous pouvez adapter à votre façon de travailler. C'est exactement ce que ce modèle application de prise de notes fournit.
+          </p>
+</div>
+</div>
+</section>
+<!-- ────────────────────────── SECTION 3 — CE QUE FAIT LE SYSTÈME ────────────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1200px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Ce que contient le modèle</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-12">
+          4 bases reliées, 6 vues préconfigurées — opérationnel en 15 minutes
+        </h2>
+<div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
+<!-- Base 1 — Clients -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">👥</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Base Clients — 17 champs</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Répertoire central de tous vos clients et prospects. Statut, contact, secteur, CA cumulé, prochaine relance. 3 vues : table complète, prospects actifs, galerie visuelle.</p>
+</div>
+</div>
+<!-- Base 2 — Projets -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">🗂️</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Base Projets — Kanban + Calendrier</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Toutes vos missions en cours. Budget, deadline, avancement automatique, détection des retards. 4 vues dont Kanban par statut et vue "À facturer" pour ne rater aucune facturation.</p>
+</div>
+</div>
+<!-- Base 3 — Tâches -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">✅</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Base Tâches — vue "Mes tâches du jour"</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Gestion opérationnelle par projet. Vue du jour filtrée sur l'urgent, Kanban par statut, calendrier des échéances. Votre to-do reliée directement à vos clients.</p>
+</div>
+</div>
+<!-- Base 4 — Relances -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">📧</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Base Relances — plus aucune relance oubliée</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Devis sans réponse, factures impayées, suivis post-livraison. Alerte automatique si une relance est en retard. Vue "Relances cette semaine" pour commencer chaque lundi matin.</p>
+</div>
+</div>
+<!-- Dashboard -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">📊</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Dashboard principal — vision d'ensemble</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Une page centrale qui agrège tout : urgences du jour, projets en cours (Kanban), relances de la semaine, et section "À facturer". Votre cockpit d'activité en un coup d'œil.</p>
+</div>
+</div>
+<!-- Modèles email — pleine largeur -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#6B7C5F; font-size:24px; line-height:1;">✉️</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">3 modèles email — prêts à personnaliser</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Email de suivi projet, relance facture, proposition commerciale. Rédigés avec les formules qui fonctionnent — personnalisez les variables et envoyez en 2 minutes.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 4 — CE QUE VOUS RECEVEZ ─────────────────── -->
+<section class="bg-ebene py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Ce que vous recevez</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-10">
+          Tout pour démarrer en 15 minutes
+        </h2>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Modèle application de prise de notes — lien de duplication instantané</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Un clic pour copier le modèle dans votre espace application de prise de notes. Les 4 bases de données et toutes les vues sont déjà configurées.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Guide d'installation — PDF pas-à-pas</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">5 étapes illustrées pour paramétrer le CRM selon votre activité. Inclut les personnalisations recommandées selon votre profil (freelance dev, coach, consultant, formateur).</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">5 clients et projets exemples pré-remplis</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pas de page blanche. Le modèle arrive avec des données fictives pour comprendre immédiatement comment tout s'articule — à supprimer ou conserver comme référence.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">3 modèles email de relance — personnalisables</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Suivi de projet, relance facture impayée, proposition commerciale. Intégrés dans le CRM avec les variables à remplacer clairement indiquées.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Support 30 jours par email</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Une question sur l'installation ou l'adaptation à votre activité ? Écrivez à contact@letablia.fr. Réponse sous 48h ouvrées.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- ─────────────────────────────── SECTION 5 — AVANT / APRÈS ────────────────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Avant / Après</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+          Ce que ça change concrètement
+        </h2>
+<div class="avantapres-grid">
+<!-- AVANT -->
+<div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Infos clients éparpillées entre emails, notes, fichiers tableur et post-its
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Relances oubliées, devis qui traînent sans réponse
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Projets terminés non facturés — argent laissé sur la table
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Aucune vision du CA par client ni du planning global
+              </li>
+</ul>
+</div>
+<!-- Flèche -->
+<div class="avantapres-arrow flex flex-col items-center justify-center">
+<svg fill="none" height="32" viewbox="0 0 32 32" width="32">
+<path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<!-- APRÈS -->
+<div style="background:#FAF7F2; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">Après</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Tout centralisé dans un espace unique — clients, projets, tâches, relances
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Relances planifiées, alerte automatique si en retard
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Vue "À facturer" : plus aucun projet terminé non facturé
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                CA par client en un coup d'œil, planning visible sur calendrier
+              </li>
+</ul>
+</div>
+</div>
+<!-- Chiffre clé -->
+<div class="mt-12 text-center">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0]">15 min</p>
+<p class="font-body text-base text-ebene mt-2">pour être opérationnel et centraliser toute votre activité client</p>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 6 — MÉTHODE ──────────────────────────────── -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">La méthode</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+          Comment fonctionne le CRM
+        </h2>
+<!-- Schéma de flux -->
+<div class="flux-schema mb-12">
+<div class="flux-node">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 1</p>
+<p class="font-body font-semibold text-[14px] text-ebene mt-1">Dupliquer le modèle dans application de prise de notes</p>
+</div>
+<div class="flux-arrow">↓</div>
+<div class="flux-node">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Étape 2</p>
+<p class="font-body font-semibold text-[14px] text-ebene mt-1">Ajouter vos clients et projets en cours</p>
+</div>
+<div class="flux-arrow">↓</div>
+<div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; width:100%; max-width:600px;">
+<div class="flux-node" style="min-width:0;">
+<p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Vue A</p>
+<p class="font-body text-[13px] text-ebene mt-1 font-semibold">Dashboard — urgences</p>
+</div>
+<div class="flux-node" style="min-width:0;">
+<p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Vue B</p>
+<p class="font-body text-[13px] text-ebene mt-1 font-semibold">Kanban — projets</p>
+</div>
+<div class="flux-node" style="min-width:0;">
+<p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8A7560; text-transform:uppercase; letter-spacing:0.06em;">Vue C</p>
+<p class="font-body text-[13px] text-ebene mt-1 font-semibold">Relances semaine</p>
+</div>
+</div>
+<div class="flux-arrow">↓</div>
+<div class="flux-node">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Résultat</p>
+<p class="font-body font-semibold text-[14px] text-ebene mt-1">Vision complète · Rien d'oublié · 15 min/jour de pilotage</p>
+</div>
+</div>
+<!-- Schéma des relations -->
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] text-center mb-6">Architecture des 4 bases de données</p>
+<div class="db-schema">
+<div class="db-node db-node-main">
+<p style="font-size:20px; line-height:1; margin-bottom:8px;">👥</p>
+<p class="font-body font-semibold text-[14px] text-ebene">Clients</p>
+<p class="font-body text-[12px] text-pierre mt-1">17 champs · 3 vues</p>
+</div>
+<div class="db-node db-node-main">
+<p style="font-size:20px; line-height:1; margin-bottom:8px;">🗂️</p>
+<p class="font-body font-semibold text-[14px] text-ebene">Projets</p>
+<p class="font-body text-[12px] text-pierre mt-1">18 champs · 4 vues</p>
+</div>
+<div class="db-node">
+<p style="font-size:20px; line-height:1; margin-bottom:8px;">✅</p>
+<p class="font-body font-semibold text-[14px] text-ebene">Tâches</p>
+<p class="font-body text-[12px] text-pierre mt-1">13 champs · 4 vues</p>
+</div>
+<div class="db-node">
+<p style="font-size:20px; line-height:1; margin-bottom:8px;">📧</p>
+<p class="font-body font-semibold text-[14px] text-ebene">Relances</p>
+<p class="font-body text-[12px] text-pierre mt-1">13 champs · 4 vues</p>
+</div>
+</div>
+<p class="font-body text-[13px] text-pierre text-center mt-4">Les bases sont reliées entre elles — les données remontent automatiquement via Rollup et Formule</p>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 7 — UTILISATION ──────────────────────────── -->
+<section class="bg-ebene py-16 px-4 md:py-20">
+<div class="max-w-[1200px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Mise en route</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-4">
+          Opérationnel en 15 minutes
+        </h2>
+<p class="font-body text-base text-pierre text-center mb-12 max-w-[600px] mx-auto leading-[1.6]">
+          Le guide PDF pas-à-pas vous accompagne à chaque étape. Pas besoin d'être expert application de prise de notes — chaque action est illustrée.
+        </p>
+<div class="flex flex-col gap-8 md:flex-row md:gap-6">
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">1</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Dupliquez</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Cliquez sur le lien de duplication reçu par email. Le modèle apparaît dans votre espace application de prise de notes avec toutes les bases et vues déjà configurées.
+            </p>
+</div>
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">2</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Ajoutez vos données</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Commencez par vos 3 à 5 clients actifs et les projets en cours. Les exemples fournis vous montrent comment renseigner chaque champ correctement.
+            </p>
+</div>
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">3</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Planifiez les relances</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Pour chaque prospect et projet en cours, créez vos relances avec une date. La vue "Relances cette semaine" s'organise automatiquement.
+            </p>
+</div>
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">4</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Pilotez au quotidien</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Ouvrez le Dashboard chaque matin. 5 à 10 minutes suffisent pour traiter les urgences, vérifier les relances de la semaine et garder le cap.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────────── SECTION 8 — PRÉREQUIS ────────────────────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Ce dont vous avez besoin pour commencer
+        </h2>
+<div class="flex flex-col gap-4 mb-8">
+<div class="prereq-item">
+<div class="prereq-num">1</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">Un compte application de prise de notes gratuit</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">application de prise de notes est gratuit pour un usage solo (une seule personne). Le plan gratuit suffit pleinement pour ce CRM. Si vous travaillez en équipe (plusieurs éditeurs), un plan payant application de prise de notes sera nécessaire.</p>
+</div>
+</div>
+<div class="prereq-item">
+<div class="prereq-num">2</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">15 minutes pour l'installation</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">La duplication prend 1 minute. Comptez ensuite 10 à 15 minutes pour supprimer les exemples et ajouter vos premiers clients et projets réels.</p>
+</div>
+</div>
+<div class="prereq-item">
+<div class="prereq-num">3</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">Aucune compétence application de prise de notes requise</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Vous n'avez jamais utilisé application de prise de notes ? Pas de problème. Le guide PDF inclus explique chaque étape avec captures d'écran. Si vous l'avez déjà utilisé, vous serez autonome en 5 minutes.</p>
+</div>
+</div>
+</div>
+<!-- Encadré rassurant -->
+<div style="background:#F0F7F4; border-left:3px solid #6B7C5F; border-radius:4px; padding:20px;">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">
+<strong>application de prise de notes est gratuit pour les indépendants.</strong> Le plan "Free" de application de prise de notes (0€/mois) inclut tout ce qu'il faut pour ce CRM : bases de données illimitées, relations entre bases, formules, vues Kanban et calendrier. Aucun abonnement supplémentaire requis pour un usage solo.
+          </p>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────────── SECTION 9 — LIMITES ──────────────────────────── -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Limites — à lire honnêtement</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Ce que ce modèle ne fait pas
+        </h2>
+<div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
+<div class="flex flex-col">
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il nécessite un compte application de prise de notes — payant si usage en équipe.</strong> Ce modèle fonctionne en solo sur le plan gratuit application de prise de notes. Si vous souhaitez que plusieurs personnes modifient les données simultanément, le plan application de prise de notes Plus (10€/mois) sera nécessaire.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Pas de synchronisation automatique avec messagerie électronique ou votre messagerie.</strong> Les emails envoyés depuis application de prise de notes sont des copies à personnaliser manuellement. Les vues de relances vous indiquent <em>quand</em> agir, mais n'envoient pas les emails automatiquement. Des vues partageables permettent toutefois de partager un suivi client en lecture.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Modèle application de prise de notes uniquement — variante base de données en préparation.</strong> Ce CRM est conçu pour application de prise de notes. Si vous préférez base de données, une version adaptée est prévue en Phase 3. Contactez-nous pour être informé en priorité.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne remplace pas un CRM complet pour équipes.</strong> Ce modèle est conçu pour les indépendants et petites structures (1 à 3 personnes). Si vous avez une équipe commerciale de 5+ personnes avec pipeline complexe et intégrations multiples, CRM ou Pipedrive seront plus adaptés.</p>
+</div>
+</div>
+</div>
+<p class="font-body text-[13px] text-pierre text-center mt-6 leading-[1.6]">
+          Ces limites sont affichées par honnêteté. Si vous avez un doute, contactez-nous avant l'achat : <a class="text-chene hover:underline" href="mailto:contact@letablia.fr" style="transition:color 0.2s ease">contact@letablia.fr</a>
+</p>
+</div>
+</section>
+<!-- ──────────────────── SECTION 10 — FAIT POUR VOUS / PAS FAIT POUR VOUS ──────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+          Ce modèle est fait pour vous si…
+        </h2>
+<div class="flex flex-col gap-8 md:flex-row md:gap-12">
+<!-- Fait pour vous -->
+<div class="md:w-1/2">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous êtes freelance, consultant, coach, formateur ou agence solo (1 à 3 personnes)
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous gérez 3 à 20 clients actifs et avez du mal à tout suivre
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous avez déjà raté une relance, oublié de facturer ou perdu le fil d'un projet
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous voulez un outil simple à adapter à votre façon de travailler — sans formation
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous êtes déjà sur application de prise de notes ou prêt à l'utiliser (plan gratuit)
+              </li>
+</ul>
+</div>
+<!-- Pas fait pour vous -->
+<div class="md:w-1/2">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">✗ Pas fait pour vous</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
+                Vous avez une équipe commerciale de 5+ personnes avec process de vente complexe
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
+                Vous avez besoin d'envoi d'emails automatique ou d'intégrations avec votre messagerie
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
+                Vous préférez travailler sur base de données, Trello ou tableur (→ contactez-nous pour la prochaine version)
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
+                Vous gérez une boutique e-commerce ou avez besoin d'un CRM avec pipeline de vente visuel avancé
+              </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 11 — FAQ PRODUIT ─────────────────────────── -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Questions fréquentes</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Tout ce que vous voulez savoir
+        </h2>
+<div class="flex flex-col" id="faq-liste">
+<!-- Q1 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Je n'ai jamais utilisé application de prise de notes. Est-ce que je vais m'en sortir ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, sans hésitation. Le modèle est accompagné d'un guide PDF pas-à-pas avec captures d'écran pour chaque étape. La duplication prend littéralement 1 clic. Le reste (créer un compte application de prise de notes, dupliquer le modèle, supprimer les exemples et ajouter vos données) est expliqué de façon très simple. Si vous êtes vraiment bloqué, le support email est là pendant 30 jours.</p>
+</div>
+</div>
+<!-- Q2 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je adapter le modèle à mon activité spécifique ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Absolument. C'est l'avantage de application de prise de notes : tout est modifiable. Vous pouvez renommer les colonnes, ajouter de nouveaux statuts (ex: adapter les statuts Projets à votre terminologie), créer de nouvelles vues filtrées, et ajouter des champs propres à votre activité. Le guide inclut des recommandations de personnalisation pour 5 profils : développeur freelance, consultant, coach, agence solo et formateur.</p>
+</div>
+</div>
+<!-- Q3 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je partager des informations avec mes clients depuis ce CRM ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, en lecture seule. application de prise de notes permet de partager une page ou une vue en mode "lecture seule" via un lien public — sans que votre client ait besoin d'un compte application de prise de notes. Vous pouvez par exemple partager la vue Kanban d'un projet pour que votre client suive l'avancement en temps réel. En revanche, pour qu'un client puisse modifier des données (co-édition), un plan payant application de prise de notes est nécessaire.</p>
+</div>
+</div>
+<!-- Q4 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Comment les relances fonctionnent-elles concrètement ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Vous créez une entrée dans la base Relances avec un client, un type (devis, facture, suivi…) et une date prévue. La vue "Relances cette semaine" filtre automatiquement tout ce qui doit être fait avant la fin de la semaine. Une formule "Alerte retard" s'active si la date est dépassée et que la relance est encore en statut "À envoyer". Vous cliquez sur le modèle email correspondant, personnalisez les variables, et envoyez depuis votre messagerie habituelle.</p>
+</div>
+</div>
+<!-- Q5 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Les mises à jour du modèle sont-elles incluses ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Les corrections et améliorations mineures vous sont communiquées par email sans frais. En cas d'évolution majeure du modèle (nouvelle base de données, nouvelles fonctionnalités), vous serez informé en priorité. Note : les mises à jour application de prise de notes ne cassent généralement pas les modèles existants — votre CRM restera fonctionnel quelle que soit la version de application de prise de notes.</p>
+</div>
+</div>
+<!-- Q6 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">J'utilise déjà un fichier tableur pour suivre mes clients. Comment migrer ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">application de prise de notes permet d'importer un CSV directement dans une base de données. Si votre fichier tableur a une colonne par type d'info (nom, email, téléphone…), vous pouvez exporter en CSV et importer en quelques clics. Le guide d'installation inclut une section dédiée à la migration depuis un fichier existant. Pour un petit nombre de clients (&lt;20), la saisie manuelle est souvent plus rapide et garantit une meilleure qualité de données.</p>
+</div>
+</div>
+</div>
+<!-- Lien FAQ complète -->
+<div class="text-center mt-10">
+<p class="font-body text-[14px] text-pierre">D'autres questions ? <a class="text-chene hover:underline" href="/faq.html" style="transition:color 0.2s ease">Consultez la FAQ complète</a> ou <a class="text-chene hover:underline" href="mailto:contact@letablia.fr" style="transition:color 0.2s ease">écrivez-nous directement</a>.</p>
+</div>
+</div>
+</section>
+<!-- ──────────────────── SECTION 12 — PRODUITS COMPLÉMENTAIRES ───────────────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1200px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">À combiner avec</p>
+<h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Ces systèmes se complètent bien
+        </h2>
+<div class="flex flex-col gap-6 md:flex-row md:gap-8">
+<!-- Produit 1 — Pack Contenu LinkedIn -->
+<a class="crosssell-card md:flex-1 block" href="/catalogue.html" style="text-decoration:none;">
+<span class="badge badge--forge" style="margin-bottom:12px; display:inline-block;">En forge</span>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Pack Contenu LinkedIn</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Système de publication LinkedIn pour freelances et consultants : modèles de posts, calendrier éditorial, méthodes pour développer sa visibilité et attirer des clients. Complémentaire pour alimenter votre CRM en nouveaux prospects.</p>
+<p class="font-body text-[13px] text-chene font-semibold">59 € · Voir ce système →</p>
+</a>
+<!-- Produit 2 — Relance Prospects -->
+<a class="crosssell-card md:flex-1 block" href="/produit/relance-prospects/" style="text-decoration:none;">
+<span class="badge badge--pret" style="margin-bottom:12px; display:inline-block;">Disponible</span>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Relance Prospects</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Séquences de relance structurées pour convertir vos prospects froids en clients. Scripts email + procédures de suivi + calendrier de relance. Idéal en complément du CRM pour systématiser votre prospection.</p>
+<p class="font-body text-[13px] text-chene font-semibold">49 € · Voir ce système →</p>
+</a>
+<!-- Produit 3 — Catalogue -->
+<a class="crosssell-card md:flex-1 block" href="/catalogue.html" style="text-decoration:none;">
+<span class="badge badge--pret" style="margin-bottom:12px; display:inline-block;">Disponibles</span>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Voir tous les systèmes forgés</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Automatisations, guides opérationnels, dashboards et kits pratiques — découvrez l'ensemble du catalogue L'établ'IA pour indépendants et TPE.</p>
+<p class="font-body text-[13px] text-chene font-semibold">Explorer le catalogue →</p>
+</a>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 13 — CTA FINAL ───────────────────────────── -->
+<section class="bg-ebene py-20 px-4 md:py-24">
+<div class="max-w-[600px] mx-auto text-center">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; margin-bottom:16px;">Prêt à centraliser toute votre activité client ?</p>
+<h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
+          Obtenez le Mini CRM Prestataire — application de prise de notes
+        </h2>
+<p class="font-body text-base text-pierre leading-[1.6] mb-4">
+          Paiement unique. Duplication instantanée. Modèle application de prise de notes + guide PDF + exemples pré-remplis + 3 modèles email. Support 30 jours. Satisfait ou Forgé — 14 jours.
+        </p>
+<p class="font-display text-[42px] text-chene leading-[1.0] mb-8">49 € — paiement unique</p>
+<a class="block md:inline-block w-full md:w-auto text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-8 py-[16px] hover:opacity-90 mb-4" href="https://letablia.lemonsqueezy.com/checkout/buy/MINI-CRM-PRISE DE NOTES" style="transition:opacity 0.2s ease">
+          Obtenir ce modèle →
+        </a>
+<p class="font-body text-[12px] text-pierre mt-2">
+          Paiement sécurisé par LemonSqueezy · Lien de duplication reçu immédiatement après paiement
+        </p>
+<!-- Réassurance en ligne -->
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
+<span class="font-body text-[13px] text-pierre">✓ Modèle application de prise de notes + guide PDF</span>
+<span class="font-body text-[13px] text-pierre">✓ Support 30 jours</span>
+<span class="font-body text-[13px] text-pierre">✓ 14j Satisfait ou Forgé</span>
+<span class="font-body text-[13px] text-pierre">✓ application de prise de notes gratuit suffit</span>
+</div>
+</div>
+</section>
+</main>
+<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+<section class="cross-sell-v4 py-16 md:py-20 bg-chene-6 border-t border-pierre/30">
+<div class="container max-w-[1200px] mx-auto px-4 md:px-8">
+<div class="text-center mb-10">
+<p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">SOUVENT FORGÉS ENSEMBLE</p>
+<h2 class="font-heading text-[28px] md:text-[36px] text-ebene leading-[1.1]">Ces systèmes complètent Mini CRM application de prise de notes.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/carnet-forge/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">PRODUIRE</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">PDF</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Carnet Forge</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Le journal de bord de l'artisan numérique, prêt à imprimer.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">19 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/produit/kit-facturation-2026/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">PRODUIRE</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">PDF</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Kit Facturation Électronique 2026</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">49 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/signal-de-vente/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">VENDRE</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">PLATEFORME E-COMMERCE · NOTIFICATION</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Signal de Vente</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Une alerte messagerie instantanée à chaque commande plateforme e-commerce. En temps réel.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">29 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<footer class="bg-ebene mt-12">
+<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+<div class="text-center md:text-left">
+<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
+</ul>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
+<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
+<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
+</div>
+</div>
+</footer>
+<!-- ══════════════════ STICKY CTA MOBILE (affiché seulement < 768px) ══════════════════ -->
+<div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
+<div>
+<p class="font-body font-semibold text-[14px] text-lin leading-none">Mini CRM application de prise de notes · 49 €</p>
+<p class="font-body text-[11px] text-pierre mt-1">Modèle application de prise de notes · 14j Satisfait ou Forgé</p>
+</div>
+<a href="https://letablia.lemonsqueezy.com/checkout/buy/MINI-CRM-PRISE DE NOTES" style="flex-shrink:0; background:#6B7C5F; color:#FAF7F2; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
+      Obtenir →
+    </a>
+</div>
+<!-- ══════════════════════════════════ SCRIPTS ══════════════════════════════════════ -->
+<script>
+    // ── Menu mobile
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+
+    // ── FAQ accordéon
+    document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        // Fermer tous
+        document.querySelectorAll('.faq-item').forEach(function(el) {
+          el.classList.remove('open');
+          el.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
+        });
+        // Ouvrir celui-ci si c'était fermé
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ── Masquer sticky CTA quand le CTA hero est visible
+    (function() {
+      var stickyCta = document.getElementById('sticky-cta');
+      if (!stickyCta || window.innerWidth >= 768) return;
+      var heroBtn = document.querySelector('main section:first-child a[href*="lemonsqueezy"]');
+      if (!heroBtn || !('IntersectionObserver' in window)) return;
+      var obs = new IntersectionObserver(function(entries) {
+        stickyCta.style.display = entries[0].isIntersecting ? 'none' : 'flex';
+      }, { threshold: 0.1 });
+      obs.observe(heroBtn);
+    })();
+  </script>
+<script defer="" src="/assets/js/cookies.js"></script>
+<script defer="" src="/assets/js/burger-menu.js"></script>
+<script defer="" src="/assets/js/search-modal.js"></script>
+</body>
+</html>

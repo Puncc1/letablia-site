@@ -39,3 +39,6 @@ npm-debug.log*
 
 
 styles/output-dev.css
+
+# Doc export ZIP archives
+letablia-docs-export-*.zip

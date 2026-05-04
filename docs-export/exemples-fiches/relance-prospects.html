@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<!-- Typographies V4 -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Système de Relance Prospects — L'établ'IA</title>
+<meta content="Envoyez automatiquement 3 emails de relance à chaque prospect au bon moment. Système forgé moteur d'automatisation prêt à brancher sur messagerie électronique + tableur. 49€ paiement unique." name="description"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Google Fonts : JetBrains Mono -->
+<link href="/styles/output.css" rel="stylesheet"/>
+<style>
+    /* ── FAQ accordéon ── */
+    .faq-item { border-bottom: 1px solid rgba(107,74,47,0.15); }
+    .faq-toggle { width:100%; text-align:left; background:transparent; border:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding: 20px 0; gap: 16px; }
+    .faq-chevron { flex-shrink:0; transition: transform 0.25s ease; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-body { display:none; padding-bottom:20px; }
+    .faq-item.open .faq-body { display:block; }
+
+    /* ── Avant / Après ── */
+    .avantapres-grid { display:grid; grid-template-columns:1fr auto 1fr; gap:24px; align-items:start; }
+    @media (max-width:767px) { .avantapres-grid { grid-template-columns:1fr; } .avantapres-arrow { display:none; } }
+
+    /* ── Schéma flux ── */
+    .flux-schema { display:flex; flex-direction:column; gap:0; align-items:center; }
+    .flux-node { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; text-align:center; min-width:200px; }
+    .flux-arrow { color:#8A7560; font-size:22px; line-height:1; margin:4px 0; }
+
+    /* ── Sticky CTA mobile ── */
+    #sticky-cta { display:none; }
+    @media (max-width:767px) { #sticky-cta { display:flex; } }
+
+    /* ── Fiche technique table ── */
+    .fiche-technique { width:100%; border-collapse:collapse; }
+    .fiche-technique tr { border-bottom:1px solid rgba(107,74,47,0.15); }
+    .fiche-technique tr:last-child { border-bottom:none; }
+    .fiche-technique td { padding:10px 12px; font-size:14px; line-height:1.5; vertical-align:top; }
+    .fiche-technique td:first-child { color:#8A7560; font-weight:600; white-space:nowrap; width:45%; }
+
+    /* ── Cross-sell cards ── */
+    .crosssell-card { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.2s ease, box-shadow 0.2s ease; }
+    .crosssell-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,34,29,0.08); }
+
+    /* ── Prérequis bloc ── */
+    .prereq-item { display:flex; gap:12px; align-items:flex-start; padding:16px; background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:6px; }
+    .prereq-num { flex-shrink:0; width:28px; height:28px; border-radius:50%; background:#8A7560; color:#FAF7F2; font-size:12px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+
+    /* ── Limites bloc ── */
+    .limite-item { display:flex; gap:12px; align-items:flex-start; padding:12px 0; border-bottom:1px solid rgba(140,63,50,0.15); }
+    .limite-item:last-child { border-bottom:none; }
+
+    /* ── Capture placeholder ── */
+    .capture-placeholder { border:1px dashed rgba(107,74,47,0.4); background:#FAF7F2; padding:32px 24px; text-align:center; border-radius:6px; color:#8A7560; font-style:italic; font-size:14px; min-height:120px; display:flex; align-items:center; justify-content:center; }
+
+    /* ── Badge cuivre ── */
+    .badge--cuivre { background:#8A7560; color:#FAF7F2; font-size:10px; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:4px 10px; border-radius:4px; }
+  </style>
+<link href="/assets/css/cookies.css" rel="stylesheet">
+</link></head>
+<body class="bg-lin font-body text-ebene">
+<!-- HEADER -->
+<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
+<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
+<nav class="hidden md:flex items-center gap-7">
+<div class="relative group" data-dropdown="">
+<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
+              Catalogue
+              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
+<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+</div>
+</div>
+</div>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
+</nav>
+<div class="hidden md:flex items-center gap-3">
+<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
+<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</button>
+<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
+</div>
+<div class="md:hidden flex items-center gap-2">
+<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
+<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</button>
+<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
+<span class="block w-6 h-[2px] bg-ebene"></span>
+<span class="block w-6 h-[2px] bg-ebene"></span>
+<span class="block w-6 h-[2px] bg-ebene"></span>
+</button>
+</div>
+</div>
+</header>
+<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
+<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
+<nav class="flex flex-col items-center gap-6 mb-10 text-center">
+<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
+<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
+<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
+<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
+<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
+<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
+<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+</div>
+<div class="border-t border-pierre/30 w-32 my-3"></div>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
+</nav>
+<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+</div>
+<div class="breadcrumb-v4 bg-lin border-b border-pierre/30">
+<div class="max-w-[1200px] mx-auto px-4 md:px-8 py-3">
+<nav class="font-body text-[13px] text-pierre">
+<a class="hover:text-chene" href="/">Accueil</a>
+<span class="mx-2">›</span>
+<a class="hover:text-chene" href="/catalogue.html">Catalogue</a>
+<span class="mx-2">›</span>
+<a class="hover:text-chene" href="/produits/vendre/">Vendre</a>
+<span class="mx-2">›</span>
+<span class="text-ebene">Relance Prospects</span>
+</nav>
+</div>
+</div>
+<!-- Menu mobile plein écran -->
+
+<!-- MAIN -->
+<main>
+<!-- BREADCRUMB -->
+<nav aria-label="Fil d'Ariane" class="bg-lin border-b border-pierre px-4 py-3">
+<div class="max-w-[1200px] mx-auto">
+<ol class="flex flex-wrap items-center gap-2 font-body text-[13px] text-pierre">
+<li><a class="hover:text-chene" href="/" style="transition:color 0.2s ease">Accueil</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li><a class="hover:text-chene" href="/catalogue.html" style="transition:color 0.2s ease">Produits</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li><a class="hover:text-chene" href="/catalogue.html" style="transition:color 0.2s ease">Automatiser</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li class="text-ebene font-semibold">Système de Relance Prospects</li>
+</ol>
+</div>
+</nav>
+<!-- SECTION 1 — HERO PRODUIT -->
+<section class="bg-lin pt-12 pb-16 px-4 md:pt-16 md:pb-20">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-10 md:flex-row md:gap-16 md:items-start">
+<!-- Colonne gauche -->
+<div class="md:w-[58%]">
+<div class="flex flex-wrap items-center gap-2 mb-5">
+<span class="badge badge--gamme">Automatiser · moteur d'automatisation + messagerie électronique + tableur</span>
+<span class="badge badge--pret">PRÊT À POSER</span>
+</div>
+<h1 class="font-heading font-bold text-[30px] md:text-[40px] text-ebene leading-[1.2] mb-4">
+              Système de Relance Prospects
+            </h1>
+<p class="font-body text-lg text-ebene leading-[1.65] mb-5">
+              Ne plus jamais oublier une relance, automatiquement.
+            </p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-8">
+              Freelances, commerciaux indépendants, TPE — toute personne qui suit des prospects dans un Google Sheet et envoie des relances via messagerie électronique.
+            </p>
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+<div>
+<p class="font-display text-[38px] text-chene leading-[1.0]">49 €</p>
+<p class="font-body text-[13px] text-pierre mt-1">Paiement unique · sans abonnement</p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="block text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90" href="https://letablia.lemonsqueezy.com/checkout/buy/RELANCE-PROSPECTS" style="transition:opacity 0.2s ease">
+                  Obtenir le système →
+                </a>
+<p class="font-body text-[12px] text-pierre text-center">
+                  Système forgé JSON inclus · Support 30 jours · 14j Satisfait ou Forgé
+                </p>
+</div>
+</div>
+</div>
+<!-- Colonne droite -->
+<div class="md:w-[42%] flex flex-col gap-6">
+<div class="capture-placeholder">Aperçu du système — capture à venir.</div>
+<!-- Fiche technique -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
+<div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
+<span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600;">Fiche technique</span>
+</div>
+<table class="fiche-technique">
+<tr><td>Nom</td><td>Système de Relance Prospects</td></tr>
+<tr><td>Type</td><td>Système forgé automation (moteur d'automatisation)</td></tr>
+<tr><td>Format livré</td><td>JSON moteur d'automatisation + guide + 3 modèles email</td></tr>
+<tr><td>Installation</td><td>25 à 40 minutes</td></tr>
+<tr><td>Niveau</td><td>Débutant (suit un guide)</td></tr>
+<tr><td>Outils requis</td><td>moteur d'automatisation, messagerie électronique, tableur</td></tr>
+<tr><td>Coûts externes</td><td>moteur d'automatisation Cloud ~20€/mois ou 0€ (self-hosted)</td></tr>
+<tr><td>Support</td><td>30 jours par email</td></tr>
+<tr><td>Garantie</td><td>Satisfait ou Forgé — 14 jours</td></tr>
+<tr><td>Version</td><td>v1.0</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2 — LE PROBLÈME -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[760px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Le problème</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-8">
+          Vous oubliez des relances — et vous perdez des clients que vous aviez presque convaincus
+        </h2>
+<div class="flex flex-col gap-5">
+<p class="font-body text-lg text-ebene leading-[1.65]">
+            Un prospect vous a demandé un devis. Vous lui avez répondu. Puis il n'a plus donné signe de vie. Vous aviez prévu de le relancer dans une semaine — mais entre deux urgences, vous avez oublié. Deux semaines plus tard, il a signé ailleurs.
+          </p>
+<p class="font-body text-base text-ebene leading-[1.65]">
+            Gérer les relances à la main dans un tableur ou sur post-it ne tient pas dans la durée. Ce n'est pas un problème de volonté — c'est un problème de système. Si personne ne vérifie automatiquement pour vous, les relances passent à la trappe.
+          </p>
+<p class="font-body text-base text-ebene leading-[1.65]">
+            Ce système forgé branche tableur et messagerie électronique ensemble. Vous remplissez votre liste de prospects. Le système vérifie toutes les heures, envoie les relances au bon moment, et vous notifie sur messagerie instantanée. Vous vous concentrez sur vos clients — pas sur votre agenda.
+          </p>
+</div>
+</div>
+</section>
+<!-- SECTION 3 — CE QUE VOUS TROUVEZ DANS LE SYSTÈME -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1200px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Ce que vous trouvez dans le système</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-12">
+          Tout pour brancher et oublier votre relance manuelle
+        </h2>
+<div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Le système forgé moteur d'automatisation JSON — prêt à importer</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Un fichier <code>relance-prospects.json</code> à charger en un clic dans moteur d'automatisation. Déclencheur horaire, lecture tableur, filtre automatique, envoi messagerie électronique, mise à jour statut, alerte messagerie instantanée.</p>
+</div>
+</div>
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" x2="8" y1="13" y2="13"></line><line x1="16" x2="8" y1="17" y2="17"></line></svg></span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Un guide d'installation pas à pas (25–40 min)</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Chaque étape détaillée : importation, connexion messagerie électronique OAuth2, connexion tableur, configuration des variables. Zéro compétence technique requise.</p>
+</div>
+</div>
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">3 modèles email de relance prêts à personnaliser</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Relance J+3 (prise de contact douce), J+7 (rappel valeur), J+14 (dernière tentative). À adapter à votre ton et votre secteur en 10 minutes.</p>
+</div>
+</div>
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><line x1="3" x2="21" y1="9" y2="9"></line><line x1="3" x2="21" y1="15" y2="15"></line><line x1="9" x2="9" y1="3" y2="21"></line><line x1="15" x2="15" y1="3" y2="21"></line></svg></span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Le tableau tableur de suivi (modèle prêt)</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Un fichier <code>tableau-relances.xlsx</code> avec les colonnes exactes attendues par le système forgé : nom, email, statut, date prochaine relance, compteur. Dupliquez et remplissez.</p>
+</div>
+</div>
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6.29 6.29l.98-.98a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg></span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Notifications messagerie instantanée en temps réel (optionnel)</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Recevez un message sur votre téléphone à chaque relance envoyée et quand un prospect atteint 3 relances sans réponse. Le guide explique comment créer un bot messagerie instantanée en 5 minutes.</p>
+</div>
+</div>
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#8A7560;"><svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Limite automatique à 3 relances par prospect</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Le système forgé compte les relances envoyées. Passé 3, il bascule automatiquement le statut sur "Relancé Max" et vous alerte — sans jamais harceler un contact.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4 — CE QUE VOUS RECEVEZ -->
+<section class="bg-ebene py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Ce que vous recevez</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-10">
+          Tout ce qu'il faut pour que le système tourne dès ce soir
+        </h2>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">relance-prospects.json</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Le système forgé moteur d'automatisation complet. À importer en un clic, puis configurer en suivant le guide.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">guide-installation-moteur d'automatisation.md</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Guide pas à pas illustré : import, connexion messagerie électronique OAuth2, connexion tableur, variables, test en live. 25 à 40 minutes.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">emails-modèles.md</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">3 modèles rédigés (Relance 1 / Relance 2 / Relance 3) avec variables de personnalisation {prenom}, {entreprise}, {objet_devis}. Prêts en 10 minutes.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">tableau-relances.xlsx</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Le modèle tableur avec les colonnes exactes : nom, email, statut, date_prochaine_relance, nb_relances. Prêt à dupliquer.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#8A7560; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Support email 30 jours</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Un blocage à l'installation ? Une question sur l'adaptation ? Réponse sous 48h ouvrées.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- SECTION 5 — AVANT / APRÈS -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Avant / Après</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+          Ce que ça change concrètement
+        </h2>
+<div class="avantapres-grid">
+<!-- AVANT -->
+<div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Vous oubliez des relances entre deux urgences
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Vous envoyez des relances trop tard — le prospect a choisi un concurrent
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Votre suivi vit dans un tableur que vous n'ouvrez pas tous les jours
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Vous ne savez plus combien de fois vous avez déjà relancé tel prospect
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Chaque relance prend 5 minutes à rédiger depuis zéro
+              </li>
+</ul>
+</div>
+<!-- Flèche -->
+<div class="avantapres-arrow flex flex-col items-center justify-center">
+<svg fill="none" height="32" viewbox="0 0 32 32" width="32">
+<path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<!-- APRÈS -->
+<div style="background:#FAF7F2; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">Après</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Le système vérifie toutes les heures et relance au bon moment
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Chaque prospect reçoit ses 3 relances à J+3, J+7, J+14
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                tableur se met à jour automatiquement après chaque envoi
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                messagerie instantanée vous notifie à chaque relance envoyée
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Vous vous concentrez sur convertir — pas sur rappeler qui relancer
+              </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6 — SCHÉMA DU FLUX -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Comment ça fonctionne</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+          Le flux automatique, de A à Z
+        </h2>
+<!-- Schéma de flux -->
+<div class="flux-schema mb-12">
+<div class="flux-node">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Déclencheur</p>
+<p class="font-body font-semibold text-[14px] text-ebene mt-1">Toutes les heures (Cron)</p>
+</div>
+<div class="flux-arrow">↓</div>
+<div class="flux-node">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Source</p>
+<p class="font-body font-semibold text-[14px] text-ebene mt-1">tableur — liste prospects</p>
+</div>
+<div class="flux-arrow">↓</div>
+<div class="flux-node">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Filtre</p>
+<p class="font-body font-semibold text-[14px] text-ebene mt-1">Statut "À relancer" + date &lt;= aujourd'hui</p>
+</div>
+<div class="flux-arrow">↓</div>
+<div class="flux-node">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; color:#8A7560; text-transform:uppercase; letter-spacing:0.08em;">Condition</p>
+<p class="font-body font-semibold text-[14px] text-ebene mt-1">Relances envoyées &lt; 3 ?</p>
+</div>
+<div class="flux-arrow">↓</div>
+<div style="display:grid; grid-template-columns:repeat(2,1fr); gap:12px; width:100%; max-width:500px;">
+<div class="flux-node" style="min-width:0; border-color:rgba(63,111,91,0.4);">
+<p style="font-family:var(--font-mono,monospace); font-size:9px; color:#6B7C5F; text-transform:uppercase; letter-spacing:0.06em;">Oui → Relance</p>
+<p class="font-body text-[13px] text-ebene mt-1 font-semibold">messagerie électronique envoie l'email · tableur mis à jour · messagerie instantanée notifié</p>
+</div>
+<div class="flux-node" style="min-width:0; border-color:rgba(140,63,50,0.4);">
+<p style="font-family:var(--font-mono,monospace); font-size:9px; color:#8C3F32; text-transform:uppercase; letter-spacing:0.06em;">Non → Max atteint</p>
+<p class="font-body text-[13px] text-ebene mt-1 font-semibold">Statut "Relancé Max" · Alerte messagerie instantanée commercial</p>
+</div>
+</div>
+</div>
+<!-- Aperçu visuel placeholder -->
+<div class="flex flex-col gap-4 md:grid md:grid-cols-2 md:gap-6">
+<div class="capture-placeholder">Aperçu du système forgé moteur d'automatisation — capture à venir.</div>
+<div class="capture-placeholder">Aperçu du Google Sheet — capture à venir.</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7 — UTILISATION -->
+<section class="bg-ebene py-16 px-4 md:py-20">
+<div class="max-w-[1200px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Mise en route</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-4">
+          Opérationnel en 5 étapes
+        </h2>
+<p class="font-body text-base text-pierre text-center mb-12 max-w-[600px] mx-auto leading-[1.6]">
+          Le guide d'installation vous accompagne pas à pas. Comptez 25 à 40 minutes pour un premier branchement.
+        </p>
+<div class="flex flex-col gap-8 md:flex-row md:gap-6">
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">1</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Importez le système forgé dans moteur d'automatisation</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Menu › Système forgés › Import from file. Sélectionnez <code>relance-prospects.json</code>. Le système apparaît à l'écran.
+            </p>
+</div>
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">2</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Connectez messagerie électronique et tableur</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Autorisez les accès OAuth2 depuis moteur d'automatisation (aucun secret à copier). Le guide explique chaque clic.
+            </p>
+</div>
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">3</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Dupliquez le tableau tableur</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Copiez <code>tableau-relances.xlsx</code> dans votre Drive. Collez l'ID de votre Sheet dans le système forgé.
+            </p>
+</div>
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">4</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Personnalisez vos 3 emails</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Adaptez les 3 modèles fournis à votre ton. Ajoutez votre nom, votre offre, vos valeurs. 10 minutes.
+            </p>
+</div>
+<div class="md:flex-1 text-center md:text-left">
+<p class="font-display text-[48px] md:text-[64px] text-chene leading-[1.0] mb-4">5</p>
+<h3 class="font-heading font-bold text-xl text-lin mb-3">Activez et oubliez</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">
+              Cliquez sur "Activer". Ajoutez vos prospects dans le Sheet. Le reste se fait tout seul, toutes les heures.
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8 — PRÉREQUIS -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Ce dont vous avez besoin avant de commencer
+        </h2>
+<div class="flex flex-col gap-4 mb-8">
+<div class="prereq-item">
+<div class="prereq-num">1</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">Un compte moteur d'automatisation</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">moteur d'automatisation Cloud (<a class="text-chene hover:underline" href="https://cloud.moteur d'automatisation.io" rel="noopener" target="_blank">cloud.moteur d'automatisation.io</a>) à ~20€/mois, ou une instance self-hosted sur votre propre serveur (gratuit, mais demande un VPS). Le guide couvre les deux cas.</p>
+</div>
+</div>
+<div class="prereq-item">
+<div class="prereq-num">2</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">Un compte Google avec messagerie électronique et tableur</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Les emails de relance partent depuis votre propre adresse messagerie électronique. Le tableau de suivi vit dans tableur. Compte Google gratuit suffisant.</p>
+</div>
+</div>
+<div class="prereq-item">
+<div class="prereq-num">3</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">messagerie instantanée (optionnel)</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pour recevoir des notifications en temps réel à chaque relance envoyée. Gratuit — le guide explique comment créer un bot messagerie instantanée en 5 minutes. Le système fonctionne parfaitement sans messagerie instantanée.</p>
+</div>
+</div>
+</div>
+<!-- Coûts tiers -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px 24px; margin-bottom:16px;">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; font-weight:600; margin-bottom:10px;">Coûts tiers récurrents estimés</p>
+<ul class="flex flex-col gap-2">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.5]">
+<span style="color:#8A7560; flex-shrink:0; margin-top:2px;">·</span>
+<span><strong>moteur d'automatisation Cloud :</strong> ~20€/mois (plan Starter) — ou 0€ si self-hosted sur votre VPS.</span>
+</li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.5]">
+<span style="color:#8A7560; flex-shrink:0; margin-top:2px;">·</span>
+<span><strong>messagerie électronique + tableur :</strong> gratuit (compte Google personnel ou Workspace déjà existant).</span>
+</li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.5]">
+<span style="color:#8A7560; flex-shrink:0; margin-top:2px;">·</span>
+<span><strong>Variante Make :</strong> 9€/mois (plan Core Make/Integromat) — si vous préférez Make à moteur d'automatisation.</span>
+</li>
+</ul>
+</div>
+<div style="background:#F0F7F4; border-left:3px solid #6B7C5F; border-radius:4px; padding:20px;">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">
+<strong>Aucune compétence en programmation requise.</strong> Si vous savez naviguer dans un interface web et copier-coller des valeurs, vous installez ce système. Le support email est là si vous bloquez quelque part.
+          </p>
+</div>
+</div>
+</section>
+<!-- SECTION 9 — LIMITES -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Limites — à lire honnêtement</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Ce que ce système ne fait pas
+        </h2>
+<div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
+<div class="flex flex-col">
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Ce système ne rédige pas vos emails.</strong> Trois modèles sont fournis et prêts à personnaliser — mais vous êtes la voix. La rédaction de contenu persuasif reste votre travail.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Ce système ne remplace pas un CRM.</strong> Il gère la relance automatique dans un Google Sheet. Pour un pipeline commercial complet, des probabilités de closing et un suivi multi-commercial, vous aurez besoin d'un CRM dédié.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Ce système ne détecte pas les réponses automatiquement.</strong> Il ne lit pas votre boîte de réception pour savoir si un prospect a répondu. Quand un prospect vous écrit, vous mettez vous-même le statut à jour dans tableur (une ligne, 10 secondes).</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Ce système n'est pas adapté aux très gros volumes.</strong> Pour des listes de plusieurs milliers de prospects actifs, les limites de l'API messagerie électronique (quotas d'envoi) peuvent s'appliquer. Nous recommandons un outil d'emailing dédié au-delà de 500 relances/jour.</p>
+</div>
+</div>
+</div>
+<p class="font-body text-[13px] text-pierre text-center mt-6 leading-[1.6]">
+          Ces limites sont affichées par honnêteté. Si vous avez un doute, contactez-nous avant l'achat : <a class="text-chene hover:underline" href="mailto:contact@letablia.fr" style="transition:color 0.2s ease">contact@letablia.fr</a>
+</p>
+</div>
+</section>
+<!-- SECTION 10 — FAIT POUR VOUS / PAS FAIT POUR VOUS -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+          Ce système est fait pour vous si…
+        </h2>
+<div class="flex flex-col gap-8 md:flex-row md:gap-12">
+<!-- Fait pour vous -->
+<div class="md:w-1/2">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous êtes freelance ou indépendant avec un portefeuille de prospects actifs
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous suivez déjà vos prospects dans un tableur (ou vous souhaitez commencer)
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous envoyez vos emails depuis messagerie électronique
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous avez moins de 500 prospects actifs à relancer simultanément
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous voulez un outil simple, pas un CRM avec 50 fonctions dont vous n'avez pas besoin
+              </li>
+</ul>
+</div>
+<!-- Pas fait pour vous -->
+<div class="md:w-1/2">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">✗ Pas fait pour vous</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
+                Vous avez déjà un CRM (CRM, Pipedrive) avec automatisation de relance intégrée
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
+                Vous envoyez en masse à des listes de milliers de contacts (besoin d'un outil emailing dédié)
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
+                Vous n'utilisez pas messagerie électronique (messagerie électronique, service d'emailing, etc.) — le système forgé moteur d'automatisation est pré-configuré pour messagerie électronique
+              </li>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
+                Vous cherchez un outil qui rédige vos emails commerciaux à votre place
+              </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 11 — FAQ PRODUIT -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">Questions fréquentes</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Tout ce que vous voulez savoir
+        </h2>
+<div class="flex flex-col" id="faq-liste">
+<!-- Q1 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Je n'ai jamais utilisé moteur d'automatisation. Est-ce que je peux quand même installer ce système ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, le guide d'installation a été conçu pour des personnes sans expérience moteur d'automatisation. Vous suivez les étapes dans l'ordre, vous copiez-collez les valeurs demandées, vous cliquez où le guide vous indique. Si c'est votre premier contact avec moteur d'automatisation, comptez 40 minutes plutôt que 25. En cas de blocage, le support email répond sous 48h.</p>
+</div>
+</div>
+<!-- Q2 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Dois-je payer moteur d'automatisation en plus des 49€ ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, moteur d'automatisation est un outil tiers. Les 49€ couvrent le système forgé JSON + les guides + les modèles + le support — pas l'abonnement moteur d'automatisation lui-même. Vous pouvez utiliser moteur d'automatisation Cloud (~20€/mois) ou héberger moteur d'automatisation gratuitement sur votre propre serveur (VPS). Le guide couvre les deux options.</p>
+</div>
+</div>
+<!-- Q3 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Comment le système sait quand relancer chaque prospect ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Chaque prospect a une colonne "date_prochaine_relance" dans le Google Sheet. Le système forgé vérifie toutes les heures si cette date est atteinte ou dépassée. Après chaque envoi, il calcule automatiquement la prochaine date (J+3, J+7, J+14 par défaut — modifiable dans le système forgé).</p>
+</div>
+</div>
+<!-- Q4 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que se passe-t-il si un prospect répond entre deux relances ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Il vous suffit de changer le statut de ce prospect dans le Google Sheet ("Répondu", "Gagné", "Perdu" — à vous de choisir). Le système forgé filtre uniquement les prospects avec le statut "À relancer". Un statut différent stop automatiquement les relances.</p>
+</div>
+</div>
+<!-- Q5 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je modifier les intervalles J+3, J+7, J+14 ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le guide d'installation vous montre exactement où trouver ces valeurs dans le système forgé et comment les modifier. Vous pouvez utiliser J+1, J+5, J+21 ou tout autre intervalle qui correspond à votre cycle de vente.</p>
+</div>
+</div>
+<!-- Q6 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que couvre exactement la garantie 14 jours ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Si ce système forgé ne fonctionne pas comme promis dans les 14 jours suivant votre achat, je le <strong>corrige</strong>. Si la correction n'aboutit pas, je vous <strong>rembourse intégralement</strong> sous 5 jours ouvrables. Un email à <a class="text-chene hover:underline" href="mailto:contact@letablia.fr">contact@letablia.fr</a> suffit. C'est aussi simple que ça.</p>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<p class="font-body text-[14px] text-pierre">D'autres questions ? <a class="text-chene hover:underline" href="/faq.html" style="transition:color 0.2s ease">Consultez la FAQ complète</a> ou <a class="text-chene hover:underline" href="mailto:contact@letablia.fr" style="transition:color 0.2s ease">écrivez-nous directement</a>.</p>
+</div>
+</div>
+</section>
+<!-- SECTION 12 — PRODUITS COMPLÉMENTAIRES -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1200px] mx-auto">
+<p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] text-center mb-4">À combiner avec</p>
+<h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Ces systèmes se complètent bien
+        </h2>
+<div class="flex flex-col gap-6 md:flex-row md:gap-8">
+<!-- Produit 1 — Mini CRM application de prise de notes -->
+<a class="crosssell-card md:flex-1 block" href="/produit/mini-crm-notion/" style="text-decoration:none;">
+<p class="font-display text-[28px] text-chene leading-[1.0] mb-2">49 €</p>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Mini CRM application de prise de notes</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Pour piloter tout votre pipeline commercial dans application de prise de notes et visualiser vos prospects, devis et clients en un coup d'œil.</p>
+<p class="font-body text-[13px] text-chene font-semibold">Voir ce système →</p>
+</a>
+<!-- Produit 2 — Pack Contenu LinkedIn -->
+<a class="crosssell-card md:flex-1 block" href="/catalogue.html" style="text-decoration:none;">
+<p class="font-display text-[28px] text-chene leading-[1.0] mb-2">59 €</p>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Pack Contenu LinkedIn</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Pour alimenter votre prospection avec un contenu régulier qui attire les bons prospects avant même qu'ils vous contactent.</p>
+<p class="font-body text-[13px] text-chene font-semibold">Voir ce système →</p>
+</a>
+<!-- Catalogue -->
+<a class="crosssell-card md:flex-1 block" href="/catalogue.html" style="text-decoration:none;">
+<span class="badge badge--pret" style="margin-bottom:12px; display:inline-block;">Disponibles</span>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Voir tous les systèmes forgés</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Automatisations, kits documentaires, dashboards et guides opérationnels — découvrez l'ensemble du catalogue L'établ'IA.</p>
+<p class="font-body text-[13px] text-chene font-semibold">Explorer le catalogue →</p>
+</a>
+</div>
+</div>
+</section>
+<!-- SECTION 13 — CTA FINAL -->
+<section class="bg-ebene py-20 px-4 md:py-24">
+<div class="max-w-[600px] mx-auto text-center">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; margin-bottom:16px;">Prêt à automatiser vos relances ?</p>
+<h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
+          Obtenir le Système de Relance Prospects
+        </h2>
+<p class="font-body text-base text-pierre leading-[1.6] mb-4">
+          Paiement unique. Téléchargement immédiat. Système forgé JSON + guide d'installation + 3 modèles email + tableau tableur. Support 30 jours. Satisfait ou Forgé — 14 jours.
+        </p>
+<p class="font-display text-[42px] text-chene leading-[1.0] mb-8">49 € — paiement unique</p>
+<a class="block md:inline-block w-full md:w-auto text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-8 py-[16px] hover:opacity-90 mb-4" href="https://letablia.lemonsqueezy.com/checkout/buy/RELANCE-PROSPECTS" style="transition:opacity 0.2s ease">
+          Obtenir le Système de Relance Prospects — 49 € →
+        </a>
+<p class="font-body text-[12px] text-pierre mt-2">
+          Paiement sécurisé par LemonSqueezy · Téléchargement immédiat après paiement
+        </p>
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
+<span class="font-body text-[13px] text-pierre">Paiement unique</span>
+<span class="font-body text-[13px] text-pierre">Système forgé JSON inclus</span>
+<span class="font-body text-[13px] text-pierre">Support 30 jours</span>
+<span class="font-body text-[13px] text-pierre">Garantie 14 jours</span>
+</div>
+</div>
+</section>
+</main>
+<!-- FOOTER -->
+<section class="cross-sell-v4 py-16 md:py-20 bg-chene-6 border-t border-pierre/30">
+<div class="container max-w-[1200px] mx-auto px-4 md:px-8">
+<div class="text-center mb-10">
+<p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">SOUVENT FORGÉS ENSEMBLE</p>
+<h2 class="font-heading text-[28px] md:text-[36px] text-ebene leading-[1.1]">Ces systèmes complètent Relance Prospects.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/signal-de-vente/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">VENDRE</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">PLATEFORME E-COMMERCE · NOTIFICATION</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Signal de Vente</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Une alerte messagerie instantanée à chaque commande plateforme e-commerce. En temps réel.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">29 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/collecteur-avis/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">VENDRE</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">PLATEFORME E-COMMERCE · EMAILING</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Le Collecteur Avis</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Collecte les avis clients après commande, automatiquement.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">29 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/gardien-de-stock/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">AUTOMATISER</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">PLATEFORME E-COMMERCE · TABLEUR</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Gardien de Stock</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Surveille votre stock plateforme e-commerce et alerte avant rupture.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">29 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<footer class="bg-ebene mt-12">
+<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+<div class="text-center md:text-left">
+<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
+</ul>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
+<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
+<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
+</div>
+</div>
+</footer>
+<!-- STICKY CTA MOBILE -->
+<div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
+<div>
+<p class="font-body font-semibold text-[14px] text-lin leading-none">Relance Prospects · 49 €</p>
+<p class="font-body text-[11px] text-pierre mt-1">Système forgé moteur d'automatisation · 14j satisfait</p>
+</div>
+<a href="https://letablia.lemonsqueezy.com/checkout/buy/RELANCE-PROSPECTS" style="flex-shrink:0; background:#8A7560; color:#FAF7F2; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
+      Obtenir le système →
+    </a>
+</div>
+<!-- SCRIPTS -->
+<script>
+    // Menu mobile
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+
+    // FAQ accordéon
+    document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(el) {
+          el.classList.remove('open');
+          el.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Masquer sticky CTA quand le CTA hero est visible
+    (function() {
+      var stickyCta = document.getElementById('sticky-cta');
+      if (!stickyCta || window.innerWidth >= 768) return;
+      var heroBtn = document.querySelector('main section:first-child a[href*="lemonsqueezy"]');
+      if (!heroBtn || !('IntersectionObserver' in window)) return;
+      var obs = new IntersectionObserver(function(entries) {
+        stickyCta.style.display = entries[0].isIntersecting ? 'none' : 'flex';
+      }, { threshold: 0.1 });
+      obs.observe(heroBtn);
+    })();
+  </script>
+<script defer="" src="/assets/js/cookies.js"></script>
+<script defer="" src="/assets/js/burger-menu.js"></script>
+<script defer="" src="/assets/js/search-modal.js"></script>
+</body>
+</html>

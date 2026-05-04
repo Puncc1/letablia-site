@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Composants et cards — L'établ'IA · Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chene:#8A7560; --pierre:#B8AFA6; --mousse:#6B7C5F;
+  --lin:#F2EDE8; --ebene:#2C2825;
+}
+*{box-sizing:border-box}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--lin); color:var(--ebene); margin:0; line-height:1.6;
+}
+.container{max-width:920px;margin:0 auto;padding:32px 24px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--ebene);letter-spacing:-0.02em}
+h1{font-size:2.4rem;border-bottom:3px solid var(--chene);padding-bottom:12px;margin-top:0}
+h2{font-size:1.8rem;margin-top:40px;color:var(--chene)}
+h3{font-size:1.3rem;margin-top:28px}
+code,pre{font-family:'JetBrains Mono',Consolas,monospace;font-size:0.92em}
+pre{background:#fffbf5;border-left:4px solid var(--chene);padding:14px 18px;overflow-x:auto;border-radius:4px}
+code{background:rgba(138,117,96,0.10);padding:2px 6px;border-radius:3px}
+pre code{background:transparent;padding:0}
+table{border-collapse:collapse;width:100%;margin:16px 0;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(44,40,37,0.08)}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--pierre);vertical-align:top}
+th{background:var(--chene);color:var(--lin);font-weight:600;font-size:0.92em;text-transform:uppercase;letter-spacing:0.05em}
+tr:last-child td{border-bottom:none}
+.swatch{display:inline-block;width:18px;height:18px;border-radius:4px;vertical-align:middle;margin-right:8px;border:1px solid rgba(0,0,0,0.1)}
+nav.toc{background:#fff;border:1px solid var(--pierre);border-radius:6px;padding:18px 24px;margin-bottom:24px}
+nav.toc ul{margin:8px 0 0 0;padding-left:20px}
+nav.toc li{margin:4px 0}
+nav.toc a{color:var(--chene);text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+.tag{display:inline-block;background:var(--mousse);color:var(--lin);padding:2px 10px;border-radius:99px;font-size:0.78em;margin-right:6px;text-transform:uppercase;letter-spacing:0.05em}
+.callout{background:rgba(107,124,95,0.10);border-left:4px solid var(--mousse);padding:12px 18px;margin:18px 0;border-radius:4px}
+.callout strong{color:var(--mousse)}
+.warning{background:rgba(140,63,50,0.08);border-left:4px solid #8C3F32;padding:12px 18px;margin:18px 0;border-radius:4px}
+ul,ol{padding-left:24px}
+li{margin:4px 0}
+hr{border:none;border-top:1px solid var(--pierre);margin:32px 0}
+.back{display:inline-block;margin-bottom:16px;color:var(--mousse);text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+.product-card-preview{display:inline-block;width:280px;border:1px solid var(--pierre);border-radius:8px;overflow:hidden;margin:8px;background:#fff;vertical-align:top}
+.product-card-preview .ribbon{background:rgba(138,117,96,0.06);height:60px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.15em;color:var(--chene)}
+.product-card-preview .body{padding:16px}
+.product-card-preview h4{font-family:'Playfair Display',serif;font-size:1.2em;margin:0 0 6px}
+.product-card-preview .blurb{color:var(--pierre);font-size:0.88em;margin:0 0 10px}
+.product-card-preview .price{font-family:'JetBrains Mono',monospace;color:var(--chene);font-weight:700}
+</style>
+</head><body>
+<div class="container">
+<a class="back" href="index.html">← Retour à l'index</a>
+<h1>09 · Composants et cards</h1>
+
+<h2>Card produit standard</h2>
+<p>Utilisée sur le catalogue, les pages familles, le cross-sell des fiches produit.</p>
+
+<div style="display:flex;flex-wrap:wrap;gap:16px;margin:18px 0">
+<div class="product-card-preview">
+<div class="ribbon">VENDRE</div>
+<div class="body">
+<p style="font-family:'JetBrains Mono',monospace;font-size:0.7em;color:#8A7560;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 6px">Plateforme e-commerce · Notification</p>
+<h4>Signal de Vente</h4>
+<p class="blurb">Une notification instantanée à chaque commande de votre boutique en ligne.</p>
+<div style="display:flex;justify-content:space-between;align-items:center"><span class="price">9 €</span><span style="font-size:0.88em;color:#6B7C5F">Voir →</span></div>
+</div>
+</div>
+</div>
+
+<h3>Code HTML</h3>
+<pre><code>&lt;a href="/signal-de-vente/"
+   class="product-card group block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition"
+   data-family="vendre"
+   data-tools="plateforme-ecommerce messagerie-instantanee"
+   data-targets="e-commerce"
+   data-price="9"
+   data-title="signal de vente"
+   data-keywords="alerte commande boutique en ligne notification temps reel"&gt;
+  &lt;div class="bg-chene-6 h-[100px] flex items-center justify-center"&gt;
+    &lt;span class="font-mono text-chene text-[11px] uppercase tracking-[2px]"&gt;VENDRE&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="p-5"&gt;
+    &lt;p class="font-mono text-[11px] text-chene uppercase tracking-[1px] mb-2"&gt;Plateforme e-commerce · Notification&lt;/p&gt;
+    &lt;h3 class="font-heading text-[22px] text-ebene mb-2 leading-[1.2]"&gt;Signal de Vente&lt;/h3&gt;
+    &lt;p class="font-body text-[14px] text-pierre leading-[1.5] mb-4"&gt;Une notification instantanée à chaque commande de votre boutique en ligne.&lt;/p&gt;
+    &lt;div class="flex items-center justify-between"&gt;
+      &lt;span class="font-mono text-[18px] text-chene font-semibold"&gt;9 €&lt;/span&gt;
+      &lt;span class="font-body text-[14px] text-mousse group-hover:underline"&gt;Voir →&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/a&gt;</code></pre>
+
+<h2>Card bundle (pack)</h2>
+<p>Variante visuelle pour les 3 packs : ribbon mousse, prix barré individuel.</p>
+
+<div style="display:flex;flex-wrap:wrap;gap:16px;margin:18px 0">
+<div class="product-card-preview" style="border:2px solid #6B7C5F">
+<div class="ribbon" style="background:#6B7C5F;color:#F2EDE8">PACK · ÉCONOMIE 18 €</div>
+<div class="body">
+<p style="font-family:'JetBrains Mono',monospace;font-size:0.7em;color:#6B7C5F;letter-spacing:0.1em;text-transform:uppercase;margin:0 0 6px">Bundle 3 systèmes</p>
+<h4>Pack E-commerce Complet</h4>
+<p class="blurb">Tout pour piloter votre boutique en ligne : alerte commandes, surveillance stock, collecte d'avis.</p>
+<div style="display:flex;justify-content:space-between;align-items:center">
+<div><span style="font-family:'JetBrains Mono',monospace;color:#6B7C5F;font-weight:700">49 €</span> <span style="font-family:'JetBrains Mono',monospace;font-size:0.78em;color:#B8AFA6;text-decoration:line-through;margin-left:6px">67 €</span></div>
+<span style="font-size:0.88em;color:#6B7C5F">Voir →</span>
+</div>
+</div>
+</div>
+</div>
+
+<h2>Boutons</h2>
+<table>
+<tr><th>Variante</th><th>Classes Tailwind</th><th>Usage</th></tr>
+<tr><td><strong>Primaire</strong></td><td><code>bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90</code></td><td>CTA principal — Forger, Acheter, Diagnostic</td></tr>
+<tr><td><strong>Secondaire</strong></td><td><code>bg-transparent text-ebene border-2 border-ebene rounded-[6px] px-7 py-[14px] hover:bg-ebene hover:text-lin</code></td><td>CTA alternatif — Voir le catalogue</td></tr>
+<tr><td><strong>Lien fort</strong></td><td><code>bg-chene text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90</code></td><td>CTA hero principal</td></tr>
+<tr><td><strong>Lien icône</strong></td><td><code>text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6</code></td><td>Recherche, menu</td></tr>
+</table>
+
+<h2>Encarts</h2>
+<table>
+<tr><th>Variante</th><th>Classes</th><th>Usage</th></tr>
+<tr><td><strong>Réassurance</strong></td><td><code>bg-chene-6 rounded-[6px] p-6</code></td><td>Hero secondaire, blocs « Satisfait ou Forgé »</td></tr>
+<tr><td><strong>Action</strong></td><td><code>bg-mousse-10 rounded-[8px] p-8</code></td><td>Bloc « Ce que je vérifie » dans diagnostic</td></tr>
+<tr><td><strong>Border</strong></td><td><code>bg-lin border border-pierre/30 rounded-[8px] p-8</code></td><td>Cards info, formulaire diagnostic</td></tr>
+<tr><td><strong>Forge</strong></td><td><code>bg-chene-6 border-l-4 border-mousse rounded-[6px] p-4</code></td><td>Bandeau politique « Satisfait ou Forgé »</td></tr>
+</table>
+
+<h2>Inputs de formulaire</h2>
+<pre><code>&lt;input type="text"
+       class="w-full font-body text-base text-ebene bg-lin-50 border border-pierre/30 rounded-[6px] px-4 py-3 focus:outline-none focus:border-mousse focus:ring-2 focus:ring-mousse/20 transition"&gt;</code></pre>
+
+<h2>Breadcrumb</h2>
+<pre><code>&lt;nav class="max-w-[1280px] mx-auto px-4 md:px-8 py-4 font-mono text-[12px] text-pierre"&gt;
+  &lt;a href="/" class="hover:text-chene"&gt;Accueil&lt;/a&gt; · &lt;a href="/catalogue.html" class="hover:text-chene"&gt;Catalogue&lt;/a&gt; · &lt;span class="text-ebene"&gt;Signal de Vente&lt;/span&gt;
+&lt;/nav&gt;</code></pre>
+
+</div></body></html>

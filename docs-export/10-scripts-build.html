@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scripts de construction — L'établ'IA · Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chene:#8A7560; --pierre:#B8AFA6; --mousse:#6B7C5F;
+  --lin:#F2EDE8; --ebene:#2C2825;
+}
+*{box-sizing:border-box}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--lin); color:var(--ebene); margin:0; line-height:1.6;
+}
+.container{max-width:920px;margin:0 auto;padding:32px 24px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--ebene);letter-spacing:-0.02em}
+h1{font-size:2.4rem;border-bottom:3px solid var(--chene);padding-bottom:12px;margin-top:0}
+h2{font-size:1.8rem;margin-top:40px;color:var(--chene)}
+h3{font-size:1.3rem;margin-top:28px}
+code,pre{font-family:'JetBrains Mono',Consolas,monospace;font-size:0.92em}
+pre{background:#fffbf5;border-left:4px solid var(--chene);padding:14px 18px;overflow-x:auto;border-radius:4px}
+code{background:rgba(138,117,96,0.10);padding:2px 6px;border-radius:3px}
+pre code{background:transparent;padding:0}
+table{border-collapse:collapse;width:100%;margin:16px 0;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(44,40,37,0.08)}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--pierre);vertical-align:top}
+th{background:var(--chene);color:var(--lin);font-weight:600;font-size:0.92em;text-transform:uppercase;letter-spacing:0.05em}
+tr:last-child td{border-bottom:none}
+.swatch{display:inline-block;width:18px;height:18px;border-radius:4px;vertical-align:middle;margin-right:8px;border:1px solid rgba(0,0,0,0.1)}
+nav.toc{background:#fff;border:1px solid var(--pierre);border-radius:6px;padding:18px 24px;margin-bottom:24px}
+nav.toc ul{margin:8px 0 0 0;padding-left:20px}
+nav.toc li{margin:4px 0}
+nav.toc a{color:var(--chene);text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+.tag{display:inline-block;background:var(--mousse);color:var(--lin);padding:2px 10px;border-radius:99px;font-size:0.78em;margin-right:6px;text-transform:uppercase;letter-spacing:0.05em}
+.callout{background:rgba(107,124,95,0.10);border-left:4px solid var(--mousse);padding:12px 18px;margin:18px 0;border-radius:4px}
+.callout strong{color:var(--mousse)}
+.warning{background:rgba(140,63,50,0.08);border-left:4px solid #8C3F32;padding:12px 18px;margin:18px 0;border-radius:4px}
+ul,ol{padding-left:24px}
+li{margin:4px 0}
+hr{border:none;border-top:1px solid var(--pierre);margin:32px 0}
+.back{display:inline-block;margin-bottom:16px;color:var(--mousse);text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+.product-card-preview{display:inline-block;width:280px;border:1px solid var(--pierre);border-radius:8px;overflow:hidden;margin:8px;background:#fff;vertical-align:top}
+.product-card-preview .ribbon{background:rgba(138,117,96,0.06);height:60px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.15em;color:var(--chene)}
+.product-card-preview .body{padding:16px}
+.product-card-preview h4{font-family:'Playfair Display',serif;font-size:1.2em;margin:0 0 6px}
+.product-card-preview .blurb{color:var(--pierre);font-size:0.88em;margin:0 0 10px}
+.product-card-preview .price{font-family:'JetBrains Mono',monospace;color:var(--chene);font-weight:700}
+</style>
+</head><body>
+<div class="container">
+<a class="back" href="index.html">← Retour à l'index</a>
+<h1>10 · Scripts de construction</h1>
+
+<div class="callout">
+<strong>Principe</strong> : <code>products.json</code> est la source unique. Tous les scripts régénèrent les pages à partir de ce JSON. <strong>On ne copie-colle JAMAIS un prix ou un blurb.</strong>
+</div>
+
+<h2>Pipeline de build</h2>
+<pre><code># Modifier products.json (prix, blurb, tools, bundles)
+nano assets/data/products.json
+
+# Régénérer toutes les pages
+python3 scripts/build-from-json.py
+
+# Si on a ajouté/retiré du contenu marqué : anonymiser
+python3 scripts/anonymize-brands.py
+
+# Si on a modifié header/footer : injecter partout
+python3 scripts/inject-canonical-shell.py
+
+# Recompiler Tailwind après modif HTML (pour purger ou ajouter classes)
+npm run build:css
+
+# Pousser sur Vercel
+git add -A
+git commit -m "Update produits"
+git push origin main && git push origin main:master
+</code></pre>
+
+<h2>scripts/build-from-json.py</h2>
+<p>Régénère depuis <code>products.json</code> :</p>
+<ul>
+<li><strong>catalogue.html</strong> — grille 14 cards (3 packs + 11 produits) + filtres avec compteurs</li>
+<li><strong>produits/&lt;famille&gt;/index.html</strong> × 5 — grille des produits de la famille</li>
+<li><strong>fiches produit prix</strong> — synchronise <code>&lt;div class="price-badge"&gt;</code> et <code>&lt;p class="price"&gt;</code></li>
+<li><strong>packs/&lt;slug&gt;/index.html</strong> × 3 — pages bundles avec produits inclus</li>
+</ul>
+<p>Utilise BeautifulSoup pour modifier le DOM proprement.</p>
+
+<h2>scripts/anonymize-brands.py</h2>
+<p>Sed massif sur tous les fichiers HTML pour remplacer les marques par leurs catégories génériques :</p>
+<ul>
+<li>Shopify → plateforme e-commerce</li>
+<li>Notion → application de prise de notes</li>
+<li>Excel, Google Sheets → tableur</li>
+<li>Gmail, Outlook → messagerie électronique</li>
+<li>Telegram, WhatsApp → messagerie instantanée</li>
+<li>Brevo, Mailchimp → service d'emailing</li>
+<li>n8n, Make, Zapier → moteur d'automatisation</li>
+</ul>
+<p>Inclut variantes UPPERCASE (RIBBONS) et patterns combinés (« Shopify/WooCommerce »).</p>
+
+<h2>scripts/inject-canonical-shell.py</h2>
+<p>Injecte le header + footer canoniques sur toutes les pages HTML. Utilise BeautifulSoup pour remplacer les balises <code>&lt;header&gt;</code> et <code>&lt;footer&gt;</code> proprement, sans toucher au reste de la page.</p>
+<p>Inclut aussi le menu mobile plein écran.</p>
+
+<h2>scripts/fix-policy.py</h2>
+<p>Corrige les phrases incompatibles avec la politique « Satisfait ou Forgé » :</p>
+<ul>
+<li>« Remboursement intégral sans justification » → phrase canonique</li>
+<li>« Satisfait ou remboursé sans question » → « Satisfait ou Forgé »</li>
+<li>« 14 jours sans condition » → « Politique Satisfait ou Forgé : on corrige avant de rembourser »</li>
+</ul>
+
+<h2>npm run build:css</h2>
+<p>Compile Tailwind CSS depuis <code>styles/input.css</code> vers <code>styles/output.css</code> avec purge automatique des classes inutilisées et minification.</p>
+<p>Taille finale : ~18 KB minifié pour 40 pages.</p>
+
+<h2>Hooks Git</h2>
+<p>Le pre-commit hook <code>.git/hooks/pre-commit</code> vérifie :</p>
+<ul>
+<li>Aucune marque tierce non anonymisée</li>
+<li>Aucun secret dans les commits (.env, tokens, mots de passe)</li>
+<li>Aucun vocabulaire interdit (workflow / template / support humain / credential) — warnings non bloquants</li>
+</ul>
+
+</div></body></html>

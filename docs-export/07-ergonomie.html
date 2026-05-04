@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ergonomie et chemins d'accès — L'établ'IA · Documentation</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --chene:#8A7560; --pierre:#B8AFA6; --mousse:#6B7C5F;
+  --lin:#F2EDE8; --ebene:#2C2825;
+}
+*{box-sizing:border-box}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--lin); color:var(--ebene); margin:0; line-height:1.6;
+}
+.container{max-width:920px;margin:0 auto;padding:32px 24px}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--ebene);letter-spacing:-0.02em}
+h1{font-size:2.4rem;border-bottom:3px solid var(--chene);padding-bottom:12px;margin-top:0}
+h2{font-size:1.8rem;margin-top:40px;color:var(--chene)}
+h3{font-size:1.3rem;margin-top:28px}
+code,pre{font-family:'JetBrains Mono',Consolas,monospace;font-size:0.92em}
+pre{background:#fffbf5;border-left:4px solid var(--chene);padding:14px 18px;overflow-x:auto;border-radius:4px}
+code{background:rgba(138,117,96,0.10);padding:2px 6px;border-radius:3px}
+pre code{background:transparent;padding:0}
+table{border-collapse:collapse;width:100%;margin:16px 0;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(44,40,37,0.08)}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--pierre);vertical-align:top}
+th{background:var(--chene);color:var(--lin);font-weight:600;font-size:0.92em;text-transform:uppercase;letter-spacing:0.05em}
+tr:last-child td{border-bottom:none}
+.swatch{display:inline-block;width:18px;height:18px;border-radius:4px;vertical-align:middle;margin-right:8px;border:1px solid rgba(0,0,0,0.1)}
+nav.toc{background:#fff;border:1px solid var(--pierre);border-radius:6px;padding:18px 24px;margin-bottom:24px}
+nav.toc ul{margin:8px 0 0 0;padding-left:20px}
+nav.toc li{margin:4px 0}
+nav.toc a{color:var(--chene);text-decoration:none}
+nav.toc a:hover{text-decoration:underline}
+.tag{display:inline-block;background:var(--mousse);color:var(--lin);padding:2px 10px;border-radius:99px;font-size:0.78em;margin-right:6px;text-transform:uppercase;letter-spacing:0.05em}
+.callout{background:rgba(107,124,95,0.10);border-left:4px solid var(--mousse);padding:12px 18px;margin:18px 0;border-radius:4px}
+.callout strong{color:var(--mousse)}
+.warning{background:rgba(140,63,50,0.08);border-left:4px solid #8C3F32;padding:12px 18px;margin:18px 0;border-radius:4px}
+ul,ol{padding-left:24px}
+li{margin:4px 0}
+hr{border:none;border-top:1px solid var(--pierre);margin:32px 0}
+.back{display:inline-block;margin-bottom:16px;color:var(--mousse);text-decoration:none;font-weight:600}
+.back:hover{text-decoration:underline}
+.product-card-preview{display:inline-block;width:280px;border:1px solid var(--pierre);border-radius:8px;overflow:hidden;margin:8px;background:#fff;vertical-align:top}
+.product-card-preview .ribbon{background:rgba(138,117,96,0.06);height:60px;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:0.7em;letter-spacing:0.15em;color:var(--chene)}
+.product-card-preview .body{padding:16px}
+.product-card-preview h4{font-family:'Playfair Display',serif;font-size:1.2em;margin:0 0 6px}
+.product-card-preview .blurb{color:var(--pierre);font-size:0.88em;margin:0 0 10px}
+.product-card-preview .price{font-family:'JetBrains Mono',monospace;color:var(--chene);font-weight:700}
+</style>
+</head><body>
+<div class="container">
+<a class="back" href="index.html">← Retour à l'index</a>
+<h1>07 · Ergonomie et chemins d'accès</h1>
+
+<div class="callout">
+<strong>Théorie d'ergonomie Raphaël (2026-05-03)</strong> :
+Le catalogue letablia.fr fonctionne comme Amazon / Etsy / Gumroad — le visiteur arrive avec une intention, il faut lui offrir 3 entrées pour atteindre le produit qui correspond.
+</div>
+
+<h2>Les 3 chemins d'accès</h2>
+
+<h3>Chemin 1 — Par BESOIN (familles)</h3>
+<p>Le visiteur sait ce qu'il VEUT FAIRE.</p>
+<ul>
+<li><strong>Automatiser</strong> — brancher des services entre eux pour économiser du temps</li>
+<li><strong>Vendre</strong> — convertir et fidéliser ses clients</li>
+<li><strong>Piloter</strong> — voir et décider sur des données fiables</li>
+<li><strong>Produire</strong> — modèles et trames pour livrer plus vite</li>
+<li><strong>Sécuriser</strong> — cyber-hygiène, conformité, RGPD</li>
+</ul>
+<p>URL : <code>/produits/&lt;slug&gt;/</code> · Affichage : page éditoriale + grille des produits de la famille.</p>
+
+<h3>Chemin 2 — Par OUTIL (catégories génériques)</h3>
+<p>Le visiteur sait avec QUOI il travaille.</p>
+<ul>
+<li>Plateforme e-commerce</li>
+<li>Tableur</li>
+<li>Application de prise de notes</li>
+<li>Service d'emailing</li>
+<li>Messagerie électronique</li>
+<li>Messagerie instantanée</li>
+<li>Document imprimable</li>
+</ul>
+<p>URL : <code>/catalogue.html?outil=&lt;slug&gt;</code> · Affichage : catalogue avec filtre activé.</p>
+
+<h3>Chemin 3 — Par RECHERCHE (Cmd+K)</h3>
+<p>Le visiteur sait CE QU'IL CHERCHE par mot-clé.</p>
+<ul>
+<li>Modal global recherche : <kbd>Cmd+K</kbd> / <kbd>/</kbd> / clic loupe ⌕</li>
+<li>Fuzzy match sur titre, tools, keywords, blurb</li>
+<li>Scoring pondéré : titre &gt; tools &gt; keywords &gt; blurb</li>
+<li>Résultats live, navigation flèches haut/bas, Entrée pour ouvrir</li>
+</ul>
+
+<h2>Personas comme raccourcis</h2>
+<p>3 cards persona sur la home qui pointent vers le catalogue avec filtre :</p>
+<ul>
+<li>« Vous êtes <strong>e-commerçant</strong> » → <code>/catalogue.html?cible=e-commerce</code></li>
+<li>« Vous êtes <strong>freelance</strong> » → <code>/catalogue.html?cible=freelance</code></li>
+<li>« Vous êtes <strong>TPE généraliste</strong> » → <code>/catalogue.html?cible=tpe-generaliste</code></li>
+</ul>
+
+<h2>Filtres du catalogue</h2>
+<p>4 axes de filtre, combinables (AND entre axes, OR à l'intérieur d'un axe) :</p>
+<ol>
+<li><strong>Famille</strong> (5 valeurs) : Automatiser, Vendre, Piloter, Produire, Sécuriser</li>
+<li><strong>Outil</strong> (7 valeurs) : catégories anonymisées</li>
+<li><strong>Prix</strong> (3 buckets) : ≤ 19 €, 20-49 €, 50 € et +</li>
+<li><strong>Cible</strong> (5 valeurs) : E-commerçant, Freelance, Agence, Formateur, TPE généraliste</li>
+</ol>
+<p>État des filtres synchronisé avec l'URL (deeplinkable). Bouton « Réinitialiser » + compteur de cards visibles.</p>
+
+<h2>Tri</h2>
+<p>Sélecteur en haut de la grille, options :</p>
+<ul>
+<li>Par défaut (ordre éditorial du catalogue)</li>
+<li>Prix croissant</li>
+<li>Prix décroissant</li>
+<li>Alphabétique</li>
+</ul>
+
+<h2>Comportements UX clés</h2>
+<ul>
+<li><strong>Empty state</strong> : si 0 card visible, message « Aucun système ne correspond. <a>Réinitialiser les filtres</a> ».</li>
+<li><strong>Mobile</strong> : aside filtres collapsible (fermée par défaut, bouton « Filtrer » la déploie).</li>
+<li><strong>Burger menu mobile</strong> : plein écran, fermeture sur clic lien ou ESC.</li>
+<li><strong>Dropdown header</strong> : zone tampon pt-1 + transition-opacity duration-150ms (évite la disparition trop rapide).</li>
+<li><strong>Sticky header</strong> : reste visible au scroll, hauteur 72px.</li>
+</ul>
+
+</div></body></html>

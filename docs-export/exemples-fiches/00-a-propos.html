@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<!-- Typographies V4 -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>À propos — L'établ'IA</title>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="/styles/output.css" rel="stylesheet"/>
+<!-- Google Fonts : JetBrains Mono -->
+<!-- Design System V3 -->
+<link href="/assets/css/cookies.css" rel="stylesheet">
+</link></head>
+<body class="bg-lin font-body text-ebene">
+<!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
+<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
+<nav class="hidden md:flex items-center gap-7">
+<div class="relative group" data-dropdown="">
+<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
+              Catalogue
+              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
+<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+</div>
+</div>
+</div>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
+</nav>
+<div class="hidden md:flex items-center gap-3">
+<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
+<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</button>
+<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
+</div>
+<div class="md:hidden flex items-center gap-2">
+<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
+<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</button>
+<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
+<span class="block w-6 h-[2px] bg-ebene"></span>
+<span class="block w-6 h-[2px] bg-ebene"></span>
+<span class="block w-6 h-[2px] bg-ebene"></span>
+</button>
+</div>
+</div>
+</header>
+<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
+<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
+<nav class="flex flex-col items-center gap-6 mb-10 text-center">
+<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
+<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
+<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
+<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
+<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
+<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
+<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+</div>
+<div class="border-t border-pierre/30 w-32 my-3"></div>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
+</nav>
+<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+</div>
+<!-- Menu mobile plein écran -->
+
+<!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+<main class="about-page">
+<!-- ─────────────────────────────────────── 1. HERO ──────────────────────────────────── -->
+<section class="bg-lin py-20 px-4">
+<div class="max-w-[720px] mx-auto text-center">
+<h1 class="font-heading font-bold text-[28px] md:text-[36px] text-ebene leading-[1.2] mb-6">
+          L'atelier derrière les systèmes
+        </h1>
+<p class="font-body text-lg text-ebene leading-[1.6]">
+          Je construis des produits digitaux simples, utiles et documentés pour aider les petites entreprises à travailler avec moins de friction.
+        </p>
+</div>
+</section>
+<!-- ─────────────────────── 2. PHOTO — GATE HITL (photo Raphaël à venir) ────────────── -->
+<section class="bg-chene-6 py-16 px-4">
+<div class="max-w-[480px] mx-auto">
+<div class="border border-pierre rounded-[8px] bg-lin p-8 flex flex-col items-center justify-center min-h-[280px]" style="position:relative;">
+<span style="position:absolute;top:12px;right:12px;font-family:'JetBrains Mono',monospace;font-size:10px;background:#8A7560;color:white;padding:2px 8px;border-radius:4px;text-transform:uppercase;letter-spacing:0.08em;">Photo à venir</span>
+<div style="width:88px;height:88px;border-radius:50%;background:#E9DDC8;border:2px solid #8A7560;display:flex;align-items:center;justify-content:center;margin-bottom:20px;">
+<svg fill="none" height="40" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 24 24" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+</div>
+<p class="font-heading font-semibold text-[16px] text-ebene text-center">Raphaël Olivi</p>
+<p class="font-body text-[14px] text-pierre text-center mt-1" style="font-style:italic;">Fondateur · Artisan numérique</p>
+<!-- img src="/assets/img/raphael.jpg" alt="Raphaël, fondateur de L'établ'IA" style="width:100%;border-radius:8px;" -->
+</div>
+</div>
+</section>
+<!-- ─────────────────────────────── 3. MANIFESTE "CE QUE LETABLIA REFUSE" ─────────────── -->
+<section class="bg-lin py-20 px-4">
+<div class="max-w-[720px] mx-auto">
+<h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] mb-10">
+          Ce que Letablia refuse
+        </h2>
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-4 p-5 border border-pierre rounded-[8px] bg-chene-6">
+<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#8C3F32;display:flex;align-items:center;justify-content:center;">
+<svg fill="none" height="14" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</span>
+<p class="font-body text-base text-ebene leading-[1.6]">Vendre de la magie IA</p>
+</li>
+<li class="flex items-start gap-4 p-5 border border-pierre rounded-[8px] bg-chene-6">
+<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#8C3F32;display:flex;align-items:center;justify-content:center;">
+<svg fill="none" height="14" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</span>
+<p class="font-body text-base text-ebene leading-[1.6]">Cacher les prérequis avant l'achat</p>
+</li>
+<li class="flex items-start gap-4 p-5 border border-pierre rounded-[8px] bg-chene-6">
+<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#8C3F32;display:flex;align-items:center;justify-content:center;">
+<svg fill="none" height="14" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</span>
+<p class="font-body text-base text-ebene leading-[1.6]">Promettre des résultats impossibles</p>
+</li>
+<li class="flex items-start gap-4 p-5 border border-pierre rounded-[8px] bg-chene-6">
+<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#8C3F32;display:flex;align-items:center;justify-content:center;">
+<svg fill="none" height="14" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</span>
+<p class="font-body text-base text-ebene leading-[1.6]">Livrer des fichiers incompréhensibles</p>
+</li>
+<li class="flex items-start gap-4 p-5 border border-pierre rounded-[8px] bg-chene-6">
+<span style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:#8C3F32;display:flex;align-items:center;justify-content:center;">
+<svg fill="none" height="14" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24" width="14" xmlns="http://www.w3.org/2000/svg"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</span>
+<p class="font-body text-base text-ebene leading-[1.6]">Remplacer l'humain quand il doit rester maître</p>
+</li>
+</ul>
+</div>
+</section>
+<!-- ───────────────────────────────────── 4. MÉTHODE DE FORGE ────────────────────────── -->
+<section class="bg-chene-6 py-20 px-4">
+<div class="max-w-[720px] mx-auto">
+<h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] mb-10">
+          La méthode de forge
+        </h2>
+<ol class="flex flex-col gap-4">
+<li class="flex items-start gap-5">
+<span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:#3F2D1E;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#F2EDE8;">1</span>
+<div style="padding-top:6px;">
+<p class="font-body font-semibold text-base text-ebene">Observer un problème réel</p>
+</div>
+</li>
+<li class="flex items-start gap-5">
+<span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:#3F2D1E;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#F2EDE8;">2</span>
+<div style="padding-top:6px;">
+<p class="font-body font-semibold text-base text-ebene">Construire un premier système</p>
+</div>
+</li>
+<li class="flex items-start gap-5">
+<span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:#3F2D1E;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#F2EDE8;">3</span>
+<div style="padding-top:6px;">
+<p class="font-body font-semibold text-base text-ebene">Tester sur un cas concret</p>
+</div>
+</li>
+<li class="flex items-start gap-5">
+<span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:#3F2D1E;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#F2EDE8;">4</span>
+<div style="padding-top:6px;">
+<p class="font-body font-semibold text-base text-ebene">Documenter pas-à-pas</p>
+</div>
+</li>
+<li class="flex items-start gap-5">
+<span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:#3F2D1E;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#F2EDE8;">5</span>
+<div style="padding-top:6px;">
+<p class="font-body font-semibold text-base text-ebene">Mettre en vente à prix clair</p>
+</div>
+</li>
+<li class="flex items-start gap-5">
+<span style="flex-shrink:0;width:36px;height:36px;border-radius:50%;background:#8A7560;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:#F2EDE8;">6</span>
+<div style="padding-top:6px;">
+<p class="font-body font-semibold text-base text-ebene">Améliorer avec les retours</p>
+</div>
+</li>
+</ol>
+</div>
+</section>
+<!-- ──────────────────────────────────────── 5. L'OUTILLAGE ──────────────────────────── -->
+<section class="bg-lin py-20 px-4">
+<div class="max-w-[720px] mx-auto">
+<h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] mb-6">
+          L'outillage
+        </h2>
+<p class="font-body text-lg text-ebene leading-[1.6]">
+          moteur d'automatisation, application de prise de notes, base de données, tableur, APIs, IA générative et automatisations web. Mon objectif n'est pas de vendre de la complexité, mais de la transformer en systèmes utilisables.
+        </p>
+<!-- Badges outils -->
+<div class="flex flex-wrap gap-3 mt-8">
+<span class="badge badge--moteur d'automatisation">moteur d'automatisation</span>
+<span class="badge badge--gamme">application de prise de notes</span>
+<span class="badge badge--gamme">base de données</span>
+<span class="badge badge--gamme">tableur</span>
+<span class="badge badge--gamme">APIs REST</span>
+<span class="badge badge--gamme">IA générative</span>
+<span class="badge badge--gamme">Automatisation web</span>
+</div>
+</div>
+</section>
+<!-- ──────────────────────────────────────── 6. CTA DOUBLE ───────────────────────────── -->
+<section class="bg-chene py-16 px-4">
+<div class="max-w-[600px] mx-auto text-center">
+<h2 class="font-heading font-bold text-[22px] md:text-[28px] text-lin leading-[1.2] mb-8">
+          Prêt à réduire vos frictions ?
+        </h2>
+<div class="flex flex-col gap-4 md:flex-row md:justify-center">
+<a class="block text-center bg-lin text-chene font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/catalogue.html" style="transition:opacity 0.2s ease;">Voir les systèmes prêts à poser</a>
+<a class="block text-center font-semibold text-base rounded-[6px] px-7 py-[14px]" href="/diagnostic.html" onmouseout="this.style.borderColor='rgba(246,241,232,0.6)'" onmouseover="this.style.borderColor='rgba(246,241,232,1)'" style="border:2px solid rgba(246,241,232,0.6);color:#F2EDE8;transition:border-color 0.2s ease;">Faire le diagnostic</a>
+</div>
+</div>
+</section>
+</main>
+<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+<footer class="bg-ebene mt-12">
+<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+<div class="text-center md:text-left">
+<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
+</ul>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
+<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
+<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
+</div>
+</div>
+</footer>
+<script>
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+  </script>
+<script defer="" src="/assets/js/cookies.js"></script>
+<script defer="" src="/assets/js/burger-menu.js"></script>
+<script defer="" src="/assets/js/search-modal.js"></script>
+</body>
+</html>
