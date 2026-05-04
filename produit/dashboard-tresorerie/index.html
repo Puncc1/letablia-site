@@ -1,24 +1,18 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-    <!-- Typographies V4 -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Trésorerie TPE — L'établ'IA</title>
-  
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-  
-  
-  
-  <!-- Google Fonts : JetBrains Mono -->
-  
-  <link rel="stylesheet" href="/styles/output.css">
-  <link rel="stylesheet" href="/assets/css/design-system.css">
-  <style>
+<meta charset="utf-8"/>
+<!-- Typographies V4 -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Trésorerie TPE — L'établ'IA</title>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Google Fonts : JetBrains Mono -->
+<link href="/styles/output.css" rel="stylesheet"/>
+<style>
     /* ── Couleur ocre spécifique à ce produit ── */
     :root { --ocre: #B88A2E; }
 
@@ -66,1027 +60,876 @@
     .apercu-card { background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; }
     .apercu-placeholder { border:1px dashed rgba(107,74,47,0.35); border-radius:4px; padding:32px 16px; text-align:center; background:#FBF7EE; }
   </style>
-    <link rel="stylesheet" href="/assets/css/cookies.css" />
-  </head>
+<link href="/assets/css/cookies.css" rel="stylesheet">
+</link></head>
 <body class="bg-lin font-body text-ebene">
-
-  <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
-  <header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
-      <div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
-        <!-- Logo -->
-        <a href="/" class="font-display text-2xl text-chene whitespace-nowrap">L'établ'IA</a>
-
-        <!-- Navigation desktop -->
-        <nav class="hidden md:flex items-center gap-7">
-          <!-- Dropdown Catalogue -->
-          <div class="relative group">
-            <a href="/catalogue.html" class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition">
+<!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+<header class="sticky top-0 z-40 bg-lin border-b border-pierre/30 h-[72px]">
+<div class="max-w-[1280px] mx-auto px-4 md:px-8 h-full flex items-center justify-between gap-4">
+<a class="font-display text-2xl text-chene whitespace-nowrap" href="/">L'établ'IA</a>
+<nav class="hidden md:flex items-center gap-7">
+<div class="relative group" data-dropdown="">
+<a class="font-body text-base text-ebene hover:text-chene flex items-center gap-1 cursor-pointer transition py-2" href="/catalogue.html">
               Catalogue
-              <svg width="10" height="10" viewBox="0 0 10 10" fill="none" class="opacity-60 group-hover:opacity-100"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <!-- Menu dropdown -->
-            <div class="absolute top-full left-0 mt-2 w-[240px] bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition pointer-events-none group-hover:pointer-events-auto">
-              <a href="/produits/automatisations/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">⚡ Automatiser</a>
-              <a href="/produits/vendre/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">📈 Vendre</a>
-              <a href="/produits/tableaux-de-bord/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">◯ Piloter</a>
-              <a href="/produits/modeles/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">◇ Produire</a>
-              <a href="/produits/guides-formations/" class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition">▣ Sécuriser</a>
-              <div class="border-t border-pierre/20 my-1"></div>
-              <a href="/catalogue.html" class="block px-4 py-2 font-body text-[14px] text-chene hover:bg-chene-6 transition font-semibold">Voir tout le catalogue →</a>
-            </div>
-          </div>
+              <svg class="opacity-60 group-hover:opacity-100" fill="none" height="10" viewbox="0 0 10 10" width="10"><path d="M1 3L5 7L9 3" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path></svg>
+</a>
+<div class="absolute top-full left-0 pt-1 w-[260px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-150 pointer-events-none group-hover:pointer-events-auto" data-dropdown-menu="">
+<div class="bg-lin border border-pierre/30 rounded-[8px] shadow-md py-2">
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
+<a class="block px-4 py-2 font-body text-[14px] text-ebene hover:bg-chene-6 hover:text-chene transition" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+</div>
+</div>
+</div>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/a-propos.html">À propos</a>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/faq.html">FAQ</a>
+<a class="font-body text-base text-ebene hover:text-chene transition" href="/contact.html">Contact</a>
+</nav>
+<div class="hidden md:flex items-center gap-3">
+<button aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6" id="search-trigger">
+<svg fill="none" height="18" viewbox="0 0 18 18" width="18"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</button>
+<a class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap" href="/diagnostic.html">Diagnostic gratuit</a>
+</div>
+<div class="md:hidden flex items-center gap-2">
+<button aria-label="Rechercher" class="text-pierre p-2" data-search-trigger="" id="search-trigger-mobile">
+<svg fill="none" height="20" viewbox="0 0 18 18" width="20"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"></circle><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"></path></svg>
+</button>
+<button aria-label="Ouvrir le menu" class="flex flex-col gap-[5px] p-1" id="menu-toggle">
+<span class="block w-6 h-[2px] bg-ebene"></span>
+<span class="block w-6 h-[2px] bg-ebene"></span>
+<span class="block w-6 h-[2px] bg-ebene"></span>
+</button>
+</div>
+</div>
+</header>
+<div class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" id="mobile-menu">
+<button aria-label="Fermer le menu" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" id="menu-close">×</button>
+<nav class="flex flex-col items-center gap-6 mb-10 text-center">
+<a class="font-heading text-2xl text-ebene hover:text-chene" href="/catalogue.html">Catalogue</a>
+<div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
+<a class="hover:text-chene" href="/produits/automatisations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>Automatiser</a>
+<a class="hover:text-chene" href="/produits/vendre/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>Vendre</a>
+<a class="hover:text-chene" href="/produits/tableaux-de-bord/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Piloter</a>
+<a class="hover:text-chene" href="/produits/modeles/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Produire</a>
+<a class="hover:text-chene" href="/produits/guides-formations/"><svg class="inline-block mr-2 -mt-0.5" fill="none" height="14" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>Sécuriser</a>
+</div>
+<div class="border-t border-pierre/30 w-32 my-3"></div>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/a-propos.html">À propos</a>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/faq.html">FAQ</a>
+<a class="font-body text-lg text-ebene hover:text-chene" href="/contact.html">Contact</a>
+</nav>
+<a class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90" href="/diagnostic.html">Diagnostic gratuit</a>
+</div>
+<div class="breadcrumb-v4 bg-lin border-b border-pierre/30">
+<div class="max-w-[1200px] mx-auto px-4 md:px-8 py-3">
+<nav class="font-body text-[13px] text-pierre">
+<a class="hover:text-chene" href="/">Accueil</a>
+<span class="mx-2">›</span>
+<a class="hover:text-chene" href="/catalogue.html">Catalogue</a>
+<span class="mx-2">›</span>
+<a class="hover:text-chene" href="/produits/tableaux-de-bord/">Piloter</a>
+<span class="mx-2">›</span>
+<span class="text-ebene">Dashboard Trésorerie TPE</span>
+</nav>
+</div>
+</div>
+<!-- Menu mobile plein écran -->
 
-          <a href="/a-propos.html" class="font-body text-base text-ebene hover:text-chene transition">À propos</a>
-          <a href="/faq.html" class="font-body text-base text-ebene hover:text-chene transition">FAQ</a>
-          <a href="/contact.html" class="font-body text-base text-ebene hover:text-chene transition">Contact</a>
-        </nav>
-
-        <!-- Search + CTA desktop -->
-        <div class="hidden md:flex items-center gap-3">
-          <button id="search-trigger" aria-label="Rechercher (⌘K)" class="text-pierre hover:text-chene transition p-2 rounded hover:bg-chene-6">
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <a href="/diagnostic.html" class="bg-mousse text-lin font-semibold text-[14px] rounded-[6px] px-5 py-[10px] hover:opacity-90 transition whitespace-nowrap">Diagnostic gratuit</a>
-        </div>
-
-        <!-- Mobile : search + burger -->
-        <div class="md:hidden flex items-center gap-2">
-          <button id="search-trigger-mobile" data-search-trigger aria-label="Rechercher" class="text-pierre p-2">
-            <svg width="20" height="20" viewBox="0 0 18 18" fill="none"><circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.5"/><path d="M12.5 12.5L16 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <button id="menu-toggle" class="flex flex-col gap-[5px] p-1" aria-label="Ouvrir le menu">
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-            <span class="block w-6 h-[2px] bg-ebene"></span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <div class="breadcrumb-v4 bg-lin border-b border-pierre/30">
-      <div class="max-w-[1200px] mx-auto px-4 md:px-8 py-3">
-        <nav class="font-body text-[13px] text-pierre">
-          <a href="/" class="hover:text-chene">Accueil</a>
-          <span class="mx-2">›</span>
-          <a href="/catalogue.html" class="hover:text-chene">Catalogue</a>
-          <span class="mx-2">›</span>
-          <a href="/produits/tableaux-de-bord/" class="hover:text-chene">Piloter</a>
-          <span class="mx-2">›</span>
-          <span class="text-ebene">Dashboard Trésorerie TPE</span>
-        </nav>
-      </div>
-    </div>
-
-
-    <!-- Menu mobile plein écran -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" >
-      <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" aria-label="Fermer le menu">&times;</button>
-      <nav class="flex flex-col items-center gap-6 mb-10 text-center">
-        <a href="/catalogue.html" class="font-heading text-2xl text-ebene hover:text-chene">Catalogue</a>
-        <div class="flex flex-col items-center gap-2 font-body text-base text-pierre">
-          <a href="/produits/automatisations/" class="hover:text-chene">⚡ Automatiser</a>
-          <a href="/produits/vendre/" class="hover:text-chene">📈 Vendre</a>
-          <a href="/produits/tableaux-de-bord/" class="hover:text-chene">◯ Piloter</a>
-          <a href="/produits/modeles/" class="hover:text-chene">◇ Produire</a>
-          <a href="/produits/guides-formations/" class="hover:text-chene">▣ Sécuriser</a>
-        </div>
-        <div class="border-t border-pierre/30 w-32 my-3"></div>
-        <a href="/a-propos.html" class="font-body text-lg text-ebene hover:text-chene">À propos</a>
-        <a href="/faq.html" class="font-body text-lg text-ebene hover:text-chene">FAQ</a>
-        <a href="/contact.html" class="font-body text-lg text-ebene hover:text-chene">Contact</a>
-      </nav>
-      <a href="/diagnostic.html" class="bg-mousse text-lin font-semibold rounded-[6px] px-7 py-[14px] hover:opacity-90">Diagnostic gratuit</a>
-    </div>
-
-  <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
-  <main>
-
-    <!-- ─────────────────────────────── BREADCRUMB ───────────────────────────────────── -->
-    <nav class="bg-lin border-b border-pierre px-4 py-3" aria-label="Fil d'Ariane">
-      <div class="max-w-[1200px] mx-auto">
-        <ol class="flex flex-wrap items-center gap-2 font-body text-[13px] text-pierre">
-          <li><a href="/" class="hover:text-chene" style="transition:color 0.2s ease">Accueil</a></li>
-          <li><span class="text-pierre opacity-50">›</span></li>
-          <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.2s ease">Produits</a></li>
-          <li><span class="text-pierre opacity-50">›</span></li>
-          <li><a href="/catalogue.html" class="hover:text-chene" style="transition:color 0.2s ease">Tableaux de bord</a></li>
-          <li><span class="text-pierre opacity-50">›</span></li>
-          <li class="text-ebene font-semibold">Dashboard Trésorerie TPE</li>
-        </ol>
-      </div>
-    </nav>
-
-    <!-- ─────────────────────────────── SECTION 1 — HERO PRODUIT ─────────────────────── -->
-    <section class="bg-lin pt-12 pb-16 px-4 md:pt-16 md:pb-20">
-      <div class="max-w-[1200px] mx-auto">
-        <div class="flex flex-col gap-10 md:flex-row md:gap-16 md:items-start">
-
-          <!-- Colonne gauche (60%) — Texte -->
-          <div class="md:w-[58%]">
-
-            <!-- Badges gamme + statut -->
-            <div class="flex flex-wrap items-center gap-2 mb-5">
-              <span class="badge badge--gamme">Piloter · Tableau de bord · Sheets/Excel</span>
-              <span class="badge badge--pret">Prêt à installer</span>
-            </div>
-
-            <!-- Titre H1 -->
-            <h1 class="font-heading font-bold text-[30px] md:text-[40px] text-ebene leading-[1.2] mb-4">
+<!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+<main>
+<!-- ─────────────────────────────── BREADCRUMB ───────────────────────────────────── -->
+<nav aria-label="Fil d'Ariane" class="bg-lin border-b border-pierre px-4 py-3">
+<div class="max-w-[1200px] mx-auto">
+<ol class="flex flex-wrap items-center gap-2 font-body text-[13px] text-pierre">
+<li><a class="hover:text-chene" href="/" style="transition:color 0.2s ease">Accueil</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li><a class="hover:text-chene" href="/catalogue.html" style="transition:color 0.2s ease">Produits</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li><a class="hover:text-chene" href="/catalogue.html" style="transition:color 0.2s ease">Tableaux de bord</a></li>
+<li><span class="text-pierre opacity-50">›</span></li>
+<li class="text-ebene font-semibold">Dashboard Trésorerie TPE</li>
+</ol>
+</div>
+</nav>
+<!-- ─────────────────────────────── SECTION 1 — HERO PRODUIT ─────────────────────── -->
+<section class="bg-lin pt-12 pb-16 px-4 md:pt-16 md:pb-20">
+<div class="max-w-[1200px] mx-auto">
+<div class="flex flex-col gap-10 md:flex-row md:gap-16 md:items-start">
+<!-- Colonne gauche (60%) — Texte -->
+<div class="md:w-[58%]">
+<!-- Badges gamme + statut -->
+<div class="flex flex-wrap items-center gap-2 mb-5">
+<span class="badge badge--gamme">Piloter · Tableau de bord · tableur/tableur</span>
+<span class="badge badge--pret">Prêt à installer</span>
+</div>
+<!-- Titre H1 -->
+<h1 class="font-heading font-bold text-[30px] md:text-[40px] text-ebene leading-[1.2] mb-4">
               Dashboard Trésorerie TPE
             </h1>
-
-            <!-- Promesse -->
-            <p class="font-body text-lg text-ebene leading-[1.65] mb-5">
+<!-- Promesse -->
+<p class="font-body text-lg text-ebene leading-[1.65] mb-5">
               Vision claire de votre trésorerie, TVA et relances en <strong>5 minutes par semaine</strong>.
             </p>
-
-            <!-- Pour qui -->
-            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-8">
-              Pour les indépendants, artisans et TPE qui veulent piloter leur activité financière sans logiciel complexe ni abonnement mensuel — avec Google Sheets ou Excel.
+<!-- Pour qui -->
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-8">
+              Pour les indépendants, artisans et TPE qui veulent piloter leur activité financière sans logiciel complexe ni abonnement mensuel — avec tableur ou tableur.
             </p>
-
-            <!-- Prix + CTA -->
-            <div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
-              <div>
-                <p class="font-display text-[38px] leading-[1.0]" style="color:#B88A2E;">39 €</p>
-                <p class="font-body text-[13px] text-pierre mt-1">Paiement unique · sans abonnement</p>
-              </div>
-              <div class="flex flex-col gap-3">
-                <a href="https://letablia.lemonsqueezy.com/checkout/buy/DASHBOARD-TRESORERIE"
-                   class="block text-center text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90"
-                   style="background:#B88A2E; transition:opacity 0.2s ease">
+<!-- Prix + CTA -->
+<div class="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+<div>
+<p class="font-display text-[38px] leading-[1.0]" style="color:#B88A2E;">39 €</p>
+<p class="font-body text-[13px] text-pierre mt-1">Paiement unique · sans abonnement</p>
+</div>
+<div class="flex flex-col gap-3">
+<a class="block text-center text-lin font-semibold text-base rounded-[6px] px-7 py-[14px] hover:opacity-90" href="https://letablia.lemonsqueezy.com/checkout/buy/DASHBOARD-TRESORERIE" style="background:#B88A2E; transition:opacity 0.2s ease">
                   Installer ce système →
                 </a>
-                <p class="font-body text-[12px] text-pierre text-center">
-                  Fichier xlsx + Sheets · Guide PDF · Support 30 jours · 14j Satisfait ou Forgé
+<p class="font-body text-[12px] text-pierre text-center">
+                  Fichier xlsx + tableur · Guide PDF · Support 30 jours · 14j Satisfait ou Forgé
                 </p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- Colonne droite (42%) — Capture + Fiche technique -->
-          <div class="md:w-[42%] flex flex-col gap-6">
-
-            <!-- Capture annotée placeholder -->
-            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
-              <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; opacity:0.6;">Aperçu du système</span>
-              <div style="border:1px dashed rgba(107,74,47,0.35); background:#FBF7EE; padding:24px; text-align:center; color:#8A7560; width:100%; border-radius:4px;">
-                <p style="font-style:italic; margin:0;">Aperçu du Dashboard — capture annotée à venir</p>
-              </div>
-              <span style="font-family:var(--font-mono,monospace); font-size:10px; color:#B88A2E; letter-spacing:0.05em;">VERSION 1.0 · TESTÉ AVRIL 2026</span>
-            </div>
-
-            <!-- Fiche technique -->
-            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
-              <div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
-                <span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600;">Fiche technique</span>
-              </div>
-              <table class="fiche-technique">
-                <tr><td>Type</td><td>Tableur Google Sheets / Excel</td></tr>
-                <tr><td>Format livré</td><td>Fichier .xlsx + lien Sheets modèle + guide PDF</td></tr>
-                <tr><td>Installation</td><td>20 à 40 minutes</td></tr>
-                <tr><td>Niveau</td><td>Débutant accompagné</td></tr>
-                <tr><td>Outils requis</td><td>Google Sheets (gratuit) OU Excel 2016+</td></tr>
-                <tr><td>Coûts externes</td><td>Aucun — outil tiers non requis</td></tr>
-                <tr><td>Support</td><td>30 jours par email</td></tr>
-                <tr><td>Garantie</td><td>Satisfait ou Forgé — 14 jours</td></tr>
-                <tr><td>Version</td><td>v1.0</td></tr>
-                <tr><td>Dernier test</td><td>Avril 2026</td></tr>
-              </table>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────── SECTION 2 — LE PROBLÈME ─────────────────────── -->
-    <section class="bg-chene-6 py-16 px-4 md:py-20">
-      <div class="max-w-[760px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Le problème</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-8">
+</div>
+</div>
+</div>
+<!-- Colonne droite (42%) — Capture + Fiche technique -->
+<div class="md:w-[42%] flex flex-col gap-6">
+<!-- Capture annotée placeholder -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:20px; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;">
+<span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; opacity:0.6;">Aperçu du système</span>
+<div style="border:1px dashed rgba(107,74,47,0.35); background:#FBF7EE; padding:24px; text-align:center; color:#8A7560; width:100%; border-radius:4px;">
+<p style="font-style:italic; margin:0;">Aperçu du Dashboard — capture annotée à venir</p>
+</div>
+<span style="font-family:var(--font-mono,monospace); font-size:10px; color:#B88A2E; letter-spacing:0.05em;">VERSION 1.0 · TESTÉ AVRIL 2026</span>
+</div>
+<!-- Fiche technique -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
+<div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
+<span style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8A7560; font-weight:600;">Fiche technique</span>
+</div>
+<table class="fiche-technique">
+<tr><td>Type</td><td>Tableur tableur / tableur</td></tr>
+<tr><td>Format livré</td><td>Fichier .xlsx + lien tableur modèle + guide PDF</td></tr>
+<tr><td>Installation</td><td>20 à 40 minutes</td></tr>
+<tr><td>Niveau</td><td>Débutant accompagné</td></tr>
+<tr><td>Outils requis</td><td>tableur (gratuit) OU tableur 2016+</td></tr>
+<tr><td>Coûts externes</td><td>Aucun — outil tiers non requis</td></tr>
+<tr><td>Support</td><td>30 jours par email</td></tr>
+<tr><td>Garantie</td><td>Satisfait ou Forgé — 14 jours</td></tr>
+<tr><td>Version</td><td>v1.0</td></tr>
+<tr><td>Dernier test</td><td>Avril 2026</td></tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────────── SECTION 2 — LE PROBLÈME ─────────────────────── -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[760px] mx-auto">
+<p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Le problème</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-8">
           Vos chiffres sont partout — et nulle part à la fois
         </h2>
-
-        <div class="flex flex-col gap-5">
-          <p class="font-body text-lg text-ebene leading-[1.65]">
+<div class="flex flex-col gap-5">
+<p class="font-body text-lg text-ebene leading-[1.65]">
             Vous saisissez vos chiffres dans 3 fichiers différents, vous ne savez jamais où vous en êtes financièrement, et la TVA arrive toujours en retard.
           </p>
-          <p class="font-body text-base text-ebene leading-[1.65]">
+<p class="font-body text-base text-ebene leading-[1.65]">
             Résultat : impossible de répondre à la simple question « Combien me reste-t-il en caisse ce mois-ci ? ». Les relances clients s'oublient. La déclaration TVA est une surprise chaque trimestre. Et quand votre expert-comptable vous demande vos chiffres, c'est la panique.
           </p>
-          <p class="font-body text-base text-ebene leading-[1.65]">
+<p class="font-body text-base text-ebene leading-[1.65]">
             Ce n'est pas un problème de rigueur — c'est un problème d'outil. Un tableur adapté à votre réalité de TPE remplace une heure de saisie chaotique par 5 minutes de lecture claire.
           </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ────────────────────────── SECTION 3 — CE QUE FAIT LE SYSTÈME ────────────────── -->
-    <section class="bg-lin py-16 px-4 md:py-20">
-      <div class="max-w-[1200px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Ce que fait le système</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-4">
+</div>
+</div>
+</section>
+<!-- ────────────────────────── SECTION 3 — CE QUE FAIT LE SYSTÈME ────────────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1200px] mx-auto">
+<p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Ce que fait le système</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-4">
           5 onglets, une vision complète
         </h2>
-        <p class="font-body text-base text-pierre text-center mb-12 max-w-[600px] mx-auto leading-[1.6]">
+<p class="font-body text-base text-pierre text-center mb-12 max-w-[600px] mx-auto leading-[1.6]">
           Chaque onglet a un rôle précis. Ensemble, ils couvrent l'intégralité du pilotage financier d'une TPE.
         </p>
-
-        <div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
-
-          <!-- Onglet 1 — Saisie -->
-          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Onglet Saisie — entrées et sorties</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Une ligne par transaction : date, libellé, montant HT, taux TVA, catégorie. Saisie rapide, validation automatique des données. Vous passez 5 minutes par semaine au lieu d'une heure en fin de mois.</p>
-            </div>
-          </div>
-
-          <!-- Onglet 2 — Dashboard -->
-          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Onglet Dashboard — vue synthétique</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Solde courant, recettes du mois, dépenses du mois, résultat net, évolution mensuelle. Tout s'actualise automatiquement dès que vous saisissez une transaction. Un coup d'œil suffit.</p>
-            </div>
-          </div>
-
-          <!-- Onglet 3 — TVA -->
-          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M13 5v2"/><path d="M13 17v2"/><path d="M13 11v2"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Onglet TVA — calcul automatique</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">TVA collectée, TVA déductible et TVA à reverser calculées automatiquement par trimestre. Remplissez votre déclaration en 10 minutes — les chiffres sont déjà là. Supporte les taux 20 %, 10 %, 5,5 % et 0 %.</p>
-            </div>
-          </div>
-
-          <!-- Onglet 4 — Relances -->
-          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
-            <span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Onglet Relances — alertes 30/60/90 jours</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Saisissez vos factures émises et leurs dates d'échéance. Le tableau identifie automatiquement les factures en retard à 30, 60 et 90 jours. Vous voyez d'un coup d'œil qui relancer cette semaine.</p>
-            </div>
-          </div>
-
-          <!-- Onglet 5 — Prévisions -->
-          <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start; md:col-span-2">
-            <span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene mb-1">Onglet Prévisions — projection sur 3 mois</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Saisissez vos charges fixes récurrentes et vos estimations de recettes. Le tableau projette votre trésorerie sur les 3 prochains mois et vous alerte si un mois risque d'être tendu. Anticipez les coups durs avant qu'ils arrivent.</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- ─────────────────────────── SECTION 4 — CE QUE VOUS RECEVEZ ─────────────────── -->
-    <section class="bg-ebene py-16 px-4 md:py-20">
-      <div class="max-w-[720px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Ce que vous recevez</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-10">
+<div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
+<!-- Onglet 1 — Saisie -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><rect height="4" rx="1" ry="1" width="8" x="8" y="2"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Onglet Saisie — entrées et sorties</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Une ligne par transaction : date, libellé, montant HT, taux TVA, catégorie. Saisie rapide, validation automatique des données. Vous passez 5 minutes par semaine au lieu d'une heure en fin de mois.</p>
+</div>
+</div>
+<!-- Onglet 2 — Dashboard -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Onglet Dashboard — vue synthétique</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Solde courant, recettes du mois, dépenses du mois, résultat net, évolution mensuelle. Tout s'actualise automatiquement dès que vous saisissez une transaction. Un coup d'œil suffit.</p>
+</div>
+</div>
+<!-- Onglet 3 — TVA -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path><path d="M13 5v2"></path><path d="M13 17v2"></path><path d="M13 11v2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Onglet TVA — calcul automatique</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">TVA collectée, TVA déductible et TVA à reverser calculées automatiquement par trimestre. Remplissez votre déclaration en 10 minutes — les chiffres sont déjà là. Supporte les taux 20 %, 10 %, 5,5 % et 0 %.</p>
+</div>
+</div>
+<!-- Onglet 4 — Relances -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start;">
+<span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Onglet Relances — alertes 30/60/90 jours</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Saisissez vos factures émises et leurs dates d'échéance. Le tableau identifie automatiquement les factures en retard à 30, 60 et 90 jours. Vous voyez d'un coup d'œil qui relancer cette semaine.</p>
+</div>
+</div>
+<!-- Onglet 5 — Prévisions -->
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; display:flex; gap:16px; align-items:flex-start; md:col-span-2">
+<span style="flex-shrink:0; margin-top:2px; color:#B88A2E;">
+<svg aria-hidden="true" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-ebene mb-1">Onglet Prévisions — projection sur 3 mois</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Saisissez vos charges fixes récurrentes et vos estimations de recettes. Le tableau projette votre trésorerie sur les 3 prochains mois et vous alerte si un mois risque d'être tendu. Anticipez les coups durs avant qu'ils arrivent.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 4 — CE QUE VOUS RECEVEZ ─────────────────── -->
+<section class="bg-ebene py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Ce que vous recevez</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-10">
           Tout ce qu'il faut pour installer et lancer
         </h2>
-
-        <ul class="flex flex-col gap-4">
-
-          <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-lin">Fichier tableur .xlsx (compatible Excel et Sheets)</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Le Dashboard complet, prêt à l'emploi. Ouvrez-le dans Google Sheets ou Excel 2016 et saisissez votre première transaction.</p>
-            </div>
-          </li>
-
-          <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-lin">Lien Google Sheets modèle (copie en 1 clic)</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pour ceux qui préfèrent Google Sheets : dupliquez le modèle en un clic dans votre Drive. Toujours à jour, accessible depuis n'importe quel appareil.</p>
-            </div>
-          </li>
-
-          <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-lin">Guide PDF illustré pas-à-pas</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Chaque onglet expliqué avec des captures annotées. Configuration des catégories, paramétrage TVA, personnalisation. Aucune connaissance préalable requise.</p>
-            </div>
-          </li>
-
-          <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-lin">Changelog et mises à jour</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Toute évolution du Dashboard (nouvelles fonctions, corrections) vous est communiquée par email avec la nouvelle version à télécharger.</p>
-            </div>
-          </li>
-
-          <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-lin">Support email pendant 30 jours</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Une formule qui ne fonctionne pas comme prévu ? Une catégorie à adapter à votre activité ? Réponse sous 48h ouvrées.</p>
-            </div>
-          </li>
-
-          <li class="flex items-start gap-4">
-            <span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <div>
-              <p class="font-body font-semibold text-base text-lin">Garantie Satisfait ou Forgé — 14 jours</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Si ce système forgé ne fonctionne pas comme promis dans les 14 jours suivant votre achat, je le <strong>corrige</strong>. Si la correction n'aboutit pas, je vous <strong>rembourse intégralement</strong> sous 5 jours ouvrables. Un email à contact@letablia.fr suffit. C'est aussi simple que ça.</p>
-            </div>
-          </li>
-
-        </ul>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────── SECTION 5 — AVANT / APRÈS ────────────────────── -->
-    <section class="bg-lin py-16 px-4 md:py-20">
-      <div class="max-w-[1000px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Avant / Après</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+<ul class="flex flex-col gap-4">
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Fichier tableur .xlsx (compatible tableur et tableur)</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Le Dashboard complet, prêt à l'emploi. Ouvrez-le dans tableur ou tableur 2016 et saisissez votre première transaction.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Lien tableur modèle (copie en 1 clic)</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pour ceux qui préfèrent tableur : dupliquez le modèle en un clic dans votre Drive. Toujours à jour, accessible depuis n'importe quel appareil.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Guide PDF illustré pas-à-pas</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Chaque onglet expliqué avec des captures annotées. Configuration des catégories, paramétrage TVA, personnalisation. Aucune connaissance préalable requise.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Changelog et mises à jour</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Toute évolution du Dashboard (nouvelles fonctions, corrections) vous est communiquée par email avec la nouvelle version à télécharger.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Support email pendant 30 jours</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Une formule qui ne fonctionne pas comme prévu ? Une catégorie à adapter à votre activité ? Réponse sous 48h ouvrées.</p>
+</div>
+</li>
+<li class="flex items-start gap-4">
+<span style="flex-shrink:0; margin-top:3px; width:20px; height:20px; background:#6B7C5F; border-radius:4px; display:flex; align-items:center; justify-content:center;">
+<svg fill="none" height="9" viewbox="0 0 11 9" width="11"><path d="M1 4.5L4 7.5L10 1.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</span>
+<div>
+<p class="font-body font-semibold text-base text-lin">Garantie Satisfait ou Forgé — 14 jours</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Si ce système forgé ne fonctionne pas comme promis dans les 14 jours suivant votre achat, je le <strong>corrige</strong>. Si la correction n'aboutit pas, je vous <strong>rembourse intégralement</strong> sous 5 jours ouvrables. Un email à contact@letablia.fr suffit. C'est aussi simple que ça.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<!-- ─────────────────────────────── SECTION 5 — AVANT / APRÈS ────────────────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Avant / Après</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
           Ce que ça change concrètement
         </h2>
-
-        <div class="avantapres-grid">
-
-          <!-- AVANT -->
-          <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
-            <ul class="flex flex-col gap-3">
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">&#x2717;</span>
+<div class="avantapres-grid">
+<!-- AVANT -->
+<div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
                 Chiffres dispersés dans 3 fichiers différents
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">&#x2717;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
                 TVA en retard et calcul manuel chaque trimestre
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">&#x2717;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
                 Oubli des relances et factures impayées perdues
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">&#x2717;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
                 Aucune visibilité financière au-delà du mois en cours
               </li>
-            </ul>
-          </div>
-
-          <!-- Flèche -->
-          <div class="avantapres-arrow flex flex-col items-center justify-center">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#B88A2E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-
-          <!-- APRÈS -->
-          <div style="background:#FAF7F2; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">Après</p>
-            <ul class="flex flex-col gap-3">
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">&#x2713;</span>
+</ul>
+</div>
+<!-- Flèche -->
+<div class="avantapres-arrow flex flex-col items-center justify-center">
+<svg fill="none" height="32" viewbox="0 0 32 32" width="32">
+<path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#B88A2E" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+</svg>
+</div>
+<!-- APRÈS -->
+<div style="background:#FAF7F2; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">Après</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Vue unique consolidée sur un seul dashboard
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">&#x2713;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 TVA calculée automatiquement, déclaration en 10 min
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">&#x2713;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Alertes automatiques à 30, 60 et 90 jours de retard
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">&#x2713;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
                 Projection de trésorerie sur les 3 prochains mois
               </li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- Chiffre clé -->
-        <div class="mt-12 text-center">
-          <p class="font-display text-[48px] md:text-[64px] leading-[1.0]" style="color:#B88A2E;">5 min</p>
-          <p class="font-body text-base text-ebene mt-2">par semaine pour piloter votre trésorerie — contre 1h+ auparavant</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────── SECTION 6 — APERÇU TECHNIQUE ─────────────────────── -->
-    <section class="bg-chene-6 py-16 px-4 md:py-20">
-      <div class="max-w-[1000px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Aperçu technique</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+</ul>
+</div>
+</div>
+<!-- Chiffre clé -->
+<div class="mt-12 text-center">
+<p class="font-display text-[48px] md:text-[64px] leading-[1.0]" style="color:#B88A2E;">5 min</p>
+<p class="font-body text-base text-ebene mt-2">par semaine pour piloter votre trésorerie — contre 1h+ auparavant</p>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 6 — APERÇU TECHNIQUE ─────────────────────── -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Aperçu technique</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
           À quoi ressemble le Dashboard
         </h2>
-
-        <div class="flex flex-col gap-6 md:grid md:grid-cols-3 md:gap-8">
-
-          <!-- Capture 1 — Onglet Saisie -->
-          <div class="apercu-card">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; margin-bottom:12px;">Onglet Saisie</p>
-            <div class="apercu-placeholder">
-              <p style="font-family:var(--font-mono,monospace); font-size:11px; color:#8A7560; font-style:italic; margin:0;">Capture annotée<br>à venir</p>
-            </div>
-            <p class="font-body text-[13px] text-pierre mt-3 leading-[1.5]">Saisie rapide ligne par ligne — date, montant, catégorie, TVA.</p>
-          </div>
-
-          <!-- Capture 2 — Onglet Dashboard -->
-          <div class="apercu-card">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; margin-bottom:12px;">Onglet Dashboard</p>
-            <div class="apercu-placeholder">
-              <p style="font-family:var(--font-mono,monospace); font-size:11px; color:#8A7560; font-style:italic; margin:0;">Capture annotée<br>à venir</p>
-            </div>
-            <p class="font-body text-[13px] text-pierre mt-3 leading-[1.5]">Vue synthétique : solde, recettes, dépenses, résultat net du mois.</p>
-          </div>
-
-          <!-- Capture 3 — Onglet Relances -->
-          <div class="apercu-card">
-            <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; margin-bottom:12px;">Onglet Relances</p>
-            <div class="apercu-placeholder">
-              <p style="font-family:var(--font-mono,monospace); font-size:11px; color:#8A7560; font-style:italic; margin:0;">Capture annotée<br>à venir</p>
-            </div>
-            <p class="font-body text-[13px] text-pierre mt-3 leading-[1.5]">Factures impayées signalées par palier — 30, 60 et 90 jours.</p>
-          </div>
-
-        </div>
-
-        <!-- Outils compatibles -->
-        <div class="mt-12">
-          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] text-center mb-6">Compatible avec</p>
-          <div class="flex flex-wrap justify-center gap-4">
-            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
-              <span style="color:#B88A2E;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="M18 17V9"/><path d="M13 17V5"/><path d="M8 17v-3"/></svg>
-              </span>
-              <p class="font-body font-semibold text-[14px] text-ebene">Google Sheets</p>
-            </div>
-            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
-              <span style="color:#B88A2E;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-              </span>
-              <p class="font-body font-semibold text-[14px] text-ebene">Excel 2016+</p>
-            </div>
-            <div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
-              <span style="color:#B88A2E;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
-              </span>
-              <p class="font-body font-semibold text-[14px] text-ebene">0 abonnement requis</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────── SECTION 7 — INSTALLATION ─────────────────────────── -->
-    <section class="bg-ebene py-16 px-4 md:py-20">
-      <div class="max-w-[720px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Installation</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-4">
+<div class="flex flex-col gap-6 md:grid md:grid-cols-3 md:gap-8">
+<!-- Capture 1 — Onglet Saisie -->
+<div class="apercu-card">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; margin-bottom:12px;">Onglet Saisie</p>
+<div class="apercu-placeholder">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; color:#8A7560; font-style:italic; margin:0;">Capture annotée<br/>à venir</p>
+</div>
+<p class="font-body text-[13px] text-pierre mt-3 leading-[1.5]">Saisie rapide ligne par ligne — date, montant, catégorie, TVA.</p>
+</div>
+<!-- Capture 2 — Onglet Dashboard -->
+<div class="apercu-card">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; margin-bottom:12px;">Onglet Dashboard</p>
+<div class="apercu-placeholder">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; color:#8A7560; font-style:italic; margin:0;">Capture annotée<br/>à venir</p>
+</div>
+<p class="font-body text-[13px] text-pierre mt-3 leading-[1.5]">Vue synthétique : solde, recettes, dépenses, résultat net du mois.</p>
+</div>
+<!-- Capture 3 — Onglet Relances -->
+<div class="apercu-card">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.08em; text-transform:uppercase; color:#8A7560; margin-bottom:12px;">Onglet Relances</p>
+<div class="apercu-placeholder">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; color:#8A7560; font-style:italic; margin:0;">Capture annotée<br/>à venir</p>
+</div>
+<p class="font-body text-[13px] text-pierre mt-3 leading-[1.5]">Factures impayées signalées par palier — 30, 60 et 90 jours.</p>
+</div>
+</div>
+<!-- Outils compatibles -->
+<div class="mt-12">
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] text-center mb-6">Compatible avec</p>
+<div class="flex flex-wrap justify-center gap-4">
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
+<span style="color:#B88A2E;">
+<svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M3 3v18h18"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+</span>
+<p class="font-body font-semibold text-[14px] text-ebene">tableur</p>
+</div>
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
+<span style="color:#B88A2E;">
+<svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><rect height="18" rx="2" ry="2" width="18" x="3" y="3"></rect><path d="M3 9h18"></path><path d="M9 21V9"></path></svg>
+</span>
+<p class="font-body font-semibold text-[14px] text-ebene">tableur 2016+</p>
+</div>
+<div style="background:#FAF7F2; border:1px solid rgba(107,74,47,0.2); border-radius:6px; padding:12px 20px; display:flex; align-items:center; gap:8px;">
+<span style="color:#B88A2E;">
+<svg aria-hidden="true" fill="none" height="22" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" viewbox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path><path d="M12 6v6l4 2"></path></svg>
+</span>
+<p class="font-body font-semibold text-[14px] text-ebene">0 abonnement requis</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 7 — INSTALLATION ─────────────────────────── -->
+<section class="bg-ebene py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Installation</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-lin leading-[1.2] text-center mb-4">
           Opérationnel en 7 étapes
         </h2>
-        <p class="font-body text-base text-pierre text-center mb-12 max-w-[560px] mx-auto leading-[1.6]">
+<p class="font-body text-base text-pierre text-center mb-12 max-w-[560px] mx-auto leading-[1.6]">
           Le guide PDF illustré vous accompagne à chaque étape. Comptez 20 à 40 minutes pour une première installation complète.
         </p>
-
-        <div class="flex flex-col">
-
-          <div class="etape-item">
-            <div class="etape-num">1</div>
-            <div style="padding-top:8px;">
-              <h3 class="font-heading font-bold text-[17px] text-lin mb-2">Achetez et téléchargez</h3>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Après l'achat, vous recevez par email le fichier .xlsx, le lien Sheets modèle et le guide PDF. Téléchargement immédiat — aucune attente.</p>
-            </div>
-          </div>
-
-          <div class="etape-item">
-            <div class="etape-num">2</div>
-            <div style="padding-top:8px;">
-              <h3 class="font-heading font-bold text-[17px] text-lin mb-2">Ouvrez dans Google Sheets ou Excel</h3>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Importez le fichier .xlsx dans Google Sheets (Fichier → Importer) ou ouvrez-le directement dans Excel. Vous pouvez aussi dupliquer le lien Sheets modèle en un clic.</p>
-            </div>
-          </div>
-
-          <div class="etape-item">
-            <div class="etape-num">3</div>
-            <div style="padding-top:8px;">
-              <h3 class="font-heading font-bold text-[17px] text-lin mb-2">Configurez votre régime de TVA</h3>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Dans l'onglet Paramètres, renseignez votre régime TVA (mensuel ou trimestriel), votre taux principal et votre seuil de franchise si applicable. Le guide vous montre chaque champ.</p>
-            </div>
-          </div>
-
-          <div class="etape-item">
-            <div class="etape-num">4</div>
-            <div style="padding-top:8px;">
-              <h3 class="font-heading font-bold text-[17px] text-lin mb-2">Adaptez les catégories de dépenses</h3>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Les catégories par défaut (fournitures, prestataires, loyer, charges sociales, etc.) conviennent à la plupart des TPE. Renommez celles qui ne correspondent pas à votre activité.</p>
-            </div>
-          </div>
-
-          <div class="etape-item">
-            <div class="etape-num">5</div>
-            <div style="padding-top:8px;">
-              <h3 class="font-heading font-bold text-[17px] text-lin mb-2">Saisissez vos premières transactions</h3>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Dans l'onglet Saisie, ajoutez vos 5 dernières transactions pour vérifier que tout s'affiche correctement dans le Dashboard. Le guide inclut une checklist de validation.</p>
-            </div>
-          </div>
-
-          <div class="etape-item">
-            <div class="etape-num">6</div>
-            <div style="padding-top:8px;">
-              <h3 class="font-heading font-bold text-[17px] text-lin mb-2">Renseignez vos factures en cours</h3>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Dans l'onglet Relances, ajoutez vos factures émises et non encore payées avec leurs dates d'échéance. Les alertes 30/60/90 jours s'activent immédiatement.</p>
-            </div>
-          </div>
-
-          <div class="etape-item">
-            <div class="etape-num">7</div>
-            <div style="padding-top:8px;">
-              <h3 class="font-heading font-bold text-[17px] text-lin mb-2">Activez les prévisions</h3>
-              <p class="font-body text-[14px] text-pierre leading-[1.6]">Dans l'onglet Prévisions, saisissez vos charges fixes mensuelles et votre objectif de chiffre d'affaires. La projection sur 3 mois s'affiche instantanément.</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────── SECTION 8 — PRÉREQUIS ────────────────────────── -->
-    <section class="bg-lin py-16 px-4 md:py-20">
-      <div class="max-w-[720px] mx-auto">
-
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+<div class="flex flex-col">
+<div class="etape-item">
+<div class="etape-num">1</div>
+<div style="padding-top:8px;">
+<h3 class="font-heading font-bold text-[17px] text-lin mb-2">Achetez et téléchargez</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Après l'achat, vous recevez par email le fichier .xlsx, le lien tableur modèle et le guide PDF. Téléchargement immédiat — aucune attente.</p>
+</div>
+</div>
+<div class="etape-item">
+<div class="etape-num">2</div>
+<div style="padding-top:8px;">
+<h3 class="font-heading font-bold text-[17px] text-lin mb-2">Ouvrez dans tableur ou tableur</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Importez le fichier .xlsx dans tableur (Fichier → Importer) ou ouvrez-le directement dans tableur. Vous pouvez aussi dupliquer le lien tableur modèle en un clic.</p>
+</div>
+</div>
+<div class="etape-item">
+<div class="etape-num">3</div>
+<div style="padding-top:8px;">
+<h3 class="font-heading font-bold text-[17px] text-lin mb-2">Configurez votre régime de TVA</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Dans l'onglet Paramètres, renseignez votre régime TVA (mensuel ou trimestriel), votre taux principal et votre seuil de franchise si applicable. Le guide vous montre chaque champ.</p>
+</div>
+</div>
+<div class="etape-item">
+<div class="etape-num">4</div>
+<div style="padding-top:8px;">
+<h3 class="font-heading font-bold text-[17px] text-lin mb-2">Adaptez les catégories de dépenses</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Les catégories par défaut (fournitures, prestataires, loyer, charges sociales, etc.) conviennent à la plupart des TPE. Renommez celles qui ne correspondent pas à votre activité.</p>
+</div>
+</div>
+<div class="etape-item">
+<div class="etape-num">5</div>
+<div style="padding-top:8px;">
+<h3 class="font-heading font-bold text-[17px] text-lin mb-2">Saisissez vos premières transactions</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Dans l'onglet Saisie, ajoutez vos 5 dernières transactions pour vérifier que tout s'affiche correctement dans le Dashboard. Le guide inclut une checklist de validation.</p>
+</div>
+</div>
+<div class="etape-item">
+<div class="etape-num">6</div>
+<div style="padding-top:8px;">
+<h3 class="font-heading font-bold text-[17px] text-lin mb-2">Renseignez vos factures en cours</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Dans l'onglet Relances, ajoutez vos factures émises et non encore payées avec leurs dates d'échéance. Les alertes 30/60/90 jours s'activent immédiatement.</p>
+</div>
+</div>
+<div class="etape-item">
+<div class="etape-num">7</div>
+<div style="padding-top:8px;">
+<h3 class="font-heading font-bold text-[17px] text-lin mb-2">Activez les prévisions</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6]">Dans l'onglet Prévisions, saisissez vos charges fixes mensuelles et votre objectif de chiffre d'affaires. La projection sur 3 mois s'affiche instantanément.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────────── SECTION 8 — PRÉREQUIS ────────────────────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Prérequis — à lire avant d'acheter</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ce dont vous avez besoin avant de commencer
         </h2>
-
-        <div class="flex flex-col gap-4 mb-8">
-
-          <div class="prereq-item">
-            <div class="prereq-num">1</div>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene">Google Sheets (compte Google gratuit) OU Excel 2016+</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Aucun outil tiers ni abonnement requis. Google Sheets est accessible gratuitement avec n'importe quel compte Google. Excel 2016 ou une version plus récente suffit pour une utilisation locale.</p>
-            </div>
-          </div>
-
-          <div class="prereq-item">
-            <div class="prereq-num">2</div>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene">20 à 40 minutes pour l'installation initiale</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">La configuration des paramètres et la personnalisation des catégories prend entre 20 et 40 minutes. Ensuite, la saisie hebdomadaire prend moins de 5 minutes.</p>
-            </div>
-          </div>
-
-          <div class="prereq-item">
-            <div class="prereq-num">3</div>
-            <div>
-              <p class="font-body font-semibold text-base text-ebene">Vos documents comptables de base</p>
-              <p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pour pré-remplir les données du mois en cours, avoir sous la main vos relevés bancaires ou factures récentes est utile — mais pas obligatoire pour démarrer.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Encadré rassurant -->
-        <div style="background:#F0F7F4; border-left:3px solid #6B7C5F; border-radius:4px; padding:20px;">
-          <p class="font-body text-[14px] text-ebene leading-[1.65]">
-            <strong>Aucune compétence en comptabilité requise.</strong> Le Dashboard est conçu pour des non-comptables. Les formules sont verrouillées, les zones de saisie clairement identifiées. Si vous savez utiliser un tableur basique, vous saurez utiliser ce Dashboard.
+<div class="flex flex-col gap-4 mb-8">
+<div class="prereq-item">
+<div class="prereq-num">1</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">tableur (compte Google gratuit) OU tableur 2016+</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Aucun outil tiers ni abonnement requis. tableur est accessible gratuitement avec n'importe quel compte Google. tableur 2016 ou une version plus récente suffit pour une utilisation locale.</p>
+</div>
+</div>
+<div class="prereq-item">
+<div class="prereq-num">2</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">20 à 40 minutes pour l'installation initiale</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">La configuration des paramètres et la personnalisation des catégories prend entre 20 et 40 minutes. Ensuite, la saisie hebdomadaire prend moins de 5 minutes.</p>
+</div>
+</div>
+<div class="prereq-item">
+<div class="prereq-num">3</div>
+<div>
+<p class="font-body font-semibold text-base text-ebene">Vos documents comptables de base</p>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mt-1">Pour pré-remplir les données du mois en cours, avoir sous la main vos relevés bancaires ou factures récentes est utile — mais pas obligatoire pour démarrer.</p>
+</div>
+</div>
+</div>
+<!-- Encadré rassurant -->
+<div style="background:#F0F7F4; border-left:3px solid #6B7C5F; border-radius:4px; padding:20px;">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">
+<strong>Aucune compétence en comptabilité requise.</strong> Le Dashboard est conçu pour des non-comptables. Les formules sont verrouillées, les zones de saisie clairement identifiées. Si vous savez utiliser un tableur basique, vous saurez utiliser ce Dashboard.
           </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────────── SECTION 9 — LIMITES ──────────────────────────── -->
-    <section class="bg-chene-6 py-16 px-4 md:py-20">
-      <div class="max-w-[720px] mx-auto">
-
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Limites — à lire honnêtement</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+</div>
+</div>
+</section>
+<!-- ─────────────────────────────── SECTION 9 — LIMITES ──────────────────────────── -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">Limites — à lire honnêtement</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ce que ce système ne fait pas
         </h2>
-
-        <div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
-          <div class="flex flex-col">
-
-            <div class="limite-item">
-              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">&#x2192;</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne fait pas la comptabilité officielle.</strong> Ce Dashboard est un outil de pilotage — pas un outil de comptabilité légale. Il ne remplace pas votre logiciel comptable ni vos déclarations fiscales officielles.</p>
-            </div>
-
-            <div class="limite-item">
-              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">&#x2192;</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne se synchronise pas avec votre banque.</strong> La saisie des transactions est manuelle. Il n'existe pas de connexion automatique à votre compte bancaire. C'est un choix délibéré pour la confidentialité et la simplicité.</p>
-            </div>
-
-            <div class="limite-item">
-              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">&#x2192;</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne remplace pas un expert-comptable.</strong> Pour les bilans officiels, les liasses fiscales et les conseils fiscaux personnalisés, votre expert-comptable reste indispensable. Ce Dashboard est complémentaire, pas substitutif.</p>
-            </div>
-
-            <div class="limite-item">
-              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">&#x2192;</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il est optimisé pour les TPE françaises.</strong> Les paramètres TVA et les catégories de charges sont calibrés pour la fiscalité française. Une adaptation sera nécessaire pour d'autres pays.</p>
-            </div>
-
-            <div class="limite-item">
-              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">&#x2192;</span>
-              <p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne gère pas la paie ni les notes de frais.</strong> Ce Dashboard couvre la trésorerie, la TVA et les relances — pas la gestion des salariés ni le remboursement de frais complexes.</p>
-            </div>
-
-          </div>
-        </div>
-
-        <p class="font-body text-[13px] text-pierre text-center mt-6 leading-[1.6]">
-          Ces limites sont affichées par honnêteté. Si vous avez un doute, contactez-nous avant l'achat : <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition:color 0.2s ease">contact@letablia.fr</a>
-        </p>
-
-      </div>
-    </section>
-
-    <!-- ──────────────────── SECTION 10 — FAIT POUR VOUS / PAS FAIT POUR VOUS ──────────── -->
-    <section class="bg-lin py-16 px-4 md:py-20">
-      <div class="max-w-[1000px] mx-auto">
-
-        <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
-          Ce système est fait pour vous si&hellip;
+<div style="background:#FAF7F2; border:1px solid rgba(140,63,50,0.2); border-radius:8px; padding:28px;">
+<div class="flex flex-col">
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne fait pas la comptabilité officielle.</strong> Ce Dashboard est un outil de pilotage — pas un outil de comptabilité légale. Il ne remplace pas votre logiciel comptable ni vos déclarations fiscales officielles.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne se synchronise pas avec votre banque.</strong> La saisie des transactions est manuelle. Il n'existe pas de connexion automatique à votre compte bancaire. C'est un choix délibéré pour la confidentialité et la simplicité.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne remplace pas un expert-comptable.</strong> Pour les bilans officiels, les liasses fiscales et les conseils fiscaux personnalisés, votre expert-comptable reste indispensable. Ce Dashboard est complémentaire, pas substitutif.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il est optimisé pour les TPE françaises.</strong> Les paramètres TVA et les catégories de charges sont calibrés pour la fiscalité française. Une adaptation sera nécessaire pour d'autres pays.</p>
+</div>
+<div class="limite-item">
+<span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">→</span>
+<p class="font-body text-[14px] text-ebene leading-[1.6]"><strong>Il ne gère pas la paie ni les notes de frais.</strong> Ce Dashboard couvre la trésorerie, la TVA et les relances — pas la gestion des salariés ni le remboursement de frais complexes.</p>
+</div>
+</div>
+</div>
+<p class="font-body text-[13px] text-pierre text-center mt-6 leading-[1.6]">
+          Ces limites sont affichées par honnêteté. Si vous avez un doute, contactez-nous avant l'achat : <a class="text-chene hover:underline" href="mailto:contact@letablia.fr" style="transition:color 0.2s ease">contact@letablia.fr</a>
+</p>
+</div>
+</section>
+<!-- ──────────────────── SECTION 10 — FAIT POUR VOUS / PAS FAIT POUR VOUS ──────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1000px] mx-auto">
+<h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-12">
+          Ce système est fait pour vous si…
         </h2>
-
-        <div class="flex flex-col gap-8 md:flex-row md:gap-12">
-
-          <!-- Fait pour vous -->
-          <div class="md:w-1/2">
-            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">&#x2713; Fait pour vous</p>
-            <ul class="flex flex-col gap-3">
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+<div class="flex flex-col gap-8 md:flex-row md:gap-12">
+<!-- Fait pour vous -->
+<div class="md:w-1/2">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B7C5F; font-weight:600; margin-bottom:16px;">✓ Fait pour vous</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous êtes indépendant, artisan ou dirigeant de TPE en France
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
-                Vous utilisez Google Sheets ou Excel pour gérer vos chiffres
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
+                Vous utilisez tableur ou tableur pour gérer vos chiffres
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous voulez une vue claire de votre trésorerie sans formation comptable
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous avez régulièrement des factures impayées à relancer
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#6B7C5F; flex-shrink:0; margin-top:2px;">●</span>
                 Vous souhaitez anticiper les mois difficiles plutôt que les subir
               </li>
-            </ul>
-          </div>
-
-          <!-- Pas fait pour vous -->
-          <div class="md:w-1/2">
-            <p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">&#x2717; Pas fait pour vous</p>
-            <ul class="flex flex-col gap-3">
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+</ul>
+</div>
+<!-- Pas fait pour vous -->
+<div class="md:w-1/2">
+<p style="font-family:var(--font-mono,monospace); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">✗ Pas fait pour vous</p>
+<ul class="flex flex-col gap-3">
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
                 Vous cherchez un outil qui se synchronise automatiquement avec votre banque
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
                 Vous avez une équipe de plus de 10 personnes avec une comptabilité complexe
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
                 Vous recherchez un logiciel de facturation intégré
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
                 Vous exercez hors de France et avez besoin d'une configuration TVA étrangère
               </li>
-              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
-                <span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">&#x25CF;</span>
+<li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+<span style="color:#8C3F32; flex-shrink:0; margin-top:2px;">●</span>
                 Vous voulez un développement sur mesure avec accompagnement personnalisé
               </li>
-            </ul>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────── SECTION 11 — FAQ PRODUIT ─────────────────────────── -->
-    <section class="bg-chene-6 py-16 px-4 md:py-20">
-      <div class="max-w-[720px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Questions fréquentes</p>
-        <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 11 — FAQ PRODUIT ─────────────────────────── -->
+<section class="bg-chene-6 py-16 px-4 md:py-20">
+<div class="max-w-[720px] mx-auto">
+<p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">Questions fréquentes</p>
+<h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Tout ce que vous voulez savoir
         </h2>
-
-        <div id="faq-liste" class="flex flex-col">
-
-          <!-- Q1 -->
-          <div class="faq-item">
-            <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je utiliser ce Dashboard sans Google Sheets ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le Dashboard est livré en fichier .xlsx, compatible avec Excel 2016 et les versions suivantes. Si vous préférez une solution locale sans compte Google, Excel fonctionne parfaitement. Google Sheets a l'avantage d'être accessible depuis n'importe quel appareil et ne nécessite aucun logiciel installé.</p>
-            </div>
-          </div>
-
-          <!-- Q2 -->
-          <div class="faq-item">
-            <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Ce tableur remplace-t-il un logiciel de comptabilité officiel ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Non. Ce Dashboard est un outil de pilotage de trésorerie, pas un logiciel comptable au sens légal. Il calcule votre TVA pour vous aider à préparer vos déclarations, mais ne produit pas de journaux comptables officiels ni de bilans certifiés. Il est complémentaire à votre expert-comptable, pas substituable.</p>
-            </div>
-          </div>
-
-          <!-- Q3 -->
-          <div class="faq-item">
-            <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Combien de temps faut-il consacrer à la saisie chaque semaine ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Pour une TPE avec 20 à 50 transactions par mois, comptez 5 à 10 minutes par semaine. L'idéal est de prendre une habitude hebdomadaire — par exemple chaque lundi matin — pour saisir les transactions de la semaine précédente. Moins de temps que de chercher vos chiffres dans plusieurs fichiers chaque mois.</p>
-            </div>
-          </div>
-
-          <!-- Q4 -->
-          <div class="faq-item">
-            <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que se passe-t-il si je ne reçois pas le fichier après l'achat ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Vérifiez d'abord vos spams. Si vous ne trouvez rien dans les 15 minutes suivant l'achat, écrivez à <a href="mailto:contact@letablia.fr" class="text-chene hover:underline">contact@letablia.fr</a> avec votre numéro de commande. Les fichiers vous sont renvoyés dans l'heure.</p>
-            </div>
-          </div>
-
-          <!-- Q5 -->
-          <div class="faq-item">
-            <button class="faq-toggle" aria-expanded="false">
-              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je personnaliser les catégories de dépenses ?</span>
-              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </button>
-            <div class="faq-body">
-              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le Dashboard est livré avec une liste de catégories standard (fournitures, prestataires, loyer, charges sociales, marketing…) mais vous pouvez renommer, ajouter ou supprimer des catégories selon votre activité. Le guide explique comment faire en quelques clics, sans modifier les formules.</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Lien FAQ complète -->
-        <div class="text-center mt-10">
-          <p class="font-body text-[14px] text-pierre">D'autres questions ? <a href="/faq.html" class="text-chene hover:underline" style="transition:color 0.2s ease">Consultez la FAQ complète</a> ou <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition:color 0.2s ease">écrivez-nous directement</a>.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ──────────────────── SECTION 12 — PRODUITS COMPLÉMENTAIRES ───────────────────── -->
-    <section class="bg-lin py-16 px-4 md:py-20">
-      <div class="max-w-[1200px] mx-auto">
-
-        <p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">À combiner avec</p>
-        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+<div class="flex flex-col" id="faq-liste">
+<!-- Q1 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je utiliser ce Dashboard sans tableur ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le Dashboard est livré en fichier .xlsx, compatible avec tableur 2016 et les versions suivantes. Si vous préférez une solution locale sans compte Google, tableur fonctionne parfaitement. tableur a l'avantage d'être accessible depuis n'importe quel appareil et ne nécessite aucun logiciel installé.</p>
+</div>
+</div>
+<!-- Q2 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Ce tableur remplace-t-il un logiciel de comptabilité officiel ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Non. Ce Dashboard est un outil de pilotage de trésorerie, pas un logiciel comptable au sens légal. Il calcule votre TVA pour vous aider à préparer vos déclarations, mais ne produit pas de journaux comptables officiels ni de bilans certifiés. Il est complémentaire à votre expert-comptable, pas substituable.</p>
+</div>
+</div>
+<!-- Q3 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Combien de temps faut-il consacrer à la saisie chaque semaine ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Pour une TPE avec 20 à 50 transactions par mois, comptez 5 à 10 minutes par semaine. L'idéal est de prendre une habitude hebdomadaire — par exemple chaque lundi matin — pour saisir les transactions de la semaine précédente. Moins de temps que de chercher vos chiffres dans plusieurs fichiers chaque mois.</p>
+</div>
+</div>
+<!-- Q4 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que se passe-t-il si je ne reçois pas le fichier après l'achat ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Vérifiez d'abord vos spams. Si vous ne trouvez rien dans les 15 minutes suivant l'achat, écrivez à <a class="text-chene hover:underline" href="mailto:contact@letablia.fr">contact@letablia.fr</a> avec votre numéro de commande. Les fichiers vous sont renvoyés dans l'heure.</p>
+</div>
+</div>
+<!-- Q5 -->
+<div class="faq-item">
+<button aria-expanded="false" class="faq-toggle">
+<span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je personnaliser les catégories de dépenses ?</span>
+<svg class="faq-chevron" fill="none" height="20" viewbox="0 0 20 20" width="20"><path d="M5 7.5L10 12.5L15 7.5" stroke="#8A7560" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path></svg>
+</button>
+<div class="faq-body">
+<p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Le Dashboard est livré avec une liste de catégories standard (fournitures, prestataires, loyer, charges sociales, marketing…) mais vous pouvez renommer, ajouter ou supprimer des catégories selon votre activité. Le guide explique comment faire en quelques clics, sans modifier les formules.</p>
+</div>
+</div>
+</div>
+<!-- Lien FAQ complète -->
+<div class="text-center mt-10">
+<p class="font-body text-[14px] text-pierre">D'autres questions ? <a class="text-chene hover:underline" href="/faq.html" style="transition:color 0.2s ease">Consultez la FAQ complète</a> ou <a class="text-chene hover:underline" href="mailto:contact@letablia.fr" style="transition:color 0.2s ease">écrivez-nous directement</a>.</p>
+</div>
+</div>
+</section>
+<!-- ──────────────────── SECTION 12 — PRODUITS COMPLÉMENTAIRES ───────────────────── -->
+<section class="bg-lin py-16 px-4 md:py-20">
+<div class="max-w-[1200px] mx-auto">
+<p class="font-body font-semibold text-[13px] uppercase tracking-[1px] text-center mb-4" style="color:#B88A2E;">À combiner avec</p>
+<h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
           Ces systèmes se complètent bien
         </h2>
-
-        <div class="flex flex-col gap-6 md:flex-row md:gap-8">
-
-          <!-- Produit 1 — Kit Facturation 2026 -->
-          <a href="/produit/kit-facturation-2026/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
-            <p class="font-display text-[22px] leading-[1.0] mb-1" style="color:#B88A2E;">29 €</p>
-            <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Kit Facturation 2026</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Modèles de factures conformes 2026, mentions légales à jour, numérotation automatique. Parfait en complément du Dashboard Trésorerie pour boucler le cycle complet.</p>
-            <p class="font-body text-[13px] font-semibold" style="color:#B88A2E;">Voir ce système &#x2192;</p>
-          </a>
-
-          <!-- Produit 2 — Cyber-Hygiène TPE -->
-          <a href="/produit/cyber-hygiene-tpe/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
-            <p class="font-display text-[22px] leading-[1.0] mb-1" style="color:#B88A2E;">39 €</p>
-            <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Cyber-Hygiène TPE</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Checklist et procédures pour sécuriser vos données financières et vos accès. Quand votre trésorerie est bien pilotée, autant la protéger correctement.</p>
-            <p class="font-body text-[13px] font-semibold" style="color:#B88A2E;">Voir ce système &#x2192;</p>
-          </a>
-
-          <!-- Produit 3 — Catalogue -->
-          <a href="/catalogue.html" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
-            <span class="badge badge--pret" style="margin-bottom:12px; display:inline-block;">Disponibles</span>
-            <h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Voir tous les systèmes forgés</h3>
-            <p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Automatisations, dashboards, guides opérationnels — découvrez l'ensemble du catalogue L'établ'IA conçu pour les TPE et indépendants.</p>
-            <p class="font-body text-[13px] font-semibold" style="color:#B88A2E;">Explorer le catalogue &#x2192;</p>
-          </a>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─────────────────────────── SECTION 13 — CTA FINAL ───────────────────────────── -->
-    <section class="bg-ebene py-20 px-4 md:py-24">
-      <div class="max-w-[600px] mx-auto text-center">
-
-        <p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B88A2E; margin-bottom:16px;">Prêt à piloter votre trésorerie ?</p>
-
-        <h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
+<div class="flex flex-col gap-6 md:flex-row md:gap-8">
+<!-- Produit 1 — Kit Facturation 2026 -->
+<a class="crosssell-card md:flex-1 block" href="/produit/kit-facturation-2026/" style="text-decoration:none;">
+<p class="font-display text-[22px] leading-[1.0] mb-1" style="color:#B88A2E;">29 €</p>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Kit Facturation 2026</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Modèles de factures conformes 2026, mentions légales à jour, numérotation automatique. Parfait en complément du Dashboard Trésorerie pour boucler le cycle complet.</p>
+<p class="font-body text-[13px] font-semibold" style="color:#B88A2E;">Voir ce système →</p>
+</a>
+<!-- Produit 2 — Cyber-Hygiène TPE -->
+<a class="crosssell-card md:flex-1 block" href="/produit/cyber-hygiene-tpe/" style="text-decoration:none;">
+<p class="font-display text-[22px] leading-[1.0] mb-1" style="color:#B88A2E;">39 €</p>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Cyber-Hygiène TPE</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Checklist et procédures pour sécuriser vos données financières et vos accès. Quand votre trésorerie est bien pilotée, autant la protéger correctement.</p>
+<p class="font-body text-[13px] font-semibold" style="color:#B88A2E;">Voir ce système →</p>
+</a>
+<!-- Produit 3 — Catalogue -->
+<a class="crosssell-card md:flex-1 block" href="/catalogue.html" style="text-decoration:none;">
+<span class="badge badge--pret" style="margin-bottom:12px; display:inline-block;">Disponibles</span>
+<h3 class="font-heading font-bold text-[18px] text-ebene mb-2">Voir tous les systèmes forgés</h3>
+<p class="font-body text-[14px] text-pierre leading-[1.6] mb-4">Automatisations, dashboards, guides opérationnels — découvrez l'ensemble du catalogue L'établ'IA conçu pour les TPE et indépendants.</p>
+<p class="font-body text-[13px] font-semibold" style="color:#B88A2E;">Explorer le catalogue →</p>
+</a>
+</div>
+</div>
+</section>
+<!-- ─────────────────────────── SECTION 13 — CTA FINAL ───────────────────────────── -->
+<section class="bg-ebene py-20 px-4 md:py-24">
+<div class="max-w-[600px] mx-auto text-center">
+<p style="font-family:var(--font-mono,monospace); font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#B88A2E; margin-bottom:16px;">Prêt à piloter votre trésorerie ?</p>
+<h2 class="font-heading font-bold text-[26px] md:text-[34px] text-lin leading-[1.2] mb-6">
           Installez votre Dashboard Trésorerie aujourd'hui
         </h2>
-
-        <p class="font-body text-base text-pierre leading-[1.6] mb-4">
+<p class="font-body text-base text-pierre leading-[1.6] mb-4">
           Paiement unique. Téléchargement immédiat. Guide PDF inclus. Support 30 jours. Satisfait ou Forgé — 14 jours.
         </p>
-
-        <p class="font-display text-[42px] leading-[1.0] mb-8" style="color:#B88A2E;">39 € — paiement unique</p>
-
-        <a href="https://letablia.lemonsqueezy.com/checkout/buy/DASHBOARD-TRESORERIE"
-           class="block md:inline-block w-full md:w-auto text-center text-lin font-semibold text-base rounded-[6px] px-8 py-[16px] hover:opacity-90 mb-4"
-           style="background:#B88A2E; transition:opacity 0.2s ease">
+<p class="font-display text-[42px] leading-[1.0] mb-8" style="color:#B88A2E;">39 € — paiement unique</p>
+<a class="block md:inline-block w-full md:w-auto text-center text-lin font-semibold text-base rounded-[6px] px-8 py-[16px] hover:opacity-90 mb-4" href="https://letablia.lemonsqueezy.com/checkout/buy/DASHBOARD-TRESORERIE" style="background:#B88A2E; transition:opacity 0.2s ease">
           Installer ce système →
         </a>
-
-        <p class="font-body text-[12px] text-pierre mt-2">
+<p class="font-body text-[12px] text-pierre mt-2">
           Paiement sécurisé par LemonSqueezy · Téléchargement immédiat après paiement
         </p>
-
-        <!-- Réassurance en ligne -->
-        <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
-          <span class="font-body text-[13px] text-pierre">&#x2713; Guide PDF inclus</span>
-          <span class="font-body text-[13px] text-pierre">&#x2713; Support 30 jours</span>
-          <span class="font-body text-[13px] text-pierre">&#x2713; 14j Satisfait ou Forgé</span>
-          <span class="font-body text-[13px] text-pierre">&#x2713; Mises à jour incluses</span>
-        </div>
-
-      </div>
-    </section>
-
-  </main>
-
-  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
-  
-    <section class="cross-sell-v4 py-16 md:py-20 bg-chene-6 border-t border-pierre/30">
-      <div class="container max-w-[1200px] mx-auto px-4 md:px-8">
-        <div class="text-center mb-10">
-          <p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">SOUVENT FORGÉS ENSEMBLE</p>
-          <h2 class="font-heading text-[28px] md:text-[36px] text-ebene leading-[1.1]">Ces systèmes complètent Dashboard Trésorerie TPE.</h2>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-          
-        <a href="/gardien-de-stock/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-          <div class="bg-chene-6 h-[80px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">AUTOMATISER</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">SHOPIFY · GOOGLE-SHEETS</p>
-            <h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Gardien de Stock</h3>
-            <p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Surveille votre stock Shopify et alerte avant rupture.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[16px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/sequenceur-post-achat/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-          <div class="bg-chene-6 h-[80px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">AUTOMATISER</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">SHOPIFY · BREVO</p>
-            <h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Séquenceur Post-Achat</h3>
-            <p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Email de remerciement et suivi automatique après chaque commande.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[16px] text-chene font-semibold">29 €</span>
-              <span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        <a href="/produit/relance-prospects/" class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group">
-          <div class="bg-chene-6 h-[80px] flex items-center justify-center">
-            <span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">VENDRE</span>
-          </div>
-          <div class="p-5">
-            <p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">GOOGLE-SHEETS · GMAIL</p>
-            <h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Relance Prospects</h3>
-            <p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Système qui relance vos prospects automatiquement, avec tact.</p>
-            <div class="flex items-center justify-between">
-              <span class="font-mono text-[16px] text-chene font-semibold">49 €</span>
-              <span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
-            </div>
-          </div>
-        </a>
-    
-        </div>
-      </div>
-    </section>
-
-    <footer class="bg-ebene" style="border-top:1px solid rgba(160,152,137,0.15);">
-    <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
-
-      <!-- 3 colonnes -->
-      <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
-
-        <!-- Colonne 1 — Marque -->
-        <div class="text-center md:text-left">
-          <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
-          <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
-        </div>
-
-        <!-- Colonne 2 — Navigation -->
-        <div>
-          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
-          <ul class="flex flex-col gap-2">
-            <li><a href="/index.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">Accueil</a></li>
-            <li><a href="/catalogue.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">Catalogue</a></li>
-            <li><a href="/a-propos.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">À propos</a></li>
-            <li><a href="/faq.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">FAQ</a></li>
-            <li><a href="/contact.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">Contact</a></li>
-          </ul>
-        </div>
-
-        <!-- Colonne 3 — Informations -->
-        <div>
-          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
-          <ul class="flex flex-col gap-2">
-            <li><a href="/mentions-legales.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">Mentions légales</a></li>
-            <li><a href="/cgv.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">CGV</a></li>
-            <li><a href="/confidentialite.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">Confidentialité</a></li>
-            <li><a href="mailto:contact@letablia.fr" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.2s ease">contact@letablia.fr</a></li>
-          </ul>
-        </div>
-
-      </div>
-
-      <!-- Séparateur + copyright -->
-      <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
-        <p class="font-body text-[12px] text-pierre">&#xa9; 2026 L'établ'IA. Tous droits réservés.</p>
-      </div>
-
-    </div>
-  </footer>
-
-  <!-- ══════════════════ STICKY CTA MOBILE (affiché seulement &lt; 768px) ══════════════════ -->
-  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
-    <div>
-      <p class="font-body font-semibold text-[14px] text-lin leading-none">Dashboard Trésorerie · 39 €</p>
-      <p class="font-body text-[11px] text-pierre mt-1">Guide inclus · 14j Satisfait ou Forgé</p>
-    </div>
-    <a href="https://letablia.lemonsqueezy.com/checkout/buy/DASHBOARD-TRESORERIE"
-       style="flex-shrink:0; background:#B88A2E; color:#FAF7F2; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
+<!-- Réassurance en ligne -->
+<div class="flex flex-wrap justify-center gap-x-6 gap-y-2 mt-6">
+<span class="font-body text-[13px] text-pierre">✓ Guide PDF inclus</span>
+<span class="font-body text-[13px] text-pierre">✓ Support 30 jours</span>
+<span class="font-body text-[13px] text-pierre">✓ 14j Satisfait ou Forgé</span>
+<span class="font-body text-[13px] text-pierre">✓ Mises à jour incluses</span>
+</div>
+</div>
+</section>
+</main>
+<!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+<section class="cross-sell-v4 py-16 md:py-20 bg-chene-6 border-t border-pierre/30">
+<div class="container max-w-[1200px] mx-auto px-4 md:px-8">
+<div class="text-center mb-10">
+<p class="font-mono text-[11px] uppercase tracking-[2px] text-chene mb-3">SOUVENT FORGÉS ENSEMBLE</p>
+<h2 class="font-heading text-[28px] md:text-[36px] text-ebene leading-[1.1]">Ces systèmes complètent Dashboard Trésorerie TPE.</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/gardien-de-stock/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">AUTOMATISER</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">PLATEFORME E-COMMERCE · TABLEUR</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Gardien de Stock</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Surveille votre stock plateforme e-commerce et alerte avant rupture.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">29 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/sequenceur-post-achat/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">AUTOMATISER</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">PLATEFORME E-COMMERCE · EMAILING</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Séquenceur Post-Achat</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Email de remerciement et suivi automatique après chaque commande.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">29 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+<a class="block bg-lin border border-pierre/30 rounded-[8px] overflow-hidden hover:border-chene transition group" href="/produit/relance-prospects/">
+<div class="bg-chene-6 h-[80px] flex items-center justify-center">
+<span class="font-mono text-chene text-[10px] uppercase tracking-[2px]">VENDRE</span>
+</div>
+<div class="p-5">
+<p class="font-mono text-[10px] text-chene uppercase tracking-[1px] mb-2">TABLEUR · MESSAGERIE</p>
+<h3 class="font-heading text-[18px] text-ebene mb-2 leading-[1.2]">Relance Prospects</h3>
+<p class="font-body text-[13px] text-pierre leading-[1.5] mb-4">Système qui relance vos prospects automatiquement, avec tact.</p>
+<div class="flex items-center justify-between">
+<span class="font-mono text-[16px] text-chene font-semibold">49 €</span>
+<span class="font-body text-[13px] text-mousse group-hover:underline">Voir →</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+</section>
+<footer class="bg-ebene mt-12">
+<div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+<div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+<div class="text-center md:text-left">
+<p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+<p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Catalogue</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/catalogue.html">Tous les systèmes</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/automatisations/">Automatiser</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/vendre/">Vendre</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/tableaux-de-bord/">Piloter</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/modeles/">Produire</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/produits/guides-formations/">Sécuriser</a></li>
+</ul>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">L'établ'IA</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/a-propos.html">À propos</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/faq.html">FAQ</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/diagnostic.html">Diagnostic gratuit</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/contact.html">Contact</a></li>
+</ul>
+</div>
+<div>
+<p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+<ul class="flex flex-col gap-2">
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/mentions-legales.html">Mentions légales</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/cgv.html">CGV</a></li>
+<li><a class="font-body text-base text-lin hover:text-chene transition" href="/confidentialite.html">Confidentialité</a></li>
+<li><span class="font-body text-base text-pierre">contact@letablia.fr</span></li>
+</ul>
+</div>
+</div>
+<div class="mt-8 border-t border-[rgba(160,152,137,0.30)] pt-6 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+<p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA · Systèmes digitaux pour professionnels francophones · Paiement unique</p>
+<p class="font-body text-[12px] text-pierre">Politique « Satisfait ou Forgé » : on corrige avant de rembourser.</p>
+</div>
+</div>
+</footer>
+<!-- ══════════════════ STICKY CTA MOBILE (affiché seulement &lt; 768px) ══════════════════ -->
+<div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; border-top:1px solid rgba(160,152,137,0.2); padding:12px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
+<div>
+<p class="font-body font-semibold text-[14px] text-lin leading-none">Dashboard Trésorerie · 39 €</p>
+<p class="font-body text-[11px] text-pierre mt-1">Guide inclus · 14j Satisfait ou Forgé</p>
+</div>
+<a href="https://letablia.lemonsqueezy.com/checkout/buy/DASHBOARD-TRESORERIE" style="flex-shrink:0; background:#B88A2E; color:#FAF7F2; font-weight:600; font-size:13px; border-radius:6px; padding:10px 16px; white-space:nowrap; text-decoration:none;">
       Installer →
     </a>
-  </div>
-
-  <!-- ══════════════════════════════════ SCRIPTS ══════════════════════════════════════ -->
-  <script>
+</div>
+<!-- ══════════════════════════════════ SCRIPTS ══════════════════════════════════════ -->
+<script>
     // ── Menu mobile
     var toggle = document.getElementById('menu-toggle');
     var close  = document.getElementById('menu-close');
@@ -1124,11 +967,8 @@
       obs.observe(heroBtn);
     })();
   </script>
-
-  
-
-    <script src="/assets/js/cookies.js" defer></script>
-      <script src="/assets/js/burger-menu.js" defer></script>
-      <script src="/assets/js/search-modal.js" defer></script>
-  </body>
+<script defer="" src="/assets/js/cookies.js"></script>
+<script defer="" src="/assets/js/burger-menu.js"></script>
+<script defer="" src="/assets/js/search-modal.js"></script>
+</body>
 </html>
