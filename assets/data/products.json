@@ -1,6 +1,7 @@
 {
-  "version": "1.0",
+  "version": "2.0",
   "updated": "2026-05-04",
+  "_note": "Source UNIQUE de vérité — prix, blurbs, tools = catégories génériques (sans marque). Toutes les pages sont régénérées depuis ce fichier.",
   "families": [
     {"slug": "automatisations", "title": "Automatiser", "verb": "Brancher des services entre eux", "icon": "lightning"},
     {"slug": "vendre", "title": "Vendre", "verb": "Convertir et fidéliser", "icon": "trending"},
@@ -14,11 +15,11 @@
       "url": "/signal-de-vente/",
       "title": "Signal de Vente",
       "family": "vendre",
-      "tools": ["shopify", "telegram"],
-      "price": 29,
+      "tools": ["plateforme-ecommerce", "messagerie-instantanee"],
+      "price": 9,
       "targets": ["e-commerce"],
-      "blurb": "Une alerte Telegram à chaque commande Shopify. En temps réel.",
-      "keywords": "alerte commande shopify telegram notification temps reel ecommerce",
+      "blurb": "Une notification instantanée à chaque commande de votre boutique en ligne.",
+      "keywords": "alerte commande boutique en ligne notification temps reel",
       "icon": "bell"
     },
     {
@@ -26,11 +27,11 @@
       "url": "/gardien-de-stock/",
       "title": "Gardien de Stock",
       "family": "automatisations",
-      "tools": ["shopify", "google-sheets", "telegram"],
+      "tools": ["plateforme-ecommerce", "tableur", "messagerie-instantanee"],
       "price": 29,
       "targets": ["e-commerce"],
-      "blurb": "Surveille votre stock Shopify et alerte avant rupture.",
-      "keywords": "stock shopify rupture alerte seuil sheets gestion",
+      "blurb": "Surveille votre stock et alerte avant rupture.",
+      "keywords": "stock rupture alerte seuil gestion boutique en ligne",
       "icon": "package"
     },
     {
@@ -38,11 +39,11 @@
       "url": "/sequenceur-post-achat/",
       "title": "Séquenceur Post-Achat",
       "family": "automatisations",
-      "tools": ["shopify", "brevo", "google-sheets"],
+      "tools": ["plateforme-ecommerce", "service-emailing", "tableur"],
       "price": 29,
       "targets": ["e-commerce", "formateur"],
       "blurb": "Email de remerciement et suivi automatique après chaque commande.",
-      "keywords": "email post achat remerciement suivi sequence brevo automatique",
+      "keywords": "email post achat remerciement suivi sequence automatique",
       "icon": "mail"
     },
     {
@@ -50,11 +51,11 @@
       "url": "/collecteur-avis/",
       "title": "Le Collecteur Avis",
       "family": "vendre",
-      "tools": ["shopify", "brevo"],
+      "tools": ["plateforme-ecommerce", "service-emailing"],
       "price": 29,
       "targets": ["e-commerce"],
       "blurb": "Collecte les avis clients après commande, automatiquement.",
-      "keywords": "avis clients shopify post commande sociale preuve",
+      "keywords": "avis clients post commande sociale preuve",
       "icon": "star"
     },
     {
@@ -62,11 +63,11 @@
       "url": "/carnet-forge/",
       "title": "Carnet Forge",
       "family": "modeles",
-      "tools": ["pdf"],
-      "price": 19,
+      "tools": ["document-imprimable"],
+      "price": 39,
       "targets": ["freelance", "tpe-generaliste"],
       "blurb": "Le journal de bord de l'artisan numérique, prêt à imprimer.",
-      "keywords": "journal carnet bord artisan pdf imprimer freelance",
+      "keywords": "journal carnet bord artisan imprimer freelance",
       "icon": "book"
     },
     {
@@ -74,23 +75,23 @@
       "url": "/produit/relance-prospects/",
       "title": "Relance Prospects",
       "family": "vendre",
-      "tools": ["google-sheets", "gmail"],
+      "tools": ["tableur", "messagerie-electronique"],
       "price": 49,
       "targets": ["freelance", "agence"],
       "blurb": "Système qui relance vos prospects automatiquement, avec tact.",
-      "keywords": "relance prospects sheets gmail commercial freelance",
+      "keywords": "relance prospects commercial freelance",
       "icon": "users"
     },
     {
       "slug": "produit/mini-crm-notion",
       "url": "/produit/mini-crm-notion/",
-      "title": "Mini CRM Notion",
+      "title": "Mini CRM Prestataire",
       "family": "modeles",
-      "tools": ["notion"],
-      "price": 39,
+      "tools": ["application-prise-de-note"],
+      "price": 49,
       "targets": ["freelance", "agence"],
-      "blurb": "Un CRM léger, prêt à l'emploi, dans votre Notion.",
-      "keywords": "crm notion clients projets freelance agence consultant",
+      "blurb": "Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.",
+      "keywords": "crm clients projets freelance agence consultant",
       "icon": "layout"
     },
     {
@@ -98,11 +99,11 @@
       "url": "/produit/dashboard-tresorerie/",
       "title": "Dashboard Trésorerie TPE",
       "family": "tableaux-de-bord",
-      "tools": ["google-sheets"],
+      "tools": ["tableur"],
       "price": 39,
       "targets": ["tpe-generaliste"],
       "blurb": "Vue claire de votre trésorerie, mise à jour quotidienne.",
-      "keywords": "tresorerie tpe sheets dashboard finances pilotage",
+      "keywords": "tresorerie tpe dashboard finances pilotage",
       "icon": "chart"
     },
     {
@@ -110,7 +111,7 @@
       "url": "/produit/cyber-hygiene-tpe/",
       "title": "Pack Cyber-Hygiène TPE",
       "family": "guides-formations",
-      "tools": ["pdf"],
+      "tools": ["document-imprimable"],
       "price": 39,
       "targets": ["tpe-generaliste"],
       "blurb": "Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.",
@@ -122,11 +123,11 @@
       "url": "/produit/kit-facturation-2026/",
       "title": "Kit Facturation Électronique 2026",
       "family": "modeles",
-      "tools": ["pdf"],
-      "price": 49,
+      "tools": ["document-imprimable"],
+      "price": 39,
       "targets": ["tpe-generaliste", "freelance"],
       "blurb": "Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.",
-      "keywords": "facturation electronique 2026 conformite tpe pdf",
+      "keywords": "facturation electronique 2026 conformite tpe",
       "icon": "file-text"
     },
     {
@@ -134,24 +135,61 @@
       "url": "/produit/agent-tri-email/",
       "title": "Agent Tri Email",
       "family": "automatisations",
-      "tools": ["gmail"],
-      "price": 29,
+      "tools": ["messagerie-electronique"],
+      "price": 39,
       "targets": ["freelance", "tpe-generaliste"],
-      "blurb": "Trie votre boîte Gmail selon des règles métier.",
-      "keywords": "tri email gmail regles automatique inbox zero",
+      "blurb": "Trie votre boîte de messagerie selon des règles métier.",
+      "keywords": "tri email regles automatique inbox zero",
       "icon": "mail"
-    },
-    {
-      "slug": "best-sellers",
-      "_meta": "ids des best-sellers à afficher en home (par ordre)",
-      "list": ["signal-de-vente", "gardien-de-stock", "produit/cyber-hygiene-tpe"]
     }
   ],
+  "bundles": [
+    {
+      "slug": "pack-e-commerce",
+      "url": "/packs/e-commerce/",
+      "title": "Pack E-commerce Complet",
+      "subtitle": "Bundle 3 systèmes",
+      "products": ["signal-de-vente", "gardien-de-stock", "collecteur-avis"],
+      "price": 49,
+      "price_individual": 67,
+      "savings": 18,
+      "targets": ["e-commerce"],
+      "blurb": "Tout pour piloter votre boutique en ligne : alerte commandes, surveillance stock, collecte d'avis.",
+      "keywords": "pack ecommerce boutique commande stock avis bundle"
+    },
+    {
+      "slug": "pack-freelance",
+      "url": "/packs/freelance/",
+      "title": "Pack Freelance Solo",
+      "subtitle": "Bundle 3 systèmes",
+      "products": ["produit/mini-crm-notion", "produit/relance-prospects", "produit/agent-tri-email"],
+      "price": 119,
+      "price_individual": 137,
+      "savings": 18,
+      "targets": ["freelance", "agence"],
+      "blurb": "L'essentiel pour gérer vos clients, relancer vos prospects et trier vos emails.",
+      "keywords": "pack freelance crm relance email tri bundle"
+    },
+    {
+      "slug": "pack-tpe-conformite",
+      "url": "/packs/tpe-conformite/",
+      "title": "Pack TPE Conformité 2026",
+      "subtitle": "Bundle 3 systèmes",
+      "products": ["produit/kit-facturation-2026", "produit/cyber-hygiene-tpe", "produit/dashboard-tresorerie"],
+      "price": 99,
+      "price_individual": 117,
+      "savings": 18,
+      "targets": ["tpe-generaliste"],
+      "blurb": "Mise à niveau TPE 2026 : facturation électronique + cyber + pilotage trésorerie.",
+      "keywords": "pack tpe conformite 2026 facturation cyber tresorerie bundle"
+    }
+  ],
+  "best_sellers": ["signal-de-vente", "gardien-de-stock", "produit/cyber-hygiene-tpe"],
   "personas": [
     {
       "slug": "e-commerce",
       "title": "E-commerçant",
-      "subtitle": "Shopify · WooCommerce",
+      "subtitle": "Plateforme de boutique en ligne",
       "blurb": "Notification commande, alerte stock, séquence post-achat, collecte d'avis.",
       "filter": {"targets": ["e-commerce"]}
     },
@@ -159,31 +197,29 @@
       "slug": "freelance",
       "title": "Freelance",
       "subtitle": "Solo · Agence",
-      "blurb": "CRM Notion, relances prospects, tri d'emails.",
+      "blurb": "CRM, relances prospects, tri d'emails.",
       "filter": {"targets": ["freelance"]}
     },
     {
       "slug": "formateur",
-      "title": "Formateur",
-      "subtitle": "Coach · Auteur",
-      "blurb": "Séquences post-achat, dashboard trésorerie, collecte d'avis.",
+      "title": "TPE généraliste",
+      "subtitle": "Coach · Formateur · Consultant",
+      "blurb": "Dashboard trésorerie, kit facturation 2026, pack cyber-hygiène.",
       "filter": {"targets": ["formateur", "tpe-generaliste"]}
     }
   ],
   "tools": [
-    {"slug": "shopify", "label": "Shopify"},
-    {"slug": "woocommerce", "label": "WooCommerce"},
-    {"slug": "n8n", "label": "n8n"},
-    {"slug": "notion", "label": "Notion"},
-    {"slug": "google-sheets", "label": "Google Sheets"},
-    {"slug": "gmail", "label": "Gmail"},
-    {"slug": "brevo", "label": "Brevo"},
-    {"slug": "telegram", "label": "Telegram"},
-    {"slug": "pdf", "label": "PDF (sans outil)"}
+    {"slug": "plateforme-ecommerce", "label": "Plateforme e-commerce"},
+    {"slug": "tableur", "label": "Tableur en ligne"},
+    {"slug": "application-prise-de-note", "label": "Application de prise de notes"},
+    {"slug": "service-emailing", "label": "Service d'emailing"},
+    {"slug": "messagerie-electronique", "label": "Messagerie électronique"},
+    {"slug": "messagerie-instantanee", "label": "Messagerie instantanée"},
+    {"slug": "document-imprimable", "label": "Document imprimable"}
   ],
   "price_buckets": [
-    {"slug": "low", "label": "≤ 29 €", "min": 0, "max": 29},
-    {"slug": "mid", "label": "30 - 49 €", "min": 30, "max": 49},
+    {"slug": "low", "label": "≤ 19 €", "min": 0, "max": 19},
+    {"slug": "mid", "label": "20 – 49 €", "min": 20, "max": 49},
     {"slug": "high", "label": "50 € et +", "min": 50, "max": 9999}
   ]
 }
