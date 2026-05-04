@@ -131,7 +131,7 @@
 
 
     <!-- Menu mobile plein écran -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" style="display: none;">
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-lin flex-col items-center justify-center hidden" >
       <button id="menu-close" class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none p-2" aria-label="Fermer le menu">&times;</button>
       <nav class="flex flex-col items-center gap-6 mb-10 text-center">
         <a href="/catalogue.html" class="font-heading text-2xl text-ebene hover:text-chene">Catalogue</a>
@@ -1124,30 +1124,7 @@
     })();
   </script>
 
-  <!-- Bannière cookies RGPD -->
-  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#2C2825; color:#F2EDE8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
-    <p style="margin:0; font-size:14px;">
-      Ce site utilise des cookies techniques et analytics.
-      <a href="/mentions-legales.html" style="color:#8A7560;">En savoir plus</a>
-    </p>
-    <div style="display:flex; gap:12px;">
-      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F2EDE8; color:#F2EDE8; padding:6px 12px; cursor:pointer;">Refuser</button>
-      <button onclick="accepterCookies()" style="background:#8A7560; border:none; color:#FAF7F2; padding:6px 12px; cursor:pointer;">Accepter</button>
-    </div>
-  </div>
-  <script>
-    function accepterCookies() {
-      localStorage.setItem('cookies', 'accepted');
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-    function refuserCookies() {
-      localStorage.setItem('cookies', 'refused');
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-    if (localStorage.getItem('cookies')) {
-      document.getElementById('cookie-banner').style.display = 'none';
-    }
-  </script>
+  
 
     <script src="/assets/js/cookies.js" defer></script>
       <script src="/assets/js/burger-menu.js" defer></script>
