@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Programme contributeurs — L'établ'IA</title>
+<meta name="description" content="Vous avez forgé un système numérique utile ? Proposez-le dans le catalogue L'établ'IA. Commission 25%, audit qualité Sentinel QA, label artisan francophone."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="programme-contributeurs.html" style="color:var(--chene);font-weight:600">Devenir contributeur</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- BREADCRUMB -->
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Programme contributeurs</span></div>
+  </div>
+</section>
+
+<!-- ═══ HERO ═══ -->
+<section style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Gouvernance ouverte</span>
+      <h1 style="margin:18px 0;font-size:clamp(2.4rem,5.5vw,4.6rem);line-height:1.04">Devenez contributeur<br/>de <em class="editorial">l'atelier</em>.</h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.25rem;max-width:44ch;margin:16px auto 0">Vous avez forgé un système numérique utile ? Proposez-le dans le catalogue L'établ'IA. Pas de marketplace anonyme — une coopérative d'artisans francophones.</p>
+    </div>
+
+    <div data-reveal style="margin:56px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center" class="pc-hero-stats">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">70%</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Pour le contributeur</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">14j</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Délai d'audit cible</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">100%</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Francophone</div>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top:40px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:24px 32px;font-family:var(--ff-body);font-size:15px;line-height:1.65;color:var(--ebene)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene)">Admission non automatique</strong><br/>
+      Chaque produit candidat passe par un audit qualité Sentinel QA avant tout. L'objectif : un catalogue petit, cohérent, honnête — pas un entrepôt de templates génériques.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1 — COMMENT ÇA MARCHE ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 01</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Comment ça <em class="editorial">marche</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Quatre étapes, documentées de bout en bout. Vous savez toujours où en est votre soumission.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:24px" class="pc-steps">
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:32px 28px;position:relative">
+        <div style="font-family:var(--ff-mono);font-size:48px;font-weight:600;color:var(--chene-15);position:absolute;top:16px;right:20px;line-height:1">01</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px">Soumission</div>
+        <h3 style="font-size:1.25rem;margin:0 0 12px;line-height:1.3">Remplissez le gabarit de soumission</h3>
+        <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Gabarit structuré à compléter : description du système, tarif proposé (9 – 200 €), livrables ZIP de démonstration, vos coordonnées (SIRET ou équivalent). Envoi via le formulaire de contact en bas de page.</p>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:32px 28px;position:relative">
+        <div style="font-family:var(--ff-mono);font-size:48px;font-weight:600;color:var(--chene-15);position:absolute;top:16px;right:20px;line-height:1">02</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px">Audit · 3–7 jours</div>
+        <h3 style="font-size:1.25rem;margin:0 0 12px;line-height:1.3">Audit qualité Sentinel QA</h3>
+        <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">L'auditeur L'établ'IA vérifie onze critères (anonymisation des marques, Méthode 4, conformité RGPD, clarté du guide d'installation, promesses réalistes). Rapport JSON produit avec score détaillé.</p>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:32px 28px;position:relative">
+        <div style="font-family:var(--ff-mono);font-size:48px;font-weight:600;color:var(--chene-15);position:absolute;top:16px;right:20px;line-height:1">03</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px">Revue éditoriale · 1–3 jours</div>
+        <h3 style="font-size:1.25rem;margin:0 0 12px;line-height:1.3">Validation éditoriale par Raphaël</h3>
+        <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Vérification du ton, du vocabulaire L'établ'IA (vouvoiement, pas d'emoji décoratif, termes artisanaux), de la cohérence avec le catalogue existant. Raphaël est arbitre final en cas de désaccord sur un critère.</p>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:32px 28px;position:relative">
+        <div style="font-family:var(--ff-mono);font-size:48px;font-weight:600;color:var(--chene-15);position:absolute;top:16px;right:20px;line-height:1">04</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px">Décision + Onboarding</div>
+        <h3 style="font-size:1.25rem;margin:0 0 12px;line-height:1.3">Intégration au catalogue</h3>
+        <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">ACCEPTÉ : signature du contrat type, accès tableau de bord, mise en ligne sous 3 jours avec label « Forgé par [Votre nom] · validé par L'établ'IA ». À REPRENDRE ou REFUSÉ : retour détaillé et motivé.</p>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:32px;background:var(--chene-6);border-left:3px solid var(--chene);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:18px 24px;font-size:14px;color:var(--ebene-80)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Délai total cible</strong><br/>
+      De la réception à la décision finale : <strong>7 à 14 jours ouvrés</strong>. Vous recevez un accusé de réception sous 48 heures.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — CHARTE ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 02</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">La <em class="editorial">charte</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Quatre engagements non négociables. Ils définissent ce que signifie « forgé par L'établ'IA ».</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:18px;font-weight:600;color:var(--chene)">A</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Anonymisation des marques</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">La fiche vitrine ne cite <em>jamais</em> une marque tierce. On dit « plateforme de boutique en ligne », pas le nom d'un éditeur. Les guides techniques post-achat peuvent nommer les outils. La vitrine, non — conformément aux ADR L'établ'IA.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:18px;font-weight:600;color:var(--chene)">M</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Méthode 4 obligatoire</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Tout système forgé doit séparer son <em>cœur métier</em> de ses <em>adaptateurs</em> (connecteurs vers services tiers). Au moins un adaptateur doit être extractible sans toucher au cœur. Justification écrite requise si dérogation demandée — et rarement accordée.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:18px;font-weight:600;color:var(--chene)">V</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Vouvoiement et ton artisanal</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Tous les textes s'adressent au client en le vouvoyant. Aucun emoji décoratif dans les fiches ou le guide. Vocabulaire L'établ'IA : « système forgé », « adaptateur », « livrable », pas « template », « workflow » ou « automation ». Le ton est précis, honnête, jamais grandiloquent.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:18px;font-weight:600;color:var(--chene)">S</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">« Satisfait ou Forgé »</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Le contributeur s'engage à corriger avant tout remboursement. Si le client signale un dysfonctionnement couvert par la promesse du produit, le contributeur dispose de 72 heures ouvrées pour proposer une correction. Le remboursement n'est prononcé qu'en dernier recours, par L'établ'IA. Pas de dérogation possible.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:40px;display:grid;grid-template-columns:1fr 1fr;gap:16px" class="pc-refuse">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--mousse);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Domaines recherchés</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;font-size:14px;color:var(--ebene-80)">
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse);font-weight:700">+</span><span>RH &amp; onboarding TPE</span></li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse);font-weight:700">+</span><span>Service client automatisé</span></li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse);font-weight:700">+</span><span>Comptabilité avancée</span></li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse);font-weight:700">+</span><span>Adaptations BE / CH / QC</span></li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse);font-weight:700">+</span><span>Métiers spécifiques (BTP, santé, restauration)</span></li>
+        </ul>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Refus systématiques</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:7px;font-size:14px;color:var(--ebene-80)">
+          <li style="display:flex;gap:8px"><span style="color:var(--chene);font-weight:700">×</span><span>Produit en abonnement ou freemium</span></li>
+          <li style="display:flex;gap:8px"><span style="color:var(--chene);font-weight:700">×</span><span>Promesse non vérifiable</span></li>
+          <li style="display:flex;gap:8px"><span style="color:var(--chene);font-weight:700">×</span><span>Installation > 4 h pour le client</span></li>
+          <li style="display:flex;gap:8px"><span style="color:var(--chene);font-weight:700">×</span><span>Domaine déjà couvert au catalogue</span></li>
+          <li style="display:flex;gap:8px"><span style="color:var(--chene);font-weight:700">×</span><span>Contenu hors francophonie</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — COMMISSION ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 03</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Commission <em class="editorial">25%</em> — transparence totale</h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Un modèle plat, décidé le 2026-05-04. Aucune surprise, aucune tranche cachée.</p>
+    </div>
+
+    <div data-reveal>
+      <!-- Table commission -->
+      <div style="background:var(--lin);border:1px solid var(--chene-25);border-radius:var(--r-md);overflow:hidden">
+        <table style="width:100%;border-collapse:collapse;font-size:15px">
+          <thead>
+            <tr style="background:var(--kraft);border-bottom:2px solid var(--chene-25)">
+              <th style="text-align:left;padding:14px 20px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);font-weight:600">Acteur</th>
+              <th style="text-align:right;padding:14px 20px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);font-weight:600">Part</th>
+              <th style="text-align:left;padding:14px 20px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);font-weight:600">Ce que ça couvre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--chene-15)">
+              <td style="padding:16px 20px;color:var(--ebene-80)">Marchand de records (MoR) + frais carte</td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-display);font-weight:600;font-size:1.1rem">~5%</td>
+              <td style="padding:16px 20px;color:var(--ebene-80);font-size:13px">TVA collectée, remboursements, frais Stripe</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--chene-15);background:var(--chene-6)">
+              <td style="padding:16px 20px;color:var(--ebene)"><strong>L'établ'IA</strong></td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-display);font-weight:700;font-size:1.3rem;color:var(--ebene)">25%</td>
+              <td style="padding:16px 20px;color:var(--ebene-80);font-size:13px">Catalogue, marketing, support N1, audit qualité, conformité juridique</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;color:var(--ebene)"><strong>Vous — le contributeur</strong></td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-display);font-weight:700;font-size:1.5rem;color:var(--mousse)">70%</td>
+              <td style="padding:16px 20px;color:var(--ebene-80);font-size:13px">Création, support N2 technique, maintenance</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Exemple concret -->
+      <div style="margin-top:24px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:24px 28px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px">Exemple concret</div>
+        <div style="display:flex;gap:32px;align-items:center;flex-wrap:wrap" class="pc-example">
+          <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700">39 €</div>
+          <div style="font-size:14px;color:var(--ebene-80)">prix de vente TTC</div>
+          <div style="color:var(--chene);font-family:var(--ff-mono)">→</div>
+          <div><span style="font-family:var(--ff-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--chene);display:block">MoR/Stripe</span><strong style="font-size:1.1rem">~ 3 €</strong></div>
+          <div style="color:var(--chene);font-family:var(--ff-mono)">→</div>
+          <div><span style="font-family:var(--ff-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--chene);display:block">Net partagé</span><strong style="font-size:1.1rem">36 €</strong></div>
+          <div style="color:var(--chene);font-family:var(--ff-mono)">→</div>
+          <div><span style="font-family:var(--ff-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--chene);display:block">L'établ'IA</span><strong style="font-size:1.1rem">9 €</strong></div>
+          <div style="color:var(--mousse);font-family:var(--ff-mono)">+</div>
+          <div><span style="font-family:var(--ff-mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--mousse);display:block">Vous</span><strong style="font-size:1.4rem;color:var(--mousse)">27 €</strong></div>
+        </div>
+      </div>
+
+      <!-- Paliers transparents -->
+      <div data-reveal style="margin-top:32px;display:grid;grid-template-columns:1fr 1fr;gap:16px" class="pc-paliers">
+        <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Paiement</div>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Virement SEPA le <strong>5 du mois M+1</strong> sur les ventes du mois M. Seuil minimum 50 €. En dessous : report au mois suivant sans frais.</p>
+        </div>
+        <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Refunds</div>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">En cas de remboursement client, la part contributeur est annulée <em>proportionnellement</em>. Vous ne pouvez jamais être en négatif sur un mois.</p>
+        </div>
+        <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Reporting</div>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Tableau de bord contributeur en lecture seule, actualisé mensuellement : ventes, refunds, net dû.</p>
+        </div>
+        <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Non-exclusivité</div>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Vous pouvez vendre votre système ailleurs en parallèle, à condition de mentionner « Également disponible chez L'établ'IA » sur vos autres canaux.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — PROCESS VALIDATION ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 04</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Process de <em class="editorial">validation</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Audit Sentinel QA, revue éditoriale, décision motivée. Tout est tracé, documenté, communicable.</p>
+    </div>
+
+    <div data-reveal>
+      <!-- Timeline process -->
+      <div style="display:flex;flex-direction:column;gap:0;position:relative">
+
+        <div style="display:flex;gap:24px;padding:0 0 32px 0;position:relative">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0">
+            <div style="width:40px;height:40px;background:var(--kraft);border:2px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:13px;font-weight:600;color:var(--chene);flex-shrink:0">1</div>
+            <div style="width:2px;flex:1;background:var(--chene-25);margin-top:8px;min-height:32px"></div>
+          </div>
+          <div style="padding-top:8px;flex:1">
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">24–48 h ouvrées</div>
+            <h3 style="font-size:1.15rem;margin:0 0 8px">Pré-vérification mécanique</h3>
+            <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Gabarit complet, ZIP ouvrable, métadonnées présentes, prix dans la fourchette (9–200 €), promesse sans superlatif. Si KO : email précis listant les manques, invitation à re-soumettre.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:24px;padding:0 0 32px 0;position:relative">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0">
+            <div style="width:40px;height:40px;background:var(--kraft);border:2px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:13px;font-weight:600;color:var(--chene);flex-shrink:0">2</div>
+            <div style="width:2px;flex:1;background:var(--chene-25);margin-top:8px;min-height:32px"></div>
+          </div>
+          <div style="padding-top:8px;flex:1">
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">3–7 jours ouvrés</div>
+            <h3 style="font-size:1.15rem;margin:0 0 8px">Audit Sentinel QA — 11 critères</h3>
+            <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">L'auditeur L'établ'IA produit un rapport JSON détaillé. Critères conformité (anonymisation, Méthode 4, RGPD, politique Forgé, vouvoiement) et critères fonctionnels (délai d'installation, clarté du guide, tests réalisés, promesses réalistes). Score global sur 10.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:24px;padding:0 0 32px 0;position:relative">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0">
+            <div style="width:40px;height:40px;background:var(--kraft);border:2px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:13px;font-weight:600;color:var(--chene);flex-shrink:0">3</div>
+            <div style="width:2px;flex:1;background:var(--chene-25);margin-top:8px;min-height:32px"></div>
+          </div>
+          <div style="padding-top:8px;flex:1">
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">1–3 jours ouvrés</div>
+            <h3 style="font-size:1.15rem;margin:0 0 8px">Revue éditoriale</h3>
+            <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Cohérence avec le catalogue existant, ton, vocabulaire L'établ'IA, positionnement prix. En cas de désaccord entre l'auditeur et le contributeur, <strong>Raphaël est arbitre final</strong>. Sa décision est motivée et documentée.</p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:24px;padding:0 0 0 0">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0">
+            <div style="width:40px;height:40px;background:var(--mousse);border:2px solid var(--mousse);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:13px;font-weight:600;color:white;flex-shrink:0">4</div>
+          </div>
+          <div style="padding-top:8px;flex:1">
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--mousse);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">1 jour</div>
+            <h3 style="font-size:1.15rem;margin:0 0 8px">Décision finale et notification</h3>
+            <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Trois verdicts possibles : <strong>ACCEPTÉ</strong> (onboarding immédiat), <strong>À REPRENDRE</strong> (liste précise des modifications attendues, délai 30 jours), <strong>REFUSÉ</strong> (motif documenté, possibilité de re-soumission après 6 mois).</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:32px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 24px;font-size:14px;color:var(--ebene-80)">
+        <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Période de test</strong><br/>
+        Les 3 premiers produits d'un contributeur sont traités en période d'essai. Pour accéder au statut « contributeur confirmé » : 10 ventes minimum et satisfaction client &gt; 4/5 sur la période.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — PROFILS TYPES ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 05</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Profils <em class="editorial">contributeurs</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Pas de profil idéal unique. Quelques exemples de ce qui correspond à l'esprit de l'atelier.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr;gap:20px">
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 28px;display:flex;gap:24px;align-items:flex-start" class="pc-profile">
+        <div style="flex-shrink:0;width:52px;height:52px;background:var(--kraft-2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-hand);font-size:24px;color:var(--chene)">R</div>
+        <div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Profil · Artisan développeur</div>
+          <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Le développeur freelance qui a résolu son propre problème</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0 0 12px">Il a construit un système pour gérer ses devis et ses relances de paiement. Il l'utilise depuis 6 mois, l'a amélioré, documenté. Il ne voulait pas monter un SaaS. L'établ'IA lui permet de le monétiser une fois, sans infra à maintenir.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">Freelance FR / BE / CH</span>
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">Automatisations</span>
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">1er produit</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 28px;display:flex;gap:24px;align-items:flex-start" class="pc-profile">
+        <div style="flex-shrink:0;width:52px;height:52px;background:var(--kraft-2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-hand);font-size:24px;color:var(--chene)">A</div>
+        <div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Profil · Consultant métier</div>
+          <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">La consultante en organisation qui a packagé sa méthode</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0 0 12px">Elle accompagne des restaurateurs depuis 3 ans. Elle a structuré ses checklists d'audit, ses plans de mise en conformité, ses modèles de suivi RH en un kit opérationnel. Elle veut partager et monétiser sans gérer de support marketing.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">Secteur restauration / BTP</span>
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">Modèles structurés</span>
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">Guides opérationnels</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 28px;display:flex;gap:24px;align-items:flex-start" class="pc-profile">
+        <div style="flex-shrink:0;width:52px;height:52px;background:var(--kraft-2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-hand);font-size:24px;color:var(--chene)">M</div>
+        <div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Profil · Artisan francophone hors France</div>
+          <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">L'artisan numérique québécois qui adapte pour le marché francophone</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0 0 12px">Il a adapté un système de gestion de stock pour les contraintes fiscales QC (TPS/TVQ). Il connaît les spécificités locales que les outils génériques ignorent. Son adaptation complète un système existant du catalogue — ou crée sa propre niche.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">Québec / Belgique / Suisse</span>
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">Adaptation locale</span>
+            <span style="font-family:var(--ff-mono);font-size:11px;background:var(--kraft);border:1px solid var(--chene-25);padding:4px 10px;border-radius:var(--r-sm);color:var(--ebene-80)">Fiscalité francophone</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:28px;background:var(--chene-6);border-left:3px solid var(--chene);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:18px 24px;font-size:14px;color:var(--ebene-80)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Pré-requis</strong><br/>
+      Avoir déjà forgé au moins <strong>1 système opérationnel</strong> — pas un projet futur. Savoir émettre une facture (France, Belgique, Suisse, Québec, Maghreb ou toute zone francophone). Maîtriser le français écrit au niveau professionnel.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6 — CTA ═══ -->
+<section style="padding:96px 0 96px;background:var(--ebene);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;max-width:52ch;margin:0 auto">
+      <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:18px">Prêt à candidater ?</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--lin);margin:0 0 20px">Soumettre <em class="editorial" style="color:var(--chene)">une idée</em></h2>
+      <p style="color:var(--pierre);font-size:1rem;line-height:1.7;margin:0 0 36px">Décrivez votre système forgé — en quelques lignes — dans le formulaire de contact. Mentionnez « Programme contributeurs » dans l'objet. On accusera réception dans les 48 heures ouvrées et vous enverra le gabarit de soumission complet.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="contact.html?subject=contributeur" style="font-size:1rem;padding:16px 36px">Soumettre une idée →</a>
+        <a href="faq.html#programme-contributeur" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-size:15px;color:var(--pierre);text-decoration:none;padding:16px 20px;border:1px solid rgba(184,175,166,0.3);border-radius:var(--r-sm);transition:color .2s">Questions fréquentes</a>
+      </div>
+      <p style="margin-top:28px;font-family:var(--ff-display);font-style:italic;color:var(--pierre);font-size:14px;opacity:.7">L'admission reste ouverte. Le catalogue reste petit. C'est voulu.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+        <li><a href="programme-contributeurs.html" style="color:var(--chene)">Devenir contributeur</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+<script defer src="/assets/js/easter-eggs.js"></script>
+
+<style>
+@media (max-width:880px){
+  .pc-hero-stats{grid-template-columns:1fr !important}
+  .pc-steps{grid-template-columns:1fr !important}
+  .pc-refuse{grid-template-columns:1fr !important}
+  .pc-paliers{grid-template-columns:1fr !important}
+  .pc-example{flex-direction:column !important;align-items:flex-start !important;gap:12px !important}
+  .pc-profile{flex-direction:column !important}
+}
+</style>
+</body></html>

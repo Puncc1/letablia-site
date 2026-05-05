@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Trouvez votre système — L'établ'IA</title>
+<meta name="description" content="Six questions, deux minutes — on identifie les 2 ou 3 systèmes qui correspondent vraiment à votre situation."/>
+<link rel="canonical" href="https://letablia.fr/trouver.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/>
+<link rel="stylesheet" href="assets/css/search.css"/>
+<style>
+/* ── Transition d'écran ── */
+.q-screen{animation:fadeUp .28s ease both}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── Carte option ── */
+.opt-card{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:18px 20px;
+  background:var(--lin);
+  border:1.5px solid var(--chene-25);
+  border-radius:var(--r-sm);
+  cursor:pointer;
+  transition:border-color .14s, background .14s, transform .12s;
+  text-align:left;width:100%;
+  font-family:var(--ff-body);
+}
+.opt-card:hover{border-color:var(--chene);background:var(--chene-6);transform:translateY(-1px)}
+.opt-card.selected{
+  border-color:var(--mousse);
+  background:rgba(107,124,95,.08);
+}
+.opt-radio{
+  width:20px;height:20px;border-radius:50%;
+  border:1.5px solid var(--chene);
+  background:transparent;
+  flex-shrink:0;margin-top:3px;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .14s, background .14s;
+}
+.opt-card.selected .opt-radio{
+  border-color:var(--mousse);
+  background:var(--mousse);
+}
+.opt-label{font-weight:600;font-size:16px;margin-bottom:3px;color:var(--ebene)}
+.opt-sub{font-size:13px;color:var(--ebene-80);line-height:1.45}
+
+/* ── Résultat — carte produit ── */
+.res-card{
+  display:grid;grid-template-columns:auto 1fr auto auto;
+  gap:20px;align-items:center;
+  padding:20px 24px;
+  background:var(--parchemin);
+  border:1.5px solid var(--chene-25);
+  border-radius:var(--r-sm);
+  text-decoration:none;color:inherit;
+  transition:border-color .15s, transform .15s, box-shadow .15s;
+}
+.res-card:hover{border-color:var(--chene);transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(44,40,37,.14)}
+.res-rank{
+  font-family:var(--ff-mono);font-size:11px;
+  color:var(--chene);letter-spacing:.12em;
+  text-align:center;
+}
+.res-rank strong{
+  display:block;font-size:1.2rem;font-weight:700;
+  color:var(--ebene);margin-bottom:2px;
+  font-family:var(--ff-display);
+}
+.res-price{
+  font-family:var(--ff-display);font-weight:700;
+  font-size:1.6rem;color:var(--ebene);white-space:nowrap;
+}
+.res-arrow svg{stroke:var(--chene)}
+
+/* ── Badge score ── */
+.score-bar{
+  height:3px;border-radius:2px;
+  background:var(--chene-15);
+  margin-top:6px;overflow:hidden;
+}
+.score-fill{height:100%;background:var(--mousse);border-radius:2px;transition:width .6s ease .2s}
+
+/* ── Médaille ── */
+.medal-1{color:#B8860B} /* doré */
+.medal-2{color:#708090} /* argent */
+.medal-3{color:#8B6914} /* bronze */
+
+@media(max-width:600px){
+  .res-card{grid-template-columns:auto 1fr;grid-template-rows:auto auto}
+  .res-rank{grid-row:1;grid-column:1}
+  .res-price{grid-row:1;grid-column:2;text-align:right}
+  .res-info{grid-row:2;grid-column:1/-1}
+  .res-arrow{display:none}
+  #quiz-box{padding:28px 20px !important}
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer le mode nuit" aria-pressed="false">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg></button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système…"/>
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results><div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div></div>
+  </div>
+</div>
+
+<!-- MAIN -->
+<main>
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span class="sep"></span>
+      <span class="current">Trouvez votre système</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding:40px 0 96px;background:var(--lin)">
+  <div class="container-narrow">
+
+    <!-- En-tête -->
+    <div data-reveal style="margin-bottom:52px">
+      <span class="tag-atelier">Questionnaire · 2 min</span>
+      <h1 style="margin-top:16px;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.06">
+        Trouvez le bon système <em class="editorial">pour vous</em>.
+      </h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.25rem;margin-top:12px;max-width:52ch;line-height:1.5">
+        Six questions sur votre activité — on calcule un score de pertinence et on vous recommande les 2 ou 3 pièces qui correspondent le mieux à votre situation.
+      </p>
+    </div>
+
+    <!-- Boîte questionnaire -->
+    <div id="quiz-box"
+      data-reveal data-reveal-delay="1"
+      style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:52px 48px;box-shadow:0 24px 48px -24px rgba(44,40,37,.18);position:relative">
+      <!-- Coin replié -->
+      <div style="position:absolute;top:-1px;right:-1px;width:64px;height:64px;background:var(--lin);border-left:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);clip-path:polygon(0 0,100% 0,100% 100%)"></div>
+
+      <!-- Barre de progression -->
+      <div id="q-header" style="display:flex;align-items:center;justify-content:space-between;margin-bottom:36px;gap:16px">
+        <span id="q-label" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap">Question 1 / 6</span>
+        <div style="flex:1;height:2px;background:var(--chene-15);border-radius:1px;overflow:hidden">
+          <div id="q-bar" style="height:100%;width:0%;background:var(--mousse);transition:width .35s ease;border-radius:1px"></div>
+        </div>
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.1em">⌬</span>
+      </div>
+
+      <!-- Zone de la question -->
+      <div id="q-screen"></div>
+
+      <!-- Navigation -->
+      <div id="q-nav" style="margin-top:40px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap">
+        <button id="q-prev" class="btn btn-ghost" style="display:none;padding:12px 20px;font-size:14px">← Précédent</button>
+        <span id="q-hint" style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.9rem">Sélectionnez une réponse pour continuer</span>
+        <button id="q-next" class="btn btn-primary" disabled style="opacity:.5;pointer-events:none">Continuer →</button>
+      </div>
+    </div>
+
+    <!-- Encart « pourquoi c'est gratuit » -->
+    <div style="margin-top:40px;padding:24px 28px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);display:flex;gap:18px;align-items:flex-start" data-reveal>
+      <div style="font-family:var(--ff-display);font-size:2rem;color:var(--chene);line-height:1">⌘</div>
+      <div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Pourquoi c'est gratuit</div>
+        <p style="margin:0;color:var(--ebene-80);font-size:14px;line-height:1.55">Parce qu'on préfère dire « ce système n'est pas pour vous » dès le départ. Vos réponses restent dans votre navigateur — rien n'est transmis à un serveur.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants.</p>
+    </div>
+    <div><h4>L'atelier</h4><ul>
+      <li><a href="catalogue.html">Catalogue (11)</a></li>
+      <li><a href="famille-automatiser.html">Automatiser</a></li>
+      <li><a href="famille-vendre.html">Vendre</a></li>
+      <li><a href="famille-piloter.html">Piloter</a></li>
+      <li><a href="famille-produire.html">Produire</a></li>
+      <li><a href="famille-securiser.html">Sécuriser</a></li>
+    </ul></div>
+    <div><h4>Service</h4><ul>
+      <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+      <li><a href="trouver.html">Trouvez votre système</a></li>
+      <li><a href="a-propos.html">L'atelier</a></li>
+      <li><a href="faq.html">Questions fréquentes</a></li>
+      <li><a href="contact.html">Nous écrire</a></li>
+    </ul></div>
+    <div><h4>Légal</h4><ul>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="cgv.html">CGV</a></li>
+      <li><a href="confidentialite.html">Confidentialité</a></li>
+    </ul></div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+
+<script>
+(function(){
+'use strict';
+
+/* ═══════════════════════════════════════════════════
+   DONNÉES PRODUITS — 11 systèmes de l'atelier
+   Chaque produit porte ses poids de scoring par axe.
+   Scoring total = somme des 6 axes (max ~24 pts)
+═══════════════════════════════════════════════════ */
+const PRODUCTS = [
+  {
+    id:'signal-de-vente', num:'01', fam:'vendre', famLabel:'Vendre',
+    title:'Signal de Vente',
+    blurb:'Une notification instantanée à chaque commande de votre boutique.',
+    price:9, url:'produits/signal-de-vente.html',
+    scores:{
+      q1:{ecommerce:4,freelance:0,tpe:0,artisan:0,autre:0},
+      q2:{clients:2,facturation:0,sauvegardes:0,messages:3,autre:0},
+      q3:{'1-2':2,'3-5':1,'6-10':0,'10+':0},
+      q4:{lte25:3,'25-50':2,'50+':1},
+      q5:{lt30:3,'30-60':1,'1h+':0},
+      q6:{ecommerce:3,tableur:0,notes:0,messagerie:1,aucune:0}
+    }
+  },
+  {
+    id:'gardien-de-stock', num:'02', fam:'automatiser', famLabel:'Automatiser',
+    title:'Gardien de Stock',
+    blurb:'Surveille votre stock et vous alerte avant la rupture.',
+    price:29, url:'produits/gardien-de-stock.html',
+    scores:{
+      q1:{ecommerce:4,freelance:0,tpe:1,artisan:0,autre:0},
+      q2:{clients:1,facturation:0,sauvegardes:3,messages:0,autre:1},
+      q3:{'1-2':0,'3-5':2,'6-10':3,'10+':2},
+      q4:{lte25:0,'25-50':3,'50+':1},
+      q5:{lt30:0,'30-60':3,'1h+':2},
+      q6:{ecommerce:3,tableur:2,notes:0,messagerie:0,aucune:0}
+    }
+  },
+  {
+    id:'sequenceur-post-achat', num:'03', fam:'automatiser', famLabel:'Automatiser',
+    title:'Séquenceur Post-Achat',
+    blurb:'Email de remerciement et suivi automatique après chaque commande.',
+    price:29, url:'produits/sequenceur-post-achat.html',
+    scores:{
+      q1:{ecommerce:4,freelance:0,tpe:0,artisan:0,autre:0},
+      q2:{clients:3,facturation:0,sauvegardes:0,messages:1,autre:0},
+      q3:{'1-2':0,'3-5':2,'6-10':3,'10+':3},
+      q4:{lte25:0,'25-50':3,'50+':1},
+      q5:{lt30:0,'30-60':3,'1h+':2},
+      q6:{ecommerce:3,tableur:0,notes:0,messagerie:1,aucune:0}
+    }
+  },
+  {
+    id:'collecteur-avis', num:'04', fam:'vendre', famLabel:'Vendre',
+    title:'Le Collecteur Avis',
+    blurb:'Collecte les avis clients après commande, automatiquement.',
+    price:29, url:'produits/collecteur-avis.html',
+    scores:{
+      q1:{ecommerce:3,freelance:1,tpe:0,artisan:0,autre:0},
+      q2:{clients:3,facturation:0,sauvegardes:0,messages:1,autre:0},
+      q3:{'1-2':1,'3-5':2,'6-10':2,'10+':1},
+      q4:{lte25:0,'25-50':3,'50+':1},
+      q5:{lt30:3,'30-60':1,'1h+':0},
+      q6:{ecommerce:3,tableur:0,notes:0,messagerie:1,aucune:0}
+    }
+  },
+  {
+    id:'carnet-forge', num:'05', fam:'produire', famLabel:'Produire',
+    title:'Carnet Forge',
+    blurb:"Le journal de bord de l'artisan numérique, prêt à imprimer.",
+    price:39, url:'produits/carnet-forge.html',
+    scores:{
+      q1:{ecommerce:0,freelance:1,tpe:0,artisan:4,autre:2},
+      q2:{clients:0,facturation:1,sauvegardes:0,messages:0,autre:3},
+      q3:{'1-2':2,'3-5':2,'6-10':1,'10+':0},
+      q4:{lte25:0,'25-50':3,'50+':1},
+      q5:{lt30:3,'30-60':1,'1h+':0},
+      q6:{ecommerce:0,tableur:0,notes:3,messagerie:0,aucune:3}
+    }
+  },
+  {
+    id:'produit-relance-prospects', num:'06', fam:'vendre', famLabel:'Vendre',
+    title:'Relance Prospects',
+    blurb:'Relance vos prospects automatiquement, avec tact et au bon moment.',
+    price:49, url:'produits/produit-relance-prospects.html',
+    scores:{
+      q1:{ecommerce:1,freelance:4,tpe:3,artisan:1,autre:1},
+      q2:{clients:4,facturation:0,sauvegardes:0,messages:2,autre:1},
+      q3:{'1-2':0,'3-5':1,'6-10':3,'10+':3},
+      q4:{lte25:0,'25-50':0,'50+':3},
+      q5:{lt30:0,'30-60':3,'1h+':2},
+      q6:{ecommerce:0,tableur:3,notes:0,messagerie:2,aucune:0}
+    }
+  },
+  {
+    id:'produit-mini-crm-notion', num:'07', fam:'produire', famLabel:'Produire',
+    title:'Mini CRM Prestataire',
+    blurb:"Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.",
+    price:49, url:'produits/produit-mini-crm-notion.html',
+    scores:{
+      q1:{ecommerce:0,freelance:4,tpe:2,artisan:1,autre:1},
+      q2:{clients:4,facturation:1,sauvegardes:0,messages:0,autre:1},
+      q3:{'1-2':0,'3-5':1,'6-10':3,'10+':3},
+      q4:{lte25:0,'25-50':0,'50+':3},
+      q5:{lt30:0,'30-60':3,'1h+':2},
+      q6:{ecommerce:0,tableur:0,notes:4,messagerie:0,aucune:0}
+    }
+  },
+  {
+    id:'produit-dashboard-tresorerie', num:'08', fam:'piloter', famLabel:'Piloter',
+    title:'Dashboard Trésorerie TPE',
+    blurb:'Vue claire de votre trésorerie, mise à jour quotidienne.',
+    price:39, url:'produits/produit-dashboard-tresorerie.html',
+    scores:{
+      q1:{ecommerce:1,freelance:1,tpe:4,artisan:3,autre:1},
+      q2:{clients:0,facturation:4,sauvegardes:0,messages:0,autre:1},
+      q3:{'1-2':0,'3-5':2,'6-10':3,'10+':3},
+      q4:{lte25:0,'25-50':3,'50+':1},
+      q5:{lt30:0,'30-60':3,'1h+':2},
+      q6:{ecommerce:0,tableur:4,notes:0,messagerie:0,aucune:0}
+    }
+  },
+  {
+    id:'produit-cyber-hygiene-tpe', num:'09', fam:'securiser', famLabel:'Sécuriser',
+    title:'Pack Cyber-Hygiène TPE',
+    blurb:'Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.',
+    price:39, url:'produits/produit-cyber-hygiene-tpe.html',
+    scores:{
+      q1:{ecommerce:1,freelance:1,tpe:4,artisan:3,autre:2},
+      q2:{clients:0,facturation:1,sauvegardes:4,messages:0,autre:1},
+      q3:{'1-2':3,'3-5':2,'6-10':1,'10+':0},
+      q4:{lte25:0,'25-50':3,'50+':1},
+      q5:{lt30:3,'30-60':1,'1h+':0},
+      q6:{ecommerce:0,tableur:0,notes:1,messagerie:0,aucune:4}
+    }
+  },
+  {
+    id:'produit-kit-facturation-2026', num:'10', fam:'produire', famLabel:'Produire',
+    title:'Kit Facturation Électronique 2026',
+    blurb:"Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.",
+    price:39, url:'produits/produit-kit-facturation-2026.html',
+    scores:{
+      q1:{ecommerce:1,freelance:3,tpe:4,artisan:4,autre:1},
+      q2:{clients:0,facturation:4,sauvegardes:0,messages:0,autre:1},
+      q3:{'1-2':3,'3-5':2,'6-10':1,'10+':0},
+      q4:{lte25:0,'25-50':3,'50+':1},
+      q5:{lt30:3,'30-60':1,'1h+':0},
+      q6:{ecommerce:0,tableur:1,notes:0,messagerie:0,aucune:3}
+    }
+  },
+  {
+    id:'produit-agent-tri-email', num:'11', fam:'automatiser', famLabel:'Automatiser',
+    title:'Agent Tri Email',
+    blurb:'Trie votre boîte de messagerie selon des règles métier personnalisées.',
+    price:39, url:'produits/produit-agent-tri-email.html',
+    scores:{
+      q1:{ecommerce:1,freelance:2,tpe:2,artisan:1,autre:2},
+      q2:{clients:1,facturation:0,sauvegardes:0,messages:4,autre:1},
+      q3:{'1-2':0,'3-5':1,'6-10':3,'10+':4},
+      q4:{lte25:0,'25-50':3,'50+':1},
+      q5:{lt30:0,'30-60':3,'1h+':2},
+      q6:{ecommerce:0,tableur:0,notes:0,messagerie:4,aucune:0}
+    }
+  }
+];
+
+/* ═══════════════════════════════════════════════════
+   QUESTIONS (6 axes de scoring)
+═══════════════════════════════════════════════════ */
+const QUESTIONS = [
+  {
+    key:'q1',
+    num:1,
+    title:"Quel est votre métier principal ?",
+    help:"Votre activité guide la plupart des recommandations.",
+    options:[
+      {value:'ecommerce', label:"E-commerce", sub:"Je vends en ligne — Shopify, WooCommerce, Prestashop…"},
+      {value:'freelance', label:"Freelance / indépendant", sub:"Conseil, services, création — solo ou petite équipe"},
+      {value:'tpe',       label:"TPE / PME", sub:"Entreprise de 1 à 20 personnes, tous secteurs"},
+      {value:'artisan',   label:"Artisan / BTP", sub:"Métier manuel, chantiers, interventions terrain"},
+      {value:'autre',     label:"Autre / pas encore sûr", sub:"Profil mixte — on vous oriente quand même"}
+    ]
+  },
+  {
+    key:'q2',
+    num:2,
+    title:"Quelle est votre douleur principale aujourd'hui ?",
+    help:"Le problème qui revient chaque semaine et vous coûte du temps.",
+    options:[
+      {value:'clients',    label:"Suivi clients & fidélisation", sub:"Relances, avis, prospection, CRM"},
+      {value:'facturation',label:"Facturation & trésorerie", sub:"Devis, factures, suivi des paiements, conformité"},
+      {value:'sauvegardes',label:"Sécurité & sauvegardes", sub:"Pertes de données, mots de passe, cyber-risques"},
+      {value:'messages',   label:"Messages & e-mails perdus", sub:"Boîte débordante, notifications manquées, relances oubliées"},
+      {value:'autre',      label:"Organisation générale", sub:"Tout s'accumule, rien n'est structuré"}
+    ]
+  },
+  {
+    key:'q3',
+    num:3,
+    title:"Combien d'heures par semaine perdez-vous sur cette douleur ?",
+    help:"Estimation honnête — même 1h/semaine compte sur un an.",
+    options:[
+      {value:'1-2',  label:"1 à 2 heures",      sub:"Un agacement récurrent, mais gérable"},
+      {value:'3-5',  label:"3 à 5 heures",      sub:"Ça commence à peser sur la semaine"},
+      {value:'6-10', label:"6 à 10 heures",     sub:"Un vrai problème de productivité"},
+      {value:'10+',  label:"Plus de 10 heures", sub:"C'est devenu un temps plein en soi"}
+    ]
+  },
+  {
+    key:'q4',
+    num:4,
+    title:"Quel budget initial êtes-vous prêt à investir ?",
+    help:"Paiement unique — pas d'abonnement, pas de surprise ensuite.",
+    options:[
+      {value:'lte25',  label:"≤ 25 €",  sub:"Le micro-système qui résout une chose précise"},
+      {value:'25-50',  label:"25 – 50 €", sub:"La pièce standard de l'atelier"},
+      {value:'50+',    label:"50 € et plus", sub:"Pack ou système avancé — plus de valeur"}
+    ]
+  },
+  {
+    key:'q5',
+    num:5,
+    title:"Combien de temps pouvez-vous consacrer à l'installation ?",
+    help:"Tout est livré avec guide étape par étape — aucune compétence technique requise.",
+    options:[
+      {value:'lt30',  label:"Moins de 30 minutes",  sub:"Je veux que ça soit opérationnel ce soir"},
+      {value:'30-60', label:"30 minutes à 1 heure",  sub:"J'ai un créneau calme devant moi"},
+      {value:'1h+',   label:"Plus d'une heure",      sub:"Je prends le temps de bien faire les choses"}
+    ]
+  },
+  {
+    key:'q6',
+    num:6,
+    title:"Quelle plateforme principale utilisez-vous au quotidien ?",
+    help:"Celle sur laquelle vous passez le plus de temps professionnel.",
+    options:[
+      {value:'ecommerce', label:"Boutique e-commerce",    sub:"Shopify, WooCommerce, Prestashop…"},
+      {value:'tableur',   label:"Tableur en ligne",       sub:"Google Sheets, Excel, Notion (base de données)"},
+      {value:'notes',     label:"Application de notes",   sub:"Notion, Obsidian, OneNote, Apple Notes…"},
+      {value:'messagerie',label:"Messagerie électronique",sub:"Gmail, Outlook, Thunderbird…"},
+      {value:'aucune',    label:"Aucune en particulier",  sub:"Je n'ai pas encore d'outil principal"}
+    ]
+  }
+];
+
+/* ═══════════════════════════════════════════════════
+   ÉTAT DE L'APPLICATION
+═══════════════════════════════════════════════════ */
+let currentStep = 0;        // 0..5 → questions, 6 → résultats
+const answers = {};         // {q1:'ecommerce', q2:'clients', …}
+
+const screen  = document.getElementById('q-screen');
+const navZone = document.getElementById('q-nav');
+const prevBtn = document.getElementById('q-prev');
+const nextBtn = document.getElementById('q-next');
+const hintEl  = document.getElementById('q-hint');
+const barEl   = document.getElementById('q-bar');
+const labelEl = document.getElementById('q-label');
+
+/* ── Rendu d'une question ── */
+function renderQuestion(){
+  const q   = QUESTIONS[currentStep];
+  const sel = answers[q.key];
+  const total = QUESTIONS.length;
+
+  labelEl.textContent = 'Question '+q.num+' / '+total;
+  barEl.style.width   = (q.num / (total + 1) * 100)+'%';
+  hintEl.textContent  = q.help;
+
+  prevBtn.style.display     = currentStep > 0 ? '' : 'none';
+  nextBtn.disabled          = !sel;
+  nextBtn.style.opacity     = sel ? 1 : .5;
+  nextBtn.style.pointerEvents = sel ? 'auto' : 'none';
+  nextBtn.textContent       = currentStep === total - 1
+    ? 'Voir mes systèmes →'
+    : 'Continuer →';
+
+  screen.innerHTML = `
+    <div class="q-screen">
+      <h2 style="font-size:clamp(1.5rem,3vw,2rem);line-height:1.2;margin-bottom:28px">${q.title}</h2>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        ${q.options.map(o=>`
+          <button class="opt-card${sel===o.value?' selected':''}" data-val="${o.value}" type="button" aria-pressed="${sel===o.value?'true':'false'}">
+            <span class="opt-radio">
+              ${sel===o.value?'<svg width="10" height="8" viewBox="0 0 10 8" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 4l3 3 5-6"/></svg>':''}
+            </span>
+            <div>
+              <div class="opt-label">${o.label}</div>
+              <div class="opt-sub">${o.sub}</div>
+            </div>
+          </button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+
+  screen.querySelectorAll('[data-val]').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      answers[q.key] = btn.dataset.val;
+      renderQuestion();
+    });
+  });
+}
+
+/* ── Calcul du score ── */
+function computeScores(){
+  return PRODUCTS.map(p=>{
+    let score = 0;
+    ['q1','q2','q3','q4','q5','q6'].forEach(ax=>{
+      const ans = answers[ax];
+      if(ans && p.scores[ax] && p.scores[ax][ans] !== undefined){
+        score += p.scores[ax][ans];
+      }
+    });
+    return {product:p, score};
+  }).sort((a,b)=>b.score - a.score);
+}
+
+/* ── Rendu des résultats ── */
+function renderResults(){
+  const MEDALS = ['🥇','🥈','🥉'];
+  const MEDAL_CLS = ['medal-1','medal-2','medal-3'];
+  const FAM_CSS = {
+    vendre:'var(--cuivre)',
+    automatiser:'var(--bronze)',
+    piloter:'var(--lapis)',
+    produire:'var(--argile)',
+    securiser:'var(--sauge)'
+  };
+
+  labelEl.textContent = 'Votre sélection personnalisée';
+  barEl.style.width   = '100%';
+  navZone.style.display = 'none';
+
+  const ranked  = computeScores();
+  const maxScore= ranked[0].score || 1;
+  const top3    = ranked.slice(0,3).filter(r=>r.score > 0);
+
+  // Libellés contextuels
+  const METIER_LBL = {
+    ecommerce:'e-commerçant·e',
+    freelance:'freelance',
+    tpe:'dirigeant·e de TPE',
+    artisan:'artisan·e',
+    autre:'professionnel·le'
+  };
+  const DOULEUR_LBL = {
+    clients:'améliorer le suivi de vos clients',
+    facturation:'mettre la facturation au carré',
+    sauvegardes:'renforcer la sécurité numérique',
+    messages:'reprendre le contrôle de vos e-mails',
+    autre:'gagner en organisation'
+  };
+
+  const metier  = METIER_LBL[answers.q1] || 'professionnel·le';
+  const douleur = DOULEUR_LBL[answers.q2] || 'avancer';
+
+  if(top3.length === 0){
+    screen.innerHTML = `
+      <div class="q-screen">
+        <span class="tag-atelier">Résultat honnête</span>
+        <h2 style="font-size:1.8rem;margin:14px 0 14px">On n'a peut-être pas votre solution.</h2>
+        <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.1rem;margin-bottom:28px;max-width:48ch">
+          Avec ces réponses, aucune pièce de l'atelier ne nous semble vraiment adaptée. Écrivez-nous — on vous répond à la main.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <a class="btn btn-mousse" href="contact.html">Nous écrire →</a>
+          <button class="btn btn-ghost" style="padding:12px 18px;font-size:14px" onclick="restart()">↻ Recommencer</button>
+        </div>
+      </div>`;
+    return;
+  }
+
+  screen.innerHTML = `
+    <div class="q-screen">
+      <span class="tag-atelier">Recommandation · ${top3.length} système${top3.length>1?'s':''}</span>
+      <h2 style="font-size:clamp(1.6rem,3.2vw,2.2rem);line-height:1.15;margin:14px 0 8px">
+        Pour un·e <em class="editorial">${metier}</em><br>qui veut <em class="editorial">${douleur}</em>.
+      </h2>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1rem;margin-bottom:32px;max-width:54ch">
+        Score calculé sur 6 axes : métier, douleur, temps perdu, budget, facilité d'installation et plateforme.
+        Commencez par le premier — le reste viendra si c'est utile.
+      </p>
+
+      <div style="display:flex;flex-direction:column;gap:14px">
+        ${top3.map((r,i)=>{
+          const p = r.product;
+          const pct = Math.round(r.score / maxScore * 100);
+          const famColor = FAM_CSS[p.fam] || 'var(--chene)';
+          return `
+          <a class="res-card" href="${p.url}" aria-label="${p.title} — ${p.price}€">
+            <div class="res-rank">
+              <strong class="${MEDAL_CLS[i]}">${MEDALS[i]}</strong>
+              <span>№ ${p.num}</span><br>
+              <span style="color:${famColor};font-weight:600;font-size:10px">${p.famLabel}</span>
+            </div>
+            <div class="res-info">
+              <h3 style="font-size:1.15rem;margin:0 0 4px">${p.title}</h3>
+              <p style="margin:0 0 8px;color:var(--ebene-80);font-size:13px;line-height:1.45">${p.blurb}</p>
+              <div class="score-bar" title="Score de pertinence : ${pct}%">
+                <div class="score-fill" style="width:${pct}%"></div>
+              </div>
+              <div style="font-family:var(--ff-mono);font-size:10px;color:var(--chene);letter-spacing:.08em;margin-top:3px">Pertinence ${pct}%</div>
+            </div>
+            <div class="res-price">${p.price}&nbsp;€</div>
+            <div class="res-arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+          </a>`;
+        }).join('')}
+      </div>
+
+      ${ranked.length > 3 ? `
+      <details style="margin-top:24px">
+        <summary style="font-family:var(--ff-mono);font-size:12px;letter-spacing:.1em;color:var(--chene);cursor:pointer;text-transform:uppercase;padding:12px 0;list-style:none;display:flex;align-items:center;gap:8px">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          Voir aussi les autres systèmes compatibles (${ranked.length - 3})
+        </summary>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:12px">
+          ${ranked.slice(3,6).filter(r=>r.score>0).map(r=>{
+            const p = r.product;
+            const pct = Math.round(r.score / maxScore * 100);
+            const famColor = FAM_CSS[p.fam] || 'var(--chene)';
+            return `
+            <a href="${p.url}" style="display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--chene-15);border-radius:var(--r-sm);text-decoration:none;color:inherit;background:var(--lin);transition:border-color .15s" onmouseenter="this.style.borderColor='var(--chene)'" onmouseleave="this.style.borderColor='var(--chene-15)'">
+              <span style="font-family:var(--ff-mono);font-size:10px;color:${famColor};letter-spacing:.1em;text-transform:uppercase;min-width:60px">№ ${p.num}<br>${p.famLabel}</span>
+              <div style="flex:1">
+                <div style="font-weight:600;font-size:14px;margin-bottom:2px">${p.title}</div>
+                <div style="font-size:12px;color:var(--ebene-80)">${p.blurb}</div>
+              </div>
+              <div style="font-family:var(--ff-display);font-weight:700;color:var(--ebene);white-space:nowrap">${p.price}&nbsp;€</div>
+            </a>`;
+          }).join('')}
+        </div>
+      </details>
+      ` : ''}
+
+      <div style="margin-top:40px;padding:22px 24px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;gap:16px;align-items:flex-start">
+        <div style="font-family:var(--ff-display);font-size:1.6rem;color:var(--chene);line-height:1">⌥</div>
+        <div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px">Pas convaincu ?</div>
+          <p style="margin:0 0 14px;color:var(--ebene-80);font-size:14px;line-height:1.5">Si la recommandation ne vous parle pas, écrivez-nous un mot — on regarde votre situation.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <button class="btn btn-ghost" style="padding:10px 16px;font-size:13px" onclick="restart()">↻ Recommencer</button>
+            <a href="catalogue.html" class="btn-link" style="font-size:13px">Voir tout le catalogue →</a>
+            <a href="contact.html" class="btn-link" style="font-size:13px">Nous écrire →</a>
+          </div>
+        </div>
+      </div>
+    </div>`;
+}
+
+/* ── Restart ── */
+function restart(){
+  currentStep = 0;
+  Object.keys(answers).forEach(k=>delete answers[k]);
+  navZone.style.display = '';
+  renderQuestion();
+}
+
+/* ── Navigation ── */
+prevBtn.addEventListener('click',()=>{
+  if(currentStep > 0){ currentStep--; renderQuestion(); }
+});
+nextBtn.addEventListener('click',()=>{
+  if(currentStep < QUESTIONS.length - 1){
+    currentStep++;
+    renderQuestion();
+  } else {
+    renderResults();
+  }
+});
+
+/* ── Init ── */
+window.restart = restart;
+renderQuestion();
+
+})();
+</script>
+
+<script defer src="/assets/js/easter-eggs.js"></script>
+</body>
+</html>

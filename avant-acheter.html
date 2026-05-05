@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avant d'acheter - Checklist prérequis - le tablia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #fafafa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        /* Palette V4 - sobres et rassurants */
+        :root {
+            --primary: #2d5a6f;
+            --secondary: #6fa8a1;
+            --accent: #e8a959;
+            --success: #5fb878;
+            --light-bg: #f8f9fa;
+            --border: #e0e4e8;
+            --text: #2c3e50;
+            --text-light: #556875;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Checklist Section */
+        .checklist-section {
+            background: white;
+            padding: 60px 40px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+        
+        .checklist-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 24px;
+            padding: 16px;
+            border-radius: 6px;
+            background: var(--light-bg);
+            transition: all 0.3s ease;
+        }
+        
+        .checklist-item:hover {
+            background: #f0f4f7;
+        }
+        
+        .checklist-item.checked {
+            background: rgba(95, 184, 120, 0.1);
+            border-left: 4px solid var(--success);
+        }
+        
+        .checkbox-wrapper {
+            flex-shrink: 0;
+            margin-right: 16px;
+            margin-top: 4px;
+        }
+        
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--success);
+        }
+        
+        .checklist-content {
+            flex: 1;
+        }
+        
+        .checklist-content label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text);
+            cursor: pointer;
+            display: block;
+        }
+        
+        .checklist-content p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 4px;
+        }
+        
+        /* Footer Message */
+        .footer-message {
+            background: var(--light-bg);
+            border-left: 4px solid var(--secondary);
+            padding: 24px;
+            margin-bottom: 40px;
+            border-radius: 6px;
+            text-align: center;
+        }
+        
+        .footer-message p {
+            color: var(--text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .footer-message strong {
+            color: var(--primary);
+        }
+        
+        /* CTA Button */
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 16px 48px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: var(--secondary);
+            border-color: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(45, 90, 111, 0.2);
+        }
+        
+        /* Bottom padding */
+        footer {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .checklist-section {
+                padding: 30px 20px;
+            }
+            
+            .checklist-item {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Avant d'acheter, vérifions que c'est pour vous</h1>
+            <p>Une installation réussie commence par une préparation solide. Parcourez cette checklist pour vérifier que vous avez tout en main.</p>
+        </div>
+    </section>
+    
+    <!-- Checklist Section -->
+    <section class="checklist-section">
+        <div class="container">
+            <h2>Checklist prérequis</h2>
+            
+            <form id="checklist-form">
+                <!-- Item 1 -->
+                <div class="checklist-item" id="item-1">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="check-1" class="checkbox">
+                    </div>
+                    <div class="checklist-content">
+                        <label for="check-1">Avez-vous accès au compte de votre plateforme principale ?</label>
+                        <p>Vous devez pouvoir vous connecter à votre compte utilisateur et accéder aux paramètres d'intégration.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 2 -->
+                <div class="checklist-item" id="item-2">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="check-2" class="checkbox">
+                    </div>
+                    <div class="checklist-content">
+                        <label for="check-2">Avez-vous un compte email professionnel actif ?</label>
+                        <p>Un email valide est nécessaire pour créer votre compte et recevoir les notifications d'installation.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="checklist-item" id="item-3">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="check-3" class="checkbox">
+                    </div>
+                    <div class="checklist-content">
+                        <label for="check-3">Disposez-vous de 30 minutes consécutives pour l'installation ?</label>
+                        <p>L'installation et la configuration initiale nécessitent une période ininterrompue pour être complètement guidée.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 4 -->
+                <div class="checklist-item" id="item-4">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="check-4" class="checkbox">
+                    </div>
+                    <div class="checklist-content">
+                        <label for="check-4">Êtes-vous à l'aise avec la copie/collage de configurations ?</label>
+                        <p>Vous aurez besoin de copier des clés API et des tokens. Aucune compétence technique avancée n'est requise.</p>
+                    </div>
+                </div>
+                
+                <!-- Item 5 -->
+                <div class="checklist-item" id="item-5">
+                    <div class="checkbox-wrapper">
+                        <input type="checkbox" id="check-5" class="checkbox">
+                    </div>
+                    <div class="checklist-content">
+                        <label for="check-5">Avez-vous lu la fiche du système qui vous intéresse ?</label>
+                        <p>Consultez la fiche produit pour comprendre les spécificités et les prérequis de votre système.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Footer Message -->
+    <section class="footer-message">
+        <div class="container">
+            <p><strong>Si tout est coché, vous êtes prêt !</strong> Sinon, vous trouverez de l'aide en bas de chaque fiche produit. Notre équipe est aussi à votre disposition pour clarifier vos questions.</p>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <a href="/catalogue.html" class="cta-button">Voir le catalogue</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Le tablia. Tous droits réservés.</p>
+        </div>
+    </footer>
+    
+    <!-- Script for checkbox interactivity -->
+    <script>
+        const checkboxes = document.querySelectorAll('.checkbox');
+        
+        checkboxes.forEach((checkbox) => {
+            checkbox.addEventListener('change', function() {
+                const item = this.closest('.checklist-item');
+                if (this.checked) {
+                    item.classList.add('checked');
+                } else {
+                    item.classList.remove('checked');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

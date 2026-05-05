@@ -1,0 +1,1052 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Comparateur — L'établ'IA</title>
+<meta name="description" content="Comparez deux systèmes forgés côte à côte : prix, durée d'installation, famille, cible et livrable." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/css/letablia.css" />
+<style>
+/* ============================================================
+   COMPARATEUR — styles spécifiques
+   ============================================================ */
+
+/* Hero */
+.cmp-hero {
+  padding: 72px 0 48px;
+  background: var(--lin);
+  border-bottom: 1px solid var(--chene-25);
+}
+.cmp-hero-inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.cmp-hero h1 {
+  margin-top: 18px;
+  margin-bottom: 14px;
+}
+.cmp-hero-sub {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--chene);
+  line-height: 1.5;
+  max-width: 56ch;
+}
+
+/* Section principale */
+.cmp-section {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+/* Barre de contrôles (selects + boutons) */
+.cmp-controls-bar {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  padding: 28px 32px;
+  background: var(--parchemin);
+  border: 1px solid var(--chene-25);
+  border-radius: var(--r-lg);
+}
+.cmp-sel-wrap {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+.cmp-sel-label {
+  display: block;
+  font-family: var(--ff-mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--chene);
+  margin-bottom: 8px;
+}
+.cmp-sel-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  font-weight: 600;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+.cmp-sel-badge-a { background: var(--ebene); color: var(--lin); }
+.cmp-sel-badge-b { background: var(--chene); color: var(--lin); }
+
+.cmp-select {
+  width: 100%;
+  padding: 12px 36px 12px 14px;
+  border: 1.5px solid var(--chene-25);
+  background: var(--lin);
+  font-family: var(--ff-body);
+  font-size: 14px;
+  color: var(--ebene);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%238a7560' stroke-width='1.5'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  transition: border-color .15s, box-shadow .15s;
+}
+.cmp-select:focus {
+  outline: none;
+  border-color: var(--chene);
+  box-shadow: 0 0 0 3px rgba(138,117,96,.15);
+}
+.cmp-select.has-val { border-color: var(--chene); font-weight: 500; }
+
+.cmp-vs-sep {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--chene);
+  padding-bottom: 10px;
+  flex-shrink: 0;
+  user-select: none;
+}
+.cmp-btns {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+  flex-shrink: 0;
+  padding-bottom: 1px;
+}
+.btn-sm {
+  padding: 10px 16px;
+  font-size: 13px;
+}
+
+/* Zone de comparaison */
+.cmp-area {
+  border: 1px solid var(--chene-25);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--parchemin);
+}
+
+/* Placeholder (état vide) */
+.cmp-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 32px;
+  text-align: center;
+  gap: 16px;
+}
+.cmp-placeholder-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: var(--chene-10);
+  border: 1px solid var(--chene-25);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 24px;
+}
+.cmp-placeholder p {
+  font-family: var(--ff-display);
+  font-style: italic;
+  color: var(--chene);
+  font-size: 1.05rem;
+  margin: 0;
+}
+.cmp-placeholder .cmp-placeholder-sub {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--pierre);
+  letter-spacing: .1em;
+  font-style: normal;
+}
+
+/* Grille de comparaison */
+.cmp-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.cmp-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr 1fr;
+  min-width: 520px;
+}
+
+/* En-têtes produits */
+.cmp-th {
+  padding: 20px 24px;
+  border-bottom: 2px solid var(--chene-25);
+  background: var(--lin);
+}
+.cmp-th-spacer {
+  background: var(--parchemin);
+  border-right: 1px solid var(--chene-10);
+  border-bottom: 2px solid var(--chene-25);
+}
+.cmp-th-a { border-right: 1px solid var(--chene-10); }
+.cmp-th-b {}
+
+.cmp-product-name {
+  font-family: var(--ff-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--ebene);
+  line-height: 1.25;
+  margin-bottom: 4px;
+}
+.cmp-product-price-tag {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  color: var(--chene);
+  letter-spacing: .08em;
+}
+
+/* Lignes du tableau */
+.cmp-row-label {
+  padding: 18px 20px 18px 24px;
+  background: var(--parchemin);
+  border-right: 1px solid var(--chene-10);
+  border-bottom: 1px solid var(--chene-10);
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--chene);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.cmp-row-label svg { opacity: .7; flex-shrink: 0; }
+
+.cmp-cell {
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--chene-10);
+  font-size: 14px;
+  color: var(--ebene);
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cmp-cell-a { border-right: 1px solid var(--chene-10); }
+.cmp-cell-b {}
+.cmp-cell-empty { color: var(--pierre); font-style: italic; }
+
+/* Surbrillance comparaison avantageuse */
+.cmp-better {
+  background: rgba(107,124,95,.07);
+  font-weight: 600;
+}
+
+/* Badge famille */
+.fam-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .08em;
+}
+.fam-badge-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Badge target */
+.target-tag {
+  display: inline-block;
+  padding: 3px 9px;
+  border: 1px solid var(--chene-25);
+  border-radius: 99px;
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ebene-80);
+  letter-spacing: .06em;
+}
+
+/* Badge outil */
+.tool-tag {
+  display: inline-block;
+  padding: 3px 9px;
+  background: var(--chene-6);
+  border: 1px solid var(--chene-15);
+  border-radius: var(--r-sm);
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ebene);
+  letter-spacing: .06em;
+}
+
+/* Prix mis en avant */
+.price-val {
+  font-family: var(--ff-mono);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--ebene);
+  letter-spacing: -.01em;
+}
+.price-unit {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  color: var(--chene);
+}
+
+/* Durée install */
+.duree-val {
+  font-family: var(--ff-mono);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Description (blurb) */
+.blurb-val {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ebene-80);
+  line-height: 1.5;
+}
+
+/* Note */
+.note-val {
+  font-family: var(--ff-mono);
+  font-size: 12px;
+  color: var(--pierre);
+}
+
+/* Ligne actions (Voir détail) */
+.cmp-actions-row {
+  background: var(--lin);
+  border-top: 2px solid var(--chene-25);
+}
+.cmp-actions-row .cmp-row-label {
+  background: var(--lin);
+  border-top: none;
+  border-bottom: none;
+}
+.cmp-actions-cell {
+  padding: 20px 24px;
+  display: flex;
+  align-items: center;
+}
+.cmp-actions-cell-a { border-right: 1px solid var(--chene-10); }
+
+/* État vide des colonnes */
+.cmp-col-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  color: var(--pierre);
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  border-bottom: 1px solid var(--chene-10);
+}
+
+/* Responsive — mobile (≤ 660px) */
+@media (max-width: 660px) {
+  .cmp-controls-bar {
+    flex-direction: column;
+    padding: 20px;
+    gap: 14px;
+  }
+  .cmp-vs-sep { display: none; }
+  .cmp-sel-wrap { flex: 1 1 100%; min-width: 0; }
+  .cmp-btns { width: 100%; }
+  .cmp-btns .btn { flex: 1; justify-content: center; }
+
+  /* Mobile cards: les 2 colonnes deviennent des cartes empilées */
+  .cmp-grid {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+  .cmp-th-spacer { display: none; }
+  .cmp-row-label {
+    display: none; /* Les labels sont injectés via data-label sur mobile */
+  }
+  .cmp-th {
+    padding: 16px 18px;
+    border-top: 4px solid var(--chene);
+    border-bottom: 1px solid var(--chene-15);
+  }
+  .cmp-th-a { border-top-color: var(--ebene); order: 1; }
+  .cmp-th-b { border-top-color: var(--chene); order: 3; border-right: none; border-bottom: 2px solid var(--chene-25); margin-top: 16px; }
+
+  /* Réorganisation : toutes les cellules A groupées, puis toutes les B */
+  .cmp-cell-a,
+  .cmp-actions-cell-a {
+    order: 2;
+    border-right: none;
+  }
+  .cmp-cell-b,
+  .cmp-actions-cell { order: 4; }
+  .cmp-actions-row .cmp-row-label { display: none; }
+
+  /* Labels inline sur mobile via data-label */
+  .cmp-cell[data-label]::before {
+    content: attr(data-label);
+    display: block;
+    width: 100%;
+    font-family: var(--ff-mono);
+    font-size: 10px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--chene);
+    margin-bottom: 6px;
+    flex-basis: 100%;
+  }
+  .cmp-actions-cell { padding: 16px 18px; }
+  .cmp-col-empty { padding: 32px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Menu mobile -->
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Overlay recherche -->
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="cmp-hero">
+  <div class="cmp-hero-inner">
+    <div class="breadcrumb">
+      <a href="index.html">Accueil</a>
+      <span class="sep"></span>
+      <a href="catalogue.html">Catalogue</a>
+      <span class="sep"></span>
+      <span class="current">Comparateur</span>
+    </div>
+    <span class="tag-atelier" style="margin-top:32px;display:inline-flex">Outil · Comparateur</span>
+    <h1 style="margin-top:14px">Comparer deux systèmes <em class="editorial">forgés</em></h1>
+    <p class="cmp-hero-sub">
+      Sélectionnez deux produits et confrontez leurs caractéristiques côte à côte — prix, durée d'installation, famille et livrables.
+    </p>
+  </div>
+</section>
+
+<!-- SECTION PRINCIPALE -->
+<section class="cmp-section">
+
+  <!-- Contrôles : selects + boutons -->
+  <div class="cmp-controls-bar" role="form" aria-label="Sélection des produits à comparer">
+    <div class="cmp-sel-wrap">
+      <label class="cmp-sel-label" for="sel-a">
+        <span class="cmp-sel-badge cmp-sel-badge-a" aria-hidden="true">A</span>
+        Premier système
+      </label>
+      <select id="sel-a" class="cmp-select" aria-label="Sélectionner le premier produit">
+        <option value="">— Choisir un système —</option>
+      </select>
+    </div>
+
+    <span class="cmp-vs-sep" aria-hidden="true">vs</span>
+
+    <div class="cmp-sel-wrap">
+      <label class="cmp-sel-label" for="sel-b">
+        <span class="cmp-sel-badge cmp-sel-badge-b" aria-hidden="true">B</span>
+        Second système
+      </label>
+      <select id="sel-b" class="cmp-select" aria-label="Sélectionner le second produit">
+        <option value="">— Choisir un système —</option>
+      </select>
+    </div>
+
+    <div class="cmp-btns">
+      <button class="btn btn-ghost btn-sm" id="btn-reset" type="button" title="Vider les deux sélections">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+        Réinitialiser
+      </button>
+      <button class="btn btn-mousse btn-sm" id="btn-random" type="button" title="Choisir deux systèmes au hasard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l5.1 5.1M4 4l5 5"/></svg>
+        Suggestion aléatoire
+      </button>
+    </div>
+  </div>
+
+  <!-- Zone de comparaison -->
+  <div class="cmp-area" id="cmp-area" aria-live="polite" aria-label="Tableau comparatif">
+
+    <!-- Placeholder affiché tant qu'aucun produit n'est sélectionné -->
+    <div class="cmp-placeholder" id="cmp-placeholder">
+      <div class="cmp-placeholder-icon" aria-hidden="true">⚖</div>
+      <p>Sélectionnez deux systèmes pour les confronter.</p>
+      <span class="cmp-placeholder-sub">17 systèmes disponibles dans l'atelier</span>
+    </div>
+
+    <!-- Grille de comparaison (affichée dès qu'un produit est sélectionné) -->
+    <div class="cmp-table-wrap" id="cmp-table-wrap" hidden>
+      <div class="cmp-grid" id="cmp-grid" role="table" aria-label="Comparaison des systèmes">
+
+        <!-- En-têtes -->
+        <div class="cmp-th-spacer" role="columnheader" aria-label="Critère"></div>
+        <div class="cmp-th cmp-th-a" role="columnheader" id="th-a">
+          <div class="cmp-product-name" id="name-a">Produit A</div>
+          <div class="cmp-product-price-tag" id="ptag-a"></div>
+        </div>
+        <div class="cmp-th cmp-th-b" role="columnheader" id="th-b">
+          <div class="cmp-product-name" id="name-b">Produit B</div>
+          <div class="cmp-product-price-tag" id="ptag-b"></div>
+        </div>
+
+        <!-- Ligne 1 : Prix -->
+        <div class="cmp-row-label" role="rowheader" aria-label="Prix">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+          Prix
+        </div>
+        <div class="cmp-cell cmp-cell-a" role="cell" id="val-a-price" data-label="Prix">
+          <span class="cmp-col-empty">—</span>
+        </div>
+        <div class="cmp-cell cmp-cell-b" role="cell" id="val-b-price" data-label="Prix">
+          <span class="cmp-col-empty">—</span>
+        </div>
+
+        <!-- Ligne 2 : Durée installation -->
+        <div class="cmp-row-label" role="rowheader" aria-label="Durée d'installation">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Installation
+        </div>
+        <div class="cmp-cell cmp-cell-a" role="cell" id="val-a-duree" data-label="Installation">
+          <span class="cmp-col-empty">—</span>
+        </div>
+        <div class="cmp-cell cmp-cell-b" role="cell" id="val-b-duree" data-label="Installation">
+          <span class="cmp-col-empty">—</span>
+        </div>
+
+        <!-- Ligne 3 : Famille -->
+        <div class="cmp-row-label" role="rowheader" aria-label="Famille">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Famille
+        </div>
+        <div class="cmp-cell cmp-cell-a" role="cell" id="val-a-family" data-label="Famille">
+          <span class="cmp-col-empty">—</span>
+        </div>
+        <div class="cmp-cell cmp-cell-b" role="cell" id="val-b-family" data-label="Famille">
+          <span class="cmp-col-empty">—</span>
+        </div>
+
+        <!-- Ligne 4 : Cible -->
+        <div class="cmp-row-label" role="rowheader" aria-label="Cible">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          Cible
+        </div>
+        <div class="cmp-cell cmp-cell-a" role="cell" id="val-a-targets" data-label="Cible">
+          <span class="cmp-col-empty">—</span>
+        </div>
+        <div class="cmp-cell cmp-cell-b" role="cell" id="val-b-targets" data-label="Cible">
+          <span class="cmp-col-empty">—</span>
+        </div>
+
+        <!-- Ligne 5 : Livrable -->
+        <div class="cmp-row-label" role="rowheader" aria-label="Livrable">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          Livrable
+        </div>
+        <div class="cmp-cell cmp-cell-a" role="cell" id="val-a-livrable" data-label="Livrable">
+          <span class="cmp-col-empty">—</span>
+        </div>
+        <div class="cmp-cell cmp-cell-b" role="cell" id="val-b-livrable" data-label="Livrable">
+          <span class="cmp-col-empty">—</span>
+        </div>
+
+        <!-- Ligne 6 : Note -->
+        <div class="cmp-row-label" role="rowheader" aria-label="Note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Note
+        </div>
+        <div class="cmp-cell cmp-cell-a" role="cell" id="val-a-note" data-label="Note">
+          <span class="cmp-col-empty">—</span>
+        </div>
+        <div class="cmp-cell cmp-cell-b" role="cell" id="val-b-note" data-label="Note">
+          <span class="cmp-col-empty">—</span>
+        </div>
+
+        <!-- Ligne actions : Voir détail -->
+        <div class="cmp-row-label cmp-actions-row" role="rowheader" aria-hidden="true" style="border-bottom:none;border-top:2px solid var(--chene-25)"></div>
+        <div class="cmp-actions-cell cmp-actions-cell-a cmp-actions-row" role="cell">
+          <a class="btn btn-ghost btn-sm" id="btn-detail-a" href="#" style="display:none" target="_blank" rel="noopener">
+            Voir le détail
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="cmp-actions-cell cmp-actions-row" role="cell">
+          <a class="btn btn-ghost btn-sm" id="btn-detail-b" href="#" style="display:none" target="_blank" rel="noopener">
+            Voir le détail
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div><!-- /.cmp-grid -->
+    </div><!-- /.cmp-table-wrap -->
+  </div><!-- /.cmp-area -->
+
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (17)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<!-- Scripts communs -->
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+
+<!-- Logique du comparateur -->
+<script>
+(function(){
+  'use strict';
+
+  /* ── Données ──────────────────────────────────────────────── */
+  var products = [];
+
+  /* ── Mappings ─────────────────────────────────────────────── */
+  var DUREE_LABELS = {
+    'lt30':  '< 30 min',
+    '30-60': '30 min – 1 h',
+    'gt60':  '> 1 h'
+  };
+
+  var FAMILY_MAP = {
+    'automatisations':   { label: 'Automatiser', color: 'var(--bronze)' },
+    'automatiser':       { label: 'Automatiser', color: 'var(--bronze)' },
+    'Automatiser':       { label: 'Automatiser', color: 'var(--bronze)' },
+    'vendre':            { label: 'Vendre',       color: 'var(--cuivre)' },
+    'Vendre':            { label: 'Vendre',       color: 'var(--cuivre)' },
+    'tableaux-de-bord':  { label: 'Piloter',      color: 'var(--lapis)'  },
+    'piloter':           { label: 'Piloter',      color: 'var(--lapis)'  },
+    'Piloter':           { label: 'Piloter',      color: 'var(--lapis)'  },
+    'modeles':           { label: 'Produire',     color: 'var(--argile)' },
+    'produire':          { label: 'Produire',     color: 'var(--argile)' },
+    'Produire':          { label: 'Produire',     color: 'var(--argile)' },
+    'guides-formations': { label: 'Sécuriser',    color: 'var(--sauge)'  },
+    'securiser':         { label: 'Sécuriser',    color: 'var(--sauge)'  },
+    'Sécuriser':         { label: 'Sécuriser',    color: 'var(--sauge)'  },
+    'Productivité':      { label: 'Productivité', color: 'var(--pierre)' },
+    'productivite':      { label: 'Productivité', color: 'var(--pierre)' }
+  };
+
+  /* Livrable selon famille */
+  var LIVRABLE_MAP = {
+    'automatisations':   'Flux d\'automatisation',
+    'automatiser':       'Flux d\'automatisation',
+    'Automatiser':       'Flux d\'automatisation',
+    'vendre':            'Séquence commerciale',
+    'Vendre':            'Séquence commerciale',
+    'tableaux-de-bord':  'Dashboard interactif',
+    'piloter':           'Rapport / Dashboard',
+    'Piloter':           'Rapport / Dashboard',
+    'modeles':           'Modèle prêt à l\'emploi',
+    'produire':          'Modèle prêt à l\'emploi',
+    'Produire':          'Modèle prêt à l\'emploi',
+    'guides-formations': 'Pack de guides',
+    'securiser':         'Guides & audit',
+    'Sécuriser':         'Guides & audit',
+    'Productivité':      'Système de rappels',
+    'productivite':      'Système de rappels'
+  };
+
+  /* Cible — slug → label lisible */
+  var TARGET_LABELS = {
+    'e-commerce':     'E-commerce',
+    'freelance':      'Freelance',
+    'agence':         'Agence',
+    'formateur':      'Formateur',
+    'tpe-generaliste':'TPE généraliste',
+    'artisan':        'Artisan',
+    // labels déjà lisibles (nouveaux produits)
+    'E-commerçant':   'E-commerçant',
+    'Freelance':      'Freelance',
+    'TPE':            'TPE',
+    'Artisan':        'Artisan',
+    'Indépendant':    'Indépendant',
+    'Agence':         'Agence',
+    'Formateur':      'Formateur',
+    'Comptable':      'Comptable'
+  };
+
+  /* ── Helpers HTML ─────────────────────────────────────────── */
+  function h(str){
+    return String(str)
+      .replace(/&/g,'&amp;')
+      .replace(/</g,'&lt;')
+      .replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;');
+  }
+
+  function getFamily(fam){
+    return FAMILY_MAP[fam] || { label: (fam||'—'), color:'var(--pierre)' };
+  }
+
+  function formatDuree(d){
+    return DUREE_LABELS[d] || d || '—';
+  }
+
+  function formatTarget(t){
+    return TARGET_LABELS[t] || (t ? (t.charAt(0).toUpperCase()+t.slice(1)) : t);
+  }
+
+  function formatTool(t){
+    /* Certains outils sont déjà des labels lisibles */
+    return t || '';
+  }
+
+  function getLivrable(p){
+    return LIVRABLE_MAP[p.family] || p.family || '—';
+  }
+
+  /* ── Population des selects ───────────────────────────────── */
+  function buildOptions(products, excludeSlug){
+    var html = '<option value="">— Choisir un système —</option>';
+    /* Regroupement par famille */
+    var groups = {};
+    products.forEach(function(p){
+      var fam = getFamily(p.family).label;
+      if(!groups[fam]) groups[fam] = [];
+      groups[fam].push(p);
+    });
+    Object.keys(groups).sort().forEach(function(famLabel){
+      html += '<optgroup label="' + h(famLabel) + '">';
+      groups[famLabel].forEach(function(p){
+        var disabled = (p.slug === excludeSlug) ? ' disabled' : '';
+        html += '<option value="' + h(p.slug) + '"' + disabled + '>' + h(p.title) + ' — ' + p.price + ' €</option>';
+      });
+      html += '</optgroup>';
+    });
+    return html;
+  }
+
+  function refreshOptions(){
+    var slugA = selA.value;
+    var slugB = selB.value;
+    selA.innerHTML = buildOptions(products, slugB);
+    selB.innerHTML = buildOptions(products, slugA);
+    selA.value = slugA;
+    selB.value = slugB;
+    selA.classList.toggle('has-val', !!slugA);
+    selB.classList.toggle('has-val', !!slugB);
+  }
+
+  /* ── Rendu d'une colonne ──────────────────────────────────── */
+  function renderColumn(side, product){
+    var prefix = side; /* 'a' ou 'b' */
+
+    /* En-tête */
+    var nameEl   = document.getElementById('name-'  + prefix);
+    var ptagEl   = document.getElementById('ptag-'  + prefix);
+    var detailEl = document.getElementById('btn-detail-' + prefix);
+
+    if(!product){
+      if(nameEl)   nameEl.textContent  = (side === 'a') ? 'Produit A' : 'Produit B';
+      if(ptagEl)   ptagEl.textContent  = '';
+      if(detailEl) detailEl.style.display = 'none';
+      /* Cellules vides */
+      ['price','duree','family','targets','livrable','note'].forEach(function(f){
+        var el = document.getElementById('val-' + prefix + '-' + f);
+        if(el) el.innerHTML = '<span class="cmp-col-empty">—</span>';
+      });
+      return;
+    }
+
+    /* Nom et prix */
+    if(nameEl)  nameEl.textContent = product.title;
+    if(ptagEl)  ptagEl.textContent = product.price + ' € · paiement unique';
+
+    /* Lien Voir détail */
+    if(detailEl){
+      detailEl.href = product.url;
+      detailEl.style.display = '';
+    }
+
+    /* Prix */
+    var priceEl = document.getElementById('val-' + prefix + '-price');
+    if(priceEl){
+      priceEl.innerHTML =
+        '<span class="price-val">' + product.price + '</span>' +
+        '<span class="price-unit">&nbsp;€</span>';
+    }
+
+    /* Durée */
+    var dureeEl = document.getElementById('val-' + prefix + '-duree');
+    if(dureeEl){
+      dureeEl.innerHTML = '<span class="duree-val">' + h(formatDuree(product.duree_install)) + '</span>';
+    }
+
+    /* Famille */
+    var famEl = document.getElementById('val-' + prefix + '-family');
+    if(famEl){
+      var fam = getFamily(product.family);
+      famEl.innerHTML =
+        '<span class="fam-badge" style="background:' + fam.color + '22;color:' + fam.color + ';border:1px solid ' + fam.color + '44">' +
+          '<span class="fam-badge-dot" style="background:' + fam.color + '"></span>' +
+          h(fam.label) +
+        '</span>';
+    }
+
+    /* Cible */
+    var targetsEl = document.getElementById('val-' + prefix + '-targets');
+    if(targetsEl){
+      var targets = product.targets || [];
+      if(targets.length === 0){
+        targetsEl.innerHTML = '<span class="cmp-col-empty">—</span>';
+      } else {
+        targetsEl.innerHTML = targets.map(function(t){
+          return '<span class="target-tag">' + h(formatTarget(t)) + '</span>';
+        }).join(' ');
+      }
+    }
+
+    /* Livrable */
+    var livrableEl = document.getElementById('val-' + prefix + '-livrable');
+    if(livrableEl){
+      var livrableStr = getLivrable(product);
+      var tools = product.tools || [];
+      var toolsHtml = tools.length > 0
+        ? '<br><span style="display:flex;flex-wrap:wrap;gap:4px;margin-top:8px">' +
+          tools.map(function(t){ return '<span class="tool-tag">' + h(formatTool(t)) + '</span>'; }).join('') +
+          '</span>'
+        : '';
+      livrableEl.innerHTML =
+        '<span style="font-weight:500;color:var(--ebene)">' + h(livrableStr) + '</span>' + toolsHtml;
+    }
+
+    /* Note (non disponible dans ce jeu de données) */
+    var noteEl = document.getElementById('val-' + prefix + '-note');
+    if(noteEl){
+      var note = product.note || product.rating || null;
+      if(note){
+        var stars = Math.round(note);
+        var starsHtml = '';
+        for(var i = 1; i <= 5; i++){
+          starsHtml += '<span style="color:' + (i <= stars ? 'var(--chene)' : 'var(--pierre)') + ';font-size:14px">★</span>';
+        }
+        noteEl.innerHTML = starsHtml + '<span class="price-unit" style="margin-left:6px">' + note + '/5</span>';
+      } else {
+        noteEl.innerHTML = '<span class="note-val">Non disponible</span>';
+      }
+    }
+  }
+
+  /* ── Comparaison des prix (mise en évidence) ──────────────── */
+  function highlightBetter(){
+    var pA = document.getElementById('val-a-price');
+    var pB = document.getElementById('val-b-price');
+    var prodA = getProduct(selA.value);
+    var prodB = getProduct(selB.value);
+    if(!prodA || !prodB) return;
+
+    pA.classList.remove('cmp-better');
+    pB.classList.remove('cmp-better');
+
+    if(prodA.price < prodB.price)      pA.classList.add('cmp-better');
+    else if(prodB.price < prodA.price) pB.classList.add('cmp-better');
+  }
+
+  /* ── Affichage/masquage du placeholder ───────────────────── */
+  function updateVisibility(){
+    var hasAny = selA.value || selB.value;
+    placeholder.hidden = !!hasAny;
+    tableWrap.hidden   = !hasAny;
+  }
+
+  /* ── Produit par slug ─────────────────────────────────────── */
+  function getProduct(slug){
+    if(!slug) return null;
+    for(var i = 0; i < products.length; i++){
+      if(products[i].slug === slug) return products[i];
+    }
+    return null;
+  }
+
+  /* ── Mise à jour complète ─────────────────────────────────── */
+  function update(){
+    updateVisibility();
+    refreshOptions();
+    renderColumn('a', getProduct(selA.value));
+    renderColumn('b', getProduct(selB.value));
+    highlightBetter();
+  }
+
+  /* ── Éléments DOM ─────────────────────────────────────────── */
+  var selA       = document.getElementById('sel-a');
+  var selB       = document.getElementById('sel-b');
+  var btnReset   = document.getElementById('btn-reset');
+  var btnRandom  = document.getElementById('btn-random');
+  var placeholder= document.getElementById('cmp-placeholder');
+  var tableWrap  = document.getElementById('cmp-table-wrap');
+
+  /* ── Événements ───────────────────────────────────────────── */
+  selA.addEventListener('change', function(){ update(); });
+  selB.addEventListener('change', function(){ update(); });
+
+  btnReset.addEventListener('click', function(){
+    selA.value = '';
+    selB.value = '';
+    update();
+  });
+
+  btnRandom.addEventListener('click', function(){
+    if(products.length < 2) return;
+    var idx = [];
+    while(idx.length < 2){
+      var r = Math.floor(Math.random() * products.length);
+      if(idx.indexOf(r) === -1) idx.push(r);
+    }
+    selA.value = products[idx[0]].slug;
+    selB.value = products[idx[1]].slug;
+    update();
+  });
+
+  /* ── Chargement des données ───────────────────────────────── */
+  fetch('assets/data/products.json')
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      products = data.products || [];
+      selA.innerHTML = buildOptions(products, '');
+      selB.innerHTML = buildOptions(products, '');
+      /* Paramètres URL optionnels : ?a=slug-a&b=slug-b */
+      var params = new URLSearchParams(window.location.search);
+      if(params.get('a') && params.get('b')){
+        selA.value = params.get('a');
+        selB.value = params.get('b');
+        update();
+      } else {
+        updateVisibility();
+      }
+    })
+    .catch(function(err){
+      console.error('[Comparateur] Erreur chargement products.json :', err);
+      placeholder.innerHTML =
+        '<div class="cmp-placeholder-icon">⚠</div>' +
+        '<p>Impossible de charger les produits.</p>' +
+        '<span class="cmp-placeholder-sub">Vérifiez la console pour plus de détails.</span>';
+    });
+
+})();
+</script>
+
+</body>
+</html>
