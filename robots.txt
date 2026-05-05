@@ -1,0 +1,15 @@
+# Robots.txt for letablia.fr
+
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.bak/
+Disallow: /.backup/
+Disallow: /assets/data/
+
+# Crawl delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://letablia.fr/sitemap.xml

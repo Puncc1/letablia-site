@@ -45,6 +45,7 @@
         "messagerie-instantanee"
       ],
       "price": 9,
+      "duree_install": "lt30",
       "targets": [
         "e-commerce"
       ],
@@ -63,6 +64,7 @@
         "messagerie-instantanee"
       ],
       "price": 29,
+      "duree_install": "30-60",
       "targets": [
         "e-commerce"
       ],
@@ -81,6 +83,7 @@
         "tableur"
       ],
       "price": 29,
+      "duree_install": "30-60",
       "targets": [
         "e-commerce",
         "formateur"
@@ -99,6 +102,7 @@
         "service-emailing"
       ],
       "price": 29,
+      "duree_install": "lt30",
       "targets": [
         "e-commerce"
       ],
@@ -115,6 +119,7 @@
         "document-imprimable"
       ],
       "price": 39,
+      "duree_install": "lt30",
       "targets": [
         "freelance",
         "tpe-generaliste"
@@ -133,6 +138,7 @@
         "messagerie-electronique"
       ],
       "price": 49,
+      "duree_install": "30-60",
       "targets": [
         "freelance",
         "agence"
@@ -150,6 +156,7 @@
         "application-prise-de-note"
       ],
       "price": 49,
+      "duree_install": "30-60",
       "targets": [
         "freelance",
         "agence"
@@ -167,6 +174,7 @@
         "tableur"
       ],
       "price": 39,
+      "duree_install": "30-60",
       "targets": [
         "tpe-generaliste"
       ],
@@ -183,6 +191,7 @@
         "document-imprimable"
       ],
       "price": 39,
+      "duree_install": "lt30",
       "targets": [
         "tpe-generaliste"
       ],
@@ -199,6 +208,7 @@
         "document-imprimable"
       ],
       "price": 39,
+      "duree_install": "lt30",
       "targets": [
         "tpe-generaliste",
         "freelance"
@@ -216,6 +226,7 @@
         "messagerie-electronique"
       ],
       "price": 39,
+      "duree_install": "30-60",
       "targets": [
         "freelance",
         "tpe-generaliste"
@@ -235,6 +246,7 @@
         "Email"
       ],
       "price": 29,
+      "duree_install": "gt60",
       "targets": [
         "TPE",
         "Freelance",
@@ -260,6 +272,7 @@
         "Tableur"
       ],
       "price": 19,
+      "duree_install": "lt30",
       "targets": [
         "Freelance",
         "Artisan",
@@ -285,6 +298,7 @@
         "Sources métier"
       ],
       "price": 39,
+      "duree_install": "30-60",
       "targets": [
         "E-commerçant",
         "Freelance",
@@ -310,6 +324,7 @@
         "Calendrier"
       ],
       "price": 39,
+      "duree_install": "30-60",
       "targets": [
         "Freelance",
         "Agence",
@@ -336,6 +351,7 @@
         "Plateforme e-commerce"
       ],
       "price": 39,
+      "duree_install": "30-60",
       "targets": [
         "E-commerçant",
         "Formateur",
@@ -362,6 +378,7 @@
         "Vérification"
       ],
       "price": 39,
+      "duree_install": "30-60",
       "targets": [
         "TPE",
         "E-commerçant",

@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cas d'usage Freelance — L'établ'IA</title>
+<meta name="description" content="Cas d'usage type : comment un freelance a repris le contrôle de son temps administratif avec trois systèmes forgés de L'établ'IA."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/>
+<link rel="stylesheet" href="assets/css/search.css"/>
+<style>
+.avant-apres-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.avant-apres-grid{grid-template-columns:1fr}}
+.aa-card{border-radius:var(--r-md);padding:32px 28px;position:relative}
+.aa-avant{background:var(--parchemin);border:1.5px solid rgba(180,60,60,0.2)}
+.aa-apres{background:var(--parchemin);border:1.5px solid rgba(107,124,95,0.35)}
+.aa-label{font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:99px;display:inline-block;margin-bottom:18px}
+.aa-avant .aa-label{background:rgba(180,60,60,0.08);color:#b43c3c}
+.aa-apres .aa-label{background:var(--mousse-10);color:var(--mousse)}
+.aa-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.aa-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;line-height:1.5;color:var(--ebene)}
+.aa-list li::before{content:"";display:inline-block;min-width:18px;height:18px;border-radius:50%;margin-top:2px}
+.aa-avant .aa-list li::before{background:rgba(180,60,60,0.15);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23b43c3c' stroke-width='2.5'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E")}
+.aa-apres .aa-list li::before{background:rgba(107,124,95,0.15);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236B7C5F' stroke-width='2.5'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E")}
+.roi-table{width:100%;border-collapse:collapse;font-size:14px}
+.roi-table th{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);padding:10px 14px;text-align:left;border-bottom:2px solid var(--chene-25)}
+.roi-table td{padding:12px 14px;border-bottom:1px solid var(--chene-15);vertical-align:top}
+.roi-table tr:last-child td{border-bottom:none;font-weight:700;background:var(--kraft);font-family:var(--ff-mono)}
+.roi-num{font-family:var(--ff-mono);font-weight:600;color:var(--mousse)}
+.roi-num-old{font-family:var(--ff-mono);color:rgba(180,60,60,0.75);text-decoration:line-through}
+.disclaimer-box{background:var(--kraft);border:1px dashed var(--chene-25);border-radius:var(--r-md);padding:16px 20px;font-size:12.5px;color:var(--ebene-80);font-family:var(--ff-mono);letter-spacing:.02em}
+.persona-banner{background:var(--ebene);padding:18px 0}
+.persona-banner-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.persona-btn{padding:10px 20px;border-radius:99px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.15s}
+.persona-btn-active{background:var(--chene);color:var(--lin)}
+.persona-btn-ghost{background:transparent;border:1px solid rgba(242,237,232,0.25);color:var(--lin)}
+.persona-btn-ghost:hover{border-color:var(--lin)}
+.persona-label{font-family:var(--ff-mono);font-size:11px;color:var(--pierre);letter-spacing:.12em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..."/>
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Bandeau persona -->
+<div class="persona-banner">
+  <div class="persona-banner-inner">
+    <span class="persona-label">Vous êtes ?</span>
+    <a href="cas-usage-ecom.html" class="persona-btn persona-btn-ghost">E-commerce</a>
+    <a href="cas-usage-freelance.html" class="persona-btn persona-btn-active">Freelance</a>
+    <a href="cas-usage-tpe.html" class="persona-btn persona-btn-ghost">TPE / Artisan</a>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section style="padding:72px 0 48px;background:var(--lin);border-bottom:1px solid var(--chene-25)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <a href="catalogue.html">Catalogue</a> <span class="sep"></span> <span class="current">Cas d'usage Freelance</span></div>
+    <div style="max-width:760px;margin-top:40px" data-reveal>
+      <span class="tag-atelier">Cas d'usage · Freelance solo francophone</span>
+      <h1 style="margin-top:18px">Freelance :<br><em class="editorial">facturer plus</em>,<br>administrer moins.</h1>
+      <p style="margin-top:24px;font-size:1.1rem;color:var(--ebene-80);max-width:560px;line-height:1.65">Comment un consultant indépendant a récupéré <strong>13 heures par mois</strong> d'administration pour les reverser dans des missions à 600 €/j.</p>
+      <div class="disclaimer-box" style="margin-top:28px;max-width:520px">
+        ⚠ Cas type — pas un client réel. Chiffres indicatifs, adaptez à votre situation.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANT / APRÈS -->
+<section style="padding:80px 0;background:var(--lin)">
+  <div class="container">
+
+    <!-- Persona -->
+    <div style="margin-bottom:48px" data-reveal>
+      <span class="tag-atelier">Le profil type</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.6rem,2.8vw,2.2rem)">Un expert qui administre<br><em class="editorial">plus qu'il ne livre</em>.</h2>
+      <p style="margin-top:16px;color:var(--ebene-80);max-width:620px;font-size:15px;line-height:1.7">Persona : Thomas, consultant ou prestataire de service freelance. 6 à 15 clients actifs en simultané. CA entre 3 500 et 9 000 €/mois. Secteur : web, communication, conseil, formation ou service BtoB. Travaille seul, parfois avec 1 sous-traitant ponctuel.</p>
+    </div>
+
+    <div class="avant-apres-grid">
+      <!-- AVANT -->
+      <div class="aa-card aa-avant" data-reveal>
+        <span class="aa-label">Avant</span>
+        <h3 style="font-size:1.2rem;margin-bottom:20px">La boîte email déborde, les prospects attendent</h3>
+        <ul class="aa-list">
+          <li>Boîte e-mail : 140 mails non lus au lundi matin — 1h30 passée à trier avant de pouvoir travailler</li>
+          <li>Relances prospects faites «&nbsp;quand on y pense&nbsp;» — 3 devis sur 10 n'ont jamais reçu de suivi, 2 missions perdues sans s'en rendre compte</li>
+          <li>Suivi clients éparpillé entre WhatsApp, e-mail, Notion et une feuille Excel — impossible de savoir d'un coup d'œil qui doit quoi à qui</li>
+          <li>Notes de frais accumulées en fin de trimestre — 2h de reconstitution douloureuse, erreurs fréquentes, pièces perdues</li>
+          <li>Relances de factures impayées faites à la main, avec culpabilité — 15 jours de retard en moyenne par client</li>
+        </ul>
+        <div style="margin-top:24px;padding:14px;background:rgba(180,60,60,0.06);border-radius:var(--r-sm);font-size:13px;color:#b43c3c;font-family:var(--ff-mono)">
+          ⏱ Estimé : ~15 h/mois en gestion administrative chronophage
+        </div>
+      </div>
+
+      <!-- APRÈS -->
+      <div class="aa-card aa-apres" data-reveal data-reveal-delay="1">
+        <span class="aa-label">Après · 3 systèmes installés</span>
+        <h3 style="font-size:1.2rem;margin-bottom:20px">Thomas pilote, les systèmes relancent</h3>
+        <ul class="aa-list">
+          <li><strong>Agent Tri Email</strong> : chaque e-mail entrant est classé automatiquement (urgent / client / prospect / admin) — inbox zéro atteint en 20 min le lundi matin</li>
+          <li><strong>Relance Prospects</strong> : tout devis envoyé déclenche une séquence de 3 relances espacées (J+3, J+7, J+14) — taux de transformation devis → mission passé de 28 % à 41 %</li>
+          <li><strong>Mini CRM Prestataire</strong> : tableau de bord Notion/tableur — en 5 sec, Thomas voit l'état de chaque relation client, les factures en attente, les jalons à venir</li>
+          <li>Chasseur de Notes de Frais : chaque reçu photographié est capturé et catégorisé automatiquement — fin de trimestre réduite à 25 min de vérification</li>
+          <li>Relances de factures planifiées et envoyées automatiquement à J+8 et J+15 — délai moyen de paiement passé de 32 jours à 19 jours</li>
+        </ul>
+        <div style="margin-top:24px;padding:14px;background:rgba(107,124,95,0.08);border-radius:var(--r-sm);font-size:13px;color:var(--mousse);font-family:var(--ff-mono)">
+          ⏱ Résiduel : ~2 h/mois — les 13 h restantes, c'est du chiffre d'affaires possible
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TABLEAU ROI -->
+<section style="padding:80px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div style="margin-bottom:40px" data-reveal>
+      <span class="tag-atelier">Tableau ROI estimé · cas type</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.6rem,2.8vw,2.2rem)">Chaque heure <em class="editorial">libérée</em> vaut plus.</h2>
+      <p style="margin-top:12px;color:var(--ebene-80);font-size:14px">Base de calcul : valeur temps à 75 €/h (TJM de 600 €/j). Adaptez selon votre tarif réel.</p>
+    </div>
+
+    <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);overflow:hidden;max-width:820px" data-reveal>
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th style="width:38%">Tâche récurrente</th>
+            <th>Avant</th>
+            <th>Après</th>
+            <th>Économie/mois</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tri et priorisation e-mails</td>
+            <td><span class="roi-num-old">6 h/mois</span></td>
+            <td><span class="roi-num">45 min</span></td>
+            <td><span class="roi-num">~394 €</span></td>
+          </tr>
+          <tr>
+            <td>Relances prospects manuelles</td>
+            <td><span class="roi-num-old">4 h/mois</span></td>
+            <td><span class="roi-num">0 min</span></td>
+            <td><span class="roi-num">~300 €</span></td>
+          </tr>
+          <tr>
+            <td>Mise à jour CRM / suivi clients</td>
+            <td><span class="roi-num-old">3 h/mois</span></td>
+            <td><span class="roi-num">30 min</span></td>
+            <td><span class="roi-num">~188 €</span></td>
+          </tr>
+          <tr>
+            <td>Notes de frais / facturation</td>
+            <td><span class="roi-num-old">2 h/mois</span></td>
+            <td><span class="roi-num">25 min</span></td>
+            <td><span class="roi-num">~119 €</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--ff-mono);letter-spacing:.04em">TOTAL ESTIMÉ</td>
+            <td><span class="roi-num-old">15 h/mois</span></td>
+            <td><span class="roi-num">~2 h/mois</span></td>
+            <td><span class="roi-num" style="font-size:1.1em;color:var(--mousse)">~1 001 €/mois</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:20px;background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:16px 20px;max-width:820px;font-size:13.5px;line-height:1.6;color:var(--ebene-80)" data-reveal>
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--chene)">Bonus missions supplémentaires</strong><br>
+      13 heures libérées × 75 €/h = 975 € de capacité facturable potentielle/mois. Même en n'en récupérant que 30 %, c'est 3 demi-journées de mission en plus.
+    </div>
+
+    <div style="margin-top:32px;display:flex;gap:24px;flex-wrap:wrap" data-reveal>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 24px;flex:1;min-width:200px">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:8px">Investissement systèmes</div>
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;line-height:1">137 €</div>
+        <div style="font-size:12px;color:var(--ebene-80);margin-top:4px">paiement unique · 3 systèmes</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 24px;flex:1;min-width:200px">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:8px">Retour sur investissement</div>
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;line-height:1;color:var(--mousse)">Semaine 2</div>
+        <div style="font-size:12px;color:var(--ebene-80);margin-top:4px">amorti en moins de 15 jours</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 24px;flex:1;min-width:200px">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:8px">Temps d'installation</div>
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;line-height:1">3–5 h</div>
+        <div style="font-size:12px;color:var(--ebene-80);margin-top:4px">avec les guides fournis</div>
+      </div>
+    </div>
+
+    <div class="disclaimer-box" style="margin-top:28px;max-width:740px">
+      ℹ Cas type — pas un client réel. Les chiffres sont indicatifs et basés sur des estimations de temps standard pour un freelance à 6–12 clients actifs. Vos gains réels dépendent de votre volume de prospects, de votre TJM et de votre organisation actuelle. Anonymisation ADR-014 : aucun nom d'entreprise ou de personne réelle n'est utilisé.
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto;text-align:center" data-reveal>
+      <span class="tag-atelier">Systèmes recommandés · Freelance</span>
+      <h2 style="margin-top:18px;font-size:clamp(1.8rem,3vw,2.4rem)">Voir les systèmes<br><em class="editorial">forgés pour ce cas</em>.</h2>
+      <p style="margin-top:18px;color:var(--ebene-80);font-size:15px;line-height:1.65;max-width:520px;margin-left:auto;margin-right:auto">Conçus pour les indépendants qui veulent travailler sur leur métier, pas sur leur administration. Paiement unique, pas d'abonnement, installation guidée.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:36px">
+        <a class="btn btn-primary" href="produits/produit-mini-crm-notion.html" style="gap:8px">
+          Mini CRM Prestataire <span style="font-family:var(--ff-mono);font-size:11px;opacity:.7">49 €</span>
+        </a>
+        <a class="btn btn-ghost" href="produits/produit-relance-prospects.html" style="gap:8px">
+          Relance Prospects <span style="font-family:var(--ff-mono);font-size:11px;opacity:.6">49 €</span>
+        </a>
+        <a class="btn btn-ghost" href="produits/produit-agent-tri-email.html" style="gap:8px">
+          Agent Tri Email <span style="font-family:var(--ff-mono);font-size:11px;opacity:.6">39 €</span>
+        </a>
+      </div>
+      <div style="margin-top:24px">
+        <a href="packs-freelance.html" style="font-family:var(--ff-mono);font-size:12px;color:var(--chene);letter-spacing:.06em;text-decoration:none;border-bottom:1px dashed var(--chene);padding-bottom:2px">
+          → Ou prenez les 3 en Pack Freelance Solo à 119 € (économie 18 €)
+        </a>
+      </div>
+      <div style="margin-top:36px;padding-top:36px;border-top:1px dashed var(--chene-25)">
+        <p style="font-size:14px;color:var(--ebene-80);margin-bottom:16px">Pas sûr(e) des systèmes qui vous correspondent ?</p>
+        <a class="btn btn-mousse" href="diagnostic.html">Faire le diagnostic gratuit (2 min)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTRES PERSONAS -->
+<section style="padding:60px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:36px" data-reveal>
+      <span class="tag-atelier">Autres profils</span>
+      <h2 style="margin-top:14px;font-size:1.6rem">Ce n'est pas votre <em class="editorial">cas</em> ?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:640px;margin:0 auto" class="avant-apres-grid">
+      <a href="cas-usage-ecom.html" style="display:block;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:24px;text-decoration:none;color:inherit;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(138,117,96,0.15)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:10px">Cas d'usage</div>
+        <h3 style="font-size:1.1rem;margin-bottom:8px">E-commerce</h3>
+        <p style="font-size:13.5px;color:var(--ebene-80);line-height:1.5;margin:0">Surveiller le stock, automatiser le post-achat, éviter les litiges. Sans passer ses nuits dessus.</p>
+        <div style="margin-top:16px;font-family:var(--ff-mono);font-size:11px;color:var(--chene)">Voir le cas →</div>
+      </a>
+      <a href="cas-usage-tpe.html" style="display:block;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:24px;text-decoration:none;color:inherit;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(138,117,96,0.15)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:10px">Cas d'usage</div>
+        <h3 style="font-size:1.1rem;margin-bottom:8px">TPE / Artisan</h3>
+        <p style="font-size:13.5px;color:var(--ebene-80);line-height:1.5;margin:0">Piloter son activité, surveiller ses délais, comprendre sa trésorerie. Chaque lundi matin.</p>
+        <div style="margin-top:16px;font-family:var(--ff-mono);font-size:11px;color:var(--chene)">Voir le cas →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+<script src="assets/js/letablia.js"></script>
+</body>
+</html>

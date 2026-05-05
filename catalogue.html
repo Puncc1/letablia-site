@@ -23,6 +23,34 @@
 .chip.active{background:var(--ebene);color:var(--lin);border-color:var(--ebene)}
 .chip.active .fam-dot{filter:brightness(1.3)}
 @media (max-width:880px){.cat-head{grid-template-columns:1fr !important}.packs-grid{grid-template-columns:1fr !important}}
+/* ── Filtres avancés ── */
+.adv-select{
+  padding:8px 28px 8px 12px;
+  border:1px solid var(--chene-25);
+  background:var(--parchemin);
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.08em;
+  color:var(--ebene);border-radius:4px;cursor:pointer;
+  transition:border-color .15s,background .15s;
+  appearance:none;-webkit-appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none' stroke='%23888' stroke-width='1.5'%3E%3Cpath d='M1 1l4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 10px center;
+}
+.adv-select:focus{outline:2px solid var(--chene);outline-offset:1px;border-color:var(--chene);}
+.adv-select.filter-on{border-color:var(--chene);background:var(--chene-10);font-weight:600;}
+.adv-reset{
+  padding:8px 14px;border:1px solid transparent;
+  background:transparent;cursor:pointer;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.08em;
+  color:var(--chene);border-radius:4px;
+  transition:all .15s;opacity:.35;pointer-events:none;
+}
+.adv-reset.active{opacity:1;pointer-events:auto;border-color:var(--chene-25);background:var(--chene-10);}
+.no-results-msg{
+  display:none;text-align:center;padding:60px 20px;
+  color:var(--ebene-80);font-family:var(--ff-display);font-style:italic;font-size:1.1rem;
+  grid-column:1/-1;
+}
+@media(max-width:660px){.adv-filters-left{flex-direction:column !important;align-items:stretch !important}.adv-select,.adv-reset{width:100%;}}
 </style>
 </head>
 <body>
@@ -88,6 +116,17 @@
 
 <main>
 
+<!-- Bandeau persona — cas d'usage -->
+<div style="background:var(--ebene);padding:18px 0">
+  <div style="display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;max-width:var(--maxw);margin:0 auto;padding:0 24px">
+    <span style="font-family:var(--ff-mono);font-size:11px;color:var(--pierre);letter-spacing:.12em;text-transform:uppercase">Vous êtes ?</span>
+    <a href="cas-usage-ecom.html" style="padding:10px 20px;border-radius:99px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;border:1px solid rgba(242,237,232,0.25);color:var(--lin);transition:.15s" onmouseover="this.style.borderColor='var(--lin)'" onmouseout="this.style.borderColor='rgba(242,237,232,0.25)'">E-commerce</a>
+    <a href="cas-usage-freelance.html" style="padding:10px 20px;border-radius:99px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;border:1px solid rgba(242,237,232,0.25);color:var(--lin);transition:.15s" onmouseover="this.style.borderColor='var(--lin)'" onmouseout="this.style.borderColor='rgba(242,237,232,0.25)'">Freelance</a>
+    <a href="cas-usage-tpe.html" style="padding:10px 20px;border-radius:99px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;background:transparent;border:1px solid rgba(242,237,232,0.25);color:var(--lin);transition:.15s" onmouseover="this.style.borderColor='var(--lin)'" onmouseout="this.style.borderColor='rgba(242,237,232,0.25)'">TPE / Artisan</a>
+    <span style="font-family:var(--ff-mono);font-size:10px;color:var(--pierre);letter-spacing:.08em;opacity:.7">→ Voir les cas d'usage Avant/Après</span>
+  </div>
+</div>
+
 <section class="catalogue-hero" style="padding:80px 0 40px;background:var(--lin);border-bottom:1px solid var(--chene-25)">
   <div class="container">
     <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Catalogue</span></div>
@@ -108,13 +147,38 @@
 <!-- Filtres -->
 <section class="catalogue-filters" style="padding:32px 0;background:var(--parchemin);border-bottom:1px solid var(--chene-25);position:sticky;top:76px;z-index:20" data-reveal>
   <div class="container">
-    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:space-between">
-      <div style="display:flex;gap:8px;flex-wrap:wrap" data-filter-group="family">
-        <button class="chip active" data-filter="all">Toutes les familles</button>
-        <button class="chip" data-filter="automatisations"><span class="fam-dot fam-automatiser" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--bronze)"></span>Automatiser</button><button class="chip" data-filter="vendre"><span class="fam-dot fam-vendre" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--cuivre)"></span>Vendre</button><button class="chip" data-filter="tableaux-de-bord"><span class="fam-dot fam-piloter" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--lapis)"></span>Piloter</button><button class="chip" data-filter="modeles"><span class="fam-dot fam-produire" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--argile)"></span>Produire</button><button class="chip" data-filter="guides-formations"><span class="fam-dot fam-securiser" style="width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:var(--sauge)"></span>Sécuriser</button>
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between">
+      <!-- Filtres avancés -->
+      <div class="adv-filters-left" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+        <!-- Filtre 1 : Budget -->
+        <select id="filter-budget" class="adv-select" aria-label="Filtrer par budget">
+          <option value="all">Budget : tous</option>
+          <option value="low">≤ 20€</option>
+          <option value="mid">20 – 40€</option>
+          <option value="high">40€+</option>
+        </select>
+        <!-- Filtre 2 : Famille -->
+        <select id="filter-family" class="adv-select" aria-label="Filtrer par famille">
+          <option value="all">Famille : toutes</option>
+          <option value="automatiser">Automatiser</option>
+          <option value="piloter">Piloter</option>
+          <option value="securiser">Sécuriser</option>
+          <option value="vendre">Vendre</option>
+          <option value="produire">Produire</option>
+          <option value="productivite">Productivité</option>
+        </select>
+        <!-- Filtre 3 : Durée installation -->
+        <select id="filter-duree" class="adv-select" aria-label="Filtrer par durée d'installation">
+          <option value="all">Installation : toutes</option>
+          <option value="lt30">&lt; 30 min</option>
+          <option value="30-60">30 min – 1h</option>
+          <option value="gt60">1h+</option>
+        </select>
+        <button id="filter-reset" class="adv-reset" type="button">↺ Réinitialiser</button>
       </div>
+      <!-- Tri -->
       <div style="display:flex;gap:14px;align-items:center">
-        <select id="sort-select" style="padding:8px 12px;border:1px solid var(--chene-25);background:var(--parchemin);font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;color:var(--ebene);border-radius:4px;text-transform:uppercase">
+        <select id="sort-select" class="adv-select" aria-label="Trier les résultats">
           <option value="default">Tri : ordre catalogue</option>
           <option value="price-asc">Prix croissant</option>
           <option value="price-desc">Prix décroissant</option>
@@ -130,7 +194,7 @@
   <div class="container">
     <div class="cote" style="margin-bottom:32px"><span data-count>11</span> <span class="cote-line"></span> <span>systèmes affichés</span></div>
     <div class="etabli-board" data-product-grid>
-      <a class="card-produit fam-vendre" href="produits/signal-de-vente.html">
+      <a class="card-produit fam-vendre" data-price="9" data-family="vendre" data-duree="lt30" href="produits/signal-de-vente.html">
     <div class="num">№ 01 · Vendre</div>
     <h3>Signal de Vente</h3>
     <div class="blurb">Une notification instantanée à chaque commande de votre boutique en ligne.</div>
@@ -139,7 +203,7 @@
       <div class="price">9€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-automatiser" href="produits/gardien-de-stock.html">
+  </a><a class="card-produit fam-automatiser" data-price="29" data-family="automatiser" data-duree="30-60" href="produits/gardien-de-stock.html">
     <div class="num">№ 02 · Automatiser</div>
     <h3>Gardien de Stock</h3>
     <div class="blurb">Surveille votre stock et alerte avant rupture.</div>
@@ -148,7 +212,7 @@
       <div class="price">29€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-automatiser" href="produits/sequenceur-post-achat.html">
+  </a><a class="card-produit fam-automatiser" data-price="29" data-family="automatiser" data-duree="30-60" href="produits/sequenceur-post-achat.html">
     <div class="num">№ 03 · Automatiser</div>
     <h3>Séquenceur Post-Achat</h3>
     <div class="blurb">Email de remerciement et suivi automatique après chaque commande.</div>
@@ -157,7 +221,7 @@
       <div class="price">29€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-vendre" href="produits/collecteur-avis.html">
+  </a><a class="card-produit fam-vendre" data-price="29" data-family="vendre" data-duree="lt30" href="produits/collecteur-avis.html">
     <div class="num">№ 04 · Vendre</div>
     <h3>Le Collecteur Avis</h3>
     <div class="blurb">Collecte les avis clients après commande, automatiquement.</div>
@@ -166,7 +230,7 @@
       <div class="price">29€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-produire" href="produits/carnet-forge.html">
+  </a><a class="card-produit fam-produire" data-price="39" data-family="produire" data-duree="lt30" href="produits/carnet-forge.html">
     <div class="num">№ 05 · Produire</div>
     <h3>Carnet Forge</h3>
     <div class="blurb">Le journal de bord de l'artisan numérique, prêt à imprimer.</div>
@@ -175,7 +239,7 @@
       <div class="price">39€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-vendre" href="produits/produit-relance-prospects.html">
+  </a><a class="card-produit fam-vendre" data-price="49" data-family="vendre" data-duree="30-60" href="produits/produit-relance-prospects.html">
     <div class="num">№ 06 · Vendre</div>
     <h3>Relance Prospects</h3>
     <div class="blurb">Système qui relance vos prospects automatiquement, avec tact.</div>
@@ -184,7 +248,7 @@
       <div class="price">49€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-produire" href="produits/produit-mini-crm-notion.html">
+  </a><a class="card-produit fam-produire" data-price="49" data-family="produire" data-duree="30-60" href="produits/produit-mini-crm-notion.html">
     <div class="num">№ 07 · Produire</div>
     <h3>Mini CRM Prestataire</h3>
     <div class="blurb">Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.</div>
@@ -193,7 +257,7 @@
       <div class="price">49€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-piloter" href="produits/produit-dashboard-tresorerie.html">
+  </a><a class="card-produit fam-piloter" data-price="39" data-family="piloter" data-duree="30-60" href="produits/produit-dashboard-tresorerie.html">
     <div class="num">№ 08 · Piloter</div>
     <h3>Dashboard Trésorerie TPE</h3>
     <div class="blurb">Vue claire de votre trésorerie, mise à jour quotidienne.</div>
@@ -202,7 +266,7 @@
       <div class="price">39€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-securiser" href="produits/produit-cyber-hygiene-tpe.html">
+  </a><a class="card-produit fam-securiser" data-price="39" data-family="securiser" data-duree="lt30" href="produits/produit-cyber-hygiene-tpe.html">
     <div class="num">№ 09 · Sécuriser</div>
     <h3>Pack Cyber-Hygiène TPE</h3>
     <div class="blurb">Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.</div>
@@ -211,7 +275,7 @@
       <div class="price">39€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-produire" href="produits/produit-kit-facturation-2026.html">
+  </a><a class="card-produit fam-produire" data-price="39" data-family="produire" data-duree="lt30" href="produits/produit-kit-facturation-2026.html">
     <div class="num">№ 10 · Produire</div>
     <h3>Kit Facturation Électronique 2026</h3>
     <div class="blurb">Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.</div>
@@ -220,7 +284,7 @@
       <div class="price">39€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-automatiser" href="produits/produit-agent-tri-email.html">
+  </a><a class="card-produit fam-automatiser" data-price="39" data-family="automatiser" data-duree="30-60" href="produits/produit-agent-tri-email.html">
     <div class="num">№ 11 · Automatiser</div>
     <h3>Agent Tri Email</h3>
     <div class="blurb">Trie votre boîte de messagerie selon des règles métier.</div>
@@ -231,6 +295,7 @@
     </div>
   </a>
     </div>
+    <p id="no-results" class="no-results-msg">Aucun système ne correspond à ces critères — essayez d'élargir les filtres.</p>
   </div>
 </section>
 
@@ -348,43 +413,87 @@
 fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});
 </script>
 <script>
+/* ─── Filtres avancés catalogue — vanilla JS ─── */
 (function(){
-  const grid = document.querySelector('[data-product-grid]');
-  const chips = document.querySelectorAll('[data-filter-group="family"] .chip');
-  const sort = document.getElementById('sort-select');
-  const count = document.querySelector('[data-count]');
-  let activeFam = 'all';
-  let activeSort = 'default';
-  function apply(){
-    const cards = [...grid.children];
-    cards.forEach(c=>c.style.display='');
-    const FAMCLS = {automatisations:'automatiser',vendre:'vendre','tableaux-de-bord':'piloter',modeles:'produire','guides-formations':'securiser'};
-    let visible = cards;
-    if(activeFam!=='all'){
-      const cls = 'fam-'+FAMCLS[activeFam];
-      visible = cards.filter(c=>{
-        const ok = c.classList.contains(cls);
-        c.style.display = ok ? '' : 'none';
-        return ok;
-      });
-    }
-    // Sort
-    const getPrice = c => parseInt(c.querySelector('.price').textContent);
-    const getName = c => c.querySelector('h3').textContent;
-    const sorted = [...visible];
-    if(activeSort==='price-asc') sorted.sort((a,b)=>getPrice(a)-getPrice(b));
-    else if(activeSort==='price-desc') sorted.sort((a,b)=>getPrice(b)-getPrice(a));
-    else if(activeSort==='name') sorted.sort((a,b)=>getName(a).localeCompare(getName(b)));
-    sorted.forEach(c=>grid.appendChild(c));
-    count.textContent = visible.length;
+  var grid    = document.querySelector('[data-product-grid]');
+  var sBudget = document.getElementById('filter-budget');
+  var sFamily = document.getElementById('filter-family');
+  var sDuree  = document.getElementById('filter-duree');
+  var sSort   = document.getElementById('sort-select');
+  var btnReset= document.getElementById('filter-reset');
+  var count   = document.querySelector('[data-count]');
+  var noRes   = document.getElementById('no-results');
+
+  /* Marque visuellement un select actif (filtre appliqué) */
+  function markActive(el){
+    el.classList.toggle('filter-on', el.value !== 'all');
   }
-  chips.forEach(c=>c.addEventListener('click',()=>{
-    chips.forEach(x=>x.classList.remove('active'));
-    c.classList.add('active');
-    activeFam = c.dataset.filter;
+
+  function apply(){
+    var budget = sBudget.value;
+    var family = sFamily.value;
+    var duree  = sDuree.value;
+    var sort   = sSort.value;
+    var hasFilter = (budget !== 'all' || family !== 'all' || duree !== 'all');
+
+    markActive(sBudget); markActive(sFamily); markActive(sDuree);
+    btnReset.classList.toggle('active', hasFilter);
+
+    /* Récupère les cards (éléments enfants du grid) */
+    var cards = Array.prototype.slice.call(grid.querySelectorAll('.card-produit'));
+    var visible = [];
+
+    cards.forEach(function(c){
+      var price = parseInt(c.dataset.price, 10) || 0;
+      var fam   = c.dataset.family  || '';
+      var dur   = c.dataset.duree   || '';
+      var ok    = true;
+
+      /* --- Filtre Budget --- */
+      if(budget === 'low'  && price > 20)            ok = false;
+      if(budget === 'mid'  && (price <= 20 || price > 40)) ok = false;
+      if(budget === 'high' && price <= 40)            ok = false;
+
+      /* --- Filtre Famille --- */
+      if(family !== 'all' && fam !== family)          ok = false;
+
+      /* --- Filtre Durée installation --- */
+      if(duree !== 'all' && dur !== duree)            ok = false;
+
+      c.style.display = ok ? '' : 'none';
+      if(ok) visible.push(c);
+    });
+
+    /* --- Tri --- */
+    var sorted = visible.slice();
+    if(sort === 'price-asc')
+      sorted.sort(function(a,b){ return parseInt(a.dataset.price,10) - parseInt(b.dataset.price,10); });
+    else if(sort === 'price-desc')
+      sorted.sort(function(a,b){ return parseInt(b.dataset.price,10) - parseInt(a.dataset.price,10); });
+    else if(sort === 'name')
+      sorted.sort(function(a,b){ return a.querySelector('h3').textContent.localeCompare(b.querySelector('h3').textContent,'fr'); });
+    sorted.forEach(function(c){ grid.appendChild(c); });
+
+    /* --- Compteur + message vide --- */
+    if(count)  count.textContent = visible.length;
+    if(noRes)  noRes.style.display = (visible.length === 0) ? 'block' : 'none';
+  }
+
+  /* Écoute tous les selects */
+  [sBudget, sFamily, sDuree, sSort].forEach(function(el){
+    el.addEventListener('change', apply);
+  });
+
+  /* Bouton réinitialiser */
+  btnReset.addEventListener('click', function(){
+    sBudget.value = 'all';
+    sFamily.value = 'all';
+    sDuree.value  = 'all';
     apply();
-  }));
-  sort.addEventListener('change',()=>{activeSort = sort.value; apply();});
+  });
+
+  /* Application initiale (affiche tout) */
+  apply();
 })();
 </script>
 </body>

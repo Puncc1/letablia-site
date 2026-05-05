@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cas d'usage E-commerce — L'établ'IA</title>
+<meta name="description" content="Cas d'usage type : comment une boutique e-commerce francophone a récupéré 10h/mois avec trois systèmes forgés de L'établ'IA."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/>
+<link rel="stylesheet" href="assets/css/search.css"/>
+<style>
+.avant-apres-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.avant-apres-grid{grid-template-columns:1fr}}
+.aa-card{border-radius:var(--r-md);padding:32px 28px;position:relative}
+.aa-avant{background:var(--parchemin);border:1.5px solid rgba(180,60,60,0.2)}
+.aa-apres{background:var(--parchemin);border:1.5px solid rgba(107,124,95,0.35)}
+.aa-label{font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:99px;display:inline-block;margin-bottom:18px}
+.aa-avant .aa-label{background:rgba(180,60,60,0.08);color:#b43c3c}
+.aa-apres .aa-label{background:var(--mousse-10);color:var(--mousse)}
+.aa-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.aa-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;line-height:1.5;color:var(--ebene)}
+.aa-list li::before{content:"";display:inline-block;min-width:18px;height:18px;border-radius:50%;margin-top:2px}
+.aa-avant .aa-list li::before{background:rgba(180,60,60,0.15);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%23b43c3c' stroke-width='2.5'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E")}
+.aa-apres .aa-list li::before{background:rgba(107,124,95,0.15);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236B7C5F' stroke-width='2.5'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E")}
+.roi-table{width:100%;border-collapse:collapse;font-size:14px}
+.roi-table th{font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);padding:10px 14px;text-align:left;border-bottom:2px solid var(--chene-25)}
+.roi-table td{padding:12px 14px;border-bottom:1px solid var(--chene-15);vertical-align:top}
+.roi-table tr:last-child td{border-bottom:none;font-weight:700;background:var(--kraft);font-family:var(--ff-mono)}
+.roi-num{font-family:var(--ff-mono);font-weight:600;color:var(--mousse)}
+.roi-num-old{font-family:var(--ff-mono);color:rgba(180,60,60,0.75);text-decoration:line-through}
+.disclaimer-box{background:var(--kraft);border:1px dashed var(--chene-25);border-radius:var(--r-md);padding:16px 20px;font-size:12.5px;color:var(--ebene-80);font-family:var(--ff-mono);letter-spacing:.02em}
+.persona-banner{background:var(--ebene);padding:18px 0}
+.persona-banner-inner{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.persona-btn{padding:10px 20px;border-radius:99px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:.15s}
+.persona-btn-active{background:var(--chene);color:var(--lin)}
+.persona-btn-ghost{background:transparent;border:1px solid rgba(242,237,232,0.25);color:var(--lin)}
+.persona-btn-ghost:hover{border-color:var(--lin)}
+.persona-label{font-family:var(--ff-mono);font-size:11px;color:var(--pierre);letter-spacing:.12em;text-transform:uppercase}
+</style>
+</head>
+<body>
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..."/>
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Bandeau persona -->
+<div class="persona-banner">
+  <div class="persona-banner-inner">
+    <span class="persona-label">Vous êtes ?</span>
+    <a href="cas-usage-ecom.html" class="persona-btn persona-btn-active">E-commerce</a>
+    <a href="cas-usage-freelance.html" class="persona-btn persona-btn-ghost">Freelance</a>
+    <a href="cas-usage-tpe.html" class="persona-btn persona-btn-ghost">TPE / Artisan</a>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section style="padding:72px 0 48px;background:var(--lin);border-bottom:1px solid var(--chene-25)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <a href="catalogue.html">Catalogue</a> <span class="sep"></span> <span class="current">Cas d'usage E-commerce</span></div>
+    <div style="max-width:760px;margin-top:40px" data-reveal>
+      <span class="tag-atelier">Cas d'usage · Boutique en ligne francophone</span>
+      <h1 style="margin-top:18px">E-commerce :<br><em class="editorial">reprendre le contrôle</em><br>de sa boutique.</h1>
+      <p style="margin-top:24px;font-size:1.1rem;color:var(--ebene-80);max-width:560px;line-height:1.65">Comment une boutique e-commerce francophone a récupéré <strong>10 heures par mois</strong> — et évité 3 litiges — avec trois systèmes installés en une après-midi.</p>
+      <div class="disclaimer-box" style="margin-top:28px;max-width:520px">
+        ⚠ Cas type — pas un client réel. Chiffres indicatifs, adaptez à votre situation.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANT / APRÈS -->
+<section style="padding:80px 0;background:var(--lin)">
+  <div class="container">
+
+    <!-- Persona -->
+    <div style="margin-bottom:48px" data-reveal>
+      <span class="tag-atelier">Le profil type</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.6rem,2.8vw,2.2rem)">Une boutique <em class="editorial">bien remplie</em>, mal pilotée.</h2>
+      <p style="margin-top:16px;color:var(--ebene-80);max-width:620px;font-size:15px;line-height:1.7">Persona : Camille, gérante d'une boutique Shopify / WooCommerce de 80 à 200 commandes/mois. Seule ou avec un micro-équipe de 2 personnes. Produits physiques expédiés depuis la France. CA entre 4 000 et 18 000 €/mois.</p>
+    </div>
+
+    <div class="avant-apres-grid">
+      <!-- AVANT -->
+      <div class="aa-card aa-avant" data-reveal>
+        <span class="aa-label">Avant</span>
+        <h3 style="font-size:1.2rem;margin-bottom:20px">Gérer manuellement, tout le temps</h3>
+        <ul class="aa-list">
+          <li>Vérification des stocks faite à la main chaque matin — oublis réguliers, ruptures surprise le vendredi soir</li>
+          <li>Suivi des commandes en retard fait dans un tableur Excel non synchronisé — temps perdu à chercher des numéros de suivi</li>
+          <li>E-mails de demande d'avis écrits un par un ou complètement oubliés après les fêtes</li>
+          <li>Litiges Paypal / Stripe : 2 à 3 par mois — chaque litige prend 45 min à traiter et crée du stress inutile</li>
+          <li>Seuils de réapprovisionnement stockés dans la tête — «&nbsp;je savais qu'il fallait commander, j'ai oublié&nbsp;»</li>
+        </ul>
+        <div style="margin-top:24px;padding:14px;background:rgba(180,60,60,0.06);border-radius:var(--r-sm);font-size:13px;color:#b43c3c;font-family:var(--ff-mono)">
+          ⏱ Estimé : ~12 h/mois en tâches répétitives non créatrices de valeur
+        </div>
+      </div>
+
+      <!-- APRÈS -->
+      <div class="aa-card aa-apres" data-reveal data-reveal-delay="1">
+        <span class="aa-label">Après · 3 systèmes installés</span>
+        <h3 style="font-size:1.2rem;margin-bottom:20px">La boutique tourne, Camille vend</h3>
+        <ul class="aa-list">
+          <li><strong>Gardien de Stock</strong> : alerte automatique par e-mail dès qu'un SKU passe sous le seuil choisi — 0 rupture surprise en 3 mois</li>
+          <li><strong>Signal de Vente</strong> : chaque commande hors-gabarit ou en retard déclenche une alerte Slack/e-mail immédiate — intervention en 20 min au lieu de 2 jours</li>
+          <li><strong>Séquenceur Post-Achat</strong> : 3 e-mails (J+2, J+5, J+12) envoyés automatiquement — les avis 5★ ont augmenté de 40 % en 6 semaines</li>
+          <li>Taux de litige divisé par 2 : le check-in J+2 désamorce les tensions avant qu'elles deviennent des disputes</li>
+          <li>Tableau de bord hebdo généré automatiquement chaque lundi — réunion réduite à 15 min au lieu de 45 min</li>
+        </ul>
+        <div style="margin-top:24px;padding:14px;background:rgba(107,124,95,0.08);border-radius:var(--r-sm);font-size:13px;color:var(--mousse);font-family:var(--ff-mono)">
+          ⏱ Résiduel : ~2 h/mois — les 10 h restantes sont libres
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TABLEAU ROI -->
+<section style="padding:80px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div style="margin-bottom:40px" data-reveal>
+      <span class="tag-atelier">Tableau ROI estimé · cas type</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.6rem,2.8vw,2.2rem)">Ce que ça <em class="editorial">libère</em> concrètement.</h2>
+      <p style="margin-top:12px;color:var(--ebene-80);font-size:14px">Base de calcul : valeur temps à 45 €/h. Adaptez selon votre taux horaire réel.</p>
+    </div>
+
+    <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);overflow:hidden;max-width:820px" data-reveal>
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th style="width:38%">Tâche récurrente</th>
+            <th>Avant</th>
+            <th>Après</th>
+            <th>Économie/mois</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Surveillance stock manuelle</td>
+            <td><span class="roi-num-old">3 h/mois</span></td>
+            <td><span class="roi-num">15 min</span></td>
+            <td><span class="roi-num">~125 €</span></td>
+          </tr>
+          <tr>
+            <td>Suivi commandes / litiges</td>
+            <td><span class="roi-num-old">4 h/mois</span></td>
+            <td><span class="roi-num">30 min</span></td>
+            <td><span class="roi-num">~158 €</span></td>
+          </tr>
+          <tr>
+            <td>Envoi e-mails avis / post-achat</td>
+            <td><span class="roi-num-old">3 h/mois</span></td>
+            <td><span class="roi-num">0 min</span></td>
+            <td><span class="roi-num">~135 €</span></td>
+          </tr>
+          <tr>
+            <td>Préparation reporting hebdo</td>
+            <td><span class="roi-num-old">2 h/mois</span></td>
+            <td><span class="roi-num">15 min</span></td>
+            <td><span class="roi-num">~79 €</span></td>
+          </tr>
+          <tr>
+            <td style="font-family:var(--ff-mono);letter-spacing:.04em">TOTAL ESTIMÉ</td>
+            <td><span class="roi-num-old">12 h/mois</span></td>
+            <td><span class="roi-num">~1 h/mois</span></td>
+            <td><span class="roi-num" style="font-size:1.1em;color:var(--mousse)">~497 €/mois</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top:32px;display:flex;gap:24px;flex-wrap:wrap" data-reveal>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 24px;flex:1;min-width:200px">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:8px">Investissement systèmes</div>
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;line-height:1">67 €</div>
+        <div style="font-size:12px;color:var(--ebene-80);margin-top:4px">paiement unique · 3 systèmes</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 24px;flex:1;min-width:200px">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:8px">Retour sur investissement</div>
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;line-height:1;color:var(--mousse)">Mois 1</div>
+        <div style="font-size:12px;color:var(--ebene-80);margin-top:4px">amorti dès le premier mois</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 24px;flex:1;min-width:200px">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:8px">Temps d'installation</div>
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;line-height:1">2–4 h</div>
+        <div style="font-size:12px;color:var(--ebene-80);margin-top:4px">avec les guides fournis</div>
+      </div>
+    </div>
+
+    <div class="disclaimer-box" style="margin-top:28px;max-width:740px">
+      ℹ Cas type — pas un client réel. Les chiffres sont indicatifs et basés sur des estimations de temps standard. Vos gains réels dépendent de votre volume de commandes, de votre organisation actuelle et du temps que vous passez réellement sur ces tâches. Anonymisation ADR-014 : aucun nom d'entreprise ou de personne réelle n'est utilisé.
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div style="max-width:700px;margin:0 auto;text-align:center" data-reveal>
+      <span class="tag-atelier">Systèmes recommandés · E-commerce</span>
+      <h2 style="margin-top:18px;font-size:clamp(1.8rem,3vw,2.4rem)">Voir les systèmes<br><em class="editorial">forgés pour ce cas</em>.</h2>
+      <p style="margin-top:18px;color:var(--ebene-80);font-size:15px;line-height:1.65;max-width:520px;margin-left:auto;margin-right:auto">Ces trois outils ont été conçus spécifiquement pour les boutiques en ligne francophones. Paiement unique, pas d'abonnement, installation guidée.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:36px">
+        <a class="btn btn-primary" href="produits/gardien-de-stock.html" style="gap:8px">
+          Gardien de Stock <span style="font-family:var(--ff-mono);font-size:11px;opacity:.7">29 €</span>
+        </a>
+        <a class="btn btn-ghost" href="produits/signal-de-vente.html" style="gap:8px">
+          Signal de Vente <span style="font-family:var(--ff-mono);font-size:11px;opacity:.6">9 €</span>
+        </a>
+        <a class="btn btn-ghost" href="produits/sequenceur-post-achat.html" style="gap:8px">
+          Séquenceur Post-Achat <span style="font-family:var(--ff-mono);font-size:11px;opacity:.6">29 €</span>
+        </a>
+      </div>
+      <div style="margin-top:24px">
+        <a href="packs-e-commerce.html" style="font-family:var(--ff-mono);font-size:12px;color:var(--chene);letter-spacing:.06em;text-decoration:none;border-bottom:1px dashed var(--chene);padding-bottom:2px">
+          → Ou prenez les 3 en Pack E-commerce Complet à 49 € (économie 18 €)
+        </a>
+      </div>
+      <div style="margin-top:36px;padding-top:36px;border-top:1px dashed var(--chene-25)">
+        <p style="font-size:14px;color:var(--ebene-80);margin-bottom:16px">Pas sûr(e) des systèmes qui vous correspondent ?</p>
+        <a class="btn btn-mousse" href="diagnostic.html">Faire le diagnostic gratuit (2 min)</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTRES PERSONAS -->
+<section style="padding:60px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:36px" data-reveal>
+      <span class="tag-atelier">Autres profils</span>
+      <h2 style="margin-top:14px;font-size:1.6rem">Ce n'est pas votre <em class="editorial">cas</em> ?</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:640px;margin:0 auto" class="avant-apres-grid">
+      <a href="cas-usage-freelance.html" style="display:block;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:24px;text-decoration:none;color:inherit;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(138,117,96,0.15)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:10px">Cas d'usage</div>
+        <h3 style="font-size:1.1rem;margin-bottom:8px">Freelance / Prestataire</h3>
+        <p style="font-size:13.5px;color:var(--ebene-80);line-height:1.5;margin:0">Gérer ses clients, relancer les prospects, trier ses emails. Sans y passer ses soirées.</p>
+        <div style="margin-top:16px;font-family:var(--ff-mono);font-size:11px;color:var(--chene)">Voir le cas →</div>
+      </a>
+      <a href="cas-usage-tpe.html" style="display:block;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:24px;text-decoration:none;color:inherit;transition:box-shadow .2s" onmouseover="this.style.boxShadow='0 4px 16px rgba(138,117,96,0.15)'" onmouseout="this.style.boxShadow=''">
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-bottom:10px">Cas d'usage</div>
+        <h3 style="font-size:1.1rem;margin-bottom:8px">TPE / Artisan</h3>
+        <p style="font-size:13.5px;color:var(--ebene-80);line-height:1.5;margin:0">Piloter son activité, surveiller ses délais, comprendre sa trésorerie. Chaque lundi matin.</p>
+        <div style="margin-top:16px;font-family:var(--ff-mono);font-size:11px;color:var(--chene)">Voir le cas →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+<script src="assets/js/letablia.js"></script>
+</body>
+</html>
