@@ -876,7 +876,8 @@
         "prospects",
         "saisonnier"
       ],
-      "icon": "sun"
+      "icon": "sun",
+      "status": "soon"
     }
   ],
   "bundles": [
