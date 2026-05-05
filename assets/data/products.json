@@ -201,8 +201,7 @@
       ],
       "blurb": "Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.",
       "keywords": "cyber securite hygiene tpe audit guides phishing rgpd",
-      "icon": "shield",
-      "status": "soon"
+      "icon": "shield"
     },
     {
       "slug": "produit/kit-facturation-2026",
@@ -220,8 +219,7 @@
       ],
       "blurb": "Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.",
       "keywords": "facturation electronique 2026 conformite tpe",
-      "icon": "file-text",
-      "status": "soon"
+      "icon": "file-text"
     },
     {
       "slug": "produit/agent-tri-email",
