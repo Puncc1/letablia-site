@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pour la Belgique — L'établ'IA accessible aux TPE belges</title>
+<meta name="description" content="L'établ'IA est accessible aux indépendants et TPE belges. TVA 21% gérée automatiquement, paiement sécurisé, livraison immédiate. 600 000 TPE belges concernées."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="catalogue.html">Voir le catalogue</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="be.html" style="color:var(--chene);font-weight:600">🇧🇪 Pour la Belgique</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- BREADCRUMB -->
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Pour la Belgique</span></div>
+  </div>
+</section>
+
+<!-- ═══ HERO ═══ -->
+<section style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Marché belge · 600 000+ TPE &amp; indépendants</span>
+      <h1 style="margin:18px 0;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.06">L'établi parle<br/><em class="editorial">aussi belge.</em></h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.2rem;max-width:52ch;margin:16px auto 0">Indépendant, gérant de SPRL ou commerçant en Belgique ? Tous les systèmes du catalogue sont accessibles directement — TVA 21% incluse et gérée automatiquement à la commande.</p>
+    </div>
+
+    <!-- Stats hero -->
+    <div data-reveal style="margin:52px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center" class="be-hero-stats">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">600k+</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">TPE &amp; indépendants BE</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">21%</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">TVA gérée automatiquement</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">0</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Démarche supplémentaire</div>
+      </div>
+    </div>
+
+    <!-- Badge engagement -->
+    <div data-reveal style="margin-top:36px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:22px 28px;font-size:15px;line-height:1.65;color:var(--ebene);display:flex;gap:20px;align-items:flex-start" class="be-badge">
+      <div style="flex-shrink:0;width:40px;height:40px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-hand);font-size:20px;color:var(--chene)">🇧🇪</div>
+      <div>
+        <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);display:block;margin-bottom:6px">Accès identique, sans friction de frontière</strong>
+        Commandez depuis la Belgique exactement comme depuis la France. La TVA belge (21%) est calculée et collectée automatiquement par notre plateforme de paiement. Votre facture indique votre numéro de TVA BCE si vous l'avez renseigné. Livraison instantanée, garantie « Satisfait ou Forgé » identique.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1 — CE QUI CHANGE (RIEN) ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 01</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Ce qui change <em class="editorial">pour vous</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Réponse directe : presque rien. Voici ce qui est géré sans que vous ayez quoi que ce soit à faire.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">TVA belge à 21% — gérée automatiquement</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Notre plateforme de paiement (LemonSqueezy) détecte votre localisation et applique le taux de TVA belge correct (21%) au moment du paiement. Aucune action de votre part. Si vous êtes assujetti à la TVA, vous pouvez renseigner votre numéro de TVA BCE pour obtenir une facture hors taxe (mécanisme d'autoliquidation B2B).</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Paiement sécurisé en euros</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Tous les prix sont affichés en euros. Le paiement est traité via Stripe (intégré à LemonSqueezy), compatible avec toutes les cartes belges (Bancontact inclus via carte Visa/Mastercard). Aucune conversion de devise, aucun frais bancaire supplémentaire.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Livraison instantanée, sans frontière</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Les systèmes sont livrés numériquement (fichiers, accès, documentation) dès validation du paiement. Il n'y a pas de délai douanier, pas d'expédition physique, pas de contrainte géographique. Un acheteur belge reçoit son kit au même instant qu'un acheteur parisien.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Garantie « Satisfait ou Forgé » identique</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">La politique de satisfaction s'applique sans distinction de pays. Si un système livré ne correspond pas à sa promesse, L'établ'IA intervient en priorité pour le corriger. La protection acheteur est la même en Belgique, en France, en Suisse ou au Québec.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — CATALOGUE ACCESSIBLE BE ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 02</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Catalogue <em class="editorial">accessible en Belgique</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Les systèmes les plus utiles pour un indépendant ou une TPE belge. Mêmes prix, même qualité, même support — TVA 21% calculée automatiquement.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="be-catalogue">
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Facturation · 39 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Kit Facturation 2026</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Génération automatique de devis et factures PDF conformes. Numérotation structurée, archivage, zéro ressaisie. Compatible avec les obligations de facturation belges.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TPE · Indépendants</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TVA BE incluse</span>
+        </div>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Trésorerie · 49 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Dashboard Trésorerie</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Tableau de bord mensuel actualisé automatiquement. Solde prévisionnel 90 jours, alertes seuil critique. Indispensable pour un indépendant qui pilote seul sa trésorerie.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Pilotage solo</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TVA BE incluse</span>
+        </div>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Relances · 35 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Séquenceur de relances impayés</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Relances automatiques à J+7, J+21, J+45 avec escalade de ton. Log exportable pour votre comptable. Réduit le délai moyen de paiement sans y penser.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">B2B · Commerce</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TVA BE incluse</span>
+        </div>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Sécurité · 29 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Cyber-Hygiène TPE</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Audit de posture numérique, plan de remédiation priorisé, checklist de sauvegarde. Conforme aux recommandations CCB (Centre pour la Cybersécurité Belgique).</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">RGPD · CCB</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TVA BE incluse</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:24px;text-align:center">
+      <a href="catalogue.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene);text-decoration:none;padding:12px 22px;border:1px solid var(--chene-25);border-radius:var(--r-sm);transition:background .2s">Voir tout le catalogue →</a>
+    </div>
+
+    <!-- Nota TVA -->
+    <div data-reveal style="margin-top:24px;background:var(--chene-6);border-left:3px solid var(--chene);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:18px 24px;font-size:14px;color:var(--ebene-80)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Note TVA belge</strong><br/>
+      Les prix affichés dans le catalogue sont hors TVA. La TVA belge de 21% est calculée et ajoutée automatiquement à la commande selon votre pays de résidence. Si vous êtes une entreprise assujettie à la TVA en Belgique, renseignez votre numéro de TVA BCE (format BE 0xxx.xxx.xxx) lors du paiement pour bénéficier de l'autoliquidation.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — MENTIONS LÉGALES BE ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 03</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Informations <em class="editorial">légales Belgique</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Ce que tout acheteur belge doit savoir sur le cadre légal applicable à ses achats sur L'établ'IA.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:14px;font-weight:700;color:var(--chene)">BCE</div>
+        <div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px;font-family:var(--ff-display)">Identification BCE pour les entreprises belges</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">La Banque-Carrefour des Entreprises (BCE) attribue à chaque entité belge un numéro unique. Si vous êtes une entreprise ou un indépendant immatriculé en Belgique, renseignez votre numéro BCE (BE 0xxx.xxx.xxx) au moment de la commande. Ce numéro apparaîtra sur la facture et permet à votre comptable d'imputer correctement l'achat.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--chene);text-align:center;line-height:1.2">ONSS /<br/>INSS</div>
+        <div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px;font-family:var(--ff-display)">Statut d'indépendant et ordre professionnel</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Les indépendants belges affiliés à une caisse d'assurances sociales (UCM, Xerius, Acerta, Partena, etc.) peuvent utiliser L'établ'IA sans restriction. Les outils numériques achetés à des fins professionnelles sont généralement déductibles fiscalement — votre comptable ou votre guichet d'entreprise agréé peut vous confirmer les modalités.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--chene);text-align:center;line-height:1.2">RGPD /<br/>AVG</div>
+        <div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px;font-family:var(--ff-display)">RGPD / AVG — Données personnelles</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Le RGPD s'applique uniformément dans toute l'Union européenne, Belgique incluse. L'établ'IA traite vos données conformément au RGPD / AVG. Autorité de contrôle compétente pour la Belgique : l'Autorité de protection des données (APD / GBA), Rue de la Presse 35, 1000 Bruxelles. Vous pouvez exercer vos droits (accès, rectification, suppression) via <a href="contact.html" style="color:var(--chene)">notre formulaire de contact</a>.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--chene);text-align:center;line-height:1.2">DROIT<br/>APP.</div>
+        <div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px;font-family:var(--ff-display)">Droit applicable et juridiction</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Les contrats conclus avec des acheteurs belges sont soumis au droit français, conformément aux Conditions Générales de Vente. En cas de litige non résolu amiablement, la compétence est celle des tribunaux de la juridiction du siège social de L'établ'IA. Les acheteurs belges consommateurs (non professionnels) bénéficient également des dispositions protectrices du droit belge de la consommation via le règlement européen sur la résolution des litiges en ligne (plateforme ODR de la Commission européenne).</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:24px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:22px 28px;font-size:14px;color:var(--ebene-80);line-height:1.65">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Ordres professionnels</strong><br/>
+      Les membres d'un ordre professionnel belge (experts-comptables — IEC/IBR, avocats — barreaux, notaires, médecins, etc.) peuvent utiliser L'établ'IA à titre professionnel. Si votre ordre exige une déclaration d'utilisation d'outils numériques tiers, L'établ'IA peut fournir une documentation technique sur demande via <a href="contact.html" style="color:var(--chene)">notre formulaire de contact</a>.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — FAQ ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 04</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Questions <em class="editorial">fréquentes</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Les questions les plus posées par les acheteurs belges avant leur première commande.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Je suis indépendant en Belgique. Puis-je commander sans TVA professionnelle ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Oui. Si vous êtes assujetti à la TVA belge (numéro BE 0xxx.xxx.xxx actif), renseignez ce numéro lors du paiement. Le mécanisme d'autoliquidation (reverse charge) s'applique : vous recevez une facture hors TVA et déclarez la TVA dans votre propre déclaration. Si vous êtes en franchise de taxe (petite entreprise sous le seuil de 25 000 €/an), la TVA de 21% s'applique normalement et est incluse dans le prix.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Le support est-il disponible en néerlandais ou en allemand ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">L'établ'IA est un atelier francophone. Le support, la documentation et les systèmes livrés sont en français. Les acheteurs flamands ou germanophones peuvent bien sûr commander — la langue de livraison reste le français. Si vous avez besoin d'une clarification dans une autre langue, précisez-le dans votre message de contact et nous ferons notre possible.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Puis-je déduire cet achat de mes impôts professionnels belges ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">En règle générale, les outils numériques achetés à des fins professionnelles sont déductibles à titre de charges professionnelles en Belgique (ISOC pour les sociétés, IPP pour les indépendants personnes physiques). La facture fournie par L'établ'IA inclut toutes les mentions légales requises. Consultez votre comptable ou votre bureau social pour confirmer le traitement fiscal adapté à votre situation.</p>
+      </div>
+
+      <div style="padding:24px 0">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Comment contacter le support depuis la Belgique ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Le support est identique quel que soit votre pays. Utilisez notre <a href="contact.html" style="color:var(--chene)">formulaire de contact</a> en précisant votre pays. Les réponses sont traitées sous 24 heures ouvrées. Aucun numéro de téléphone spécifique à la Belgique — tout passe par email pour garantir un suivi écrit tracé.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — CTA ═══ -->
+<section style="padding:96px 0;background:var(--ebene);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;max-width:52ch;margin:0 auto">
+      <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:18px">🇧🇪 Accessible depuis la Belgique</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--lin);margin:0 0 20px">Voir le catalogue <em class="editorial" style="color:var(--chene)">complet</em></h2>
+      <p style="color:var(--pierre);font-size:1rem;line-height:1.7;margin:0 0 16px">Tous les systèmes sont disponibles pour les acheteurs belges. TVA 21% calculée automatiquement, facture BCE disponible, livraison instantanée.</p>
+      <p style="color:var(--pierre);font-size:14px;line-height:1.6;margin:0 0 36px;font-family:var(--ff-display);font-style:italic">« Satisfait ou Forgé » · Paiement sécurisé · Support 24h ouvrées · Aucune démarche supplémentaire</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="catalogue.html" style="font-size:1rem;padding:16px 36px">Voir le catalogue →</a>
+        <a href="faq.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-size:15px;color:var(--pierre);text-decoration:none;padding:16px 20px;border:1px solid rgba(184,175,166,0.3);border-radius:var(--r-sm);transition:color .2s">Questions générales</a>
+      </div>
+      <p style="margin-top:32px;font-family:var(--ff-display);font-style:italic;color:var(--pierre);font-size:14px;opacity:.7">Atelier francophone ouvert à la Belgique, la Suisse, le Québec et le Maghreb.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+        <li><a href="experts-comptables.html">Partenaires EC</a></li>
+        <li><a href="programme-contributeurs.html">Devenir contributeur</a></li>
+        <li><a href="be.html" style="color:var(--chene)">🇧🇪 Pour la Belgique</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France · 🇧🇪 Belgique bienvenue</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+<script defer src="/assets/js/easter-eggs.js"></script>
+
+<style>
+@media (max-width:880px){
+  .be-hero-stats{grid-template-columns:1fr !important}
+  .be-catalogue{grid-template-columns:1fr !important}
+  .be-badge{flex-direction:column !important}
+}
+</style>
+</body></html>
