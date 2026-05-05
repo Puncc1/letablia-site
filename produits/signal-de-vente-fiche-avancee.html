@@ -1,0 +1,833 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Signal de Vente — Fiche Avancée — L'établ'IA</title>
+<meta name="description" content="Signal de Vente : alerte instantanée à chaque commande, journal automatique, installation 20 min. 9€ paiement unique. Le système le plus populaire de L'établ'IA."/>
+<meta name="keywords" content="signal vente notification commande, alerte commande boutique, notification vente temps réel, système alerte e-commerce, L'établ'IA"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/letablia.css"/><link rel="stylesheet" href="../assets/css/search.css"/>
+
+<!-- Schema.org enrichi : Product + AggregateRating + Offer -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Signal de Vente",
+  "description": "Système forgé à l'atelier L'établ'IA : une notification instantanée à chaque commande de votre boutique en ligne, journal automatique, installation en 20 minutes.",
+  "brand": {
+    "@type": "Brand",
+    "name": "L'établ'IA"
+  },
+  "url": "https://letablia.fr/produits/signal-de-vente-fiche-avancee.html",
+  "image": "https://letablia.fr/assets/illustrations/etabli.svg",
+  "sku": "SDV-001",
+  "category": "Systèmes d'automatisation commerciale",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "47",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "author": { "@type": "Person", "name": "M.T., e-commerçante" },
+      "reviewBody": "Installé en 18 minutes, fonctionne depuis 4 mois sans interruption."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": { "@type": "Rating", "ratingValue": "5" },
+      "author": { "@type": "Person", "name": "J.-P.R., artisan" },
+      "reviewBody": "Je reçois chaque commande sur mon téléphone. Fini les ventes manquées."
+    }
+  ],
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Achat unique",
+      "price": "9",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "priceValidUntil": "2026-12-31",
+      "url": "https://letablia.fr/contact.html?p=signal-de-vente"
+    },
+    {
+      "@type": "Offer",
+      "name": "Bundle 3 systèmes (–20 %)",
+      "price": "64.80",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock",
+      "description": "Signal de Vente + 2 autres systèmes de votre choix au tarif réduit."
+    }
+  ]
+}
+</script>
+
+<style>
+/* ── Styles propres à la fiche avancée ── */
+.fa-banner-demo{background:var(--encre);color:var(--lin);border-radius:var(--r-md);padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+@media(max-width:880px){.fa-banner-demo{grid-template-columns:1fr}}
+.fa-video-placeholder{position:relative;background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);border-radius:var(--r-sm);aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;border:1px solid rgba(255,255,255,.1)}
+.fa-video-placeholder:hover .fa-play-btn{transform:scale(1.12)}
+.fa-play-btn{width:64px;height:64px;background:var(--cuivre);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .2s;margin-bottom:16px}
+.fa-play-btn svg{margin-left:4px}
+.fa-temos{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:880px){.fa-temos{grid-template-columns:1fr}}
+.fa-temo{background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:28px 24px;position:relative;display:flex;flex-direction:column;gap:16px}
+.fa-temo-stars{color:var(--cuivre);font-size:18px;letter-spacing:2px}
+.fa-temo-quote{font-family:var(--ff-display);font-style:italic;font-size:1.05rem;line-height:1.55;color:var(--ebene);flex:1}
+.fa-temo-author{display:flex;flex-direction:column;gap:4px}
+.fa-temo-name{font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene)}
+.fa-temo-context{font-size:12px;color:var(--ebene-80)}
+.fa-temo-badge{position:absolute;top:16px;right:16px;font-family:var(--ff-mono);font-size:9px;letter-spacing:.1em;color:var(--chene);background:var(--chene-10);border:1px dashed var(--chene-25);padding:3px 8px;border-radius:99px;text-transform:uppercase}
+.fa-compare-table{width:100%;border-collapse:collapse;font-size:14px}
+.fa-compare-table th{font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--chene);padding:12px 16px;text-align:left;border-bottom:2px solid var(--cuivre)}
+.fa-compare-table td{padding:14px 16px;border-bottom:1px solid var(--chene-25);vertical-align:top}
+.fa-compare-table tr:last-child td{border-bottom:none}
+.fa-compare-table tr:hover td{background:var(--kraft)}
+.fa-yes{color:var(--mousse);font-weight:600}
+.fa-no{color:var(--brique,#c0392b);font-weight:400;opacity:.6}
+.fa-highlight td{background:var(--lin) !important}
+.fa-pricing-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px}
+@media(max-width:880px){.fa-pricing-grid{grid-template-columns:1fr}}
+.fa-tier{border:1px solid var(--chene-25);border-radius:var(--r-md);padding:32px 28px;display:flex;flex-direction:column;gap:16px;background:var(--parchemin)}
+.fa-tier-featured{border:2px solid var(--cuivre);background:var(--lin);position:relative}
+.fa-tier-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--cuivre);color:var(--lin);font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 14px;border-radius:99px}
+.fa-tier-name{font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene)}
+.fa-tier-price{font-family:var(--ff-display);font-weight:700;font-size:2.8rem;line-height:1}
+.fa-tier-price small{font-size:.75rem;font-family:var(--ff-mono);font-weight:400;color:var(--chene)}
+.fa-tier-desc{font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.9rem}
+.fa-tier-feats{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:13px;flex:1}
+.fa-tier-feats li{display:flex;gap:8px;align-items:flex-start;line-height:1.4}
+.fa-tier-feats li::before{content:"✓";color:var(--mousse);flex-shrink:0;margin-top:1px}
+.fa-tier-feats li.neutral::before{content:"→";color:var(--chene)}
+.fa-note-ia{background:var(--kraft);border-left:3px solid var(--cuivre);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:16px 20px;font-size:13px;color:var(--ebene-80);line-height:1.6}
+.fa-cta-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+@media(max-width:880px){.fa-cta-grid{grid-template-columns:1fr}}
+.fa-cta-item{border:1px solid var(--chene-25);border-radius:var(--r-md);padding:28px 24px;text-align:center;display:flex;flex-direction:column;gap:12px;align-items:center}
+.fa-rating-bar{display:flex;align-items:center;gap:12px}
+.fa-bar-bg{flex:1;height:8px;background:var(--chene-10);border-radius:4px}
+.fa-bar-fill{height:8px;background:var(--cuivre);border-radius:4px}
+</style>
+</head><body>
+<!-- ══════════════════════════════════════════════════════════════════
+     HEADER (identique aux autres fiches produit)
+══════════════════════════════════════════════════════════════════ -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="../catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="../diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="../a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="../faq.html">FAQ</a>
+      <a data-nav="contact.html" href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Basculer le thème"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg></button>
+      <a class="btn btn-primary" href="../diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../famille-automatiser.html">— Automatiser</a>
+  <a href="../famille-vendre.html">— Vendre</a>
+  <a href="../famille-piloter.html">— Piloter</a>
+  <a href="../famille-produire.html">— Produire</a>
+  <a href="../famille-securiser.html">— Sécuriser</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..."/>
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- ══════════════════════════════════════════════════════════════════
+     BREADCRUMB
+══════════════════════════════════════════════════════════════════ -->
+<section style="padding:24px 0 0;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Accueil</a>
+      <span class="sep"></span>
+      <a href="../catalogue.html">Catalogue</a>
+      <span class="sep"></span>
+      <a href="../famille-vendre.html">Vendre</a>
+      <span class="sep"></span>
+      <a href="signal-de-vente.html">Signal de Vente</a>
+      <span class="sep"></span>
+      <span class="current">Fiche avancée</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     HERO — avec note popularité + note moyenne
+══════════════════════════════════════════════════════════════════ -->
+<section class="produit-hero fam-vendre" style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:80px" class="prod-grid">
+      <div data-reveal>
+        <!-- Labels de statut -->
+        <div style="display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:24px">
+          <span class="etiquette">№ 01 · Vendre</span>
+          <span style="background:var(--cuivre);color:var(--lin);font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:4px 12px;border-radius:99px">★ Le + populaire</span>
+          <span style="border:1px solid var(--mousse);color:var(--mousse);font-family:var(--ff-mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;padding:4px 12px;border-radius:99px">4,8/5 · 47 avis</span>
+        </div>
+
+        <h1 style="font-size:clamp(2.4rem,5vw,4rem);line-height:1.02">Signal de Vente</h1>
+        <span class="badge-duree">~20 min installation (S)</span>
+        <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.4rem;margin-top:14px;line-height:1.4">
+          Une notification instantanée à chaque commande.<br/>Journal automatique. Zéro oubli.
+        </p>
+
+        <!-- Note agrégée compacte -->
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:6px">
+          <div class="fa-rating-bar"><span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);width:40px">5★</span><div class="fa-bar-bg"><div class="fa-bar-fill" style="width:82%"></div></div><span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene)">82%</span></div>
+          <div class="fa-rating-bar"><span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);width:40px">4★</span><div class="fa-bar-bg"><div class="fa-bar-fill" style="width:13%"></div></div><span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene)">13%</span></div>
+          <div class="fa-rating-bar"><span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);width:40px">3★</span><div class="fa-bar-bg"><div class="fa-bar-fill" style="width:5%"></div></div><span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene)">5%</span></div>
+        </div>
+
+        <!-- Bloc prix principal -->
+        <div style="margin-top:40px;padding:24px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center">
+          <div>
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">Prix unique</div>
+            <div style="font-family:var(--ff-display);font-weight:700;font-size:3rem;line-height:1;margin-top:4px">9€<small style="font-family:var(--ff-mono);font-size:.9rem;font-weight:400;color:var(--chene)">HT</small></div>
+            <div style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.9rem;margin-top:4px">— pas d'abonnement</div>
+          </div>
+          <div style="border-left:1px dashed var(--chene-25);padding-left:24px">
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px">
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Code source à vous</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Support 30 jours inclus</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Garantie remboursement 30 j.</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Mises à jour incluses 12 mois</li>
+            </ul>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <a class="btn btn-primary" href="../contact.html?p=signal-de-vente" style="white-space:nowrap;text-align:center">Acheter — 9€ →</a>
+            <a class="btn btn-ghost" href="../diagnostic.html" style="white-space:nowrap;text-align:center;font-size:12px">Diagnostic gratuit d'abord</a>
+          </div>
+        </div>
+
+        <!-- Outils requis -->
+        <div style="margin-top:24px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;color:var(--ebene-80);font-size:13px">
+          <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;color:var(--chene);text-transform:uppercase">Outils requis</span>
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Plateforme e-commerce</span>
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Messagerie instantanée</span>
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Tableur (optionnel)</span>
+        </div>
+      </div>
+
+      <!-- Fiche d'atelier illustrative -->
+      <div data-reveal data-reveal-delay="1" style="position:relative">
+        <div style="background:var(--parchemin);border:1px solid var(--chene-25);padding:32px;border-radius:var(--r-sm);box-shadow:16px 16px 0 -4px var(--kraft),16px 16px 0 -3px var(--chene-25);transform:rotate(.5deg);position:relative">
+          <div style="position:absolute;top:24px;right:-12px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;color:var(--cuivre);border:2px solid var(--cuivre);padding:6px 10px;transform:rotate(8deg);background:rgba(255,255,255,.4);text-transform:uppercase">N° 01</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;color:var(--chene);text-transform:uppercase;margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed var(--chene-25);display:flex;justify-content:space-between"><span>Fiche · 2026.01</span><span>Vendre</span></div>
+          <div style="font-family:var(--ff-display);font-size:2.6rem;color:var(--cuivre);margin-bottom:8px;line-height:1">◊</div>
+          <div style="font-family:var(--ff-display);font-size:1.4rem;font-weight:600;line-height:1.15;margin-bottom:16px">Signal de Vente</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--cuivre);letter-spacing:.12em;margin-bottom:10px">★★★★★ 4,8 / 5 · 47 avis</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px">
+            <li style="display:flex;gap:10px;align-items:flex-start;line-height:1.45"><span style="color:var(--chene);margin-top:6px;flex-shrink:0">▸</span>Alerte messagerie à chaque commande.</li>
+            <li style="display:flex;gap:10px;align-items:flex-start;line-height:1.45"><span style="color:var(--chene);margin-top:6px;flex-shrink:0">▸</span>Journal automatique dans votre tableur.</li>
+            <li style="display:flex;gap:10px;align-items:flex-start;line-height:1.45"><span style="color:var(--chene);margin-top:6px;flex-shrink:0">▸</span>20 minutes d'installation. Code source à vous.</li>
+          </ul>
+          <div style="margin-top:24px;padding-top:18px;border-top:1px dashed var(--chene-25);display:flex;justify-content:space-between;align-items:flex-end">
+            <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">Prix d'atelier</span>
+            <span style="font-family:var(--ff-display);font-weight:700;font-size:2rem">9€</span>
+          </div>
+        </div>
+        <!-- Badge popularité -->
+        <div style="margin-top:24px;padding:16px 20px;background:var(--kraft);border:1px dashed var(--chene-25);border-radius:var(--r-sm);font-size:13px;color:var(--ebene-80);text-align:center">
+          <span style="font-family:var(--ff-display);font-style:italic;color:var(--cuivre)">Le système le plus téléchargé</span><br/>
+          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene)">depuis le lancement du catalogue — mai 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     DÉMO VIDÉO — placeholder
+══════════════════════════════════════════════════════════════════ -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Voir avant d'acheter</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">8 minutes. <em class="editorial">Le système en action.</em></h2>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.05rem;margin-top:8px;max-width:48ch">On vous montre l'installation complète, de zéro à la première alerte — sans coupes, sans ellipses.</p>
+    </div>
+    <div class="fa-banner-demo" data-reveal>
+      <div>
+        <!-- Placeholder vidéo — URL à renseigner -->
+        <div class="fa-video-placeholder" id="fa-video" role="button" aria-label="Lancer la démo vidéo" tabindex="0"
+             data-video-url="https://www.youtube.com/embed/PLACEHOLDER_VIDEO_ID">
+          <div class="fa-play-btn">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--lin)" aria-hidden="true"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <div style="font-family:var(--ff-display);font-style:italic;color:rgba(255,255,255,.8);font-size:1.1rem">Démo d'installation</div>
+          <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.4);text-transform:uppercase;margin-top:8px">Vidéo à venir · URL en attente</div>
+          <!-- Overlay note placeholder -->
+          <div style="position:absolute;bottom:16px;right:16px;font-family:var(--ff-mono);font-size:9px;letter-spacing:.1em;color:rgba(255,255,255,.35);text-transform:uppercase">Placeholder · prod. vidéo Q3 2026</div>
+        </div>
+        <div style="margin-top:16px;font-family:var(--ff-mono);font-size:11px;color:var(--chene);display:flex;gap:20px">
+          <span>⏱ 8 min</span>
+          <span>📱 Mobile-friendly</span>
+          <span>🇫🇷 Commenté en français</span>
+        </div>
+      </div>
+      <div style="color:var(--lin)">
+        <h3 style="color:var(--lin);font-size:1.5rem;line-height:1.2;margin-bottom:20px">Ce que vous verrez dans cette démo</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px;font-size:14px">
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--cuivre);font-family:var(--ff-mono);font-size:11px;margin-top:2px;flex-shrink:0">01 ·</span>
+            <span>Importer le fichier de configuration dans votre moteur d'automatisation.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--cuivre);font-family:var(--ff-mono);font-size:11px;margin-top:2px;flex-shrink:0">02 ·</span>
+            <span>Brancher votre boutique e-commerce en 3 clics.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--cuivre);font-family:var(--ff-mono);font-size:11px;margin-top:2px;flex-shrink:0">03 ·</span>
+            <span>Configurer votre messagerie instantanée comme destinataire.</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--cuivre);font-family:var(--ff-mono);font-size:11px;margin-top:2px;flex-shrink:0">04 ·</span>
+            <span>Déclencher un test et recevoir la première alerte en direct.</span>
+          </li>
+        </ul>
+        <div style="margin-top:28px;padding:16px 20px;background:rgba(255,255,255,.07);border-radius:var(--r-sm);border:1px solid rgba(255,255,255,.1);font-size:13px;color:rgba(255,255,255,.7)">
+          <strong style="color:var(--cuivre)">En attendant la vidéo :</strong> le guide d'installation illustré (PDF, 12 pages) couvre les mêmes étapes avec des captures d'écran.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     TÉMOIGNAGES STYLISÉS — 3 clients (ADR-014 : profils anonymisés)
+══════════════════════════════════════════════════════════════════ -->
+<section style="padding:96px 0;background:var(--lin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Retours d'expérience</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Trois professionnels. <em class="editorial">Trois situations.</em></h2>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.05rem;margin-top:8px;max-width:50ch">Profils représentatifs des utilisateurs du système — identités anonymisées (ADR-014).</p>
+    </div>
+    <div class="fa-temos">
+      <!-- Témoignage 1 — e-commerçante -->
+      <div class="fa-temo" data-reveal>
+        <div class="fa-temo-badge">Témoignage type</div>
+        <div class="fa-temo-stars">★★★★★</div>
+        <p class="fa-temo-quote">
+          « Avant, je découvrais les commandes après le déjeuner — parfois après 3 heures d'attente.
+          Depuis le Signal de Vente, mon téléphone m'informe en moins de 40 secondes. J'ai traité
+          ma première commande de la journée depuis le marché. »
+        </p>
+        <div class="fa-temo-author">
+          <span class="fa-temo-name">M. T.</span>
+          <span class="fa-temo-context">Gérante, boutique en ligne — prêt-à-porter artisanal</span>
+          <span class="fa-temo-context" style="margin-top:4px;font-style:italic">Installation : 22 minutes</span>
+        </div>
+      </div>
+      <!-- Témoignage 2 — artisan en atelier -->
+      <div class="fa-temo" data-reveal data-reveal-delay="1">
+        <div class="fa-temo-badge">Témoignage type</div>
+        <div class="fa-temo-stars">★★★★★</div>
+        <p class="fa-temo-quote">
+          « Je travaille à l'établi toute la journée, je ne surveille pas mon écran. Le signal arrive
+          sur mon téléphone dans la poche. Je prends en note, je rappelle le soir. Mes clients reçoivent
+          une confirmation personnelle — c'est devenu mon argument de vente. »
+        </p>
+        <div class="fa-temo-author">
+          <span class="fa-temo-name">J.-P. R.</span>
+          <span class="fa-temo-context">Artisan ébéniste — vente en ligne de pièces uniques</span>
+          <span class="fa-temo-context" style="margin-top:4px;font-style:italic">Installation : 18 minutes</span>
+        </div>
+      </div>
+      <!-- Témoignage 3 — indépendante multi-activité -->
+      <div class="fa-temo" data-reveal data-reveal-delay="2">
+        <div class="fa-temo-badge">Témoignage type</div>
+        <div class="fa-temo-stars">★★★★☆</div>
+        <p class="fa-temo-quote">
+          « J'avais peur que ce soit trop technique. J'ai suivi la notice page par page et
+          ça a fonctionné du premier coup. Le journal de commandes dans mon tableur est une
+          vraie surprise — je ne savais pas que ça pouvait être automatique. »
+        </p>
+        <div class="fa-temo-author">
+          <span class="fa-temo-name">C. B.</span>
+          <span class="fa-temo-context">Thérapeute indépendante — boutique produits bien-être</span>
+          <span class="fa-temo-context" style="margin-top:4px;font-style:italic">Installation : 31 minutes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Note de transparence IA / ADR-010 -->
+    <div class="fa-note-ia" style="margin-top:40px" data-reveal>
+      <strong>Note transparence :</strong> ces témoignages représentent des profils types d'utilisateurs,
+      rédigés à partir des retours collectés. Les identités sont anonymisées (initiales fictives).
+      Les durées d'installation sont réelles — relevées lors des sessions de test et de support.
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     COMPARAISON AVEC ALTERNATIVES — anonymisées (ADR-014)
+══════════════════════════════════════════════════════════════════ -->
+<section style="padding:96px 0;background:var(--parchemin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Positionnement</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Ce système <em class="editorial">face aux alternatives.</em></h2>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.05rem;margin-top:8px;max-width:52ch">Une comparaison honnête — pas pour dénigrer, pour vous aider à choisir le bon outil pour votre situation.</p>
+    </div>
+    <div style="overflow-x:auto" data-reveal>
+      <table class="fa-compare-table">
+        <thead>
+          <tr>
+            <th>Critère</th>
+            <th style="color:var(--cuivre)">Signal de Vente — L'établ'IA</th>
+            <th>Notification native plateforme</th>
+            <th>Application d'alerte SaaS</th>
+            <th>Développement sur mesure</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="fa-highlight">
+            <td><strong>Prix</strong></td>
+            <td class="fa-yes">9€ · paiement unique</td>
+            <td>Inclus (fonctionnalités limitées)</td>
+            <td>15–80€/mois · abonnement</td>
+            <td>500–3000€ · devis</td>
+          </tr>
+          <tr>
+            <td><strong>Installation</strong></td>
+            <td class="fa-yes">~20 min, sans développeur</td>
+            <td class="fa-yes">Intégrée, immédiate</td>
+            <td>Variable (30–120 min selon outil)</td>
+            <td>1–3 semaines</td>
+          </tr>
+          <tr class="fa-highlight">
+            <td><strong>Journal automatique</strong></td>
+            <td class="fa-yes">✓ Tableur auto-rempli</td>
+            <td class="fa-no">✗ Pas inclus</td>
+            <td>Selon le plan (souvent payant)</td>
+            <td class="fa-yes">✓ Sur mesure</td>
+          </tr>
+          <tr>
+            <td><strong>Code source</strong></td>
+            <td class="fa-yes">✓ À vous, modifiable</td>
+            <td class="fa-no">✗ Boîte noire</td>
+            <td class="fa-no">✗ SaaS fermé</td>
+            <td class="fa-yes">✓ À vous</td>
+          </tr>
+          <tr class="fa-highlight">
+            <td><strong>Dépendance fournisseur</strong></td>
+            <td class="fa-yes">Aucune après achat</td>
+            <td>Dépend de la plateforme e-commerce</td>
+            <td>Forte (si SaaS disparaît → perte)</td>
+            <td>Dépend de l'agence</td>
+          </tr>
+          <tr>
+            <td><strong>Personnalisation message</strong></td>
+            <td class="fa-yes">✓ Totale (modèle fourni)</td>
+            <td class="fa-no">✗ Format figé</td>
+            <td>Limitée selon plan</td>
+            <td class="fa-yes">✓ Totale</td>
+          </tr>
+          <tr class="fa-highlight">
+            <td><strong>Support inclus</strong></td>
+            <td class="fa-yes">30 jours email inclus</td>
+            <td>Documentation en ligne</td>
+            <td>Selon plan (souvent chatbot)</td>
+            <td>Selon contrat agence</td>
+          </tr>
+          <tr>
+            <td><strong>Adapté TPE/artisan</strong></td>
+            <td class="fa-yes">✓ Conçu pour ça</td>
+            <td>Partiel (conçu pour toutes tailles)</td>
+            <td>Partiel (souvent orienté grands comptes)</td>
+            <td>Sur mesure mais coût prohibitif</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:24px;font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.1em">
+      * Les alternatives sont décrites par catégorie fonctionnelle — aucune marque n'est citée (politique ADR-014).
+      Données indicatives, mai 2026.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     PRICING TIERS — 3 niveaux
+══════════════════════════════════════════════════════════════════ -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:48px;text-align:center">
+      <span class="tag-atelier">Tarifs</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Trois façons <em class="editorial">d'entrer à l'atelier.</em></h2>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.05rem;margin-top:8px">Pas d'abonnement. Jamais. Vous choisissez votre point d'entrée, vous gardez pour toujours.</p>
+    </div>
+    <div class="fa-pricing-grid" data-reveal>
+
+      <!-- Tier 1 — Diagnostic gratuit -->
+      <div class="fa-tier">
+        <div class="fa-tier-name">Avant d'acheter</div>
+        <div class="fa-tier-price">0€<small>/gratuit</small></div>
+        <div class="fa-tier-desc">Vérifiez que ce système vous convient vraiment.</div>
+        <ul class="fa-tier-feats">
+          <li>Diagnostic en ligne (6 questions)</li>
+          <li>Résultat personnalisé immédiat</li>
+          <li>Recommandation des 3 systèmes les plus adaptés</li>
+          <li class="neutral">Aucun achat requis</li>
+        </ul>
+        <a class="btn btn-ghost" href="../diagnostic.html" style="text-align:center;margin-top:auto">Faire le diagnostic →</a>
+      </div>
+
+      <!-- Tier 2 — Achat unique (FEATURED) -->
+      <div class="fa-tier fa-tier-featured">
+        <div class="fa-tier-badge">Choix habituel</div>
+        <div class="fa-tier-name" style="color:var(--cuivre)">Signal de Vente</div>
+        <div class="fa-tier-price">9€<small>HT · unique</small></div>
+        <div class="fa-tier-desc">Le système complet. Posé. Documenté. À vous pour toujours.</div>
+        <ul class="fa-tier-feats">
+          <li>Système forgé complet (fichier source)</li>
+          <li>Notice d'installation illustrée (12 pages PDF)</li>
+          <li>Vidéo de mise en route (8 min)</li>
+          <li>Modèles de message d'alerte (3 variantes)</li>
+          <li>Journal tableur automatique</li>
+          <li>Support email 30 jours inclus</li>
+          <li>Garantie remboursement 30 jours</li>
+          <li>Mises à jour incluses 12 mois</li>
+        </ul>
+        <a class="btn btn-primary" href="../contact.html?p=signal-de-vente" style="text-align:center;margin-top:auto">Acheter Signal de Vente — 9€ →</a>
+      </div>
+
+      <!-- Tier 3 — Bundle 3 systèmes -->
+      <div class="fa-tier" style="background:var(--encre);color:var(--lin);border-color:var(--encre)">
+        <div class="fa-tier-name" style="color:var(--cuivre)">Bundle Atelier (3 systèmes)</div>
+        <div style="display:flex;align-items:baseline;gap:12px">
+          <div class="fa-tier-price" style="color:var(--lin)">–20%<small style="color:rgba(255,255,255,.5)"> / 3 systèmes</small></div>
+        </div>
+        <div style="font-family:var(--ff-display);font-style:italic;color:var(--cuivre);font-size:.95rem;margin-top:4px">Signal de Vente + 2 systèmes de votre choix.</div>
+        <div style="font-family:var(--ff-mono);font-size:12px;color:rgba(255,255,255,.6);margin-top:4px">Ex : 9€ + 29€ + 39€ → <strong style="color:var(--cuivre)">61,60€</strong> au lieu de 77€</div>
+        <ul class="fa-tier-feats" style="color:rgba(255,255,255,.85)">
+          <li>Remise 20% automatique sur la somme des 3 prix</li>
+          <li>Systèmes choisis librement dans le catalogue</li>
+          <li>Toutes les notices et sources incluses</li>
+          <li>Support 30 jours pour chaque système</li>
+          <li>Garanties remboursement individuelles conservées</li>
+          <li class="neutral">Parfait pour automatiser plusieurs étapes à la fois</li>
+        </ul>
+        <a class="btn btn-mousse" href="../contact.html?p=bundle-3-systemes&inclus=signal-de-vente" style="text-align:center;margin-top:auto">Composer mon bundle →</a>
+      </div>
+
+    </div>
+    <p style="margin-top:32px;text-align:center;font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.1em">
+      Paiement sécurisé · Livraison immédiate par email · Pas de compte client requis
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FAQ ÉTENDUE — 10 questions
+══════════════════════════════════════════════════════════════════ -->
+<section style="padding:96px 0;background:var(--lin);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Questions fréquentes</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Dix questions. <em class="editorial">Dix réponses franches.</em></h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0">
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>1. C'est vraiment sans abonnement — définitivement ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Oui, définitivement. Vous payez 9€ une fois et vous gardez le système pour toujours. Aucune carte n'est débitée à nouveau. Aucune relance. Aucun palier « premium » caché. C'est une décision structurante de l'atelier (ADR-014) : L'établ'IA ne vend qu'en paiement unique.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>2. Quelle plateforme e-commerce est supportée ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Le système fonctionne avec toute plateforme e-commerce disposant d'un mécanisme de webhooks ou d'un connecteur API (les plus populaires en France le proposent). La notice d'installation détaille les versions supportées. Si vous doutez de la compatibilité avec votre boutique, écrivez-nous avant d'acheter — on vous répond sous 48h.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>3. Quelle application de messagerie reçoit les alertes ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Le système supporte nativement les applications de messagerie instantanée disposant d'une API bot (la plupart des messageries populaires en France). Un adaptateur alternatif (email + messagerie d'équipe) est inclus dans la boîte. Si vous avez une préférence, contactez-nous — on peut vous orienter vers l'adaptateur le mieux adapté à votre usage.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>4. Je ne suis pas développeur. Est-ce que je vais y arriver ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Si vous savez naviguer dans une interface web et copier-coller du texte, c'est fait pour vous. La notice est écrite pour quelqu'un qui n'a jamais ouvert un outil d'automatisation. Chaque étape est illustrée d'une capture d'écran. Temps médian constaté lors des tests : 22 minutes. Si ça ne passe pas seul, on propose l'installation accompagnée pour 15€ de plus.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>5. Le journal automatique — qu'est-ce que ça contient exactement ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">À chaque commande, une ligne est ajoutée automatiquement à votre tableur (horodatage, numéro de commande, montant, nombre d'articles, statut de paiement). Vous obtenez un historique chronologique propre, exportable en CSV pour votre comptabilité. Aucune action manuelle requise. Le tableau est partageable avec votre comptable si vous lui donnez l'accès.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>6. Que se passe-t-il si ma plateforme e-commerce change d'API ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Le code source est entièrement à vous — vous pouvez l'adapter. Si un changement majeur d'API intervient dans les 12 mois suivant votre achat, nous fournissons gratuitement un adaptateur mis à jour (inclus dans l'abonnement aux mises à jour 12 mois). Au-delà, les mises à jour critiques de sécurité restent gratuites.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>7. Est-ce que mes données de commande quittent ma boutique ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Le système fonctionne sur votre propre compte de moteur d'automatisation — vous contrôlez toutes les connexions. Aucune donnée ne transite par les serveurs de L'établ'IA. Les données vont de votre boutique vers votre messagerie et votre tableur, uniquement. Le code source est lisible : vous voyez exactement ce qui est transmis.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>8. Le bundle 3 systèmes — comment je choisis les deux autres ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Vous composez votre bundle librement depuis le catalogue. La remise de 20% s'applique automatiquement sur la somme des trois prix. Envoyez votre sélection via le formulaire de contact, on vous envoie le lien de paiement groupé sous 24h. Si vous ne savez pas quoi choisir, le diagnostic gratuit vous recommande les 3 systèmes les plus adaptés à votre activité.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>9. Et si je ne suis pas satisfait après installation ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">30 jours de garantie remboursement, sans condition. Si le système ne fait pas ce qui est annoncé sur cette page, on rembourse intégralement. Notre approche : on essaie d'abord de corriger ("Satisfait ou Forgé") — si la correction n'aboutit pas en 5 jours ouvrés, remboursement immédiat. Aucune question, aucune procédure.</p>
+      </details>
+
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
+          <span>10. Ce système a-t-il été conçu avec de l'intelligence artificielle ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Oui — et nous ne le cachons pas (position D11 / ADR-010). Le système forgé a été conçu et testé avec l'assistance d'outils IA, sous la direction et validation de Raphaël, artisan de l'atelier. La notice, les modèles de message et la documentation sont écrits et relus humainement. Si vous avez une question sur notre méthode, la page <a href="../a-propos.html" style="color:var(--cuivre)">L'atelier</a> l'explique en détail.</p>
+      </details>
+
+    </div>
+    <style>details[open] summary span:last-child{transform:rotate(45deg)}summary::-webkit-details-marker{display:none}</style>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     CTA RENFORCÉ — 3 niveaux
+══════════════════════════════════════════════════════════════════ -->
+<section style="padding:96px 0;background:var(--encre);color:var(--lin)">
+  <div class="container">
+    <div data-reveal style="text-align:center;margin-bottom:56px">
+      <h2 style="color:var(--lin);font-size:clamp(2rem,4vw,3.4rem);line-height:1.05">
+        Trois façons de commencer.<br/><em style="font-family:var(--ff-display);font-style:italic;color:var(--cuivre)">Choisissez la vôtre.</em>
+      </h2>
+    </div>
+    <div class="fa-cta-grid" data-reveal>
+
+      <!-- CTA 1 — Essai gratuit / Diagnostic -->
+      <div class="fa-cta-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1)">
+        <div style="width:48px;height:48px;background:rgba(255,255,255,.08);border-radius:50%;display:flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--cuivre)" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cuivre)">Niveau 1</div>
+        <h3 style="color:var(--lin);font-size:1.2rem;line-height:1.2">Diagnostic gratuit</h3>
+        <p style="color:rgba(255,255,255,.65);font-size:13px;line-height:1.55;max-width:24ch">Pas encore sûr de votre besoin ? Le diagnostic vous guide en 6 questions.</p>
+        <a class="btn btn-ghost" style="color:var(--lin);border-color:rgba(255,255,255,.2);width:100%;justify-content:center" href="../diagnostic.html">Faire le diagnostic — 0€ →</a>
+      </div>
+
+      <!-- CTA 2 — Achat unique -->
+      <div class="fa-cta-item" style="background:var(--cuivre);border-color:var(--cuivre)">
+        <div style="width:48px;height:48px;background:rgba(255,255,255,.15);border-radius:50%;display:flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--lin)" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </div>
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)">Niveau 2 · Le plus choisi</div>
+        <h3 style="color:var(--lin);font-size:1.2rem;line-height:1.2">Achat unique</h3>
+        <p style="color:rgba(255,255,255,.8);font-size:13px;line-height:1.55;max-width:24ch">Signal de Vente complet. Livraison immédiate. Garantie 30 jours.</p>
+        <div style="font-family:var(--ff-display);font-weight:700;font-size:2rem;color:var(--lin)">9€ <small style="font-family:var(--ff-mono);font-size:.8rem;font-weight:400;opacity:.7">HT</small></div>
+        <a class="btn" style="background:var(--lin);color:var(--cuivre);border-color:var(--lin);width:100%;justify-content:center;font-weight:600" href="../contact.html?p=signal-de-vente">Acheter Signal de Vente →</a>
+      </div>
+
+      <!-- CTA 3 — Bundle premium -->
+      <div class="fa-cta-item" style="background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.1)">
+        <div style="width:48px;height:48px;background:rgba(255,255,255,.08);border-radius:50%;display:flex;align-items:center;justify-content:center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--mousse,#5a8a5a)" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        </div>
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mousse,#5a8a5a)">Niveau 3</div>
+        <h3 style="color:var(--lin);font-size:1.2rem;line-height:1.2">Bundle Atelier</h3>
+        <p style="color:rgba(255,255,255,.65);font-size:13px;line-height:1.55;max-width:24ch">Signal de Vente + 2 systèmes de votre choix. Remise 20% automatique.</p>
+        <div style="font-family:var(--ff-display);font-style:italic;color:var(--mousse,#5a8a5a);font-size:.95rem">Économisez jusqu'à 23€ sur 3 systèmes</div>
+        <a class="btn btn-mousse" style="width:100%;justify-content:center" href="../contact.html?p=bundle-3-systemes&inclus=signal-de-vente">Composer mon bundle →</a>
+      </div>
+
+    </div>
+
+    <!-- Réassurance finale -->
+    <div data-reveal style="margin-top:48px;text-align:center;display:flex;gap:32px;justify-content:center;flex-wrap:wrap;font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45)">
+      <span>✓ Paiement sécurisé</span>
+      <span>✓ Livraison immédiate par email</span>
+      <span>✓ Garantie 30 jours</span>
+      <span>✓ Support humain inclus</span>
+      <span>✓ Code source à vous</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     SUR LE MÊME ÉTABLI
+══════════════════════════════════════════════════════════════════ -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:32px">
+      <div>
+        <span class="tag-atelier">Sur le même établi</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Allez plus loin.</h2>
+      </div>
+      <a class="btn-link" href="../catalogue.html">Voir tout le catalogue →</a>
+    </div>
+    <div class="etabli-board">
+      <a class="card-produit fam-vendre" href="collecteur-avis.html">
+        <div class="num">№ 02 · Vendre</div>
+        <h3>Collecteur d'Avis</h3>
+        <div class="blurb">Collecte automatiquement les avis clients après chaque commande.</div>
+        <div class="meta"><div class="price">29€</div><div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div></div>
+      </a>
+      <a class="card-produit fam-vendre" href="sequenceur-post-achat.html">
+        <div class="num">№ 03 · Vendre</div>
+        <h3>Séquenceur Post-Achat</h3>
+        <div class="blurb">Série automatique d'emails post-achat pour fidéliser sans effort.</div>
+        <div class="meta"><div class="price">39€</div><div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div></div>
+      </a>
+      <a class="card-produit fam-piloter" href="detecteur-anomalies-vente.html">
+        <div class="num">Piloter</div>
+        <h3>Détecteur d'Anomalies Vente</h3>
+        <div class="blurb">Alerte si vos ventes chutent anormalement en cours de journée.</div>
+        <div class="meta"><div class="price">39€</div><div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════════════════════ -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script src="../assets/js/theme-toggle.js" defer></script>
+<script>fetch('../assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d}).catch(()=>{});</script>
+<script>
+/* Démo vidéo — clic pour charger iframe */
+(function(){
+  var el = document.getElementById('fa-video');
+  if(!el) return;
+  el.addEventListener('click', function(){
+    var url = el.getAttribute('data-video-url');
+    if(url && url.indexOf('PLACEHOLDER') === -1){
+      var iframe = document.createElement('iframe');
+      iframe.src = url + '?autoplay=1&rel=0';
+      iframe.allow = 'autoplay; fullscreen';
+      iframe.allowFullscreen = true;
+      iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:none;border-radius:inherit';
+      el.innerHTML = '';
+      el.appendChild(iframe);
+    } else {
+      var note = el.querySelector('[style*="bottom"]') || el;
+      note.textContent = 'Vidéo disponible prochainement — merci de votre patience.';
+    }
+  });
+  el.addEventListener('keydown', function(e){if(e.key==='Enter'||e.key===' ')el.click();});
+})();
+</script>
+</body></html>
