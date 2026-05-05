@@ -5,7 +5,7 @@
 <script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Catalogue — L'établ'IA</title>
-<meta name="description" content="L'intégralité de l'atelier : 38 systèmes numériques classés en 6 familles, 3 packs, paiement unique." />
+<meta name="description" content="L'intégralité de l'atelier : 38 systèmes numériques, 3 packs, paiement unique." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -52,73 +52,6 @@
   grid-column:1/-1;
 }
 @media(max-width:660px){.adv-filters-left{flex-direction:column !important;align-items:stretch !important}.adv-select,.adv-reset{width:100%;}}
-/* ── Famille surveiller (couleur propre) ── */
-.fam-surveiller{--fam:var(--mousse)}
-.fam-dot.fam-surveiller{background:var(--mousse)}
-/* ── Grille 6 familles ── */
-.familles-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
-}
-@media(max-width:900px){.familles-grid{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:540px){.familles-grid{grid-template-columns:1fr}}
-.famille-card{
-  background:var(--parchemin);
-  border:1px solid var(--chene-25);
-  border-left:4px solid var(--fam,var(--chene));
-  border-radius:6px;
-  padding:24px 20px;
-  cursor:pointer;text-decoration:none;color:inherit;
-  display:flex;flex-direction:column;gap:10px;
-  transition:transform .2s, box-shadow .2s;
-  text-align:left;font-family:inherit;
-}
-.famille-card:hover{
-  transform:translateY(-2px);
-  box-shadow:0 6px 20px rgba(44,40,37,.09);
-  background:var(--lin);
-}
-.famille-card.active-famille{
-  background:var(--chene-10);
-  border-color:var(--chene-25);
-  box-shadow:inset 0 0 0 1px var(--fam,var(--chene));
-}
-.famille-card-icon{font-size:1.5rem;line-height:1;display:block}
-.famille-card-name{
-  font-family:var(--ff-display);font-size:1.1rem;
-  font-weight:600;color:var(--ebene);margin:0;
-}
-.famille-card-desc{
-  font-size:13px;color:var(--ebene-80);line-height:1.5;flex:1;margin:0;
-}
-.famille-card-footer{
-  display:flex;justify-content:space-between;align-items:center;
-  margin-top:6px;padding-top:10px;
-  border-top:1px dashed var(--chene-25);
-}
-.famille-card-count{
-  font-family:var(--ff-mono);font-size:10px;
-  color:var(--fam,var(--chene));letter-spacing:.1em;text-transform:uppercase;
-}
-.famille-card-cta{
-  font-family:var(--ff-mono);font-size:10px;
-  color:var(--chene);letter-spacing:.08em;
-}
-/* ── Section systèmes collapsible ── */
-#systemes-section{display:none}
-#systemes-section.is-open{display:block}
-/* ── Bouton toggle ── */
-.toggle-systemes-btn{
-  display:inline-flex;align-items:center;gap:8px;
-  padding:14px 32px;
-  background:transparent;
-  border:1.5px solid var(--chene);
-  border-radius:99px;
-  font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;
-  text-transform:uppercase;color:var(--chene);
-  cursor:pointer;transition:all .2s;
-}
-.toggle-systemes-btn:hover{background:var(--chene);color:var(--lin)}
-.toggle-systemes-btn.is-open{background:var(--ebene);color:var(--lin);border-color:var(--ebene)}
 </style>
 </head>
 <body>
@@ -138,7 +71,6 @@
           <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
           <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
           <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
-          <a href="bundles.html" style="color:var(--mousse);font-weight:600">★ Bundles — jusqu'à -25 %</a>
           <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
         </div>
       </div>
@@ -202,94 +134,14 @@
     <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Catalogue</span></div>
     <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;margin-top:48px" class="cat-head">
       <div data-reveal>
-        <span class="tag-atelier">Catalogue · 38 systèmes · 6 familles</span>
+        <span class="tag-atelier">Catalogue · 38 systèmes</span>
         <h1 style="margin-top:18px">Toute la <em class="editorial">production</em> de l'atelier.</h1>
       </div>
       <div data-reveal data-reveal-delay="1">
         <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.15rem;line-height:1.5">
-          38 systèmes forgés, classés par 6 familles. Trois packs. Tout est là — rien n'est caché en page 3, ni en pop-up au moment de payer.
+          Onze pièces. Cinq familles. Trois packs. Tout est là — rien n'est caché en page 3, ni en pop-up au moment de payer.
         </p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ BLOC 1 · Grille 6 familles ═══ -->
-<section id="familles-section" style="padding:64px 0 52px;background:var(--parchemin);border-bottom:1px solid var(--chene-25)">
-  <div class="container">
-    <div style="margin-bottom:36px" data-reveal>
-      <span class="tag-atelier">6 Familles · 38 systèmes</span>
-      <h2 style="margin-top:14px;font-size:clamp(1.4rem,2.5vw,1.9rem)">Choisissez votre <em class="editorial">terrain</em>.</h2>
-      <p style="color:var(--ebene-80);font-size:15px;margin-top:10px;max-width:520px">Cliquez sur une famille pour filtrer — ou déployez le catalogue complet ci-dessous.</p>
-    </div>
-    <div class="familles-grid" data-reveal data-reveal-delay="1">
-      <!-- Automatiser · 9 systèmes -->
-      <button class="famille-card fam-automatiser" data-famille-filter="automatiser" type="button" aria-label="Filtrer : famille Automatiser">
-        <span class="famille-card-icon">⚙️</span>
-        <strong class="famille-card-name">Automatiser</strong>
-        <p class="famille-card-desc">Déléguer les tâches répétitives aux machines — plus jamais de copier-coller sans valeur.</p>
-        <div class="famille-card-footer">
-          <span class="famille-card-count">9 systèmes</span>
-          <span class="famille-card-cta">Voir →</span>
-        </div>
-      </button>
-      <!-- Vendre · 9 systèmes -->
-      <button class="famille-card fam-vendre" data-famille-filter="vendre" type="button" aria-label="Filtrer : famille Vendre">
-        <span class="famille-card-icon">📈</span>
-        <strong class="famille-card-name">Vendre</strong>
-        <p class="famille-card-desc">Convertir, relancer, fidéliser sans effort manuel ni harcèlement commercial.</p>
-        <div class="famille-card-footer">
-          <span class="famille-card-count">9 systèmes</span>
-          <span class="famille-card-cta">Voir →</span>
-        </div>
-      </button>
-      <!-- Piloter · 8 systèmes -->
-      <button class="famille-card fam-piloter" data-famille-filter="piloter" type="button" aria-label="Filtrer : famille Piloter">
-        <span class="famille-card-icon">🧭</span>
-        <strong class="famille-card-name">Piloter</strong>
-        <p class="famille-card-desc">Visualiser, mesurer et décider avec les bons chiffres au bon moment.</p>
-        <div class="famille-card-footer">
-          <span class="famille-card-count">8 systèmes</span>
-          <span class="famille-card-cta">Voir →</span>
-        </div>
-      </button>
-      <!-- Sécuriser · 5 systèmes -->
-      <button class="famille-card fam-securiser" data-famille-filter="securiser" type="button" aria-label="Filtrer : famille Sécuriser">
-        <span class="famille-card-icon">🔒</span>
-        <strong class="famille-card-name">Sécuriser</strong>
-        <p class="famille-card-desc">Protéger données, accès et continuité d'activité sans paranoïa technique.</p>
-        <div class="famille-card-footer">
-          <span class="famille-card-count">5 systèmes</span>
-          <span class="famille-card-cta">Voir →</span>
-        </div>
-      </button>
-      <!-- Produire · 4 systèmes -->
-      <button class="famille-card fam-produire" data-famille-filter="produire" type="button" aria-label="Filtrer : famille Produire">
-        <span class="famille-card-icon">🛠️</span>
-        <strong class="famille-card-name">Produire</strong>
-        <p class="famille-card-desc">Créer contenus, fiches et livrables plus vite — et mieux, assisté par IA.</p>
-        <div class="famille-card-footer">
-          <span class="famille-card-count">4 systèmes</span>
-          <span class="famille-card-cta">Voir →</span>
-        </div>
-      </button>
-      <!-- Surveiller · 3 systèmes -->
-      <button class="famille-card fam-surveiller" data-famille-filter="surveiller" type="button" aria-label="Filtrer : famille Surveiller">
-        <span class="famille-card-icon">👁️</span>
-        <strong class="famille-card-name">Surveiller</strong>
-        <p class="famille-card-desc">Observer marché, concurrence et réputation en continu, sans intervention.</p>
-        <div class="famille-card-footer">
-          <span class="famille-card-count">3 systèmes</span>
-          <span class="famille-card-cta">Voir →</span>
-        </div>
-      </button>
-    </div>
-    <!-- Bouton déployer tout le catalogue -->
-    <div style="text-align:center;margin-top:40px">
-      <button id="toggle-all-systemes" class="toggle-systemes-btn" type="button">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        Voir tous les systèmes (38)
-      </button>
     </div>
   </div>
 </section>
@@ -315,7 +167,7 @@
           <option value="securiser">Sécuriser</option>
           <option value="vendre">Vendre</option>
           <option value="produire">Produire</option>
-          <option value="surveiller">Surveiller</option>
+          <option value="productivite">Productivité</option>
         </select>
         <!-- Filtre 3 : Durée installation -->
         <select id="filter-duree" class="adv-select" aria-label="Filtrer par durée d'installation">
@@ -339,8 +191,8 @@
   </div>
 </section>
 
-<!-- ═══ BLOC 3 · Grille 38 systèmes (déployable) ═══ -->
-<section id="systemes-section" style="padding:64px 0;background:var(--lin)">
+<!-- Tous les produits -->
+<section style="padding:64px 0;background:var(--lin)">
   <div class="container">
     <div class="cote" style="margin-bottom:32px"><span data-count>11</span> <span class="cote-line"></span> <span>systèmes affichés</span></div>
     <div class="etabli-board" data-product-grid>
@@ -796,7 +648,7 @@
     <div>
       <h4>L'atelier</h4>
       <ul>
-        <li><a href="catalogue.html">Catalogue</a></li><li><a href="bundles.html" style="color:var(--mousse);font-weight:600">Bundles — jusqu'à -25 %</a></li>
+        <li><a href="catalogue.html">Catalogue (38)</a></li>
         <li><a href="famille-automatiser.html">Automatiser</a></li>
         <li><a href="famille-vendre.html">Vendre</a></li>
         <li><a href="famille-piloter.html">Piloter</a></li>
@@ -918,69 +770,5 @@ fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d})
 })();
 </script>
 <script defer src="/assets/js/easter-eggs.js"></script>
-<script>
-/* ─── Familles cards + toggle systèmes ─── */
-(function(){
-  var section     = document.getElementById('systemes-section');
-  var toggleBtn   = document.getElementById('toggle-all-systemes');
-  var sFamily     = document.getElementById('filter-family');
-  var famCards    = document.querySelectorAll('[data-famille-filter]');
-  var filtersBar  = document.querySelector('.catalogue-filters');
-
-  /* Ouvre la section systèmes */
-  function openSection(){
-    if(!section) return;
-    section.classList.add('is-open');
-    if(toggleBtn){
-      toggleBtn.classList.add('is-open');
-      toggleBtn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg> Masquer le catalogue';
-    }
-  }
-
-  /* Scroll vers la barre de filtres */
-  function scrollToFilters(){
-    if(filtersBar){
-      var top = filtersBar.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({top: top, behavior: 'smooth'});
-    }
-  }
-
-  /* Clic sur une carte famille */
-  famCards.forEach(function(card){
-    card.addEventListener('click', function(){
-      var fam = this.getAttribute('data-famille-filter');
-      /* Met à jour le select filtre */
-      if(sFamily){ sFamily.value = fam; sFamily.dispatchEvent(new Event('change')); }
-      /* Marque la carte active */
-      famCards.forEach(function(c){ c.classList.remove('active-famille'); });
-      this.classList.add('active-famille');
-      /* Ouvre la section */
-      openSection();
-      /* Scroll vers les filtres */
-      setTimeout(scrollToFilters, 60);
-    });
-  });
-
-  /* Bouton "Voir tous les systèmes" */
-  if(toggleBtn){
-    toggleBtn.addEventListener('click', function(){
-      if(section.classList.contains('is-open')){
-        section.classList.remove('is-open');
-        toggleBtn.classList.remove('is-open');
-        toggleBtn.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg> Voir tous les systèmes (38)';
-        /* Réinitialise le filtre famille + retire les highlights */
-        if(sFamily){ sFamily.value = 'all'; sFamily.dispatchEvent(new Event('change')); }
-        famCards.forEach(function(c){ c.classList.remove('active-famille'); });
-      } else {
-        /* Réinitialise le filtre famille pour tout afficher */
-        if(sFamily){ sFamily.value = 'all'; sFamily.dispatchEvent(new Event('change')); }
-        famCards.forEach(function(c){ c.classList.remove('active-famille'); });
-        openSection();
-        setTimeout(scrollToFilters, 60);
-      }
-    });
-  }
-})();
-</script>
 </body>
 </html>
