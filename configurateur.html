@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Configurateur — Composez votre système forgé | L'Établia</title>
+  <meta name="description" content="Choisissez votre système forgé et vos plateformes. Obtenez un workflow n8n personnalisé, prêt à installer." />
+  <meta name="robots" content="index, follow" />
+  <link rel="stylesheet" href="/assets/css/letablia.css" />
+  <style>
+    /* ── Configurateur — styles spécifiques ── */
+    :root {
+      --forge-primary: #1a1a2e;
+      --forge-accent:  #e8b86d;
+      --forge-ok:      #2d9e4f;
+      --forge-warn:    #c0392b;
+      --forge-muted:   #6b7280;
+      --forge-card-bg: #f9f6f0;
+      --forge-border:  #d4c9b5;
+    }
+
+    .configurateur-hero {
+      background: var(--forge-primary);
+      color: #fff;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+    .configurateur-hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-weight: 700;
+      margin-bottom: .75rem;
+    }
+    .configurateur-hero p {
+      color: rgba(255,255,255,.75);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .config-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .config-section h2 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-left: 4px solid var(--forge-accent);
+      padding-left: .75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Cartes produits (cœurs) ── */
+    .coeurs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .coeur-card {
+      background: var(--forge-card-bg);
+      border: 2px solid var(--forge-border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      cursor: pointer;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .coeur-card:hover,
+    .coeur-card:focus {
+      border-color: var(--forge-accent);
+      box-shadow: 0 2px 8px rgba(0,0,0,.12);
+      outline: none;
+    }
+    .coeur-card.selected {
+      border-color: var(--forge-ok);
+      background: #edfaf3;
+    }
+    .coeur-card .coeur-name   { font-weight: 600; font-size: .97rem; margin-bottom: .25rem; }
+    .coeur-card .coeur-famille { font-size: .78rem; color: var(--forge-muted); text-transform: uppercase; letter-spacing: .04em; }
+    .coeur-card .coeur-prix   { font-size: 1.1rem; font-weight: 700; color: var(--forge-primary); margin-top: .5rem; }
+
+    /* ── Branches / adaptateurs ── */
+    .branches-container { display: none; }
+    .branches-container.visible { display: block; }
+
+    .branche-block {
+      background: #fff;
+      border: 1px solid var(--forge-border);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .branche-block h3 {
+      font-size: .95rem;
+      font-weight: 600;
+      margin-bottom: .75rem;
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+    .branche-badge {
+      font-size: .7rem;
+      background: var(--forge-accent);
+      color: var(--forge-primary);
+      padding: .15rem .4rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    .variantes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+    .variante-btn {
+      border: 2px solid var(--forge-border);
+      background: #fff;
+      border-radius: 6px;
+      padding: .4rem .8rem;
+      font-size: .85rem;
+      cursor: pointer;
+      transition: border-color .12s, background .12s;
+    }
+    .variante-btn:hover { border-color: var(--forge-accent); }
+    .variante-btn.selected {
+      border-color: var(--forge-ok);
+      background: #edfaf3;
+      font-weight: 600;
+    }
+    .variante-btn:disabled, .variante-btn.indisponible {
+      opacity: .45;
+      cursor: not-allowed;
+      border-style: dashed;
+    }
+    .variante-btn.indisponible::after { content: " ⏳"; }
+
+    /* ── Récapitulatif et CTA ── */
+    .recap-panel {
+      position: sticky;
+      top: 1rem;
+      background: var(--forge-primary);
+      color: #fff;
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+    }
+    .recap-panel h2 { color: var(--forge-accent); border-left: none; padding-left: 0; }
+    .recap-coeur   { font-size: 1.1rem; font-weight: 700; margin-bottom: .5rem; }
+    .recap-prix    { font-size: 1.4rem; font-weight: 800; color: var(--forge-accent); }
+    .recap-adaptateurs { list-style: none; padding: 0; margin: .75rem 0; }
+    .recap-adaptateurs li { font-size: .88rem; opacity: .9; padding: .15rem 0; }
+    .recap-adaptateurs li::before { content: "🎁 "; }
+
+    .btn-checkout {
+      display: block;
+      width: 100%;
+      padding: .9rem 1.5rem;
+      background: var(--forge-accent);
+      color: var(--forge-primary);
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      margin-top: 1.25rem;
+      transition: opacity .15s;
+    }
+    .btn-checkout:hover { opacity: .88; }
+    .btn-checkout:disabled { opacity: .45; cursor: not-allowed; }
+
+    /* ── Case renonciation droit de rétractation (ART L.221-28) ── */
+    .retractation-block {
+      background: #fff8e1;
+      border: 1.5px solid #f0c040;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      display: none;
+    }
+    .retractation-block.visible { display: block; }
+    .retractation-label {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      font-size: .87rem;
+      line-height: 1.5;
+      cursor: pointer;
+    }
+    .retractation-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+      /* OBLIGATOIRE : jamais pré-cochée — art. L.221-28, 13° */
+      accent-color: var(--forge-primary);
+    }
+
+    /* ── Erreurs / messages ── */
+    .config-error {
+      background: #fdecea;
+      border: 1px solid var(--forge-warn);
+      color: var(--forge-warn);
+      border-radius: 6px;
+      padding: .75rem 1rem;
+      font-size: .88rem;
+      margin-top: .75rem;
+      display: none;
+    }
+    .config-error.visible { display: block; }
+
+    .config-warning {
+      background: #fff8e1;
+      border: 1px solid #f0c040;
+      color: #7a5800;
+      border-radius: 6px;
+      padding: .75rem 1rem;
+      font-size: .88rem;
+      margin-top: .75rem;
+      display: none;
+    }
+    .config-warning.visible { display: block; }
+
+    /* ── Layout deux colonnes (large) ── */
+    @media (min-width: 900px) {
+      .config-layout {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 2rem;
+        align-items: start;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .config-section { max-width: none; margin: 2rem 0; padding: 0; }
+    }
+
+    /* ── Filtre famille ── */
+    .famille-filter {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-bottom: 1.25rem;
+    }
+    .famille-btn {
+      border: 2px solid var(--forge-border);
+      background: #fff;
+      border-radius: 20px;
+      padding: .3rem .9rem;
+      font-size: .82rem;
+      cursor: pointer;
+      transition: border-color .12s, background .12s;
+    }
+    .famille-btn:hover, .famille-btn.active {
+      border-color: var(--forge-primary);
+      background: var(--forge-primary);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── HERO ────────────────────────────────────────────────────────────── -->
+  <header class="configurateur-hero">
+    <h1>⚙️ Composez votre système forgé</h1>
+    <p>Choisissez votre système, sélectionnez vos plateformes.<br>
+       Vous obtenez un workflow n8n prêt à installer + les adaptateurs offerts.</p>
+  </header>
+
+  <!-- ── LAYOUT PRINCIPAL ─────────────────────────────────────────────────── -->
+  <div class="config-layout">
+    <main>
+
+      <!-- ── ÉTAPE 1 — Choisir le cœur ── -->
+      <section class="config-section" id="step-coeur">
+        <h2>Étape 1 — Choisissez votre système</h2>
+
+        <!-- Filtre famille -->
+        <div class="famille-filter" id="famille-filter" role="group" aria-label="Filtrer par famille">
+          <button class="famille-btn active" data-famille="" onclick="filterFamille(this, '')">Tous (38)</button>
+          <button class="famille-btn" data-famille="Automatiser" onclick="filterFamille(this, 'Automatiser')">⚡ Automatiser</button>
+          <button class="famille-btn" data-famille="Vendre" onclick="filterFamille(this, 'Vendre')">💰 Vendre</button>
+          <button class="famille-btn" data-famille="Piloter" onclick="filterFamille(this, 'Piloter')">🧭 Piloter</button>
+          <button class="famille-btn" data-famille="Produire" onclick="filterFamille(this, 'Produire')">📄 Produire</button>
+          <button class="famille-btn" data-famille="Sécuriser" onclick="filterFamille(this, 'Sécuriser')">🛡️ Sécuriser</button>
+          <button class="famille-btn" data-famille="Surveiller" onclick="filterFamille(this, 'Surveiller')">👁️ Surveiller</button>
+        </div>
+
+        <div class="coeurs-grid" id="coeurs-grid">
+          <!-- Injecté par JS depuis configurations.json -->
+        </div>
+      </section>
+
+      <!-- ── ÉTAPE 2 — Choisir les adaptateurs ── -->
+      <section class="config-section branches-container" id="step-branches">
+        <h2>Étape 2 — Choisissez vos plateformes <span style="font-weight:400;color:var(--forge-ok);font-size:.85rem;">🎁 offerts</span></h2>
+        <div id="branches-wrapper">
+          <!-- Injecté par JS selon le cœur sélectionné -->
+        </div>
+      </section>
+
+      <!-- Messages d'erreur/warning -->
+      <div class="config-error" id="config-error"></div>
+      <div class="config-warning" id="config-warning"></div>
+
+    </main>
+
+    <!-- ── SIDEBAR RÉCAPITULATIF ── -->
+    <aside>
+      <div class="recap-panel" id="recap-panel">
+        <h2>Votre combo</h2>
+        <div id="recap-content">
+          <p style="opacity:.6;font-size:.88rem;">Sélectionnez un système pour commencer.</p>
+        </div>
+      </div>
+
+      <!-- Case renonciation droit de rétractation (obligatoire ART L.221-28, 13°) -->
+      <div class="retractation-block" id="retractation-block">
+        <label class="retractation-label" for="checkbox-retractation">
+          <input
+            type="checkbox"
+            id="checkbox-retractation"
+            name="retractation"
+            required
+            aria-required="true"
+          />
+          <span>
+            <strong>Je renonce à mon droit de rétractation</strong> et je demande l'exécution
+            immédiate de la prestation de contenu numérique.
+            Je comprends que mon droit de rétractation légal sera perdu à la livraison du fichier
+            ZIP téléchargeable.
+            <br><em>(Art. L.221-28, 13° du Code de la consommation)</em>
+          </span>
+        </label>
+        <p style="margin-top:.5rem;font-size:.78rem;color:#7a5800;">
+          ⚠️ Cette case n'est pas pré-cochée. Vous devez cocher vous-même pour procéder au paiement.
+          La politique «&nbsp;Satisfait ou Forgé&nbsp;» s'applique à la place.
+        </p>
+      </div>
+
+      <button class="btn-checkout" id="btn-checkout" disabled onclick="handleCheckout()">
+        Acheter ce combo
+      </button>
+    </aside>
+  </div>
+
+  <!-- ── SCRIPT PRINCIPAL ─────────────────────────────────────────────────── -->
+  <script>
+  // ─── État global ──────────────────────────────────────────────────────────
+  let CONFIG = null;         // configurations.json parsé
+  let selectedCoeur = null;  // { slug, titre, prix, branches[] }
+  let selectedAdaptateurs = {};  // { 'BR-007': { variante, label }, ... }
+
+  // ─── Chargement configurations.json ──────────────────────────────────────
+  async function loadConfig() {
+    try {
+      const resp = await fetch('/assets/data/configurations.json');
+      if (!resp.ok) throw new Error('HTTP ' + resp.status);
+      CONFIG = await resp.json();
+      renderCoeurs();
+    } catch (e) {
+      console.error('Erreur chargement configurations.json :', e);
+      showError('Impossible de charger la configuration. Actualisez la page.');
+    }
+  }
+
+  // ─── Rendu grille des cœurs ───────────────────────────────────────────────
+  function renderCoeurs(familleFilter = '') {
+    const grid = document.getElementById('coeurs-grid');
+    grid.innerHTML = '';
+
+    const produits = CONFIG.produits.filter(p =>
+      p.status !== 'soon' && (!familleFilter || p.famille === familleFilter)
+    );
+
+    produits.forEach(p => {
+      const card = document.createElement('div');
+      card.className = 'coeur-card';
+      card.tabIndex = 0;
+      card.dataset.slug = p.slug;
+      card.setAttribute('role', 'button');
+      card.setAttribute('aria-pressed', 'false');
+      card.innerHTML = `
+        <div class="coeur-famille">${p.famille}</div>
+        <div class="coeur-name">${p.titre}</div>
+        <div class="coeur-prix">${p.prix}&nbsp;€</div>
+      `;
+      card.addEventListener('click', () => selectCoeur(p, card));
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectCoeur(p, card); }
+      });
+      grid.appendChild(card);
+    });
+  }
+
+  // ─── Filtre famille ───────────────────────────────────────────────────────
+  function filterFamille(btn, famille) {
+    document.querySelectorAll('.famille-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderCoeurs(famille);
+    // Si le cœur sélectionné disparaît du filtre, reset
+    if (selectedCoeur && famille && selectedCoeur.famille !== famille) {
+      resetSelection();
+    }
+  }
+
+  // ─── Sélection d'un cœur ─────────────────────────────────────────────────
+  function selectCoeur(produit, cardEl) {
+    // Déselectionner l'ancien
+    document.querySelectorAll('.coeur-card').forEach(c => {
+      c.classList.remove('selected');
+      c.setAttribute('aria-pressed', 'false');
+    });
+    cardEl.classList.add('selected');
+    cardEl.setAttribute('aria-pressed', 'true');
+
+    selectedCoeur = produit;
+    selectedAdaptateurs = {};  // reset adaptateurs
+
+    // Afficher étape 2
+    renderBranches(produit);
+    document.getElementById('step-branches').classList.add('visible');
+    document.getElementById('retractation-block').classList.add('visible');
+    document.getElementById('checkbox-retractation').checked = false;
+    updateRecap();
+    clearMessages();
+  }
+
+  // ─── Rendu des branches/adaptateurs ──────────────────────────────────────
+  function renderBranches(produit) {
+    const wrapper = document.getElementById('branches-wrapper');
+    wrapper.innerHTML = '';
+
+    produit.branches.forEach(brancheId => {
+      const brancheData = CONFIG.branches.find(b => b.id === brancheId);
+      if (!brancheData) return;
+
+      const block = document.createElement('div');
+      block.className = 'branche-block';
+      block.innerHTML = `
+        <h3>
+          <span class="branche-badge">${brancheId}</span>
+          ${brancheData.nom}
+        </h3>
+        <p style="font-size:.82rem;color:var(--forge-muted);margin-bottom:.75rem;">
+          ${brancheData.role}
+        </p>
+        <div class="variantes-grid" id="variantes-${brancheId}"></div>
+      `;
+      wrapper.appendChild(block);
+
+      const varGrid = block.querySelector('.variantes-grid');
+      brancheData.variantes.forEach(v => {
+        const btn = document.createElement('button');
+        btn.className = 'variante-btn' + (!v.disponible ? ' indisponible' : '');
+        btn.textContent = v.label;
+        btn.disabled = !v.disponible;
+        btn.dataset.branche = brancheId;
+        btn.dataset.variante = v.id;
+        btn.title = v.disponible ? '' : 'Pas encore disponible — contactez-nous pour être notifié';
+        btn.addEventListener('click', () => {
+          if (!v.disponible) {
+            showError(`"${v.label}" n'est pas encore disponible. Contactez-nous pour être prévenu.`);
+            return;
+          }
+          selectVariante(brancheId, v.id, v.label, btn, varGrid);
+        });
+        varGrid.appendChild(btn);
+      });
+    });
+  }
+
+  // ─── Sélection d'une variante ─────────────────────────────────────────────
+  function selectVariante(brancheId, varianteId, label, btn, varGrid) {
+    // Radio : 1 seule variante par branche
+    varGrid.querySelectorAll('.variante-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedAdaptateurs[brancheId] = { variante: varianteId, label };
+    updateRecap();
+    clearMessages();
+  }
+
+  // ─── Mise à jour du récapitulatif ─────────────────────────────────────────
+  function updateRecap() {
+    const recapContent = document.getElementById('recap-content');
+
+    if (!selectedCoeur) {
+      recapContent.innerHTML = '<p style="opacity:.6;font-size:.88rem;">Sélectionnez un système pour commencer.</p>';
+      document.getElementById('btn-checkout').disabled = true;
+      return;
+    }
+
+    const adaptsChoisis = Object.entries(selectedAdaptateurs);
+    const nbBranches = selectedCoeur.branches.length;
+    const nbChoisis  = adaptsChoisis.length;
+
+    // Vérifier si au moins 1 adaptateur par branche
+    const allBranchesConfigured = nbChoisis === nbBranches;
+
+    let html = `
+      <div class="recap-coeur">🔩 ${selectedCoeur.titre}</div>
+      <div class="recap-prix">${selectedCoeur.prix}&nbsp;€</div>
+    `;
+
+    if (adaptsChoisis.length > 0) {
+      html += `<ul class="recap-adaptateurs">`;
+      adaptsChoisis.forEach(([brancheId, { label }]) => {
+        html += `<li>${label}</li>`;
+      });
+      html += `</ul>`;
+    } else {
+      html += `<p style="opacity:.6;font-size:.82rem;margin-top:.75rem;">
+        Choisissez vos plateformes ci-dessus.<br>
+        <em>${nbBranches} branche(s) à configurer.</em>
+      </p>`;
+    }
+
+    if (!allBranchesConfigured) {
+      html += `<p style="color:#f0c040;font-size:.8rem;margin-top:.5rem;">
+        ⚠️ ${nbChoisis}/${nbBranches} plateformes configurées
+      </p>`;
+    }
+
+    recapContent.innerHTML = html;
+
+    // Activer le bouton si tout est configuré + case cochée
+    const canBuy = allBranchesConfigured &&
+                   (document.getElementById('checkbox-retractation')?.checked ?? false);
+    document.getElementById('btn-checkout').disabled = !canBuy;
+  }
+
+  // ─── Écouter la case de rétractation ──────────────────────────────────────
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('checkbox-retractation')
+      .addEventListener('change', updateRecap);
+  });
+
+  // ─── Gestion du checkout ──────────────────────────────────────────────────
+  function handleCheckout() {
+    clearMessages();
+
+    // 1. Vérifications côté client
+    if (!selectedCoeur) {
+      showError('Veuillez sélectionner un système forgé.');
+      return;
+    }
+
+    const adaptsChoisis = Object.entries(selectedAdaptateurs);
+    if (adaptsChoisis.length === 0) {
+      showError('Veuillez choisir au moins une plateforme (adaptateur).');
+      return;
+    }
+
+    const nbBranches = selectedCoeur.branches.length;
+    if (adaptsChoisis.length < nbBranches) {
+      showError(
+        `Ce système nécessite ${nbBranches} plateforme(s) configurée(s). ` +
+        `Il vous manque : ` +
+        selectedCoeur.branches
+          .filter(b => !selectedAdaptateurs[b])
+          .map(b => CONFIG.branches.find(br => br.id === b)?.nom || b)
+          .join(', ')
+        + '.'
+      );
+      return;
+    }
+
+    const checkbox = document.getElementById('checkbox-retractation');
+    if (!checkbox.checked) {
+      showError('Vous devez cocher la case de renonciation au droit de rétractation pour procéder.');
+      checkbox.focus();
+      return;
+    }
+
+    // 2. Construire l'URL checkout LemonSqueezy
+    // IMPORTANT : Cette section nécessite que Raphaël ait renseigné les IDs LS.
+    // En V1, on redirige vers un formulaire de contact pré-rempli.
+    // En V2 (après création des produits LS), utiliser COEUR_VARIANT_IDS.
+    const comboResume = buildComboResume();
+    const url = buildLSUrl(comboResume);
+
+    if (!url) {
+      // Fallback V1 : formulaire de contact pré-rempli
+      const subject = encodeURIComponent(`Commande combo : ${selectedCoeur.titre}`);
+      const body = encodeURIComponent(
+        `Bonjour,\n\nJe souhaite acheter :\n${comboResume}\n\nMerci.`
+      );
+      window.location.href = `/contact.html?subject=${subject}&body=${body}`;
+      return;
+    }
+
+    // V2 : Overlay LemonSqueezy JS
+    window.open(url, '_blank', 'noopener');
+  }
+
+  function buildComboResume() {
+    if (!selectedCoeur) return '';
+    let lines = [`Système : ${selectedCoeur.titre} (${selectedCoeur.prix}€)`];
+    Object.entries(selectedAdaptateurs).forEach(([brId, { label }]) => {
+      lines.push(`Adaptateur ${brId} : ${label} (0€ offert)`);
+    });
+    return lines.join('\n');
+  }
+
+  /**
+   * Construit l'URL LemonSqueezy.
+   * ⚠️ PLACEHOLDER en V1 — remplacer par les vrais IDs après création dans LS.
+   * Voir ~/etablia/scripts/lemonsqueezy-checkout-url-builder.js pour la version complète.
+   */
+  function buildLSUrl(comboResume) {
+    // Table des IDs LS à renseigner par Raphaël
+    const COEUR_IDS = {
+      // 'signal-de-vente': 'ls_variant_XXXXXXXX',
+      // Remplir après étape 1 du guide setup-lemonsqueezy-combos.md
+    };
+    const ADAPT_IDS = {
+      // 'BR-007-shopify': 'ls_variant_YYYYYYYY',
+      // Remplir après étape 2 du guide setup-lemonsqueezy-combos.md
+    };
+
+    const coeurId = COEUR_IDS[selectedCoeur.slug];
+    if (!coeurId) return null;  // V1 : fallback contact
+
+    const adapts = Object.entries(selectedAdaptateurs)
+      .map(([brId, { variante }]) => ADAPT_IDS[`${brId}-${variante}`])
+      .filter(Boolean);
+
+    let url = `https://letablia.lemonsqueezy.com/checkout/buy/${coeurId}`;
+    if (adapts.length > 0) url += `?cart=${adapts.join(',')}`;
+    return url;
+  }
+
+  // ─── Utilitaires ─────────────────────────────────────────────────────────
+  function resetSelection() {
+    selectedCoeur = null;
+    selectedAdaptateurs = {};
+    document.querySelectorAll('.coeur-card').forEach(c => {
+      c.classList.remove('selected');
+      c.setAttribute('aria-pressed', 'false');
+    });
+    document.getElementById('step-branches').classList.remove('visible');
+    document.getElementById('retractation-block').classList.remove('visible');
+    document.getElementById('branches-wrapper').innerHTML = '';
+    updateRecap();
+    clearMessages();
+  }
+
+  function showError(msg) {
+    const el = document.getElementById('config-error');
+    el.textContent = '⛔ ' + msg;
+    el.classList.add('visible');
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function showWarning(msg) {
+    const el = document.getElementById('config-warning');
+    el.textContent = '⚠️ ' + msg;
+    el.classList.add('visible');
+  }
+
+  function clearMessages() {
+    document.getElementById('config-error').classList.remove('visible');
+    document.getElementById('config-warning').classList.remove('visible');
+  }
+
+  // ─── Init ─────────────────────────────────────────────────────────────────
+  loadConfig();
+  </script>
+
+  <!-- LemonSqueezy overlay JS (à activer quand les produits sont créés) -->
+  <!--
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+  -->
+
+</body>
+</html>

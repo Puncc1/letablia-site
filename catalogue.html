@@ -119,6 +119,22 @@
 }
 .toggle-systemes-btn:hover{background:var(--chene);color:var(--lin)}
 .toggle-systemes-btn.is-open{background:var(--ebene);color:var(--lin);border-color:var(--ebene)}
+/* ── Produits en forgeage ── */
+.card-produit[data-status="soon"]{
+  opacity:.72;cursor:default;pointer-events:none;
+  border-style:dashed;
+}
+.badge-soon{
+  display:inline-block;
+  background:var(--pierre);color:var(--ebene);
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;padding:3px 8px;border-radius:99px;
+  margin-left:8px;vertical-align:middle;opacity:.85;
+}
+.cta-soon{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;
+  color:var(--ebene-80);text-transform:uppercase;opacity:.65;
+}
 </style>
 </head>
 <body>
@@ -380,70 +396,70 @@
       <div class="price">29€</div>
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
-  </a><a class="card-produit fam-produire" data-price="39" data-family="produire" data-duree="lt30" href="produits/carnet-forge.html">
-    <div class="num">№ 05 · Produire</div>
+  </a><div class="card-produit fam-produire" data-price="39" data-family="produire" data-duree="lt30" data-status="soon">
+    <div class="num">№ 05 · Produire <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Carnet Forge</h3>
     <div class="blurb">Le journal de bord de l'artisan numérique, prêt à imprimer.</div>
     <div class="tools"><span class="tool">Document imprimable</span></div>
     <div class="meta">
       <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a><a class="card-produit fam-vendre" data-price="49" data-family="vendre" data-duree="30-60" href="produits/produit-relance-prospects.html">
-    <div class="num">№ 06 · Vendre</div>
+  </div><div class="card-produit fam-vendre" data-price="49" data-family="vendre" data-duree="30-60" data-status="soon">
+    <div class="num">№ 06 · Vendre <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Relance Prospects</h3>
     <div class="blurb">Système qui relance vos prospects automatiquement, avec tact.</div>
     <div class="tools"><span class="tool">Tableur en ligne</span><span class="tool">Messagerie électronique</span></div>
     <div class="meta">
       <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a><a class="card-produit fam-produire" data-price="49" data-family="produire" data-duree="30-60" href="produits/produit-mini-crm-notion.html">
-    <div class="num">№ 07 · Produire</div>
+  </div><div class="card-produit fam-produire" data-price="49" data-family="produire" data-duree="30-60" data-status="soon">
+    <div class="num">№ 07 · Produire <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Mini CRM Prestataire</h3>
     <div class="blurb">Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.</div>
     <div class="tools"><span class="tool">Application de prise de notes</span></div>
     <div class="meta">
       <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a><a class="card-produit fam-piloter" data-price="39" data-family="piloter" data-duree="30-60" href="produits/produit-dashboard-tresorerie.html">
-    <div class="num">№ 08 · Piloter</div>
+  </div><div class="card-produit fam-piloter" data-price="39" data-family="piloter" data-duree="30-60" data-status="soon">
+    <div class="num">№ 08 · Piloter <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Dashboard Trésorerie TPE</h3>
     <div class="blurb">Vue claire de votre trésorerie, mise à jour quotidienne.</div>
     <div class="tools"><span class="tool">Tableur en ligne</span></div>
     <div class="meta">
       <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a><a class="card-produit fam-securiser" data-price="39" data-family="securiser" data-duree="lt30" href="produits/produit-cyber-hygiene-tpe.html">
-    <div class="num">№ 09 · Sécuriser</div>
+  </div><div class="card-produit fam-securiser" data-price="39" data-family="securiser" data-duree="lt30" data-status="soon">
+    <div class="num">№ 09 · Sécuriser <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Pack Cyber-Hygiène TPE</h3>
     <div class="blurb">Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.</div>
     <div class="tools"><span class="tool">Document imprimable</span></div>
     <div class="meta">
       <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a><a class="card-produit fam-produire" data-price="39" data-family="produire" data-duree="lt30" href="produits/produit-kit-facturation-2026.html">
-    <div class="num">№ 10 · Produire</div>
+  </div><div class="card-produit fam-produire" data-price="39" data-family="produire" data-duree="lt30" data-status="soon">
+    <div class="num">№ 10 · Produire <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Kit Facturation Électronique 2026</h3>
     <div class="blurb">Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.</div>
     <div class="tools"><span class="tool">Document imprimable</span></div>
     <div class="meta">
       <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a><a class="card-produit fam-automatiser" data-price="39" data-family="automatiser" data-duree="30-60" href="produits/produit-agent-tri-email.html">
-    <div class="num">№ 11 · Automatiser</div>
+  </div><div class="card-produit fam-automatiser" data-price="39" data-family="automatiser" data-duree="30-60" data-status="soon">
+    <div class="num">№ 11 · Automatiser <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Agent Tri Email</h3>
     <div class="blurb">Trie votre boîte de messagerie selon des règles métier.</div>
     <div class="tools"><span class="tool">Messagerie électronique</span></div>
     <div class="meta">
       <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a>
+  </div>
   <a class="card-produit fam-automatiser" data-price="29" data-family="automatiser" data-duree="30-60" href="produits/chasseur-notes-frais.html">
     <div class="num">№ 12 · Automatiser</div>
     <h3>Chasseur de Notes de Frais</h3>
@@ -544,16 +560,16 @@
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
   </a>
-  <a class="card-produit fam-piloter" data-price="49" data-family="piloter" data-duree="30-60" href="produits/detecteur-anomalies-vente.html">
-    <div class="num">№ 22 · Piloter</div>
+  <div class="card-produit fam-piloter" data-price="49" data-family="piloter" data-duree="30-60" data-status="soon">
+    <div class="num">№ 22 · Piloter <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Détecteur d'Anomalies Vente</h3>
     <div class="blurb">Alerte sur les anomalies marchandes — jamais d'action autonome, juste l'alerte.</div>
     <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Tableur</span></div>
     <div class="meta">
       <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a>
+  </div>
   <a class="card-produit fam-produire" data-price="49" data-family="produire" data-duree="30-60" href="produits/redacteur-fiches-produit.html">
     <div class="num">№ 23 · Produire</div>
     <h3>Rédacteur de Fiches Produit</h3>
@@ -574,26 +590,26 @@
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
   </a>
-  <a class="card-produit fam-securiser" data-price="29" data-family="securiser" data-duree="30-60" href="produits/depart-collaborateur-securise.html">
-    <div class="num">№ 25 · Sécuriser</div>
+  <div class="card-produit fam-securiser" data-price="29" data-family="securiser" data-duree="30-60" data-status="soon">
+    <div class="num">№ 25 · Sécuriser <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Départ Collaborateur Sécurisé</h3>
     <div class="blurb">Sécurise les accès et données quand un collaborateur quitte l'entreprise.</div>
     <div class="tools"><span class="tool">Tableur RH</span><span class="tool">Service emailing</span></div>
     <div class="meta">
       <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a>
-  <a class="card-produit fam-automatiser" data-price="29" data-family="automatiser" data-duree="30-60" href="produits/suivi-periode-essai.html">
-    <div class="num">№ 26 · Automatiser</div>
+  </div>
+  <div class="card-produit fam-automatiser" data-price="29" data-family="automatiser" data-duree="30-60" data-status="soon">
+    <div class="num">№ 26 · Automatiser <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Suivi de Période d'Essai</h3>
     <div class="blurb">Rappelle les échéances de période d'essai pour ne plus jamais les oublier.</div>
     <div class="tools"><span class="tool">Tableur RH</span><span class="tool">Notification</span></div>
     <div class="meta">
       <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a>
+  </div>
   <a class="card-produit fam-securiser" data-price="29" data-family="securiser" data-duree="30-60" href="produits/sentinelle-mots-passe.html">
     <div class="num">№ 27 · Sécuriser</div>
     <h3>Sentinelle de Mots de Passe</h3>
@@ -604,16 +620,16 @@
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
   </a>
-  <a class="card-produit fam-automatiser" data-price="39" data-family="automatiser" data-duree="30-60" href="produits/repondeur-faq-automatique.html">
-    <div class="num">№ 28 · Automatiser</div>
+  <div class="card-produit fam-automatiser" data-price="39" data-family="automatiser" data-duree="30-60" data-status="soon">
+    <div class="num">№ 28 · Automatiser <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Répondeur FAQ Automatique</h3>
     <div class="blurb">Version simple et accessible du Guichet FAQ — réponses standards aux questions courantes.</div>
     <div class="tools"><span class="tool">Email</span><span class="tool">Base FAQ</span></div>
     <div class="meta">
       <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a>
+  </div>
   <a class="card-produit fam-vendre" data-price="39" data-family="vendre" data-duree="30-60" href="produits/alerteur-paiements-retard.html">
     <div class="num">№ 29 · Vendre</div>
     <h3>Alerteur de Paiements en Retard</h3>
@@ -624,16 +640,16 @@
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
   </a>
-  <a class="card-produit fam-vendre" data-price="39" data-family="vendre" data-duree="30-60" href="produits/programme-fidelite-simple.html">
-    <div class="num">№ 30 · Vendre</div>
+  <div class="card-produit fam-vendre" data-price="39" data-family="vendre" data-duree="30-60" data-status="soon">
+    <div class="num">№ 30 · Vendre <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Programme Fidélité Simple</h3>
     <div class="blurb">Récompense vos clients récurrents avec des codes promo automatiques.</div>
     <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Codes promo</span></div>
     <div class="meta">
       <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a>
+  </div>
   <a class="card-produit fam-piloter" data-price="39" data-family="piloter" data-duree="30-60" href="produits/calculateur-marge-dynamique.html">
     <div class="num">№ 31 · Piloter</div>
     <h3>Calculateur de Marge Dynamique</h3>
@@ -644,16 +660,16 @@
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
   </a>
-  <a class="card-produit fam-securiser" data-price="49" data-family="securiser" data-duree="30-60" href="produits/gardien-acces.html">
-    <div class="num">№ 32 · Sécuriser</div>
+  <div class="card-produit fam-securiser" data-price="49" data-family="securiser" data-duree="30-60" data-status="soon">
+    <div class="num">№ 32 · Sécuriser <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Gardien des Accès</h3>
     <div class="blurb">Surveille les accès et permissions, escalade humaine systématique sur faux positifs.</div>
     <div class="tools"><span class="tool">Identity</span><span class="tool">Tableur</span></div>
     <div class="meta">
       <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a>
+  </div>
   <a class="card-produit fam-surveiller" data-price="39" data-family="surveiller" data-duree="30-60" href="produits/observatoire-concurrentiel.html">
     <div class="num">№ 33 · Surveiller</div>
     <h3>Observatoire Concurrentiel</h3>
@@ -674,16 +690,16 @@
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
   </a>
-  <a class="card-produit fam-surveiller" data-price="39" data-family="surveiller" data-duree="30-60" href="produits/veilleur-mentions.html">
-    <div class="num">№ 35 · Surveiller</div>
+  <div class="card-produit fam-surveiller" data-price="39" data-family="surveiller" data-duree="30-60" data-status="soon">
+    <div class="num">№ 35 · Surveiller <span class="badge-soon">Forgeage en cours</span></div>
     <h3>Veilleur de Mentions</h3>
     <div class="blurb">Capte les mentions de votre marque ou de votre nom partout sur le web public.</div>
     <div class="tools"><span class="tool">Veille web</span><span class="tool">Notification</span></div>
     <div class="meta">
       <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+      <div class="cta-soon">Bientôt disponible</div>
     </div>
-  </a>
+  </div>
   <a class="card-produit fam-vendre" data-price="29" data-family="vendre" data-duree="30-60" href="produits/preparateur-black-friday.html">
     <div class="num">№ 36 · Vendre</div>
     <h3>Préparateur Black Friday</h3>

@@ -126,7 +126,8 @@
       ],
       "blurb": "Le journal de bord de l'artisan numérique, prêt à imprimer.",
       "keywords": "journal carnet bord artisan imprimer freelance",
-      "icon": "book"
+      "icon": "book",
+      "status": "soon"
     },
     {
       "slug": "produit/relance-prospects",
@@ -145,7 +146,8 @@
       ],
       "blurb": "Système qui relance vos prospects automatiquement, avec tact.",
       "keywords": "relance prospects commercial freelance",
-      "icon": "users"
+      "icon": "users",
+      "status": "soon"
     },
     {
       "slug": "produit/mini-crm-notion",
@@ -163,7 +165,8 @@
       ],
       "blurb": "Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.",
       "keywords": "crm clients projets freelance agence consultant",
-      "icon": "layout"
+      "icon": "layout",
+      "status": "soon"
     },
     {
       "slug": "produit/dashboard-tresorerie",
@@ -180,7 +183,8 @@
       ],
       "blurb": "Vue claire de votre trésorerie, mise à jour quotidienne.",
       "keywords": "tresorerie tpe dashboard finances pilotage",
-      "icon": "chart"
+      "icon": "chart",
+      "status": "soon"
     },
     {
       "slug": "produit/cyber-hygiene-tpe",
@@ -197,7 +201,8 @@
       ],
       "blurb": "Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.",
       "keywords": "cyber securite hygiene tpe audit guides phishing rgpd",
-      "icon": "shield"
+      "icon": "shield",
+      "status": "soon"
     },
     {
       "slug": "produit/kit-facturation-2026",
@@ -215,7 +220,8 @@
       ],
       "blurb": "Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.",
       "keywords": "facturation electronique 2026 conformite tpe",
-      "icon": "file-text"
+      "icon": "file-text",
+      "status": "soon"
     },
     {
       "slug": "produit/agent-tri-email",
@@ -233,7 +239,8 @@
       ],
       "blurb": "Trie votre boîte de messagerie selon des règles métier.",
       "keywords": "tri email regles automatique inbox zero",
-      "icon": "mail"
+      "icon": "mail",
+      "status": "soon"
     },
     {
       "slug": "chasseur-notes-frais",
@@ -508,7 +515,8 @@
         "détection",
         "alerte"
       ],
-      "icon": "alert-circle"
+      "icon": "alert-circle",
+      "status": "soon"
     },
     {
       "slug": "redacteur-fiches-produit",
@@ -574,7 +582,8 @@
         "accès",
         "départ"
       ],
-      "icon": "shield"
+      "icon": "shield",
+      "status": "soon"
     },
     {
       "slug": "suivi-periode-essai",
@@ -596,7 +605,8 @@
         "relance",
         "échéance"
       ],
-      "icon": "check-circle"
+      "icon": "check-circle",
+      "status": "soon"
     },
     {
       "slug": "sentinelle-mots-passe",
@@ -642,7 +652,8 @@
         "automatique",
         "support"
       ],
-      "icon": "message-circle"
+      "icon": "message-circle",
+      "status": "soon"
     },
     {
       "slug": "alerteur-paiements-retard",
@@ -686,7 +697,8 @@
         "récurrent",
         "e-commerce"
       ],
-      "icon": "gift"
+      "icon": "gift",
+      "status": "soon"
     },
     {
       "slug": "calculateur-marge-dynamique",
@@ -731,7 +743,8 @@
         "sécurité",
         "RGPD"
       ],
-      "icon": "key"
+      "icon": "key",
+      "status": "soon"
     },
     {
       "slug": "observatoire-concurrentiel",
@@ -798,7 +811,8 @@
         "veille",
         "monitoring"
       ],
-      "icon": "radio"
+      "icon": "radio",
+      "status": "soon"
     },
     {
       "slug": "preparateur-black-friday",
