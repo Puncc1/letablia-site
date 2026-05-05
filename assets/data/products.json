@@ -126,8 +126,7 @@
       ],
       "blurb": "Le journal de bord de l'artisan numérique, prêt à imprimer.",
       "keywords": "journal carnet bord artisan imprimer freelance",
-      "icon": "book",
-      "status": "soon"
+      "icon": "book"
     },
     {
       "slug": "produit/relance-prospects",
@@ -236,8 +235,7 @@
       ],
       "blurb": "Trie votre boîte de messagerie selon des règles métier.",
       "keywords": "tri email regles automatique inbox zero",
-      "icon": "mail",
-      "status": "soon"
+      "icon": "mail"
     },
     {
       "slug": "chasseur-notes-frais",
@@ -579,8 +577,7 @@
         "accès",
         "départ"
       ],
-      "icon": "shield",
-      "status": "soon"
+      "icon": "shield"
     },
     {
       "slug": "suivi-periode-essai",
