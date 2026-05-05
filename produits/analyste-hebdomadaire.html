@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Analyste Hebdomadaire — L'établ'IA</title><meta name="description" content="Chaque lundi matin, votre rapport d'activité de la semaine précédente est déjà dans votre messagerie. Chiffres clés, alertes, trois actions concrètes. Sans rien ouvrir."/>
+<meta name="keywords" content="rapport activité hebdomadaire, pilotage TPE automatique, tableau de bord freelance, suivi chiffre affaires automatisé, rapport lundi matin"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/letablia.css"/><link rel="stylesheet" href="../assets/css/search.css"/>
+</head><body>
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="../catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="../diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="../a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="../faq.html">FAQ</a>
+      <a data-nav="contact.html" href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../famille-automatiser.html">— Automatiser</a>
+  <a href="../famille-vendre.html">— Vendre</a>
+  <a href="../famille-piloter.html">— Piloter</a>
+  <a href="../famille-produire.html">— Produire</a>
+  <a href="../famille-securiser.html">— Sécuriser</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+<main>
+<section style="padding:24px 0 0;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Accueil</a> <span class="sep"></span> <a href="../catalogue.html">Catalogue</a> <span class="sep"></span> <a href="../famille-piloter.html">Piloter</a> <span class="sep"></span> <span class="current">Analyste Hebdomadaire</span></div>
+  </div>
+</section>
+
+<section class="produit-hero fam-piloter" style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:80px" class="prod-grid">
+      <div data-reveal>
+        <div style="display:flex;gap:14px;align-items:center;margin-bottom:24px">
+          <span class="etiquette">Piloter</span>
+          <span class="cote"><span>Famille</span><span class="cote-line"></span><a href="../famille-piloter.html" style="color:var(--cuivre);text-decoration:none">Piloter →</a></span>
+        </div>
+        <h1 style="font-size:clamp(2.4rem,5vw,4rem);line-height:1.02">Analyste Hebdomadaire</h1>
+        <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.4rem;margin-top:14px;line-height:1.4">Votre rapport d'activité arrive chaque lundi. Sans que vous ayez à ouvrir quoi que ce soit.</p>
+
+        <div style="margin-top:48px;padding:24px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center">
+          <div>
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">Prix unique</div>
+            <div style="font-family:var(--ff-display);font-weight:700;font-size:3rem;line-height:1;margin-top:4px">39€<small style="font-family:var(--ff-mono);font-size:.9rem;font-weight:400;color:var(--chene)">HT</small></div>
+            <div style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.9rem;margin-top:4px">— achat unique</div>
+          </div>
+          <div style="border-left:1px dashed var(--chene-25);padding-left:24px">
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px">
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>3 profils inclus (TPE / freelance / e-commerce)</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Saisie hebdomadaire en moins de 5 min</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Garantie Satisfait ou Forgé</li>
+            </ul>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="../contact.html?p=analyste-hebdomadaire" style="white-space:nowrap">Acheter →</a>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;color:var(--ebene-80);font-size:13px">
+          <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;color:var(--chene);text-transform:uppercase">Outils requis</span>
+          <span class="tool" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Moteur d'automatisation</span><span class="tool" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Tableur</span><span class="tool" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Messagerie email</span>
+        </div>
+      </div>
+
+      <!-- Fiche d'atelier illustrative -->
+      <div data-reveal data-reveal-delay="1" style="position:relative">
+        <div style="background:var(--parchemin);border:1px solid var(--chene-25);padding:32px;border-radius:var(--r-sm);box-shadow:16px 16px 0 -4px var(--kraft),16px 16px 0 -3px var(--chene-25);transform:rotate(.5deg);position:relative">
+          <div style="position:absolute;top:24px;right:-12px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;color:var(--cuivre);border:2px solid var(--cuivre);padding:6px 10px;transform:rotate(8deg);background:rgba(255,255,255,.4);text-transform:uppercase">Piloter</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;color:var(--chene);text-transform:uppercase;margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed var(--chene-25);display:flex;justify-content:space-between"><span>Fiche · 2026</span><span>Piloter</span></div>
+          <div style="font-family:var(--ff-display);font-size:2.6rem;color:var(--cuivre);margin-bottom:8px;line-height:1">◊</div>
+          <div style="font-family:var(--ff-display);font-size:1.4rem;font-weight:600;line-height:1.15;margin-bottom:12px">Analyste Hebdomadaire</div>
+          <div style="font-family:var(--ff-mono);font-size:10px;color:var(--chene);letter-spacing:.1em;margin-bottom:12px;text-transform:uppercase">Ce que vous recevez chaque lundi</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--ebene-80)">
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>Le verdict de la semaine en une phrase</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>3 chiffres à retenir selon votre profil</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>Les alertes actives avec cause probable et action suggérée</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>3 actions concrètes pour cette semaine</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>L'évolution sur 8 semaines</li>
+          </ul>
+          <div style="margin-top:24px;padding-top:18px;border-top:1px dashed var(--chene-25);display:flex;justify-content:space-between;align-items:flex-end">
+            <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">Prix d'atelier</span>
+            <span style="font-family:var(--ff-display);font-weight:700;font-size:2rem">39€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Le problème -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:40px">
+      <span class="tag-atelier">Le problème que ce système forgé résout</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Vous avez des données. <em class="editorial">Vous ne les consultez pas.</em></h2>
+    </div>
+    <p style="color:var(--ebene-80);line-height:1.65;font-size:15px">Vous avez un tableur. Vous avez un outil de gestion. Vous avez des données.</p>
+    <p style="color:var(--ebene-80);line-height:1.65;font-size:15px;margin-top:16px">Mais vous ne les consultez pas. La semaine est chargée, "vous verrez ça ce soir", et ce soir ne vient jamais.</p>
+    <p style="color:var(--ebene-80);line-height:1.65;font-size:15px;margin-top:16px">Résultat : les anomalies sont détectées trop tard. Le chiffre d'affaires baisse depuis trois semaines avant que vous vous en rendiez compte. Une facture en retard de 45 jours attend toujours une relance. Un stock critique n'a pas été commandé.</p>
+    <p style="color:var(--ebene-80);line-height:1.65;font-size:15px;margin-top:16px">L'Analyste Hebdomadaire change cette équation. Le rapport vient à vous — pas l'inverse.</p>
+  </div>
+</section>
+
+<!-- Ce que vous recevez chaque lundi -->
+<section style="padding:96px 0;background:var(--lin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Ce que vous recevez chaque lundi</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Un email sobre. <em class="editorial">Lisible en 2 minutes.</em></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--chene-25);border-left:1px solid var(--chene-25)" class="pieces-grid-3">
+      <div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 01</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Le verdict de la semaine</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">En une phrase : bonne semaine, semaine stable, ou vigilance nécessaire.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 02</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">3 chiffres à retenir</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Les indicateurs qui comptent pour votre profil. Chiffre d'affaires, encours clients, trésorerie — ou taux d'occupation et pipeline si vous êtes freelance.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 03</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Les alertes actives</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Chaque alerte comprend le symptôme observé, la cause probable et une action suggérée. Pas de tableau de bord à interpréter.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 04</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">3 actions pour cette semaine</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Formulées directement : "relancez les 3 factures en retard de paiement". Pas des généralités.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 05</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">L'évolution sur 8 semaines</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Représentation visuelle sobre de votre chiffre d'affaires hebdomadaire, pour voir les tendances en un coup d'œil.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">Format</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Email sobre, sans images</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Responsive, compatible mode sombre, lisible sur messagerie mobile. Formulé en français naturel, sans jargon.</p>
+      </div>
+    </div>
+    <style>@media (max-width:880px){.pieces-grid-3{grid-template-columns:1fr 1fr !important}}</style>
+  </div>
+</section>
+
+<!-- 3 profils -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Trois profils, trois rapports distincts</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Adapté à <em class="editorial">votre activité</em>. Pas générique.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px" class="steps-grid">
+      <div data-reveal style="padding:28px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-sm)">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px">Profil TPE service</div>
+        <h3 style="font-size:1.15rem;margin:0 0 12px">Coach, consultant, formateur, agence</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ebene-80)">
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Chiffre d'affaires</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Marge brute</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Encours clients</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Pipeline qualifié</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Heures travaillées</li>
+        </ul>
+      </div>
+      <div data-reveal data-reveal-delay="1" style="padding:28px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-sm)">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px">Profil Freelance solo</div>
+        <h3 style="font-size:1.15rem;margin:0 0 12px">Indépendant, prestataire</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ebene-80)">
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Encaissements</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Taux d'occupation</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Factures en attente</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Pipeline devis</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Délai moyen de paiement</li>
+        </ul>
+      </div>
+      <div data-reveal data-reveal-delay="2" style="padding:28px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-sm)">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px">Profil E-commerçant</div>
+        <h3 style="font-size:1.15rem;margin:0 0 12px">Boutique en ligne</h3>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ebene-80)">
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Chiffre d'affaires et commandes</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Panier moyen</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Taux de conversion</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Stocks critiques</li>
+          <li style="display:flex;gap:8px"><span style="color:var(--mousse)">✓</span>Top produits</li>
+        </ul>
+      </div>
+    </div>
+    <style>@media (max-width:880px){.steps-grid{grid-template-columns:1fr 1fr !important}}</style>
+  </div>
+</section>
+
+<!-- Ce qu'il y a dedans -->
+<section style="padding:96px 0;background:var(--lin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:48px">
+      <div>
+        <span class="tag-atelier">Ce qu'il y a dans la boîte</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Six <em class="editorial">livrables</em>, posés à plat.</h2>
+      </div>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);max-width:36ch;font-size:1.05rem">Quand vous achetez un système, voilà précisément ce que vous recevez par email — fichiers et documentation.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--chene-25);border-left:1px solid var(--chene-25)" class="pieces-grid-3b">
+      <div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 01</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Le moteur central</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Fichier à importer directement dans votre moteur d'automatisation. Configuration complète.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 02</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">3 modules de profil</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">TPE service / freelance / e-commerce. Un seul est actif selon votre choix. Les trois sont inclus — changez de profil en activant un autre module.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 03</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Tableur de saisie hebdomadaire</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Colonnes pré-libellées, listes déroulantes, exemples pré-remplis. Saisie en moins de 5 minutes par semaine.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 04</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">3 trames d'email HTML</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Sobre, responsive, compatible mode sombre et messagerie mobile. Une trame par profil.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 05</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Guide d'installation complet</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Chemin A (service d'envoi d'emails) ou chemin B (SMTP simple). Deux chemins documentés. Niveau intermédiaire.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 06</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">FAQ dépannage</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Réponses directes aux questions les plus fréquentes. Pas de forum.</p>
+      </div>
+    </div>
+    <style>@media (max-width:880px){.pieces-grid-3b{grid-template-columns:1fr 1fr !important}}</style>
+
+    <div style="margin-top:32px;padding:24px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-sm)">
+      <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px">Ce que ce système forgé ne fait pas</div>
+      <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--ebene-80)">
+        <li style="display:flex;gap:8px"><span style="color:var(--cuivre)">—</span>Il ne se connecte pas directement à votre plateforme de vente en ligne ni à votre logiciel de caisse en V1. Vous saisissez vos données dans le tableur fourni, une fois par semaine.</li>
+        <li style="display:flex;gap:8px"><span style="color:var(--cuivre)">—</span>Il ne génère pas ses suggestions via un service d'intelligence artificielle externe. Les actions suggérées sont des textes pré-rédigés activés selon les seuils — fiables, prévisibles, sans dépendance à une API tierce payante.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:96px 0;background:var(--parchemin);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Questions fréquentes</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Avant d'<em class="editorial">acheter</em>.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Dois-je saisir des données manuellement chaque semaine ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Oui, en V1. Le tableur de saisie est conçu pour que cette saisie prenne moins de 5 minutes. Les colonnes sont pré-libellées, les catégories en liste déroulante, et des exemples vous guident dès la première utilisation.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Et si je veux changer de profil plus tard ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Vous activez simplement un autre module de profil dans votre moteur d'automatisation. Les trois modules sont inclus dans votre livraison.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Le rapport peut-il arriver un autre jour que le lundi ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Oui. L'heure et le jour d'envoi se modifient en une ligne dans le moteur central, sans toucher au reste.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>J'utilise déjà un tableau de bord trésorerie. Est-ce que l'Analyste Hebdomadaire fait doublon ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Non. Un tableau de bord trésorerie est un outil que vous consultez activement. L'Analyste Hebdomadaire vous envoie un rapport sans que vous ayez à ouvrir quoi que ce soit. Les deux sont complémentaires.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>C'est vraiment sans abonnement ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Oui. Vous payez 39 € une fois. Le système vous appartient. Aucune carte n'est débitée ensuite.</p>
+      </details>
+    </div>
+    <style>details[open] summary span:last-child{transform:rotate(45deg)}summary::-webkit-details-marker{display:none}</style>
+  </div>
+</section>
+
+<!-- Garantie -->
+<section style="padding:64px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Garantie</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.6rem,3vw,2.2rem)">Satisfait ou <em class="editorial">Forgé</em></h2>
+      <p style="color:var(--ebene-80);line-height:1.65;margin:20px auto 0;max-width:52ch;font-size:15px">Si ce système forgé ne tient pas ses promesses, écrivez à <a href="mailto:contact@letablia.fr" style="color:var(--chene)">contact@letablia.fr</a>. L'établ'IA examine votre situation et corrige en priorité. Le remboursement est le dernier recours, pas le premier — c'est l'engagement artisan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:96px 0;background:var(--encre);color:var(--lin);text-align:center">
+  <div class="container-narrow">
+    <h2 style="color:var(--lin);font-size:clamp(2rem,4vw,3.4rem);line-height:1.05">Le rapport arrive lundi.<br/><em style="font-family:var(--ff-display);font-style:italic;color:var(--cuivre)">Vous, vous pilotez.</em></h2>
+    <p style="color:var(--pierre);font-size:1.1rem;margin:24px auto 32px;max-width:46ch">Achat en un clic. Lien de téléchargement immédiat. Moteur central, 3 profils, tableur, trames email et guide d'installation.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-mousse" href="../contact.html?p=analyste-hebdomadaire">Acheter l'Analyste Hebdomadaire — 39€</a>
+      <a class="btn btn-ghost" style="color:var(--lin);border-color:var(--lin)" href="../diagnostic.html">Faire le diagnostic d'abord</a>
+    </div>
+  </div>
+</section>
+</main><footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue (11)</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script>fetch('../assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+</body></html>

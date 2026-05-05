@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Déclencheur de Rituels — L'établ'IA</title><meta name="description" content="Cinq notifications à heure fixe. Cinq modèles prêts à remplir. Le déclencheur qui manquait à vos rituels de travail — planification matinale, revue hebdomadaire, bilan mensuel."/>
+<meta name="keywords" content="rituel travail freelance, planification matinale automatique, revue hebdomadaire, bilan mensuel, productivité indépendant"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/letablia.css"/><link rel="stylesheet" href="../assets/css/search.css"/>
+</head><body>
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="../catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="../diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="../a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="../faq.html">FAQ</a>
+      <a data-nav="contact.html" href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../famille-automatiser.html">— Automatiser</a>
+  <a href="../famille-vendre.html">— Vendre</a>
+  <a href="../famille-piloter.html">— Piloter</a>
+  <a href="../famille-produire.html">— Produire</a>
+  <a href="../famille-securiser.html">— Sécuriser</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+<main>
+<section style="padding:24px 0 0;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Accueil</a> <span class="sep"></span> <a href="../catalogue.html">Catalogue</a> <span class="sep"></span> <span class="current">Déclencheur de Rituels</span></div>
+  </div>
+</section>
+
+<section class="produit-hero" style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:80px" class="prod-grid">
+      <div data-reveal>
+        <div style="display:flex;gap:14px;align-items:center;margin-bottom:24px">
+          <span class="etiquette">Productivité</span>
+        </div>
+        <h1 style="font-size:clamp(2.4rem,5vw,4rem);line-height:1.02">Déclencheur de Rituels</h1>
+        <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.4rem;margin-top:14px;line-height:1.4">Cinq notifications à heure fixe. Cinq modèles prêts à remplir. La cloche de l'atelier qui sonne — pas de rappel ignoré, pas de carnet ouvert une fois puis oublié.</p>
+
+        <div style="margin-top:48px;padding:24px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center">
+          <div>
+            <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">Prix unique</div>
+            <div style="font-family:var(--ff-display);font-weight:700;font-size:3rem;line-height:1;margin-top:4px">19€<small style="font-family:var(--ff-mono);font-size:.9rem;font-weight:400;color:var(--chene)">HT</small></div>
+            <div style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.9rem;margin-top:4px">— pas d'abonnement</div>
+          </div>
+          <div style="border-left:1px dashed var(--chene-25);padding-left:24px">
+            <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:6px;font-size:13px">
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>5 modèles Markdown inclus</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Horaires modifiables</li>
+              <li style="display:flex;gap:8px;align-items:center"><span style="color:var(--mousse)">✓</span>Garantie Satisfait ou Forgé</li>
+            </ul>
+          </div>
+          <div>
+            <a class="btn btn-primary" href="../contact.html?p=declencheur-rituels" style="white-space:nowrap">Acheter →</a>
+          </div>
+        </div>
+
+        <div style="margin-top:32px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;color:var(--ebene-80);font-size:13px">
+          <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;color:var(--chene);text-transform:uppercase">Outils requis</span>
+          <span class="tool" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Moteur d'automatisation</span><span class="tool" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Messagerie instantanée</span><span class="tool" style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);background:var(--chene-10);padding:4px 10px;border-radius:99px">Application de notes Markdown</span>
+        </div>
+      </div>
+
+      <!-- Fiche d'atelier illustrative -->
+      <div data-reveal data-reveal-delay="1" style="position:relative">
+        <div style="background:var(--parchemin);border:1px solid var(--chene-25);padding:32px;border-radius:var(--r-sm);box-shadow:16px 16px 0 -4px var(--kraft),16px 16px 0 -3px var(--chene-25);transform:rotate(.5deg);position:relative">
+          <div style="position:absolute;top:24px;right:-12px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;color:var(--cuivre);border:2px solid var(--cuivre);padding:6px 10px;transform:rotate(8deg);background:rgba(255,255,255,.4);text-transform:uppercase">19€</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;color:var(--chene);text-transform:uppercase;margin-bottom:18px;padding-bottom:12px;border-bottom:1px dashed var(--chene-25);display:flex;justify-content:space-between"><span>Fiche · 2026</span><span>Rituels</span></div>
+          <div style="font-family:var(--ff-display);font-size:2.6rem;color:var(--cuivre);margin-bottom:8px;line-height:1">◊</div>
+          <div style="font-family:var(--ff-display);font-size:1.4rem;font-weight:600;line-height:1.15;margin-bottom:12px">Déclencheur de Rituels</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.1em;margin-bottom:14px;text-transform:uppercase">5 rituels inclus</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;font-size:13px;color:var(--ebene-80)">
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>Ouverture de l'établi (lundi–vendredi, 7h00) — 15 min</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>Journal de fermeture (chaque soir, 21h00) — 10 min</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>Revue de l'établi (dimanche, 17h00) — 40 min</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>Inventaire mensuel (1er du mois) — 60 min</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--chene)">▸</span>Bilan du trimestre — 90 min</li>
+          </ul>
+          <div style="margin-top:24px;padding-top:18px;border-top:1px dashed var(--chene-25);display:flex;justify-content:space-between;align-items:flex-end">
+            <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">Prix d'atelier</span>
+            <span style="font-family:var(--ff-display);font-weight:700;font-size:2rem">19€</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Le problème -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:40px">
+      <span class="tag-atelier">Ce que vous avez aujourd'hui</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Un carnet acheté. <em class="editorial">Un dossier fermé.</em></h2>
+    </div>
+    <p style="color:var(--ebene-80);line-height:1.65;font-size:15px">Vous connaissez la valeur d'une revue hebdomadaire. D'un bilan mensuel. D'une planification matinale posée. Vous avez peut-être essayé — un carnet acheté, un modèle créé dans votre application de notes, une intention de "le faire ce dimanche".</p>
+    <p style="color:var(--ebene-80);line-height:1.65;font-size:15px;margin-top:16px">Le dimanche arrive. Vous avez d'autres choses à faire. Le modèle reste dans un dossier fermé.</p>
+    <p style="color:var(--ebene-80);line-height:1.65;font-size:15px;margin-top:16px">Ce n'est pas un problème de méthode. C'est un problème de déclencheur.</p>
+  </div>
+</section>
+
+<!-- Ce qu'il fait -->
+<section style="padding:96px 0;background:var(--lin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start" class="prod-grid">
+      <div>
+        <span class="tag-atelier">Ce que le système forgé fait</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">La cloche de l'atelier. <em class="editorial">Rien de plus.</em></h2>
+        <p style="color:var(--ebene-80);line-height:1.65;margin-top:24px;font-size:15px">Il envoie cinq notifications à heure fixe, aux moments où vos cinq rituels sont programmés. Pas de tableau de bord, pas d'analyse de données, pas de comparaison à une version idéale de vous-même.</p>
+        <p style="color:var(--ebene-80);line-height:1.65;margin-top:16px;font-size:15px">Quand la notification arrive, votre modèle de page est prêt — pré-structuré, pré-rempli avec les questions pertinentes. Vous l'ouvrez, vous répondez honnêtement, vous archivez. Quinze minutes le matin. Dix minutes le soir. Quarante minutes le dimanche.</p>
+      </div>
+      <div>
+        <div style="padding:28px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-sm)">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px">Ce que ce système ne fera pas à votre place</div>
+          <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:14px;color:var(--ebene-80)">
+            <li style="display:flex;gap:8px"><span style="color:var(--cuivre)">—</span>Il ne pense pas à votre place</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--cuivre)">—</span>Il ne vous rendra pas productif si vous ne le souhaitez pas</li>
+            <li style="display:flex;gap:8px"><span style="color:var(--cuivre)">—</span>Il ne garantit aucun résultat chiffré</li>
+          </ul>
+          <p style="margin:16px 0 0;font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1rem;line-height:1.4">Ce qu'il fait : signaler que c'est le moment. Ce qui se passe ensuite, c'est votre travail.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Les 5 rituels -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Les cinq rituels inclus</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Cinq <em class="editorial">moments</em>. Un pour chaque rythme.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--chene-25);border-left:1px solid var(--chene-25)" class="pieces-grid">
+      <div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 01</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Ouverture de l'établi</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Lundi–vendredi, 7h00. Planification matinale. 15 minutes.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 02</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Journal de fermeture</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Tous les jours, 21h00. Bilan du soir. 10 minutes.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 03</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Revue de l'établi</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Dimanche, 17h00. Revue hebdomadaire. 40 minutes.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 04</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Inventaire mensuel</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">1er du mois, 8h00. Point mensuel. 60 minutes.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--kraft)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 05</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Bilan du trimestre</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">1er jour du trimestre, 8h00. Vue trimestrielle. 90 minutes.</p>
+      </div>
+    </div>
+    <p style="color:var(--ebene-80);font-size:14px;margin-top:20px;font-style:italic">Les horaires sont modifiables. Vous les ajustez en deux minutes dans votre moteur d'automatisation si votre rythme est différent.</p>
+    <style>@media (max-width:1000px){.pieces-grid{grid-template-columns:repeat(2,1fr) !important}}</style>
+  </div>
+</section>
+
+<!-- Ce qu'il y a dedans -->
+<section style="padding:96px 0;background:var(--lin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:48px">
+      <div>
+        <span class="tag-atelier">Ce qu'il y a dans la boîte</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.6rem)">Six <em class="editorial">fichiers</em>, posés à plat.</h2>
+      </div>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);max-width:36ch;font-size:1.05rem">Quand vous achetez un système, voilà précisément ce que vous recevez — fichiers et documentation.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--chene-25);border-left:1px solid var(--chene-25)" class="pieces-grid-3">
+      <div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 01</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Système forgé principal</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Fichier JSON à importer dans votre moteur d'automatisation. Les cinq rituels, prêts à brancher.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 02</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Guide d'installation</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">20 à 30 minutes pour tout mettre en place. Pas-à-pas, sans jargon technique.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 03</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">5 modèles Markdown</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Format universel <code>.md</code>, compatible avec toute application de notes supportant le Markdown. À adapter librement.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 04</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">FAQ dépannage</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">8 questions fréquentes avec réponses directes. Pas de forum, pas de ticket.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">№ 05</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Livret "Artisan de soi"</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Petit traité des rituels qui durent. Philosophie sobre, sans promesse chiffrée.</p>
+      </div><div style="border-right:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:24px 18px;background:var(--lin)" data-reveal>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em">Prérequis</div>
+        <h3 style="font-size:1.05rem;margin:14px 0 8px;line-height:1.25">Ce dont vous avez besoin</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Un moteur d'automatisation installé, une application de notes Markdown, une messagerie instantanée pour les notifications.</p>
+      </div>
+    </div>
+    <style>@media (max-width:880px){.pieces-grid-3{grid-template-columns:1fr 1fr !important}}</style>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="padding:96px 0;background:var(--parchemin);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <span class="tag-atelier">Questions fréquentes</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Avant d'<em class="editorial">acheter</em>.</h2>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0">
+      <details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Je n'ai pas de moteur d'automatisation. Les modèles sont-ils quand même utiles ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Oui. Les cinq modèles Markdown fonctionnent de manière totalement indépendante. Importez-les dans votre application de notes et ouvrez-les manuellement à chaque rituel — avec un rappel dans votre agenda. Le déclencheur automatique apporte du confort, pas de la valeur exclusive.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Puis-je modifier les horaires ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Oui, et nous vous y encourageons. Les horaires proposés sont des références — ils ne correspondent peut-être pas à votre rythme réel. Ajustez les expressions CRON dans votre moteur en deux minutes.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Puis-je adapter les questions des modèles ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Oui, c'est même recommandé. Les modèles sont des points de départ, pas des formulaires figés. Conservez les originaux, travaillez sur des copies personnalisées.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Est-ce que ça marche avec les applications de notes courantes ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Les modèles sont en format Markdown standard (<code>.md</code>). Compatibles avec la plupart des applications modernes de prise de notes supportant ce format. Si votre application ne supporte pas l'import natif, le contenu reste utilisable en copiant-collant depuis un éditeur texte.</p>
+      </details><details data-reveal style="border-bottom:1px solid var(--chene-25);padding:20px 0">
+        <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.25rem;font-weight:500;list-style:none">
+          <span>Y a-t-il un abonnement ou des frais récurrents ?</span>
+          <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--cuivre);transition:transform .2s">+</span>
+        </summary>
+        <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.6;font-size:15px">Non. Paiement unique 19 €. Aucun coût récurrent lié au produit lui-même.</p>
+      </details>
+    </div>
+    <style>details[open] summary span:last-child{transform:rotate(45deg)}summary::-webkit-details-marker{display:none}</style>
+  </div>
+</section>
+
+<!-- Garantie -->
+<section style="padding:64px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Garantie</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.6rem,3vw,2.2rem)">Satisfait ou <em class="editorial">Forgé</em></h2>
+      <p style="color:var(--ebene-80);line-height:1.65;margin:20px auto 0;max-width:52ch;font-size:15px">Si le produit ne correspond pas à ce qui était décrit, ou si vous rencontrez un problème technique bloquant non résolu après avoir suivi le guide d'installation, contactez-nous à <a href="mailto:contact@letablia.fr" style="color:var(--chene)">contact@letablia.fr</a> avec votre numéro de commande. L'artisan regarde d'abord ce qui ne va pas et corrige. Si le problème ne peut pas être résolu, le remboursement est accordé.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="padding:96px 0;background:var(--encre);color:var(--lin);text-align:center">
+  <div class="container-narrow">
+    <h2 style="color:var(--lin);font-size:clamp(2rem,4vw,3.4rem);line-height:1.05">La cloche sonne.<br/><em style="font-family:var(--ff-display);font-style:italic;color:var(--cuivre)">À vous de jouer.</em></h2>
+    <p style="color:var(--pierre);font-size:1.1rem;margin:24px auto 32px;max-width:46ch">Achat en un clic. Lien de téléchargement immédiat. Cinq modèles, un système forgé, un guide d'installation.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-mousse" href="../contact.html?p=declencheur-rituels">Acheter le Déclencheur de Rituels — 19€</a>
+      <a class="btn btn-ghost" style="color:var(--lin);border-color:var(--lin)" href="../diagnostic.html">Faire le diagnostic d'abord</a>
+    </div>
+  </div>
+</section>
+</main><footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue (11)</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script>fetch('../assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+</body></html>
