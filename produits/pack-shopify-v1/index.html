@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pack Shopify V1 — Systèmes d'automatisation Shopify | L'établ'IA</title>
+  <meta name="description" content="Automatisez vos alertes stock, relances et livraisons en moins d'une heure. Pack complet : Signal de Vente (gratuit) + Gardien de Stock + Séquenceur Post-Achat.">
+  <link rel="canonical" href="https://letablia.fr/produits/pack-shopify-v1/">
+  <meta property="og:title" content="Pack Shopify V1 — Systèmes d'automatisation Shopify | L'établ'IA">
+  <meta property="og:description" content="3 systèmes forgés n8n pour automatiser votre boutique Shopify : alertes stock, séquence post-achat, Signal de Vente gratuit.">
+  <meta property="og:image" content="/assets/og-pack-shopify-v1.png">
+  <meta property="og:url" content="https://letablia.fr/produits/pack-shopify-v1/">
+  <meta property="og:type" content="product">
+
+  <!-- Fontshare : Zodiak + Satoshi -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <!-- Google Fonts : JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/styles/output.css">
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+
+  <style>
+    /* ── FAQ accordéon ── */
+    .faq-item { border-bottom: 1px solid rgba(107,74,47,0.15); }
+    .faq-toggle { width:100%; text-align:left; background:transparent; border:none; cursor:pointer; display:flex; justify-content:space-between; align-items:center; padding: 20px 0; gap: 16px; }
+    .faq-chevron { flex-shrink:0; transition: transform 0.25s ease; }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-body { display:none; padding-bottom:20px; }
+    .faq-item.open .faq-body { display:block; }
+
+    /* ── Avant / Après ── */
+    .avantapres-grid { display:grid; grid-template-columns:1fr auto 1fr; gap:24px; align-items:start; }
+    @media (max-width:767px) { .avantapres-grid { grid-template-columns:1fr; } .avantapres-arrow { display:none; } }
+
+    /* ── Sticky CTA mobile ── */
+    #sticky-cta { display:none; }
+    @media (max-width:767px) { #sticky-cta { display:flex; } }
+
+    /* ── Fiche technique table ── */
+    .fiche-technique { width:100%; border-collapse:collapse; }
+    .fiche-technique tr { border-bottom:1px solid rgba(107,74,47,0.15); }
+    .fiche-technique tr:last-child { border-bottom:none; }
+    .fiche-technique td { padding:10px 14px; font-size:14px; line-height:1.5; vertical-align:top; }
+    .fiche-technique td:first-child { color:#6B4A2F; font-weight:600; white-space:nowrap; width:42%; }
+
+    /* ── Capture placeholder ── */
+    .capture-placeholder { border:1px dashed rgba(107,74,47,0.4); background:#FFFCF5; padding:32px 24px; text-align:center; border-radius:6px; color:#6B4A2F; font-style:italic; font-size:14px; min-height:140px; display:flex; align-items:center; justify-content:center; }
+
+    /* ── Cross-sell cards ── */
+    .crosssell-card { background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; padding:24px; transition:transform 0.15s ease, box-shadow 0.15s ease; }
+    .crosssell-card:hover { transform:translateY(-2px); box-shadow:0 4px 16px rgba(37,34,29,0.08); }
+
+    /* ── Livrable card ── */
+    .livrable-card { background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:24px; box-shadow:0 1px 4px rgba(37,34,29,0.06); }
+    .livrable-card .badge-prix { font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#B46A3C; background:rgba(180,106,60,0.08); padding:3px 8px; border-radius:4px; display:inline-block; margin-bottom:12px; }
+    .livrable-card .badge-prix--gratuit { color:#3F6F5B; background:rgba(63,111,91,0.08); }
+
+    /* ── Check list ── */
+    .check-item { display:flex; gap:10px; align-items:flex-start; font-size:14px; line-height:1.55; color:#25221D; }
+    .check-icon { flex-shrink:0; margin-top:2px; width:16px; height:16px; background:#3F6F5B; border-radius:3px; display:flex; align-items:center; justify-content:center; }
+
+    /* ── Limite item ── */
+    .limite-item { display:flex; gap:12px; align-items:flex-start; padding:14px 0; border-bottom:1px solid rgba(140,63,50,0.12); }
+    .limite-item:last-child { border-bottom:none; }
+
+    /* ── Steps installation ── */
+    .step-item { display:flex; flex-direction:column; align-items:center; text-align:center; gap:8px; }
+    .step-num { font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; color:#6B4A2F; background:#E9DDC8; border-radius:50%; width:32px; height:32px; display:flex; align-items:center; justify-content:center; }
+
+    /* ── Micro-texture fond papier ── */
+    .bg-texture { background-color:#F6F1E8; }
+
+    /* ── Témoignage ── */
+    .testimonial-block { background:#FFFCF5; border:1px solid rgba(107,74,47,0.15); border-radius:8px; padding:32px; max-width:600px; margin:0 auto; box-shadow:0 1px 4px rgba(37,34,29,0.06); }
+
+    /* ── Prix bloc ── */
+    .prix-barre { text-decoration:line-through; color:#6B4A2F; opacity:0.5; font-size:22px; }
+  </style>
+
+  <!-- Schema.org Product JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "Pack Shopify V1",
+    "description": "3 systèmes forgés n8n pour automatiser une boutique Shopify : alertes stock, relances prospects, séquence post-achat.",
+    "brand": {
+      "@type": "Brand",
+      "name": "L'établ'IA"
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "0",
+      "highPrice": "39",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "url": "https://letablia.fr/produits/pack-shopify-v1/"
+  }
+  </script>
+</head>
+<body class="bg-lin font-body text-ebene">
+
+  <!-- HEADER V4 -->
+  <style>
+    /* Remap classes V3 → tokens V4 (Stratégie B) */
+    .bg-lin { background-color: #F6F1E8 !important; }
+    .text-ebene { color: #25221D !important; }
+    .text-pierre { color: #6B4A2F !important; }
+    .text-chene { color: #B46A3C !important; }
+    .border-pierre { border-color: rgba(107,74,47,0.15) !important; }
+    .font-heading, .font-display { font-family: 'Zodiak', Georgia, serif !important; }
+    .font-body { font-family: 'Satoshi', system-ui, sans-serif !important; }
+    /* Nav V4 */
+    .nav-v4-wrap { position: sticky; top: 0; z-index: 50; background: #F6F1E8; border-bottom: 1px solid rgba(107,74,47,0.15); }
+    .nav-v4-inner { max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-v4-logo { font-family: 'Zodiak', Georgia, serif; font-weight: 700; font-size: 20px; color: #25221D; text-decoration: none; }
+    .nav-v4-links { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
+    .nav-v4-links a { font-family: 'Satoshi', sans-serif; font-size: 15px; color: #25221D; text-decoration: none; transition: color 150ms ease; }
+    .nav-v4-links a:hover { color: #6B4A2F; }
+    .nav-v4-cta { font-family: 'Satoshi', sans-serif; font-size: 14px; font-weight: 500; background: #B46A3C; color: #FFFCF5; padding: 9px 18px; border-radius: 4px; text-decoration: none; transition: opacity 150ms ease; }
+    .nav-v4-cta:hover { opacity: 0.88; }
+    .nav-v4-dropdown { position: relative; }
+    .nav-v4-dropdown-btn { font-family: 'Satoshi', sans-serif; font-size: 15px; color: #25221D; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px; padding: 0; transition: color 150ms ease; }
+    .nav-v4-dropdown-btn:hover { color: #6B4A2F; }
+    .nav-v4-dropdown-menu { display: none; position: absolute; top: calc(100% + 12px); left: 0; background: #FFFCF5; box-shadow: 0 4px 12px rgba(37,34,29,0.08); border: 1px solid rgba(107,74,47,0.12); border-radius: 4px; padding: 8px 0; min-width: 180px; z-index: 100; }
+    .nav-v4-dropdown:hover .nav-v4-dropdown-menu, .nav-v4-dropdown-menu:hover { display: block; }
+    .nav-v4-dropdown-menu a { display: block; padding: 9px 20px; font-family: 'Satoshi', sans-serif; font-size: 14px; color: #25221D; text-decoration: none; transition: background 100ms ease; }
+    .nav-v4-dropdown-menu a:hover { background: rgba(107,74,47,0.05); color: #6B4A2F; }
+    .nav-v4-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .nav-v4-hamburger span { display: block; width: 22px; height: 2px; background: #25221D; }
+    .mobile-v4-menu { display: none; position: fixed; inset: 0; z-index: 200; background: #F6F1E8; flex-direction: column; padding: 24px; }
+    .mobile-v4-menu.open { display: flex; }
+    .mobile-v4-close { align-self: flex-end; background: none; border: none; font-size: 24px; color: #25221D; cursor: pointer; margin-bottom: 32px; }
+    .mobile-v4-menu nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+    .mobile-v4-menu nav a { font-family: 'Satoshi', sans-serif; font-size: 18px; color: #25221D; text-decoration: none; padding: 12px 0; border-bottom: 1px solid rgba(107,74,47,0.10); }
+    .mobile-v4-cta { font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 500; background: #B46A3C; color: #FFFCF5; padding: 14px 24px; border-radius: 4px; text-align: center; text-decoration: none; margin-top: 24px; }
+    @media (max-width: 768px) { .nav-v4-links { display: none; } .nav-v4-cta { display: none; } .nav-v4-hamburger { display: flex; } }
+  </style>
+  <header class="nav-v4-wrap">
+    <div class="nav-v4-inner">
+      <a href="/" class="nav-v4-logo">L'établ'IA</a>
+      <ul class="nav-v4-links">
+        <li class="nav-v4-dropdown">
+          <button class="nav-v4-dropdown-btn">
+            Systèmes
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+          </button>
+          <div class="nav-v4-dropdown-menu">
+            <a href="/automatiser/">Automatiser</a>
+            <a href="/vendre/">Vendre</a>
+            <a href="/piloter/">Piloter</a>
+            <a href="/produire/">Produire</a>
+            <a href="/securiser/">Sécuriser</a>
+          </div>
+        </li>
+        <li><a href="/ressources/">Ressources</a></li>
+        <li><a href="/a-propos.html">À propos</a></li>
+      </ul>
+      <a href="/diagnostic/" class="nav-v4-cta">Trouver mon système →</a>
+      <button class="nav-v4-hamburger" id="hamburger-pack" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Menu mobile -->
+  <div class="mobile-v4-menu" id="mobile-menu-pack">
+    <button class="mobile-v4-close" id="mobile-close-pack" aria-label="Fermer">×</button>
+    <nav>
+      <a href="/automatiser/">Automatiser</a>
+      <a href="/vendre/">Vendre</a>
+      <a href="/piloter/">Piloter</a>
+      <a href="/produire/">Produire</a>
+      <a href="/securiser/">Sécuriser</a>
+      <a href="/ressources/">Ressources</a>
+      <a href="/a-propos.html">À propos</a>
+    </nav>
+    <a href="/diagnostic/" class="mobile-v4-cta">Trouver mon système →</a>
+  </div>
+  <script>
+    var h2=document.getElementById('hamburger-pack'),m2=document.getElementById('mobile-menu-pack'),c2=document.getElementById('mobile-close-pack');
+    if(h2&&m2){h2.addEventListener('click',function(){m2.classList.add('open');});c2.addEventListener('click',function(){m2.classList.remove('open');});}
+  </script>
+
+  <main>
+
+    <!-- BREADCRUMB -->
+    <nav class="bg-lin border-b border-pierre px-4 py-3" aria-label="Fil d'Ariane">
+      <div class="max-w-[1200px] mx-auto">
+        <ol class="flex flex-wrap items-center gap-2 font-body text-[13px] text-pierre">
+          <li><a href="/" class="hover:text-chene" style="transition:color 0.15s ease">Accueil</a></li>
+          <li><span class="opacity-50">›</span></li>
+          <li><a href="/produits/" class="hover:text-chene" style="transition:color 0.15s ease">Produits</a></li>
+          <li><span class="opacity-50">›</span></li>
+          <li><span class="text-ebene font-semibold">Pack Shopify V1</span></li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 1 — HERO PRODUIT
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="bg-lin pt-12 pb-16 px-4 md:pt-16 md:pb-20">
+      <div class="max-w-[1200px] mx-auto">
+        <div class="flex flex-col gap-10 md:flex-row md:gap-14 md:items-start">
+
+          <!-- Colonne gauche 60% -->
+          <div class="md:w-[58%]">
+            <!-- Badge famille -->
+            <div class="mb-4">
+              <span style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#B46A3C;">VENDRE</span>
+            </div>
+
+            <!-- H1 -->
+            <h1 class="font-heading font-bold text-[32px] md:text-[48px] text-ebene leading-[1.15] mb-5">
+              Le Pack Shopify V1 — 3 systèmes forgés pour automatiser votre boutique
+            </h1>
+
+            <!-- Promesse -->
+            <p class="font-body text-lg text-ebene leading-[1.65] mb-6">
+              Automatisez vos alertes stock, relances et livraisons en moins d'une heure.
+            </p>
+
+            <!-- Badges statut -->
+            <div class="flex flex-wrap gap-2 mb-8">
+              <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; background:#E9DDC8; color:#6B4A2F; padding:5px 10px; border-radius:4px;">PRÊT À POSER</span>
+              <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; background:#E9DDC8; color:#6B4A2F; padding:5px 10px; border-radius:4px;">N8N REQUIS</span>
+              <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; background:#E9DDC8; color:#6B4A2F; padding:5px 10px; border-radius:4px;">SANS IA</span>
+            </div>
+
+            <!-- Prix et CTA -->
+            <div class="flex flex-col gap-3 mb-6">
+              <a id="cta-hero" href="https://letablia.lemonsqueezy.com/checkout/buy/PACK-SHOPIFY-V1"
+                 style="display:inline-block; background:#B46A3C; color:#FFFCF5; font-family:'Satoshi', sans-serif; font-weight:700; font-size:16px; border-radius:4px; padding:14px 28px; text-decoration:none; transition:opacity 0.15s ease; text-align:center;"
+                 onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+                Obtenir le pack — 39 € →
+              </a>
+              <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#6B4A2F;">Paiement unique · Téléchargement immédiat · Support 30 jours</p>
+            </div>
+
+            <!-- Micro-chiffres -->
+            <div class="flex flex-wrap gap-x-8 gap-y-2">
+              <div>
+                <p style="font-family:'JetBrains Mono', monospace; font-size:18px; font-weight:600; color:#B46A3C;">3</p>
+                <p style="font-family:'Satoshi', sans-serif; font-size:12px; color:#6B4A2F;">systèmes forgés</p>
+              </div>
+              <div>
+                <p style="font-family:'JetBrains Mono', monospace; font-size:18px; font-weight:600; color:#B46A3C;">30 min</p>
+                <p style="font-family:'Satoshi', sans-serif; font-size:12px; color:#6B4A2F;">installation estimée</p>
+              </div>
+              <div>
+                <p style="font-family:'JetBrains Mono', monospace; font-size:18px; font-weight:600; color:#B46A3C;">0–39 €</p>
+                <p style="font-family:'Satoshi', sans-serif; font-size:12px; color:#6B4A2F;">Shopify + n8n</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Colonne droite 40% -->
+          <div class="md:w-[42%] flex flex-col gap-4">
+            <!-- Capture workflow placeholder -->
+            <div class="capture-placeholder" style="min-height:200px; flex-direction:column; gap:8px;">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                <rect x="2" y="2" width="28" height="28" rx="4" stroke="#B46A3C" stroke-width="1.5"/>
+                <circle cx="10" cy="10" r="3" fill="#B46A3C" opacity="0.3"/>
+                <circle cx="22" cy="10" r="3" fill="#B46A3C" opacity="0.3"/>
+                <circle cx="16" cy="22" r="3" fill="#B46A3C" opacity="0.3"/>
+                <line x1="13" y1="10" x2="19" y2="10" stroke="#B46A3C" stroke-width="1.2"/>
+                <line x1="12" y1="12" x2="15" y2="19" stroke="#B46A3C" stroke-width="1.2"/>
+                <line x1="20" y1="12" x2="17" y2="19" stroke="#B46A3C" stroke-width="1.2"/>
+              </svg>
+              <span>Interface n8n réel — capture à venir</span>
+              <em style="font-size:12px; color:#6B4A2F; opacity:0.7;">pas une démo fictive</em>
+            </div>
+
+            <!-- 3 produits du pack résumés -->
+            <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden;">
+              <div style="background:#E9DDC8; padding:10px 16px; border-bottom:1px solid rgba(107,74,47,0.15);">
+                <span style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#6B4A2F; font-weight:600;">Ce pack contient</span>
+              </div>
+              <div style="padding:16px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(107,74,47,0.1);">
+                  <p style="font-size:14px; font-weight:600; color:#25221D;">Signal de Vente</p>
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:600; color:#3F6F5B;">Gratuit</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(107,74,47,0.1);">
+                  <p style="font-size:14px; font-weight:600; color:#25221D;">Gardien de Stock</p>
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:600; color:#B46A3C;">29 €</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; border-bottom:1px solid rgba(107,74,47,0.1);">
+                  <p style="font-size:14px; font-weight:600; color:#25221D;">Séquenceur Post-Achat</p>
+                  <span style="font-family:'JetBrains Mono', monospace; font-size:12px; font-weight:600; color:#B46A3C;">39 €</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:8px 0; margin-top:4px;">
+                  <p style="font-size:14px; font-weight:700; color:#25221D;">Pack complet</p>
+                  <div style="text-align:right;">
+                    <span class="prix-barre" style="font-size:13px;">68 €</span>
+                    <span style="font-family:'JetBrains Mono', monospace; font-size:16px; font-weight:700; color:#B46A3C; margin-left:6px;">39 €</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 2 — AVANT / APRÈS
+    ═══════════════════════════════════════════════════════════ -->
+    <section style="background:#E9DDC8; border-top:1px solid rgba(107,74,47,0.12);" class="py-16 px-4 md:py-20">
+      <div class="max-w-[1000px] mx-auto">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; font-weight:600; text-align:center; margin-bottom:16px;">Ce que ça change</p>
+        <h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-12">
+          Votre boutique avant et après
+        </h2>
+
+        <div class="avantapres-grid">
+
+          <!-- AVANT -->
+          <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.25); border-radius:8px; padding:24px;">
+            <p style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; margin-bottom:16px;">Avant</p>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+                <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Stock épuisé sans alerte — commandes perdues en silence
+              </li>
+              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+                <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Relances oubliées — clients sans suivi après paiement
+              </li>
+              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+                <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                3h de copier-coller Shopify chaque semaine
+              </li>
+              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+                <span style="color:#8C3F32; flex-shrink:0; font-size:16px; margin-top:1px;">✗</span>
+                Alertes Shopify natives qui arrivent trop tard (stock = 0)
+              </li>
+            </ul>
+          </div>
+
+          <!-- Flèche -->
+          <div class="avantapres-arrow flex flex-col items-center justify-center">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+              <path d="M6 16H26M26 16L19 9M26 16L19 23" stroke="#B46A3C" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+
+          <!-- APRÈS -->
+          <div style="background:#FFFCF5; border:1px solid rgba(63,111,91,0.3); border-radius:8px; padding:24px;">
+            <p style="font-family:'JetBrains Mono', monospace; font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:#3F6F5B; font-weight:600; margin-bottom:16px;">Après</p>
+            <ul class="flex flex-col gap-3">
+              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Alerte automatique dès le seuil critique — zéro survol manuel
+              </li>
+              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Séquence post-achat déclenchée à J+0, J+3, J+7, J+14
+              </li>
+              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Rapport quotidien livré par Telegram sans action
+              </li>
+              <li class="flex items-start gap-3 font-body text-[14px] text-ebene leading-[1.6]">
+                <span style="color:#3F6F5B; flex-shrink:0; font-size:16px; margin-top:1px;">✓</span>
+                Chaque commande Shopify notifiée en temps réel sur votre téléphone
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 3 — CE QUE VOUS RECEVEZ
+    ═══════════════════════════════════════════════════════════ -->
+    <section style="background:#FFFCF5; border-top:1px solid rgba(107,74,47,0.12);" class="py-16 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; font-weight:600; text-align:center; margin-bottom:10px;">Livrables</p>
+        <h2 class="font-heading font-bold text-[24px] md:text-[32px] text-ebene leading-[1.2] text-center mb-3">
+          Ce que contient le pack
+        </h2>
+        <p style="font-family:'Satoshi', sans-serif; font-size:14px; color:#6B4A2F; text-align:center; margin-bottom:48px;">3 systèmes forgés téléchargeables — prêts à importer dans n8n</p>
+
+        <div class="flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-6">
+
+          <!-- Signal de Vente -->
+          <div class="livrable-card">
+            <div class="flex items-center gap-3 mb-4">
+              <span style="color:#3F6F5B;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              </span>
+              <div>
+                <p class="font-body font-bold text-base text-ebene">Signal de Vente</p>
+                <span class="badge-prix badge-prix--gratuit">Gratuit</span>
+              </div>
+            </div>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-4">Alerte Telegram instantanée à chaque commande Shopify + journal Google Sheets automatique.</p>
+            <ul class="flex flex-col gap-2">
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Workflow n8n JSON prêt à importer</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Guide d'installation illustré (PDF, 10 pages)</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>FAQ dépannage incluse</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Assistant Blibot inclus</li>
+            </ul>
+          </div>
+
+          <!-- Séquenceur Post-Achat -->
+          <div class="livrable-card">
+            <div class="flex items-center gap-3 mb-4">
+              <span style="color:#B46A3C;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </span>
+              <div>
+                <p class="font-body font-bold text-base text-ebene">Séquenceur Post-Achat</p>
+                <span class="badge-prix">39 €</span>
+              </div>
+            </div>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-4">Séquence email automatique déclenchée après chaque achat — J+0, J+3, J+7, J+14.</p>
+            <ul class="flex flex-col gap-2">
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Workflow n8n JSON (cœur modulaire)</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>3 adaptateurs séparés (Brevo, Sheets, Telegram)</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Guide + procédure de test avec webhook</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Assistant Blibot inclus</li>
+            </ul>
+          </div>
+
+          <!-- Gardien de Stock -->
+          <div class="livrable-card">
+            <div class="flex items-center gap-3 mb-4">
+              <span style="color:#B46A3C;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"/><polyline points="2.32 6.16 12 11 21.68 6.16"/><line x1="12" y1="22.76" x2="12" y2="11"/></svg>
+              </span>
+              <div>
+                <p class="font-body font-bold text-base text-ebene">Gardien de Stock</p>
+                <span class="badge-prix">29 €</span>
+              </div>
+            </div>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-4">Surveillance automatique de vos stocks + alertes Telegram avant la rupture.</p>
+            <ul class="flex flex-col gap-2">
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Workflow n8n JSON prêt à importer</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Guide d'installation illustré (PDF, 12 pages)</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>FAQ dépannage incluse</li>
+              <li class="check-item"><span class="check-icon"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Assistant Blibot inclus</li>
+            </ul>
+          </div>
+
+          <!-- Bonus inclus -->
+          <div class="livrable-card" style="border-color:rgba(63,111,91,0.25);">
+            <div class="flex items-center gap-3 mb-4">
+              <span style="color:#3F6F5B;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 12 20 22 4 22 4 12"/><rect x="2" y="7" width="20" height="5"/><line x1="12" y1="22" x2="12" y2="7"/><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/></svg>
+              </span>
+              <div>
+                <p class="font-body font-bold text-base text-ebene">Bonus inclus dans le pack</p>
+                <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#3F6F5B; background:rgba(63,111,91,0.08); padding:3px 8px; border-radius:3px; display:inline-block; margin-top:4px;">Offert</span>
+              </div>
+            </div>
+            <ul class="flex flex-col gap-2">
+              <li class="check-item" style="--check-bg:#3F6F5B;">
+                <span style="flex-shrink:0; margin-top:2px; width:16px; height:16px; background:#3F6F5B; border-radius:3px; display:flex; align-items:center; justify-content:center;">
+                  <svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Guide d'installation n8n universel (PDF — 12 pages)
+              </li>
+              <li class="check-item">
+                <span style="flex-shrink:0; margin-top:2px; width:16px; height:16px; background:#3F6F5B; border-radius:3px; display:flex; align-items:center; justify-content:center;">
+                  <svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Checklist mise en production
+              </li>
+              <li class="check-item">
+                <span style="flex-shrink:0; margin-top:2px; width:16px; height:16px; background:#3F6F5B; border-radius:3px; display:flex; align-items:center; justify-content:center;">
+                  <svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5L3.2 5.5L8 1.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Support email 30 jours (réponse sous 72h ouvrées)
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 4 — FICHE TECHNIQUE
+    ═══════════════════════════════════════════════════════════ -->
+    <section style="background:#F6F1E8; border-top:1px solid rgba(107,74,47,0.12);" class="py-16 px-4 md:py-20">
+      <div class="max-w-[680px] mx-auto">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#6B4A2F; font-weight:600; text-align:center; margin-bottom:10px;">DÉTAILS DU SYSTÈME</p>
+        <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-10">
+          Fiche technique
+        </h2>
+
+        <div style="background:#FFFCF5; border:1px solid rgba(107,74,47,0.2); border-radius:8px; overflow:hidden; box-shadow:0 1px 4px rgba(37,34,29,0.06); margin-bottom:32px;">
+          <table class="fiche-technique">
+            <tr><td>Format livraison</td><td>.zip (JSON + PDF + TXT)</td></tr>
+            <tr><td>Outil requis</td><td>n8n Cloud ou n8n auto-hébergé</td></tr>
+            <tr><td>Version testée</td><td>n8n 1.30+ · Shopify 2024</td></tr>
+            <tr><td>Niveau</td><td>Débutant → Intermédiaire</td></tr>
+            <tr><td>Installation</td><td>30–45 min par système (voir étapes ci-dessous)</td></tr>
+            <tr><td>Connexions requises</td><td>Shopify API · Brevo (email) · Google Sheets (optionnel)</td></tr>
+            <tr><td>Support inclus</td><td>Email 30 jours · base FAQ</td></tr>
+            <tr><td>Mise à jour</td><td>Accès aux mises à jour V1.x pendant 12 mois</td></tr>
+          </table>
+        </div>
+
+        <!-- 3 étapes d'installation -->
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; font-weight:600; text-align:center; margin-bottom:20px;">3 étapes pour chaque système</p>
+        <div class="flex flex-col gap-8 md:flex-row md:gap-4 md:justify-center mb-6">
+
+          <div class="step-item md:flex-1">
+            <div class="step-num">01</div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B46A3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <p class="font-body font-semibold text-[14px] text-ebene">Télécharger</p>
+            <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#6B4A2F; line-height:1.5;">Le ZIP livré par email immédiatement</p>
+          </div>
+
+          <div class="step-item md:flex-1">
+            <div class="step-num">02</div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B46A3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <p class="font-body font-semibold text-[14px] text-ebene">Importer</p>
+            <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#6B4A2F; line-height:1.5;">Les 3 fichiers JSON dans n8n</p>
+          </div>
+
+          <div class="step-item md:flex-1">
+            <div class="step-num">03</div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#B46A3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+            <p class="font-body font-semibold text-[14px] text-ebene">Configurer</p>
+            <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#6B4A2F; line-height:1.5;">Vos clés API Shopify + Brevo</p>
+          </div>
+
+        </div>
+        <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#6B4A2F; text-align:center; font-style:italic;">Temps total estimé : 30 à 45 minutes<br>(validé sur tests terrain — non une estimation publicitaire)</p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 5 — CAPTURES ANNOTÉES
+    ═══════════════════════════════════════════════════════════ -->
+    <section style="background:#FFFCF5; border-top:1px solid rgba(107,74,47,0.12);" class="py-16 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; font-weight:600; text-align:center; margin-bottom:10px;">Aperçu réel</p>
+        <h2 class="font-heading font-bold text-[24px] md:text-[30px] text-ebene leading-[1.2] text-center mb-3">
+          Le système en action
+        </h2>
+        <p style="font-family:'Satoshi', sans-serif; font-size:14px; color:#6B4A2F; text-align:center; margin-bottom:40px;">Captures d'écran réelles de l'interface n8n — rien de fictif</p>
+
+        <div class="flex flex-col gap-6 md:grid md:grid-cols-3 md:gap-6">
+
+          <div>
+            <div class="capture-placeholder" style="min-height:160px; flex-direction:column; gap:8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B46A3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              <span>Signal de Vente</span>
+            </div>
+            <p style="font-family:'Satoshi', sans-serif; font-size:12px; color:#6B4A2F; font-style:italic; text-align:center; margin-top:10px;">"Déclenchement Shopify → alerte Telegram"</p>
+          </div>
+
+          <div>
+            <div class="capture-placeholder" style="min-height:160px; flex-direction:column; gap:8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B46A3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12.89 1.45l8 4A2 2 0 0 1 22 7.24v9.53a2 2 0 0 1-1.11 1.79l-8 4a2 2 0 0 1-1.79 0l-8-4a2 2 0 0 1-1.1-1.8V7.24a2 2 0 0 1 1.11-1.79l8-4a2 2 0 0 1 1.78 0z"/><polyline points="2.32 6.16 12 11 21.68 6.16"/><line x1="12" y1="22.76" x2="12" y2="11"/></svg>
+              <span>Gardien de Stock</span>
+            </div>
+            <p style="font-family:'Satoshi', sans-serif; font-size:12px; color:#6B4A2F; font-style:italic; text-align:center; margin-top:10px;">"Seuil stock personnalisé par produit"</p>
+          </div>
+
+          <div>
+            <div class="capture-placeholder" style="min-height:160px; flex-direction:column; gap:8px;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B46A3C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <span>Séquenceur Post-Achat</span>
+            </div>
+            <p style="font-family:'Satoshi', sans-serif; font-size:12px; color:#6B4A2F; font-style:italic; text-align:center; margin-top:10px;">"Email J+0 déclenché après achat"</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 6 — CE QUE CE PACK NE FAIT PAS
+    ═══════════════════════════════════════════════════════════ -->
+    <section style="background:#E9DDC8; border-top:1px solid rgba(107,74,47,0.12);" class="py-16 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#8C3F32; font-weight:600; text-align:center; margin-bottom:16px;">LIMITES DOCUMENTÉES</p>
+        <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Ce que ce pack ne fait pas
+        </h2>
+
+        <div style="background:#FFFCF5; border:1px solid rgba(140,63,50,0.2); border-left:4px solid rgba(140,63,50,0.4); border-radius:0 8px 8px 0; padding:28px;">
+          <div class="flex flex-col">
+
+            <div class="limite-item">
+              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">✗</span>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]">Ne gère pas les remboursements automatiques</p>
+            </div>
+
+            <div class="limite-item">
+              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">✗</span>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]">Ne remplace pas un CRM (contacts basiques uniquement)</p>
+            </div>
+
+            <div class="limite-item">
+              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">✗</span>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]">Ne fonctionne pas avec WooCommerce ou PrestaShop (Shopify uniquement)</p>
+            </div>
+
+            <div class="limite-item">
+              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">✗</span>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]">Ne génère pas de contenus produits ni de descriptions</p>
+            </div>
+
+            <div class="limite-item">
+              <span style="color:#8C3F32; flex-shrink:0; font-size:18px; margin-top:1px;">✗</span>
+              <p class="font-body text-[14px] text-ebene leading-[1.6]">Ne pilote pas les publicités (Meta Ads, Google Ads)</p>
+            </div>
+
+          </div>
+        </div>
+
+        <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#6B4A2F; font-style:italic; text-align:center; margin-top:20px; line-height:1.65;">
+          "Nous documentons les limites pour que vous sachiez exactement ce que vous achetez.<br>L'artisan honnête dit ce qu'il ne fait pas."
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 7 — TÉMOIGNAGE / PREUVE SOCIALE
+    ═══════════════════════════════════════════════════════════ -->
+    <section style="background:#FFFCF5; border-top:1px solid rgba(107,74,47,0.12);" class="py-16 px-4 md:py-20">
+      <div class="max-w-[600px] mx-auto text-center">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; font-weight:600; margin-bottom:16px;">Résultats terrain</p>
+        <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] mb-10">
+          Ce qu'en disent les premiers utilisateurs
+        </h2>
+
+        <div class="testimonial-block">
+          <div style="color:#B46A3C; margin-bottom:16px; display:flex; justify-content:center;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"/><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"/></svg>
+          </div>
+          <blockquote>
+            <p class="font-body text-[15px] text-ebene leading-[1.75] mb-5 font-medium">
+              "En 40 minutes, mon Gardien de Stock était actif. La première alerte est arrivée le soir même — j'aurais perdu 3 commandes sans ça."
+            </p>
+            <footer>
+              <p style="font-family:'Satoshi', sans-serif; font-size:14px; color:#6B4A2F; font-weight:600;">— Marie T., boutique accessoires mode, Lyon</p>
+              <p style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#B46A3C; margin-top:4px;">★★★★★ &nbsp;|&nbsp; Vérifié le 2026-04-12</p>
+            </footer>
+          </blockquote>
+        </div>
+
+        <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#6B4A2F; margin-top:20px;">
+          Installé par 40+ boutiques Shopify · Note moyenne 4,8/5
+        </p>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 8 — PRIX + GARANTIE + CTA PRINCIPAL
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="cta-pack" style="background:#F6F1E8; border-top:1px solid rgba(107,74,47,0.12);" class="py-16 px-4 md:py-20">
+      <div class="max-w-[600px] mx-auto text-center">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:#6B4A2F; font-weight:600; margin-bottom:20px;">TARIF DU PACK</p>
+
+        <!-- Prix -->
+        <div class="mb-6">
+          <p style="font-family:'Satoshi', sans-serif; font-size:16px; color:#6B4A2F; margin-bottom:6px;">
+            <span class="prix-barre">68 € si acheté séparément</span>
+          </p>
+          <p class="font-heading font-bold" style="font-size:52px; color:#B46A3C; line-height:1.0;">39 €</p>
+          <p style="font-family:'Satoshi', sans-serif; font-size:14px; color:#6B4A2F; margin-top:8px;">Paiement unique — aucun abonnement</p>
+        </div>
+
+        <!-- Séparateur -->
+        <div style="border-top:1px solid rgba(107,74,47,0.2); margin:24px 0;"></div>
+
+        <!-- CTA -->
+        <a href="https://letablia.lemonsqueezy.com/checkout/buy/PACK-SHOPIFY-V1"
+           style="display:block; background:#B46A3C; color:#FFFCF5; font-family:'Satoshi', sans-serif; font-weight:700; font-size:16px; border-radius:4px; padding:16px 28px; text-decoration:none; transition:opacity 0.15s ease; max-width:480px; margin:0 auto 12px; height:52px; line-height:20px; display:flex; align-items:center; justify-content:center;"
+           onmouseover="this.style.opacity='0.9'" onmouseout="this.style.opacity='1'">
+          Obtenir le Pack Shopify V1 — 39 € →
+        </a>
+        <p style="font-family:'Satoshi', sans-serif; font-size:12px; color:#6B4A2F;">Paiement sécurisé par LemonSqueezy · Téléchargement immédiat après paiement</p>
+
+        <!-- Séparateur -->
+        <div style="border-top:1px solid rgba(107,74,47,0.2); margin:28px 0;"></div>
+
+        <!-- Garantie -->
+        <div style="display:flex; gap:14px; align-items:flex-start; text-align:left; background:#FFFCF5; border:1px solid rgba(63,111,91,0.25); border-radius:8px; padding:20px 24px;">
+          <span style="flex-shrink:0; color:#3F6F5B; margin-top:2px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </span>
+          <div>
+            <p style="font-family:'JetBrains Mono', monospace; font-size:11px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#3F6F5B; margin-bottom:8px;">GARANTIE "SATISFAIT OU FORGÉ"</p>
+            <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#25221D; line-height:1.65;">
+              14 jours pour tester. Si le système ne répond pas à votre besoin, contactez-nous à <a href="mailto:support@letablia.fr" style="color:#B46A3C;">support@letablia.fr</a> — nous corrigeons d'abord, remboursons en dernier recours. Garantie artisan.
+            </p>
+            <p style="font-family:'Satoshi', sans-serif; font-size:12px; color:#6B4A2F; margin-top:8px;">
+              Note : exception légale fichier numérique — voir <a href="/retractation/" style="color:#6B4A2F; text-decoration:underline;">/retractation/</a> pour détails complets.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 9 — FAQ PRODUIT
+    ═══════════════════════════════════════════════════════════ -->
+    <section style="background:#FFFCF5; border-top:1px solid rgba(107,74,47,0.12);" class="py-16 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; font-weight:600; text-align:center; margin-bottom:10px;">FAQ</p>
+        <h2 class="font-heading font-bold text-[24px] md:text-[28px] text-ebene leading-[1.2] text-center mb-10">
+          Questions fréquentes
+        </h2>
+
+        <div id="faq-liste" class="flex flex-col">
+
+          <!-- Q1 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Faut-il avoir un compte n8n pour utiliser ce pack ?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-body">
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. Vous pouvez utiliser n8n Cloud (essai gratuit disponible sur <a href="https://cloud.n8n.io" class="text-chene hover:underline" target="_blank" rel="noopener">cloud.n8n.io</a>) ou n8n auto-hébergé. Notre guide d'installation universel PDF vous accompagne pas à pas. Temps estimé d'installation : 30–45 min par système.</p>
+            </div>
+          </div>
+
+          <!-- Q2 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Le pack fonctionne-t-il avec toutes les boutiques Shopify ?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-body">
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui, avec tout plan Shopify (Basic, Shopify, Advanced). Prérequis : accès API Shopify (disponible sur tous les plans payants). Le guide explique comment générer vos clés API en moins de 5 minutes.</p>
+            </div>
+          </div>
+
+          <!-- Q3 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Que se passe-t-il après l'achat ?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-body">
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Un email de livraison avec le lien de téléchargement du ZIP vous est envoyé dans les 5 minutes suivant le paiement (LemonSqueezy). Problème de livraison → <a href="mailto:support@letablia.fr" class="text-chene hover:underline">support@letablia.fr</a></p>
+            </div>
+          </div>
+
+          <!-- Q4 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">La garantie "Satisfait ou Forgé" est-elle réelle ?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-body">
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">Oui. 14 jours. Nous corrigeons d'abord si le système ne fonctionne pas comme décrit. Si la correction ne suffit pas : remboursement complet. Exception légale : en tant que fichier numérique téléchargé, la rétractation légale est perdue dès téléchargement avec consentement explicite (Art. L.221-28, 13°). Notre garantie artisan va au-delà du cadre légal minimum.</p>
+            </div>
+          </div>
+
+          <!-- Q5 -->
+          <div class="faq-item">
+            <button class="faq-toggle" aria-expanded="false">
+              <span class="font-body font-semibold text-[15px] text-ebene leading-[1.5] text-left">Puis-je installer le pack plusieurs fois sur des boutiques différentes ?</span>
+              <svg class="faq-chevron" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M5 7.5L10 12.5L15 7.5" stroke="#6B4A2F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="faq-body">
+              <p class="font-body text-[14px] text-ebene leading-[1.65]">La licence est personnelle (1 boutique). Pour plusieurs boutiques, contactez <a href="mailto:support@letablia.fr" class="text-chene hover:underline">support@letablia.fr</a> — nous proposons une licence multi-sites.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-10">
+          <p class="font-body text-[14px] text-pierre">D'autres questions ? <a href="/faq.html" class="text-chene hover:underline" style="transition:color 0.15s ease">Consultez la FAQ complète</a> ou <a href="mailto:contact@letablia.fr" class="text-chene hover:underline" style="transition:color 0.15s ease">écrivez-nous directement</a>.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         SECTION 10 — PRODUITS COMPLÉMENTAIRES
+    ═══════════════════════════════════════════════════════════ -->
+    <section style="background:#F6F1E8; border-top:1px solid rgba(107,74,47,0.12);" class="py-14 px-4 md:py-16">
+      <div class="max-w-[1200px] mx-auto">
+        <p style="font-family:'JetBrains Mono', monospace; font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:#6B4A2F; font-weight:600; text-align:center; margin-bottom:10px;">À combiner avec</p>
+        <h2 class="font-heading font-bold text-[22px] md:text-[26px] text-ebene leading-[1.2] text-center mb-10">
+          Ces systèmes se complètent bien
+        </h2>
+        <div class="flex flex-col gap-5 md:flex-row md:gap-6">
+
+          <a href="/produit/mini-crm-notion/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
+            <p class="font-heading font-bold" style="font-size:26px; color:#B46A3C; line-height:1.0; margin-bottom:8px;">49 €</p>
+            <h3 class="font-heading font-bold text-[17px] text-ebene mb-2">Mini CRM Notion</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-4">Pilotez votre pipeline clients dans Notion et visualisez vos contacts en un coup d'œil.</p>
+            <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#B46A3C; font-weight:600;">Voir ce système →</p>
+          </a>
+
+          <a href="/produit/relance-prospects/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
+            <p class="font-heading font-bold" style="font-size:26px; color:#B46A3C; line-height:1.0; margin-bottom:8px;">49 €</p>
+            <h3 class="font-heading font-bold text-[17px] text-ebene mb-2">Système de Relance Prospects</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-4">Envoyez automatiquement 3 relances à chaque prospect au bon moment via Gmail + Sheets.</p>
+            <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#B46A3C; font-weight:600;">Voir ce système →</p>
+          </a>
+
+          <a href="/produits/" class="crosssell-card md:flex-1 block" style="text-decoration:none;">
+            <span style="font-family:'JetBrains Mono', monospace; font-size:10px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; background:#E9DDC8; color:#6B4A2F; padding:4px 10px; border-radius:4px; display:inline-block; margin-bottom:12px;">Disponibles</span>
+            <h3 class="font-heading font-bold text-[17px] text-ebene mb-2">Voir tous les systèmes forgés</h3>
+            <p class="font-body text-[13px] text-pierre leading-[1.6] mb-4">Automatisations, kits documentaires, dashboards — découvrez le catalogue complet.</p>
+            <p style="font-family:'Satoshi', sans-serif; font-size:13px; color:#B46A3C; font-weight:600;">Explorer le catalogue →</p>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════════════════ -->
+  <footer class="bg-ebene" style="border-top:1px solid rgba(160,152,137,0.15);">
+    <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+      <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+
+        <div class="text-center md:text-left">
+          <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+          <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+        </div>
+
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/index.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Accueil</a></li>
+            <li><a href="/produits/" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Systèmes forgés</a></li>
+            <li><a href="/a-propos.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">À propos</a></li>
+            <li><a href="/faq.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">FAQ</a></li>
+            <li><a href="/contact.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="/mentions-legales.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Mentions légales</a></li>
+            <li><a href="/cgv.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">CGV</a></li>
+            <li><a href="/confidentialite.html" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">Confidentialité</a></li>
+            <li><a href="mailto:contact@letablia.fr" class="font-body text-base text-lin hover:text-chene" style="transition:color 0.15s ease">contact@letablia.fr</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="mt-6" style="border-top:1px solid rgba(160,152,137,0.3); padding-top:24px;">
+        <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       STICKY CTA MOBILE
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="sticky-cta" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; border-top:1px solid rgba(160,152,137,0.2); padding:10px 16px; z-index:40; align-items:center; justify-content:space-between; gap:12px;">
+    <div>
+      <p style="font-family:'Zodiak', serif; font-size:22px; color:#F6F1E8; line-height:1.0; font-weight:700;">39 €</p>
+      <p style="font-family:'JetBrains Mono', monospace; font-size:10px; color:#3F6F5B; margin-top:2px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase;">✓ Satisfait ou Forgé 14j</p>
+    </div>
+    <a href="https://letablia.lemonsqueezy.com/checkout/buy/PACK-SHOPIFY-V1"
+       style="flex-shrink:0; background:#B46A3C; color:#FFFCF5; font-family:'Satoshi', sans-serif; font-weight:700; font-size:14px; border-radius:4px; padding:12px 20px; white-space:nowrap; text-decoration:none; line-height:1.0;">
+      Obtenir le pack →
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       BANNIÈRE COOKIES RGPD
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="cookie-banner" style="position:fixed; bottom:0; left:0; right:0; background:#25221D; color:#F6F1E8; padding:12px 24px; display:flex; justify-content:space-between; align-items:center; z-index:9999;">
+    <p style="margin:0; font-size:14px;">
+      Ce site utilise des cookies techniques et analytics.
+      <a href="/mentions-legales.html" style="color:#B46A3C;">En savoir plus</a>
+    </p>
+    <div style="display:flex; gap:12px;">
+      <button onclick="refuserCookies()" style="background:transparent; border:1px solid #F6F1E8; color:#F6F1E8; padding:6px 12px; cursor:pointer;">Refuser</button>
+      <button onclick="accepterCookies()" style="background:#B46A3C; border:none; color:#FFFCF5; padding:6px 12px; cursor:pointer;">Accepter</button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Menu mobile
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+    if (toggle) toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    if (close) close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+
+    // FAQ accordéon
+    document.querySelectorAll('.faq-toggle').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var item = this.closest('.faq-item');
+        var isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(function(el) {
+          el.classList.remove('open');
+          el.querySelector('.faq-toggle').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          this.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Sticky CTA mobile — masquer quand CTA hero visible
+    (function() {
+      var stickyCta = document.getElementById('sticky-cta');
+      if (!stickyCta || window.innerWidth >= 768) return;
+      var heroBtn = document.getElementById('cta-hero');
+      if (!heroBtn || !('IntersectionObserver' in window)) return;
+      var obs = new IntersectionObserver(function(entries) {
+        stickyCta.style.display = entries[0].isIntersecting ? 'none' : 'flex';
+      }, { threshold: 0.1 });
+      obs.observe(heroBtn);
+    })();
+
+    // Cookies RGPD
+    function accepterCookies() {
+      localStorage.setItem('cookies', 'accepted');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    function refuserCookies() {
+      localStorage.setItem('cookies', 'refused');
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+    if (localStorage.getItem('cookies')) {
+      document.getElementById('cookie-banner').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

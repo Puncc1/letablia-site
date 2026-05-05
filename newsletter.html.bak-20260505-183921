@@ -1,0 +1,729 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>La Forge — Newsletter · L'établ'IA</title>
+<meta name="description" content="Une lettre hebdomadaire sur l'automatisation des TPE et freelances. 1 idée, 1 outil, 1 retour terrain. Rien de plus. Gratuite."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/>
+<link rel="stylesheet" href="assets/css/search.css"/>
+<style>
+/* ─── NEWSLETTER.HTML — styles spécifiques ─── */
+
+.forge-hero{
+  padding:72px 0 80px;
+  background:var(--lin);
+  border-bottom:1px solid var(--chene-25);
+}
+.forge-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--mousse);border:1px solid var(--mousse);
+  padding:6px 14px;margin-bottom:32px;
+}
+.forge-badge::before{
+  content:"";width:8px;height:8px;border-radius:50%;
+  background:var(--mousse);animation:pulse-forge 2s ease-in-out infinite;
+}
+@keyframes pulse-forge{0%,100%{opacity:1}50%{opacity:.3}}
+.forge-hero h1{
+  font-size:clamp(3.2rem,7vw,6rem);line-height:.9;margin-bottom:28px;
+}
+.forge-hero h1 em{font-family:var(--ff-display);font-style:italic;color:var(--chene)}
+.forge-hero h1 .sub{
+  display:block;font-family:var(--ff-mono);font-size:clamp(.8rem,1.5vw,1rem);
+  font-weight:400;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--chene);margin-top:16px;
+}
+.forge-lede{
+  font-size:1.2rem;line-height:1.6;color:var(--ebene-80);
+  max-width:50ch;margin-bottom:36px;
+}
+.forge-meta-row{
+  display:flex;align-items:center;gap:28px;flex-wrap:wrap;
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+  letter-spacing:.1em;margin-top:24px;
+  padding-top:24px;border-top:1px dashed var(--chene-25);
+}
+.forge-meta-row span::before{content:"— ";}
+
+/* Piliers */
+.piliers-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.pilier-card{
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  padding:28px 24px 24px;position:relative;
+}
+.pilier-numero{
+  position:absolute;top:16px;right:18px;
+  font-family:var(--ff-mono);font-size:10px;color:var(--chene-25);
+  letter-spacing:.12em;
+}
+.pilier-icon{font-size:1.8rem;margin-bottom:14px;display:block}
+.pilier-card h3{font-size:1.15rem;margin-bottom:10px}
+.pilier-card p{font-size:.9rem;color:var(--ebene-80);line-height:1.55;margin:0}
+.pilier-exemple{
+  margin-top:14px;padding:10px 12px;
+  background:var(--lin);border-left:2px solid var(--mousse);
+  font-family:var(--ff-mono);font-size:11px;color:var(--ebene-80);
+  line-height:1.5;
+}
+
+/* Pourquoi / Pourquoi pas */
+.deux-colonnes{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.raison-oui,.raison-non{padding:32px}
+.raison-oui{background:var(--parchemin);border:1px solid var(--mousse);border-radius:var(--r-md)}
+.raison-non{background:var(--lin);border:1px dashed var(--chene-25);border-radius:var(--r-md)}
+.raison-titre{
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  margin-bottom:20px;
+}
+.raison-oui .raison-titre{color:var(--mousse)}
+.raison-non .raison-titre{color:var(--chene)}
+.raison-liste{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.raison-liste li{
+  font-size:.92rem;line-height:1.5;color:var(--ebene-80);
+  padding-left:20px;position:relative;
+}
+.raison-oui .raison-liste li::before{content:"✓";position:absolute;left:0;color:var(--mousse);font-weight:700}
+.raison-non .raison-liste li::before{content:"✕";position:absolute;left:0;color:var(--pierre);font-weight:700}
+
+/* Formulaire */
+.forge-form-wrap{
+  max-width:600px;margin:0 auto;
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  padding:44px 40px;position:relative;
+  box-shadow:0 16px 40px -20px rgba(44,40,37,.18),
+             12px 12px 0 -3px var(--kraft),
+             12px 12px 0 -2px var(--chene-25);
+}
+.forge-form-stamp{
+  position:absolute;top:20px;right:28px;
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mousse);border:2px solid var(--mousse);padding:5px 9px;
+  transform:rotate(3deg);opacity:.7;
+}
+.forge-form-label-top{
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+  letter-spacing:.14em;text-transform:uppercase;
+  margin-bottom:24px;padding-bottom:14px;border-bottom:1px dashed var(--chene-25);
+}
+.forge-form-wrap .field{margin-bottom:18px}
+.forge-form-wrap label{
+  display:block;font-family:var(--ff-mono);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--chene);
+  margin-bottom:6px;
+}
+.forge-form-wrap input[type="email"]{
+  width:100%;padding:12px 14px;
+  background:var(--lin);border:1px solid var(--chene-25);
+  font-family:var(--ff-body);font-size:15px;color:var(--ebene);
+  border-radius:var(--r-sm);outline:none;
+  transition:border-color .2s;
+}
+.forge-form-wrap input[type="email"]:focus{border-color:var(--chene)}
+.forge-checkbox-row{
+  display:flex;align-items:flex-start;gap:12px;
+  margin-top:16px;padding-top:16px;border-top:1px dashed var(--chene-25);
+}
+.forge-checkbox-row input[type="checkbox"]{
+  width:18px;height:18px;flex-shrink:0;margin-top:2px;cursor:pointer;
+  accent-color:var(--mousse);
+}
+.forge-checkbox-row label{
+  font-family:var(--ff-body);font-size:.85rem;color:var(--ebene-80);
+  line-height:1.5;letter-spacing:0;text-transform:none;margin:0;
+}
+.forge-activation-notice{
+  margin-top:20px;padding:12px 16px;
+  background:rgba(138,117,96,.08);border:1px dashed var(--chene-25);
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+  letter-spacing:.06em;line-height:1.6;text-align:center;
+}
+
+/* Échantillon */
+.echantillon-card{
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  padding:32px 28px;
+  position:relative;
+}
+.echantillon-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:24px;padding-bottom:14px;border-bottom:1px solid var(--chene-25);
+}
+.echantillon-numero{
+  font-family:var(--ff-mono);font-size:10px;color:var(--chene);
+  letter-spacing:.18em;text-transform:uppercase;
+}
+.echantillon-date{
+  font-family:var(--ff-mono);font-size:10px;color:var(--pierre);
+  letter-spacing:.1em;
+}
+.echantillon-bloc{margin-bottom:20px;padding-bottom:20px;border-bottom:1px dashed var(--chene-25)}
+.echantillon-bloc:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.echantillon-tag{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--mousse);margin-bottom:8px;
+}
+.echantillon-bloc h4{font-size:1rem;margin-bottom:6px}
+.echantillon-bloc p{font-size:.88rem;color:var(--ebene-80);line-height:1.55;margin:0}
+
+/* FAQ */
+.faq-forge-item{
+  border-bottom:1px dashed var(--chene-25);padding:20px 0;
+}
+.faq-forge-item:last-child{border-bottom:none}
+.faq-forge-q{
+  font-family:var(--ff-display);font-weight:600;
+  font-size:1.05rem;margin-bottom:8px;color:var(--ebene);
+}
+.faq-forge-a{font-size:.92rem;color:var(--ebene-80);line-height:1.6;margin:0}
+
+/* Engagement strip */
+.engagement-strip{
+  background:var(--ebene);color:var(--lin);
+  padding:48px 0;
+}
+.engagement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center}
+.engagement-item .num{
+  font-family:var(--ff-display);font-size:3rem;color:var(--chene);
+  display:block;margin-bottom:8px;
+}
+.engagement-item p{font-size:.88rem;color:rgba(242,237,232,.7);margin:0;line-height:1.5}
+
+/* Responsive */
+@media(max-width:880px){
+  .piliers-grid{grid-template-columns:1fr}
+  .deux-colonnes{grid-template-columns:1fr;gap:24px}
+  .engagement-grid{grid-template-columns:1fr;gap:32px}
+  .forge-form-wrap{padding:28px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false">
+        <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..."/>
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ══════════════════════════════════════
+     1. HERO
+══════════════════════════════════════ -->
+<section class="forge-hero">
+  <div class="container">
+    <div class="forge-badge" role="note" aria-label="Gratuit">Gratuit · 1 email / semaine max</div>
+
+    <h1 data-reveal>
+      <em>La Forge</em>
+      <span class="sub">Un envoi par semaine. Jamais plus.</span>
+    </h1>
+
+    <p class="forge-lede" data-reveal data-reveal-delay="1">
+      Une lettre sur l'automatisation des TPE, artisans et freelances francophones.
+      Pas de veille décousue, pas de listes d'outils sans contexte.
+      Chaque numéro : une idée concrète, un outil utile, un retour terrain.
+    </p>
+
+    <a href="#inscription" class="btn btn-mousse" style="font-size:1rem;padding:16px 28px">
+      S'inscrire gratuitement →
+    </a>
+
+    <div class="forge-meta-row">
+      <span>Gratuite</span>
+      <span>Francophone</span>
+      <span>Désinscription en 1 clic</span>
+      <span>Aucune affiliation cachée</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     2. LES 3 PILIERS
+══════════════════════════════════════ -->
+<section style="padding:72px 0;background:var(--lin)">
+  <div class="container">
+    <div style="margin-bottom:40px" data-reveal>
+      <span class="tag-atelier">Ce qu'on envoie</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">
+        Trois pièces forgées.<br/>
+        <em style="font-family:var(--ff-display);font-style:italic;color:var(--chene)">Chaque semaine.</em>
+      </h2>
+      <p style="margin-top:14px;font-size:1rem;color:var(--ebene-80);max-width:52ch">
+        On n'envoie pas ce qu'on ne peut pas expliquer en 3 minutes.
+        Chaque numéro tient dans une pause café.
+      </p>
+    </div>
+
+    <div class="piliers-grid" data-reveal data-reveal-delay="1">
+
+      <div class="pilier-card">
+        <span class="pilier-numero">N° 01</span>
+        <span class="pilier-icon">⚙️</span>
+        <h3>1 idée d'automatisation</h3>
+        <p>
+          Réutilisable dans la semaine, sans développeur.
+          Décrite étape par étape, avec les outils exacts.
+        </p>
+        <div class="pilier-exemple">
+          Ex : « Envoyer un devis PDF automatiquement depuis un formulaire en ligne. Durée de mise en place : 40 min. »
+        </div>
+      </div>
+
+      <div class="pilier-card">
+        <span class="pilier-numero">N° 02</span>
+        <span class="pilier-icon">🔧</span>
+        <h3>1 outil à tester</h3>
+        <p>
+          Parfois gratuit, parfois payant — avec le vrai avis après utilisation réelle.
+          On dit quand c'est décevant.
+        </p>
+        <div class="pilier-exemple">
+          Ex : « Comparatif agenda partagé client : ce qui marche, ce qui coûte trop cher, ce qu'on a gardé. »
+        </div>
+      </div>
+
+      <div class="pilier-card">
+        <span class="pilier-numero">N° 03</span>
+        <span class="pilier-icon">📋</span>
+        <h3>1 retour terrain</h3>
+        <p>
+          Anonymisé, sourcé, honnête. Réussite ou échec — les deux sont instructifs.
+          Pas de success-story bidon.
+        </p>
+        <div class="pilier-exemple">
+          Ex : « Comment une fleuriste a réduit ses relances impayées de 80% (et ce qu'elle a cassé en chemin). »
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     3. ENGAGEMENT (chiffres)
+══════════════════════════════════════ -->
+<section class="engagement-strip">
+  <div class="container">
+    <div class="engagement-grid" data-reveal>
+      <div class="engagement-item">
+        <span class="num">1</span>
+        <p>email par semaine.<br/>Ni plus, ni moins.</p>
+      </div>
+      <div class="engagement-item">
+        <span class="num">0</span>
+        <p>sponsor caché.<br/>Aucune affiliation non déclarée.</p>
+      </div>
+      <div class="engagement-item">
+        <span class="num">1 clic</span>
+        <p>pour se désinscrire.<br/>Sans formulaire de rétention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     4. POURQUOI OUI / POURQUOI NON
+══════════════════════════════════════ -->
+<section style="padding:72px 0;background:var(--lin)">
+  <div class="container">
+    <div style="margin-bottom:40px" data-reveal>
+      <span class="tag-atelier">Franchement</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.7rem,3vw,2.3rem)">
+        Pourquoi s'inscrire —<br/>
+        <em style="font-family:var(--ff-display);font-style:italic;color:var(--chene)">ou pas.</em>
+      </h2>
+    </div>
+
+    <div class="deux-colonnes" data-reveal data-reveal-delay="1">
+
+      <div class="raison-oui">
+        <div class="raison-titre">Bonnes raisons de s'abonner</div>
+        <ul class="raison-liste">
+          <li>Vous perdez du temps sur des tâches répétables — et vous le savez.</li>
+          <li>Vous cherchez une veille outil rédigée par quelqu'un qui s'en sert vraiment.</li>
+          <li>Vous voulez des exemples concrets pour votre secteur (commerce, artisan, freelance).</li>
+          <li>Vous aimez les retours honnêtes, y compris quand ça ne marche pas.</li>
+          <li>Vous souhaitez rejoindre une communauté francophone qui pratique, pas qui théorise.</li>
+        </ul>
+      </div>
+
+      <div class="raison-non">
+        <div class="raison-titre">Mauvaises raisons de s'abonner</div>
+        <ul class="raison-liste">
+          <li>Vous voulez des codes promo ou des offres partenaires — on n'en fait pas.</li>
+          <li>Vous cherchez des listes de 47 outils à essayer un jour. Ce n'est pas l'esprit.</li>
+          <li>Vous attendez du contenu de brand marketing. On n'est pas une agence.</li>
+          <li>Vous voulez être sûr que chaque numéro s'applique à votre cas précis. Ce n'est pas garanti.</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     5. FORMULAIRE D'INSCRIPTION
+══════════════════════════════════════ -->
+<section id="inscription" style="padding:80px 0;background:var(--kraft)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px" data-reveal>
+      <span class="tag-atelier" style="justify-content:center">Rejoindre La Forge</span>
+      <h2 style="margin-top:16px;font-size:clamp(1.8rem,3vw,2.4rem)">
+        Gratuit. <em style="font-family:var(--ff-display);font-style:italic;color:var(--chene)">Pour l'instant.</em>
+      </h2>
+      <p style="margin-top:12px;font-size:.95rem;color:var(--ebene-80);max-width:44ch;margin-left:auto;margin-right:auto">
+        Version premium (5 €/mois) envisagée plus tard pour les abonnés qui souhaitent aller plus loin.
+        Aujourd'hui, on construit l'audience d'abord.
+      </p>
+    </div>
+
+    <div class="forge-form-wrap" data-reveal data-reveal-delay="1">
+      <div class="forge-form-stamp">Inscription № LA-FORGE</div>
+
+      <div class="forge-form-label-top">Formulaire d'abonnement</div>
+
+      <form method="POST" action="contact.html?subject=newsletter" onsubmit="return handleForgeSignup(event)">
+        <div class="field">
+          <label for="forge-email">Votre adresse email</label>
+          <input
+            type="email"
+            id="forge-email"
+            name="email"
+            required
+            placeholder="vous@exemple.fr"
+            autocomplete="email"
+            aria-describedby="forge-email-hint"
+          />
+          <span id="forge-email-hint" style="font-family:var(--ff-mono);font-size:10px;color:var(--pierre);letter-spacing:.08em;display:block;margin-top:5px">
+            Adresse utilisée uniquement pour La Forge. Jamais revendue.
+          </span>
+        </div>
+
+        <div class="forge-checkbox-row">
+          <input
+            type="checkbox"
+            id="forge-rgpd"
+            name="rgpd"
+            required
+            aria-required="true"
+          />
+          <label for="forge-rgpd">
+            J'accepte de recevoir La Forge par email (1 envoi maximum par semaine)
+            et j'ai pris connaissance de la
+            <a href="confidentialite.html" style="color:var(--chene)">politique de confidentialité</a>.
+            Je peux me désinscrire à tout moment en 1 clic.
+          </label>
+        </div>
+
+        <div class="forge-activation-notice" role="status">
+          ⚠ Inscription en cours d'activation — Nous vous contactons personnellement
+          pour confirmer votre abonnement jusqu'à l'ouverture du service automatique.
+        </div>
+
+        <button
+          type="submit"
+          class="btn btn-mousse"
+          style="width:100%;justify-content:center;margin-top:24px;font-size:1rem;padding:16px"
+        >
+          Rejoindre La Forge →
+        </button>
+      </form>
+
+      <div id="forge-success" style="display:none;text-align:center;padding:32px 0">
+        <div style="font-family:var(--ff-display);font-size:3.5rem;color:var(--mousse);margin-bottom:12px">⚒</div>
+        <h3 style="font-size:1.4rem;margin-bottom:10px">Demande reçue.</h3>
+        <p style="color:var(--ebene-80);font-size:.9rem;max-width:36ch;margin:0 auto;line-height:1.6">
+          On vous envoie un email de confirmation dans les 48 h. Vérifiez votre dossier promotions si nécessaire.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     6. ÉCHANTILLONS DE NUMÉROS
+══════════════════════════════════════ -->
+<section style="padding:72px 0;background:var(--lin)">
+  <div class="container">
+    <div style="margin-bottom:40px" data-reveal>
+      <span class="tag-atelier">Avant de s'abonner</span>
+      <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">
+        Lire un échantillon
+      </h2>
+      <p style="margin-top:12px;font-size:.95rem;color:var(--ebene-80);max-width:50ch">
+        Deux extraits de numéros pour juger sur pièce. C'est à peu près ça, chaque semaine.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px" class="ech-grid" data-reveal data-reveal-delay="1">
+
+      <!-- Numéro 1 -->
+      <div class="echantillon-card">
+        <div class="echantillon-header">
+          <span class="echantillon-numero">La Forge · N° 003</span>
+          <span class="echantillon-date">Avril 2026</span>
+        </div>
+
+        <div class="echantillon-bloc">
+          <div class="echantillon-tag">⚙️ Idée de la semaine</div>
+          <h4>Transformer un bon de commande PDF en tâche automatique</h4>
+          <p>
+            Un client envoie un PDF par email. Au lieu de saisir à la main dans votre outil de gestion,
+            une règle d'automatisation extrait le montant et crée la tâche correspondante.
+            Mise en place : 45 min, aucun code.
+          </p>
+        </div>
+
+        <div class="echantillon-bloc">
+          <div class="echantillon-tag">🔧 Outil à tester</div>
+          <h4>Parseur de documents — ce qui marche vraiment</h4>
+          <p>
+            Testé sur 3 semaines : deux solutions trop chères pour le volume d'un freelance,
+            une solution gratuite avec une limite raisonnable. On a gardé la dernière.
+          </p>
+        </div>
+
+        <div class="echantillon-bloc">
+          <div class="echantillon-tag">📋 Retour terrain</div>
+          <h4>« J'ai automatisé mes relances, et ça m'a coûté un client »</h4>
+          <p>
+            Un consultant indépendant raconte comment une relance automatique mal configurée
+            a créé une tension avec un client fidèle — et ce qu'il a changé depuis.
+          </p>
+        </div>
+      </div>
+
+      <!-- Numéro 2 -->
+      <div class="echantillon-card">
+        <div class="echantillon-header">
+          <span class="echantillon-numero">La Forge · N° 007</span>
+          <span class="echantillon-date">Mai 2026</span>
+        </div>
+
+        <div class="echantillon-bloc">
+          <div class="echantillon-tag">⚙️ Idée de la semaine</div>
+          <h4>Alerte stock faible → message WhatsApp en 10 secondes</h4>
+          <p>
+            Pour les e-commerçants avec un système de caisse ou boutique en ligne : quand un article passe sous
+            un seuil, une notification arrive directement sur le téléphone du gérant.
+            Zéro abonnement supplémentaire si vous avez déjà n8n.
+          </p>
+        </div>
+
+        <div class="echantillon-bloc">
+          <div class="echantillon-tag">🔧 Outil à tester</div>
+          <h4>Tableau de bord e-commerce sans Excel ni abonnement BI</h4>
+          <p>
+            On a monté un tableau de bord lisible en 30 minutes avec des outils déjà
+            dans la pile de la plupart des boutiques. Capture d'écran incluse.
+          </p>
+        </div>
+
+        <div class="echantillon-bloc">
+          <div class="echantillon-tag">📋 Retour terrain</div>
+          <h4>Une fleuriste réduit ses impayés de 80% — le détail complet</h4>
+          <p>
+            Séquence de relance automatique + SMS de confirmation : chiffres réels,
+            durée de mise en place, ce qu'elle a cassé, ce qui a tenu.
+            Anonymisé avec accord.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <style>@media(max-width:880px){.ech-grid{grid-template-columns:1fr !important}}</style>
+
+    <div style="text-align:center;margin-top:40px">
+      <a href="#inscription" class="btn btn-ghost" style="font-size:.95rem">
+        S'inscrire pour recevoir le prochain numéro →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     7. FAQ
+══════════════════════════════════════ -->
+<section style="padding:72px 0;background:var(--parchemin);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start" class="faq-forge-grid">
+
+      <div data-reveal>
+        <span class="tag-atelier">Questions fréquentes</span>
+        <h2 style="margin-top:16px;font-size:clamp(1.8rem,3vw,2.4rem)">
+          Les doutes<br/>
+          <em style="font-family:var(--ff-display);font-style:italic;color:var(--chene)">raisonnables.</em>
+        </h2>
+        <p style="margin-top:14px;font-size:.9rem;color:var(--ebene-80);line-height:1.6">
+          Quelque chose manque ?
+          <a href="contact.html" style="color:var(--chene);border-bottom:1px solid var(--chene-25)">Écrivez-nous</a> —
+          on répond à la main.
+        </p>
+      </div>
+
+      <div data-reveal data-reveal-delay="1">
+        <div class="faq-forge-item">
+          <div class="faq-forge-q">C'est vraiment gratuit ?</div>
+          <p class="faq-forge-a">Oui. La version actuelle est entièrement gratuite. Une version premium (5 €/mois) est envisagée plus tard pour des contenus approfondis. Vous ne serez jamais basculé automatiquement — vous choisirez.</p>
+        </div>
+        <div class="faq-forge-item">
+          <div class="faq-forge-q">À quelle fréquence ?</div>
+          <p class="faq-forge-a">Un envoi par semaine, le même jour. Jamais deux fois dans la même semaine. On considère l'inbox de nos abonnés comme un bien commun à ne pas gaspiller.</p>
+        </div>
+        <div class="faq-forge-item">
+          <div class="faq-forge-q">Vous avez des liens d'affiliation ?</div>
+          <p class="faq-forge-a">Non. Quand un outil est mentionné, c'est parce qu'on l'a utilisé ou qu'un abonné l'a partagé avec son retour. Aucun lien rémunéré, aucun partenariat commercial non déclaré.</p>
+        </div>
+        <div class="faq-forge-item">
+          <div class="faq-forge-q">Comment me désinscrire ?</div>
+          <p class="faq-forge-a">Chaque email contient un lien de désinscription en bas. Un clic, c'est terminé. Pas de formulaire de rétention, pas de question « pourquoi vous partez ».</p>
+        </div>
+        <div class="faq-forge-item">
+          <div class="faq-forge-q">Que faites-vous de mon email (RGPD) ?</div>
+          <p class="faq-forge-a">Votre adresse est utilisée uniquement pour envoyer La Forge. Elle n'est pas revendue, ni partagée avec des tiers. Vous pouvez demander sa suppression à tout moment en écrivant à <a href="mailto:contact@letablia.fr" style="color:var(--chene)">contact@letablia.fr</a>. Détails dans notre <a href="confidentialite.html" style="color:var(--chene)">politique de confidentialité</a>.</p>
+        </div>
+        <div class="faq-forge-item">
+          <div class="faq-forge-q">Pour quel profil est-ce fait ?</div>
+          <p class="faq-forge-a">TPE, artisans, freelances, e-commerçants francophones qui gèrent eux-mêmes leur outil numérique. Pas besoin de coder — mais il faut être prêt à mettre les mains dans le cambouis une heure par semaine.</p>
+        </div>
+      </div>
+
+    </div>
+    <style>@media(max-width:880px){.faq-forge-grid{grid-template-columns:1fr !important;gap:40px}}</style>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+        <li><a href="newsletter.html" style="color:var(--chene)">La Forge ↗</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script>
+function handleForgeSignup(e) {
+  e.preventDefault();
+  var form = e.target;
+  var success = document.getElementById('forge-success');
+  form.style.display = 'none';
+  success.style.display = 'block';
+  return false;
+}
+</script>
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+<script defer src="/assets/js/easter-eggs.js"></script>
+</body>
+</html>

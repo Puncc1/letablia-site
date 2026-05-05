@@ -1,0 +1,802 @@
+/* =========================================================
+   L'ÉTABL'IA — Design System V3 — COMPLET
+   Mission FIX-01 — 2026-05-01
+   Toutes classes préfixées v3-, toutes variables --v3-
+   Mobile-first — Compatible Tailwind (aucun conflit)
+   ========================================================= */
+
+/* ── 1. VARIABLES ROOT ─────────────────────────────────── */
+:root {
+  /* Couleurs */
+  --v3-color-fond:     #F6F1E8;
+  --v3-color-ivoire:   #FFFCF5;
+  --v3-color-papier:   #E9DDC8;
+  --v3-color-graphite: #25221D;
+  --v3-color-brun:     #6B4A2F;
+  --v3-color-cuivre:   #B46A3C;
+  --v3-color-vert:     #3F6F5B;
+  --v3-color-ardoise:  #344E5C;
+  --v3-color-brique:   #8C3F32;
+  --v3-color-ocre:     #B88A2E;
+
+  /* Typographie */
+  --v3-font-titre: 'Zodiak', 'Georgia', serif;
+  --v3-font-corps: 'Satoshi', system-ui, sans-serif;
+  --v3-font-mono:  'JetBrains Mono', 'Courier New', monospace;
+
+  /* Espacement */
+  --v3-spacing-xs:  4px;
+  --v3-spacing-sm:  8px;
+  --v3-spacing-md:  16px;
+  --v3-spacing-lg:  24px;
+  --v3-spacing-xl:  48px;
+  --v3-spacing-2xl: 80px;
+
+  /* Breakpoints (référence) */
+  --v3-bp-mobile:  375px;
+  --v3-bp-tablet:  768px;
+  --v3-bp-desktop: 1280px;
+
+  /* Bordures */
+  --v3-border-fin:       1px solid rgba(107, 74, 47, 0.2);
+  --v3-border-accent:    2px solid var(--v3-color-cuivre);
+  --v3-border-radius-sm: 4px;
+  --v3-border-radius-md: 8px;
+}
+
+/* ── 2. RESET MINIMAL V3 ────────────────────────────────── */
+.v3-section {
+  padding: var(--v3-spacing-xl) var(--v3-spacing-md);
+  font-family: var(--v3-font-corps);
+  color: var(--v3-color-graphite);
+}
+
+.v3-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--v3-spacing-md);
+}
+
+.v3-section-title {
+  font-family: var(--v3-font-titre);
+  font-size: 1.75rem;
+  color: var(--v3-color-brun);
+  margin-bottom: var(--v3-spacing-lg);
+  line-height: 1.2;
+}
+
+.v3-section-intro {
+  font-family: var(--v3-font-corps);
+  font-size: 1rem;
+  color: var(--v3-color-graphite);
+  line-height: 1.6;
+  max-width: 640px;
+  margin-bottom: var(--v3-spacing-xl);
+}
+
+/* ── 3. BADGES ──────────────────────────────────────────── */
+.v3-badge {
+  display: inline-block;
+  font-family: var(--v3-font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--v3-border-radius-sm);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.v3-badge--pret {
+  background: var(--v3-color-vert);
+  color: #fff;
+}
+
+.v3-badge--forge {
+  background: var(--v3-color-ocre);
+  color: var(--v3-color-graphite);
+}
+
+.v3-badge--nouveau {
+  background: var(--v3-color-cuivre);
+  color: #fff;
+}
+
+.v3-badge--beta {
+  background: var(--v3-color-ardoise);
+  color: #fff;
+}
+
+.v3-badge--n8n {
+  background: var(--v3-color-brique);
+  color: #fff;
+}
+
+.v3-badge--gratuit {
+  background: var(--v3-color-vert);
+  color: #fff;
+}
+
+.v3-badge--gamme {
+  background: var(--v3-color-papier);
+  color: var(--v3-color-brun);
+  border: 1px solid rgba(107, 74, 47, 0.4);
+}
+
+.v3-badge--pack {
+  background: var(--v3-color-cuivre);
+  color: #fff;
+  border: 1px solid var(--v3-color-brun);
+}
+
+/* ── 4. BOUTONS ─────────────────────────────────────────── */
+.v3-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--v3-spacing-sm);
+  font-family: var(--v3-font-corps);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 12px 20px;
+  border-radius: var(--v3-border-radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 100ms ease, box-shadow 100ms ease, background-color 150ms ease;
+  white-space: nowrap;
+}
+
+.v3-btn:active {
+  transform: translateY(1px);
+}
+
+/* Bouton principal — cuivre */
+.v3-btn--primary {
+  background: var(--v3-color-cuivre);
+  color: #fff;
+  border-color: var(--v3-color-cuivre);
+}
+
+.v3-btn--primary:hover {
+  background: #9d5c33;
+  border-color: #9d5c33;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(180, 106, 60, 0.3);
+}
+
+/* Bouton secondaire — bordure cuivre, fond ivoire */
+.v3-btn--secondary {
+  background: var(--v3-color-ivoire);
+  color: var(--v3-color-cuivre);
+  border-color: var(--v3-color-cuivre);
+}
+
+.v3-btn--secondary:hover {
+  background: var(--v3-color-papier);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(107, 74, 47, 0.15);
+}
+
+/* Bouton fantôme — transparent */
+.v3-btn--ghost {
+  background: transparent;
+  color: var(--v3-color-brun);
+  border-color: rgba(107, 74, 47, 0.3);
+}
+
+.v3-btn--ghost:hover {
+  background: var(--v3-color-papier);
+  border-color: var(--v3-color-brun);
+}
+
+/* Tailles */
+.v3-btn--sm {
+  font-size: 0.8125rem;
+  padding: 8px 14px;
+}
+
+.v3-btn--lg {
+  font-size: 1rem;
+  padding: 14px 28px;
+}
+
+/* ── 5. CARTE PRODUIT V3 ────────────────────────────────── */
+.v3-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 420px;
+  background: var(--v3-color-ivoire);
+  border: 1px solid rgba(107, 74, 47, 0.2);
+  border-radius: var(--v3-border-radius-md);
+  padding: var(--v3-spacing-lg);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  font-family: var(--v3-font-corps);
+  color: var(--v3-color-graphite);
+}
+
+.v3-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(107, 74, 47, 0.12);
+}
+
+.v3-card__header {
+  display: flex;
+  align-items: center;
+  gap: var(--v3-spacing-sm);
+  flex-wrap: wrap;
+  margin-bottom: var(--v3-spacing-md);
+}
+
+.v3-card__title {
+  font-family: var(--v3-font-titre);
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--v3-color-brun);
+  line-height: 1.3;
+  margin: 0 0 var(--v3-spacing-sm) 0;
+}
+
+.v3-card__promise {
+  font-size: 0.9375rem;
+  color: var(--v3-color-graphite);
+  line-height: 1.6;
+  margin: 0 0 var(--v3-spacing-md) 0;
+  flex-grow: 1;
+}
+
+.v3-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.8125rem;
+  color: var(--v3-color-brun);
+  border-top: var(--v3-border-fin);
+  border-bottom: var(--v3-border-fin);
+  padding: var(--v3-spacing-sm) 0;
+  margin-bottom: var(--v3-spacing-md);
+}
+
+.v3-card__meta span::before {
+  content: '→ ';
+  color: var(--v3-color-cuivre);
+  font-weight: 600;
+}
+
+.v3-card__includes {
+  font-size: 0.8125rem;
+  color: var(--v3-color-brun);
+  margin-bottom: var(--v3-spacing-md);
+  line-height: 1.5;
+}
+
+.v3-card__footer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--v3-spacing-sm);
+  margin-top: auto;
+}
+
+.v3-card__price {
+  font-family: var(--v3-font-titre);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--v3-color-graphite);
+}
+
+.v3-card__price--barred {
+  text-decoration: line-through;
+  font-size: 1rem;
+  color: rgba(37, 34, 29, 0.45);
+  font-family: var(--v3-font-corps);
+  font-weight: 400;
+  margin-right: var(--v3-spacing-sm);
+}
+
+.v3-card__reassurance {
+  font-size: 0.75rem;
+  color: rgba(37, 34, 29, 0.55);
+  font-family: var(--v3-font-mono);
+  letter-spacing: 0.04em;
+}
+
+/* ── 6. GRILLE DE CARTES ────────────────────────────────── */
+.v3-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--v3-spacing-lg);
+}
+
+/* ── 7. SECTION "CHOISISSEZ VOTRE PROBLÈME" ─────────────── */
+.v3-problems-section {
+  padding: var(--v3-spacing-xl) var(--v3-spacing-md);
+  background: var(--v3-color-fond);
+}
+
+.v3-problems-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--v3-spacing-md);
+}
+
+.v3-problem-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--v3-spacing-sm);
+  padding: var(--v3-spacing-lg);
+  background: var(--v3-color-ivoire);
+  border: var(--v3-border-fin);
+  border-radius: var(--v3-border-radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--v3-color-graphite);
+  transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.v3-problem-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(107, 74, 47, 0.1);
+  border-color: rgba(180, 106, 60, 0.4);
+}
+
+.v3-problem-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  color: var(--v3-color-cuivre);
+  stroke: currentColor;
+}
+
+.v3-problem-card__title {
+  font-family: var(--v3-font-titre);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--v3-color-brun);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.v3-problem-card__desc {
+  font-size: 0.875rem;
+  color: var(--v3-color-graphite);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* ── 8. SECTION "FAMILLES DE SYSTÈMES" ──────────────────── */
+.v3-families-section {
+  padding: var(--v3-spacing-xl) var(--v3-spacing-md);
+  background: var(--v3-color-papier);
+}
+
+.v3-families-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--v3-spacing-lg);
+}
+
+.v3-family-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--v3-spacing-sm);
+  padding: var(--v3-spacing-lg);
+  background: var(--v3-color-ivoire);
+  border: var(--v3-border-fin);
+  border-radius: var(--v3-border-radius-md);
+  text-decoration: none;
+  color: var(--v3-color-graphite);
+  transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.v3-family-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(107, 74, 47, 0.1);
+}
+
+.v3-family-card__icon {
+  width: 36px;
+  height: 36px;
+  color: var(--v3-color-brun);
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.v3-family-card__title {
+  font-family: var(--v3-font-titre);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--v3-color-brun);
+  margin: 0;
+}
+
+.v3-family-card__desc {
+  font-size: 0.875rem;
+  color: var(--v3-color-graphite);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.v3-family-card__count {
+  font-family: var(--v3-font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--v3-color-cuivre);
+  margin-top: auto;
+}
+
+/* ── 9. SECTION "COMMENT ÇA FONCTIONNE" ─────────────────── */
+.v3-how-it-works {
+  padding: var(--v3-spacing-xl) var(--v3-spacing-md);
+  background: var(--v3-color-fond);
+}
+
+.v3-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--v3-spacing-lg);
+  counter-reset: v3-steps;
+}
+
+.v3-step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--v3-spacing-lg);
+  padding: var(--v3-spacing-lg);
+  background: var(--v3-color-ivoire);
+  border: var(--v3-border-fin);
+  border-radius: var(--v3-border-radius-md);
+  counter-increment: v3-steps;
+}
+
+.v3-step__number {
+  font-family: var(--v3-font-mono);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--v3-color-cuivre);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 48px;
+}
+
+.v3-step__content {
+  flex: 1;
+}
+
+.v3-step__title {
+  font-family: var(--v3-font-titre);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--v3-color-brun);
+  margin: 0 0 var(--v3-spacing-sm) 0;
+}
+
+.v3-step__desc {
+  font-size: 0.9375rem;
+  color: var(--v3-color-graphite);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── 10. SECTION "MANIFESTE" ────────────────────────────── */
+.v3-manifesto {
+  padding: var(--v3-spacing-xl) var(--v3-spacing-md);
+  background: var(--v3-color-graphite);
+  color: var(--v3-color-fond);
+}
+
+.v3-manifesto__title {
+  font-family: var(--v3-font-titre);
+  font-size: 1.75rem;
+  color: var(--v3-color-ivoire);
+  margin-bottom: var(--v3-spacing-lg);
+}
+
+.v3-manifesto-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--v3-spacing-md);
+}
+
+.v3-manifesto-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--v3-spacing-md);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--v3-color-fond);
+}
+
+.v3-manifesto-item__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--v3-color-brique);
+  stroke: currentColor;
+  margin-top: 2px;
+}
+
+.v3-manifesto-item__text {
+  flex: 1;
+}
+
+/* ── 11. SECTION "MÉTHODE FORGE" ────────────────────────── */
+.v3-methode-forge {
+  padding: var(--v3-spacing-xl) var(--v3-spacing-md);
+  background: var(--v3-color-fond);
+}
+
+.v3-methode-forge__title {
+  font-family: var(--v3-font-titre);
+  font-size: 1.75rem;
+  color: var(--v3-color-brun);
+  margin-bottom: var(--v3-spacing-lg);
+}
+
+.v3-forge-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  counter-reset: forge-steps;
+}
+
+.v3-forge-step {
+  display: flex;
+  align-items: stretch;
+  gap: var(--v3-spacing-md);
+  padding: var(--v3-spacing-md) 0;
+  border-bottom: var(--v3-border-fin);
+  counter-increment: forge-steps;
+}
+
+.v3-forge-step:last-child {
+  border-bottom: none;
+}
+
+.v3-forge-step__num {
+  font-family: var(--v3-font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--v3-color-cuivre);
+  text-transform: uppercase;
+  width: 80px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.v3-forge-step__verb {
+  font-family: var(--v3-font-titre);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--v3-color-brun);
+  min-width: 120px;
+  flex-shrink: 0;
+}
+
+.v3-forge-step__desc {
+  font-size: 0.875rem;
+  color: var(--v3-color-graphite);
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* ── 12. STICKY CTA MOBILE ──────────────────────────────── */
+.v3-sticky-cta-mobile {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--v3-spacing-sm);
+  background: var(--v3-color-graphite);
+  color: var(--v3-color-fond);
+  padding: var(--v3-spacing-md);
+  box-shadow: 0 -4px 16px rgba(37, 34, 29, 0.2);
+  font-family: var(--v3-font-corps);
+}
+
+.v3-sticky-cta-mobile__info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.v3-sticky-cta-mobile__title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--v3-color-ivoire);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.v3-sticky-cta-mobile__sub {
+  font-size: 0.6875rem;
+  color: rgba(246, 241, 232, 0.65);
+  font-family: var(--v3-font-mono);
+  letter-spacing: 0.04em;
+}
+
+.v3-sticky-cta-mobile__price {
+  font-family: var(--v3-font-titre);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--v3-color-ivoire);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── 13. UTILITAIRES V3 ─────────────────────────────────── */
+.v3-divider {
+  border: none;
+  border-top: var(--v3-border-fin);
+  margin: var(--v3-spacing-lg) 0;
+}
+
+.v3-text-mono {
+  font-family: var(--v3-font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.v3-text-muted {
+  color: rgba(37, 34, 29, 0.55);
+}
+
+.v3-filet-cuivre {
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--v3-color-cuivre);
+  margin-bottom: var(--v3-spacing-md);
+}
+
+/* ── 14. BREAKPOINTS TABLET (≥ 768px) ───────────────────── */
+@media (min-width: 768px) {
+  /* Masquer le sticky CTA sur tablette/desktop */
+  .v3-sticky-cta-mobile {
+    display: none;
+  }
+
+  /* Titres de section plus grands */
+  .v3-section-title {
+    font-size: 2.25rem;
+  }
+
+  /* Grille de cartes produit */
+  .v3-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .v3-card {
+    max-width: 340px;
+  }
+
+  /* Grille problèmes : 2 colonnes */
+  .v3-problems-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Grille familles : 3 colonnes */
+  .v3-families-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Étapes comment ça marche en 2 colonnes */
+  .v3-steps-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--v3-spacing-lg);
+  }
+
+  /* Forge steps : affichage inline */
+  .v3-forge-step {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Section padding augmenté */
+  .v3-section,
+  .v3-problems-section,
+  .v3-families-section,
+  .v3-how-it-works,
+  .v3-manifesto,
+  .v3-methode-forge {
+    padding: var(--v3-spacing-xl) var(--v3-spacing-xl);
+  }
+}
+
+/* ── 15. BREAKPOINTS DESKTOP LARGE (≥ 1280px) ──────────── */
+@media (min-width: 1280px) {
+  /* Titres H1/H2 encore plus grands */
+  .v3-section-title {
+    font-size: 2.75rem;
+  }
+
+  /* Grille cartes produit : 3 colonnes */
+  .v3-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Grille problèmes : 4 colonnes */
+  .v3-problems-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Grille familles : 5 colonnes */
+  .v3-families-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* Étapes comment ça marche : 4 colonnes */
+  .v3-steps-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Padding généreux desktop */
+  .v3-section,
+  .v3-problems-section,
+  .v3-families-section,
+  .v3-how-it-works,
+  .v3-manifesto,
+  .v3-methode-forge {
+    padding: var(--v3-spacing-2xl) var(--v3-spacing-xl);
+  }
+}
+
+/* ── 16. COMPATIBILITÉ — ALIAS CLASSES PLATES ───────────── */
+/* index.html utilise v3-family-icon/title/tagline (non-BEM) */
+.v3-family-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--v3-spacing-md);
+  color: var(--v3-color-cuivre);
+}
+
+.v3-family-title {
+  font-family: var(--v3-font-titre);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--v3-color-graphite);
+  margin: 0 0 var(--v3-spacing-sm);
+}
+
+.v3-family-tagline {
+  font-family: var(--v3-font-corps);
+  font-size: var(--v3-size-small);
+  color: var(--v3-color-brun);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* v3-problem-icon alias */
+.v3-problem-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: var(--v3-spacing-sm);
+  display: block;
+}

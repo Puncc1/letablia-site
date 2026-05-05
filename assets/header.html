@@ -1,0 +1,89 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+     HEADER PARTAGÉ — L'établ'IA
+     Composant réutilisable. Inclure après <body> sur chaque page.
+     Dépendance CSS : /assets/css/base.css (via design-system.css)
+     ──────────────────────────────────────────────────────────────────
+     Burger menu : CSS-only (checkbox #nav-toggle), aucun JavaScript.
+     Utilise : .nav-wrapper · .nav-toggle-input · .mobile-overlay
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<div class="nav-wrapper">
+
+  <!-- Checkbox cachée — contrôle le menu mobile via CSS -->
+  <input
+    type="checkbox"
+    id="nav-toggle"
+    class="nav-toggle-input"
+    aria-hidden="true"
+  />
+
+  <!-- ── Header principal ──────────────────────────────────────────── -->
+  <header>
+    <div class="header-content">
+
+      <!-- Logo textuel — chêne #8A7560 -->
+      <a href="/" class="logo" aria-label="L'établ'IA — Accueil">
+        L'établ'IA
+      </a>
+
+      <!-- Navigation desktop (≥ 768px) -->
+      <nav class="nav-desktop" aria-label="Navigation principale">
+        <a href="/catalogue.html">Systèmes</a>
+        <a href="/a-propos.html">À propos</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+
+      <!-- CTA desktop -->
+      <a href="/catalogue.html" class="cta-desktop">
+        Trouver mon système
+      </a>
+
+      <!-- Bouton hamburger mobile — label CSS-only (pas de JS) -->
+      <label
+        for="nav-toggle"
+        class="menu-toggle"
+        aria-label="Ouvrir le menu"
+        role="button"
+        tabindex="0"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+    </div>
+  </header>
+
+  <!-- ── Menu mobile plein écran — visible quand #nav-toggle:checked ── -->
+  <div class="mobile-overlay" role="dialog" aria-label="Menu mobile">
+
+    <!-- Bouton fermeture — label pointe vers le même checkbox -->
+    <label
+      for="nav-toggle"
+      class="menu-close-label"
+      aria-label="Fermer le menu"
+      role="button"
+      tabindex="0"
+    >
+      &times;
+    </label>
+
+    <!-- Liens de navigation mobile -->
+    <nav class="mobile-nav" aria-label="Navigation mobile">
+      <a href="/catalogue.html">Systèmes</a>
+      <a href="/a-propos.html">À propos</a>
+      <a href="/contact.html">Contact</a>
+    </nav>
+
+    <!-- CTA mobile pleine largeur -->
+    <a
+      href="/catalogue.html"
+      class="btn-principal"
+      style="min-width: 16rem; text-align: center;"
+    >
+      Trouver mon système
+    </a>
+
+  </div><!-- /.mobile-overlay -->
+
+</div><!-- /.nav-wrapper -->

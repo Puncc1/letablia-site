@@ -1,0 +1,1022 @@
+{
+  "version": "2.0",
+  "updated": "2026-05-04",
+  "_note": "Source UNIQUE de vérité — prix, blurbs, tools = catégories génériques (sans marque). Toutes les pages sont régénérées depuis ce fichier.",
+  "families": [
+    {
+      "slug": "automatisations",
+      "title": "Automatiser",
+      "verb": "Brancher des services entre eux",
+      "icon": "lightning"
+    },
+    {
+      "slug": "vendre",
+      "title": "Vendre",
+      "verb": "Convertir et fidéliser",
+      "icon": "trending"
+    },
+    {
+      "slug": "tableaux-de-bord",
+      "title": "Piloter",
+      "verb": "Voir et décider",
+      "icon": "compass"
+    },
+    {
+      "slug": "modeles",
+      "title": "Produire",
+      "verb": "Modèles et trames",
+      "icon": "layers"
+    },
+    {
+      "slug": "guides-formations",
+      "title": "Sécuriser",
+      "verb": "Cyber et conformité",
+      "icon": "shield"
+    }
+  ],
+  "products": [
+    {
+      "slug": "signal-de-vente",
+      "url": "/produits/signal-de-vente.html",
+      "title": "Signal de Vente",
+      "family": "Vendre",
+      "tools": [
+        "plateforme-ecommerce",
+        "messagerie-instantanee"
+      ],
+      "price": 9,
+      "duree_install": "lt30",
+      "targets": [
+        "e-commerce"
+      ],
+      "blurb": "Une notification instantanée à chaque commande de votre boutique en ligne.",
+      "keywords": "alerte commande boutique en ligne notification temps reel",
+      "icon": "bell"
+    },
+    {
+      "slug": "gardien-de-stock",
+      "url": "/produits/gardien-de-stock.html",
+      "title": "Gardien de Stock",
+      "family": "Automatiser",
+      "tools": [
+        "plateforme-ecommerce",
+        "tableur",
+        "messagerie-instantanee"
+      ],
+      "price": 29,
+      "duree_install": "30-60",
+      "targets": [
+        "e-commerce"
+      ],
+      "blurb": "Surveille votre stock et alerte avant rupture.",
+      "keywords": "stock rupture alerte seuil gestion boutique en ligne",
+      "icon": "package"
+    },
+    {
+      "slug": "sequenceur-post-achat",
+      "url": "/produits/sequenceur-post-achat.html",
+      "title": "Séquenceur Post-Achat",
+      "family": "Automatiser",
+      "tools": [
+        "plateforme-ecommerce",
+        "service-emailing",
+        "tableur"
+      ],
+      "price": 29,
+      "duree_install": "30-60",
+      "targets": [
+        "e-commerce",
+        "formateur"
+      ],
+      "blurb": "Email de remerciement et suivi automatique après chaque commande.",
+      "keywords": "email post achat remerciement suivi sequence automatique",
+      "icon": "mail"
+    },
+    {
+      "slug": "collecteur-avis",
+      "url": "/produits/collecteur-avis.html",
+      "title": "Le Collecteur Avis",
+      "family": "Vendre",
+      "tools": [
+        "plateforme-ecommerce",
+        "service-emailing"
+      ],
+      "price": 29,
+      "duree_install": "lt30",
+      "targets": [
+        "e-commerce"
+      ],
+      "blurb": "Collecte les avis clients après commande, automatiquement.",
+      "keywords": "avis clients post commande sociale preuve",
+      "icon": "star"
+    },
+    {
+      "slug": "carnet-forge",
+      "url": "/produits/carnet-forge.html",
+      "title": "Carnet Forge",
+      "family": "Produire",
+      "tools": [
+        "document-imprimable"
+      ],
+      "price": 39,
+      "duree_install": "lt30",
+      "targets": [
+        "freelance",
+        "tpe-generaliste"
+      ],
+      "blurb": "Le journal de bord de l'artisan numérique, prêt à imprimer.",
+      "keywords": "journal carnet bord artisan imprimer freelance",
+      "icon": "book"
+    },
+    {
+      "slug": "produit/relance-prospects",
+      "url": "/produits/produit-relance-prospects.html",
+      "title": "Relance Prospects",
+      "family": "Vendre",
+      "tools": [
+        "tableur",
+        "messagerie-electronique"
+      ],
+      "price": 49,
+      "duree_install": "30-60",
+      "targets": [
+        "freelance",
+        "agence"
+      ],
+      "blurb": "Système qui relance vos prospects automatiquement, avec tact.",
+      "keywords": "relance prospects commercial freelance",
+      "icon": "users"
+    },
+    {
+      "slug": "produit/mini-crm-notion",
+      "url": "/produits/produit-mini-crm-notion.html",
+      "title": "Mini CRM Prestataire",
+      "family": "Produire",
+      "tools": [
+        "application-prise-de-note"
+      ],
+      "price": 49,
+      "duree_install": "30-60",
+      "targets": [
+        "freelance",
+        "agence"
+      ],
+      "blurb": "Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.",
+      "keywords": "crm clients projets freelance agence consultant",
+      "icon": "layout"
+    },
+    {
+      "slug": "produit/dashboard-tresorerie",
+      "url": "/produits/produit-dashboard-tresorerie.html",
+      "title": "Dashboard Trésorerie TPE",
+      "family": "Piloter",
+      "tools": [
+        "tableur"
+      ],
+      "price": 39,
+      "duree_install": "30-60",
+      "targets": [
+        "tpe-generaliste"
+      ],
+      "blurb": "Vue claire de votre trésorerie, mise à jour quotidienne.",
+      "keywords": "tresorerie tpe dashboard finances pilotage",
+      "icon": "chart"
+    },
+    {
+      "slug": "produit/cyber-hygiene-tpe",
+      "url": "/produits/produit-cyber-hygiene-tpe.html",
+      "title": "Pack Cyber-Hygiène TPE",
+      "family": "Produire",
+      "tools": [
+        "document-imprimable"
+      ],
+      "price": 39,
+      "duree_install": "lt30",
+      "targets": [
+        "tpe-generaliste"
+      ],
+      "blurb": "Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.",
+      "keywords": "cyber securite hygiene tpe audit guides phishing rgpd",
+      "icon": "shield"
+    },
+    {
+      "slug": "produit/kit-facturation-2026",
+      "url": "/produits/produit-kit-facturation-2026.html",
+      "title": "Kit Facturation Électronique 2026",
+      "family": "Produire",
+      "tools": [
+        "document-imprimable"
+      ],
+      "price": 39,
+      "duree_install": "lt30",
+      "targets": [
+        "tpe-generaliste",
+        "freelance"
+      ],
+      "blurb": "Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.",
+      "keywords": "facturation electronique 2026 conformite tpe",
+      "icon": "file-text"
+    },
+    {
+      "slug": "produit/agent-tri-email",
+      "url": "/produits/produit-agent-tri-email.html",
+      "title": "Agent Tri Email",
+      "family": "Automatiser",
+      "tools": [
+        "messagerie-electronique"
+      ],
+      "price": 39,
+      "duree_install": "30-60",
+      "targets": [
+        "freelance",
+        "tpe-generaliste"
+      ],
+      "blurb": "Trie votre boîte de messagerie selon des règles métier.",
+      "keywords": "tri email regles automatique inbox zero",
+      "icon": "mail"
+    },
+    {
+      "slug": "chasseur-notes-frais",
+      "url": "/produits/chasseur-notes-frais.html",
+      "title": "Chasseur de Notes de Frais",
+      "family": "Automatiser",
+      "tools": [
+        "OCR",
+        "Tableur",
+        "Email"
+      ],
+      "price": 29,
+      "duree_install": "gt60",
+      "targets": [
+        "TPE",
+        "Freelance",
+        "Comptable"
+      ],
+      "blurb": "Récupère et classe vos notes de frais reçues par email, sans effort.",
+      "keywords": [
+        "notes de frais",
+        "OCR",
+        "comptabilité",
+        "facture",
+        "RGPD"
+      ],
+      "icon": "receipt"
+    },
+    {
+      "slug": "declencheur-rituels",
+      "url": "/produits/declencheur-rituels.html",
+      "title": "Déclencheur de Rituels",
+      "family": "Piloter",
+      "tools": [
+        "Notification",
+        "Tableur"
+      ],
+      "price": 19,
+      "duree_install": "lt30",
+      "targets": [
+        "Freelance",
+        "Artisan",
+        "Indépendant"
+      ],
+      "blurb": "Vos rituels professionnels qui se rappellent eux-mêmes, sobrement.",
+      "keywords": [
+        "rituels",
+        "productivité",
+        "organisation",
+        "freelance"
+      ],
+      "icon": "calendar-clock"
+    },
+    {
+      "slug": "analyste-hebdomadaire",
+      "url": "/produits/analyste-hebdomadaire.html",
+      "title": "Analyste Hebdomadaire",
+      "family": "Piloter",
+      "tools": [
+        "Email",
+        "Tableur",
+        "Sources métier"
+      ],
+      "price": 39,
+      "duree_install": "30-60",
+      "targets": [
+        "E-commerçant",
+        "Freelance",
+        "TPE"
+      ],
+      "blurb": "Un rapport pilotage chaque lundi matin, dans votre boîte mail.",
+      "keywords": [
+        "pilotage",
+        "rapport hebdo",
+        "métriques",
+        "dashboard"
+      ],
+      "icon": "chart-line"
+    },
+    {
+      "slug": "sentinelle-delais",
+      "url": "/produits/sentinelle-delais.html",
+      "title": "Sentinelle de Délais",
+      "family": "Piloter",
+      "tools": [
+        "Notification",
+        "Tableur",
+        "Calendrier"
+      ],
+      "price": 39,
+      "duree_install": "30-60",
+      "targets": [
+        "Freelance",
+        "Agence",
+        "Indépendant"
+      ],
+      "blurb": "Vos échéances projets surveillées en continu, alertes avant qu'il soit trop tard.",
+      "keywords": [
+        "délais",
+        "échéances",
+        "projets",
+        "alertes",
+        "freelance"
+      ],
+      "icon": "clock-alert"
+    },
+    {
+      "slug": "concierge-post-vente",
+      "url": "/produits/concierge-post-vente.html",
+      "title": "Concierge Post-Vente",
+      "family": "Vendre",
+      "tools": [
+        "Email",
+        "Tableur",
+        "Plateforme e-commerce"
+      ],
+      "price": 39,
+      "duree_install": "30-60",
+      "targets": [
+        "E-commerçant",
+        "Formateur",
+        "Artisan"
+      ],
+      "blurb": "Chaque acheteur reçoit la séquence email post-achat qu'il mérite, sans levée d'âme.",
+      "keywords": [
+        "post-vente",
+        "email",
+        "relance",
+        "fidélisation",
+        "e-commerce"
+      ],
+      "icon": "package-check"
+    },
+    {
+      "slug": "controleur-sauvegardes",
+      "url": "/produits/controleur-sauvegardes.html",
+      "title": "Contrôleur de Sauvegardes",
+      "family": "Sécuriser",
+      "tools": [
+        "Notification",
+        "Stockage",
+        "Vérification"
+      ],
+      "price": 39,
+      "duree_install": "30-60",
+      "targets": [
+        "TPE",
+        "E-commerçant",
+        "Indépendant"
+      ],
+      "blurb": "Vous saurez chaque jour si vos sauvegardes sont vraiment protégées.",
+      "keywords": [
+        "sauvegardes",
+        "backup",
+        "sécurité",
+        "RGPD",
+        "TPE"
+      ],
+      "icon": "shield-check"
+    },
+    {
+      "slug": "messager-retard",
+      "url": "/produits/messager-retard.html",
+      "title": "Messager de Retard",
+      "family": "Automatiser",
+      "tools": [
+        "Plateforme e-commerce",
+        "Service emailing",
+        "Messagerie instantanée"
+      ],
+      "price": 29,
+      "targets": [
+        "E-commerçant",
+        "Artisan BTP",
+        "Prestataire"
+      ],
+      "blurb": "Prévient automatiquement le client en cas de retard, avec un message calibré.",
+      "keywords": [
+        "retard",
+        "client",
+        "notification",
+        "SAV"
+      ],
+      "icon": "clock"
+    },
+    {
+      "slug": "chronometre-facturable",
+      "url": "/produits/chronometre-facturable.html",
+      "title": "Chronomètre Facturable",
+      "family": "Piloter",
+      "tools": [
+        "Messagerie instantanée",
+        "Tableur"
+      ],
+      "price": 29,
+      "targets": [
+        "Freelance",
+        "Consultant"
+      ],
+      "blurb": "Chronomètre vos tâches facturables sans rien noter à la main.",
+      "keywords": [
+        "temps",
+        "facturation",
+        "freelance",
+        "chrono"
+      ],
+      "icon": "timer"
+    },
+    {
+      "slug": "guichet-faq",
+      "url": "/produits/guichet-faq.html",
+      "title": "Guichet Automatique FAQ",
+      "family": "Automatiser",
+      "tools": [
+        "Email",
+        "Base de connaissances"
+      ],
+      "price": 49,
+      "targets": [
+        "E-commerçant",
+        "TPE"
+      ],
+      "blurb": "Répond automatiquement aux 10 questions les plus fréquentes, sans prétendre être humain.",
+      "keywords": [
+        "FAQ",
+        "support",
+        "automatique",
+        "label IA"
+      ],
+      "icon": "chat"
+    },
+    {
+      "slug": "programmateur-social",
+      "url": "/produits/programmateur-social.html",
+      "title": "Programmateur Social",
+      "family": "Automatiser",
+      "tools": [
+        "Plateforme publication",
+        "Tableur"
+      ],
+      "price": 49,
+      "targets": [
+        "Coach",
+        "Formateur"
+      ],
+      "blurb": "Programme vos publications sociales sans coller, sans copier.",
+      "keywords": [
+        "social",
+        "planning",
+        "contenu",
+        "LinkedIn"
+      ],
+      "icon": "calendar"
+    },
+    {
+      "slug": "detecteur-anomalies-vente",
+      "url": "/produits/detecteur-anomalies-vente.html",
+      "title": "Détecteur d'Anomalies Vente",
+      "family": "Piloter",
+      "tools": [
+        "Plateforme e-commerce",
+        "Tableur"
+      ],
+      "price": 49,
+      "targets": [
+        "E-commerçant"
+      ],
+      "blurb": "Alerte sur les anomalies marchandes — jamais d'action autonome, juste l'alerte.",
+      "keywords": [
+        "anomalies",
+        "ventes",
+        "détection",
+        "alerte"
+      ],
+      "icon": "alert-circle"
+    },
+    {
+      "slug": "redacteur-fiches-produit",
+      "url": "/produits/redacteur-fiches-produit.html",
+      "title": "Rédacteur de Fiches Produit",
+      "family": "Produire",
+      "tools": [
+        "LLM",
+        "Tableur"
+      ],
+      "price": 49,
+      "targets": [
+        "E-commerçant"
+      ],
+      "blurb": "Génère vos fiches produit assistées par IA, validées par vous, label transparent.",
+      "keywords": [
+        "fiches",
+        "SEO",
+        "IA",
+        "contenu"
+      ],
+      "icon": "edit"
+    },
+    {
+      "slug": "recuperateur-paniers-abandonnes",
+      "url": "/produits/recuperateur-paniers-abandonnes.html",
+      "title": "Récupérateur de Paniers Abandonnés",
+      "family": "Vendre",
+      "tools": [
+        "Plateforme e-commerce",
+        "Service emailing"
+      ],
+      "price": 39,
+      "targets": [
+        "E-commerçant"
+      ],
+      "blurb": "Récupère les paniers abandonnés sans agressivité, séquence sobre RGPD-conforme.",
+      "keywords": [
+        "paniers",
+        "conversion",
+        "email",
+        "relance"
+      ],
+      "icon": "shopping-cart"
+    },
+    {
+      "slug": "depart-collaborateur-securise",
+      "url": "/produits/depart-collaborateur-securise.html",
+      "title": "Départ Collaborateur Sécurisé",
+      "family": "Sécuriser",
+      "tools": [
+        "Tableur RH",
+        "Service emailing"
+      ],
+      "price": 29,
+      "targets": [
+        "TPE"
+      ],
+      "blurb": "Sécurise les accès et données quand un collaborateur quitte l'entreprise.",
+      "keywords": [
+        "RH",
+        "sécurité",
+        "accès",
+        "départ"
+      ],
+      "icon": "shield"
+    },
+    {
+      "slug": "suivi-periode-essai",
+      "url": "/produits/suivi-periode-essai.html",
+      "title": "Suivi de Période d'Essai",
+      "family": "Automatiser",
+      "tools": [
+        "Tableur RH",
+        "Notification"
+      ],
+      "price": 29,
+      "targets": [
+        "TPE"
+      ],
+      "blurb": "Rappelle les échéances de période d'essai pour ne plus jamais les oublier.",
+      "keywords": [
+        "RH",
+        "essai",
+        "relance",
+        "échéance"
+      ],
+      "icon": "check-circle"
+    },
+    {
+      "slug": "sentinelle-mots-passe",
+      "url": "/produits/sentinelle-mots-passe.html",
+      "title": "Sentinelle de Mots de Passe",
+      "family": "Sécuriser",
+      "tools": [
+        "Gestionnaire mots passe",
+        "Notification"
+      ],
+      "price": 29,
+      "targets": [
+        "TPE",
+        "Freelance"
+      ],
+      "blurb": "Surveille la rotation de vos mots de passe sans jamais les lire.",
+      "keywords": [
+        "sécurité",
+        "passwords",
+        "rotation",
+        "RGPD"
+      ],
+      "icon": "lock"
+    },
+    {
+      "slug": "repondeur-faq-automatique",
+      "url": "/produits/repondeur-faq-automatique.html",
+      "title": "Répondeur FAQ Automatique",
+      "family": "Automatiser",
+      "tools": [
+        "Email",
+        "Base FAQ"
+      ],
+      "price": 39,
+      "targets": [
+        "E-commerçant",
+        "TPE"
+      ],
+      "blurb": "Version simple et accessible du Guichet FAQ — réponses standards aux questions courantes.",
+      "keywords": [
+        "FAQ",
+        "email",
+        "automatique",
+        "support"
+      ],
+      "icon": "message-circle"
+    },
+    {
+      "slug": "alerteur-paiements-retard",
+      "url": "/produits/alerteur-paiements-retard.html",
+      "title": "Alerteur de Paiements en Retard",
+      "family": "Vendre",
+      "tools": [
+        "Tableur facturation",
+        "Service emailing"
+      ],
+      "price": 39,
+      "targets": [
+        "Freelance B2B"
+      ],
+      "blurb": "Relance vos factures impayées avec progressivité, B2B uniquement RGPD respecté.",
+      "keywords": [
+        "facture",
+        "paiement",
+        "relance",
+        "B2B"
+      ],
+      "icon": "euro-sign"
+    },
+    {
+      "slug": "programme-fidelite-simple",
+      "url": "/produits/programme-fidelite-simple.html",
+      "title": "Programme Fidélité Simple",
+      "family": "Vendre",
+      "tools": [
+        "Plateforme e-commerce",
+        "Codes promo"
+      ],
+      "price": 39,
+      "targets": [
+        "E-commerçant"
+      ],
+      "blurb": "Récompense vos clients récurrents avec des codes promo automatiques.",
+      "keywords": [
+        "fidélité",
+        "promo",
+        "récurrent",
+        "e-commerce"
+      ],
+      "icon": "gift"
+    },
+    {
+      "slug": "calculateur-marge-dynamique",
+      "url": "/produits/calculateur-marge-dynamique.html",
+      "title": "Calculateur de Marge Dynamique",
+      "family": "Piloter",
+      "tools": [
+        "Tableur",
+        "Données coûts"
+      ],
+      "price": 39,
+      "targets": [
+        "E-commerçant"
+      ],
+      "blurb": "Calcule votre prix optimal selon coûts variables, validation humaine obligatoire.",
+      "keywords": [
+        "marge",
+        "prix",
+        "calcul",
+        "dynamique"
+      ],
+      "icon": "trending-up"
+    },
+    {
+      "slug": "gardien-acces",
+      "url": "/produits/gardien-acces.html",
+      "title": "Gardien des Accès",
+      "family": "Sécuriser",
+      "tools": [
+        "Identity",
+        "Tableur"
+      ],
+      "price": 49,
+      "targets": [
+        "TPE",
+        "Agence"
+      ],
+      "blurb": "Surveille les accès et permissions, escalade humaine systématique sur faux positifs.",
+      "keywords": [
+        "accès",
+        "permissions",
+        "sécurité",
+        "RGPD"
+      ],
+      "icon": "key"
+    },
+    {
+      "slug": "observatoire-concurrentiel",
+      "url": "/produits/observatoire-concurrentiel.html",
+      "title": "Observatoire Concurrentiel",
+      "family": "Surveiller",
+      "tools": [
+        "Veille web",
+        "Tableur"
+      ],
+      "price": 39,
+      "targets": [
+        "E-commerçant"
+      ],
+      "blurb": "Surveille votre concurrence sans pénétration intrusive, juste observation publique.",
+      "keywords": [
+        "concurrence",
+        "veille",
+        "observation",
+        "éthique"
+      ],
+      "icon": "eye"
+    },
+    {
+      "slug": "veilleur-prix-concurrents",
+      "url": "/produits/veilleur-prix-concurrents.html",
+      "title": "Veilleur de Prix Concurrents",
+      "family": "Surveiller",
+      "tools": [
+        "Veille e-commerce",
+        "Tableur"
+      ],
+      "price": 49,
+      "targets": [
+        "E-commerçant"
+      ],
+      "blurb": "Suit les prix de vos concurrents et alerte sur les changements significatifs.",
+      "keywords": [
+        "prix",
+        "concurrence",
+        "veille",
+        "alerte"
+      ],
+      "icon": "bar-chart"
+    },
+    {
+      "slug": "veilleur-mentions",
+      "url": "/produits/veilleur-mentions.html",
+      "title": "Veilleur de Mentions",
+      "family": "Surveiller",
+      "tools": [
+        "Veille web",
+        "Notification"
+      ],
+      "price": 39,
+      "targets": [
+        "Personal brand",
+        "E-commerçant"
+      ],
+      "blurb": "Capte les mentions de votre marque ou de votre nom partout sur le web public.",
+      "keywords": [
+        "mentions",
+        "brand",
+        "veille",
+        "monitoring"
+      ],
+      "icon": "radio"
+    },
+    {
+      "slug": "preparateur-black-friday",
+      "url": "/produits/preparateur-black-friday.html",
+      "title": "Préparateur Black Friday",
+      "family": "Vendre",
+      "tools": [
+        "Plateforme e-commerce",
+        "Service emailing"
+      ],
+      "price": 29,
+      "targets": [
+        "E-commerçant"
+      ],
+      "blurb": "Système saisonnier sept-oct : alertes stock + relances email pré-BF + tracking conversion.",
+      "keywords": [
+        "black friday",
+        "saisonnier",
+        "stock",
+        "email"
+      ],
+      "icon": "zap"
+    },
+    {
+      "slug": "bilan-fin-annee",
+      "url": "/produits/bilan-fin-annee.html",
+      "title": "Bilan de Fin d'Année",
+      "family": "Piloter",
+      "tools": [
+        "Tableur",
+        "Générateur PDF"
+      ],
+      "price": 39,
+      "targets": [
+        "TPE"
+      ],
+      "blurb": "Saisonnier nov-déc : génère le bilan annuel automatisé en PDF, KPIs N vs N-1.",
+      "keywords": [
+        "bilan",
+        "KPI",
+        "annuel",
+        "saisonnier"
+      ],
+      "icon": "chart-pie"
+    },
+    {
+      "slug": "lanceur-rentree",
+      "url": "/produits/lanceur-rentree.html",
+      "title": "Lanceur de Rentrée",
+      "family": "Vendre",
+      "tools": [
+        "CRM",
+        "Service emailing"
+      ],
+      "price": 29,
+      "targets": [
+        "Freelance B2B",
+        "Agence"
+      ],
+      "blurb": "Saisonnier août : réveille vos prospects dormants en 3 emails, tri chaud/tiède/froid.",
+      "keywords": [
+        "rentrée",
+        "relance",
+        "prospects",
+        "saisonnier"
+      ],
+      "icon": "sun"
+    }
+  ],
+  "bundles": [
+    {
+      "slug": "pack-e-commerce",
+      "url": "/packs/e-commerce/",
+      "title": "Pack E-commerce Complet",
+      "subtitle": "Bundle 3 systèmes",
+      "products": [
+        "signal-de-vente",
+        "gardien-de-stock",
+        "collecteur-avis"
+      ],
+      "price": 49,
+      "price_individual": 67,
+      "savings": 18,
+      "targets": [
+        "e-commerce"
+      ],
+      "blurb": "Tout pour piloter votre boutique en ligne : alerte commandes, surveillance stock, collecte d'avis.",
+      "keywords": "pack ecommerce boutique commande stock avis bundle"
+    },
+    {
+      "slug": "pack-freelance",
+      "url": "/packs/freelance/",
+      "title": "Pack Freelance Solo",
+      "subtitle": "Bundle 3 systèmes",
+      "products": [
+        "produit/mini-crm-notion",
+        "produit/relance-prospects",
+        "produit/agent-tri-email"
+      ],
+      "price": 119,
+      "price_individual": 137,
+      "savings": 18,
+      "targets": [
+        "freelance",
+        "agence"
+      ],
+      "blurb": "L'essentiel pour gérer vos clients, relancer vos prospects et trier vos emails.",
+      "keywords": "pack freelance crm relance email tri bundle"
+    },
+    {
+      "slug": "pack-tpe-conformite",
+      "url": "/packs/tpe-conformite/",
+      "title": "Pack TPE Conformité 2026",
+      "subtitle": "Bundle 3 systèmes",
+      "products": [
+        "produit/kit-facturation-2026",
+        "produit/cyber-hygiene-tpe",
+        "produit/dashboard-tresorerie"
+      ],
+      "price": 99,
+      "price_individual": 117,
+      "savings": 18,
+      "targets": [
+        "tpe-generaliste"
+      ],
+      "blurb": "Mise à niveau TPE 2026 : facturation électronique + cyber + pilotage trésorerie.",
+      "keywords": "pack tpe conformite 2026 facturation cyber tresorerie bundle"
+    }
+  ],
+  "best_sellers": [
+    "signal-de-vente",
+    "gardien-de-stock",
+    "produit/cyber-hygiene-tpe"
+  ],
+  "personas": [
+    {
+      "slug": "e-commerce",
+      "title": "E-commerçant",
+      "subtitle": "Plateforme de boutique en ligne",
+      "blurb": "Notification commande, alerte stock, séquence post-achat, collecte d'avis.",
+      "filter": {
+        "targets": [
+          "e-commerce"
+        ]
+      }
+    },
+    {
+      "slug": "freelance",
+      "title": "Freelance",
+      "subtitle": "Solo · Agence",
+      "blurb": "CRM, relances prospects, tri d'emails.",
+      "filter": {
+        "targets": [
+          "freelance"
+        ]
+      }
+    },
+    {
+      "slug": "formateur",
+      "title": "TPE généraliste",
+      "subtitle": "Coach · Formateur · Consultant",
+      "blurb": "Dashboard trésorerie, kit facturation 2026, pack cyber-hygiène.",
+      "filter": {
+        "targets": [
+          "formateur",
+          "tpe-generaliste"
+        ]
+      }
+    }
+  ],
+  "tools": [
+    {
+      "slug": "plateforme-ecommerce",
+      "label": "Plateforme e-commerce"
+    },
+    {
+      "slug": "tableur",
+      "label": "Tableur en ligne"
+    },
+    {
+      "slug": "application-prise-de-note",
+      "label": "Application de prise de notes"
+    },
+    {
+      "slug": "service-emailing",
+      "label": "Service d'emailing"
+    },
+    {
+      "slug": "messagerie-electronique",
+      "label": "Messagerie électronique"
+    },
+    {
+      "slug": "messagerie-instantanee",
+      "label": "Messagerie instantanée"
+    },
+    {
+      "slug": "document-imprimable",
+      "label": "Document imprimable"
+    }
+  ],
+  "price_buckets": [
+    {
+      "slug": "low",
+      "label": "≤ 19 €",
+      "min": 0,
+      "max": 19
+    },
+    {
+      "slug": "mid",
+      "label": "20 – 49 €",
+      "min": 20,
+      "max": 49
+    },
+    {
+      "slug": "high",
+      "label": "50 € et +",
+      "min": 50,
+      "max": 9999
+    }
+  ]
+}

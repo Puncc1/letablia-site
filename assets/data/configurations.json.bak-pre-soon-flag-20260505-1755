@@ -1,0 +1,556 @@
+{
+  "version": "1.0",
+  "generated": "2026-05-05",
+  "source": "CARTOGRAPHIE-COEURS-BRANCHES.csv (Mission 775)",
+  "_note": "Branches et variantes par produit. Utilisé par le configurateur pour le checkout LemonSqueezy combo.",
+
+  "branches": [
+    {
+      "id": "BR-001",
+      "nom": "Lecteur/Écrivain tableur",
+      "role": "Lire les données sources et/ou écrire les résultats dans un tableur",
+      "variantes": [
+        { "id": "google-sheets",    "label": "Google Sheets",     "disponible": true },
+        { "id": "excel-online",     "label": "Excel Online",      "disponible": true },
+        { "id": "libreoffice-calc", "label": "LibreOffice Calc",  "disponible": true },
+        { "id": "airtable",         "label": "Airtable",          "disponible": true },
+        { "id": "csv-fichier",      "label": "CSV fichier",       "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-002",
+      "nom": "Émetteur email transactionnel",
+      "role": "Envoyer des emails automatiques (transactionnels, relances, séquences)",
+      "variantes": [
+        { "id": "brevo",        "label": "Brevo (Sendinblue)",  "disponible": true },
+        { "id": "mailchimp",    "label": "Mailchimp",           "disponible": true },
+        { "id": "mailjet",      "label": "Mailjet",             "disponible": true },
+        { "id": "smtp-perso",   "label": "SMTP personnalisé",   "disponible": true },
+        { "id": "gmail-api",    "label": "Gmail API",           "disponible": true },
+        { "id": "outlook-api",  "label": "Outlook API",         "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-003",
+      "nom": "Notification messagerie instantanée",
+      "role": "Pousser des alertes/notifications sur une messagerie instantanée",
+      "variantes": [
+        { "id": "slack",            "label": "Slack",               "disponible": true },
+        { "id": "telegram",         "label": "Telegram",            "disponible": true },
+        { "id": "whatsapp-business","label": "WhatsApp Business",   "disponible": true },
+        { "id": "discord",          "label": "Discord",             "disponible": true },
+        { "id": "microsoft-teams",  "label": "Microsoft Teams",     "disponible": true },
+        { "id": "signal",           "label": "Signal",              "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-004",
+      "nom": "Parser email entrant",
+      "role": "Lire et analyser les emails reçus (boîte + pièces jointes)",
+      "variantes": [
+        { "id": "imap-gmail",        "label": "IMAP Gmail",                   "disponible": true },
+        { "id": "imap-outlook",      "label": "IMAP Outlook / Microsoft 365", "disponible": true },
+        { "id": "webhook-email",     "label": "Webhook fournisseur email",    "disponible": true },
+        { "id": "proton-bridge",     "label": "Proton Mail bridge",           "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-005",
+      "nom": "Stockage interne",
+      "role": "Persister l'état ou les données intermédiaires du système",
+      "variantes": [
+        { "id": "sqlite-local",    "label": "SQLite local",       "disponible": true },
+        { "id": "json-local",      "label": "Fichier JSON local", "disponible": true },
+        { "id": "csv-local",       "label": "Fichier CSV local",  "disponible": true },
+        { "id": "n8n-datastore",   "label": "n8n data store",     "disponible": true },
+        { "id": "redis",           "label": "Redis",              "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-006",
+      "nom": "Générateur PDF",
+      "role": "Produire un document PDF depuis un template ou données structurées",
+      "variantes": [
+        { "id": "wkhtmltopdf",          "label": "wkhtmltopdf",                  "disponible": true },
+        { "id": "puppeteer",            "label": "Headless Chrome/Puppeteer",    "disponible": true },
+        { "id": "api-pdf",              "label": "API PDF tierce (PDFshift…)",   "disponible": true },
+        { "id": "libreoffice-headless", "label": "LibreOffice headless",         "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-007",
+      "nom": "Webhook plateforme e-commerce",
+      "role": "Recevoir les événements depuis la plateforme boutique",
+      "variantes": [
+        { "id": "shopify",       "label": "Shopify Webhooks",       "disponible": true },
+        { "id": "woocommerce",   "label": "WooCommerce Webhooks",   "disponible": true },
+        { "id": "prestashop",    "label": "PrestaShop Webhooks",    "disponible": true },
+        { "id": "magento",       "label": "Magento API",            "disponible": false },
+        { "id": "csv-polling",   "label": "API polling CSV",        "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-008",
+      "nom": "Lecteur calendrier/agenda",
+      "role": "Lire les événements, échéances ou disponibilités depuis un agenda",
+      "variantes": [
+        { "id": "google-calendar",  "label": "Google Calendar API",   "disponible": true },
+        { "id": "outlook-calendar", "label": "Outlook Calendar API",  "disponible": true },
+        { "id": "caldav",           "label": "CalDAV/iCal",           "disponible": true },
+        { "id": "notion-calendar",  "label": "Notion Calendar",       "disponible": false },
+        { "id": "calendly",         "label": "Calendly",              "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-009",
+      "nom": "Détecteur seuil/anomalie",
+      "role": "Évaluer si une valeur dépasse un seuil ou s'écarte d'une baseline",
+      "variantes": [
+        { "id": "seuil-fixe",        "label": "Seuil fixe configurable",        "disponible": true },
+        { "id": "moyenne-mobile",    "label": "Moyenne mobile (N périodes)",    "disponible": true },
+        { "id": "percentile-histo",  "label": "Percentile historique",          "disponible": false },
+        { "id": "ecart-type",        "label": "Écart-type (σ)",                 "disponible": false },
+        { "id": "seuil-relatif",     "label": "Seuil relatif (%)",              "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-010",
+      "nom": "Appel LLM",
+      "role": "Envoyer un prompt à un modèle de langage et récupérer la génération",
+      "variantes": [
+        { "id": "ollama-local",    "label": "Ollama local (Mistral/Llama)", "disponible": true },
+        { "id": "openai-api",      "label": "OpenAI API (GPT-4)",           "disponible": true },
+        { "id": "anthropic-api",   "label": "Anthropic API (Claude)",       "disponible": true },
+        { "id": "mistral-api",     "label": "Mistral API",                  "disponible": true },
+        { "id": "groq-api",        "label": "Groq API",                     "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-011",
+      "nom": "Lecteur CRM",
+      "role": "Lire et écrire les contacts/prospects dans une plateforme CRM",
+      "variantes": [
+        { "id": "hubspot-crm",  "label": "HubSpot CRM",         "disponible": true },
+        { "id": "brevo-crm",    "label": "Brevo CRM",            "disponible": true },
+        { "id": "notion-crm",   "label": "Notion CRM template",  "disponible": true },
+        { "id": "airtable-crm", "label": "Airtable CRM",         "disponible": true },
+        { "id": "pipedrive",    "label": "Pipedrive API",         "disponible": false },
+        { "id": "csv-contacts", "label": "CSV contacts",          "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-012",
+      "nom": "Scraper web public",
+      "role": "Collecter des données publiques sur des pages web ou flux",
+      "variantes": [
+        { "id": "http-request",  "label": "HTTP Request n8n (HTML)", "disponible": true },
+        { "id": "puppeteer-web", "label": "Playwright/Puppeteer",    "disponible": false },
+        { "id": "flux-rss",      "label": "Flux RSS/Atom",           "disponible": true },
+        { "id": "sitemap-xml",   "label": "API sitemap XML",         "disponible": true },
+        { "id": "serpapi",       "label": "SerpAPI",                  "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-013",
+      "nom": "Gestionnaire mots de passe",
+      "role": "Interroger l'état des entrées dans le coffre-fort mots de passe",
+      "variantes": [
+        { "id": "bitwarden",     "label": "Bitwarden API",             "disponible": true },
+        { "id": "1password",     "label": "1Password Connect API",     "disponible": true },
+        { "id": "keepass",       "label": "KeePass fichier local",     "disponible": true },
+        { "id": "vaultwarden",   "label": "Vaultwarden auto-hébergé",  "disponible": true },
+        { "id": "dashlane",      "label": "Dashlane CLI",              "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-014",
+      "nom": "Vérificateur sauvegarde",
+      "role": "Contrôler l'existence et la fraîcheur des fichiers de sauvegarde",
+      "variantes": [
+        { "id": "filesystem-local",  "label": "Vérification locale (filesystem)", "disponible": true },
+        { "id": "s3-backblaze",      "label": "Bucket S3/Backblaze B2",           "disponible": true },
+        { "id": "webhook-backup",    "label": "Webhook service backup",           "disponible": true },
+        { "id": "rsync-log",         "label": "rsync log parser",                 "disponible": true },
+        { "id": "restic-stats",      "label": "Restic stats",                     "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-015",
+      "nom": "Déclencheur planifié",
+      "role": "Déclencher l'exécution du système selon une planification temporelle",
+      "variantes": [
+        { "id": "cron-n8n",           "label": "Cron n8n (Schedule Trigger)",  "disponible": true },
+        { "id": "trigger-quotidien",  "label": "Trigger quotidien",            "disponible": true },
+        { "id": "trigger-hebdo",      "label": "Trigger hebdomadaire",         "disponible": true },
+        { "id": "webhook-temporel",   "label": "Webhook temporel externe",     "disponible": false },
+        { "id": "cron-serveur",       "label": "Cron serveur",                 "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-016",
+      "nom": "Dashboard tableur",
+      "role": "Présenter les KPI et visualisations dans un tableur structuré",
+      "variantes": [
+        { "id": "google-sheets-dash",  "label": "Google Sheets (graphiques)",   "disponible": true },
+        { "id": "excel-powerquery",    "label": "Excel Online (Power Query)",   "disponible": true },
+        { "id": "airtable-gallery",    "label": "Airtable (Gallery view)",      "disponible": true },
+        { "id": "notion-db",           "label": "Notion DB (views)",            "disponible": false },
+        { "id": "retool",              "label": "Retool",                        "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-017",
+      "nom": "Lecteur OCR/parser fichier",
+      "role": "Extraire du texte structuré depuis des images, PDF ou fichiers scannés",
+      "variantes": [
+        { "id": "tesseract-local",   "label": "Tesseract local",            "disponible": true },
+        { "id": "google-vision",     "label": "Google Cloud Vision API",   "disponible": true },
+        { "id": "azure-vision",      "label": "Azure Computer Vision",     "disponible": false },
+        { "id": "aws-textract",      "label": "AWS Textract",              "disponible": false },
+        { "id": "abbyy",             "label": "Abbyy FineReader API",      "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-018",
+      "nom": "Plateforme publication sociale",
+      "role": "Programmer et publier des contenus sur les réseaux sociaux",
+      "variantes": [
+        { "id": "linkedin-api",    "label": "LinkedIn API directe",  "disponible": true },
+        { "id": "buffer-api",      "label": "Buffer API",            "disponible": true },
+        { "id": "hootsuite-api",   "label": "Hootsuite API",         "disponible": false },
+        { "id": "publer-api",      "label": "Publer API",            "disponible": true },
+        { "id": "twitter-api",     "label": "Twitter/X API",         "disponible": false },
+        { "id": "meta-graph-api",  "label": "Meta Graph API",        "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-019",
+      "nom": "Base de connaissances FAQ",
+      "role": "Stocker et interroger les questions/réponses de la FAQ",
+      "variantes": [
+        { "id": "google-sheets-faq", "label": "Google Sheets FAQ",                      "disponible": true },
+        { "id": "notion-faq",        "label": "Notion base FAQ",                        "disponible": true },
+        { "id": "json-local-faq",    "label": "Fichier JSON local",                     "disponible": true },
+        { "id": "vectorielle",       "label": "Base vectorielle (Qdrant/Weaviate)",     "disponible": false },
+        { "id": "airtable-faq",      "label": "Airtable FAQ",                           "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-020",
+      "nom": "Émetteur code promo e-commerce",
+      "role": "Générer et envoyer des codes de réduction via la plateforme boutique",
+      "variantes": [
+        { "id": "shopify-discounts",  "label": "Shopify Discounts API",          "disponible": true },
+        { "id": "woo-coupons",        "label": "WooCommerce Coupons API",        "disponible": true },
+        { "id": "presta-promo",       "label": "PrestaShop Promo API",           "disponible": false },
+        { "id": "csv-codes",          "label": "CSV codes statiques",             "disponible": true },
+        { "id": "code-unique",        "label": "Code unique généré",             "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-021",
+      "nom": "Calculateur financier",
+      "role": "Effectuer des calculs de marge, prix ou agrégats financiers",
+      "variantes": [
+        { "id": "js-n8n",         "label": "Code JS n8n (calcul embarqué)",       "disponible": true },
+        { "id": "formules-sheets","label": "Formules tableur (Google Sheets)",    "disponible": true },
+        { "id": "api-calcul",     "label": "API calcul spécialisée",              "disponible": false },
+        { "id": "python-n8n",     "label": "Python script n8n",                  "disponible": true },
+        { "id": "excel-pq",       "label": "Excel Power Query",                  "disponible": true }
+      ]
+    },
+    {
+      "id": "BR-022",
+      "nom": "Gestionnaire identités/accès",
+      "role": "Lire et modifier les permissions et accès dans un IAM ou annuaire",
+      "variantes": [
+        { "id": "google-workspace", "label": "Google Workspace Admin API",    "disponible": true },
+        { "id": "ms365-graph",      "label": "Microsoft 365 Graph API",       "disponible": true },
+        { "id": "okta-api",         "label": "Okta API",                      "disponible": false },
+        { "id": "aws-iam",          "label": "AWS IAM",                       "disponible": false },
+        { "id": "keycloak",         "label": "Keycloak API",                  "disponible": false }
+      ]
+    },
+    {
+      "id": "BR-023",
+      "nom": "Tracker temps",
+      "role": "Enregistrer et consulter les entrées de temps facturable",
+      "variantes": [
+        { "id": "toggl",        "label": "Toggl Track API",           "disponible": true },
+        { "id": "clockify",     "label": "Clockify API",              "disponible": true },
+        { "id": "harvest",      "label": "Harvest API",               "disponible": false },
+        { "id": "sheets-temps", "label": "Tableur dédié (Google Sheets)", "disponible": true },
+        { "id": "notion-temps", "label": "Notion DB temps",           "disponible": true }
+      ]
+    }
+  ],
+
+  "produits": [
+    {
+      "slug": "signal-de-vente",
+      "titre": "Signal de Vente",
+      "prix": 9,
+      "famille": "Vendre",
+      "branches": ["BR-007", "BR-003"]
+    },
+    {
+      "slug": "gardien-de-stock",
+      "titre": "Gardien de Stock",
+      "prix": 29,
+      "famille": "Automatiser",
+      "branches": ["BR-007", "BR-001", "BR-003", "BR-009"]
+    },
+    {
+      "slug": "sequenceur-post-achat",
+      "titre": "Séquenceur Post-Achat",
+      "prix": 29,
+      "famille": "Automatiser",
+      "branches": ["BR-007", "BR-002", "BR-001"]
+    },
+    {
+      "slug": "collecteur-avis",
+      "titre": "Le Collecteur Avis",
+      "prix": 29,
+      "famille": "Vendre",
+      "branches": ["BR-007", "BR-002"]
+    },
+    {
+      "slug": "carnet-forge",
+      "titre": "Carnet Forge",
+      "prix": 39,
+      "famille": "Produire",
+      "branches": ["BR-006"]
+    },
+    {
+      "slug": "produit/relance-prospects",
+      "titre": "Relance Prospects",
+      "prix": 49,
+      "famille": "Vendre",
+      "branches": ["BR-001", "BR-004", "BR-002"]
+    },
+    {
+      "slug": "produit/mini-crm-notion",
+      "titre": "Mini CRM Prestataire",
+      "prix": 49,
+      "famille": "Produire",
+      "branches": ["BR-011"]
+    },
+    {
+      "slug": "produit/dashboard-tresorerie",
+      "titre": "Dashboard Trésorerie TPE",
+      "prix": 39,
+      "famille": "Piloter",
+      "branches": ["BR-001", "BR-016"]
+    },
+    {
+      "slug": "produit/cyber-hygiene-tpe",
+      "titre": "Pack Cyber-Hygiène TPE",
+      "prix": 39,
+      "famille": "Produire",
+      "branches": ["BR-006"]
+    },
+    {
+      "slug": "produit/kit-facturation-2026",
+      "titre": "Kit Facturation Électronique 2026",
+      "prix": 39,
+      "famille": "Produire",
+      "branches": ["BR-006"]
+    },
+    {
+      "slug": "produit/agent-tri-email",
+      "titre": "Agent Tri Email",
+      "prix": 39,
+      "famille": "Automatiser",
+      "branches": ["BR-004", "BR-005"]
+    },
+    {
+      "slug": "chasseur-notes-frais",
+      "titre": "Chasseur de Notes de Frais",
+      "prix": 29,
+      "famille": "Automatiser",
+      "branches": ["BR-004", "BR-017", "BR-001"]
+    },
+    {
+      "slug": "declencheur-rituels",
+      "titre": "Déclencheur de Rituels",
+      "prix": 19,
+      "famille": "Piloter",
+      "branches": ["BR-015", "BR-001", "BR-003"]
+    },
+    {
+      "slug": "analyste-hebdomadaire",
+      "titre": "Analyste Hebdomadaire",
+      "prix": 39,
+      "famille": "Piloter",
+      "branches": ["BR-001", "BR-002", "BR-007"]
+    },
+    {
+      "slug": "sentinelle-delais",
+      "titre": "Sentinelle de Délais",
+      "prix": 39,
+      "famille": "Piloter",
+      "branches": ["BR-001", "BR-008", "BR-003"]
+    },
+    {
+      "slug": "concierge-post-vente",
+      "titre": "Concierge Post-Vente",
+      "prix": 39,
+      "famille": "Vendre",
+      "branches": ["BR-007", "BR-002", "BR-001"]
+    },
+    {
+      "slug": "controleur-sauvegardes",
+      "titre": "Contrôleur de Sauvegardes",
+      "prix": 39,
+      "famille": "Sécuriser",
+      "branches": ["BR-014", "BR-003", "BR-015"]
+    },
+    {
+      "slug": "messager-retard",
+      "titre": "Messager de Retard",
+      "prix": 29,
+      "famille": "Automatiser",
+      "branches": ["BR-007", "BR-002", "BR-003"]
+    },
+    {
+      "slug": "chronometre-facturable",
+      "titre": "Chronomètre Facturable",
+      "prix": 29,
+      "famille": "Piloter",
+      "branches": ["BR-003", "BR-001", "BR-023"]
+    },
+    {
+      "slug": "guichet-faq",
+      "titre": "Guichet Automatique FAQ",
+      "prix": 49,
+      "famille": "Automatiser",
+      "branches": ["BR-004", "BR-019", "BR-002"]
+    },
+    {
+      "slug": "programmateur-social",
+      "titre": "Programmateur Social",
+      "prix": 49,
+      "famille": "Automatiser",
+      "branches": ["BR-001", "BR-018"]
+    },
+    {
+      "slug": "detecteur-anomalies-vente",
+      "titre": "Détecteur d'Anomalies Vente",
+      "prix": 49,
+      "famille": "Piloter",
+      "branches": ["BR-007", "BR-001", "BR-003"]
+    },
+    {
+      "slug": "redacteur-fiches-produit",
+      "titre": "Rédacteur de Fiches Produit",
+      "prix": 49,
+      "famille": "Produire",
+      "branches": ["BR-001", "BR-010", "BR-005", "BR-003"]
+    },
+    {
+      "slug": "recuperateur-paniers-abandonnes",
+      "titre": "Récupérateur de Paniers Abandonnés",
+      "prix": 39,
+      "famille": "Vendre",
+      "branches": ["BR-007", "BR-002"]
+    },
+    {
+      "slug": "depart-collaborateur-securise",
+      "titre": "Départ Collaborateur Sécurisé",
+      "prix": 29,
+      "famille": "Sécuriser",
+      "branches": ["BR-001", "BR-022", "BR-002"]
+    },
+    {
+      "slug": "suivi-periode-essai",
+      "titre": "Suivi de Période d'Essai",
+      "prix": 29,
+      "famille": "Automatiser",
+      "branches": ["BR-001", "BR-003", "BR-015"]
+    },
+    {
+      "slug": "sentinelle-mots-passe",
+      "titre": "Sentinelle de Mots de Passe",
+      "prix": 29,
+      "famille": "Sécuriser",
+      "branches": ["BR-013", "BR-003"]
+    },
+    {
+      "slug": "repondeur-faq-automatique",
+      "titre": "Répondeur FAQ Automatique",
+      "prix": 39,
+      "famille": "Automatiser",
+      "branches": ["BR-004", "BR-019", "BR-002"]
+    },
+    {
+      "slug": "alerteur-paiements-retard",
+      "titre": "Alerteur de Paiements en Retard",
+      "prix": 39,
+      "famille": "Vendre",
+      "branches": ["BR-001", "BR-002", "BR-015"]
+    },
+    {
+      "slug": "programme-fidelite-simple",
+      "titre": "Programme Fidélité Simple",
+      "prix": 39,
+      "famille": "Vendre",
+      "branches": ["BR-007", "BR-020", "BR-002"]
+    },
+    {
+      "slug": "calculateur-marge-dynamique",
+      "titre": "Calculateur de Marge Dynamique",
+      "prix": 39,
+      "famille": "Piloter",
+      "branches": ["BR-001", "BR-021"]
+    },
+    {
+      "slug": "gardien-acces",
+      "titre": "Gardien des Accès",
+      "prix": 49,
+      "famille": "Sécuriser",
+      "branches": ["BR-022", "BR-001", "BR-003"]
+    },
+    {
+      "slug": "observatoire-concurrentiel",
+      "titre": "Observatoire Concurrentiel",
+      "prix": 39,
+      "famille": "Surveiller",
+      "branches": ["BR-012", "BR-001", "BR-003"]
+    },
+    {
+      "slug": "veilleur-prix-concurrents",
+      "titre": "Veilleur de Prix Concurrents",
+      "prix": 49,
+      "famille": "Surveiller",
+      "branches": ["BR-012", "BR-001", "BR-009"]
+    },
+    {
+      "slug": "veilleur-mentions",
+      "titre": "Veilleur de Mentions",
+      "prix": 39,
+      "famille": "Surveiller",
+      "branches": ["BR-012", "BR-003"]
+    },
+    {
+      "slug": "preparateur-black-friday",
+      "titre": "Préparateur Black Friday",
+      "prix": 29,
+      "famille": "Vendre",
+      "branches": ["BR-007", "BR-002", "BR-009"]
+    },
+    {
+      "slug": "bilan-fin-annee",
+      "titre": "Bilan de Fin d'Année",
+      "prix": 39,
+      "famille": "Piloter",
+      "branches": ["BR-001", "BR-006", "BR-002"]
+    },
+    {
+      "slug": "lanceur-rentree",
+      "titre": "Lanceur de Rentrée",
+      "prix": 29,
+      "famille": "Vendre",
+      "branches": ["BR-011", "BR-002"]
+    }
+  ]
+}

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent de tri email intelligent — L'établ'IA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;500;700&family=DM+Serif+Display&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/output.css">
+  <link rel="stylesheet" href="/assets/silktide-consent-manager.css">
+</head>
+<body class="bg-lin font-body text-ebene">
+
+  <!-- ═══════════════════════════════════════ HEADER ══════════════════════════════════════ -->
+  <header class="sticky top-0 z-40 bg-lin border-b border-pierre h-[72px]">
+    <div class="max-w-[1200px] mx-auto px-4 h-full flex items-center justify-between">
+
+      <!-- Logo -->
+      <a href="../" class="font-display text-2xl text-chene">L'établ'IA</a>
+
+      <!-- Navigation desktop -->
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="../catalogue.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">Systèmes forgés</a>
+        <a href="../a-propos.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">À propos</a>
+        <a href="../faq.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">FAQ</a>
+        <a href="../contact.html"
+           class="font-body text-base text-ebene hover:text-chene"
+           style="transition: color 0.2s ease">Contact</a>
+      </nav>
+
+      <!-- CTA desktop -->
+      <a href="../catalogue.html"
+         class="hidden md:inline-block bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[10px] hover:opacity-90">Voir le catalogue</a>
+
+      <!-- Bouton hamburger mobile -->
+      <button id="menu-toggle"
+              class="md:hidden flex flex-col gap-[5px] p-1"
+              aria-label="Ouvrir le menu">
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+        <span class="block w-6 h-[2px] bg-ebene"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <!-- Menu mobile plein écran -->
+  <div id="mobile-menu"
+       class="fixed inset-0 z-50 bg-lin flex flex-col items-center justify-center hidden">
+
+    <!-- Bouton fermeture -->
+    <button id="menu-close"
+            class="absolute top-6 right-4 font-body text-2xl text-ebene leading-none"
+            aria-label="Fermer le menu">&times;</button>
+
+    <!-- Liens de navigation -->
+    <nav class="flex flex-col items-center gap-8 mb-10">
+      <a href="../catalogue.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">Systèmes forgés</a>
+      <a href="../a-propos.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">À propos</a>
+      <a href="../faq.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">FAQ</a>
+      <a href="../contact.html"
+         class="font-body text-base text-ebene hover:text-chene"
+         style="transition: color 0.2s ease">Contact</a>
+    </nav>
+
+    <!-- CTA mobile pleine largeur -->
+    <a href="../catalogue.html"
+       class="w-64 text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-5 py-[14px]">Voir le catalogue</a>
+
+  </div>
+
+  <!-- ═══════════════════════════════════════ MAIN ════════════════════════════════════════ -->
+  <main>
+
+    <!-- ───────────────────────────────── SECTION 1 — HERO PRODUIT ───────────────────────── -->
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+
+        <div class="flex flex-col gap-8 md:flex-row md:gap-12 md:items-start">
+
+          <!-- Colonne gauche — Texte (60%) -->
+          <div class="md:w-[60%]">
+            <p class="font-body font-semibold text-[13px] text-chene uppercase tracking-[1px] mb-3">Agents IA</p>
+            <h1 class="font-heading font-bold text-[28px] md:text-[36px] text-ebene leading-[1.2] mb-4">
+              Agent de tri email intelligent
+            </h1>
+            <p class="font-body text-lg text-ebene leading-[1.6] mb-6">
+              Vos emails sont triés, classés et les réponses types envoyées automatiquement. Vous récupérez 4 heures par semaine.
+            </p>
+            <p class="font-display text-[32px] text-chene leading-[1.0] mb-1">39 €</p>
+            <p class="font-body text-[13px] text-pierre mb-6">Paiement unique · Guide PDF inclus · Satisfait ou Forgé — 14 jours</p>
+            <a href="https://letablia.lemonsqueezy.com/checkout/buy/AGENT-TRI-EMAIL"
+               class="block md:inline-block w-full md:w-auto text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px]">Automatiser mon tri email</a>
+          </div>
+
+          <!-- Colonne droite — Capture placeholder (40%) -->
+          <div class="md:w-[40%] border border-pierre rounded-[8px] bg-lin p-6 min-h-[280px] flex items-center justify-center">
+            <p class="font-body text-[14px] text-pierre text-center leading-[1.6]">
+              [Capture de résultat — à insérer avant le lancement]
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────────── SECTION 2 — LE PROBLÈME ─────────────────────── -->
+    <section class="bg-chene-6 py-20 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto text-center">
+
+        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] mb-6">
+          Vous en avez assez de trier vos emails à la main ?
+        </h2>
+        <p class="font-body text-lg text-ebene leading-[1.6]">
+          Chaque matin, c'est la même routine : 30 minutes à ouvrir, trier, répondre aux mêmes messages. Les emails importants se noient dans les newsletters et les notifications. Vous repoussez les relances parce qu'il y en a trop. Et pendant ce temps, votre vrai travail attend.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ─────────────────────────────────── SECTION 3 — LE RÉSULTAT ──────────────────────── -->
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+
+        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] text-center mb-12">
+          Ce que ce système change concrètement
+        </h2>
+
+        <div class="flex flex-col gap-8 md:flex-row md:gap-12 md:items-start">
+
+          <!-- Colonne gauche — Indicateurs -->
+          <div class="md:w-1/2 flex flex-col gap-6">
+
+            <div>
+              <p class="font-display text-[36px] text-chene leading-[1.0]">4h</p>
+              <p class="font-body text-base text-ebene leading-[1.6]">récupérées par semaine</p>
+            </div>
+
+            <div>
+              <p class="font-display text-[36px] text-chene leading-[1.0]">0</p>
+              <p class="font-body text-base text-ebene leading-[1.6]">relance oubliée</p>
+            </div>
+
+            <div>
+              <p class="font-display text-[36px] text-chene leading-[1.0]">100%</p>
+              <p class="font-body text-base text-ebene leading-[1.6]">des suivis à jour</p>
+            </div>
+
+          </div>
+
+          <!-- Colonne droite — Capture placeholder -->
+          <div class="md:w-1/2 border border-pierre rounded-[8px] bg-lin p-6 min-h-[280px] flex items-center justify-center">
+            <p class="font-body text-[14px] text-pierre text-center leading-[1.6]">
+              [Capture de résultat — à insérer avant le lancement]
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────── SECTION 4 — COMMENT ÇA MARCHE ──────────────────── -->
+    <section class="bg-ebene py-20 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+
+        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-lin leading-[1.2] text-center mb-4">
+          Installation en 15 minutes
+        </h2>
+        <p class="font-body text-base text-pierre leading-[1.6] text-center mb-12 max-w-[720px] mx-auto">
+          Ce système forgé fonctionne sur n8n, la plateforme d'automatisation européenne. Vous recevez un fichier JSON prêt à l'emploi et un guide PDF illustré pas-à-pas.
+        </p>
+
+        <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+
+          <!-- Étape 1 -->
+          <div class="md:flex-1 md:px-8 text-center md:text-left">
+            <p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">1</p>
+            <h3 class="font-heading font-bold text-xl text-lin mb-3">Importez le fichier</h3>
+            <p class="font-body text-base text-pierre leading-[1.6]">
+              Téléchargez le fichier JSON et importez-le dans n8n. Deux clics, c'est fait.
+            </p>
+          </div>
+
+          <!-- Étape 2 -->
+          <div class="md:flex-1 md:px-8 text-center md:text-left">
+            <p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">2</p>
+            <h3 class="font-heading font-bold text-xl text-lin mb-3">Connectez vos comptes</h3>
+            <p class="font-body text-base text-pierre leading-[1.6]">
+              Gmail, Google Sheets. Le guide vous accompagne étape par étape.
+            </p>
+          </div>
+
+          <!-- Étape 3 -->
+          <div class="md:flex-1 md:px-8 text-center md:text-left">
+            <p class="font-display text-[36px] md:text-[64px] text-chene leading-[1.0] mb-4">3</p>
+            <h3 class="font-heading font-bold text-xl text-lin mb-3">Activez</h3>
+            <p class="font-body text-base text-pierre leading-[1.6]">
+              Lancez le système. Il travaille pour vous 24h/24, sans intervention.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────── SECTION 5 — FAIT POUR VOUS SI… ─────────────────────── -->
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[1200px] mx-auto">
+
+        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-ebene leading-[1.2] text-center mb-12">
+          Ce système est fait pour vous si&#8230;
+        </h2>
+
+        <div class="flex flex-col gap-8 md:flex-row md:gap-12">
+
+          <!-- Colonne gauche — Fait pour vous -->
+          <div class="md:w-1/2">
+            <p class="font-body font-semibold text-lg text-mousse mb-4">&#10003; Fait pour vous si&#8230;</p>
+            <ul class="flex flex-col gap-[10px]">
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous utilisez Gmail quotidiennement</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous passez plus de 30 minutes par jour à trier vos emails</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous avez un espace n8n (Cloud ou auto-hébergé)</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous voulez automatiser les réponses aux emails récurrents</li>
+            </ul>
+          </div>
+
+          <!-- Colonne droite — Pas fait pour vous -->
+          <div class="md:w-1/2">
+            <p class="font-body font-semibold text-lg text-chene mb-4">&#10007; Pas fait pour vous si&#8230;</p>
+            <ul class="flex flex-col gap-[10px]">
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous n'utilisez pas Gmail</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous cherchez une solution sur mesure avec accompagnement personnalisé</li>
+              <li class="font-body text-base text-ebene leading-[1.6]">Vous n'avez pas d'espace n8n et ne souhaitez pas en créer un</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────── SECTION 6 — PRÉREQUIS TECHNIQUES ────────────────── -->
+    <section class="bg-chene-6 py-20 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto">
+
+        <h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] text-center mb-8">
+          Ce qu'il vous faut avant de commencer
+        </h2>
+
+        <!-- Blocs prérequis -->
+        <div class="flex flex-col gap-4">
+
+          <!-- Prérequis 1 -->
+          <div>
+            <p class="font-body font-semibold text-base text-ebene leading-[1.6]">Un espace n8n</p>
+            <p class="font-body text-base text-ebene leading-[1.6]">n8n Cloud (à partir de 24 €/mois, prêt en 5 min) ou VPS personnel (à partir de 5 €/mois). Coût récurrent non inclus dans le prix du système.</p>
+          </div>
+
+          <!-- Prérequis 2 -->
+          <div>
+            <p class="font-body font-semibold text-base text-ebene leading-[1.6]">Les comptes des outils connectés</p>
+            <p class="font-body text-base text-ebene leading-[1.6]">Un compte Gmail et un Google Sheets. Liens d'inscription dans le guide.</p>
+          </div>
+
+          <!-- Prérequis 3 -->
+          <div>
+            <p class="font-body font-semibold text-base text-ebene leading-[1.6]">15 à 30 minutes pour l'installation</p>
+            <p class="font-body text-base text-ebene leading-[1.6]">Guide illustré fourni. Support email si blocage.</p>
+          </div>
+
+        </div>
+
+        <!-- Encadré Mousse — pas nécessaire -->
+        <div class="mt-8 bg-mousse-10 border-l-[3px] border-mousse rounded-[4px] p-5 md:p-5">
+          <p class="font-body text-base text-ebene leading-[1.6]">
+            Pas besoin de savoir coder. Pas besoin de comprendre l'IA. Pas besoin de connaissances en informatique. Pas besoin de gérer un serveur.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ───────────────────────────── SECTION 7 — GARANTIES ET CTA FINAL ────────────────── -->
+    <section class="bg-ebene py-20 px-4 md:py-20">
+      <div class="max-w-[600px] mx-auto text-center">
+
+        <h2 class="font-heading font-bold text-[22px] md:text-[28px] text-lin leading-[1.2] mb-6">
+          Vous n'avez rien à perdre
+        </h2>
+
+        <p class="font-body text-base text-pierre leading-[1.6] mb-4">
+          Si ce système forgé ne fonctionne pas comme promis dans les 14 jours suivant votre achat, je le <strong>corrige</strong>. Si la correction n'aboutit pas, je vous <strong>rembourse intégralement</strong> sous 5 jours ouvrables. Un email à <a href="mailto:contact@letablia.fr" class="text-pierre hover:underline" style="transition: color 0.2s ease">contact@letablia.fr</a> suffit. C'est aussi simple que ça.
+        </p>
+        <p class="font-body text-base text-pierre leading-[1.6] mb-8">
+          Support email sous 48 heures pour tout problème d'installation ou de fonctionnement.
+        </p>
+
+        <p class="font-display text-[32px] text-chene leading-[1.0] mb-6">39 € — Paiement unique</p>
+
+        <a href="https://letablia.lemonsqueezy.com/checkout/buy/AGENT-TRI-EMAIL"
+           class="block md:inline-block w-full md:w-auto text-center bg-chene text-lin font-semibold text-base rounded-[6px] px-7 py-[14px]">Automatiser mon tri email</a>
+
+        <p class="font-body text-[12px] text-pierre mt-3">
+          Paiement sécurisé par LemonSqueezy · Téléchargement immédiat
+        </p>
+
+      </div>
+    </section>
+
+    <!-- ──────────────────────────────── SECTION 8 — CONTENU LIVRÉ ───────────────────────── -->
+    <section class="bg-lin py-20 px-4 md:py-20">
+      <div class="max-w-[720px] mx-auto">
+
+        <h2 class="font-heading font-bold text-2xl text-ebene leading-[1.2] text-center mb-8">
+          Ce que vous recevez
+        </h2>
+
+        <ul class="flex flex-col gap-3 w-fit mx-auto">
+
+          <li class="flex items-start gap-3">
+            <span class="mt-[6px] shrink-0 w-2 h-2 rounded-[4px] bg-chene"></span>
+            <span class="font-body text-base text-ebene leading-[1.6]">1 fichier JSON prêt à importer dans n8n</span>
+          </li>
+
+          <li class="flex items-start gap-3">
+            <span class="mt-[6px] shrink-0 w-2 h-2 rounded-[4px] bg-chene"></span>
+            <span class="font-body text-base text-ebene leading-[1.6]">1 guide PDF d'installation illustré pas-à-pas</span>
+          </li>
+
+          <li class="flex items-start gap-3">
+            <span class="mt-[6px] shrink-0 w-2 h-2 rounded-[4px] bg-chene"></span>
+            <span class="font-body text-base text-ebene leading-[1.6]">Accès au support email pendant 30 jours</span>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ══════════════════════════════════════ FOOTER ══════════════════════════════════════ -->
+  <footer class="bg-ebene">
+    <div class="max-w-[1200px] mx-auto px-4 pt-12 pb-6">
+
+      <!-- 3 colonnes -->
+      <div class="flex flex-col gap-8 md:flex-row md:gap-0 md:justify-between">
+
+        <!-- Colonne 1 — Marque -->
+        <div class="text-center md:text-left">
+          <p class="font-display text-[20px] text-lin leading-snug">L'établ'IA</p>
+          <p class="font-display text-[14px] text-pierre mt-1">Forgé pour votre métier</p>
+        </div>
+
+        <!-- Colonne 2 — Navigation -->
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Navigation</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="../index.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Accueil</a></li>
+            <li><a href="../catalogue.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Catalogue</a></li>
+            <li><a href="../a-propos.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">À propos</a></li>
+            <li><a href="../faq.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">FAQ</a></li>
+            <li><a href="../contact.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Colonne 3 — Informations -->
+        <div>
+          <p class="font-body font-semibold text-[13px] text-pierre uppercase tracking-[1px] mb-4">Informations</p>
+          <ul class="flex flex-col gap-2">
+            <li><a href="../mentions-legales.html"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">Mentions légales</a></li>
+            <li><a href="mailto:contact@letablia.fr"
+                   class="font-body text-base text-lin hover:text-chene"
+                   style="transition: color 0.2s ease">contact@letablia.fr</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Séparateur + copyright -->
+      <div class="mt-6 border-t border-[rgba(160,152,137,0.30)] pt-6">
+        <p class="font-body text-[12px] text-pierre">© 2026 L'établ'IA. Tous droits réservés.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    var toggle = document.getElementById('menu-toggle');
+    var close  = document.getElementById('menu-close');
+    var menu   = document.getElementById('mobile-menu');
+
+    toggle.addEventListener('click', function () { menu.classList.remove('hidden'); });
+    close.addEventListener('click',  function () { menu.classList.add('hidden'); });
+  </script>
+
+  <script src="/assets/silktide-consent-manager.js"></script>
+  <script src="/assets/cookie-config.js"></script>
+
+</body>
+</html>
