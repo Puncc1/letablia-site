@@ -1,0 +1,215 @@
+---
+# CI/CD Pipeline — letablia.fr
+# Déclencheurs : push main + pull_request
+# Étapes : lint HTML/CSS, validation JSON, smoke tests E2E (best-effort)
+# Auteur : L'établ'IA — developpeur-workflows — GAP-07 V7 hybride
+# Version : 1.0 — 2026-05-05
+
+name: CI letablia-site
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  # ── Job 1 : Validation JSON ─────────────────────────────────────────
+  validate-json:
+    name: Validation JSON (products + configurations)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Valider products.json
+        run: |
+          echo "=== Validation assets/data/products.json ==="
+          python3 -m json.tool assets/data/products.json > /dev/null && echo "PASS — products.json valide" || (echo "FAIL — products.json invalide"; exit 1)
+
+      - name: Valider configurations.json
+        run: |
+          echo "=== Validation assets/data/configurations.json ==="
+          python3 -m json.tool assets/data/configurations.json > /dev/null && echo "PASS — configurations.json valide" || (echo "FAIL — configurations.json invalide"; exit 1)
+
+      - name: Vérifier structure minimale products.json
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+
+          with open("assets/data/products.json", "r", encoding="utf-8") as f:
+              data = json.load(f)
+
+          # Structure attendue : liste ou objet avec clé "products"
+          products = data if isinstance(data, list) else data.get("products", data)
+
+          if not products:
+              print("FAIL — products.json vide ou sans entrées")
+              sys.exit(1)
+
+          # Vérifier les champs obligatoires sur le premier produit
+          first = products[0] if isinstance(products, list) else list(products.values())[0]
+          required_fields = ["id", "name", "price"]
+          missing = [f for f in required_fields if f not in first]
+          if missing:
+              print(f"WARN — Champs manquants sur le premier produit : {missing}")
+              # Avertissement non bloquant (certains produits ont des structures variables)
+          else:
+              print(f"PASS — Structure produit valide ({len(products)} produit(s) détecté(s))")
+          EOF
+
+  # ── Job 2 : Lint HTML/CSS/JS ─────────────────────────────────────────
+  lint-html:
+    name: Lint HTML (htmlhint)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Installer htmlhint
+        run: npm install -g htmlhint
+
+      - name: Créer config .htmlhintrc
+        run: |
+          cat > .htmlhintrc <<'EOF'
+          {
+            "doctype-first": false,
+            "title-require": false,
+            "attr-value-not-empty": false,
+            "attr-no-duplication": true,
+            "tag-pair": true,
+            "spec-char-escape": false,
+            "id-unique": true,
+            "src-not-empty": true,
+            "tagname-lowercase": false,
+            "attr-lowercase": false,
+            "space-tab-mixed-disabled": "space",
+            "inline-style-disabled": false
+          }
+          EOF
+
+      - name: Lint HTML (fichiers racine et sous-dossiers)
+        run: |
+          echo "=== Lint HTML sur *.html ==="
+          # Lint uniquement les fichiers HTML à la racine et 1 niveau (pas les .bak)
+          HTML_FILES=$(find . -maxdepth 2 -name "*.html" ! -name "*.bak*" ! -path "./.git/*" 2>/dev/null)
+          if [ -z "$HTML_FILES" ]; then
+            echo "WARN — Aucun fichier HTML trouvé"
+            exit 0
+          fi
+          ERRORS=0
+          for f in $HTML_FILES; do
+            result=$(htmlhint "$f" 2>&1)
+            if echo "$result" | grep -q "error"; then
+              echo "WARN HTML: $f — $result"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+          if [ "$ERRORS" -gt 0 ]; then
+            echo "WARN — $ERRORS fichier(s) HTML avec avertissements (non bloquant)"
+          else
+            echo "PASS — Lint HTML OK"
+          fi
+        # Lint HTML est non bloquant (avertissements seulement)
+        continue-on-error: true
+
+  # ── Job 3 : Smoke tests URL (best-effort) ────────────────────────────
+  smoke-tests:
+    name: Smoke tests URLs critiques
+    runs-on: ubuntu-latest
+    # N'utiliser que sur push main (pas sur PR pour éviter les hits prod)
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Tester les URLs critiques letablia.fr
+        run: |
+          BASE_URL="https://letablia.fr"
+          URLS=(
+            "/"
+            "/catalogue.html"
+            "/a-propos.html"
+            "/assets/data/products.json"
+            "/assets/data/configurations.json"
+          )
+
+          ERRORS=0
+          for path in "${URLS[@]}"; do
+            status=$(curl -s -o /dev/null -w "%{http_code}" --max-time 10 "${BASE_URL}${path}" 2>/dev/null || echo "000")
+            if [ "$status" = "200" ]; then
+              echo "PASS ${status} — ${BASE_URL}${path}"
+            elif [ "$status" = "000" ]; then
+              echo "WARN timeout/connexion — ${BASE_URL}${path} (non bloquant)"
+            else
+              echo "FAIL ${status} — ${BASE_URL}${path}"
+              ERRORS=$((ERRORS + 1))
+            fi
+          done
+
+          if [ "$ERRORS" -gt 0 ]; then
+            echo "::warning ::$ERRORS URL(s) en erreur après deploy — vérifier manuellement"
+          else
+            echo "PASS — Smoke tests OK"
+          fi
+        # Non bloquant : Vercel peut être en cours de deploy au moment du test
+        continue-on-error: true
+        timeout-minutes: 3
+
+  # ── Job 4 : QA Checklist sur Pull Request ────────────────────────────
+  pr-checklist:
+    name: Checklist QA Pull Request
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Générer checklist QA
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `## Checklist QA — letablia.fr
+
+            Avant de merger cette PR, vérifier les points suivants :
+
+            ### Contenu
+            - [ ] Les fichiers modifiés sont listés ci-dessous (voir "Files changed")
+            - [ ] Aucun texte placeholder (\`À_RENSEIGNER_\`, \`TBD\`, \`TODO\`) présent dans les HTML
+            - [ ] Les prix affichés correspondent à \`assets/data/products.json\`
+            - [ ] Les liens internes sont valides (pas de 404)
+
+            ### Vocabulaire L'établ'IA
+            - [ ] "système forgé" (pas "workflow" ni "template")
+            - [ ] "professionnels francophones" (pas "clients")
+            - [ ] Vouvoiement respecté dans tout le texte visible
+
+            ### Technique
+            - [ ] \`assets/data/products.json\` valide (job "Validation JSON" vert)
+            - [ ] \`assets/data/configurations.json\` valide (job "Validation JSON" vert)
+            - [ ] Pas de fichiers \`.bak\` ou \`.bak-*\` commitées
+            - [ ] Pas de credentials ou secrets dans les fichiers modifiés
+
+            ### Déploiement
+            - [ ] Preview Vercel disponible (lien dans "Checks" ci-dessous)
+            - [ ] Preview testée sur mobile et desktop
+            - [ ] Raphaël a validé les changements visuels si modification CSS majeure
+
+            ---
+            *Checklist générée automatiquement par CI letablia-site V7 — GAP-07*`;
+
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body
+            });
