@@ -100,17 +100,17 @@
       </div>
       
       <div data-reveal data-reveal-delay="1">
-        <form style="background:var(--parchemin);border:1px solid var(--chene-25);padding:40px;border-radius:var(--r-md);position:relative;box-shadow:0 12px 32px -16px rgba(44,40,37,.15)" onsubmit="event.preventDefault();this.querySelector('.cf-success').style.display='block';this.querySelector('.cf-form').style.display='none'">
+        <form id="cf-form" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:40px;border-radius:var(--r-md);position:relative;box-shadow:0 12px 32px -16px rgba(44,40,37,.15)" onsubmit="cfEnvoyer(event)">
           <div style="position:absolute;top:24px;right:32px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.16em;color:var(--mousse);text-transform:uppercase;border:2px solid var(--mousse);padding:6px 10px;transform:rotate(4deg)">Formulaire № 01</div>
-          
-          <div class="cf-form">
+
+          <div class="cf-form" id="cf-champs">
             <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-bottom:24px;padding-bottom:14px;border-bottom:1px dashed var(--chene-25)">Bon de commande / Demande</div>
-            
-            <div class="field"><label>Votre nom</label><input type="text" required placeholder="Marie Dupont"/></div>
-            <div class="field"><label>Email</label><input type="email" required placeholder="marie@exemple.fr"/></div>
+
+            <div class="field"><label for="cf-nom">Votre nom</label><input id="cf-nom" type="text" required placeholder="Marie Dupont"/></div>
+            <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" required placeholder="marie@exemple.fr"/></div>
             <div class="field">
-              <label>Sujet</label>
-              <select>
+              <label for="cf-sujet">Sujet</label>
+              <select id="cf-sujet">
                 <option>Acheter un système</option>
                 <option>Question sur un produit</option>
                 <option>Demande de diagnostic personnalisé</option>
@@ -118,16 +118,19 @@
                 <option>Autre</option>
               </select>
             </div>
-            <div class="field"><label>Votre message</label><textarea rows="5" placeholder="Dites-nous ce que vous cherchez, on vous répond." required></textarea></div>
-            
-            <button class="btn btn-primary" type="submit" style="width:100%;justify-content:center;margin-top:14px">Envoyer le message</button>
-            <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.9rem;text-align:center;margin:18px 0 0">— Vos données restent chez nous. Lisez la <a href="confidentialite.html" style="color:var(--chene)">notice</a>.</p>
+            <div class="field"><label for="cf-message">Votre message</label><textarea id="cf-message" rows="5" placeholder="Dites-nous ce que vous cherchez, on vous répond." required></textarea></div>
+
+            <div id="cf-erreur" style="display:none;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px;padding:12px 16px;font-size:.9rem;color:#b91c1c;margin-bottom:14px"></div>
+
+            <button class="btn btn-primary" type="submit" id="cf-btn" style="width:100%;justify-content:center;margin-top:14px">Envoyer le message</button>
+            <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:.9rem;text-align:center;margin:18px 0 0">— En envoyant ce message, vous acceptez le traitement de votre demande conformément à notre <a href="confidentialite.html" style="color:var(--chene)">politique de confidentialité</a>.</p>
           </div>
 
-          <div class="cf-success" style="display:none;text-align:center;padding:24px 0">
+          <div id="cf-succes" style="display:none;text-align:center;padding:24px 0">
             <div style="font-family:var(--ff-display);font-size:3rem;color:var(--mousse);margin-bottom:14px">✓</div>
-            <h3 style="font-size:1.4rem;margin-bottom:8px">Reçu !</h3>
-            <p style="color:var(--ebene-80);font-size:14px">On vous répond dans la journée ouvrée. Pour ne rien rater, surveillez votre boîte (et le dossier promotions, on s'y retrouve parfois).</p>
+            <h3 style="font-size:1.4rem;margin-bottom:8px">Votre messagerie s'ouvre</h3>
+            <p style="color:var(--ebene-80);font-size:14px">Un brouillon pré-rempli a été préparé dans votre client mail. Il ne reste qu'à cliquer sur Envoyer. On vous répond sous 48 h ouvrées.</p>
+            <p style="margin-top:16px;font-size:.85rem;color:var(--chene)">Si rien ne s'est ouvert, écrivez directement à <a href="mailto:contact@letablia.fr" style="color:var(--chene)">contact@letablia.fr</a>.</p>
           </div>
         </form>
       </div>
@@ -184,4 +187,42 @@
 <script src="assets/js/theme-toggle.js" defer></script>
 <script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
 <script defer src="/assets/js/easter-eggs.js"></script>
+<script>
+function cfEnvoyer(e) {
+  e.preventDefault();
+
+  var nom     = document.getElementById('cf-nom').value.trim();
+  var email   = document.getElementById('cf-email').value.trim();
+  var sujet   = document.getElementById('cf-sujet').value;
+  var message = document.getElementById('cf-message').value.trim();
+  var erreur  = document.getElementById('cf-erreur');
+
+  // Validation côté client
+  erreur.style.display = 'none';
+  if (!nom) { erreur.textContent = 'Veuillez indiquer votre nom.'; erreur.style.display = 'block'; return; }
+  if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) { erreur.textContent = 'Veuillez indiquer une adresse email valide.'; erreur.style.display = 'block'; return; }
+  if (!message) { erreur.textContent = 'Veuillez écrire un message.'; erreur.style.display = 'block'; return; }
+
+  // Construction du mailto: avec encodage correct
+  var corps = [
+    'De : ' + nom,
+    'Email : ' + email,
+    '',
+    message,
+    '',
+    '--',
+    'Envoyé depuis letablia.fr/contact'
+  ].join('\n');
+
+  var url = 'mailto:contact@letablia.fr'
+    + '?subject=' + encodeURIComponent('[letablia.fr] ' + sujet + ' — ' + nom)
+    + '&body='    + encodeURIComponent(corps);
+
+  window.location.href = url;
+
+  // Affichage du message de confirmation (après ouverture du mail)
+  document.getElementById('cf-champs').style.display = 'none';
+  document.getElementById('cf-succes').style.display = 'block';
+}
+</script>
 </body></html>

@@ -715,9 +715,38 @@
 function handleForgeSignup(e) {
   e.preventDefault();
   var form = e.target;
-  var success = document.getElementById('forge-success');
+
+  var emailInput = document.getElementById('forge-email');
+  var email = emailInput ? emailInput.value.trim() : '';
+
+  if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+    emailInput.focus();
+    return false;
+  }
+
+  // Ouverture du client mail avec l'adresse pré-remplie
+  var corps = [
+    'Nouvelle inscription à La Forge :',
+    '',
+    'Email : ' + email,
+    '',
+    'Consentement RGPD coché : oui',
+    '',
+    '--',
+    'Formulaire newsletter letablia.fr'
+  ].join('\n');
+
+  var url = 'mailto:contact@letablia.fr'
+    + '?subject=' + encodeURIComponent('[La Forge] Nouvelle inscription — ' + email)
+    + '&body='    + encodeURIComponent(corps);
+
+  window.location.href = url;
+
+  // Affichage confirmation
   form.style.display = 'none';
-  success.style.display = 'block';
+  var success = document.getElementById('forge-success');
+  if (success) success.style.display = 'block';
+
   return false;
 }
 </script>
