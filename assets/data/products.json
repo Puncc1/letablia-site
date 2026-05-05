@@ -599,8 +599,7 @@
         "relance",
         "échéance"
       ],
-      "icon": "check-circle",
-      "status": "soon"
+      "icon": "check-circle"
     },
     {
       "slug": "sentinelle-mots-passe",
@@ -646,8 +645,7 @@
         "automatique",
         "support"
       ],
-      "icon": "message-circle",
-      "status": "soon"
+      "icon": "message-circle"
     },
     {
       "slug": "alerteur-paiements-retard",
@@ -691,8 +689,7 @@
         "récurrent",
         "e-commerce"
       ],
-      "icon": "gift",
-      "status": "soon"
+      "icon": "gift"
     },
     {
       "slug": "calculateur-marge-dynamique",
@@ -804,8 +801,7 @@
         "veille",
         "monitoring"
       ],
-      "icon": "radio",
-      "status": "soon"
+      "icon": "radio"
     },
     {
       "slug": "preparateur-black-friday",
