@@ -145,8 +145,7 @@
       ],
       "blurb": "Système qui relance vos prospects automatiquement, avec tact.",
       "keywords": "relance prospects commercial freelance",
-      "icon": "users",
-      "status": "soon"
+      "icon": "users"
     },
     {
       "slug": "produit/mini-crm-notion",
@@ -510,8 +509,7 @@
         "détection",
         "alerte"
       ],
-      "icon": "alert-circle",
-      "status": "soon"
+      "icon": "alert-circle"
     },
     {
       "slug": "redacteur-fiches-produit",
@@ -868,8 +866,7 @@
         "prospects",
         "saisonnier"
       ],
-      "icon": "sun",
-      "status": "soon"
+      "icon": "sun"
     }
   ],
   "bundles": [
