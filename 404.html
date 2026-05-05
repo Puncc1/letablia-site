@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Page introuvable — L'établ'IA</title>
+<meta name="description" content="Cette adresse a glissé sous la rabotteuse. Mais l'atelier reste ouvert."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/>
+<link rel="stylesheet" href="assets/css/search.css"/>
+<style>
+.p404-section{padding:80px 0 96px;background:var(--lin);text-align:center}
+.p404-ref{font-family:var(--ff-mono);font-size:11px;letter-spacing:.22em;color:var(--chene);text-transform:uppercase;margin-bottom:30px}
+.p404-section h1{font-family:var(--ff-display);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:600;line-height:1.1;max-width:24ch;margin:0 auto 18px}
+.p404-section h1 em{color:var(--chene);font-style:italic}
+.p404-sub{font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.1rem;max-width:44ch;margin:0 auto 40px;line-height:1.55}
+.p404-ascii{font-family:var(--ff-mono);font-size:12px;line-height:1.55;color:var(--chene);background:var(--parchemin);border:1px solid var(--chene-25);display:inline-block;padding:22px 36px;border-radius:var(--r-sm);margin-bottom:40px;text-align:left;position:relative}
+.p404-ascii::before{content:"Fiche d'atelier  ·  Réf. ERREUR-404";position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--parchemin);padding:0 12px;font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;color:var(--chene);white-space:nowrap;border:1px solid var(--chene-25)}
+.p404-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:24px}
+.p404-note{font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.08em}
+</style>
+</head>
+<body>
+
+<!-- ════ HEADER ════ -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg></button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a><a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a><a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a><a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a><a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a><a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..."/>
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results><div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div></div>
+  </div>
+</div>
+
+<!-- ════ MAIN ════ -->
+<main>
+<section class="p404-section">
+  <div class="container">
+    <p class="p404-ref">Erreur · 404 · Page introuvable</p>
+    <h1>L'établi est fermé<br/>pour <em>cette page-là.</em></h1>
+    <p class="p404-sub">
+      On a cherché dans tous les tiroirs… elle n'y est pas.<br/>
+      Mais l'atelier reste ouvert. Voici par où revenir.
+    </p>
+
+    <div class="p404-ascii"><pre>
+   ___________________________
+  |                           |
+  |   L'établ'IA — Atelier   |
+  |    ___________________    |
+  |   |   |   |   |   |   |  |
+  |   |   |   |   |   |   |  |
+  |   |___|___|___|___|___|  |
+  |___________________________|
+       |||             |||
+  =====|||=============|||=====
+       '''             '''</pre></div>
+
+    <div class="p404-cta">
+      <a class="btn btn-primary" href="catalogue.html">
+        Retour au catalogue
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a class="btn btn-ghost" href="contact.html">Nous contacter</a>
+    </div>
+    <p class="p404-note">— ou tapez « / » pour chercher directement un système</p>
+  </div>
+</section>
+</main>
+
+<!-- ════ FOOTER ════ -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div><h4>L'atelier</h4><ul>
+      <li><a href="catalogue.html">Catalogue (11)</a></li>
+      <li><a href="famille-automatiser.html">Automatiser</a></li>
+      <li><a href="famille-vendre.html">Vendre</a></li>
+      <li><a href="famille-piloter.html">Piloter</a></li>
+      <li><a href="famille-produire.html">Produire</a></li>
+      <li><a href="famille-securiser.html">Sécuriser</a></li>
+    </ul></div>
+    <div><h4>Service</h4><ul>
+      <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+      <li><a href="a-propos.html">L'atelier</a></li>
+      <li><a href="faq.html">Questions fréquentes</a></li>
+      <li><a href="contact.html">Nous écrire</a></li>
+    </ul></div>
+    <div><h4>Légal</h4><ul>
+      <li><a href="mentions-legales.html">Mentions légales</a></li>
+      <li><a href="cgv.html">CGV</a></li>
+      <li><a href="confidentialite.html">Confidentialité</a></li>
+    </ul></div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+</body>
+</html>

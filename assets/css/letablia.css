@@ -433,3 +433,15 @@ a{color:inherit}
 
 /* === SELECTION =================================================== */
 ::selection{background:var(--chene);color:var(--lin)}
+
+/* === BADGE DURÉE INSTALLATION ===================================== */
+.badge-duree {
+  display: inline-block;
+  background: var(--couleur-mousse, #6B7C5C);
+  color: var(--couleur-lin, #F2EDE4);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.85rem;
+  margin-top: 8px;
+}
