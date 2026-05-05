@@ -1,0 +1,503 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Maintenance Artisanale 9 €/mois — L'établ'IA</title>
+<meta name="description" content="Votre système forgé reste affûté. Abonnement Maintenance Artisanale à 9 €/mois : mises à jour si une source change, guide de dépannage prioritaire, 1 modification mineure par trimestre. Sans engagement."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="maintenance-artisanale.html" style="color:var(--chene);font-weight:600">Maintenance 9 €/mois</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- BREADCRUMB -->
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Maintenance Artisanale</span></div>
+  </div>
+</section>
+
+<!-- ═══ HERO ═══ -->
+<section style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Abonnement · 9 €/mois</span>
+      <h1 style="margin:18px 0;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1.06">Votre système forgé<br/>reste <em class="editorial">affûté</em>.</h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.2rem;max-width:46ch;margin:16px auto 0">Un système forgé, c'est solide à la livraison. La Maintenance Artisanale, c'est pour qu'il reste solide six mois plus tard — même si le monde change autour.</p>
+    </div>
+
+    <div data-reveal style="margin:56px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center" class="ma-hero-stats">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">9 €</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Par mois TTC</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">&lt; 24h</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Réponse prioritaire</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">0</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Engagement</div>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top:40px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:24px 32px;font-family:var(--ff-body);font-size:15px;line-height:1.65;color:var(--ebene)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene)">Réservé aux acheteurs de systèmes forgés L'établ'IA</strong><br/>
+      Cet abonnement ne s'ouvre qu'après l'achat d'un système du catalogue. Il n'est pas un produit autonome — c'est la tranquillité d'esprit qui accompagne votre livrable.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1 — POUR QUI ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 01</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Pour <em class="editorial">qui</em> — et pour qui non</h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Soyons honnêtes. Cette offre est taillée pour un profil précis.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:24px" class="ma-pour-qui">
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:32px 28px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--mousse);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px">C'est pour vous si…</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px">
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--mousse);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px">+</span>
+            <span style="font-size:15px;color:var(--ebene-80);line-height:1.5">Vous êtes une TPE ou un indépendant sans équipe technique en interne</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--mousse);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px">+</span>
+            <span style="font-size:15px;color:var(--ebene-80);line-height:1.5">Vous voulez que le système tourne tout seul, sans vous en préoccuper chaque trimestre</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--mousse);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px">+</span>
+            <span style="font-size:15px;color:var(--ebene-80);line-height:1.5">Vous n'avez pas le temps (ni l'envie) de suivre les changements d'API ou de connecteurs</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--mousse);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px">+</span>
+            <span style="font-size:15px;color:var(--ebene-80);line-height:1.5">Vous préférez avoir un interlocuteur humain disponible plutôt qu'une documentation à éplucher</span>
+          </li>
+        </ul>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:32px 28px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px">Ce n'est pas pour vous si…</div>
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:14px">
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--chene);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px">×</span>
+            <span style="font-size:15px;color:var(--ebene-80);line-height:1.5">Vous êtes développeur ou intégrateur — vous savez adapter le système vous-même</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--chene);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px">×</span>
+            <span style="font-size:15px;color:var(--ebene-80);line-height:1.5">Votre usage demande des évolutions fréquentes, des refontes ou de nouvelles intégrations chaque mois</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--chene);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px">×</span>
+            <span style="font-size:15px;color:var(--ebene-80);line-height:1.5">Vous n'avez pas encore acquis de système forgé — commencez par là</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start">
+            <span style="color:var(--chene);font-weight:700;font-size:16px;flex-shrink:0;margin-top:1px">×</span>
+            <span style="font-size:15px;color:var(--ebene-80);line-height:1.5">Vous cherchez un prestataire pour piloter un projet numérique étendu — ce n'est pas notre offre</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — CE QUI EST INCLUS ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 02</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Les <em class="editorial">3 piliers</em> de la maintenance</h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Ce que couvre exactement votre abonnement. Ni plus, ni moins — c'est promis.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:32px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:52px;height:52px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:22px;font-weight:600;color:var(--chene)">1</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 10px;font-family:var(--ff-display)">Mises à jour si une source change</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0 0 12px">Les connecteurs d'un système forgé communiquent avec des services extérieurs. Quand l'un d'eux change son mode de fonctionnement — et ça arrive, sans prévenir —, votre système peut se bloquer. En tant qu'abonné, vous signalez le problème et L'établ'IA adapte le connecteur concerné dans les délais convenus. Pas de supplément, pas de devis.</p>
+          <div style="background:var(--chene-6);border-left:3px solid var(--chene);padding:12px 16px;border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:13px;color:var(--ebene-80)"><strong style="color:var(--chene)">Couvert :</strong> adaptation d'un adaptateur existant suite à un changement côté source. <strong style="color:var(--chene)">Non couvert :</strong> remplacement d'un service source par un autre (nouveau connecteur = nouveau chantier).</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:32px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:52px;height:52px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:22px;font-weight:600;color:var(--chene)">2</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 10px;font-family:var(--ff-display)">Guide de dépannage prioritaire — réponse &lt; 24 h ouvrées</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0 0 12px">Quelque chose cloche et vous ne savez pas pourquoi ? Envoyez un message via le canal dédié. L'établ'IA répond dans les 24 heures ouvrées avec un diagnostic précis : est-ce un bug du système, une erreur de paramétrage de votre côté, ou un changement externe ? Vous repartez avec une réponse concrète — pas avec une documentation de 40 pages à décortiquer.</p>
+          <div style="background:var(--chene-6);border-left:3px solid var(--chene);padding:12px 16px;border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:13px;color:var(--ebene-80)"><strong style="color:var(--chene)">Couvert :</strong> questions de fonctionnement, diagnostic de panne, vérification de paramétrage. <strong style="color:var(--chene)">Non couvert :</strong> formation initiale ou accompagnement projet.</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:32px 0">
+        <div style="flex-shrink:0;width:52px;height:52px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:22px;font-weight:600;color:var(--chene)">3</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 10px;font-family:var(--ff-display)">1 modification mineure par trimestre</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0 0 12px">Un seuil à ajuster, un message à reformuler, une fréquence à modifier — ces petits réglages font partie de la vie d'un système. Une fois par trimestre civil (janvier, avril, juillet, octobre), vous pouvez soumettre une modification mineure. L'établ'IA la réalise et livre la version mise à jour. Les crédits non utilisés ne s'accumulent pas d'un trimestre à l'autre.</p>
+          <div style="background:var(--chene-6);border-left:3px solid var(--chene);padding:12px 16px;border-radius:0 var(--r-sm) var(--r-sm) 0;font-size:13px;color:var(--ebene-80)"><strong style="color:var(--chene)">Exemples :</strong> changer un seuil d'alerte, ajuster un texte de notification, modifier une règle de tri. <strong style="color:var(--chene)">Hors périmètre :</strong> ajout d'une nouvelle fonctionnalité, refonte d'un module, nouveau connecteur.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — CE QUI N'EST PAS INCLUS ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 03</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Ce qui n'est <em class="editorial">pas inclus</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">L'honnêteté avant tout. Voici ce que la Maintenance Artisanale ne couvre pas — pour éviter toute déception.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="ma-non-inclus">
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px">Gros chantiers &amp; refontes</div>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Restructurer un module complet, repenser la logique métier, migrer vers un mode de fonctionnement différent — ce sont des travaux de forge, pas de maintenance. Ils se traitent séparément, sur devis.</p>
+      </div>
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px">Nouvelles intégrations</div>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Brancher votre système forgé à un nouveau service que vous souhaitez ajouter est un développement nouveau. La maintenance couvre le maintien des adaptateurs existants, pas la création de nouveaux.</p>
+      </div>
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px">Pannes de votre côté</div>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Si la panne provient d'un paramètre que vous avez modifié, d'un accès révoqué de votre côté ou d'un problème d'infrastructure que vous gérez, la remise en route ne relève pas de la maintenance — mais nous vous aidons à diagnostiquer.</p>
+      </div>
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px">Formation &amp; accompagnement projet</div>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Apprendre à utiliser votre système, former un collaborateur ou concevoir une stratégie numérique sont des services distincts. Le guide de dépannage prioritaire répond aux questions opérationnelles — il ne remplace pas une formation.</p>
+      </div>
+    </div>
+
+    <div data-reveal style="margin-top:32px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 28px;font-size:14px;color:var(--ebene-80)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Un doute sur le périmètre ?</strong><br/>
+      Avant de souscrire, écrivez-nous en décrivant votre situation. On vous dira en 24 heures si la Maintenance Artisanale est adaptée — ou si votre besoin appelle autre chose. <a href="contact.html" style="color:var(--chene)">Nous écrire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — COMMENT ÇA MARCHE ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 04</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Comment <em class="editorial">ça marche</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Trois étapes, rien de plus. Le reste, c'est notre travail.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0;position:relative">
+
+      <div style="display:flex;gap:24px;padding:0 0 36px 0">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0">
+          <div style="width:44px;height:44px;background:var(--kraft);border:2px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:15px;font-weight:600;color:var(--chene);flex-shrink:0">1</div>
+          <div style="width:2px;flex:1;background:var(--chene-25);margin-top:8px;min-height:36px"></div>
+        </div>
+        <div style="padding-top:10px;flex:1">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Avant tout</div>
+          <h3 style="font-size:1.15rem;margin:0 0 10px">Vous achetez un système forgé</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">La Maintenance Artisanale n'est disponible qu'en complément d'un système du catalogue. Si vous n'en avez pas encore, commencez par là — le <a href="diagnostic.html" style="color:var(--chene)">diagnostic gratuit</a> vous oriente vers le bon système selon votre besoin.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;padding:0 0 36px 0">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0">
+          <div style="width:44px;height:44px;background:var(--kraft);border:2px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:15px;font-weight:600;color:var(--chene);flex-shrink:0">2</div>
+          <div style="width:2px;flex:1;background:var(--chene-25);margin-top:8px;min-height:36px"></div>
+        </div>
+        <div style="padding-top:10px;flex:1">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Abonnement</div>
+          <h3 style="font-size:1.15rem;margin:0 0 10px">Vous souscrivez à la Maintenance Artisanale</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Via le lien d'abonnement ci-dessous. Paiement mensuel de 9 € TTC. Vous recevez un email de confirmation avec les coordonnées de votre canal de dépannage prioritaire et les modalités de la modification trimestrielle.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;padding:0 0 0 0">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:0;flex-shrink:0">
+          <div style="width:44px;height:44px;background:var(--mousse);border:2px solid var(--mousse);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:15px;font-weight:600;color:white;flex-shrink:0">3</div>
+        </div>
+        <div style="padding-top:10px;flex:1">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--mousse);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Au quotidien</div>
+          <h3 style="font-size:1.15rem;margin:0 0 10px">L'établ'IA veille — vous, vous travaillez</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Quand quelque chose cloche, vous signalez. Nous intervenons. Pour les mises à jour proactives (changement détecté d'une source), nous vous prévenons et traitons sans attendre votre signalement. Votre système est entretenu comme un outil de métier — affûté régulièrement, pas laissé à rouiller.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — TARIF ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 05</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Le <em class="editorial">tarif</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Simple, fixe, sans surprise de fin de mois.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start" class="ma-tarif">
+
+      <div style="background:var(--lin);border:2px solid var(--chene-25);border-radius:var(--r-md);padding:40px 32px;text-align:center">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px">Maintenance Artisanale</div>
+        <div style="font-family:var(--ff-display);font-size:4rem;font-weight:700;color:var(--ebene);line-height:1">9 €</div>
+        <div style="font-size:14px;color:var(--ebene-80);margin-top:4px">par mois TTC</div>
+        <div style="margin:24px 0;height:1px;background:var(--chene-15)"></div>
+        <ul style="list-style:none;padding:0;margin:0;text-align:left;display:flex;flex-direction:column;gap:12px">
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ebene-80)"><span style="color:var(--mousse);font-weight:700;flex-shrink:0">✓</span>Mises à jour en cas de changement source</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ebene-80)"><span style="color:var(--mousse);font-weight:700;flex-shrink:0">✓</span>Dépannage prioritaire &lt; 24 h ouvrées</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ebene-80)"><span style="color:var(--mousse);font-weight:700;flex-shrink:0">✓</span>1 modification mineure par trimestre</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ebene-80)"><span style="color:var(--mousse);font-weight:700;flex-shrink:0">✓</span>Sans engagement — résiliation en 1 clic</li>
+          <li style="display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--ebene-80)"><span style="color:var(--mousse);font-weight:700;flex-shrink:0">✓</span>Garantie « Satisfait ou Forgé »</li>
+        </ul>
+        <a href="contact.html?subject=maintenance-9eur" class="btn btn-primary" style="margin-top:28px;width:100%;display:block;text-align:center;padding:14px 24px">S'abonner →</a>
+        <p style="margin-top:12px;font-size:12px;color:var(--ebene-80);font-family:var(--ff-mono)">Lien de paiement récurrent à venir · En attendant, écrivez-nous</p>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Résiliation</div>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">À tout moment, sans délai ni pénalité. La résiliation prend effet à la fin de la période mensuelle en cours.</p>
+        </div>
+        <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Facturation</div>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Prélèvement mensuel automatique. Facture émise le 1er de chaque mois pour le mois en cours.</p>
+        </div>
+        <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:20px 22px">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Garantie Satisfait ou Forgé</div>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Si votre demande de maintenance reste sans résolution satisfaisante dans les délais convenus, nous remboursons le mois en cours — sans discussion inutile.</p>
+        </div>
+        <div style="background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 22px">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px">Un système, un abonnement</div>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0">Vous possédez plusieurs systèmes forgés ? Chaque système dispose de son propre abonnement. Pas de formule "multi-systèmes" pour l'instant — gardons les choses simples.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6 — FAQ ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 06</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Questions <em class="editorial">fréquentes</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <details style="border-bottom:1px solid var(--chene-15);padding:0">
+        <summary style="list-style:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ebene);line-height:1.3">
+          Puis-je résilier immédiatement si je n'en ai pas besoin un mois donné ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 22px 0;font-size:14px;color:var(--ebene-80);line-height:1.7">Oui, à tout moment. La résiliation prend effet à la fin du mois en cours — vous conservez l'accès au dépannage prioritaire jusqu'à la dernière heure payée. Aucun préavis, aucune justification à fournir. (On ne vous enverra pas de mail mélancolique non plus. Enfin, peut-être un.)</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--chene-15);padding:0">
+        <summary style="list-style:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ebene);line-height:1.3">
+          Les modifications trimestrielles s'accumulent-elles si je n'en fais pas usage ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 22px 0;font-size:14px;color:var(--ebene-80);line-height:1.7">Non. Chaque trimestre repart de zéro : 1 modification disponible, qu'elle ait été utilisée ou non. Ce choix délibéré évite d'accumuler du travail en souffrance — et vous évite de vous sentir obligé de demander quelque chose pour "ne pas perdre" votre crédit.</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--chene-15);padding:0">
+        <summary style="list-style:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ebene);line-height:1.3">
+          Que se passe-t-il si L'établ'IA ne respecte pas le délai de réponse de 24 h ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 22px 0;font-size:14px;color:var(--ebene-80);line-height:1.7">Nous appliquons la garantie « Satisfait ou Forgé » : le mois concerné est remboursé. Le délai de 24 heures s'entend en heures ouvrées (lundi–vendredi, hors jours fériés français). Si votre signalement arrive un vendredi soir, la réponse est attendue pour le mardi matin — pas le samedi. Ce point est précisé dans les CGS de l'abonnement.</div>
+      </details>
+
+      <details style="border-bottom:1px solid var(--chene-15);padding:0">
+        <summary style="list-style:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ebene);line-height:1.3">
+          Puis-je souscrire à la Maintenance sans avoir encore acheté un système forgé ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 22px 0;font-size:14px;color:var(--ebene-80);line-height:1.7">Non. La Maintenance Artisanale est un service d'entretien — il faut d'abord quelque chose à entretenir. Si vous ne savez pas encore quel système vous correspond, commencez par le <a href="diagnostic.html" style="color:var(--chene)">diagnostic gratuit</a>.</div>
+      </details>
+
+      <details style="padding:0">
+        <summary style="list-style:none;display:flex;justify-content:space-between;align-items:center;padding:22px 0;cursor:pointer;font-size:1rem;font-weight:600;color:var(--ebene);line-height:1.3">
+          Ma demande de modification est-elle toujours considérée comme « mineure » ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0;margin-left:16px">+</span>
+        </summary>
+        <div style="padding:0 0 22px 0;font-size:14px;color:var(--ebene-80);line-height:1.7">Pas forcément. Avant de lancer la modification, L'établ'IA évalue si elle entre dans le périmètre « mineur » (réglage d'un paramètre, ajustement de texte, modification d'un seuil) ou si elle constitue un développement nouveau. Si c'est le second cas, nous vous le disons avant de commencer — et nous proposons un devis séparé si vous souhaitez tout de même y donner suite.</div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA FINAL ═══ -->
+<section style="padding:96px 0;background:var(--ebene);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;max-width:52ch;margin:0 auto">
+      <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:18px">Gardez votre système affûté</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--lin);margin:0 0 20px">9 €/mois. <em class="editorial" style="color:var(--chene)">Pilote automatique.</em></h2>
+      <p style="color:var(--pierre);font-size:1rem;line-height:1.7;margin:0 0 36px">Votre système forgé mérite d'être entretenu comme un outil de métier. Pas laissé à rouiller dans un coin jusqu'à ce qu'un connecteur casse. Souscrivez — et repassez à votre vrai travail.</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="contact.html?subject=maintenance-9eur" style="font-size:1rem;padding:16px 36px">S'abonner à la Maintenance →</a>
+        <a href="catalogue.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-size:15px;color:var(--pierre);text-decoration:none;padding:16px 20px;border:1px solid rgba(184,175,166,0.3);border-radius:var(--r-sm);transition:color .2s">Voir le catalogue</a>
+      </div>
+      <p style="margin-top:28px;font-family:var(--ff-display);font-style:italic;color:var(--pierre);font-size:14px;opacity:.7">Garantie « Satisfait ou Forgé » · Sans engagement · Résiliation en 1 clic</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+        <li><a href="programme-contributeurs.html" style="color:var(--chene)">Devenir contributeur</a></li>
+        <li><a href="maintenance-artisanale.html" style="color:var(--chene)">Maintenance 9 €/mois</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+<script defer src="/assets/js/easter-eggs.js"></script>
+
+<style>
+@media (max-width:880px){
+  .ma-hero-stats{grid-template-columns:1fr !important}
+  .ma-pour-qui{grid-template-columns:1fr !important}
+  .ma-non-inclus{grid-template-columns:1fr !important}
+  .ma-tarif{grid-template-columns:1fr !important}
+}
+details summary::-webkit-details-marker{display:none}
+details[open] summary span:last-child{transform:rotate(45deg);display:inline-block}
+</style>
+</body></html>

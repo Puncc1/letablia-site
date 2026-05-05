@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Installation Clé en Main — L'établ'IA</title>
+  <meta name="description" content="L'établ'IA installe votre système d'automatisation directement dans votre espace. Accès temporaire, charte de confidentialité signée, rapport de livraison. 249 € achat unique.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://letablia.fr/installation-cle-en-main.html">
+
+  <!-- Fonts V4 -->
+  <link rel="preconnect" href="https://api.fontshare.com">
+  <link href="https://api.fontshare.com/v2/css?f[]=zodiak@400,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── DESIGN SYSTEM V4 ───────────────────────────── */
+    :root {
+      --papier:     #F6F1E8;
+      --ivoire:     #FFFCF5;
+      --papier-sec: #E9DDC8;
+      --graphite:   #25221D;
+      --brun:       #6B4A2F;
+      --cuivre:     #B46A3C;
+      --vert:       #3F6F5B;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      font-family: 'Satoshi', system-ui, sans-serif;
+      background: var(--papier);
+      color: var(--graphite);
+      margin: 0; padding: 0;
+    }
+
+    /* ── NAV ────────────────────────────────────────── */
+    .nav-wrap {
+      position: sticky; top: 0; z-index: 50;
+      background: var(--papier);
+      border-bottom: 1px solid rgba(107,74,47,0.15);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto;
+      padding: 0 24px; height: 68px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: 20px;
+      color: var(--graphite); text-decoration: none;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 32px;
+      list-style: none; margin: 0; padding: 0;
+    }
+    .nav-links a {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--graphite); text-decoration: none;
+      transition: color 150ms ease;
+    }
+    .nav-links a:hover { color: var(--brun); }
+    .nav-cta {
+      font-family: 'Satoshi', sans-serif; font-size: 14px; font-weight: 500;
+      background: var(--cuivre); color: var(--ivoire);
+      padding: 9px 18px; border-radius: 4px;
+      text-decoration: none; transition: opacity 150ms ease;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+    .nav-hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .nav-hamburger span { display: block; width: 22px; height: 2px; background: var(--graphite); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: var(--papier); flex-direction: column; padding: 24px;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-close {
+      align-self: flex-end; background: none; border: none;
+      font-size: 28px; color: var(--graphite); cursor: pointer; margin-bottom: 32px;
+    }
+    .mobile-menu nav { display: flex; flex-direction: column; gap: 4px; }
+    .mobile-menu nav a {
+      font-family: 'Satoshi', sans-serif; font-size: 18px;
+      color: var(--graphite); text-decoration: none;
+      padding: 12px 0; border-bottom: 1px solid rgba(107,74,47,0.10);
+    }
+    .mobile-menu-cta {
+      font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 500;
+      background: var(--cuivre); color: var(--ivoire);
+      padding: 14px 24px; border-radius: 4px; text-align: center;
+      text-decoration: none; margin-top: 24px; display: block;
+    }
+
+    /* ── HERO ───────────────────────────────────────── */
+    .hero {
+      background: var(--graphite);
+      padding: 88px 24px 72px;
+      text-align: center;
+    }
+    .hero-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--cuivre);
+      margin: 0 0 24px; display: block;
+    }
+    .hero h1 {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: clamp(28px, 4.5vw, 44px);
+      color: var(--papier); margin: 0 0 24px; line-height: 1.15;
+      max-width: 760px; margin-left: auto; margin-right: auto;
+    }
+    .hero-sub {
+      font-family: 'Satoshi', sans-serif; font-size: 17px;
+      color: rgba(246,241,232,0.70); line-height: 1.65;
+      max-width: 600px; margin: 0 auto 40px;
+    }
+    .hero-price-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px; letter-spacing: 0.06em;
+      color: var(--papier-sec); display: inline-block;
+      border: 1px solid rgba(180,106,60,0.40);
+      padding: 6px 16px; border-radius: 4px; margin-bottom: 36px;
+    }
+    .btn-cta-hero {
+      font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 700;
+      background: var(--cuivre); color: var(--ivoire);
+      padding: 16px 36px; border-radius: 4px;
+      text-decoration: none; display: inline-block;
+      transition: opacity 150ms ease;
+    }
+    .btn-cta-hero:hover { opacity: 0.88; }
+
+    /* ── SECTION : COMMENT CA SE PASSE ─────────────── */
+    .section-steps {
+      background: var(--papier); padding: 80px 24px;
+      border-top: 1px solid rgba(107,74,47,0.10);
+    }
+    .section-title {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: clamp(22px, 3vw, 32px);
+      color: var(--graphite); margin: 0 0 12px;
+    }
+    .section-lead {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--brun); line-height: 1.65; margin: 0 0 48px;
+      max-width: 620px;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; max-width: 1100px; margin: 0 auto;
+    }
+    .step-card {
+      background: var(--ivoire);
+      border: 1px solid rgba(107,74,47,0.15);
+      border-radius: 4px; padding: 32px 28px;
+    }
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--cuivre);
+      margin: 0 0 16px; display: block;
+    }
+    .step-card h3 {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: 20px;
+      color: var(--graphite); margin: 0 0 12px;
+    }
+    .step-card p {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--graphite); line-height: 1.65; margin: 0;
+    }
+
+    /* ── SECTION : SÉCURITÉ ─────────────────────────── */
+    .section-securite {
+      background: var(--papier-sec);
+      padding: 72px 24px;
+      border-top: 1px solid rgba(107,74,47,0.15);
+    }
+    .securite-inner {
+      max-width: 800px; margin: 0 auto;
+    }
+    .securite-bloc {
+      background: var(--ivoire);
+      border-left: 3px solid var(--vert);
+      border-radius: 4px; padding: 28px 28px 28px 28px;
+      margin-top: 32px;
+    }
+    .securite-bloc h3 {
+      font-family: 'Satoshi', sans-serif; font-weight: 700;
+      font-size: 16px; color: var(--vert);
+      margin: 0 0 12px; text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .securite-bloc ul {
+      margin: 0; padding: 0 0 0 20px;
+    }
+    .securite-bloc ul li {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--graphite); line-height: 1.65; margin-bottom: 8px;
+    }
+    .securite-bloc ul li:last-child { margin-bottom: 0; }
+
+    /* ── SECTION : INCLUS ───────────────────────────── */
+    .section-inclus {
+      background: var(--papier); padding: 80px 24px;
+      border-top: 1px solid rgba(107,74,47,0.10);
+    }
+    .inclus-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px; max-width: 1000px; margin: 0 auto;
+    }
+    .inclus-item {
+      background: var(--ivoire);
+      border: 1px solid rgba(107,74,47,0.15);
+      border-radius: 4px; padding: 24px 24px;
+    }
+    .inclus-item strong {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: 17px;
+      color: var(--graphite); display: block; margin-bottom: 8px;
+    }
+    .inclus-item p {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--brun); line-height: 1.6; margin: 0;
+    }
+
+    /* ── SECTION : TARIF ────────────────────────────── */
+    .section-tarif {
+      background: var(--graphite); padding: 80px 24px;
+      text-align: center;
+    }
+    .tarif-card {
+      max-width: 520px; margin: 0 auto;
+      background: rgba(246,241,232,0.06);
+      border: 1px solid rgba(180,106,60,0.30);
+      border-radius: 4px; padding: 48px 40px;
+    }
+    .tarif-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.14em;
+      text-transform: uppercase; color: var(--cuivre);
+      display: block; margin-bottom: 16px;
+    }
+    .tarif-prix {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: clamp(48px, 8vw, 72px);
+      color: var(--papier); line-height: 1; margin: 0 0 8px;
+    }
+    .tarif-note {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: rgba(246,241,232,0.55); margin: 0 0 32px;
+    }
+    .tarif-desc {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: rgba(246,241,232,0.75); line-height: 1.65;
+      margin: 0 0 36px;
+    }
+    .btn-cta-tarif {
+      font-family: 'Satoshi', sans-serif; font-size: 16px; font-weight: 700;
+      background: var(--cuivre); color: var(--ivoire);
+      padding: 16px 36px; border-radius: 4px;
+      text-decoration: none; display: inline-block;
+      transition: opacity 150ms ease;
+    }
+    .btn-cta-tarif:hover { opacity: 0.88; }
+
+    /* ── SECTION : FAQ ──────────────────────────────── */
+    .section-faq {
+      background: var(--papier); padding: 80px 24px;
+      border-top: 1px solid rgba(107,74,47,0.10);
+    }
+    .faq-list {
+      max-width: 760px; margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(107,74,47,0.15);
+      padding: 24px 0;
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(107,74,47,0.15); }
+    .faq-q {
+      font-family: 'Satoshi', sans-serif; font-weight: 700;
+      font-size: 16px; color: var(--graphite); margin: 0 0 10px;
+    }
+    .faq-a {
+      font-family: 'Satoshi', sans-serif; font-size: 15px;
+      color: var(--brun); line-height: 1.65; margin: 0;
+    }
+
+    /* ── CTA FINAL ──────────────────────────────────── */
+    .section-cta-final {
+      background: var(--papier-sec); padding: 72px 24px;
+      text-align: center;
+      border-top: 1px solid rgba(107,74,47,0.15);
+    }
+    .section-cta-final h2 {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: clamp(24px, 3.5vw, 34px);
+      color: var(--graphite); margin: 0 0 16px;
+    }
+    .section-cta-final p {
+      font-family: 'Satoshi', sans-serif; font-size: 16px;
+      color: var(--brun); line-height: 1.65;
+      max-width: 540px; margin: 0 auto 36px;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    .footer {
+      background: var(--graphite); padding: 48px 24px 24px;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px; margin-bottom: 40px;
+    }
+    .footer-logo {
+      font-family: 'Zodiak', Georgia, serif;
+      font-weight: 700; font-size: 18px;
+      color: var(--papier); text-decoration: none;
+      display: block; margin-bottom: 8px;
+    }
+    .footer-tagline {
+      font-family: 'Satoshi', sans-serif; font-size: 13px;
+      color: rgba(160,152,137,0.80); line-height: 1.55;
+      margin: 0 0 12px;
+    }
+    .footer-email {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--cuivre); text-decoration: none;
+    }
+    .footer-col-titre {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(160,152,137,0.70);
+      display: block; margin-bottom: 16px;
+    }
+    .footer-links {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .footer-links a {
+      font-family: 'Satoshi', sans-serif; font-size: 14px;
+      color: var(--papier); text-decoration: none;
+      transition: color 150ms ease;
+    }
+    .footer-links a:hover { color: var(--cuivre); }
+    .footer-bottom {
+      max-width: 1200px; margin: 0 auto;
+      border-top: 1px solid rgba(160,152,137,0.20);
+      padding-top: 20px;
+    }
+    .footer-copy {
+      font-family: 'Satoshi', sans-serif; font-size: 12px;
+      color: rgba(160,152,137,0.60); margin: 0;
+    }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .nav-hamburger { display: flex; }
+      .steps-grid, .inclus-grid { grid-template-columns: 1fr; }
+      .tarif-card { padding: 36px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════ NAV ══════════════════════════════════ -->
+<header class="nav-wrap">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">L'établ'IA</a>
+    <ul class="nav-links">
+      <li><a href="/catalogue.html">Systèmes forgés</a></li>
+      <li><a href="/a-propos.html">À propos</a></li>
+      <li><a href="/faq.html">FAQ</a></li>
+      <li><a href="/contact.html">Contact</a></li>
+    </ul>
+    <a href="/catalogue.html" class="nav-cta">Trouver mon système</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+  <button class="mobile-menu-close" id="mobile-close" aria-label="Fermer">&times;</button>
+  <nav>
+    <a href="/catalogue.html">Systèmes forgés</a>
+    <a href="/a-propos.html">À propos</a>
+    <a href="/faq.html">FAQ</a>
+    <a href="/contact.html">Contact</a>
+  </nav>
+  <a href="/contact.html?subject=install-cle-en-main" class="mobile-menu-cta">Demander un créneau</a>
+</div>
+
+<!-- ══════════════════════════════════ HERO ══════════════════════════════════ -->
+<section class="hero">
+  <span class="hero-label">Service Premium — Direction D6</span>
+  <h1>L'établi vient à vous.<br>Vous récupérez le système prêt.</h1>
+  <p class="hero-sub">
+    Vous n'installez rien. Nous prenons en main votre environnement d'automatisation,
+    configurons, testons, et vous livrons un rapport complet. Résultat : votre système
+    est opérationnel dès le premier jour, sans effort de votre part.
+  </p>
+  <div class="hero-price-tag">Service clé en main — 249 € achat unique</div>
+  <br>
+  <a href="/contact.html?subject=install-cle-en-main" class="btn-cta-hero">Demander un créneau d'installation</a>
+</section>
+
+<!-- ══════════════════════════════ COMMENT ÇA SE PASSE ═══════════════════════ -->
+<section class="section-steps">
+  <div style="max-width: 1100px; margin: 0 auto;">
+    <h2 class="section-title">Comment se déroule l'installation</h2>
+    <p class="section-lead">
+      Trois étapes, aucune compétence technique requise de votre côté.
+      Vous donnez accès, nous livrons. Tout se passe en moins de 48 heures ouvrées.
+    </p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-num">Étape 01</span>
+        <h3>Vous choisissez votre système</h3>
+        <p>
+          Vous achetez d'abord le système forgé de votre choix dans notre catalogue,
+          puis vous optez pour le service d'installation clé en main.
+          Nous vous envoyons un formulaire de prise en charge sécurisé et une charte
+          de confidentialité à signer — avant toute action de notre part.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-num">Étape 02</span>
+        <h3>Vous nous donnez un accès temporaire</h3>
+        <p>
+          Vous créez un accès invité limité dans votre espace d'automatisation
+          et nous transmettez les comptes nécessaires à la configuration
+          (messagerie, tableur, etc.). Cet accès est révoqué immédiatement
+          après livraison. Aucun mot de passe n'est stocké.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <span class="step-num">Étape 03</span>
+        <h3>Nous installons, testons et livrons</h3>
+        <p>
+          Nous importons le système, configurons chaque connexion, effectuons
+          les tests de bout en bout. Vous recevez un rapport d'installation PDF
+          et un screencast de 5 minutes expliquant ce qui a été mis en place.
+          Votre système est actif à la livraison.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ SÉCURITÉ ══════════════════════════════ -->
+<section class="section-securite">
+  <div class="securite-inner">
+    <h2 class="section-title">Protocole de sécurité</h2>
+    <p class="section-lead">
+      Vous nous confiez un accès à votre environnement professionnel.
+      Nous prenons cette responsabilité au sérieux. Voici notre protocole.
+    </p>
+
+    <div class="securite-bloc">
+      <h3>Avant l'installation</h3>
+      <ul>
+        <li>Charte de confidentialité signée par les deux parties avant tout accès.</li>
+        <li>Formulaire de périmètre : nous documentons exactement ce à quoi nous accédons.</li>
+        <li>Aucun accès à vos données personnelles ou celles de vos clients.</li>
+      </ul>
+    </div>
+
+    <div class="securite-bloc">
+      <h3>Pendant l'installation</h3>
+      <ul>
+        <li>Accès strictement limité à l'espace d'automatisation convenu — rien d'autre.</li>
+        <li>Aucun identifiant n'est noté, exporté ou conservé en dehors de la session.</li>
+        <li>Intervention tracée : horodatage de début et de fin disponible sur demande.</li>
+      </ul>
+    </div>
+
+    <div class="securite-bloc">
+      <h3>Après la livraison</h3>
+      <ul>
+        <li>Révocation immédiate de l'accès invité dès la livraison du rapport.</li>
+        <li>Confirmation écrite de la révocation, avec capture d'écran jointe.</li>
+        <li>Aucune copie du système conservée de notre côté après livraison.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ INCLUS ════════════════════════════════ -->
+<section class="section-inclus">
+  <div style="max-width: 1000px; margin: 0 auto;">
+    <h2 class="section-title">Ce qui est inclus</h2>
+    <p class="section-lead">
+      Le service clé en main ne laisse rien au hasard.
+      Voici précisément ce que vous recevez.
+    </p>
+
+    <div class="inclus-grid">
+      <div class="inclus-item">
+        <strong>Installation complète</strong>
+        <p>Import, configuration de toutes les connexions, paramétrage selon votre contexte exact.</p>
+      </div>
+      <div class="inclus-item">
+        <strong>Tests de bout en bout</strong>
+        <p>Le système est testé en conditions réelles avant livraison. Aucune approximation.</p>
+      </div>
+      <div class="inclus-item">
+        <strong>Rapport PDF de livraison</strong>
+        <p>Document récapitulatif : ce qui a été installé, comment le relancer, contacts en cas de problème.</p>
+      </div>
+      <div class="inclus-item">
+        <strong>Screencast 5 minutes</strong>
+        <p>Vidéo privée vous montrant votre système en action, pas à pas, pour que vous soyez autonome.</p>
+      </div>
+      <div class="inclus-item">
+        <strong>Support 30 jours</strong>
+        <p>Questions, ajustements mineurs, anomalies post-livraison — nous répondons sous 48 h ouvrées.</p>
+      </div>
+      <div class="inclus-item">
+        <strong>Charte signée + confirmation de révocation</strong>
+        <p>Preuves documentaires de la confidentialité et de la clôture d'accès, archivées pour vous.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ TARIF ═════════════════════════════════ -->
+<section class="section-tarif">
+  <div class="tarif-card">
+    <span class="tarif-label">Tarif — Service clé en main</span>
+    <p class="tarif-prix">249 €</p>
+    <p class="tarif-note">Achat unique — aucun abonnement — hors coût du système forgé</p>
+    <p class="tarif-desc">
+      Ce tarif couvre l'installation, la configuration, les tests, le rapport PDF,
+      le screencast et 30 jours de support post-livraison.
+      Le système forgé (à partir de 29 €) est à acheter séparément dans le catalogue.
+    </p>
+    <a href="/contact.html?subject=install-cle-en-main" class="btn-cta-tarif">Demander un créneau d'installation</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ FAQ ═══════════════════════════════════ -->
+<section class="section-faq">
+  <div style="max-width: 760px; margin: 0 auto;">
+    <h2 class="section-title" style="margin-bottom: 40px;">Questions fréquentes</h2>
+
+    <div class="faq-list">
+      <div class="faq-item">
+        <p class="faq-q">Qui a concrètement accès à mon espace ?</p>
+        <p class="faq-a">
+          Raphaël (fondateur de L'établ'IA), ou un assistant de confiance désigné et mentionné dans la charte.
+          Vous êtes informé du nom de la personne avant toute intervention.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Est-ce que mes données clients sont accessibles ?</p>
+        <p class="faq-a">
+          Non. Nous accédons uniquement à l'espace d'automatisation convenu
+          (import du workflow, connexion des services). Nous ne consultons aucune
+          donnée de votre activité ni de vos clients.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Combien de temps dure l'intervention ?</p>
+        <p class="faq-a">
+          L'installation technique prend généralement 1 à 2 heures. La livraison complète
+          (rapport + screencast) intervient sous 48 heures ouvrées après réception de vos accès.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Que se passe-t-il si quelque chose ne fonctionne pas après la livraison ?</p>
+        <p class="faq-a">
+          Le support de 30 jours est là pour ça. Signalez l'anomalie par email,
+          nous diagnostiquons et corrigeons sous 48 h ouvrées.
+          Les modifications majeures hors périmètre initial font l'objet d'un devis séparé.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Ce service est-il compatible avec tous vos systèmes forgés ?</p>
+        <p class="faq-a">
+          Oui, pour l'ensemble des systèmes du catalogue L'établ'IA.
+          Il n'est pas applicable aux systèmes tiers ou aux configurations personnalisées
+          non issues de notre catalogue.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Que comprend le rapport PDF de livraison ?</p>
+        <p class="faq-a">
+          Le rapport inclut : la liste des composants installés, les connexions configurées,
+          les instructions de démarrage et d'arrêt du système, les contacts support,
+          et la confirmation de révocation d'accès.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ CTA FINAL ═════════════════════════════ -->
+<section class="section-cta-final">
+  <h2>Prêt à recevoir votre système déjà en place&nbsp;?</h2>
+  <p>
+    Demandez votre créneau d'installation. Nous revenons vers vous sous 24 h ouvrées
+    pour convenir d'une date et vous envoyer la charte de confidentialité à signer.
+  </p>
+  <a href="/contact.html?subject=install-cle-en-main" class="btn-cta-tarif">Demander un créneau</a>
+</section>
+
+<!-- ══════════════════════════════════ FOOTER ════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <a href="/" class="footer-logo">L'établ'IA</a>
+      <p class="footer-tagline">Des systèmes digitaux prêts à poser dans votre entreprise.</p>
+      <a href="mailto:contact@letablia.fr" class="footer-email">contact@letablia.fr</a>
+    </div>
+    <div>
+      <span class="footer-col-titre">Navigation</span>
+      <ul class="footer-links">
+        <li><a href="/">Accueil</a></li>
+        <li><a href="/catalogue.html">Catalogue</a></li>
+        <li><a href="/a-propos.html">À propos</a></li>
+        <li><a href="/faq.html">FAQ</a></li>
+        <li><a href="/contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-titre">Légal</span>
+      <ul class="footer-links">
+        <li><a href="/cgv.html">CGV</a></li>
+        <li><a href="/confidentialite/">Confidentialité</a></li>
+        <li><a href="/retractation.html">Rétractation</a></li>
+        <li><a href="/mentions-legales.html">Mentions légales</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-titre">Services</span>
+      <ul class="footer-links">
+        <li><a href="/catalogue.html">Systèmes forgés</a></li>
+        <li><a href="/installation-cle-en-main.html">Installation clé en main</a></li>
+        <li><a href="/carnet-forge/">Carnet de forge</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 L'établ'IA · Tous droits réservés · Produits digitaux pour TPE francophones</p>
+  </div>
+</footer>
+
+<script>
+  var hamburger   = document.getElementById('hamburger');
+  var mobileMenu  = document.getElementById('mobile-menu');
+  var mobileClose = document.getElementById('mobile-close');
+  hamburger   && hamburger.addEventListener('click',   function () { mobileMenu.classList.add('open'); });
+  mobileClose && mobileClose.addEventListener('click', function () { mobileMenu.classList.remove('open'); });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pour les Experts-Comptables — Programme partenaire L'établ'IA</title>
+<meta name="description" content="Cabinet d'expertise comptable ? Recommandez L'établ'IA à vos clients TPE et percevez 20% de commission lifetime sur chaque vente. Inscription gratuite, outils de suivi inclus."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="contact.html?subject=partenaire-ec">Devenir partenaire</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="experts-comptables.html" style="color:var(--chene);font-weight:600">Programme partenaire EC</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- BREADCRUMB -->
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Pour les Experts-Comptables</span></div>
+  </div>
+</section>
+
+<!-- ═══ HERO ═══ -->
+<section style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Programme partenaire · Cabinets EC</span>
+      <h1 style="margin:18px 0;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.06">Vos clients TPE perdent<br/>5h/semaine en saisie.<br/><em class="editorial">Voici comment leur en redonner 4.</em></h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.2rem;max-width:52ch;margin:16px auto 0">Recommandez L'établ'IA à vos clients. Vous renforcez votre mission conseil, ils gagnent du temps — et vous percevez <strong style="font-style:normal;font-family:var(--ff-body)">20% de commission</strong> sur chaque vente générée.</p>
+    </div>
+
+    <!-- Stats hero -->
+    <div data-reveal style="margin:52px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center" class="ec-hero-stats">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">20%</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Commission lifetime</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">0 €</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Inscription</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">3 000+</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Cabinets EC en France</div>
+      </div>
+    </div>
+
+    <!-- Badge engagement -->
+    <div data-reveal style="margin-top:36px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:22px 28px;font-size:15px;line-height:1.65;color:var(--ebene);display:flex;gap:20px;align-items:flex-start" class="ec-badge">
+      <div style="flex-shrink:0;width:40px;height:40px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-hand);font-size:20px;color:var(--chene)">✦</div>
+      <div>
+        <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);display:block;margin-bottom:6px">Garantie « Satisfait ou Forgé »</strong>
+        Chaque système du catalogue est garanti par notre politique « Satisfait ou Forgé » : si un outil ne correspond pas à sa promesse, L'établ'IA intervient avant tout remboursement. Votre réputation de conseil est protégée.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1 — POURQUOI UN EC S'Y INTÉRESSE ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 01</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Pourquoi un cabinet <em class="editorial">s'y intéresse</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Trois raisons métier — au-delà de la commission — pour lesquelles ce partenariat s'inscrit dans votre stratégie de cabinet.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:18px;font-weight:600;color:var(--chene)">①</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Monter en valeur conseil auprès de vos clients</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Un client TPE qui passe de 5h à 1h de saisie hebdomadaire vous contacte sur des sujets à plus forte valeur : stratégie, investissement, transmission. Recommander des outils fiables positionne votre mission au-dessus de la tenue courante.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:18px;font-weight:600;color:var(--chene)">②</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Fidéliser votre portefeuille TPE</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Un client outillé numériquement reste plus longtemps en cabinet. Sa comptabilité est plus propre, ses pièces mieux classées, ses délais de transmission raccourcis. Vous gagnez du temps sur chaque dossier — et le client le ressent.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:18px;font-weight:600;color:var(--chene)">③</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Revenu complémentaire sans gestion de stock ni SAV</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">20% de commission sur chaque vente générée par votre lien partenaire — versés mensuellement. Vous orientez le client, L'établ'IA gère la vente, la livraison et le support. Aucune infrastructure à maintenir de votre côté.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — COMMENT ÇA MARCHE ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 02</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Comment ça <em class="editorial">marche</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Trois étapes. Pas de contrat complexe, pas de formation obligatoire.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0;position:relative">
+
+      <div style="display:flex;gap:24px;padding:0 0 36px 0">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+          <div style="width:44px;height:44px;background:var(--kraft);border:2px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:15px;font-weight:700;color:var(--chene)">1</div>
+          <div style="width:2px;flex:1;background:var(--chene-25);margin-top:8px;min-height:36px"></div>
+        </div>
+        <div style="padding-top:10px;flex:1">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Inscription gratuite · &lt; 5 minutes</div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px">Vous rejoignez le programme partenaire</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Vous remplissez le formulaire de candidature avec le SIRET de votre cabinet et vos coordonnées. Vous recevez sous 24 heures ouvrées votre lien de suivi personnalisé, votre accès au kit de présentation client et les identifiants de votre tableau de bord commissions.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;padding:0 0 36px 0">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+          <div style="width:44px;height:44px;background:var(--kraft);border:2px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:15px;font-weight:700;color:var(--chene)">2</div>
+          <div style="width:2px;flex:1;background:var(--chene-25);margin-top:8px;min-height:36px"></div>
+        </div>
+        <div style="padding-top:10px;flex:1">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Recommandation ciblée</div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px">Vous orientez vos clients TPE vers les outils adaptés</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Lors d'un entretien, d'un rendez-vous de bilan ou d'un simple échange, vous partagez votre lien partenaire ou imprimez la fiche de présentation adaptée à la situation du client. Le catalogue propose des systèmes clairs, expliqués sans jargon — faciles à recommander même lors d'un rendez-vous court.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px">
+        <div style="display:flex;flex-direction:column;align-items:center;flex-shrink:0">
+          <div style="width:44px;height:44px;background:var(--mousse);border:2px solid var(--mousse);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:15px;font-weight:700;color:white">3</div>
+        </div>
+        <div style="padding-top:10px;flex:1">
+          <div style="font-family:var(--ff-mono);font-size:11px;color:var(--mousse);letter-spacing:.12em;text-transform:uppercase;margin-bottom:6px">Commission 20% · paiement mensuel</div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px">Vous percevez votre commission sur chaque vente</h3>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Chaque achat effectué via votre lien partenaire génère une commission de <strong>20% sur le prix HT</strong>, versée par virement SEPA le 5 du mois suivant. La commission est <em>lifetime</em> : si le même client achète un deuxième système six mois plus tard, vous percevez à nouveau 20%.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:36px;background:var(--chene-6);border-left:3px solid var(--chene);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:18px 24px;font-size:14px;color:var(--ebene-80)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Exemple concret</strong><br/>
+      Un client achète le <em>Kit Facturation 2026</em> à 39 € HT via votre lien → vous percevez <strong>7,80 €</strong>. Il achète deux mois plus tard le <em>Dashboard Trésorerie</em> à 49 € HT → vous percevez <strong>9,80 €</strong> supplémentaires. Automatique, traçable, sans démarche de votre part.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — CATALOGUE COMPATIBLE EC ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 03</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Catalogue <em class="editorial">recommandable</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Les systèmes les plus pertinents pour vos clients TPE. Chacun est livré clé en main, avec guide d'installation et promesse vérifiable.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="ec-catalogue">
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Facturation · 39 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Kit Facturation 2026</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Génération automatique de devis et factures PDF, numérotation conforme, archivage structuré. Zéro ressaisie entre devis et facture. Compatible obligations légales 2026.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Conformité 2026</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">→ 7,80 € commission</span>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Sécurité · 29 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Cyber-Hygiène TPE</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Audit de posture numérique, plan de remédiation priorisé, checklist de sauvegarde des données. Utile avant une mission de conseil en continuité ou en transmission.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">RGPD & continuité</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">→ 5,80 € commission</span>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Trésorerie · 49 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Dashboard Trésorerie</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Tableau de bord de trésorerie mensuel actualisé automatiquement. Solde prévisionnel sur 90 jours, alertes seuil critique. Le client voit son cash en temps réel — et vous appelle avant d'être à découvert.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Anticipation EC</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">→ 9,80 € commission</span>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Relances · 35 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Séquenceur de relances impayés</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Relances automatiques à J+7, J+21, J+45 avec escalade de ton. Suivi des réponses, log exportable. Réduit le délai moyen de paiement et décharge votre client d'une tâche anxiogène.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">DSO client</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">→ 7,00 € commission</span>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Notes de frais · 29 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Collecteur de notes de frais</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Capture photo + extraction automatique des montants, dates et TVA. Export mensuel structuré prêt à intégrer dans le dossier comptable. Vos collaborateurs passent moins de temps à réclamer les justificatifs.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Gain cabinet</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">→ 5,80 € commission</span>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Stock · 45 €</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Gardien de stock</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Suivi de stock en temps réel, alertes seuil de réapprovisionnement, rapport mensuel valorisation. Utile pour les clients commerçants, artisans ou e-commerçants dont vous tenez la comptabilité matière.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Commerce / artisanat</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">→ 9,00 € commission</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:24px;text-align:center">
+      <a href="catalogue.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene);text-decoration:none;padding:12px 22px;border:1px solid var(--chene-25);border-radius:var(--r-sm);transition:background .2s">Voir tout le catalogue →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — OUTILS MIS À DISPOSITION ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 04</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Outils mis à <em class="editorial">votre disposition</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Tout ce qu'il faut pour orienter un client en 5 minutes, lors d'un entretien ou par email.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px" class="ec-outils">
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 22px;text-align:center">
+        <div style="font-family:var(--ff-hand);font-size:36px;color:var(--chene);margin-bottom:12px">📋</div>
+        <h3 style="font-size:1rem;margin:0 0 10px;font-family:var(--ff-display)">Kit de présentation client</h3>
+        <p style="font-size:13px;color:var(--ebene-80);line-height:1.6;margin:0">Fiche PDF d'une page par système — imprimable ou envoyable par email. Rédigée pour être comprise sans connaissance technique préalable.</p>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 22px;text-align:center">
+        <div style="font-family:var(--ff-hand);font-size:36px;color:var(--chene);margin-bottom:12px">🔗</div>
+        <h3 style="font-size:1rem;margin:0 0 10px;font-family:var(--ff-display)">Lien de tracking personnalisé</h3>
+        <p style="font-size:13px;color:var(--ebene-80);line-height:1.6;margin:0">Un lien unique à votre cabinet. Chaque achat via ce lien est automatiquement attribué à votre compte partenaire, même plusieurs semaines après le premier clic.</p>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 22px;text-align:center">
+        <div style="font-family:var(--ff-hand);font-size:36px;color:var(--chene);margin-bottom:12px">📊</div>
+        <h3 style="font-size:1rem;margin:0 0 10px;font-family:var(--ff-display)">Tableau de bord commissions</h3>
+        <p style="font-size:13px;color:var(--ebene-80);line-height:1.6;margin:0">Accès en lecture seule : nombre de ventes attribuées, montant brut, commissions dues, historique des virements. Actualisé en temps réel.</p>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:24px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:22px 28px;font-size:14px;color:var(--ebene-80);line-height:1.65">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Format des fiches</strong><br/>
+      Chaque fiche de présentation est disponible en PDF prêt à imprimer, en version email (texte + lien) et en slide format 16:9 pour vos réunions client. Vous pouvez y apposer le logo de votre cabinet sur demande.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — ENGAGEMENT DE SERVICE ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 05</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Engagement <em class="editorial">de service</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Ce que L'établ'IA s'engage à garantir — à vous et à vos clients.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="ec-engagements">
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 22px;display:flex;gap:16px;align-items:flex-start">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:20px;font-weight:700;color:var(--chene);width:32px">24h</div>
+        <div>
+          <h3 style="font-size:1rem;margin:0 0 6px;font-family:var(--ff-display)">Réponse sous 24 heures ouvrées</h3>
+          <p style="font-size:13px;color:var(--ebene-80);line-height:1.6;margin:0">Tout signalement — qu'il vienne de vous ou directement d'un client — reçoit un accusé de réception sous 24 heures ouvrées. Pas de ticket qui disparaît.</p>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 22px;display:flex;gap:16px;align-items:flex-start">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:20px;font-weight:700;color:var(--chene);width:32px">N2</div>
+        <div>
+          <h3 style="font-size:1rem;margin:0 0 6px;font-family:var(--ff-display)">Escalade technique directe</h3>
+          <p style="font-size:13px;color:var(--ebene-80);line-height:1.6;margin:0">Si un client rencontre un problème que vous ne pouvez pas résoudre, L'établ'IA prend le relais en support N2. Vous signalez, on gère — sans que votre réputation soit engagée.</p>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 22px;display:flex;gap:16px;align-items:flex-start">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:20px;font-weight:700;color:var(--chene);width:32px">SF</div>
+        <div>
+          <h3 style="font-size:1rem;margin:0 0 6px;font-family:var(--ff-display)">« Satisfait ou Forgé »</h3>
+          <p style="font-size:13px;color:var(--ebene-80);line-height:1.6;margin:0">Chaque système est couvert par notre politique « Satisfait ou Forgé » : correction prioritaire avant tout remboursement. Le risque de satisfaction client est porté par L'établ'IA, pas par vous.</p>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 22px;display:flex;gap:16px;align-items:flex-start">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:20px;font-weight:700;color:var(--chene);width:32px">MÀJ</div>
+        <div>
+          <h3 style="font-size:1rem;margin:0 0 6px;font-family:var(--ff-display)">Mises à jour réglementaires incluses</h3>
+          <p style="font-size:13px;color:var(--ebene-80);line-height:1.6;margin:0">Tout changement législatif ou réglementaire affectant un système (TVA, facturation électronique, etc.) donne lieu à une mise à jour sans frais pour les acheteurs existants — et à une notification automatique que vous pouvez relayer.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6 — TARIF & COMMISSION ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 06</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Tarif <em class="editorial">&amp; commission</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Un modèle sans surprise, documenté de façon transparente.</p>
+    </div>
+
+    <div data-reveal>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-md);overflow:hidden">
+        <table style="width:100%;border-collapse:collapse;font-size:15px">
+          <thead>
+            <tr style="background:var(--kraft);border-bottom:2px solid var(--chene-25)">
+              <th style="text-align:left;padding:14px 20px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);font-weight:600">Élément</th>
+              <th style="text-align:right;padding:14px 20px;font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);font-weight:600">Détail</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--chene-15)">
+              <td style="padding:16px 20px;color:var(--ebene-80)">Inscription au programme</td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-display);font-weight:700;font-size:1.2rem;color:var(--mousse)">0 €</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--chene-15);background:var(--chene-6)">
+              <td style="padding:16px 20px;color:var(--ebene)"><strong>Commission par vente attribuée</strong></td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-display);font-weight:700;font-size:1.5rem;color:var(--ebene)">20% HT</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--chene-15)">
+              <td style="padding:16px 20px;color:var(--ebene-80)">Durée d'attribution (cookie)</td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-body);font-weight:600;color:var(--ebene-80)">90 jours</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--chene-15)">
+              <td style="padding:16px 20px;color:var(--ebene-80)">Lifetime — achats ultérieurs du même client</td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-body);font-weight:600;color:var(--ebene-80)">Oui, inclus</td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--chene-15)">
+              <td style="padding:16px 20px;color:var(--ebene-80)">Versement</td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-body);color:var(--ebene-80)">Virement SEPA, le 5 du mois M+1</td>
+            </tr>
+            <tr>
+              <td style="padding:16px 20px;color:var(--ebene-80)">Seuil minimum de versement</td>
+              <td style="padding:16px 20px;text-align:right;font-family:var(--ff-body);color:var(--ebene-80)">30 € (report sans frais si inférieur)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:24px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:24px 28px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px">Simulation · Cabinet de 3 collaborateurs</div>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.7;margin:0 0 16px">Vous recommandez 2 systèmes par mois à vos clients TPE (panier moyen : 39 € HT). Sur 12 mois, cela représente environ <strong>24 ventes × 7,80 € = 187 € de commission annuelle</strong> — pour quelques secondes de recommandation par entretien client. Avec un portefeuille de 50 TPE actifs et 4 recommandations par mois, on atteint facilement 600–900 € annuels.</p>
+        <p style="font-size:12px;color:var(--ebene-80);font-style:italic;margin:0">Simulation indicative, non garantie. Les résultats dépendent de votre portefeuille client et de votre fréquence de recommandation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 7 — FAQ ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 07</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Questions <em class="editorial">fréquentes</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Les points que soulèvent souvent les collaborateurs de cabinet avant de rejoindre le programme.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Les commissions sont-elles soumises à TVA ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Les commissions versées à un cabinet assujetti à la TVA constituent une prestation de services. Elles sont donc soumises à TVA au taux applicable à votre activité. Vous recevrez un document récapitulatif mensuel compatible avec votre déclaration. Pour les cabinets en franchise en base TVA, la question ne se pose pas.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Comment se passe le paiement des commissions ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Chaque mois, un relevé de commissions est généré dans votre tableau de bord. Le virement SEPA est effectué le 5 du mois M+1, après déduction des éventuels remboursements accordés aux clients. Vous recevez une notification par email avant chaque virement.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Un même client peut-il être recommandé par plusieurs EC ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">C'est le premier clic sur un lien partenaire qui détermine l'attribution — durée de cookie 90 jours. Si un client a utilisé votre lien, l'achat vous est attribué même s'il a visité le site directement par la suite. En cas de doute sur une attribution, notre service partenaire tranche sous 48 heures ouvrées.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Puis-je être exclu du programme ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Oui, deux cas d'exclusion : (1) non-conformité déontologique détectée (recommandation abusive, conflit d'intérêt non déclaré), (2) inactivité de plus de 24 mois consécutifs. Dans les deux cas, un préavis de 30 jours est envoyé par email avec les commissions dues jusqu'à la date de clôture.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Quelle est la fiscalité des commissions pour le cabinet ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Les commissions constituent un produit accessoire à comptabiliser dans votre résultat. Elles ne modifient pas votre activité principale ni votre statut. Nous vous recommandons d'en informer votre ordre professionnel si votre réglementation locale l'exige. L'établ'IA n'intervient pas dans votre comptabilité — nous fournissons uniquement les documents nécessaires à votre propre tenue.</p>
+      </div>
+
+      <div style="padding:24px 0">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Dois-je signaler ce partenariat à mon client ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Nous vous recommandons la transparence avec vos clients — c'est dans l'esprit du programme. Un kit de disclosure est disponible dans votre espace partenaire : une phrase simple à glisser dans votre présentation, qui renforce votre crédibilité plutôt qu'elle ne la fragilise.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 8 — CTA ═══ -->
+<section style="padding:96px 0;background:var(--ebene);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;max-width:52ch;margin:0 auto">
+      <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:18px">Programme partenaire · Cabinets EC</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--lin);margin:0 0 20px">Rejoindre <em class="editorial" style="color:var(--chene)">le programme</em></h2>
+      <p style="color:var(--pierre);font-size:1rem;line-height:1.7;margin:0 0 16px">Inscription gratuite. Votre lien partenaire et votre kit de présentation client sont disponibles sous 24 heures ouvrées après validation de votre dossier.</p>
+      <p style="color:var(--pierre);font-size:14px;line-height:1.6;margin:0 0 36px;font-family:var(--ff-display);font-style:italic">20% de commission lifetime · « Satisfait ou Forgé » · Support client direct · 0 € d'inscription</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="contact.html?subject=partenaire-ec" style="font-size:1rem;padding:16px 36px">Devenir partenaire →</a>
+        <a href="faq.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-size:15px;color:var(--pierre);text-decoration:none;padding:16px 20px;border:1px solid rgba(184,175,166,0.3);border-radius:var(--r-sm);transition:color .2s">Questions générales</a>
+      </div>
+      <p style="margin-top:32px;font-family:var(--ff-display);font-style:italic;color:var(--pierre);font-size:14px;opacity:.7">Programme ouvert aux cabinets francophones (France, Belgique, Suisse, Québec, Maghreb).</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+        <li><a href="experts-comptables.html" style="color:var(--chene)">Partenaires EC</a></li>
+        <li><a href="programme-contributeurs.html">Devenir contributeur</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+<script defer src="/assets/js/easter-eggs.js"></script>
+
+<style>
+@media (max-width:880px){
+  .ec-hero-stats{grid-template-columns:1fr !important}
+  .ec-catalogue{grid-template-columns:1fr !important}
+  .ec-outils{grid-template-columns:1fr !important}
+  .ec-engagements{grid-template-columns:1fr !important}
+  .ec-badge{flex-direction:column !important}
+}
+</style>
+</body></html>

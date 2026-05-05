@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Famille Surveiller — L'établ'IA</title>
+<meta name="description" content="Observer, alerter, anticiper. 3 systèmes forgés de veille concurrentielle et de surveillance de réputation pour TPE, e-commerçants et agences." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/css/letablia.css" />
+<link rel="stylesheet" href="../assets/css/search.css" />
+<style>
+  :root { --ardoise: oklch(42% 0.07 265); }
+  .fam-surveiller { --fam-color: var(--ardoise); }
+  .fam-dot.fam-surveiller { background: var(--ardoise); }
+  .card-produit.fam-surveiller { border-top-color: var(--ardoise); }
+  .card-produit.fam-surveiller .num { color: var(--ardoise); }
+  @media (max-width:880px){
+    .fam-head{grid-template-columns:1fr !important}
+    .other-fam{grid-template-columns:1fr 1fr !important}
+  }
+  /* Bandeau "Nouvelle famille" */
+  .badge-nouveau {
+    display:inline-flex;align-items:center;gap:6px;
+    font-family:var(--ff-mono);font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:var(--ardoise);
+    background:rgba(60,50,100,0.08);
+    border:1px solid var(--ardoise);
+    padding:4px 10px;border-radius:2px;
+    margin-bottom:16px;
+  }
+  /* Bloc "Éthique D11" */
+  .ethique-bloc {
+    background:var(--kraft);border:1px dashed var(--chene-25);
+    padding:24px 28px;border-radius:var(--r-sm);
+    margin-top:40px;
+  }
+  .ethique-bloc h4 {
+    font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--mousse);margin:0 0 10px;
+  }
+  .ethique-bloc p {
+    font-size:14px;line-height:1.65;color:var(--ebene-80);margin:0;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="../catalogue.html" href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="surveiller.html" style="font-weight:600"><span class="fam-dot fam-surveiller" style="background:var(--ardoise,oklch(42% 0.07 265))"></span>Surveiller</a>
+          <a href="../catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="../diagnostic.html" href="../diagnostic.html">Diagnostic</a>
+      <a data-nav="../a-propos.html" href="../a-propos.html">L'atelier</a>
+      <a data-nav="../faq.html" href="../faq.html">FAQ</a>
+      <a data-nav="../contact.html" href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile menu -->
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../famille-automatiser.html">— Automatiser</a>
+  <a href="../famille-vendre.html">— Vendre</a>
+  <a href="../famille-piloter.html">— Piloter</a>
+  <a href="../famille-produire.html">— Produire</a>
+  <a href="../famille-securiser.html">— Sécuriser</a>
+  <a href="surveiller.html" style="font-weight:600">— Surveiller ✦</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<!-- Search overlay -->
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ════════ HERO FAMILLE ════════ -->
+<section style="padding:80px 0 40px;background:var(--lin);border-bottom:1px solid var(--chene-25)">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Accueil</a>
+      <span class="sep"></span>
+      <a href="../catalogue.html">Catalogue</a>
+      <span class="sep"></span>
+      <span class="current">Surveiller</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:64px;align-items:end;margin-top:48px" class="fam-head">
+      <div data-reveal>
+        <div class="badge-nouveau">✦ Nouvelle famille · 2026-05-05</div>
+        <span class="tag-atelier" style="color:var(--ardoise,oklch(42% 0.07 265))">Famille · Surveiller</span>
+        <div style="display:flex;align-items:flex-start;gap:24px;margin-top:18px">
+          <div style="font-family:var(--ff-display);font-size:5rem;color:var(--ardoise,oklch(42% 0.07 265));line-height:.9;font-weight:700">◉</div>
+          <div>
+            <h1 style="font-size:clamp(2.4rem,4.5vw,4rem);line-height:1">Surveiller.</h1>
+            <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.3rem;margin-top:10px">— Observer, alerter, anticiper.</p>
+          </div>
+        </div>
+      </div>
+
+      <div data-reveal data-reveal-delay="1">
+        <div style="border-left:1px solid var(--chene-25);padding-left:32px">
+          <p style="color:var(--ebene-80);font-size:1.05rem;line-height:1.65">
+            Trois systèmes forgés pour ne rien manquer de ce qui se passe autour de votre activité — concurrents, prix, réputation.
+            La veille n'est plus un luxe d'agence : c'est un réflexe d'artisan numérique.
+          </p>
+          <div class="cote" style="margin-top:24px"><span>De 39 €</span> <span class="cote-line"></span> <span>à 49 €</span></div>
+        </div>
+
+        <div class="ethique-bloc">
+          <h4>Position éthique</h4>
+          <p>Ces systèmes surveillent uniquement des informations publiques et accessibles. Aucune intrusion, aucune donnée privée. La veille légitime, c'est lire ce que vos concurrents montrent au monde — et le faire systématiquement.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PRODUITS ════════ -->
+<section style="padding:64px 0;background:var(--lin)">
+  <div class="container">
+    <div class="cote" style="margin-bottom:32px">
+      <span>3 systèmes</span>
+      <span class="cote-line"></span>
+      <span>famille surveiller</span>
+    </div>
+
+    <div class="etabli-board">
+
+      <!-- Observatoire Concurrentiel -->
+      <a class="card-produit fam-surveiller" href="../produits/observatoire-concurrentiel.html">
+        <div class="num" style="color:var(--ardoise,oklch(42% 0.07 265))">№ 26 · Surveiller</div>
+        <h3>Observatoire Concurrentiel</h3>
+        <div class="blurb">Surveille 5 concurrents et vous alerte dès qu'ils publient un nouveau produit, article ou promotion.</div>
+        <div class="tools">
+          <span class="tool">Veille web automatisée</span>
+          <span class="tool">Détection de changements</span>
+        </div>
+        <div class="meta">
+          <div class="price">39 €</div>
+          <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- Veilleur de Prix Concurrents -->
+      <a class="card-produit fam-surveiller" href="../produits/veilleur-prix-concurrents.html">
+        <div class="num" style="color:var(--ardoise,oklch(42% 0.07 265))">№ 27 · Surveiller</div>
+        <h3>Veilleur de Prix Concurrents</h3>
+        <div class="blurb">Surveille les prix de 10 produits concurrents et vous alerte dès qu'un écart significatif est détecté.</div>
+        <div class="tools">
+          <span class="tool">Extraction de prix publics</span>
+          <span class="tool">Alerte sur seuil</span>
+        </div>
+        <div class="meta">
+          <div class="price">49 €</div>
+          <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+      <!-- Veilleur de Mentions -->
+      <a class="card-produit fam-surveiller" href="../produits/veilleur-mentions.html">
+        <div class="num" style="color:var(--ardoise,oklch(42% 0.07 265))">№ 28 · Surveiller</div>
+        <h3>Veilleur de Mentions</h3>
+        <div class="blurb">Surveille les mentions de votre marque sur le web francophone et vous envoie chaque matin un résumé digeste.</div>
+        <div class="tools">
+          <span class="tool">Veille marque quotidienne</span>
+          <span class="tool">Digest matinal</span>
+        </div>
+        <div class="meta">
+          <div class="price">39 €</div>
+          <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
+        </div>
+      </a>
+
+    </div><!-- /etabli-board -->
+
+    <!-- Bloc "Pourquoi Surveiller" -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:64px" class="autres-fam">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-sm)">
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ardoise,oklch(42% 0.07 265));margin-bottom:12px">Ce que vous savez enfin</div>
+        <p style="font-size:14px;line-height:1.65;color:var(--ebene-80);margin:0">Quand un concurrent baisse ses prix. Quand votre marque est citée dans un forum. Quand un concurrent lance un nouveau produit. Sans passer trois heures par semaine à chercher manuellement.</p>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-sm)">
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ardoise,oklch(42% 0.07 265));margin-bottom:12px">Comment ça fonctionne</div>
+        <p style="font-size:14px;line-height:1.65;color:var(--ebene-80);margin:0">Chaque système utilise un service de veille web générique pour surveiller les sources définies. Dès qu'un changement est détecté, une alerte arrive dans votre messagerie. Le tableur archive tout.</p>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-sm)">
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ardoise,oklch(42% 0.07 265));margin-bottom:12px">Ce que vous ne faites plus</div>
+        <p style="font-size:14px;line-height:1.65;color:var(--ebene-80);margin:0">Vérifier manuellement les sites de vos concurrents. Chercher votre nom dans un moteur de recherche. Rater une information stratégique parce que vous n'aviez pas le temps ce jour-là.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════ AUTRES FAMILLES ════════ -->
+<section style="padding:96px 0;background:var(--kraft);border-top:1px solid var(--chene-25)">
+  <div class="container">
+    <div data-reveal style="display:flex;justify-content:space-between;align-items:end;flex-wrap:wrap;gap:24px;margin-bottom:32px">
+      <div>
+        <span class="tag-atelier">Autres familles</span>
+        <h2 style="margin-top:14px;font-size:clamp(1.8rem,3vw,2.4rem)">Voir aussi.</h2>
+      </div>
+      <a class="btn-link" href="../catalogue.html">Tout le catalogue →</a>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:18px" class="other-fam">
+      <a href="../famille-automatiser.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--bronze);line-height:1">⌬</div>
+        <h3 style="font-size:1.1rem">Automatiser</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Connecter, déclencher, transmettre.</p>
+      </a>
+      <a href="../famille-vendre.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--cuivre);line-height:1">◊</div>
+        <h3 style="font-size:1.1rem">Vendre</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Convertir, relancer, fidéliser.</p>
+      </a>
+      <a href="../famille-piloter.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--lapis);line-height:1">◈</div>
+        <h3 style="font-size:1.1rem">Piloter</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Voir, comprendre, décider.</p>
+      </a>
+      <a href="../famille-produire.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--argile);line-height:1">▣</div>
+        <h3 style="font-size:1.1rem">Produire</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Modèles, trames, gabarits prêts.</p>
+      </a>
+      <a href="../famille-securiser.html" style="background:var(--parchemin);border:1px solid var(--chene-25);padding:28px;border-radius:var(--r-md);text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:10px;transition:transform .25s, border .2s;position:relative">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;color:var(--sauge);line-height:1">△</div>
+        <h3 style="font-size:1.1rem">Sécuriser</h3>
+        <p style="color:var(--ebene-80);font-size:13px;line-height:1.5;margin:0">Conformité, cyber, sérénité.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+        <li><a href="surveiller.html" style="font-weight:600">Surveiller ✦</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA. Tous droits réservés.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script src="../assets/js/theme-toggle.js" defer></script>
+<script>
+fetch('../assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d}).catch(()=>{});
+</script>
+<script defer src="../assets/js/easter-eggs.js"></script>
+</body>
+</html>

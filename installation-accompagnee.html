@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Installation Accompagnée — 1h visio avec l'atelier — L'établ'IA</title>
+<meta name="description" content="Vous installez votre système forgé, nous regardons par-dessus l'épaule. 1 séance visio d'1h avec Raphaël pour une mise en route sans stress. 99 € — sans engagement."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+<style>
+.ia-hero-tag{display:inline-block;font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--mousse);border:1.5px solid var(--mousse);padding:5px 12px;border-radius:var(--r-sm);margin-bottom:20px}
+.ia-price-card{background:var(--parchemin);border:2px solid var(--chene-25);border-radius:var(--r-lg);padding:40px 48px;text-align:center;position:relative;max-width:480px;margin:0 auto;box-shadow:0 16px 48px -20px rgba(44,40,37,.18)}
+.ia-price-card::before{content:"99 €";position:absolute;top:-22px;left:50%;transform:translateX(-50%);font-family:var(--ff-display);font-size:1.15rem;font-weight:700;color:var(--mousse);background:var(--lin);padding:6px 18px;border:1.5px solid var(--mousse);border-radius:20px}
+.ia-step{display:flex;align-items:flex-start;gap:20px;padding:24px 28px;background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);margin-bottom:16px}
+.ia-step-num{flex-shrink:0;width:40px;height:40px;border-radius:50%;background:var(--mousse);color:#fff;font-family:var(--ff-display);font-weight:700;font-size:1.1rem;display:flex;align-items:center;justify-content:center}
+.ia-step-body h3{font-family:var(--ff-display);font-size:1.05rem;font-weight:600;margin-bottom:6px;color:var(--ebene)}
+.ia-step-body p{font-size:.92rem;color:var(--ebene-80);margin:0;line-height:1.55}
+.ia-two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ia-list-card{background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 32px}
+.ia-list-card h3{font-family:var(--ff-display);font-size:1rem;margin-bottom:16px}
+.ia-list-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ia-list-card li{font-size:.9rem;color:var(--ebene-80);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.ia-list-card li::before{content:"✓";flex-shrink:0;font-weight:700;color:var(--mousse);margin-top:.05em}
+.ia-list-card--non li::before{content:"✕";color:var(--chene)}
+.ia-faq-item{border-bottom:1px dashed var(--chene-25);padding:20px 0}
+.ia-faq-item:first-child{border-top:1px dashed var(--chene-25)}
+.ia-faq-q{font-family:var(--ff-display);font-size:1.02rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px;color:var(--ebene)}
+.ia-faq-q svg{flex-shrink:0;transition:transform .25s;color:var(--chene)}
+.ia-faq-a{font-size:.92rem;color:var(--ebene-80);line-height:1.6;max-height:0;overflow:hidden;transition:max-height .3s ease,padding .3s}
+.ia-faq-item.open .ia-faq-q svg{transform:rotate(180deg)}
+.ia-faq-item.open .ia-faq-a{max-height:300px;padding-top:14px}
+.ia-reassurance-band{background:var(--kraft);border-top:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25);padding:28px 0;text-align:center}
+@media(max-width:640px){.ia-two-col{grid-template-columns:1fr}.ia-price-card{padding:32px 24px}.ia-hero-price-big{font-size:4rem !important}}
+</style>
+</head><body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- BREADCRUMB -->
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Installation Accompagnée</span></div>
+  </div>
+</section>
+
+<!-- ═══ HERO ═══ -->
+<section style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container-narrow" style="text-align:center">
+    <div data-reveal>
+      <span class="ia-hero-tag">Service complémentaire</span>
+      <h1 style="font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1.06;margin:0 auto 20px;max-width:18ch">
+        Vous installez.<br/><em class="editorial">Nous regardons<br/>par-dessus l'épaule.</em>
+      </h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.2rem;max-width:44ch;margin:0 auto 32px;line-height:1.5">
+        Une séance visioconférence d'1h avec Raphaël pour mettre en route votre système forgé — sans planter, sans paniquer, et avec quelqu'un à qui poser les vraies questions.
+      </p>
+      <a href="/contact.html?subject=install-accompagnee" class="btn btn-primary" style="font-size:1.05rem;padding:16px 40px">
+        Réserver mon créneau
+      </a>
+      <p style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);margin-top:14px">99 € · paiement unique · sans engagement</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BANDE CHIFFRES ═══ -->
+<div class="ia-reassurance-band">
+  <div class="container">
+    <div style="display:flex;justify-content:center;gap:64px;flex-wrap:wrap;align-items:center">
+      <div style="text-align:center">
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;color:var(--ebene)">1h</div>
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--chene);margin-top:4px">Séance dédiée</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;color:var(--ebene)">7j</div>
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--chene);margin-top:4px">Suivi post-séance</div>
+      </div>
+      <div style="text-align:center">
+        <div style="font-family:var(--ff-display);font-size:2rem;font-weight:700;color:var(--ebene)">99 €</div>
+        <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--chene);margin-top:4px">Une fois, c'est tout</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ POURQUOI ═══ -->
+<section style="padding:80px 0;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;margin-bottom:48px">
+      <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--chene)">Pourquoi ce service existe</span>
+      <h2 style="margin:14px 0 0;font-size:clamp(1.8rem,3.5vw,2.8rem)">L'installation, c'est le moment où<br/><em class="editorial">tout peut basculer</em>.</h2>
+    </div>
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="ia-two-col">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 30px">
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--chene);margin-bottom:12px">Ce qu'on observe</div>
+        <p style="font-size:.94rem;color:var(--ebene-80);line-height:1.65;margin:0">Un système bien conçu peut rester dormant dans un dossier pendant des semaines. Pas par manque de volonté — par manque de quelqu'un pour dire « là, c'est bon, continuez ».</p>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 30px">
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--chene);margin-bottom:12px">Ce que ça règle</div>
+        <p style="font-size:.94rem;color:var(--ebene-80);line-height:1.65;margin:0">L'Installation Accompagnée, c'est un filet de sécurité humain. Vous n'installez plus seul dans votre coin — vous installez avec quelqu'un qui connaît le système de l'intérieur.</p>
+      </div>
+    </div>
+    <div data-reveal style="margin-top:20px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:28px 32px;border-left:4px solid var(--mousse)">
+      <p style="font-family:var(--ff-display);font-style:italic;font-size:1.05rem;color:var(--ebene);margin:0;line-height:1.6">« On ne vend pas du support. On vend une heure de présence — celle qui fait passer de "je crois que ça marche" à "ça tourne, je l'ai vu de mes yeux." »</p>
+      <div style="font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--chene);margin-top:12px">— L'atelier</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMMENT ÇA SE PASSE ═══ -->
+<section style="padding:72px 0;background:var(--kraft)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;margin-bottom:48px">
+      <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--chene)">Déroulé</span>
+      <h2 style="margin:14px 0 0;font-size:clamp(1.8rem,3.5vw,2.8rem)">Comment ça se passe</h2>
+    </div>
+    <div data-reveal>
+      <div class="ia-step">
+        <div class="ia-step-num" aria-hidden="true">1</div>
+        <div class="ia-step-body">
+          <h3>Vous achetez votre système forgé + l'Installation Accompagnée</h3>
+          <p>Les deux peuvent s'acheter ensemble ou séparément. Vous recevez une confirmation avec un lien de prise de rendez-vous et une fiche de préparation à lire avant la séance (5 minutes, promis).</p>
+        </div>
+      </div>
+      <div class="ia-step">
+        <div class="ia-step-num" aria-hidden="true">2</div>
+        <div class="ia-step-body">
+          <h3>Vous réservez votre créneau en ligne</h3>
+          <p>Choisissez un horaire qui vous convient dans le calendrier partagé. Les créneaux sont disponibles en semaine, matin et après-midi. Confirmation automatique avec le lien de connexion à la séance.</p>
+        </div>
+      </div>
+      <div class="ia-step">
+        <div class="ia-step-num" aria-hidden="true">3</div>
+        <div class="ia-step-body">
+          <h3>1h de visioconférence guidée — vous êtes aux commandes</h3>
+          <p>Vous partagez votre écran. Raphaël (ou un assistant délégué formé par l'atelier) vous guide pas à pas. On installe, on teste, on vérifie que tout tourne avant de raccrocher. En cas de blocage inattendu, on planifie la suite.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ INCLUS / PAS INCLUS ═══ -->
+<section style="padding:72px 0;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;margin-bottom:48px">
+      <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--chene)">Contenu de la séance</span>
+      <h2 style="margin:14px 0 0;font-size:clamp(1.8rem,3.5vw,2.8rem)">Ce qui est inclus</h2>
+    </div>
+    <div data-reveal class="ia-two-col">
+      <div class="ia-list-card">
+        <h3 style="color:var(--mousse)">Compris dans les 99 €</h3>
+        <ul>
+          <li>1h de visioconférence dédiée avec partage d'écran</li>
+          <li>Installation guidée du système forgé de A à Z</li>
+          <li>Test de bon fonctionnement avant fin de séance</li>
+          <li>Suivi questions-réponses par email pendant 7 jours après la séance</li>
+          <li>Fiche de préparation pré-séance incluse</li>
+          <li>Reprise d'un point bloquant en cas de problème signalé dans les 7j</li>
+        </ul>
+      </div>
+      <div class="ia-list-card ia-list-card--non">
+        <h3 style="color:var(--chene)">Pas inclus</h3>
+        <ul>
+          <li>Modifications majeures ou personnalisation profonde du système</li>
+          <li>Développement de fonctionnalités nouvelles</li>
+          <li>Prise en main à distance de vos accès ou mots de passe</li>
+          <li>Séances supplémentaires (facturation séparée si nécessaire)</li>
+          <li>Installation d'autres systèmes non achetés</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TARIF ═══ -->
+<section style="padding:80px 0;background:var(--kraft)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;margin-bottom:56px">
+      <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--chene)">Tarif</span>
+      <h2 style="margin:14px 0 0;font-size:clamp(1.8rem,3.5vw,2.8rem)">Simple. Sans surprise.</h2>
+    </div>
+    <div data-reveal>
+      <div class="ia-price-card">
+        <div style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1rem;margin-bottom:8px;margin-top:12px">Installation Accompagnée</div>
+        <div class="ia-hero-price-big" style="font-family:var(--ff-display);font-size:5.5rem;font-weight:700;color:var(--ebene);line-height:1">99</div>
+        <div style="font-family:var(--ff-display);font-size:1.6rem;color:var(--ebene);margin-top:-6px;margin-bottom:20px">€ <span style="font-size:1rem;font-weight:400;color:var(--chene)">TTC</span></div>
+        <div style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--chene);margin-bottom:28px">Achat unique · sans engagement · non reconductible</div>
+        <a href="/contact.html?subject=install-accompagnee" class="btn btn-primary" style="display:block;text-align:center;padding:16px 32px;font-size:1rem">
+          Réserver mon créneau
+        </a>
+        <p style="font-family:var(--ff-display);font-style:italic;font-size:.88rem;color:var(--chene);margin:16px 0 0">Vous serez contacté sous 24 h ouvrées pour confirmer le rendez-vous.</p>
+      </div>
+      <p style="text-align:center;font-size:.86rem;color:var(--ebene-80);margin-top:28px;font-family:var(--ff-display);font-style:italic">Ce service s'ajoute à l'achat d'un système forgé. Il n'est pas vendu seul.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section style="padding:72px 0 96px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;margin-bottom:48px">
+      <span style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--chene)">Questions fréquentes</span>
+      <h2 style="margin:14px 0 0;font-size:clamp(1.8rem,3.5vw,2.8rem)">On a probablement<br/><em class="editorial">votre réponse</em> ici.</h2>
+    </div>
+    <div data-reveal class="ia-faq-list">
+
+      <div class="ia-faq-item">
+        <button class="ia-faq-q" aria-expanded="false">
+          Comment se déroule la visioconférence ?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ia-faq-a" role="region">
+          La séance se tient en visioconférence avec partage d'écran depuis votre côté. Le lien de connexion vous est envoyé après confirmation du créneau. Aucune installation particulière n'est requise de votre côté — un navigateur récent suffit. Nous vous demandons uniquement d'avoir préparé votre environnement de travail (accès plateforme, comptes ouverts) selon la fiche envoyée à la réservation.
+        </div>
+      </div>
+
+      <div class="ia-faq-item">
+        <button class="ia-faq-q" aria-expanded="false">
+          La séance est-elle enregistrée ? Aurai-je un replay ?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ia-faq-a" role="region">
+          Par défaut, la séance n'est pas enregistrée — nous respectons votre environnement de travail et vos données. Si vous souhaitez un enregistrement pour votre usage personnel, signalez-le lors de la réservation et nous l'activerons avec votre accord explicite. Un résumé écrit des étapes réalisées vous est envoyé par email dans les 24h suivant la séance.
+        </div>
+      </div>
+
+      <div class="ia-faq-item">
+        <button class="ia-faq-q" aria-expanded="false">
+          Que se passe-t-il si je dois annuler ou déplacer mon créneau ?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ia-faq-a" role="region">
+          Vous pouvez annuler ou reporter librement jusqu'à 48h avant le rendez-vous, sans frais. En dessous de ce délai, le créneau est considéré comme consommé sauf cas de force majeure — dans ce cas, écrivez-nous directement et on s'arrange. Nous sommes artisans, pas une plateforme automatisée : les cas particuliers, on les gère à la main.
+        </div>
+      </div>
+
+      <div class="ia-faq-item">
+        <button class="ia-faq-q" aria-expanded="false">
+          Et si l'installation ne se termine pas en 1h ?
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="ia-faq-a" role="region">
+          Si nous n'avons pas pu terminer l'installation dans le temps imparti pour une raison indépendante de votre préparation (problème technique inattendu côté système, par exemple), nous planifions une seconde session courte sans surcoût. En revanche, si l'environnement n'est pas préparé comme indiqué dans la fiche, une nouvelle réservation sera nécessaire — c'est pour ça qu'on envoie la fiche à l'avance.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA FINAL -->
+    <div data-reveal style="text-align:center;margin-top:64px;padding:48px 32px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:var(--r-lg)">
+      <span style="font-family:var(--ff-hand);font-size:1.3rem;color:var(--chene);display:block;margin-bottom:10px">Prêt à démarrer ?</span>
+      <h3 style="font-family:var(--ff-display);font-size:clamp(1.5rem,3vw,2.2rem);margin-bottom:16px;line-height:1.2">Un créneau, une heure,<br/>un système qui tourne.</h3>
+      <p style="font-size:.94rem;color:var(--ebene-80);max-width:38ch;margin:0 auto 28px;line-height:1.55">Écrivez-nous via le formulaire de contact pour réserver votre créneau d'installation accompagnée.</p>
+      <a href="/contact.html?subject=install-accompagnee" class="btn btn-primary" style="font-size:1rem;padding:16px 40px">
+        Réserver mon créneau
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="installation-accompagnee.html" aria-current="page">Installation accompagnée</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+<script defer src="/assets/js/easter-eggs.js"></script>
+<script>
+/* FAQ accordion */
+document.querySelectorAll('.ia-faq-q').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var item=this.closest('.ia-faq-item');
+    var wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.ia-faq-item.open').forEach(function(el){
+      el.classList.remove('open');
+      el.querySelector('.ia-faq-q').setAttribute('aria-expanded','false');
+    });
+    if(!wasOpen){
+      item.classList.add('open');
+      this.setAttribute('aria-expanded','true');
+    }
+  });
+});
+</script>
+</body></html>
