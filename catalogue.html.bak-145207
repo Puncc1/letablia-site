@@ -5,7 +5,7 @@
 <script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Catalogue — L'établ'IA</title>
-<meta name="description" content="L'intégralité de l'atelier : 38 systèmes numériques, 3 packs, paiement unique." />
+<meta name="description" content="L'intégralité de l'atelier : 11 systèmes numériques, 3 packs, paiement unique." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -134,7 +134,7 @@
     <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Catalogue</span></div>
     <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:end;margin-top:48px" class="cat-head">
       <div data-reveal>
-        <span class="tag-atelier">Catalogue · 38 systèmes</span>
+        <span class="tag-atelier">Catalogue · 11 systèmes</span>
         <h1 style="margin-top:18px">Toute la <em class="editorial">production</em> de l'atelier.</h1>
       </div>
       <div data-reveal data-reveal-delay="1">
@@ -296,276 +296,6 @@
       <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
     </div>
   </a>
-  <a class="card-produit fam-automatiser" data-price="29" data-family="automatiser" data-duree="30-60" href="produits/chasseur-notes-frais.html">
-    <div class="num">№ 12 · Automatiser</div>
-    <h3>Chasseur de Notes de Frais</h3>
-    <div class="blurb">Récupère et classe vos notes de frais reçues par email, sans effort.</div>
-    <div class="tools"><span class="tool">OCR</span><span class="tool">Tableur</span><span class="tool">Email</span></div>
-    <div class="meta">
-      <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-piloter" data-price="19" data-family="piloter" data-duree="lt30" href="produits/declencheur-rituels.html">
-    <div class="num">№ 13 · Piloter</div>
-    <h3>Déclencheur de Rituels</h3>
-    <div class="blurb">Vos rituels professionnels qui se rappellent eux-mêmes, sobrement.</div>
-    <div class="tools"><span class="tool">Notification</span><span class="tool">Tableur</span></div>
-    <div class="meta">
-      <div class="price">19€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-piloter" data-price="39" data-family="piloter" data-duree="30-60" href="produits/analyste-hebdomadaire.html">
-    <div class="num">№ 14 · Piloter</div>
-    <h3>Analyste Hebdomadaire</h3>
-    <div class="blurb">Un rapport pilotage chaque lundi matin, dans votre boîte mail.</div>
-    <div class="tools"><span class="tool">Email</span><span class="tool">Tableur</span><span class="tool">Sources métier</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-piloter" data-price="39" data-family="piloter" data-duree="30-60" href="produits/sentinelle-delais.html">
-    <div class="num">№ 15 · Piloter</div>
-    <h3>Sentinelle de Délais</h3>
-    <div class="blurb">Vos échéances projets surveillées en continu, alertes avant qu'il soit trop tard.</div>
-    <div class="tools"><span class="tool">Notification</span><span class="tool">Tableur</span><span class="tool">Calendrier</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-vendre" data-price="39" data-family="vendre" data-duree="30-60" href="produits/concierge-post-vente.html">
-    <div class="num">№ 16 · Vendre</div>
-    <h3>Concierge Post-Vente</h3>
-    <div class="blurb">Chaque acheteur reçoit la séquence email post-achat qu'il mérite, sans levée d'âme.</div>
-    <div class="tools"><span class="tool">Email</span><span class="tool">Tableur</span><span class="tool">Plateforme e-commerce</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-securiser" data-price="39" data-family="securiser" data-duree="30-60" href="produits/controleur-sauvegardes.html">
-    <div class="num">№ 17 · Sécuriser</div>
-    <h3>Contrôleur de Sauvegardes</h3>
-    <div class="blurb">Vous saurez chaque jour si vos sauvegardes sont vraiment protégées.</div>
-    <div class="tools"><span class="tool">Notification</span><span class="tool">Stockage</span><span class="tool">Vérification</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-automatiser" data-price="29" data-family="automatiser" data-duree="30-60" href="produits/messager-retard.html">
-    <div class="num">№ 18 · Automatiser</div>
-    <h3>Messager de Retard</h3>
-    <div class="blurb">Prévient automatiquement le client en cas de retard, avec un message calibré.</div>
-    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Service emailing</span><span class="tool">Messagerie instantanée</span></div>
-    <div class="meta">
-      <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-piloter" data-price="29" data-family="piloter" data-duree="30-60" href="produits/chronometre-facturable.html">
-    <div class="num">№ 19 · Piloter</div>
-    <h3>Chronomètre Facturable</h3>
-    <div class="blurb">Chronomètre vos tâches facturables sans rien noter à la main.</div>
-    <div class="tools"><span class="tool">Messagerie instantanée</span><span class="tool">Tableur</span></div>
-    <div class="meta">
-      <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-automatiser" data-price="49" data-family="automatiser" data-duree="30-60" href="produits/guichet-faq.html">
-    <div class="num">№ 20 · Automatiser</div>
-    <h3>Guichet Automatique FAQ</h3>
-    <div class="blurb">Répond automatiquement aux 10 questions les plus fréquentes, sans prétendre être humain.</div>
-    <div class="tools"><span class="tool">Email</span><span class="tool">Base de connaissances</span></div>
-    <div class="meta">
-      <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-automatiser" data-price="49" data-family="automatiser" data-duree="30-60" href="produits/programmateur-social.html">
-    <div class="num">№ 21 · Automatiser</div>
-    <h3>Programmateur Social</h3>
-    <div class="blurb">Programme vos publications sociales sans coller, sans copier.</div>
-    <div class="tools"><span class="tool">Plateforme publication</span><span class="tool">Tableur</span></div>
-    <div class="meta">
-      <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-piloter" data-price="49" data-family="piloter" data-duree="30-60" href="produits/detecteur-anomalies-vente.html">
-    <div class="num">№ 22 · Piloter</div>
-    <h3>Détecteur d'Anomalies Vente</h3>
-    <div class="blurb">Alerte sur les anomalies marchandes — jamais d'action autonome, juste l'alerte.</div>
-    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Tableur</span></div>
-    <div class="meta">
-      <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-produire" data-price="49" data-family="produire" data-duree="30-60" href="produits/redacteur-fiches-produit.html">
-    <div class="num">№ 23 · Produire</div>
-    <h3>Rédacteur de Fiches Produit</h3>
-    <div class="blurb">Génère vos fiches produit assistées par IA, validées par vous, label transparent.</div>
-    <div class="tools"><span class="tool">LLM</span><span class="tool">Tableur</span></div>
-    <div class="meta">
-      <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-vendre" data-price="39" data-family="vendre" data-duree="30-60" href="produits/recuperateur-paniers-abandonnes.html">
-    <div class="num">№ 24 · Vendre</div>
-    <h3>Récupérateur de Paniers Abandonnés</h3>
-    <div class="blurb">Récupère les paniers abandonnés sans agressivité, séquence sobre RGPD-conforme.</div>
-    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Service emailing</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-securiser" data-price="29" data-family="securiser" data-duree="30-60" href="produits/depart-collaborateur-securise.html">
-    <div class="num">№ 25 · Sécuriser</div>
-    <h3>Départ Collaborateur Sécurisé</h3>
-    <div class="blurb">Sécurise les accès et données quand un collaborateur quitte l'entreprise.</div>
-    <div class="tools"><span class="tool">Tableur RH</span><span class="tool">Service emailing</span></div>
-    <div class="meta">
-      <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-automatiser" data-price="29" data-family="automatiser" data-duree="30-60" href="produits/suivi-periode-essai.html">
-    <div class="num">№ 26 · Automatiser</div>
-    <h3>Suivi de Période d'Essai</h3>
-    <div class="blurb">Rappelle les échéances de période d'essai pour ne plus jamais les oublier.</div>
-    <div class="tools"><span class="tool">Tableur RH</span><span class="tool">Notification</span></div>
-    <div class="meta">
-      <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-securiser" data-price="29" data-family="securiser" data-duree="30-60" href="produits/sentinelle-mots-passe.html">
-    <div class="num">№ 27 · Sécuriser</div>
-    <h3>Sentinelle de Mots de Passe</h3>
-    <div class="blurb">Surveille la rotation de vos mots de passe sans jamais les lire.</div>
-    <div class="tools"><span class="tool">Gestionnaire mots passe</span><span class="tool">Notification</span></div>
-    <div class="meta">
-      <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-automatiser" data-price="39" data-family="automatiser" data-duree="30-60" href="produits/repondeur-faq-automatique.html">
-    <div class="num">№ 28 · Automatiser</div>
-    <h3>Répondeur FAQ Automatique</h3>
-    <div class="blurb">Version simple et accessible du Guichet FAQ — réponses standards aux questions courantes.</div>
-    <div class="tools"><span class="tool">Email</span><span class="tool">Base FAQ</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-vendre" data-price="39" data-family="vendre" data-duree="30-60" href="produits/alerteur-paiements-retard.html">
-    <div class="num">№ 29 · Vendre</div>
-    <h3>Alerteur de Paiements en Retard</h3>
-    <div class="blurb">Relance vos factures impayées avec progressivité, B2B uniquement RGPD respecté.</div>
-    <div class="tools"><span class="tool">Tableur facturation</span><span class="tool">Service emailing</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-vendre" data-price="39" data-family="vendre" data-duree="30-60" href="produits/programme-fidelite-simple.html">
-    <div class="num">№ 30 · Vendre</div>
-    <h3>Programme Fidélité Simple</h3>
-    <div class="blurb">Récompense vos clients récurrents avec des codes promo automatiques.</div>
-    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Codes promo</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-piloter" data-price="39" data-family="piloter" data-duree="30-60" href="produits/calculateur-marge-dynamique.html">
-    <div class="num">№ 31 · Piloter</div>
-    <h3>Calculateur de Marge Dynamique</h3>
-    <div class="blurb">Calcule votre prix optimal selon coûts variables, validation humaine obligatoire.</div>
-    <div class="tools"><span class="tool">Tableur</span><span class="tool">Données coûts</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-securiser" data-price="49" data-family="securiser" data-duree="30-60" href="produits/gardien-acces.html">
-    <div class="num">№ 32 · Sécuriser</div>
-    <h3>Gardien des Accès</h3>
-    <div class="blurb">Surveille les accès et permissions, escalade humaine systématique sur faux positifs.</div>
-    <div class="tools"><span class="tool">Identity</span><span class="tool">Tableur</span></div>
-    <div class="meta">
-      <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-surveiller" data-price="39" data-family="surveiller" data-duree="30-60" href="produits/observatoire-concurrentiel.html">
-    <div class="num">№ 33 · Surveiller</div>
-    <h3>Observatoire Concurrentiel</h3>
-    <div class="blurb">Surveille votre concurrence sans pénétration intrusive, juste observation publique.</div>
-    <div class="tools"><span class="tool">Veille web</span><span class="tool">Tableur</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-surveiller" data-price="49" data-family="surveiller" data-duree="30-60" href="produits/veilleur-prix-concurrents.html">
-    <div class="num">№ 34 · Surveiller</div>
-    <h3>Veilleur de Prix Concurrents</h3>
-    <div class="blurb">Suit les prix de vos concurrents et alerte sur les changements significatifs.</div>
-    <div class="tools"><span class="tool">Veille e-commerce</span><span class="tool">Tableur</span></div>
-    <div class="meta">
-      <div class="price">49€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-surveiller" data-price="39" data-family="surveiller" data-duree="30-60" href="produits/veilleur-mentions.html">
-    <div class="num">№ 35 · Surveiller</div>
-    <h3>Veilleur de Mentions</h3>
-    <div class="blurb">Capte les mentions de votre marque ou de votre nom partout sur le web public.</div>
-    <div class="tools"><span class="tool">Veille web</span><span class="tool">Notification</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-vendre" data-price="29" data-family="vendre" data-duree="30-60" href="produits/preparateur-black-friday.html">
-    <div class="num">№ 36 · Vendre</div>
-    <h3>Préparateur Black Friday</h3>
-    <div class="blurb">Système saisonnier sept-oct : alertes stock + relances email pré-BF + tracking conversion.</div>
-    <div class="tools"><span class="tool">Plateforme e-commerce</span><span class="tool">Service emailing</span></div>
-    <div class="meta">
-      <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-piloter" data-price="39" data-family="piloter" data-duree="30-60" href="produits/bilan-fin-annee.html">
-    <div class="num">№ 37 · Piloter</div>
-    <h3>Bilan de Fin d'Année</h3>
-    <div class="blurb">Saisonnier nov-déc : génère le bilan annuel automatisé en PDF, KPIs N vs N-1.</div>
-    <div class="tools"><span class="tool">Tableur</span><span class="tool">Générateur PDF</span></div>
-    <div class="meta">
-      <div class="price">39€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
-  <a class="card-produit fam-vendre" data-price="29" data-family="vendre" data-duree="30-60" href="produits/lanceur-rentree.html">
-    <div class="num">№ 38 · Vendre</div>
-    <h3>Lanceur de Rentrée</h3>
-    <div class="blurb">Saisonnier août : réveille vos prospects dormants en 3 emails, tri chaud/tiède/froid.</div>
-    <div class="tools"><span class="tool">CRM</span><span class="tool">Service emailing</span></div>
-    <div class="meta">
-      <div class="price">29€</div>
-      <div class="arrow"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg></div>
-    </div>
-  </a>
     </div>
     <p id="no-results" class="no-results-msg">Aucun système ne correspond à ces critères — essayez d'élargir les filtres.</p>
   </div>
@@ -648,7 +378,7 @@
     <div>
       <h4>L'atelier</h4>
       <ul>
-        <li><a href="catalogue.html">Catalogue (38)</a></li>
+        <li><a href="catalogue.html">Catalogue (11)</a></li>
         <li><a href="famille-automatiser.html">Automatiser</a></li>
         <li><a href="famille-vendre.html">Vendre</a></li>
         <li><a href="famille-piloter.html">Piloter</a></li>
