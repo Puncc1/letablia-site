@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Tableau de bord commissions EC — Bientôt disponible · L'établ'IA</title>
+<meta name="description" content="Votre tableau de bord partenaire Expert-Comptable est en cours de construction. En attendant, recevez un récapitulatif mensuel par email avec toutes vos statistiques de commission."/>
+<meta name="robots" content="noindex,follow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/letablia.css"/><link rel="stylesheet" href="../assets/css/search.css"/>
+</head><body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+        </div>
+      </div>
+      <a href="../diagnostic.html">Diagnostic</a>
+      <a href="../a-propos.html">L'atelier</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../contact.html?subject=partenaire-ec">Devenir partenaire</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+  <a href="../experts-comptables.html" style="color:var(--chene);font-weight:600">Programme partenaire EC</a>
+</div>
+
+<main>
+
+<!-- BREADCRUMB -->
+<section style="padding:40px 0 20px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Accueil</a>
+      <span class="sep"></span>
+      <a href="../experts-comptables.html">Programme EC</a>
+      <span class="sep"></span>
+      <span class="current">Tableau de bord commissions</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1 — HERO ═══ -->
+<section style="padding:72px 0 80px;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;max-width:58ch;margin:0 auto">
+      <div style="display:inline-flex;align-items:center;gap:10px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:999px;padding:6px 18px;margin-bottom:28px">
+        <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--chene);animation:pulse-dot 2s infinite"></span>
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">En construction</span>
+      </div>
+      <h1 style="font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.1;margin:0 0 20px">
+        Votre tableau de bord EC —<br/><em class="editorial">bientôt disponible</em>
+      </h1>
+      <p style="font-size:1.1rem;color:var(--ebene-80);line-height:1.7;margin:0 0 12px">
+        Nous construisons un espace dédié où vous pourrez suivre vos ventes, vos commissions et vos versements en temps réel. Cette page vous présente ce qui est prévu, et ce qui est déjà en place.
+      </p>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--pierre);font-size:14px">
+        En attendant l'ouverture, vous recevez chaque mois un récapitulatif complet par email.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — CE QU'IL Y AURA ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 01</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Ce que vous verrez <em class="editorial">dans le dashboard</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:58ch">
+        Voici les indicateurs prévus dans la première version. Le périmètre est fixé — nous développons actuellement l'infrastructure de suivi.
+      </p>
+    </div>
+
+    <!-- MOCKUP TABLEAU DE BORD -->
+    <div data-reveal style="background:var(--ebene);border:1px solid var(--chene-25);border-radius:var(--r-md);overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.18)">
+
+      <!-- Barre de titre mockup -->
+      <div style="background:rgba(255,255,255,.04);border-bottom:1px solid rgba(184,175,166,.12);padding:12px 20px;display:flex;align-items:center;gap:8px">
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e05555;opacity:.7"></span>
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#e0a055;opacity:.7"></span>
+        <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:#55a655;opacity:.7"></span>
+        <span style="font-family:var(--ff-mono);font-size:11px;color:rgba(184,175,166,.5);letter-spacing:.08em;margin-left:8px">tableau-de-bord.ec.letablia.fr — [accès sécurisé]</span>
+        <span style="margin-left:auto;font-family:var(--ff-mono);font-size:10px;color:var(--chene);background:rgba(184,146,73,.12);border:1px solid rgba(184,146,73,.2);padding:2px 10px;border-radius:999px;letter-spacing:.08em">APERÇU · PAS ENCORE DISPONIBLE</span>
+      </div>
+
+      <!-- Grille indicateurs mockup -->
+      <div style="padding:28px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px" class="db-grid">
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(184,175,166,.12);border-radius:var(--r-sm);padding:20px 18px">
+          <div style="font-family:var(--ff-mono);font-size:10px;color:var(--pierre);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Ventes du mois</div>
+          <div style="font-size:2.2rem;font-weight:700;color:var(--lin);font-family:var(--ff-display);line-height:1">— —</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:rgba(184,175,166,.5);margin-top:6px">achats attribués</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(184,175,166,.12);border-radius:var(--r-sm);padding:20px 18px">
+          <div style="font-family:var(--ff-mono);font-size:10px;color:var(--pierre);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Commission du mois</div>
+          <div style="font-size:2.2rem;font-weight:700;color:var(--chene);font-family:var(--ff-display);line-height:1">— €</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:rgba(184,175,166,.5);margin-top:6px">20 % lifetime</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(184,175,166,.12);border-radius:var(--r-sm);padding:20px 18px">
+          <div style="font-family:var(--ff-mono);font-size:10px;color:var(--pierre);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Commission cumulée</div>
+          <div style="font-size:2.2rem;font-weight:700;color:var(--lin);font-family:var(--ff-display);line-height:1">— €</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:rgba(184,175,166,.5);margin-top:6px">depuis le début</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(184,175,166,.12);border-radius:var(--r-sm);padding:20px 18px">
+          <div style="font-family:var(--ff-mono);font-size:10px;color:var(--pierre);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Prochain versement</div>
+          <div style="font-size:2.2rem;font-weight:700;color:var(--lin);font-family:var(--ff-display);line-height:1">— €</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:rgba(184,175,166,.5);margin-top:6px">prévu le 05/06/2026</div>
+        </div>
+
+        <div style="background:rgba(255,255,255,.04);border:1px solid rgba(184,175,166,.12);border-radius:var(--r-sm);padding:20px 18px">
+          <div style="font-family:var(--ff-mono);font-size:10px;color:var(--pierre);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Clients actifs</div>
+          <div style="font-size:2.2rem;font-weight:700;color:var(--lin);font-family:var(--ff-display);line-height:1">— —</div>
+          <div style="font-family:var(--ff-mono);font-size:11px;color:rgba(184,175,166,.5);margin-top:6px">ayant acheté via votre lien</div>
+        </div>
+
+      </div>
+
+      <div style="border-top:1px solid rgba(184,175,166,.1);padding:14px 24px;background:rgba(184,146,73,.06)">
+        <p style="font-family:var(--ff-mono);font-size:11px;color:rgba(184,175,166,.5);margin:0;text-align:center;letter-spacing:.06em">
+          ⚒ Interface en cours de développement · Accès par login dédié cabinet · Disponibilité annoncée par email
+        </p>
+      </div>
+
+    </div><!-- /mockup -->
+
+    <div data-reveal style="margin-top:24px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 26px;font-size:14px;color:var(--ebene-80);line-height:1.65">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Note honnête</strong><br/>
+      Ces indicateurs sont le périmètre défini pour la V1 du dashboard. Les données sont déjà collectées en interne — il manque uniquement l'interface de consultation. En attendant, ces mêmes chiffres vous sont transmis chaque mois par email.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — EN ATTENDANT : EMAIL MENSUEL ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 02</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">En attendant : <em class="editorial">l'email mensuel</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:58ch">
+        Sans attendre l'ouverture du dashboard, vous recevez automatiquement un récapitulatif complet le premier lundi de chaque mois.
+      </p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="email-grid">
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-size:28px;margin-bottom:14px">📬</div>
+        <h3 style="font-size:1rem;margin:0 0 10px;font-family:var(--ff-display)">Contenu de l'email mensuel</h3>
+        <ul style="font-size:13px;color:var(--ebene-80);line-height:1.8;margin:0;padding-left:18px">
+          <li>Nombre de ventes attribuées à votre cabinet</li>
+          <li>Montant brut des commissions du mois</li>
+          <li>Commission cumulée depuis votre inscription</li>
+          <li>Montant et date du prochain virement prévu</li>
+          <li>Liste détaillée des achats (date, produit, montant)</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-size:28px;margin-bottom:14px">🗓</div>
+        <h3 style="font-size:1rem;margin:0 0 10px;font-family:var(--ff-display)">Cadence &amp; format</h3>
+        <ul style="font-size:13px;color:var(--ebene-80);line-height:1.8;margin:0;padding-left:18px">
+          <li>Envoi : premier lundi du mois, avant 9 h</li>
+          <li>Format : email texte + pièce jointe PDF récapitulatif</li>
+          <li>Expéditeur : <code style="font-family:var(--ff-mono);font-size:12px;background:var(--lin);padding:1px 5px;border-radius:3px">commissions@letablia.fr</code></li>
+          <li>Archivage : chaque email reste accessible dans votre boîte</li>
+          <li>Aucune action requise — envoi automatique dès inscription</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:20px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:20px 26px;font-size:14px;color:var(--ebene-80);line-height:1.65">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Transparence totale</strong><br/>
+      Le email mensuel automatique contient exactement les mêmes informations que le dashboard prévu. Vous n'avez aucune donnée en moins — seulement un accès en temps réel qui n'est pas encore disponible.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — COMMENT RECEVOIR L'EMAIL ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 03</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Comment <em class="editorial">recevoir l'email</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:58ch">
+        Trois étapes, une seule fois.
+      </p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:16px" class="steps-list">
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 28px;display:flex;gap:20px;align-items:flex-start">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:22px;font-weight:700;color:var(--chene);width:36px;line-height:1">01</div>
+        <div>
+          <h3 style="font-size:1rem;margin:0 0 8px;font-family:var(--ff-display)">S'inscrire au programme partenaire EC</h3>
+          <p style="font-size:13px;color:var(--ebene-80);line-height:1.65;margin:0">
+            Remplissez le formulaire d'inscription via la page du programme. L'inscription est gratuite et sans engagement. Votre dossier est validé sous 24 h ouvrées.
+          </p>
+          <a href="../experts-comptables.html" style="display:inline-block;margin-top:10px;font-family:var(--ff-mono);font-size:12px;color:var(--chene);text-decoration:none;letter-spacing:.06em">→ Voir le programme EC</a>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 28px;display:flex;gap:20px;align-items:flex-start">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:22px;font-weight:700;color:var(--chene);width:36px;line-height:1">02</div>
+        <div>
+          <h3 style="font-size:1rem;margin:0 0 8px;font-family:var(--ff-display)">Recevoir votre lien de tracking personnalisé</h3>
+          <p style="font-size:13px;color:var(--ebene-80);line-height:1.65;margin:0">
+            Une fois votre dossier validé, vous recevez votre lien affilié unique. Chaque achat effectué via ce lien est automatiquement comptabilisé à votre compte, même plusieurs semaines après le premier clic.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:24px 28px;display:flex;gap:20px;align-items:flex-start">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:22px;font-weight:700;color:var(--chene);width:36px;line-height:1">03</div>
+        <div>
+          <h3 style="font-size:1rem;margin:0 0 8px;font-family:var(--ff-display)">Recevoir l'email mensuel automatiquement</h3>
+          <p style="font-size:13px;color:var(--ebene-80);line-height:1.65;margin:0">
+            Dès votre activation, le récapitulatif mensuel vous est envoyé automatiquement chaque premier lundi du mois. Aucune manipulation requise de votre côté.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — FAQ ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 04</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Questions <em class="editorial">fréquentes</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:2px" class="faq-list">
+
+      <details style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-sm);overflow:hidden">
+        <summary style="padding:20px 24px;cursor:pointer;font-family:var(--ff-display);font-size:1.05rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          Quand le dashboard sera-t-il disponible ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 24px 20px;font-size:14px;color:var(--ebene-80);line-height:1.7">
+          Nous n'avons pas encore de date ferme à vous communiquer — par honnêteté, nous préférons ne pas annoncer un délai que nous ne pouvons pas garantir. Ce qui est certain : vous serez informé en premier, par email, dès que l'accès sera ouvert. Les partenaires inscrits auront un accès prioritaire en avant-première.
+        </div>
+      </details>
+
+      <details style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-sm);overflow:hidden">
+        <summary style="padding:20px 24px;cursor:pointer;font-family:var(--ff-display);font-size:1.05rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          L'email mensuel contient-il vraiment toutes les informations ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 24px 20px;font-size:14px;color:var(--ebene-80);line-height:1.7">
+          Oui. L'email mensuel automatique est conçu pour être un substitut complet au dashboard : nombre de ventes, montant des commissions du mois, cumul depuis l'inscription, date et montant du prochain virement, et détail transaction par transaction. Aucune donnée n'est retenue côté L'établ'IA dans l'attente du dashboard.
+        </div>
+      </details>
+
+      <details style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-sm);overflow:hidden">
+        <summary style="padding:20px 24px;cursor:pointer;font-family:var(--ff-display);font-size:1.05rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          Comment saurai-je que le dashboard est disponible ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 24px 20px;font-size:14px;color:var(--ebene-80);line-height:1.7">
+          Un email d'annonce sera envoyé à tous les partenaires EC actifs dès l'ouverture. Vous y trouverez vos identifiants de connexion et un guide de prise en main de deux pages. Aucune démarche de votre côté n'est nécessaire.
+        </div>
+      </details>
+
+      <details style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-sm);overflow:hidden">
+        <summary style="padding:20px 24px;cursor:pointer;font-family:var(--ff-display);font-size:1.05rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          Le dashboard sera-t-il payant ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 24px 20px;font-size:14px;color:var(--ebene-80);line-height:1.7">
+          Non. L'accès au tableau de bord est inclus dans le programme partenaire EC, sans surcoût. Comme le programme lui-même, l'inscription et tous les outils mis à votre disposition sont et resteront gratuits.
+        </div>
+      </details>
+
+      <details style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-sm);overflow:hidden">
+        <summary style="padding:20px 24px;cursor:pointer;font-family:var(--ff-display);font-size:1.05rem;font-weight:600;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px">
+          Je n'ai reçu aucun email mensuel — que faire ?
+          <span style="font-family:var(--ff-mono);font-size:18px;color:var(--chene);flex-shrink:0">+</span>
+        </summary>
+        <div style="padding:0 24px 20px;font-size:14px;color:var(--ebene-80);line-height:1.7">
+          Vérifiez d'abord vos dossiers spam et indésirables — l'expéditeur est <code style="font-family:var(--ff-mono);font-size:12px;background:var(--lin);padding:1px 5px;border-radius:3px">commissions@letablia.fr</code>. Si l'email est absent, écrivez-nous via le formulaire contact en mentionnant votre cabinet. Nous vérifierons l'état de votre compte partenaire sous 24 h ouvrées.
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6 — CTA ═══ -->
+<section style="padding:96px 0;background:var(--ebene);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;max-width:52ch;margin:0 auto">
+      <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:18px">Programme partenaire · Cabinets EC</span>
+      <h2 style="font-size:clamp(1.8rem,3.5vw,2.8rem);line-height:1.1;color:var(--lin);margin:0 0 20px">
+        Rejoindre le programme,<br/><em class="editorial" style="color:var(--chene)">dès aujourd'hui</em>
+      </h2>
+      <p style="color:var(--pierre);font-size:1rem;line-height:1.7;margin:0 0 12px">
+        Inscription gratuite. Lien de tracking disponible sous 24 h. Email mensuel automatique dès le premier achat attribué.
+      </p>
+      <p style="color:var(--pierre);font-size:14px;line-height:1.6;margin:0 0 36px;font-family:var(--ff-display);font-style:italic">
+        Et bien sûr : dès que le tableau de bord est disponible, vous êtes les premiers à y accéder.
+      </p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="../experts-comptables.html" style="font-size:1rem;padding:16px 36px">Découvrir le programme EC →</a>
+        <a href="../contact.html?subject=partenaire-ec" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-size:15px;color:var(--pierre);text-decoration:none;padding:16px 20px;border:1px solid rgba(184,175,166,0.3);border-radius:var(--r-sm);transition:color .2s">Poser une question</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+        <li><a href="../experts-comptables.html" style="color:var(--chene)">Partenaires EC</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script src="../assets/js/theme-toggle.js" defer></script>
+<script defer src="../assets/js/easter-eggs.js"></script>
+
+<style>
+@keyframes pulse-dot {
+  0%,100%{opacity:1;transform:scale(1)}
+  50%{opacity:.5;transform:scale(.8)}
+}
+@media (max-width:820px){
+  .db-grid{grid-template-columns:1fr 1fr !important}
+  .email-grid{grid-template-columns:1fr !important}
+}
+@media (max-width:560px){
+  .db-grid{grid-template-columns:1fr !important}
+}
+details summary::-webkit-details-marker{display:none}
+details[open] summary span:last-child{transform:rotate(45deg)}
+details summary span:last-child{transition:transform .2s;display:inline-block}
+</style>
+
+</body></html>

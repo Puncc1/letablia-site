@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pour le Maghreb francophone — L'établ'IA accessible aux freelances et TPE du Maroc, Tunisie et Algérie</title>
+<meta name="description" content="L'établ'IA reconnaît les francophones du Maghreb. Freelances tech, agences et TPE de Casablanca, Tunis et Alger : tous les systèmes sont accessibles par carte bancaire internationale. Livraison numérique instantanée."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="catalogue.html">Voir le catalogue</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="maghreb.html" style="color:var(--chene);font-weight:600">🌙 Pour le Maghreb</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, tableau de bord..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- BREADCRUMB -->
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Pour le Maghreb francophone</span></div>
+  </div>
+</section>
+
+<!-- ═══ HERO ═══ -->
+<section style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Maroc · Tunisie · Algérie · Francophonie du Maghreb</span>
+      <h1 style="margin:18px 0;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.06">L'établi reconnaît les<br/><em class="editorial">francophones du Maghreb.</em></h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.2rem;max-width:54ch;margin:16px auto 0">Freelance tech à Casablanca, agence à Tunis, TPE à Alger — tous les systèmes du catalogue vous sont accessibles. Livraison numérique instantanée, documentation entièrement en français, paiement par carte bancaire internationale.</p>
+    </div>
+
+    <!-- Stats hero -->
+    <div data-reveal style="margin:52px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center" class="mgh-hero-stats">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">🇲🇦</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Maroc · DH · Casablanca</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">🇹🇳</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Tunisie · DT · Tunis</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">🇩🇿</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Algérie · DZD · Alger</div>
+      </div>
+    </div>
+
+    <!-- Badge engagement -->
+    <div data-reveal style="margin-top:36px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:22px 28px;font-size:15px;line-height:1.65;color:var(--ebene);display:flex;gap:20px;align-items:flex-start" class="mgh-badge">
+      <div style="flex-shrink:0;width:40px;height:40px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;color:var(--chene)">🌙</div>
+      <div>
+        <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);display:block;margin-bottom:6px">Francophonie du Maghreb — vous êtes les bienvenus</strong>
+        L'atelier a été pensé pour tous les francophones qui construisent, vendent et gèrent leur activité avec les outils numériques. Le Maghreb francophone adopte les solutions no-code à grande vitesse — L'établ'IA est là pour accompagner ce mouvement, depuis Casablanca jusqu'à Alger.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1 — POUR QUI ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 01</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Cette page est faite <em class="editorial">pour vous</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:58ch">Vous avez une activité au Maroc, en Tunisie ou en Algérie ? Voici ce que L'établ'IA vous apporte concrètement.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">💻</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Freelances tech et développeurs indépendants</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Vous facturez des clients locaux et internationaux, gérez vos missions en solo, et cherchez à automatiser votre back-office sans y consacrer des semaines. Les systèmes de facturation, relances, gestion de contacts et tableau de bord sont conçus pour votre profil.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">🏢</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Agences et petites équipes numériques</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Agences web, studios créatifs, cabinets de conseil en transformation numérique à Casablanca, Tunis ou Alger : les systèmes de production, de pilotage d'équipe et de suivi client vous permettent de professionnaliser votre organisation sans recruter.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">🛍️</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">TPE, commerçants et artisans en développement</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Boutique en ligne, atelier artisanal, restaurant, service de livraison locale — si vous gérez une petite structure et souhaitez vendre mieux, piloter votre trésorerie et automatiser vos tâches répétitives, les systèmes de L'établ'IA sont faits pour vous, sans complexité technique inutile.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — CE QUI CHANGE ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 02</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Ce qui <em class="editorial">fonctionne déjà</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:58ch">Voici ce qui est opérationnel dès aujourd'hui pour les acheteurs du Maghreb — sans configuration supplémentaire de votre côté.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Paiement par carte bancaire internationale</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Les cartes bancaires internationales à débit international émises par des banques marocaines, tunisiennes ou algériennes fonctionnent sans obstacle. Le paiement s'effectue en euros — votre banque applique automatiquement le taux de change en vigueur (DH, DT ou DZD selon votre compte). Aucun frais de notre côté : seul votre établissement bancaire peut appliquer une commission de change.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Livraison numérique instantanée par ZIP standard</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Tous les systèmes sont livrés numériquement (archive ZIP, documentation PDF, accès aux fichiers de configuration) dès validation du paiement. Aucune frontière, aucune douane, aucun délai postal. Votre accès est disponible dans la minute suivant la confirmation de commande, que vous soyez à Casablanca, Tunis ou Alger.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Documentation et support intégralement en français</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">L'atelier est francophone de bout en bout. Les guides d'installation, les notices d'utilisation et les réponses de support sont rédigés en français standard, accessible depuis Maghreb ou depuis l'Europe. Si un terme vous semble moins courant dans votre contexte local, signalez-le-nous : nous adaptons volontiers.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — FRICTION PAIEMENT — HONNÊTETÉ ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:40px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 03</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Ce qu'on vous <em class="editorial">dit clairement</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:58ch">On préfère être honnête plutôt que de vous faire découvrir une friction au moment du paiement.</p>
+    </div>
+
+    <!-- Encadré friction — message principal -->
+    <div data-reveal style="background:var(--kraft);border:2px solid var(--chene-25);border-radius:var(--r-md);padding:32px 36px;margin-bottom:32px">
+      <div style="display:flex;gap:18px;align-items:flex-start">
+        <div style="flex-shrink:0;font-size:28px">⚠️</div>
+        <div>
+          <h3 style="font-size:1.25rem;margin:0 0 12px;font-family:var(--ff-display)">Paiement en devise locale (DH, DT, DZD) — pas encore disponible</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.7;margin:0 0 12px">À ce jour, il n'est pas possible de régler directement en dirham marocain, en dinar tunisien ou en dinar algérien. Les prix sont affichés et facturés en euros (EUR). La conversion est assurée par votre banque au taux du jour.</p>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.7;margin:0 0 12px">Les modes de paiement local (virement bancaire maghrébin, solutions de paiement mobile régionales) ne sont pas encore intégrés. Nous travaillons activement sur des solutions de paiement local adaptées au Maghreb — nous vous informerons dès qu'elles seront disponibles.</p>
+          <p style="font-size:15px;font-weight:600;color:var(--ebene);line-height:1.65;margin:0">En attendant : <strong>la carte bancaire internationale fonctionne sans problème</strong>. Si vous disposez d'une carte à débit international activée, vous pouvez commander dès maintenant.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conseils pratiques -->
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:11px;font-weight:700;color:var(--chene);width:40px;text-align:right;padding-top:4px">DH</div>
+        <div>
+          <strong style="font-size:15px;font-family:var(--ff-display)">Maroc — Dirham marocain</strong>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:4px 0 0">Les cartes bancaires marocaines à débit international sont disponibles dans la plupart des banques. Vérifiez que votre carte est activée pour les achats en ligne à l'étranger. Le montant est converti en dirhams au taux de change interbancaire du jour.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:11px;font-weight:700;color:var(--chene);width:40px;text-align:right;padding-top:4px">DT</div>
+        <div>
+          <strong style="font-size:15px;font-family:var(--ff-display)">Tunisie — Dinar tunisien</strong>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:4px 0 0">En Tunisie, les achats en ligne à l'étranger nécessitent une carte internationale activée (allocation devise). Vérifiez que votre quota de change disponible couvre le montant avant de passer commande. La facturation reste en euros de notre côté.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:20px;align-items:flex-start;padding:22px 0">
+        <div style="flex-shrink:0;font-family:var(--ff-mono);font-size:11px;font-weight:700;color:var(--chene);width:40px;text-align:right;padding-top:4px">DZD</div>
+        <div>
+          <strong style="font-size:15px;font-family:var(--ff-display)">Algérie — Dinar algérien</strong>
+          <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:4px 0 0">En Algérie, les achats en devises étrangères sont soumis à une réglementation spécifique. Si vous disposez d'une carte à débit international autorisé pour les achats en ligne à l'étranger, elle fonctionne. Si vous rencontrez un blocage, <a href="contact.html" style="color:var(--chene)">écrivez-nous</a> — nous cherchons des alternatives ensemble.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — CATALOGUE ACCESSIBLE ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 04</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Catalogue <em class="editorial">accessible depuis le Maghreb</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:60ch">Tous les systèmes du catalogue sont disponibles sans restriction géographique. Voici une sélection particulièrement adaptée au contexte des indépendants et TPE du Maghreb francophone.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="mgh-catalogue">
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Facturation · international</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Kit Facturation 2026</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Génération automatique de devis et factures PDF structurés. Numérotation conforme, archivage, zéro ressaisie. Adapté aux indépendants qui facturent en euros ou en devises locales selon leurs clients.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Freelances · Agences</span>
+        </div>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Relances · efficacité</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Séquenceur de relances impayés</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Relances automatiques à J+7, J+21, J+45 avec escalade de ton. Particulièrement utile quand vous gérez des clients locaux et internationaux à la fois.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TPE · Freelances</span>
+        </div>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Pilotage · trésorerie</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Tableau de bord Trésorerie</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Suivi mensuel automatisé de vos entrées et sorties. Solde prévisionnel à 90 jours, alertes seuil critique. Indispensable pour piloter seul ses finances, toute devise confondue.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Pilotage solo · TPE</span>
+        </div>
+      </div>
+
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Automatisation · no-code</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Collecteur d'avis automatisé</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Collecte automatique de retours clients après chaque prestation ou achat. Construit votre réputation en ligne sans y penser — particulièrement précieux dans un marché en croissance où la preuve sociale est déterminante.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">E-commerce · Services</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:24px;text-align:center">
+      <a href="catalogue.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene);text-decoration:none;padding:12px 22px;border:1px solid var(--chene-25);border-radius:var(--r-sm);transition:background .2s">Voir tout le catalogue →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — FAQ ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 05</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Questions <em class="editorial">fréquentes</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Les questions les plus posées par les acheteurs du Maghreb avant leur première commande.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Ma carte bancaire marocaine / tunisienne / algérienne fonctionne-t-elle ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Si votre carte est activée pour les achats en ligne à l'étranger (débit international), elle fonctionnera. Le paiement est traité en euros. Votre banque convertit automatiquement le montant dans votre devise locale au taux du jour. En cas de difficulté, <a href="contact.html" style="color:var(--chene)">contactez-nous</a> — nous vous aidons à identifier une solution.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Pourquoi n'y a-t-il pas de paiement en DH, DT ou DZD ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">L'établ'IA est un atelier basé en France, facturant en euros. Intégrer des solutions de paiement locales pour chaque pays nécessite des partenariats et des agréments spécifiques. Nous travaillons à rendre cela possible. En attendant, la carte bancaire internationale reste le chemin le plus direct.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Le support tient-il compte du décalage horaire ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">L'atelier est basé en France (UTC+1/+2). Le Maroc et la Tunisie sont proches de ce fuseau horaire, l'Algérie est à UTC+1. En pratique, les décalages sont minimes. Le support est assuré par écrit, avec un délai de réponse sous 24 heures ouvrées. Pas de ligne téléphonique — tout passe par notre <a href="contact.html" style="color:var(--chene)">formulaire de contact</a> pour garantir un suivi écrit traçable.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Les systèmes sont-ils adaptés au contexte maghrébin ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Les systèmes sont conçus pour des contextes francophones variés. Certains exemples ou intitulés reflètent le contexte européen — si vous identifiez un élément inadapté à votre contexte local (terminologie fiscale, nom d'un document, format de numéro), signalez-le-nous. Nous adaptons volontiers sur demande.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Puis-je déduire cet achat de mes charges professionnelles ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Selon votre statut et la réglementation fiscale de votre pays, les outils numériques professionnels peuvent être déductibles de vos charges. La facture fournie comporte toutes les mentions nécessaires. Consultez votre comptable ou votre centre de gestion pour confirmer le traitement fiscal adapté à votre situation.</p>
+      </div>
+
+      <div style="padding:24px 0">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Y a-t-il une garantie si le système ne me convient pas ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Oui. La garantie « Satisfait ou Forgé » s'applique sans distinction de pays. Si un système ne correspond pas à sa promesse, L'établ'IA intervient en priorité pour le corriger ou vous rembourser. Écrivez-nous via le <a href="contact.html" style="color:var(--chene)">formulaire de contact</a> en mentionnant votre numéro de commande.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 6 — CTA ═══ -->
+<section style="padding:96px 0;background:var(--ebene);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;max-width:52ch;margin:0 auto">
+      <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:18px">🌙 Accessible depuis le Maghreb</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--lin);margin:0 0 20px">Voir le catalogue <em class="editorial" style="color:var(--chene)">complet</em></h2>
+      <p style="color:var(--pierre);font-size:1rem;line-height:1.7;margin:0 0 16px">Tous les systèmes sont disponibles pour les acheteurs du Maghreb. Paiement par carte bancaire internationale, livraison ZIP instantanée, garantie identique, support en français.</p>
+      <p style="color:var(--pierre);font-size:14px;line-height:1.6;margin:0 0 36px;font-family:var(--ff-display);font-style:italic">« Satisfait ou Forgé » · Paiement sécurisé · Support par écrit sous 24 h · Zéro démarche supplémentaire</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="catalogue.html" style="font-size:1rem;padding:16px 36px">Voir le catalogue →</a>
+        <a href="contact.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-size:15px;color:var(--pierre);text-decoration:none;padding:16px 20px;border:1px solid rgba(184,175,166,0.3);border-radius:var(--r-sm);transition:color .2s">Une question ? Écrivez-nous</a>
+      </div>
+      <p style="margin-top:32px;font-family:var(--ff-display);font-style:italic;color:var(--pierre);font-size:14px;opacity:.7">Atelier francophone ouvert au Maroc, à la Tunisie, à l'Algérie et à toute la francophonie mondiale.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et commerçants. Atelier basé en France, ouvert à toute la francophonie.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+        <li><a href="experts-comptables.html">Partenaires EC</a></li>
+        <li><a href="programme-contributeurs.html">Devenir contributeur</a></li>
+        <li><a href="be.html" style="color:var(--chene)">🇧🇪 Pour la Belgique</a></li>
+        <li><a href="ch.html" style="color:var(--chene)">🇨🇭 Pour la Suisse</a></li>
+        <li><a href="qc.html" style="color:var(--chene)">🍁 Pour le Québec</a></li>
+        <li><a href="maghreb.html" style="color:var(--chene);font-weight:600">🌙 Pour le Maghreb</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France · 🌙 Maghreb francophone bienvenu</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+<script defer src="/assets/js/easter-eggs.js"></script>
+
+<style>
+@media (max-width:880px){
+  .mgh-hero-stats{grid-template-columns:1fr !important}
+  .mgh-catalogue{grid-template-columns:1fr !important}
+  .mgh-badge{flex-direction:column !important}
+}
+</style>
+</body></html>

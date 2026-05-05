@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pour le Québec — L'établ'IA accessible aux TPE et indépendants québécois</title>
+<meta name="description" content="L'établ'IA est accessible aux indépendants et TPE québécois. Loi 25 conforme, paiement en dollars canadiens (CAD), TVQ + TPS gérées automatiquement. Francophonie québécoise bienvenue."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/letablia.css"/><link rel="stylesheet" href="assets/css/search.css"/>
+</head><body>
+
+<!-- HEADER -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="a-propos.html">L'atelier</a>
+      <a data-nav="faq.html" href="faq.html">FAQ</a>
+      <a data-nav="contact.html" href="contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="catalogue.html">Voir le catalogue</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="catalogue.html">Catalogue</a>
+  <a href="famille-automatiser.html">— Automatiser</a>
+  <a href="famille-vendre.html">— Vendre</a>
+  <a href="famille-piloter.html">— Piloter</a>
+  <a href="famille-produire.html">— Produire</a>
+  <a href="famille-securiser.html">— Sécuriser</a>
+  <a href="diagnostic.html">Diagnostic</a>
+  <a href="a-propos.html">L'atelier</a>
+  <a href="faq.html">FAQ</a>
+  <a href="contact.html">Contact</a>
+  <a href="qc.html" style="color:var(--chene);font-weight:600">🍁 Pour le Québec</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, tableau de bord..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- BREADCRUMB -->
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Accueil</a> <span class="sep"></span> <span class="current">Pour le Québec</span></div>
+  </div>
+</section>
+
+<!-- ═══ HERO ═══ -->
+<section style="padding:64px 0 80px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center">
+      <span class="tag-atelier">Marché québécois · TPE &amp; indépendants francophones</span>
+      <h1 style="margin:18px 0;font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.06">Pour les TPE et indépendants<br/><em class="editorial">québécois.</em></h1>
+      <p style="font-family:var(--ff-display);font-style:italic;color:var(--chene);font-size:1.2rem;max-width:52ch;margin:16px auto 0">Travailleur autonome, artisan ou propriétaire d'une petite entreprise au Québec ? Tous les systèmes du catalogue vous sont accessibles directement — paiement en dollars canadiens, TVQ et TPS gérées automatiquement, conformité Loi 25 assurée.</p>
+    </div>
+
+    <!-- Stats hero -->
+    <div data-reveal style="margin:52px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;text-align:center" class="qc-hero-stats">
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">CAD</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Paiement en dollars canadiens</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">Loi 25</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Conformité protection des données</div>
+      </div>
+      <div style="background:var(--parchemin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:28px 20px">
+        <div style="font-family:var(--ff-display);font-size:2.4rem;font-weight:700;color:var(--ebene)">0</div>
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;margin-top:6px">Démarche supplémentaire requise</div>
+      </div>
+    </div>
+
+    <!-- Badge engagement -->
+    <div data-reveal style="margin-top:36px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:22px 28px;font-size:15px;line-height:1.65;color:var(--ebene);display:flex;gap:20px;align-items:flex-start" class="qc-badge">
+      <div style="flex-shrink:0;width:40px;height:40px;background:var(--parchemin);border:1px solid var(--chene-25);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--ff-hand);font-size:20px;color:var(--chene)">🍁</div>
+      <div>
+        <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--chene);display:block;margin-bottom:6px">Accès complet, sans friction de fuseau horaire</strong>
+        Commandez depuis le Québec comme depuis n'importe quelle région francophone. La TVQ (9,975%) et la TPS (5%) sont calculées et perçues automatiquement par notre plateforme de paiement selon votre localisation. Livraison numérique instantanée, garantie « Satisfait ou Forgé » identique quel que soit votre fuseau horaire.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 1 — CE QUI CHANGE POUR VOUS ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 01</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Ce qui est <em class="editorial">adapté pour vous</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Voici ce que L'établ'IA a prévu spécifiquement pour les acheteurs québécois — sans que vous ayez quoi que ce soit à configurer.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Paiement en dollars canadiens (CAD) — sans conversion</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Notre plateforme de paiement (LemonSqueezy) prend en charge le dollar canadien. Vous payez dans votre devise sans frais de conversion imposés de notre côté. Les prix affichés en CAD incluent déjà la TVQ (9,975%) et la TPS (5%), calculées et remises automatiquement aux autorités fiscales canadiennes et québécoises — vous n'avez rien à gérer.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">TVQ (9,975%) + TPS (5%) gérées automatiquement</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">LemonSqueezy agit en tant que « marchand officiel » (merchant of record) et est inscrit auprès de Revenu Québec et de l'Agence du revenu du Canada. Les taxes de vente provinciale (TVQ) et fédérale (TPS) sont collectées, déclarées et remises pour votre compte. Si vous êtes un inscrit TPS/TVQ, renseignez vos numéros d'inscription lors du paiement pour obtenir une facture adaptée.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Conformité Loi 25 — protection des renseignements personnels</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">La Loi 25 (Loi modernisant des dispositions législatives en matière de protection des renseignements personnels) est l'équivalent québécois du RGPD. L'établ'IA collecte uniquement les renseignements nécessaires à la transaction et au suivi. Votre consentement est obtenu explicitement lors de l'inscription. Vous disposez d'un droit d'accès, de rectification et de suppression de vos données — exercice via notre <a href="contact.html" style="color:var(--chene)">formulaire de contact</a>.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-size:22px">✅</div>
+        <div>
+          <h3 style="font-size:1.2rem;margin:0 0 8px;font-family:var(--ff-display)">Livraison numérique instantanée, garantie identique</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Les systèmes sont livrés numériquement (fichiers, accès, documentation) dès validation du paiement — aucune frontière, aucun délai douanier. La garantie « Satisfait ou Forgé » s'applique sans distinction de pays. Si un système ne correspond pas à sa promesse, L'établ'IA intervient en priorité pour le corriger, qu'il soit 6 h ou 15 h à Montréal.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 2 — LOI 25 : DÉTAIL ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 02</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Loi 25 — <em class="editorial">vos droits en clair</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">La Loi 25 renforce la protection des renseignements personnels des résidents du Québec. Voici comment L'établ'IA s'y conforme concrètement.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--chene);text-align:center;line-height:1.2">CONS<br/>ENT</div>
+        <div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px;font-family:var(--ff-display)">Consentement explicite et finalité déclarée</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">L'établ'IA collecte uniquement les renseignements nécessaires : adresse courriel, nom, pays de facturation. Ces données sont utilisées exclusivement pour la gestion de la commande, la livraison du système acheté et le support après-vente. Aucune revente, aucun partage commercial avec des tiers non essentiels au service. Votre consentement est sollicité lors de toute inscription à la lettre d'information.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--chene);text-align:center;line-height:1.2">DURÉE<br/>CONS.</div>
+        <div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px;font-family:var(--ff-display)">Durée de conservation limitée</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Les données liées à une commande sont conservées 7 ans pour satisfaire aux obligations fiscales et comptables (Loi sur la fiscalité municipale, Loi sur l'impôt). Au-delà, elles sont supprimées ou anonymisées. Les données de messagerie (support) sont conservées 2 ans après le dernier échange. Vous pouvez demander la suppression anticipée de vos données hors obligations légales via notre <a href="contact.html" style="color:var(--chene)">formulaire de contact</a>.</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0;border-bottom:1px solid var(--chene-25)">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--chene);text-align:center;line-height:1.2">DROIT<br/>ACCÈS</div>
+        <div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px;font-family:var(--ff-display)">Droit d'accès, de rectification et de suppression</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">Conformément à la Loi 25, vous pouvez à tout moment demander à consulter les renseignements personnels vous concernant, les faire rectifier ou les faire supprimer. Écrivez-nous via notre <a href="contact.html" style="color:var(--chene)">formulaire de contact</a> en indiquant « Demande Loi 25 » en objet. Nous traitons votre demande dans un délai de 30 jours. L'autorité compétente au Québec est la Commission d'accès à l'information (CAI).</p>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:24px;align-items:flex-start;padding:28px 0">
+        <div style="flex-shrink:0;width:48px;height:48px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;font-family:var(--ff-mono);font-size:12px;font-weight:700;color:var(--chene);text-align:center;line-height:1.2">TRANS<br/>FERT</div>
+        <div>
+          <h3 style="font-size:1.15rem;margin:0 0 8px;font-family:var(--ff-display)">Transfert à l'extérieur du Québec</h3>
+          <p style="font-size:15px;color:var(--ebene-80);line-height:1.65;margin:0">L'établ'IA est basé en France (Union européenne). Les renseignements transmis lors du paiement transitent par LemonSqueezy (États-Unis), soumis à des clauses contractuelles types garantissant un niveau de protection adéquat. Ce transfert est limité aux données strictement nécessaires au traitement de la transaction et est déclaré conformément aux exigences de la Loi 25.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Nota Loi 25 -->
+    <div data-reveal style="margin-top:24px;background:var(--chene-6);border-left:3px solid var(--chene);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:18px 24px;font-size:14px;color:var(--ebene-80)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Autorité compétente — Loi 25</strong><br/>
+      Commission d'accès à l'information du Québec (CAI) · 575, rue Saint-Amable, bureau 1.10, Québec (Québec) G1R 2G4 · <a href="https://www.cai.gouv.qc.ca" target="_blank" rel="noopener" style="color:var(--chene)">cai.gouv.qc.ca</a>. Toute question relative à vos renseignements personnels peut être adressée à la CAI si L'établ'IA ne répond pas à votre demande dans les délais prescrits.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 3 — CATALOGUE ACCESSIBLE QC ═══ -->
+<section style="padding:80px 0;background:var(--parchemin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 03</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Catalogue <em class="editorial">accessible au Québec</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:60ch">Tous les systèmes du catalogue sont disponibles pour les acheteurs québécois — sans restriction géographique. Les systèmes à saisonnalité (promotions de type Vendredi fou) s'alignent sur le calendrier nord-américain.</p>
+    </div>
+
+    <div data-reveal style="display:grid;grid-template-columns:1fr 1fr;gap:20px" class="qc-catalogue">
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Facturation · en CAD</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Kit Facturation 2026</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Génération automatique de soumissions et factures PDF structurées. Numérotation conforme, archivage, zéro ressaisie. Adapté aux exigences de Revenu Québec.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TPE · Travailleurs autonomes</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TVQ + TPS incluses</span>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Trésorerie · en CAD</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Tableau de bord Trésorerie</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Suivi mensuel automatisé de vos entrées et sorties. Solde prévisionnel à 90 jours, alertes seuil critique. Indispensable pour piloter seul sa trésorerie en dollars canadiens.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Pilotage solo</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TVQ + TPS incluses</span>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Relances · en CAD</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Séquenceur de relances impayés</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Relances automatiques à J+7, J+21, J+45 avec escalade de ton. Journal exportable pour votre comptable ou conseiller fiscal. Réduit le délai moyen de paiement sans y penser.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">B2B · Commerce</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TVQ + TPS incluses</span>
+        </div>
+      </div>
+
+      <div style="background:var(--lin);border:1px solid var(--chene-15);border-radius:var(--r-md);padding:26px 24px">
+        <div style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px">Sécurité · en CAD</div>
+        <h3 style="font-size:1.1rem;margin:0 0 10px;font-family:var(--ff-display)">Sécurité numérique TPE</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.6;margin:0 0 14px">Audit de posture numérique, plan de remédiation priorisé, liste de vérification de sauvegarde. Conforme aux recommandations du Centre canadien pour la cybersécurité (CCCS).</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">Loi 25 · CCCS</span>
+          <span style="font-family:var(--ff-mono);font-size:10px;background:var(--kraft);border:1px solid var(--chene-25);padding:3px 8px;border-radius:var(--r-sm);color:var(--ebene-80)">TVQ + TPS incluses</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-reveal style="margin-top:24px;text-align:center">
+      <a href="catalogue.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene);text-decoration:none;padding:12px 22px;border:1px solid var(--chene-25);border-radius:var(--r-sm);transition:background .2s">Voir tout le catalogue →</a>
+    </div>
+
+    <!-- Nota TVQ/TPS -->
+    <div data-reveal style="margin-top:24px;background:var(--chene-6);border-left:3px solid var(--chene);border-radius:0 var(--r-sm) var(--r-sm) 0;padding:18px 24px;font-size:14px;color:var(--ebene-80)">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Note TVQ + TPS Québec</strong><br/>
+      Les prix affichés en dollars canadiens incluent la TVQ (9,975%) et la TPS (5%), calculées et collectées automatiquement à la commande selon votre province de résidence. Si vous êtes un inscrit TPS/TVQ (numéro NEQ attribué par Revenu Québec), renseignez vos numéros d'inscription lors du paiement afin d'obtenir une facture conforme à vos obligations fiscales.
+    </div>
+
+    <!-- Note saisonnalité -->
+    <div data-reveal style="margin-top:16px;background:var(--kraft);border:1px solid var(--chene-25);border-radius:var(--r-md);padding:18px 24px;font-size:14px;color:var(--ebene-80);line-height:1.65">
+      <strong style="font-family:var(--ff-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--chene)">Promotions saisonnières</strong><br/>
+      Les promotions à caractère saisonnier (Vendredi fou / <em>Black Friday</em> en novembre, fêtes de fin d'année) suivent le calendrier nord-américain pour les acheteurs québécois. Les offres de printemps et de rentrée s'appliquent également selon les périodes locales. Inscrivez-vous à notre lettre d'information pour être informé des prochaines offres.
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 4 — FAQ ═══ -->
+<section style="padding:80px 0;background:var(--lin);border-top:1px solid var(--chene-15)">
+  <div class="container-narrow">
+    <div data-reveal style="margin-bottom:48px">
+      <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:8px">
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 04</span>
+        <h2 style="font-size:2rem;line-height:1.1;margin:0">Questions <em class="editorial">fréquentes</em></h2>
+        <span style="flex:1;height:1px;background:var(--chene-25)"></span>
+      </div>
+      <p style="margin-top:16px;color:var(--ebene-80);font-size:1rem;max-width:56ch">Les questions les plus posées par les acheteurs québécois avant leur première commande.</p>
+    </div>
+
+    <div data-reveal style="display:flex;flex-direction:column;gap:0">
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Puis-je payer en dollars canadiens sans frais de change ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Oui. Notre plateforme de paiement (LemonSqueezy) prend en charge le dollar canadien (CAD). Vous êtes facturé dans votre devise. Des frais de conversion bancaire peuvent s'appliquer selon votre institution financière si vous utilisez une carte libellée dans une autre devise, mais L'établ'IA n'ajoute aucun frais supplémentaire de son côté.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Comment la Loi 25 s'applique-t-elle à mon achat ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">La Loi 25 vous garantit que vos renseignements personnels (courriel, nom, adresse de facturation) sont collectés avec votre consentement, utilisés uniquement pour gérer votre commande et votre accès aux systèmes achetés, et conservés pour la durée minimale requise par la loi. Vous pouvez à tout moment demander à consulter, rectifier ou faire supprimer vos données en nous écrivant via notre <a href="contact.html" style="color:var(--chene)">formulaire de contact</a>.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Le support tient-il compte du fuseau horaire EST ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">L'atelier est basé en France (UTC+1/+2). Le support est assuré par courriel, avec un délai de réponse de 24 heures ouvrées. En pratique, un message envoyé le matin (heure de Montréal) reçoit généralement une réponse en fin de journée ou le lendemain matin. Pas de ligne téléphonique dédiée — tout passe par courriel pour garantir un suivi écrit traçable.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Puis-je déduire cet achat de mes revenus d'entreprise ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">En règle générale, les outils numériques achetés à des fins professionnelles constituent des dépenses d'entreprise déductibles au Québec et au Canada. La facture fournie par L'établ'IA comporte toutes les mentions légales requises. Nous vous recommandons de consulter votre comptable ou fiscaliste pour confirmer le traitement adapté à votre situation fiscale particulière.</p>
+      </div>
+
+      <div style="padding:24px 0;border-bottom:1px solid var(--chene-25)">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Les systèmes sont-ils entièrement en français québécois ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">L'établ'IA est un atelier francophone. Les systèmes, la documentation et le support sont intégralement en français. Nous utilisons un français neutre et précis, accessible autant depuis Montréal, Québec, que Paris ou Bruxelles. Quelques termes peuvent différer légèrement entre le français québécois et européen — si vous repérez quelque chose qui vous semble étrange, signalez-le-nous et nous adapterons volontiers.</p>
+      </div>
+
+      <div style="padding:24px 0">
+        <h3 style="font-size:1.05rem;margin:0 0 8px;font-family:var(--ff-display)">Comment contacter le support depuis le Québec ?</h3>
+        <p style="font-size:14px;color:var(--ebene-80);line-height:1.65;margin:0">Le support est identique quel que soit votre pays. Utilisez notre <a href="contact.html" style="color:var(--chene)">formulaire de contact</a> en précisant votre province. Les réponses sont traitées sous 24 heures ouvrées (heure de Paris). Aucun numéro de téléphone dédié — tout passe par courriel pour garantir un suivi écrit traçable.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SECTION 5 — CTA ═══ -->
+<section style="padding:96px 0;background:var(--ebene);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div data-reveal style="text-align:center;max-width:52ch;margin:0 auto">
+      <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:18px">🍁 Accessible depuis le Québec</span>
+      <h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.1;color:var(--lin);margin:0 0 20px">Voir le catalogue <em class="editorial" style="color:var(--chene)">complet</em></h2>
+      <p style="color:var(--pierre);font-size:1rem;line-height:1.7;margin:0 0 16px">Tous les systèmes sont disponibles pour les acheteurs québécois. Paiement en CAD, TVQ + TPS calculées automatiquement, Loi 25 respectée, livraison instantanée.</p>
+      <p style="color:var(--pierre);font-size:14px;line-height:1.6;margin:0 0 36px;font-family:var(--ff-display);font-style:italic">« Satisfait ou Forgé » · Paiement sécurisé · Support par courriel sous 24 h · Aucune démarche supplémentaire</p>
+      <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+        <a class="btn btn-primary" href="catalogue.html" style="font-size:1rem;padding:16px 36px">Voir le catalogue →</a>
+        <a href="faq.html" style="display:inline-flex;align-items:center;gap:8px;font-family:var(--ff-body);font-size:15px;color:var(--pierre);text-decoration:none;padding:16px 20px;border:1px solid rgba(184,175,166,0.3);border-radius:var(--r-sm);transition:color .2s">Questions générales</a>
+      </div>
+      <p style="margin-top:32px;font-family:var(--ff-display);font-style:italic;color:var(--pierre);font-size:14px;opacity:.7">Atelier francophone ouvert au Québec, à la France, à la Belgique, à la Suisse et à la francophonie internationale.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, travailleurs autonomes, artisans et commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="catalogue.html">Catalogue</a></li>
+        <li><a href="famille-automatiser.html">Automatiser</a></li>
+        <li><a href="famille-vendre.html">Vendre</a></li>
+        <li><a href="famille-piloter.html">Piloter</a></li>
+        <li><a href="famille-produire.html">Produire</a></li>
+        <li><a href="famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="a-propos.html">L'atelier</a></li>
+        <li><a href="faq.html">Questions fréquentes</a></li>
+        <li><a href="contact.html">Nous écrire</a></li>
+        <li><a href="experts-comptables.html">Partenaires EC</a></li>
+        <li><a href="programme-contributeurs.html">Devenir contributeur</a></li>
+        <li><a href="be.html" style="color:var(--chene)">🇧🇪 Pour la Belgique</a></li>
+        <li><a href="ch.html" style="color:var(--chene)">🇨🇭 Pour la Suisse</a></li>
+        <li><a href="qc.html" style="color:var(--chene);font-weight:600">🍁 Pour le Québec</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="mentions-legales.html">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France · 🍁 Québec bienvenu</span>
+  </div>
+</footer>
+
+<script src="assets/js/letablia.js"></script>
+<script src="assets/js/theme-toggle.js" defer></script>
+<script>fetch('assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+<script defer src="/assets/js/easter-eggs.js"></script>
+
+<style>
+@media (max-width:880px){
+  .qc-hero-stats{grid-template-columns:1fr !important}
+  .qc-catalogue{grid-template-columns:1fr !important}
+  .qc-badge{flex-direction:column !important}
+}
+</style>
+</body></html>
