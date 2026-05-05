@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Le pire client qu'on a jamais eu (et ce qu'on a appris) — Journal — L'établ'IA</title>
+<meta name="description" content="En mars, on a géré une collaboration qui a tout raté. Ce texte n'est pas là pour régler des comptes, mais pour documenter trois changements concrets dans notre façon de travailler."/>
+<link rel="canonical" href="https://letablia.fr/journal/pire-client.html"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/letablia.css"/><link rel="stylesheet" href="../assets/css/search.css"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Le pire client qu'on a jamais eu (et ce qu'on a appris)",
+  "datePublished": "2026-04-15",
+  "author": {"@type": "Organization", "name": "L'établ'IA"},
+  "publisher": {"@type": "Organization", "name": "L'établ'IA", "url": "https://letablia.fr"},
+  "description": "En mars, on a géré une collaboration qui a tout raté. Ce texte documente trois changements concrets dans notre façon de travailler."
+}
+</script>
+</head><body>
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">
+      L'établ'<span style="color:var(--chene)">IA</span>
+      <small>est. 2026</small>
+    </a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a data-nav="catalogue.html" href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="../catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a data-nav="diagnostic.html" href="../diagnostic.html">Diagnostic</a>
+      <a data-nav="a-propos.html" href="../a-propos.html">L'atelier</a>
+      <a data-nav="journal.html" href="../journal.html">Journal</a>
+      <a data-nav="faq.html" href="../faq.html">FAQ</a>
+      <a data-nav="contact.html" href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      </button>
+      <a class="btn btn-primary" href="../diagnostic.html">Diagnostic gratuit</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../famille-automatiser.html">— Automatiser</a>
+  <a href="../famille-vendre.html">— Vendre</a>
+  <a href="../famille-piloter.html">— Piloter</a>
+  <a href="../famille-produire.html">— Produire</a>
+  <a href="../famille-securiser.html">— Sécuriser</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../journal.html">Journal</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+</div>
+<div class="search-overlay" data-search-overlay>
+  <div class="search-card">
+    <div class="search-input-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg>
+      <input type="text" placeholder="Chercher un système : alerte stock, CRM, dashboard..." />
+      <span class="kbd">ESC</span>
+      <button class="le-mobile-close" data-search-close style="position:static;font-size:24px">✕</button>
+    </div>
+    <div class="search-results" data-search-results>
+      <div class="se-empty">Tapez quelques mots — les systèmes apparaîtront ici.</div>
+    </div>
+  </div>
+</div>
+
+<main>
+<!-- Fil d'Ariane -->
+<section style="padding:48px 0 24px;background:var(--lin)">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="../index.html">Accueil</a>
+      <span class="sep"></span>
+      <a href="../journal.html">Journal</a>
+      <span class="sep"></span>
+      <span class="current">Le pire client</span>
+    </div>
+  </div>
+</section>
+
+<!-- Hero article -->
+<section style="padding:56px 0 64px;background:var(--lin)">
+  <div class="container-narrow">
+    <div data-reveal>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap">
+        <span class="etiquette">Retour d'expérience</span>
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.12em;text-transform:uppercase">15 avril 2026</span>
+        <span style="font-family:var(--ff-mono);font-size:11px;color:var(--pierre);letter-spacing:.08em">7 min de lecture</span>
+      </div>
+      <h1 style="font-size:clamp(2.2rem,4.5vw,3.4rem);line-height:1.08;margin-bottom:28px">Le pire client qu'on a jamais eu<br/>(et ce qu'on a appris)</h1>
+      <p style="font-family:var(--ff-display);font-style:italic;font-size:1.3rem;line-height:1.5;color:var(--chene);max-width:52ch;border-left:3px solid var(--chene-25);padding-left:20px">On ne va pas prétendre que tout s'est bien passé. Ce texte n'est pas là pour régler des comptes. C'est un compte rendu honnête d'une collaboration ratée, et des trois choses concrètes qu'on a changées ensuite.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Corps -->
+<section style="padding:0 0 96px;background:var(--lin)">
+  <div class="container-narrow">
+    <article style="font-family:var(--ff-body);font-size:1.08rem;line-height:1.78;color:var(--ebene);max-width:62ch;margin:0 auto" data-reveal>
+
+      <p>Il y a un type de client que tout prestataire de service finit par rencontrer. Pas un mauvais payeur, pas quelqu'un de malhonnête. Quelqu'un dont les attentes, les habitudes de travail et la façon de communiquer sont fondamentalement incompatibles avec les vôtres, et que vous n'avez pas su détecter à temps. On a rencontré le nôtre en mars.</p>
+
+      <p>La demande est arrivée par email. Projet de Signal de Vente pour une boutique en ligne de produits artisanaux. Brief court mais précis : déclenchement de notifications sur les paniers abandonnés avec un score d'intention. Budget dans nos fourchettes, délai raisonnable, interlocuteur qui semblait avoir compris ce qu'on faisait. On a dit oui.</p>
+
+      <h2 style="font-size:clamp(1.7rem,3vw,2.2rem);margin:64px 0 24px;line-height:1.15">Comment ça a commencé à déraper</h2>
+
+      <p>La livraison initiale s'est bien passée. Le système fonctionnait, les tests montraient les bons comportements, la documentation était complète. On a envoyé un email récapitulatif avec les accès et les instructions. Deux jours plus tard, le premier retour est arrivé.</p>
+
+      <p>Le système "ne ressemblait pas à ce qui avait été décrit". On a relu le brief ensemble. Le système correspondait exactement à ce qui avait été décrit. On a corrigé malgré tout quelques formulations dans les emails de notification parce que les retours semblaient de bonne foi, et qu'on voulait satisfaire le client. C'est là qu'on a fait l'erreur de base.</p>
+
+      <p>En disant oui à la première demande hors-scope, on a établi un précédent. Chaque correction en appelait une autre. Le seuil de déclenchement était "trop sensible". Puis "pas assez sensible". L'email de notification était "trop long". Puis "trop court, on n'a plus les infos". On a passé trois semaines à modifier un système qui avait pris trois jours à construire. Chaque modification était suivie d'un nouveau "ah, et tant qu'on y est".</p>
+
+      <p>Le problème central n'était pas la mauvaise volonté du client. C'était l'absence de cadre. Ni lui ni nous n'avions défini ce que signifiait "terminé". On avait livré une pièce finie selon notre définition. Lui en avait une autre. Et comme on n'avait rien couché sur papier, les deux définitions s'étaient heurtées indéfiniment.</p>
+
+      <h2 style="font-size:clamp(1.7rem,3vw,2.2rem);margin:64px 0 24px;line-height:1.15">Ce qu'on a changé, concrètement</h2>
+
+      <p>Depuis cette collaboration, trois choses ont changé dans notre façon de travailler. Pas des principes vagues. Des procédures précises.</p>
+
+      <p>La première : tout projet, même simple, commence par un brief écrit, validé par les deux parties avant qu'on touche au code. Ce document liste ce que le système fera, dans quelles conditions, et explicitement ce qu'il ne fera pas. "Le système ne gère pas les retours produits" est une phrase utile à écrire avant de commencer. Elle ne semble pas nécessaire jusqu'au moment où quelqu'un vous demande pourquoi les retours produits ne sont pas gérés.</p>
+
+      <p>La deuxième : le scope est le scope. Quand une demande de modification dépasse ce qui a été convenu, on le dit, on chiffre, et on laisse le client décider. On ne dit plus oui par défaut pour éviter un inconfort dans l'échange. Cet inconfort-là coûte moins cher que trois semaines de dérive.</p>
+
+      <p>La troisième, c'est celle qu'on a tardé à accepter : certains signaux d'alerte sont présents dès le premier email, et on a tendance à les ignorer parce qu'on veut croire que ça va bien se passer. Le client qui n'a pas de réponse précise à "quel problème quotidien ce système va-t-il résoudre" n'est généralement pas prêt. Celui dont chaque question génère trois nouvelles questions n'a pas fini de clarifier son besoin. Repousser le démarrage d'un projet pour clarifier ces points n'est pas de la bureaucratie. C'est de la maintenance préventive.</p>
+
+      <p>On n'a pas de rancœur vis-à-vis de ce client. La collaboration s'est terminée sans éclat, avec un remboursement partiel que les deux parties ont accepté. Mais on a appris quelque chose que deux ans de lecture sur la gestion de projet n'avaient pas réussi à nous enseigner aussi solidement : la douleur d'une mauvaise collaboration est un meilleur professeur que le meilleur des articles de blog sur le sujet.</p>
+
+      <p>Y compris celui-ci.</p>
+
+    </article>
+  </div>
+</section>
+
+<!-- Footer article -->
+<section style="padding:48px 0 72px;background:var(--parchemin);border-top:1px solid var(--chene-25)">
+  <div class="container-narrow">
+    <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px">
+      <a href="../journal.html" class="btn-link" style="font-size:14px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+        Retour au journal
+      </a>
+      <div style="text-align:right">
+        <div style="font-family:var(--ff-mono);font-size:10px;color:var(--pierre);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px">Article suivant</div>
+        <a href="changelog-signal-de-vente.html" class="btn-link" style="font-size:14px">
+          Changelog Signal de Vente v1.1
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="vertical-align:middle"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">
+        L'établ'<span style="color:var(--chene)">IA</span>
+        <small>est. 2026</small>
+      </a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue (11)</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../journal.html">Journal</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote IA n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script src="../assets/js/theme-toggle.js" defer></script>
+<script>fetch('../assets/data/products.json').then(r=>r.json()).then(d=>{window.LE_DATA=d});</script>
+</body></html>

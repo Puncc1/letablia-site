@@ -445,3 +445,280 @@ a{color:inherit}
   font-size: 0.85rem;
   margin-top: 8px;
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MODE LUMIÈRE DE L'ÉTABLI — THEME TOGGLE jour/nuit
+   AMELIO-SITE-L3-5-MODE-LUMIERE-NUIT
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* --- Bouton toggle ------------------------------------------------ */
+.le-theme-btn{
+  background:none;border:1px solid var(--chene-25);
+  width:38px;height:38px;border-radius:var(--r-md);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+  color:var(--chene);flex-shrink:0;
+}
+.le-theme-btn:hover{background:var(--chene-10);color:var(--ebene)}
+.le-theme-btn:focus-visible{outline:2px solid var(--mousse);outline-offset:2px}
+/* Soleil visible par défaut, lune cachée */
+.le-theme-btn .icon-moon{display:none}
+.le-theme-btn .icon-sun{display:block}
+/* Mode nuit : inverser */
+[data-theme="dark"] .le-theme-btn .icon-moon{display:block}
+[data-theme="dark"] .le-theme-btn .icon-sun{display:none}
+
+/* --- Transitions : activées UNIQUEMENT après init JS (anti-FOUC) - */
+.theme-ready,
+.theme-ready body{
+  transition:background .3s ease, color .3s ease;
+}
+.theme-ready .le-header,
+.theme-ready .le-mobile,
+.theme-ready .le-dropdown,
+.theme-ready .card-produit,
+.theme-ready .le-footer,
+.theme-ready .marquee,
+.theme-ready .field input,
+.theme-ready .field textarea,
+.theme-ready .field select{
+  transition:background .3s ease, border-color .3s ease, color .3s ease;
+}
+.theme-ready .btn-primary,
+.theme-ready .btn-ghost,
+.theme-ready .btn-mousse{
+  transition:background .3s ease, color .3s ease, box-shadow .3s ease, transform .15s ease;
+}
+
+/* --- Mode nuit : variables overrides ------------------------------ */
+[data-theme="dark"]{
+  /* Surfaces : ébène comme fond, lin atténué comme texte */
+  --lin:       #2C2825;   /* fond principal = ébène */
+  --ebene:     #E8DFC9;   /* texte principal = lin atténué */
+  --parchemin: #352E29;   /* cartes, surfaces légères */
+  --kraft:     #3A3229;   /* kraft sombre */
+  --kraft-2:   #302820;   /* kraft-2 sombre */
+
+  /* Alpha recalculés pour fond sombre */
+  --chene-6:   rgba(138,117,96,0.08);
+  --chene-10:  rgba(138,117,96,0.16);
+  --chene-15:  rgba(138,117,96,0.22);
+  --chene-25:  rgba(138,117,96,0.32);
+  --pierre-30: rgba(184,175,166,0.12);
+  --mousse-10: rgba(107,124,95,0.18);
+  --ebene-80:  rgba(232,223,201,0.80);
+  --ebene-08:  rgba(232,223,201,0.08);
+}
+
+/* Logo : le code couleur encre (#1B1815) devient illisible sur fond sombre */
+[data-theme="dark"] .le-logo{color:var(--ebene)}
+[data-theme="dark"] .le-logo::before{background:var(--chene)}
+
+/* Footer : déjà sombre, restaurer les couleurs claires */
+[data-theme="dark"] .le-footer{
+  --lin:    #E8DFC9;
+  --ebene:  #E8DFC9;
+  --pierre: #B8AFA6;
+}
+[data-theme="dark"] .le-footer-brand .le-logo{color:#E8DFC9}
+
+/* surface-ebene (sections sur fond ébène) : déjà sombres, conserver */
+[data-theme="dark"] .surface-ebene{
+  --lin: #E8DFC9;
+}
+
+/* Texture fond : légèrement réduite en mode nuit */
+[data-theme="dark"] body::before{opacity:.15}
+
+/* Bouton primary en mode nuit */
+[data-theme="dark"] .btn-primary{
+  background:var(--chene);color:#FAF6EE;
+  box-shadow:0 2px 0 rgba(0,0,0,.35);
+}
+[data-theme="dark"] .btn-primary:hover{
+  background:#9d8870;box-shadow:0 3px 0 rgba(0,0,0,.35);
+}
+
+/* Bouton ghost en mode nuit */
+[data-theme="dark"] .btn-ghost{color:var(--ebene);border-color:var(--ebene)}
+[data-theme="dark"] .btn-ghost:hover{background:var(--ebene);color:#2C2825}
+
+/* Sélection de texte */
+[data-theme="dark"] ::selection{background:var(--chene);color:#FAF6EE}
+
+/* Formulaires */
+[data-theme="dark"] .field input,
+[data-theme="dark"] .field textarea,
+[data-theme="dark"] .field select{
+  background:var(--parchemin);color:var(--ebene);
+  border-color:var(--chene-25);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   MICRO-ANIMATIONS CSS SUBTILES — L3-4-MICRO-ANIMATIONS-CSS
+   Animations légères et imperceptibles pour meilleure UX
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* --- KEYFRAMES ---------------------------------------------------- */
+
+/* Underline qui "tire" du left vers le right */
+@keyframes tire-trait {
+  from {
+    width: 0;
+    left: 0;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+/* --- 1. CTA PRIMARY BUTTON HOVER ---------------------------------- */
+/* Rotation 0.5deg + lift (translateY -1px) */
+.btn-primary,
+button.primary,
+a.btn-primary {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary:hover,
+button.primary:hover,
+a.btn-primary:hover {
+  transform: translateY(-1px) rotate(0.5deg);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:active,
+button.primary:active,
+a.btn-primary:active {
+  transform: translateY(0) rotate(0deg);
+}
+
+/* --- 2. PRODUCT CARDS HOVER --------------------------------------- */
+/* Shadow légère + lift (translateY -4px) */
+.product-card,
+.card-product,
+.card-produit,
+[class*="card"][class*="product"] {
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.product-card:hover,
+.card-product:hover,
+.card-produit:hover,
+[class*="card"][class*="product"]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* --- 3. SECTION TITLES H2 - TIRE-TRAIT ANIMATION ------------------- */
+/* Underline qui "tire" au viewport entry (Intersection Observer) */
+h2,
+.h2,
+[class*="title"] h2 {
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+h2::after,
+.h2::after,
+[class*="title"] h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+/* État activé: l'underline apparaît complètement */
+h2.animated::after,
+.h2.animated::after,
+[class*="title"] h2.animated::after {
+  animation: tire-trait 0.3s ease forwards;
+}
+
+/* --- 4. LOGO HOVER - 3D TILT -------------------------------------- */
+/* Tilt 3D subtil (rotateX 5deg + rotateY -2deg) */
+.logo,
+.site-logo,
+[class*="logo"] {
+  position: relative;
+  transition: transform 0.25s ease;
+  transform-style: preserve-3d;
+}
+
+.logo:hover,
+.site-logo:hover,
+[class*="logo"]:hover {
+  transform: rotateX(5deg) rotateY(-2deg);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   ACCESSIBILITY — prefers-reduced-motion: reduce
+   Désactiver toutes les animations pour utilisateurs préférant moins
+   de mouvement
+   ═══════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Désactiver animations CTA Button */
+  .btn-primary,
+  button.primary,
+  a.btn-primary {
+    transition: none;
+  }
+
+  .btn-primary:hover,
+  button.primary:hover,
+  a.btn-primary:hover {
+    transform: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Désactiver animations Product Cards */
+  .product-card,
+  .card-product,
+  .card-produit,
+  [class*="card"][class*="product"] {
+    transition: none;
+  }
+
+  .product-card:hover,
+  .card-product:hover,
+  .card-produit:hover,
+  [class*="card"][class*="product"]:hover {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Désactiver animations H2 tire-trait */
+  h2::after,
+  .h2::after,
+  [class*="title"] h2::after {
+    transition: none;
+  }
+
+  h2.animated::after,
+  .h2.animated::after,
+  [class*="title"] h2.animated::after {
+    animation: none;
+    width: 100%;
+  }
+
+  /* Désactiver animations Logo */
+  .logo,
+  .site-logo,
+  [class*="logo"] {
+    transition: none;
+  }
+
+  .logo:hover,
+  .site-logo:hover,
+  [class*="logo"]:hover {
+    transform: none;
+  }
+}

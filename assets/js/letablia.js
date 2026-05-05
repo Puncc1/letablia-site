@@ -69,6 +69,15 @@
     if(a.dataset.nav === path) a.classList.add('current');
   });
 
+  // ---- Micro-animations: H2 tire-trait au viewport entry ----
+  // Animation tire-trait (underline qui tire du left) au scroll reveal
+  const h2Observer = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){e.target.classList.add('animated');h2Observer.unobserve(e.target)}
+    });
+  },{threshold:0.1, rootMargin:'0px 0px -100px 0px'});
+  document.querySelectorAll('h2').forEach(h2=>h2Observer.observe(h2));
+
   // ---- Data loader ----
   // products.json is loaded inline by each page via window.LE_DATA = {...}
 })();

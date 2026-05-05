@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none" stroke="#2C2520" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <title>Clé et tournevis croisés</title>
+  <!-- Tournevis (rotated -45deg autour de 100,100) -->
+  <g transform="rotate(-45 100 100)">
+    <!-- Manche strié octogonal -->
+    <rect x="30" y="92" width="50" height="16" fill="#6B7C5C" stroke="#2C2520"/>
+    <line x1="36" y1="92" x2="36" y2="108" stroke-width="0.9"/>
+    <line x1="44" y1="92" x2="44" y2="108" stroke-width="0.9"/>
+    <line x1="52" y1="92" x2="52" y2="108" stroke-width="0.9"/>
+    <line x1="60" y1="92" x2="60" y2="108" stroke-width="0.9"/>
+    <line x1="68" y1="92" x2="68" y2="108" stroke-width="0.9"/>
+    <!-- Tige métallique -->
+    <rect x="80" y="97" width="60" height="6" fill="#F2EDE4" stroke="#2C2520"/>
+    <!-- Lame plate -->
+    <path d="M 140 96 L 158 98 L 158 102 L 140 104 Z" fill="#F2EDE4" stroke="#2C2520"/>
+  </g>
+  <!-- Clé à mâchoires (rotated +45deg autour de 100,100) -->
+  <g transform="rotate(45 100 100)">
+    <!-- Anneau de bout -->
+    <circle cx="40" cy="100" r="14" fill="#F2EDE4" stroke="#2C2520"/>
+    <circle cx="40" cy="100" r="6" fill="none" stroke="#2C2520"/>
+    <!-- Manche -->
+    <rect x="54" y="95" width="80" height="10" fill="#F2EDE4" stroke="#2C2520"/>
+    <!-- Tête mâchoires -->
+    <path d="M 134 90 L 158 88 L 162 95 L 152 100 L 162 105 L 158 112 L 134 110 Z" fill="#F2EDE4" stroke="#2C2520"/>
+    <!-- Vis de réglage -->
+    <circle cx="146" cy="100" r="2.5" fill="#2C2520"/>
+  </g>
+  <!-- Croisement central -->
+  <circle cx="100" cy="100" r="3" fill="#2C2520" stroke="none"/>
+</svg>

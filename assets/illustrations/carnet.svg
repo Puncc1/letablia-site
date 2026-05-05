@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" fill="none" stroke="#2C2520" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+  <title>Carnet ouvert avec stylo</title>
+  <!-- Page gauche -->
+  <path d="M 30 50 Q 28 45 35 42 L 145 38 Q 150 38 150 45 L 150 165 Q 150 170 145 170 L 35 168 Q 28 168 30 162 Z" fill="#F2EDE4" stroke="#2C2520"/>
+  <!-- Page droite -->
+  <path d="M 270 50 Q 272 45 265 42 L 155 38 Q 150 38 150 45 L 150 165 Q 150 170 155 170 L 265 168 Q 272 168 270 162 Z" fill="#F2EDE4" stroke="#2C2520"/>
+  <!-- Reliure spirale (Mousse) -->
+  <g stroke="#6B7C5C" stroke-width="1.5">
+    <ellipse cx="150" cy="50" rx="3" ry="6" fill="none"/>
+    <ellipse cx="150" cy="68" rx="3" ry="6" fill="none"/>
+    <ellipse cx="150" cy="86" rx="3" ry="6" fill="none"/>
+    <ellipse cx="150" cy="104" rx="3" ry="6" fill="none"/>
+    <ellipse cx="150" cy="122" rx="3" ry="6" fill="none"/>
+    <ellipse cx="150" cy="140" rx="3" ry="6" fill="none"/>
+    <ellipse cx="150" cy="158" rx="3" ry="6" fill="none"/>
+  </g>
+  <!-- Lignes page gauche -->
+  <g stroke-width="0.8">
+    <line x1="42" y1="60" x2="138" y2="58"/>
+    <line x1="42" y1="74" x2="138" y2="72"/>
+    <line x1="42" y1="88" x2="138" y2="86"/>
+    <line x1="42" y1="102" x2="138" y2="100"/>
+    <line x1="42" y1="116" x2="138" y2="114"/>
+    <line x1="42" y1="130" x2="120" y2="128"/>
+  </g>
+  <!-- Lignes page droite -->
+  <g stroke-width="0.8">
+    <line x1="162" y1="58" x2="258" y2="60"/>
+    <line x1="162" y1="72" x2="258" y2="74"/>
+    <line x1="162" y1="86" x2="258" y2="88"/>
+    <line x1="162" y1="100" x2="258" y2="102"/>
+    <line x1="162" y1="114" x2="258" y2="116"/>
+  </g>
+  <!-- Stylo en diagonale (Mousse) -->
+  <g stroke="#6B7C5C" stroke-width="2.2">
+    <line x1="195" y1="135" x2="245" y2="155"/>
+    <!-- clip -->
+    <line x1="200" y1="138" x2="208" y2="142" stroke-width="1.5"/>
+    <!-- pointe -->
+    <line x1="245" y1="155" x2="252" y2="158" stroke-width="1"/>
+    <!-- embout -->
+    <circle cx="194" cy="134" r="2" fill="#6B7C5C"/>
+  </g>
+</svg>
