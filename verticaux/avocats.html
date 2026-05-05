@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pour les Avocats et Professions Juridiques — L'établ'IA</title>
+<meta name="description" content="Avocats solo, petits cabinets 1-3 personnes : fini les délais procéduraux oubliés et les honoraires impayés qui s'accumulent. L'établ'IA forge des systèmes numériques sur mesure, dans le strict respect du secret professionnel."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/letablia.css"/>
+<link rel="stylesheet" href="../assets/css/search.css"/>
+<style>
+/* ── Page verticale Avocats / Professions juridiques ───────── */
+
+/* Breadcrumb */
+.avo-breadcrumb{
+  background:var(--ebene);padding:10px 0;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--pierre);
+}
+.avo-breadcrumb a{color:var(--pierre);text-decoration:none;opacity:.7}
+.avo-breadcrumb a:hover{opacity:1}
+.avo-breadcrumb span{margin:0 8px;opacity:.4}
+
+/* Hero Avocats */
+.hero-avo{
+  background:var(--lin);
+  padding:80px 0 96px;
+  border-bottom:1px solid var(--chene-25);
+  position:relative;overflow:hidden;
+}
+.hero-avo::before{
+  content:"";position:absolute;right:-80px;top:-40px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(138,117,96,.06) 0%,transparent 70%);
+}
+.hero-avo-inner{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center;
+}
+.hero-avo-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--chene);
+  margin-bottom:24px;
+}
+.hero-avo-tag::before{content:"";width:22px;height:1px;background:var(--chene);}
+.hero-avo h1{margin-bottom:24px;max-width:20ch}
+.hero-avo h1 em{font-family:var(--ff-display);font-style:italic;color:var(--chene)}
+.hero-avo-lede{
+  font-size:1.15rem;line-height:1.6;color:var(--ebene-80);
+  max-width:46ch;margin-bottom:32px;
+}
+.hero-avo-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-avo-note{font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.06em}
+
+/* Carte dossier (illu droite hero) */
+.carte-dossier{
+  background:var(--parchemin);
+  border:1px solid var(--chene-25);
+  border-radius:var(--r-sm);
+  padding:28px 24px;
+  box-shadow:12px 12px 0 -3px var(--kraft),12px 12px 0 -2px var(--chene-25);
+}
+.carte-dossier-header{
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px dashed var(--chene-25);padding-bottom:12px;margin-bottom:16px;
+}
+.carte-dossier-num{font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;color:var(--chene);text-transform:uppercase}
+.carte-dossier-status{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;
+  background:rgba(107,124,95,.12);color:var(--mousse);
+  padding:3px 10px;border-radius:99px;text-transform:uppercase;
+}
+.carte-dossier-titre{font-weight:700;margin-bottom:4px;font-size:1rem}
+.carte-dossier-sub{font-family:var(--ff-mono);font-size:11px;color:var(--chene);margin-bottom:16px}
+.carte-dossier-list{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px}
+.carte-dossier-list li{
+  font-size:13px;color:var(--ebene-80);
+  display:flex;align-items:center;gap:8px;
+}
+.carte-dossier-list li::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--mousse);flex-shrink:0;
+}
+.carte-dossier-footer{
+  border-top:1px dashed var(--chene-25);padding-top:12px;
+  display:flex;justify-content:space-between;
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+}
+
+/* Pour qui / Pour qui pas */
+.pour-qui-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.pour-qui-grid{grid-template-columns:1fr}}
+.pq-card{border-radius:var(--r-md);padding:28px 24px;border:1.5px solid}
+.pq-oui{background:var(--parchemin);border-color:rgba(107,124,95,.3)}
+.pq-non{background:var(--parchemin);border-color:rgba(180,60,60,.15)}
+.pq-label{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 12px;border-radius:99px;display:inline-block;margin-bottom:16px;
+}
+.pq-oui .pq-label{background:var(--mousse-10);color:var(--mousse)}
+.pq-non .pq-label{background:rgba(180,60,60,.08);color:#b43c3c}
+.pq-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.pq-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;line-height:1.5}
+.pq-oui .pq-list li::before{
+  content:"✓";flex-shrink:0;width:18px;height:18px;border-radius:50%;
+  background:rgba(107,124,95,.15);color:var(--mousse);
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+  line-height:18px;text-align:center;margin-top:1px;
+}
+.pq-non .pq-list li::before{
+  content:"✕";flex-shrink:0;width:18px;height:18px;border-radius:50%;
+  background:rgba(180,60,60,.1);color:#b43c3c;
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+  line-height:18px;text-align:center;margin-top:1px;
+}
+
+/* Pain points */
+.pains-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.pain-card{
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  border-radius:var(--r-md);padding:24px 22px;
+  border-left:3px solid var(--chene);
+}
+.pain-icon{font-size:1.5rem;margin-bottom:12px}
+.pain-title{font-weight:700;margin-bottom:8px;font-size:.95rem}
+.pain-desc{font-size:14px;color:var(--ebene-80);line-height:1.55}
+
+/* Systèmes forgés */
+.systemes-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.systemes-grid{grid-template-columns:1fr}}
+.systeme-card{
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  border-radius:var(--r-md);padding:28px 24px;
+  position:relative;transition:box-shadow .2s;
+}
+.systeme-card:hover{box-shadow:0 4px 20px rgba(44,40,37,.08)}
+.systeme-rang{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--chene);margin-bottom:12px;
+}
+.systeme-nom{
+  font-family:var(--ff-display);font-size:1.2rem;font-weight:700;
+  color:var(--ebene);margin-bottom:8px;line-height:1.2;
+}
+.systeme-desc{font-size:14px;color:var(--ebene-80);line-height:1.6;margin-bottom:16px}
+.systeme-tags{display:flex;flex-wrap:wrap;gap:6px}
+.systeme-tag{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--mousse);
+  background:var(--mousse-10);border:1px solid rgba(107,124,95,.2);
+  padding:3px 10px;border-radius:99px;
+}
+.systeme-prix{
+  font-family:var(--ff-mono);font-weight:600;font-size:.9rem;
+  color:var(--ebene);margin-top:16px;border-top:1px dashed var(--chene-25);
+  padding-top:14px;
+}
+
+/* Bloc secret professionnel */
+.secret-pro{
+  background:var(--ebene);color:var(--lin);
+  border-radius:var(--r-lg);padding:44px 40px;
+  position:relative;overflow:hidden;
+}
+.secret-pro::before{
+  content:"";position:absolute;right:-60px;bottom:-60px;
+  width:280px;height:280px;border-radius:50%;
+  background:radial-gradient(circle,rgba(138,117,96,.14) 0%,transparent 70%);
+  pointer-events:none;
+}
+.secret-pro-tag{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--chene);margin-bottom:16px;
+}
+.secret-pro h2{color:var(--lin);margin-bottom:16px}
+.secret-pro-lede{color:rgba(242,237,232,.8);font-size:1rem;line-height:1.65;margin-bottom:28px;max-width:58ch}
+.secret-pro-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+.secret-pro-list li{
+  display:flex;align-items:flex-start;gap:12px;
+  font-size:14px;color:rgba(242,237,232,.85);line-height:1.5;
+}
+.secret-pro-list li::before{
+  content:"→";color:var(--chene);flex-shrink:0;font-family:var(--ff-mono);
+}
+
+/* Témoignage */
+.temoignage{
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  border-radius:var(--r-md);padding:36px 32px;
+  position:relative;max-width:780px;margin:0 auto;
+}
+.temoignage::before{
+  content:""";font-family:var(--ff-display);font-size:5rem;
+  color:var(--chene-25);position:absolute;top:-16px;left:24px;
+  line-height:1;
+}
+.temoignage-texte{
+  font-size:1.05rem;line-height:1.7;color:var(--ebene);
+  font-style:italic;font-family:var(--ff-display);
+  margin-bottom:20px;padding-top:20px;
+}
+.temoignage-auteur{
+  display:flex;align-items:center;gap:14px;
+  border-top:1px dashed var(--chene-25);padding-top:16px;
+}
+.temoignage-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--kraft);border:1px solid var(--chene-25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-display);font-weight:700;color:var(--chene);font-size:1rem;
+}
+.temoignage-nom{font-weight:600;font-size:.9rem}
+.temoignage-role{font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;color:var(--chene);text-transform:uppercase}
+.cas-type-badge{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--pierre);
+  background:var(--kraft);border:1px dashed var(--chene-25);
+  padding:2px 8px;border-radius:2px;margin-left:8px;vertical-align:middle;
+}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--chene-25);border-radius:var(--r-md);overflow:hidden}
+.faq-item{border-bottom:1px solid var(--chene-25)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{
+  width:100%;background:var(--parchemin);border:none;cursor:pointer;
+  padding:22px 24px;text-align:left;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-family:var(--ff-body);font-weight:600;font-size:.95rem;color:var(--ebene);
+  transition:background .15s;
+}
+.faq-q:hover{background:var(--kraft)}
+.faq-q[aria-expanded="true"]{background:var(--kraft)}
+.faq-chevron{width:16px;height:16px;flex-shrink:0;transition:transform .2s;color:var(--chene)}
+.faq-q[aria-expanded="true"] .faq-chevron{transform:rotate(180deg)}
+.faq-a{
+  display:none;padding:0 24px 22px;background:var(--parchemin);
+  font-size:14.5px;line-height:1.65;color:var(--ebene-80);
+}
+.faq-q[aria-expanded="true"] + .faq-a{display:block}
+
+/* CTA final */
+.cta-final{
+  background:var(--lin);
+  border-top:1px solid var(--chene-25);
+  padding:80px 0;text-align:center;
+}
+.cta-final h2{margin-bottom:16px}
+.cta-final p{color:var(--ebene-80);margin-bottom:32px;max-width:48ch;margin-left:auto;margin-right:auto}
+
+/* Helpers layout */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.section-pad{padding:80px 0}
+.section-header{margin-bottom:48px}
+.section-tag{
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--chene);
+  display:flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.section-tag::before{content:"";width:20px;height:1px;background:var(--chene)}
+.bg-kraft{background:var(--kraft)}
+.bg-parchemin{background:var(--parchemin);border-top:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25)}
+
+@media(max-width:900px){
+  .hero-avo-inner{grid-template-columns:1fr}
+  .carte-dossier{display:none}
+  .secret-pro{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════ HEADER ════════════ -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="../catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a href="../diagnostic.html">Diagnostic</a>
+      <a href="../a-propos.html">L'atelier</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg></button>
+      <a class="btn btn-primary" href="../contact.html?subject=vertical-avocats">Discuter d'un cabinet</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../famille-automatiser.html">— Automatiser</a>
+  <a href="../famille-vendre.html">— Vendre</a>
+  <a href="../famille-piloter.html">— Piloter</a>
+  <a href="../famille-produire.html">— Produire</a>
+  <a href="../famille-securiser.html">— Sécuriser</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<!-- Breadcrumb -->
+<div class="avo-breadcrumb">
+  <div class="container">
+    <a href="../index.html">Accueil</a>
+    <span>›</span>
+    <a href="../catalogue.html">Verticaux métier</a>
+    <span>›</span>
+    Avocats / Professions juridiques
+  </div>
+</div>
+
+<main>
+
+<!-- ════════════ 1. HERO ════════════ -->
+<section class="hero-avo">
+  <div class="container">
+    <div class="hero-avo-inner">
+      <div>
+        <div class="hero-avo-tag">Vertical D1 · Professions juridiques</div>
+        <h1>
+          Vos délais respectés,<br/>
+          <em>vos honoraires payés.</em>
+        </h1>
+        <p class="hero-avo-lede">
+          Avocat solo, petit cabinet de 1 à 3 personnes, notaire en début d'exercice — vous maîtrisez le droit, mais la gestion administrative grignote votre temps. Un délai procédural oublié, une relance d'honoraires jamais envoyée, un dossier introuvable. L'établ'IA forge des systèmes qui surveillent ce que vous ne pouvez pas toujours surveiller, dans le strict respect du secret professionnel.
+        </p>
+        <p class="satisfait-forge">« Satisfait ou Forgé » — remboursement sans condition sous 30 jours</p>
+        <div class="hero-avo-cta">
+          <a class="btn btn-primary" href="../contact.html?subject=vertical-avocats">Discuter d'un cabinet</a>
+          <a class="btn btn-ghost" href="../diagnostic.html">Diagnostic gratuit</a>
+        </div>
+        <p class="hero-avo-note" style="margin-top:16px">— Aucune donnée client traitée par IA · Secret professionnel garanti</p>
+      </div>
+      <!-- Illustration : fiche dossier -->
+      <div class="carte-dossier" aria-hidden="true">
+        <div class="carte-dossier-header">
+          <span class="carte-dossier-num">Dossier № 112 · Mai 2026</span>
+          <span class="carte-dossier-status">Actif</span>
+        </div>
+        <div class="carte-dossier-titre">Contentieux commercial</div>
+        <div class="carte-dossier-sub">Conclusions en réponse — Tribunal judiciaire</div>
+        <ul class="carte-dossier-list">
+          <li>Échéance conclusions : 18 mai — alerte envoyée</li>
+          <li>Honoraires facturés à J+0 — en attente règlement</li>
+          <li>Relance honoraires programmée : J+15</li>
+          <li>Archivage automatique des pièces reçues</li>
+        </ul>
+        <div class="carte-dossier-footer">
+          <span>Prochaine audience : 03 juin</span>
+          <span>Statut : Suivi actif</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 2. POUR QUI / POUR QUI PAS ════════════ -->
+<section class="section-pad bg-parchemin">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Avant de continuer</div>
+      <h2>Ce service est conçu pour vous si…</h2>
+    </div>
+    <div class="pour-qui-grid">
+      <div class="pq-card pq-oui">
+        <span class="pq-label">Vous vous reconnaissez</span>
+        <ul class="pq-list">
+          <li>Avocat en exercice individuel ou cabinet de 1 à 3 personnes</li>
+          <li>Notaire en début d'exercice ou collaborateur en transition</li>
+          <li>Vous gérez vos agendas procéduraux sur tableau ou agenda papier</li>
+          <li>Vous avez déjà failli manquer une échéance de conclusions ou d'appel</li>
+          <li>Vos factures d'honoraires attendent parfois plusieurs semaines un règlement</li>
+          <li>Vous relancez vos clients manuellement — quand vous y pensez</li>
+        </ul>
+      </div>
+      <div class="pq-card pq-non">
+        <span class="pq-label">Ce n'est pas pour vous si…</span>
+        <ul class="pq-list">
+          <li>Vous êtes un grand cabinet avec plus de 10 collaborateurs et une équipe dédiée à la gestion</li>
+          <li>Vous disposez déjà d'un logiciel de gestion de cabinet entièrement configuré et utilisé quotidiennement</li>
+          <li>Votre problème est exclusivement d'ordre comptable ou de paye</li>
+          <li>Vous cherchez une solution de plaidoirie ou d'assistance juridique automatisée</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 3. VOS PAINS ════════════ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Ce qui coince</div>
+      <h2>Trois frictions qui fragilisent votre cabinet</h2>
+    </div>
+    <div class="pains-grid">
+      <div class="pain-card">
+        <div class="pain-icon">⏳</div>
+        <div class="pain-title">Le délai procédural oublié</div>
+        <p class="pain-desc">Un délai de conclusions manqué, une forclusion, un appel hors délai — la sanction est immédiate et sans appel. Surveiller manuellement chaque date pour chaque dossier est une charge cognitive que nul ne devrait porter seul.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📄</div>
+        <div class="pain-title">Les honoraires qui tardent</div>
+        <p class="pain-desc">Votre client est satisfait du dossier, mais la facture reste sans réponse. Relancer soi-même est inconfortable et chronophage. Un rappel automatique, professionnel et discret, règle la situation avant qu'elle ne devienne un litige.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🗂️</div>
+        <div class="pain-title">Le dossier introuvable</div>
+        <p class="pain-desc">Pièces reçues, mails épars, courriers scannés — sans archivage structuré, retrouver un document en urgence avant une audience devient une source de stress évitable. Un processus simple de classement automatique change tout.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 4. LES 3 SYSTÈMES FORGÉS ════════════ -->
+<section class="section-pad bg-parchemin">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">L'atelier au service du droit</div>
+      <h2>Trois systèmes forgés pour votre exercice</h2>
+      <p style="color:var(--ebene-80);max-width:54ch;margin-top:12px">Chaque système est livré configuré, documenté et testé sur votre activité réelle. Aucune donnée client n'est transmise à un service d'intelligence artificielle. Vous restez maître de vos informations.</p>
+    </div>
+    <div class="systemes-grid">
+
+      <div class="systeme-card">
+        <div class="systeme-rang">Système · Automatiser</div>
+        <div class="systeme-nom">La Sentinelle de Délais</div>
+        <p class="systeme-desc">Surveille chaque date-limite procédurale enregistrée dans votre agenda. Déclenche une alerte à J-7 puis à J-2 avant toute échéance critique — conclusions, appel, communication de pièces. Aucune sanction par défaut d'attention.</p>
+        <div class="systeme-tags">
+          <span class="systeme-tag">Alertes échéances</span>
+          <span class="systeme-tag">J-7 et J-2</span>
+          <span class="systeme-tag">Zéro oubli</span>
+        </div>
+        <div class="systeme-prix">À partir de 39 € — installation unique</div>
+      </div>
+
+      <div class="systeme-card">
+        <div class="systeme-rang">Système · Automatiser</div>
+        <div class="systeme-nom">L'Alerteur de Paiements en Retard</div>
+        <p class="systeme-desc">Dès qu'une facture d'honoraires dépasse le délai de règlement que vous avez fixé, une relance courtoise est envoyée automatiquement à votre client. Ton professionnel, signature personnalisée, aucune intervention de votre part.</p>
+        <div class="systeme-tags">
+          <span class="systeme-tag">Relance honoraires</span>
+          <span class="systeme-tag">Ton sobre</span>
+          <span class="systeme-tag">Zéro conflit</span>
+        </div>
+        <div class="systeme-prix">À partir de 39 € — installation unique</div>
+      </div>
+
+      <div class="systeme-card">
+        <div class="systeme-rang">Système · Vendre</div>
+        <div class="systeme-nom">Le Concierge Post-Procédure</div>
+        <p class="systeme-desc">À la clôture d'un dossier, un suivi discret s'active : satisfaction client à J+30, rappel de disponibilité à J+180 pour de nouveaux besoins. Vos clients gardent le lien avec votre cabinet entre deux affaires, naturellement.</p>
+        <div class="systeme-tags">
+          <span class="systeme-tag">Suivi post-dossier</span>
+          <span class="systeme-tag">Fidélisation</span>
+          <span class="systeme-tag">Discret</span>
+        </div>
+        <div class="systeme-prix">À partir de 39 € — installation unique</div>
+      </div>
+
+      <div class="systeme-card" style="border-style:dashed;opacity:.72">
+        <div class="systeme-rang">Sur mesure · À la demande</div>
+        <div class="systeme-nom">Archivage Structuré de Dossier</div>
+        <p class="systeme-desc">Classement automatique des documents entrants (courriers, pièces, emails) dans l'arborescence de votre choix. Nommage normalisé, indexation locale, aucune copie vers le cloud sans votre accord explicite.</p>
+        <div class="systeme-tags">
+          <span class="systeme-tag">Classement auto</span>
+          <span class="systeme-tag">Local uniquement</span>
+          <span class="systeme-tag">Sur devis</span>
+        </div>
+        <div class="systeme-prix">Sur devis — selon volume dossiers</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 5. SECRET PROFESSIONNEL ════════════ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="secret-pro">
+      <div class="secret-pro-tag">Engagement · Confidentialité</div>
+      <h2>Secret professionnel : notre engagement absolu</h2>
+      <p class="secret-pro-lede">
+        L'exercice du droit repose sur la confiance. Toute divulgation d'information couverte par le secret professionnel engagerait votre responsabilité — et la nôtre. C'est pourquoi les systèmes que nous forgeons respectent une règle simple et non négociable : zéro donnée client traitée par un service d'intelligence artificielle tiers.
+      </p>
+      <ul class="secret-pro-list">
+        <li>Les alertes de délais n'utilisent que les dates et libellés que vous saisissez vous-même — jamais le contenu des dossiers.</li>
+        <li>Les relances d'honoraires fonctionnent à partir de vos modèles de messages : aucune rédaction automatisée par IA.</li>
+        <li>L'archivage s'effectue en local ou sur votre propre infrastructure — aucun stockage cloud imposé.</li>
+        <li>Les systèmes sont documentés, auditables et explicables à tout moment à votre Bâtonnier si nécessaire.</li>
+        <li>Nous ne revendons aucune donnée, n'intégrons aucune statistique anonymisée, n'hébergeons rien sans votre consentement écrit.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 6. TÉMOIGNAGE ════════════ -->
+<section class="section-pad bg-parchemin">
+  <div class="container">
+    <div class="section-header" style="text-align:center">
+      <div class="section-tag" style="justify-content:center">Retour d'exercice</div>
+      <h2>Ce que ça change, concrètement</h2>
+    </div>
+    <div class="temoignage">
+      <blockquote>
+        <p class="temoignage-texte">
+          « Je gère seul une cinquantaine de dossiers actifs. Avant, je gardais les échéances dans ma tête et sur un agenda papier. La Sentinelle de Délais m'alerte désormais sept jours avant chaque date critique — plus besoin de vérifier le soir. Et les honoraires : depuis que les relances partent automatiquement à J+20, mes délais de règlement ont diminué de moitié. »
+        </p>
+      </blockquote>
+      <div class="temoignage-auteur">
+        <div class="temoignage-avatar" aria-hidden="true">M.D.</div>
+        <div class="temoignage-info">
+          <div class="temoignage-nom">
+            M.D.
+            <span class="cas-type-badge">cas type · anonymisé</span>
+          </div>
+          <div class="temoignage-role">Avocat en exercice individuel · Contentieux civil · Île-de-France</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 7. FAQ ════════════ -->
+<section class="section-pad">
+  <div class="container" style="max-width:820px">
+    <div class="section-header">
+      <div class="section-tag">Questions fréquentes</div>
+      <h2>Ce que les avocats nous demandent en premier</h2>
+    </div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Les systèmes sont-ils compatibles avec le RPVA et les outils du Palais ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Les systèmes que nous forgeons ne s'interfacent pas directement avec le Réseau Privé Virtuel des Avocats (RPVA) ni avec les plateformes de communication judiciaire. Ils fonctionnent en aval : vous renseignez vous-même les dates et statuts issus de vos échanges avec les juridictions, et les alertes s'activent en conséquence. Cette indépendance technique est précisément ce qui garantit la neutralité et la sécurité des données.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Le contenu de mes dossiers clients est-il accessible par les systèmes ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Non, et c'est un choix de conception délibéré. La Sentinelle de Délais n'accède qu'aux métadonnées que vous saisissez : numéro de dossier, intitulé de procédure, dates, statut. L'Alerteur de Paiements n'accède qu'aux montants et dates de facturation. Aucune pièce, aucune consultation, aucune correspondance ne transite par nos systèmes. Le secret professionnel de l'avocat est structurellement préservé.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Comment fonctionne l'archivage de dossier sans compromettre la confidentialité ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Le système d'archivage structuré fonctionne entièrement en local, sur votre propre poste ou votre serveur interne. Aucun document n'est envoyé vers un service externe. Le classement automatique s'effectue selon des règles de nommage que vous définissez (numéro de dossier, type de pièce, date), sans lecture ni analyse du contenu. Vous pouvez auditer le fonctionnement à tout moment.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Puis-je personnaliser les messages de relance d'honoraires à mon image ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Entièrement. Les modèles de messages sont rédigés avec vous lors de la session de prise en main. Vous choisissez le ton (sobre, neutre, ferme), le niveau de formalisme, votre signature, et les délais de déclenchement — J+15, J+30, J+45 selon votre pratique habituelle. Aucune intelligence artificielle ne rédige à votre place : les textes sont les vôtres, déclenchés automatiquement.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Et si les systèmes ne me conviennent pas après l'installation ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Garantie « Satisfait ou Forgé » : si dans les 30 jours vous estimez que les systèmes ne vous apportent pas de valeur mesurable, nous remboursons intégralement, sans condition et sans question. Nous préférons une installation qui fonctionne à un client insatisfait. Cette garantie s'applique à tous les systèmes, y compris le pack complet.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 8. CTA FINAL ════════════ -->
+<section class="cta-final">
+  <div class="container">
+    <div class="section-tag" style="justify-content:center">Prochaine étape</div>
+    <h2>Prêt à consacrer votre attention à ce qui compte ?</h2>
+    <p>Un échange de 20 minutes suffit pour identifier les points où un système bien conçu ferait la différence dans votre exercice quotidien.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="/contact.html?subject=vertical-avocats">Discuter d'un cabinet</a>
+      <a class="btn btn-ghost" href="../diagnostic.html">Faire le diagnostic gratuit</a>
+    </div>
+    <p style="margin-top:24px;font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.06em">
+      Réponse sous 24h · Aucun engagement · Secret professionnel garanti · Satisfait ou Forgé
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et professions libérales. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script src="../assets/js/theme-toggle.js" defer></script>
+<script>
+function toggleFaq(btn){
+  var expanded = btn.getAttribute('aria-expanded') === 'true';
+  document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(function(b){
+    if(b !== btn){ b.setAttribute('aria-expanded','false'); }
+  });
+  btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+}
+</script>
+
+</body>
+</html>
