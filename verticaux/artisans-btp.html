@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"/>
+<script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pour les Artisans BTP — L'établ'IA</title>
+<meta name="description" content="Plombiers, électriciens, maçons : fini les devis perdus et les clients qui rappellent sans arrêt. L'établ'IA forge des systèmes numériques sur mesure pour les artisans BTP 1-5 salariés."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/letablia.css"/>
+<link rel="stylesheet" href="../assets/css/search.css"/>
+<style>
+/* ── Page verticale Artisans BTP ───────────────────────────── */
+
+/* Breadcrumb */
+.btp-breadcrumb{
+  background:var(--ebene);padding:10px 0;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--pierre);
+}
+.btp-breadcrumb a{color:var(--pierre);text-decoration:none;opacity:.7}
+.btp-breadcrumb a:hover{opacity:1}
+.btp-breadcrumb span{margin:0 8px;opacity:.4}
+
+/* Hero BTP */
+.hero-btp{
+  background:var(--lin);
+  padding:80px 0 96px;
+  border-bottom:1px solid var(--chene-25);
+  position:relative;overflow:hidden;
+}
+.hero-btp::before{
+  content:"";position:absolute;right:-80px;top:-40px;
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(138,117,96,.06) 0%,transparent 70%);
+}
+.hero-btp-inner{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:72px;align-items:center;
+}
+.hero-btp-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--chene);
+  margin-bottom:24px;
+}
+.hero-btp-tag::before{content:"";width:22px;height:1px;background:var(--chene);}
+.hero-btp h1{margin-bottom:24px;max-width:18ch}
+.hero-btp h1 em{font-family:var(--ff-display);font-style:italic;color:var(--chene)}
+.hero-btp-lede{
+  font-size:1.15rem;line-height:1.6;color:var(--ebene-80);
+  max-width:46ch;margin-bottom:32px;
+}
+.hero-btp-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-btp-note{font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.06em}
+
+/* Carte chantier (illu droite hero) */
+.carte-chantier{
+  background:var(--parchemin);
+  border:1px solid var(--chene-25);
+  border-radius:var(--r-sm);
+  padding:28px 24px;
+  box-shadow:12px 12px 0 -3px var(--kraft),12px 12px 0 -2px var(--chene-25);
+}
+.carte-chantier-header{
+  display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1px dashed var(--chene-25);padding-bottom:12px;margin-bottom:16px;
+}
+.carte-chantier-num{font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;color:var(--chene);text-transform:uppercase}
+.carte-chantier-status{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;
+  background:rgba(107,124,95,.12);color:var(--mousse);
+  padding:3px 10px;border-radius:99px;text-transform:uppercase;
+}
+.carte-chantier-titre{font-weight:700;margin-bottom:4px;font-size:1rem}
+.carte-chantier-sub{font-family:var(--ff-mono);font-size:11px;color:var(--chene);margin-bottom:16px}
+.carte-chantier-list{list-style:none;padding:0;margin:0 0 16px;display:flex;flex-direction:column;gap:8px}
+.carte-chantier-list li{
+  font-size:13px;color:var(--ebene-80);
+  display:flex;align-items:center;gap:8px;
+}
+.carte-chantier-list li::before{
+  content:"";width:6px;height:6px;border-radius:50%;
+  background:var(--mousse);flex-shrink:0;
+}
+.carte-chantier-footer{
+  border-top:1px dashed var(--chene-25);padding-top:12px;
+  display:flex;justify-content:space-between;
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+}
+
+/* Pour qui / Pour qui pas */
+.pour-qui-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.pour-qui-grid{grid-template-columns:1fr}}
+.pq-card{border-radius:var(--r-md);padding:28px 24px;border:1.5px solid}
+.pq-oui{background:var(--parchemin);border-color:rgba(107,124,95,.3)}
+.pq-non{background:var(--parchemin);border-color:rgba(180,60,60,.15)}
+.pq-label{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+  padding:4px 12px;border-radius:99px;display:inline-block;margin-bottom:16px;
+}
+.pq-oui .pq-label{background:var(--mousse-10);color:var(--mousse)}
+.pq-non .pq-label{background:rgba(180,60,60,.08);color:#b43c3c}
+.pq-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.pq-list li{display:flex;align-items:flex-start;gap:10px;font-size:14.5px;line-height:1.5}
+.pq-oui .pq-list li::before{
+  content:"✓";flex-shrink:0;width:18px;height:18px;border-radius:50%;
+  background:rgba(107,124,95,.15);color:var(--mousse);
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+  line-height:18px;text-align:center;margin-top:1px;
+}
+.pq-non .pq-list li::before{
+  content:"✕";flex-shrink:0;width:18px;height:18px;border-radius:50%;
+  background:rgba(180,60,60,.1);color:#b43c3c;
+  display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;
+  line-height:18px;text-align:center;margin-top:1px;
+}
+
+/* Pain points */
+.pains-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.pain-card{
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  border-radius:var(--r-md);padding:24px 22px;
+  border-left:3px solid var(--chene);
+}
+.pain-icon{font-size:1.5rem;margin-bottom:12px}
+.pain-title{font-weight:700;margin-bottom:8px;font-size:.95rem}
+.pain-desc{font-size:14px;color:var(--ebene-80);line-height:1.55}
+
+/* Systèmes forgés */
+.systemes-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media(max-width:760px){.systemes-grid{grid-template-columns:1fr}}
+.systeme-card{
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  border-radius:var(--r-md);padding:28px 24px;
+  position:relative;transition:box-shadow .2s;
+}
+.systeme-card:hover{box-shadow:0 4px 20px rgba(44,40,37,.08)}
+.systeme-rang{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--chene);margin-bottom:12px;
+}
+.systeme-nom{
+  font-family:var(--ff-display);font-size:1.2rem;font-weight:700;
+  color:var(--ebene);margin-bottom:8px;line-height:1.2;
+}
+.systeme-desc{font-size:14px;color:var(--ebene-80);line-height:1.6;margin-bottom:16px}
+.systeme-tags{display:flex;flex-wrap:wrap;gap:6px}
+.systeme-tag{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--mousse);
+  background:var(--mousse-10);border:1px solid rgba(107,124,95,.2);
+  padding:3px 10px;border-radius:99px;
+}
+.systeme-prix{
+  font-family:var(--ff-mono);font-weight:600;font-size:.9rem;
+  color:var(--ebene);margin-top:16px;border-top:1px dashed var(--chene-25);
+  padding-top:14px;
+}
+
+/* Pack BTP */
+.pack-btp{
+  background:var(--ebene);color:var(--lin);
+  border-radius:var(--r-lg);padding:48px 40px;
+  position:relative;overflow:hidden;
+}
+.pack-btp::before{
+  content:"";position:absolute;right:-60px;bottom:-60px;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(138,117,96,.15) 0%,transparent 70%);
+  pointer-events:none;
+}
+.pack-btp-inner{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center}
+@media(max-width:760px){.pack-btp-inner{grid-template-columns:1fr}}
+.pack-btp-tag{
+  font-family:var(--ff-mono);font-size:10px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--chene);margin-bottom:16px;
+}
+.pack-btp h2{color:var(--lin);margin-bottom:16px}
+.pack-btp-lede{color:rgba(242,237,232,.75);font-size:1rem;line-height:1.6;margin-bottom:24px}
+.pack-inclus{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+.pack-inclus li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:14px;color:rgba(242,237,232,.85);line-height:1.45;
+}
+.pack-inclus li::before{
+  content:"→";color:var(--chene);flex-shrink:0;font-family:var(--ff-mono);
+}
+.pack-prix-box{
+  background:rgba(242,237,232,.06);
+  border:1px solid rgba(138,117,96,.35);
+  border-radius:var(--r-md);padding:28px 24px;text-align:center;
+}
+.pack-prix-ancien{
+  font-family:var(--ff-mono);font-size:13px;
+  color:rgba(242,237,232,.45);text-decoration:line-through;
+  margin-bottom:6px;
+}
+.pack-prix-actuel{
+  font-family:var(--ff-display);font-size:3rem;font-weight:700;
+  color:var(--lin);line-height:1;margin-bottom:6px;
+}
+.pack-prix-note{
+  font-family:var(--ff-mono);font-size:11px;color:var(--chene);
+  letter-spacing:.06em;margin-bottom:20px;
+}
+.pack-garantie{
+  font-family:var(--ff-mono);font-size:11px;color:var(--mousse);
+  letter-spacing:.05em;margin-top:14px;
+}
+
+/* Témoignage */
+.temoignage{
+  background:var(--parchemin);border:1px solid var(--chene-25);
+  border-radius:var(--r-md);padding:36px 32px;
+  position:relative;max-width:780px;margin:0 auto;
+}
+.temoignage::before{
+  content:""";font-family:var(--ff-display);font-size:5rem;
+  color:var(--chene-25);position:absolute;top:-16px;left:24px;
+  line-height:1;
+}
+.temoignage-texte{
+  font-size:1.05rem;line-height:1.7;color:var(--ebene);
+  font-style:italic;font-family:var(--ff-display);
+  margin-bottom:20px;padding-top:20px;
+}
+.temoignage-auteur{
+  display:flex;align-items:center;gap:14px;
+  border-top:1px dashed var(--chene-25);padding-top:16px;
+}
+.temoignage-avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--kraft);border:1px solid var(--chene-25);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--ff-display);font-weight:700;color:var(--chene);font-size:1rem;
+}
+.temoignage-info{}
+.temoignage-nom{font-weight:600;font-size:.9rem}
+.temoignage-role{font-family:var(--ff-mono);font-size:10px;letter-spacing:.1em;color:var(--chene);text-transform:uppercase}
+.cas-type-badge{
+  font-family:var(--ff-mono);font-size:9px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--pierre);
+  background:var(--kraft);border:1px dashed var(--chene-25);
+  padding:2px 8px;border-radius:2px;margin-left:8px;vertical-align:middle;
+}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:0;border:1px solid var(--chene-25);border-radius:var(--r-md);overflow:hidden}
+.faq-item{border-bottom:1px solid var(--chene-25)}
+.faq-item:last-child{border-bottom:none}
+.faq-q{
+  width:100%;background:var(--parchemin);border:none;cursor:pointer;
+  padding:22px 24px;text-align:left;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-family:var(--ff-body);font-weight:600;font-size:.95rem;color:var(--ebene);
+  transition:background .15s;
+}
+.faq-q:hover{background:var(--kraft)}
+.faq-q[aria-expanded="true"]{background:var(--kraft)}
+.faq-chevron{width:16px;height:16px;flex-shrink:0;transition:transform .2s;color:var(--chene)}
+.faq-q[aria-expanded="true"] .faq-chevron{transform:rotate(180deg)}
+.faq-a{
+  display:none;padding:0 24px 22px;background:var(--parchemin);
+  font-size:14.5px;line-height:1.65;color:var(--ebene-80);
+}
+.faq-q[aria-expanded="true"] + .faq-a{display:block}
+
+/* CTA final */
+.cta-final{
+  background:var(--lin);
+  border-top:1px solid var(--chene-25);
+  padding:80px 0;text-align:center;
+}
+.cta-final h2{margin-bottom:16px}
+.cta-final p{color:var(--ebene-80);margin-bottom:32px;max-width:48ch;margin-left:auto;margin-right:auto}
+
+/* Helpers layout */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.section-pad{padding:80px 0}
+.section-header{margin-bottom:48px}
+.section-tag{
+  font-family:var(--ff-mono);font-size:11px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--chene);
+  display:flex;align-items:center;gap:10px;margin-bottom:12px;
+}
+.section-tag::before{content:"";width:20px;height:1px;background:var(--chene)}
+.bg-kraft{background:var(--kraft)}
+.bg-parchemin{background:var(--parchemin);border-top:1px solid var(--chene-25);border-bottom:1px solid var(--chene-25)}
+
+@media(max-width:900px){
+  .hero-btp-inner{grid-template-columns:1fr}
+  .carte-chantier{display:none}
+  .pack-btp{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════ HEADER ════════════ -->
+<header class="le-header">
+  <div class="le-header-row">
+    <a class="le-logo" href="../index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+    <nav class="le-nav" aria-label="Menu principal">
+      <div class="has-menu">
+        <a href="../catalogue.html">Catalogue ▾</a>
+        <div class="le-dropdown">
+          <a href="../famille-automatiser.html"><span class="fam-dot fam-automatiser"></span>Automatiser</a>
+          <a href="../famille-vendre.html"><span class="fam-dot fam-vendre"></span>Vendre</a>
+          <a href="../famille-piloter.html"><span class="fam-dot fam-piloter"></span>Piloter</a>
+          <a href="../famille-produire.html"><span class="fam-dot fam-produire"></span>Produire</a>
+          <a href="../famille-securiser.html"><span class="fam-dot fam-securiser"></span>Sécuriser</a>
+          <a href="../catalogue.html" style="border-top:1px dashed var(--chene-25);margin-top:4px;padding-top:12px;color:var(--chene);font-family:var(--ff-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase">Voir tout le catalogue →</a>
+        </div>
+      </div>
+      <a href="../diagnostic.html">Diagnostic</a>
+      <a href="../a-propos.html">L'atelier</a>
+      <a href="../faq.html">FAQ</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <div class="le-actions">
+      <button class="le-theme-btn" data-theme-btn aria-label="Activer la lumière douce (mode nuit)" aria-pressed="false"><svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg><svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+      <button class="le-search-btn" data-search-btn aria-label="Rechercher"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3-3"/></svg></button>
+      <a class="btn btn-primary" href="../contact.html?subject=vertical-btp">Voir comment ça marche</a>
+      <button class="le-burger" data-burger aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="le-mobile" data-mobile-menu>
+  <button class="le-mobile-close" data-mobile-close>✕</button>
+  <a href="../catalogue.html">Catalogue</a>
+  <a href="../famille-automatiser.html">— Automatiser</a>
+  <a href="../famille-vendre.html">— Vendre</a>
+  <a href="../famille-piloter.html">— Piloter</a>
+  <a href="../famille-produire.html">— Produire</a>
+  <a href="../famille-securiser.html">— Sécuriser</a>
+  <a href="../diagnostic.html">Diagnostic</a>
+  <a href="../a-propos.html">L'atelier</a>
+  <a href="../faq.html">FAQ</a>
+  <a href="../contact.html">Contact</a>
+</div>
+
+<!-- Breadcrumb -->
+<div class="btp-breadcrumb">
+  <div class="container">
+    <a href="../index.html">Accueil</a>
+    <span>›</span>
+    <a href="../catalogue.html">Verticaux métier</a>
+    <span>›</span>
+    Artisans BTP
+  </div>
+</div>
+
+<main>
+
+<!-- ════════════ 1. HERO ════════════ -->
+<section class="hero-btp">
+  <div class="container">
+    <div class="hero-btp-inner">
+      <div>
+        <div class="hero-btp-tag">Vertical D1 · Artisans BTP</div>
+        <h1>
+          Vos chantiers, vos devis, vos clients :<br/>
+          <em>tout suivi en un endroit.</em>
+        </h1>
+        <p class="hero-btp-lede">
+          Plombier, électricien, maçon — vous avancez sur le chantier pendant que les devis dorment, que les clients rappellent et que les factures attendent. L'établ'IA forge des petits systèmes numériques qui font le suivi à votre place, sans vous changer de métier.
+        </p>
+        <p class="satisfait-forge">« Satisfait ou Forgé » — remboursement sans condition sous 30 jours</p>
+        <div class="hero-btp-cta">
+          <a class="btn btn-primary" href="../contact.html?subject=vertical-btp">Voir comment ça marche</a>
+          <a class="btn btn-ghost" href="../diagnostic.html">Diagnostic gratuit</a>
+        </div>
+        <p class="hero-btp-note" style="margin-top:16px">— Accompagnement humain inclus · Aucune marque imposée</p>
+      </div>
+      <!-- Illustration : fiche chantier -->
+      <div class="carte-chantier" aria-hidden="true">
+        <div class="carte-chantier-header">
+          <span class="carte-chantier-num">Chantier № 047 · Mai 2026</span>
+          <span class="carte-chantier-status">En cours</span>
+        </div>
+        <div class="carte-chantier-titre">Rénovation salle de bain</div>
+        <div class="carte-chantier-sub">M. et Mme Lefebvre · Nantes</div>
+        <ul class="carte-chantier-list">
+          <li>Devis accepté — relance automatique envoyée</li>
+          <li>Mise en service prévue : 12 mai</li>
+          <li>Rapport de chantier généré hier soir</li>
+          <li>Client notifié du léger décalage (+2j)</li>
+        </ul>
+        <div class="carte-chantier-footer">
+          <span>Prochain suivi : 09 mai</span>
+          <span>Facture : À émettre</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 2. POUR QUI / POUR QUI PAS ════════════ -->
+<section class="section-pad bg-parchemin">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Avant de continuer</div>
+      <h2>Ce service est fait pour vous si…</h2>
+    </div>
+    <div class="pour-qui-grid">
+      <div class="pq-card pq-oui">
+        <span class="pq-label">Vous vous reconnaissez</span>
+        <ul class="pq-list">
+          <li>Artisan BTP de 1 à 5 salariés ou en solo</li>
+          <li>Vous gérez encore vos devis sur papier ou tableur</li>
+          <li>Votre smartphone est votre seul outil numérique</li>
+          <li>Vous perdez du temps à rappeler les clients pour les délais</li>
+          <li>Vous oubliez parfois de relancer un devis envoyé il y a trois semaines</li>
+          <li>La facturation attend toujours la fin du chantier — parfois trop longtemps</li>
+        </ul>
+      </div>
+      <div class="pq-card pq-non">
+        <span class="pq-label">Ce n'est pas pour vous si…</span>
+        <ul class="pq-list">
+          <li>Vous êtes un grand bureau d'études avec plus de 20 personnes</li>
+          <li>Vous avez déjà un ERP installé et configuré que vous utilisez quotidiennement</li>
+          <li>Vous cherchez un logiciel de comptabilité complet avec module de paye</li>
+          <li>Votre problème est uniquement fiscal ou juridique</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 3. VOS PAINS ════════════ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">Ce qui coince</div>
+      <h2>Les cinq frictions qui vous coûtent du temps — et des chantiers</h2>
+    </div>
+    <div class="pains-grid">
+      <div class="pain-card">
+        <div class="pain-icon">📋</div>
+        <div class="pain-title">Le devis qui traîne</div>
+        <p class="pain-desc">Vous envoyez un devis, vous attendez. Deux semaines passent, vous rappellez, le client avait oublié. Le chantier part chez le voisin. Une relance automatique à J+7 aurait suffi.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📞</div>
+        <div class="pain-title">Le client qui rappelle dix fois</div>
+        <p class="pain-desc">« Où en êtes-vous ? » « C'est pour quand ? » « Vous avez un retard ? » Chaque appel entrant sur le chantier vous déconcentre. Un message proactif au bon moment coupe cette boucle.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📅</div>
+        <div class="pain-title">Le planning du jour dans la tête</div>
+        <p class="pain-desc">Qui intervient où, à quelle heure, avec quel matériau ? Sans trace écrite, le moindre imprévu — un sous-traitant absent, une livraison tardive — fait déraper toute la semaine.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🧾</div>
+        <div class="pain-title">La facture oubliée</div>
+        <p class="pain-desc">Le chantier est livré, vous passez au suivant. La facture du mois dernier attend encore. Le client aussi. Un rappel automatique à la mise en service règle ça sans y penser.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🔕</div>
+        <div class="pain-title">Le silence après livraison</div>
+        <p class="pain-desc">Vous livrez, vous partez. Six mois après, un problème surgit — le client ne sait plus comment vous joindre. Un suivi post-chantier automatique maintient le lien et les recommandations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 4. LES 4 SYSTÈMES FORGÉS ════════════ -->
+<section class="section-pad bg-parchemin">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-tag">L'atelier au service du BTP</div>
+      <h2>Quatre systèmes forgés qui changent tout</h2>
+      <p style="color:var(--ebene-80);max-width:54ch;margin-top:12px">Chaque système est livré configuré, documenté et testé. Pas de formation, pas d'abonnement logiciel. Vous posez les outils sur le chantier — ils travaillent.</p>
+    </div>
+    <div class="systemes-grid">
+
+      <div class="systeme-card">
+        <div class="systeme-rang">Système · Automatiser</div>
+        <div class="systeme-nom">La Sentinelle de Délais</div>
+        <p class="systeme-desc">Surveille chaque devis envoyé. Déclenche une relance personnalisée à J+7 si aucune réponse. Alerte aussi sur les échéances de chantier qui approchent — sans que vous ayez à y penser.</p>
+        <div class="systeme-tags">
+          <span class="systeme-tag">Relance devis</span>
+          <span class="systeme-tag">Alerte échéance</span>
+          <span class="systeme-tag">Zéro oubli</span>
+        </div>
+        <div class="systeme-prix">À partir de 39 € — installation unique</div>
+      </div>
+
+      <div class="systeme-card">
+        <div class="systeme-rang">Système · Automatiser</div>
+        <div class="systeme-nom">Le Messager de Retard</div>
+        <p class="systeme-desc">Dès qu'un chantier prend du retard, il prévient le client avant qu'il n'appelle. Message concis, ton professionnel, heure choisie par vous. Le client est informé — vous pouvez travailler.</p>
+        <div class="systeme-tags">
+          <span class="systeme-tag">Prévention retard</span>
+          <span class="systeme-tag">Communication client</span>
+          <span class="systeme-tag">Sur chantier</span>
+        </div>
+        <div class="systeme-prix">À partir de 39 € — installation unique</div>
+      </div>
+
+      <div class="systeme-card">
+        <div class="systeme-rang">Système · Produire · Rang 19</div>
+        <div class="systeme-nom">Le Rapport de Chantier Automatique</div>
+        <p class="systeme-desc">Chaque soir, à l'heure que vous choisissez, le système génère un compte-rendu de journée depuis vos notes (vocales ou texte). Historique complet du chantier, prêt à envoyer ou à archiver.</p>
+        <div class="systeme-tags">
+          <span class="systeme-tag">Rapport quotidien</span>
+          <span class="systeme-tag">Notes vocales</span>
+          <span class="systeme-tag">Archivage auto</span>
+        </div>
+        <div class="systeme-prix">À partir de 49 € — installation unique</div>
+      </div>
+
+      <div class="systeme-card">
+        <div class="systeme-rang">Système · Vendre</div>
+        <div class="systeme-nom">Le Concierge Post-Vente</div>
+        <p class="systeme-desc">Après chaque livraison, un suivi automatique démarre : vérification à J+30, demande d'avis à J+60, rappel de disponibilité à J+180. Vos clients se souviennent de vous quand ils ont besoin.</p>
+        <div class="systeme-tags">
+          <span class="systeme-tag">Suivi post-chantier</span>
+          <span class="systeme-tag">Demande d'avis</span>
+          <span class="systeme-tag">Fidélisation</span>
+        </div>
+        <div class="systeme-prix">À partir de 39 € — installation unique</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 5. PACK BTP ════════════ -->
+<section class="section-pad">
+  <div class="container">
+    <div class="pack-btp">
+      <div class="pack-btp-inner">
+        <div>
+          <div class="pack-btp-tag">Offre groupée · Pack BTP</div>
+          <h2>Les trois systèmes fondamentaux réunis</h2>
+          <p class="pack-btp-lede">
+            Sentinelle de Délais + Messager de Retard + Concierge Post-Vente, livrés ensemble avec un accompagnement de mise en route dédié à votre activité de terrain.
+          </p>
+          <ul class="pack-inclus">
+            <li>Installation et configuration des 3 systèmes</li>
+            <li>Adaptation au vocabulaire de votre métier</li>
+            <li>Session de prise en main (visio, 45 min)</li>
+            <li>Documentation personnalisée format A4</li>
+            <li>Support prioritaire pendant 60 jours</li>
+          </ul>
+        </div>
+        <div class="pack-prix-box">
+          <div class="pack-prix-ancien">3 systèmes séparés = 117 €</div>
+          <div class="pack-prix-actuel">119 €</div>
+          <div class="pack-prix-note">tout compris · paiement unique</div>
+          <a class="btn btn-mousse" href="../contact.html?subject=vertical-btp" style="width:100%;justify-content:center;margin-top:8px">Démarrer maintenant</a>
+          <div class="pack-garantie">✓ Satisfait ou Forgé — remboursé sous 30 jours</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 6. TÉMOIGNAGE ════════════ -->
+<section class="section-pad bg-parchemin">
+  <div class="container">
+    <div class="section-header" style="text-align:center">
+      <div class="section-tag" style="justify-content:center">Retour terrain</div>
+      <h2>Ce que ça change, concrètement</h2>
+    </div>
+    <div class="temoignage">
+      <blockquote>
+        <p class="temoignage-texte">
+          « Avant, je passais le dimanche soir à rappeler les clients pour les tenir au courant. Maintenant, le système envoie un message dès que je note un retard depuis mon téléphone. Et les relances de devis, je n'y pense plus — elles partent toutes seules. En deux mois, j'ai signé deux chantiers supplémentaires que j'aurais autrement perdus. »
+        </p>
+      </blockquote>
+      <div class="temoignage-auteur">
+        <div class="temoignage-avatar" aria-hidden="true">P.M.</div>
+        <div class="temoignage-info">
+          <div class="temoignage-nom">
+            P.M.
+            <span class="cas-type-badge">cas type · anonymisé</span>
+          </div>
+          <div class="temoignage-role">Plombier chauffagiste · 3 compagnons · Loire-Atlantique</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 7. FAQ BTP ════════════ -->
+<section class="section-pad">
+  <div class="container" style="max-width:820px">
+    <div class="section-header">
+      <div class="section-tag">Questions fréquentes</div>
+      <h2>Ce que les artisans BTP demandent en premier</h2>
+    </div>
+    <div class="faq-list" role="list">
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Est-ce que ça fonctionne si je travaille avec des sous-traitants ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Oui. Vous pouvez paramétrer les systèmes pour que les notifications concernent aussi bien vos compagnons que vos sous-traitants. Le Messager de Retard peut notifier plusieurs contacts en une seule action — client, sous-traitant, coordinateur — selon la configuration que vous choisissez au démarrage.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Mes devis incluent des détails sur les matériaux — le système peut les gérer ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Les systèmes travaillent à partir des données que vous saisissez — montant, nom du client, date de validité, numéro de chantier. La liste des matériaux reste dans votre outil de devis habituel. La Sentinelle de Délais n'a besoin que de la date d'envoi et du statut (accepté / refusé / en attente) pour fonctionner.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Je réponds à des appels d'offres publics — est-ce compatible ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Les marchés publics ont des contraintes administratives spécifiques que nos systèmes n'adressent pas directement (DUME, mémoire technique, signature électronique certifiée). En revanche, le suivi de vos chantiers privés et la communication client fonctionnent de la même manière. Si votre activité est mixte, nous définissons ensemble ce qui est pertinent d'automatiser lors de la session de prise en main.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Je ne suis pas à l'aise avec la technologie — est-ce que je vais y arriver ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          C'est exactement pour vous que ces systèmes ont été conçus. Après la session de prise en main, votre intervention se résume à renseigner quelques champs — numéro de chantier, montant, date — depuis votre smartphone. Le reste est automatique. Si quelque chose coince dans les 60 jours, vous appelez, on règle.
+        </div>
+      </div>
+
+      <div class="faq-item" role="listitem">
+        <button class="faq-q" aria-expanded="false" onclick="toggleFaq(this)">
+          Et si ça ne me convient pas après l'installation ?
+          <svg class="faq-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-a">
+          Garantie « Satisfait ou Forgé » : si dans les 30 jours vous estimez que les systèmes ne vous apportent pas de valeur, nous remboursons intégralement, sans question. Nous préférons que chaque installation soit un succès plutôt qu'un client déçu.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ════════════ 8. CTA FINAL ════════════ -->
+<section class="cta-final">
+  <div class="container">
+    <div class="section-tag" style="justify-content:center">Prochaine étape</div>
+    <h2>Prêt à passer une heure pour récupérer des semaines ?</h2>
+    <p>Un échange de 20 minutes suffit pour identifier les deux ou trois points où un système bien forgé ferait la différence sur votre chantier.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-primary" href="/contact.html?subject=vertical-btp">Voir comment ça marche</a>
+      <a class="btn btn-ghost" href="../diagnostic.html">Faire le diagnostic gratuit</a>
+    </div>
+    <p style="margin-top:24px;font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.06em">
+      Réponse sous 24h · Pas d'engagement · Satisfait ou Forgé
+    </p>
+  </div>
+</section>
+
+</main>
+
+<!-- ════════════ FOOTER ════════════ -->
+<footer class="le-footer">
+  <div class="le-footer-grid">
+    <div class="le-footer-brand">
+      <a class="le-logo" href="../index.html">L'établ'<span style="color:var(--chene)">IA</span><small>est. 2026</small></a>
+      <p>Petits systèmes numériques utiles, faits à la main. Pour TPE, freelances, artisans et e-commerçants. Atelier basé en France.</p>
+    </div>
+    <div>
+      <h4>L'atelier</h4>
+      <ul>
+        <li><a href="../catalogue.html">Catalogue</a></li>
+        <li><a href="../famille-automatiser.html">Automatiser</a></li>
+        <li><a href="../famille-vendre.html">Vendre</a></li>
+        <li><a href="../famille-piloter.html">Piloter</a></li>
+        <li><a href="../famille-produire.html">Produire</a></li>
+        <li><a href="../famille-securiser.html">Sécuriser</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Service</h4>
+      <ul>
+        <li><a href="../diagnostic.html">Diagnostic gratuit</a></li>
+        <li><a href="../a-propos.html">L'atelier</a></li>
+        <li><a href="../faq.html">Questions fréquentes</a></li>
+        <li><a href="../contact.html">Nous écrire</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="../mentions-legales.html">Mentions légales</a></li>
+        <li><a href="../cgv.html">CGV</a></li>
+        <li><a href="../confidentialite.html">Confidentialité</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="le-footer-bottom">
+    <span>© 2026 L'établ'IA — Aucun copilote n'a été maltraité durant la fabrication.</span>
+    <span>Fait à la main · France</span>
+  </div>
+</footer>
+
+<script src="../assets/js/letablia.js"></script>
+<script src="../assets/js/theme-toggle.js" defer></script>
+<script>
+function toggleFaq(btn){
+  var expanded = btn.getAttribute('aria-expanded') === 'true';
+  // Ferme tous les autres
+  document.querySelectorAll('.faq-q[aria-expanded="true"]').forEach(function(b){
+    if(b !== btn){ b.setAttribute('aria-expanded','false'); }
+  });
+  btn.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+}
+</script>
+
+</body>
+</html>
