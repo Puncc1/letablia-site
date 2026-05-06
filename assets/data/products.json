@@ -164,7 +164,8 @@
       "blurb": "Un CRM léger, prêt à l'emploi, dans votre application de prise de notes.",
       "keywords": "crm clients projets freelance agence consultant",
       "icon": "layout",
-      "status": "soon"
+      "status": "soon",
+      "status_reason": "Bloqué tech permanent — export workspace API Notion impossible (décision Raphaël 2026-05-06)"
     },
     {
       "slug": "produit/dashboard-tresorerie",
