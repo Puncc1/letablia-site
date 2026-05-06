@@ -32,6 +32,12 @@
       "title": "Sécuriser",
       "verb": "Cyber et conformité",
       "icon": "shield"
+    },
+    {
+      "slug": "surveiller",
+      "title": "Surveiller",
+      "verb": "Veiller sur ce qui compte",
+      "icon": "eye"
     }
   ],
   "products": [
