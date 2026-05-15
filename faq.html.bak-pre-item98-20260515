@@ -146,38 +146,6 @@
         "@type": "Answer",
         "text": "Oui. Le programme contributeurs L'établ'IA permet à d'autres artisans francophones de soumettre leurs propres systèmes forgés (commission 25%). Conditions et charte sur la page « Devenir contributeur » (à venir)."
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Faut-il n8n Cloud ou n8n auto-hébergé ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les deux fonctionnent. n8n Cloud est plus simple à démarrer — pas de serveur à gérer, interface accessible depuis le navigateur, gratuit jusqu'à un certain volume d'exécutions. n8n auto-hébergé (sur votre VPS ou votre serveur) donne plus de contrôle et supprime les limites de volume, mais demande une configuration initiale. Pour commencer, n8n Cloud suffit largement. Si vous avez déjà un serveur ou si vous prévoyez d'installer plusieurs systèmes forgés, l'auto-hébergement est plus économique à terme."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Quelle est la différence entre un système forgé et un SaaS ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Un SaaS est un service que vous louez — vous payez tant qu'il fonctionne, et il cesse si l'éditeur ferme ou change ses conditions. Un système forgé vous appartient : vous l'achetez une fois, vous l'installez sur votre infrastructure, vous gardez le code source. Si L'établ'IA ferme demain, vos systèmes continuent de tourner. La dépendance est faible : n8n (open source) et vos services tiers — pas nous."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Comment mes données sont-elles traitées — RGPD ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Les systèmes forgés tournent sur votre propre infrastructure (votre n8n, vos comptes). L'établ'IA ne stocke pas et ne traite pas les données de vos clients — elles restent dans vos propres outils. Pour l'achat lui-même, les données de paiement transitent par LemonSqueezy (Merchant of Record, conforme RGPD). Vos coordonnées d'acheteur sont conservées pour la durée légale de la relation commerciale. Politique complète dans notre page Confidentialité."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Qu'est-ce que la Méthode 4 ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "La Méthode 4 est l'architecture de conception de tous nos systèmes forgés : un cœur (la logique métier, invariante) plus des adaptateurs (les connexions à vos outils, remplaçables). Si vous changez de boutique en ligne ou de service emailing, seul l'adaptateur change — la logique reste intacte. Ça rend les systèmes durables et modifiables sans tout reprendre de zéro."
-      }
     }
   ]
 }
@@ -384,40 +352,7 @@
       </section><section data-reveal>
         <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:24px">
           <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 04</span>
-          <h2 style="font-size:1.8rem;line-height:1">Systèmes &amp; données</h2>
-          <span style="flex:1;height:1px;background:var(--chene-25)"></span>
-        </div>
-        <div>
-          <details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
-            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
-              <span>Faut-il n8n Cloud ou n8n auto-hébergé ?</span>
-              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
-            </summary>
-            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Les deux fonctionnent. n8n Cloud est plus simple à démarrer — pas de serveur à gérer, interface accessible depuis le navigateur, gratuit jusqu'à un certain volume d'exécutions. n8n auto-hébergé (sur votre VPS ou votre serveur) donne plus de contrôle et supprime les limites de volume, mais demande une configuration initiale. Pour commencer, n8n Cloud suffit largement. Si vous avez déjà un serveur ou si vous prévoyez d'installer plusieurs systèmes forgés, l'auto-hébergement est plus économique à terme.</p>
-          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
-            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
-              <span>Quelle est la différence entre un système forgé et un SaaS ?</span>
-              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
-            </summary>
-            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Un SaaS est un service que vous louez — vous payez tant qu'il fonctionne, et il cesse si l'éditeur ferme ou change ses conditions. Un système forgé vous appartient : vous l'achetez une fois, vous l'installez sur votre infrastructure, vous gardez le code source. Si L'établ'IA ferme demain, vos systèmes continuent de tourner. La dépendance est faible : n8n (open source) et vos services tiers — pas nous.</p>
-          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
-            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
-              <span>Comment mes données sont-elles traitées — RGPD ?</span>
-              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
-            </summary>
-            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">Les systèmes forgés tournent sur votre propre infrastructure (votre n8n, vos comptes). L'établ'IA ne stocke pas et ne traite pas les données de vos clients — elles restent dans vos propres outils. Pour l'achat lui-même, les données de paiement transitent par LemonSqueezy (Merchant of Record, conforme RGPD). Vos coordonnées d'acheteur sont conservées pour la durée légale de la relation commerciale.</p>
-          </details><details style="border-bottom:1px solid var(--chene-25);padding:18px 0">
-            <summary style="cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--ff-display);font-size:1.2rem;font-weight:500;list-style:none">
-              <span>Qu'est-ce que la Méthode 4 ?</span>
-              <span style="font-family:var(--ff-mono);font-size:1.5rem;color:var(--chene);transition:transform .2s">+</span>
-            </summary>
-            <p style="margin:14px 0 0;color:var(--ebene-80);line-height:1.65;font-size:15px">La Méthode 4 est l'architecture de conception de tous nos systèmes forgés : un cœur (la logique métier, invariante) plus des adaptateurs (les connexions à vos outils, remplaçables). Si vous changez de boutique en ligne ou de service emailing, seul l'adaptateur change — la logique reste intacte. Ça rend les systèmes durables et modifiables sans tout reprendre de zéro.</p>
-          </details>
-        </div>
-      </section><section data-reveal>
-        <div style="display:flex;align-items:baseline;gap:18px;margin-bottom:24px">
-          <span style="font-family:var(--ff-mono);font-size:11px;color:var(--chene);letter-spacing:.14em;text-transform:uppercase">№ 05</span>
-          <h2 style="font-size:1.8rem;line-height:1">Légal &amp; partenariat</h2>
+          <h2 style="font-size:1.8rem;line-height:1">Légal & partenariat</h2>
           <span style="flex:1;height:1px;background:var(--chene-25)"></span>
         </div>
         <div>
