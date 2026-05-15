@@ -71,6 +71,115 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://letablia.fr/produits/programmateur-social.html#howto",
+  "name": "Comment installer Programmateur Social en moins de 30 minutes",
+  "description": "Guide d'installation du système forgé qui publie automatiquement sur vos réseaux sociaux à chaque nouveau produit mis en ligne.",
+  "totalTime": "PT30M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "49"
+  },
+  "supply": [{"@type": "HowToSupply", "name": "Un compte n8n (Cloud ou auto-hébergé)"}, {"@type": "HowToSupply", "name": "Votre plateforme e-commerce"}, {"@type": "HowToSupply", "name": "Vos accès API aux réseaux sociaux ciblés"}],
+  "tool": [
+    {"@type": "HowToTool", "name": "Le fichier ZIP du système forgé"}
+  ],
+  "step": [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Télécharger et décompresser le système forgé",
+    "text": "Téléchargez le ZIP depuis LemonSqueezy. Décompressez : JSON principal + guide PDF."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Importer dans n8n",
+    "text": "Dans n8n, cliquez « Nouveau workflow » > « Importer ». Le système s'affiche avec ses nœuds pré-configurés."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Connecter votre plateforme e-commerce",
+    "text": "Cliquez sur le nœud source. Connectez votre boutique via API (accès lecture seule sur les produits). Le système détecte les nouveaux produits publiés."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Connecter vos comptes sociaux",
+    "text": "Renseignez les tokens d'accès de chaque réseau social dans les nœuds dédiés. Le guide PDF détaille la procédure de création d'accès API pour chaque plateforme."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 5,
+    "name": "Personnaliser les modèles de posts",
+    "text": "Dans les nœuds de contenu, adaptez les modèles de posts pour chaque réseau (format court pour certains, plus développé pour d'autres). Les modèles utilisent les données de votre produit (nom, prix, image)."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 6,
+    "name": "Activer le système forgé",
+    "text": "Activez le workflow. Lors de chaque nouveau produit publié sur votre boutique, le post part automatiquement sur vos réseaux dans les minutes qui suivent."
+  }
+]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://letablia.fr/produits/programmateur-social.html#faq",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Quels réseaux sociaux sont supportés ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La version de base inclut les adaptateurs pour les principaux réseaux sociaux professionnels. La liste complète des réseaux supportés est dans le guide PDF. Pour un réseau non listé, contactez contact@letablia.fr."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Le post est-il identique sur tous les réseaux ou adapté à chaque plateforme ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Chaque réseau dispose de son propre modèle de post, adapté au format et au ton attendus. Un même produit génère donc un post optimisé pour chaque réseau, pas un copier-coller uniforme."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Puis-je valider le post avant publication ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. Le nœud « Configuration » propose un mode « relecture » : le post est envoyé pour approbation avant d'être publié. Vous recevez un lien de validation par email ou Telegram."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Le système publie-t-il aussi lors d'une mise à jour de produit ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Par défaut, il ne publie qu'à la création d'un nouveau produit. Pour déclencher aussi sur les mises à jour de prix ou de stock, activez l'option correspondante dans le nœud « Configuration »."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Que se passe-t-il si mon token d'accès réseau social expire ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le système envoie une alerte d'expiration avant le renouvellement automatique (si disponible) ou manuel. Le guide PDF explique la procédure de renouvellement pour chaque réseau."
+    }
+  }
+]
+}
+</script>
+
 </head><body>
 <!-- HEADER -->
 <header class="le-header">

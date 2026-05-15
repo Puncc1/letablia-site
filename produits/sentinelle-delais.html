@@ -71,6 +71,115 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://letablia.fr/produits/sentinelle-delais.html#howto",
+  "name": "Comment installer Sentinelle de Délais en moins de 20 minutes",
+  "description": "Guide d'installation du système forgé qui surveille votre tableau d'échéances et envoie des alertes à J-14, J-7 et J-3 avant chaque deadline.",
+  "totalTime": "PT20M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "39"
+  },
+  "supply": [{"@type": "HowToSupply", "name": "Un compte n8n (Cloud ou auto-hébergé)"}, {"@type": "HowToSupply", "name": "Votre tableur d'échéances (Google Sheets ou équivalent)"}, {"@type": "HowToSupply", "name": "Un canal d'alerte (email ou Telegram)"}],
+  "tool": [
+    {"@type": "HowToTool", "name": "Le fichier ZIP du système forgé"}
+  ],
+  "step": [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Télécharger et décompresser le système forgé",
+    "text": "Téléchargez le ZIP depuis LemonSqueezy. Décompressez : JSON principal + guide PDF."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Importer dans n8n",
+    "text": "Dans n8n, cliquez « Nouveau workflow » > « Importer ». Le système s'affiche avec ses nœuds pré-configurés."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Connecter votre tableur d'échéances",
+    "text": "Cliquez sur le nœud tableur. Saisissez l'identifiant de votre feuille et autorisez l'accès. La colonne « Date d'échéance » doit être présente."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Configurer les paliers d'alerte",
+    "text": "Dans le nœud « Configuration », activez ou désactivez chaque palier : J-14 (anticipation), J-7 (planification), J-3 (urgence). Personnalisez le message de chaque palier."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 5,
+    "name": "Connecter votre canal d'alerte",
+    "text": "Choisissez email ou Telegram. Les alertes arriveront avec le nom de l'échéance, la date limite et le nombre de jours restants."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 6,
+    "name": "Activer le système forgé",
+    "text": "Activez le workflow. Chaque matin, le système lit votre tableau et envoie les alertes correspondantes. Vous ne ratez plus aucune échéance."
+  }
+]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://letablia.fr/produits/sentinelle-delais.html#faq",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Quels types d'échéances puis-je surveiller avec ce système ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Tout ce qui a une date dans votre tableur : délais clients, renouvellements de contrats, dates de déclarations fiscales, périodes d'essai, dates d'audit… Un système, toutes vos échéances."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Puis-je définir des destinataires différents selon le type d'échéance ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. Le nœud « Configuration » permet d'associer un destinataire (ou une liste) à chaque catégorie d'échéance. Une deadline client peut aller au commercial, une déclaration fiscale au comptable."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Le système envoie-t-il une alerte même si l'échéance est déjà passée ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Par défaut, non — le système ne remonte pas les échéances passées. Si vous souhaitez un signalement des retards, activez l'option correspondante dans le nœud « Configuration »."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Comment marquer une échéance comme traitée pour ne plus recevoir d'alerte ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Ajoutez une colonne « Statut » dans votre tableur et inscrivez « traité ». Le système ignore automatiquement les lignes avec ce statut lors des prochains cycles."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Ce système est-il compatible avec un calendrier partagé (Google Calendar) ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le système lit des tableurs. Une intégration lecture depuis Google Calendar est possible — contactez contact@letablia.fr pour cette adaptation."
+    }
+  }
+]
+}
+</script>
+
 </head><body>
 <!-- HEADER -->
 <header class="le-header">

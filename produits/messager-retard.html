@@ -71,6 +71,115 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://letablia.fr/produits/messager-retard.html#howto",
+  "name": "Comment installer Messager de Retard en moins de 20 minutes",
+  "description": "Guide d'installation du système forgé qui prévient automatiquement vos clients d'un retard de livraison, avant qu'ils ne se plaignent.",
+  "totalTime": "PT20M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "29"
+  },
+  "supply": [{"@type": "HowToSupply", "name": "Un compte n8n (Cloud ou auto-hébergé)"}, {"@type": "HowToSupply", "name": "Votre plateforme e-commerce ou système de suivi commandes"}, {"@type": "HowToSupply", "name": "Un compte email professionnel"}],
+  "tool": [
+    {"@type": "HowToTool", "name": "Le fichier ZIP du système forgé"}
+  ],
+  "step": [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Télécharger et décompresser le système forgé",
+    "text": "Téléchargez le ZIP depuis LemonSqueezy. Décompressez : JSON principal + guide PDF en français."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Importer dans n8n",
+    "text": "Dans n8n, cliquez « Nouveau workflow » > « Importer ». Le système s'affiche avec ses nœuds pré-configurés."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Connecter votre système de commandes",
+    "text": "Cliquez sur le nœud source. Connectez votre plateforme e-commerce via API. Le système surveille les commandes dont la date de livraison estimée est dépassée."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Configurer le seuil de retard",
+    "text": "Dans le nœud « Configuration », définissez le délai après la date de livraison estimée à partir duquel un message est envoyé (ex : +1 jour). Personnalisez le texte du message."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 5,
+    "name": "Connecter votre compte email",
+    "text": "Renseignez les identifiants de votre adresse professionnelle. Le message de retard partira depuis votre propre adresse, avec votre contenu et vos coordonnées."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 6,
+    "name": "Activer le système forgé",
+    "text": "Activez le workflow. Le système vérifie plusieurs fois par jour les commandes en retard et envoie automatiquement le bon message au bon client."
+  }
+]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://letablia.fr/produits/messager-retard.html#faq",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Comment le système sait-il qu'une commande est en retard ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Il compare la date de livraison estimée (indiquée dans votre plateforme) avec la date du jour. Si la commande n'est pas marquée « livrée » passé le délai configuré, le message de retard est déclenché."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Le message de retard est-il envoyé une seule fois ou plusieurs fois ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Une seule fois par commande. Le système marque chaque commande notifiée pour éviter les doublons. Le guide PDF explique comment configurer un rappel si le retard se prolonge."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Puis-je personnaliser le message selon le type de retard (transporteur, stock…) ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui, à condition que votre plateforme fournisse la raison du retard. Dans ce cas, le nœud « Configuration » permet de créer des variantes de message selon la cause. Consultez le guide PDF."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Ce système fonctionne-t-il si ma boutique n'a pas de date de livraison estimée ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le système nécessite une date de livraison estimée pour fonctionner. Si votre plateforme ne la fournit pas, une date peut être calculée à partir de la date de commande + délai moyen configuré."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Que se passe-t-il si la commande est finalement livrée avant l'envoi du message ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Si la commande est marquée « livrée » avant le déclenchement, le système ne l'envoie pas. Il vérifie le statut actuel à l'instant du déclenchement pour éviter tout message inutile."
+    }
+  }
+]
+}
+</script>
+
 </head><body>
 <!-- HEADER -->
 <header class="le-header">

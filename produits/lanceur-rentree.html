@@ -70,6 +70,115 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://letablia.fr/produits/lanceur-rentree.html#howto",
+  "name": "Comment installer Lanceur de Rentrée en moins de 20 minutes",
+  "description": "Guide d'installation du système forgé qui réveille vos prospects dormants avec 3 emails progressifs sur 5 à 7 jours et trie automatiquement les contacts chaud/tiède/froid.",
+  "totalTime": "PT20M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "29"
+  },
+  "supply": [{"@type": "HowToSupply", "name": "Un compte n8n (Cloud ou auto-hébergé)"}, {"@type": "HowToSupply", "name": "Votre liste de prospects (CSV ou tableur)"}, {"@type": "HowToSupply", "name": "Un compte email professionnel"}],
+  "tool": [
+    {"@type": "HowToTool", "name": "Le fichier ZIP du système forgé"}
+  ],
+  "step": [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Télécharger et décompresser le système forgé",
+    "text": "Téléchargez le ZIP depuis LemonSqueezy. Décompressez : JSON principal + guide PDF en français."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Importer dans n8n",
+    "text": "Dans n8n, cliquez « Nouveau workflow » > « Importer ». Le système s'affiche avec ses nœuds pré-configurés."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Importer votre liste de prospects",
+    "text": "Chargez votre CSV ou connectez votre tableur dans le nœud source. Vérifiez que les colonnes email, prénom et statut sont présentes."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Personnaliser les 3 emails de séquence",
+    "text": "Dans les nœuds de contenu, adaptez les textes des 3 emails de relance (J0, J+3, J+6) avec votre tonalité et vos offres de rentrée. Les modèles livrés sont fonctionnels."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 5,
+    "name": "Configurer le tri chaud/tiède/froid",
+    "text": "Dans le nœud « Configuration », définissez les critères de classification : ouverture, clic, réponse. Le CSV de sortie sera segmenté pour votre commercial."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 6,
+    "name": "Activer et lancer la séquence",
+    "text": "Activez le workflow. Les emails partent depuis votre adresse professionnelle selon le calendrier défini. Le tri automatique alimente votre CSV de sortie en temps réel."
+  }
+]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://letablia.fr/produits/lanceur-rentree.html#faq",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "À quelle période de l'année ce système est-il le plus efficace ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Il est optimisé pour la fenêtre août-septembre (rentrée). Cependant, il peut être utilisé pour toute campagne de réactivation ponctuelle — changez simplement les textes des emails."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Les emails sont-ils envoyés depuis mon adresse ou une adresse tierce ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Depuis votre propre adresse professionnelle. Vos prospects reçoivent des emails qui viennent de vous — aucune mention de L'établ'IA n'apparaît dans les envois."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Comment fonctionne le tri chaud/tiède/froid ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le système analyse les comportements de chaque prospect (email ouvert, lien cliqué, réponse envoyée) pour les classer. Le CSV final permet à votre commercial de prioriser les rappels téléphoniques."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Puis-je exclure certains contacts de la séquence ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Oui. Ajoutez une colonne « exclu » dans votre tableur et marquez les contacts à ne pas contacter. Le système ignore ces lignes lors de l'envoi."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Que se passe-t-il si un prospect se désabonne en cours de séquence ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Le système détecte les demandes de désinscription (clic sur lien désabonnement ou réponse « stop ») et exclut le contact des emails suivants. Le guide PDF détaille la configuration du lien de désinscription."
+    }
+  }
+]
+}
+</script>
+
 </head><body>
 <!-- HEADER -->
 <header class="le-header">

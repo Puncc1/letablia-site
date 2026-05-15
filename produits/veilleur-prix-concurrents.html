@@ -72,6 +72,115 @@
   ]
 }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://letablia.fr/produits/veilleur-prix-concurrents.html#howto",
+  "name": "Comment installer Veilleur de Prix Concurrents en moins de 30 minutes",
+  "description": "Guide d'installation du système forgé qui surveille dix produits concurrents chaque jour et vous alerte dès qu'un prix change.",
+  "totalTime": "PT30M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "49"
+  },
+  "supply": [{"@type": "HowToSupply", "name": "Un compte n8n (Cloud ou auto-hébergé)"}, {"@type": "HowToSupply", "name": "Les URLs des pages produits concurrentes à surveiller"}, {"@type": "HowToSupply", "name": "Un canal d'alerte (email ou Telegram)"}],
+  "tool": [
+    {"@type": "HowToTool", "name": "Le fichier ZIP du système forgé"}
+  ],
+  "step": [
+  {
+    "@type": "HowToStep",
+    "position": 1,
+    "name": "Télécharger et décompresser le système forgé",
+    "text": "Téléchargez le ZIP depuis LemonSqueezy. Décompressez : JSON principal + guide PDF."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 2,
+    "name": "Importer dans n8n",
+    "text": "Dans n8n, cliquez « Nouveau workflow » > « Importer ». Le système s'affiche avec ses nœuds pré-configurés."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 3,
+    "name": "Renseigner les URLs et produits à surveiller",
+    "text": "Dans le nœud « Configuration », saisissez jusqu'à 10 URLs de pages produits concurrentes. Pour chaque URL, indiquez le sélecteur CSS du prix (expliqué dans le guide PDF)."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 4,
+    "name": "Configurer le seuil d'alerte",
+    "text": "Définissez le pourcentage de variation de prix déclenchant une alerte (ex : toute variation de 3 % ou plus). Les micro-variations d'affichage (centimes) peuvent être filtrées."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 5,
+    "name": "Connecter votre canal d'alerte",
+    "text": "Renseignez vos identifiants email ou Telegram. L'alerte inclut l'ancien prix, le nouveau prix, l'écart en euros et en pourcentage."
+  },
+  {
+    "@type": "HowToStep",
+    "position": 6,
+    "name": "Activer le système forgé",
+    "text": "Activez le workflow. Le système scanne les pages chaque matin et envoie une alerte immédiate dès qu'un changement de prix dépasse votre seuil."
+  }
+]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://letablia.fr/produits/veilleur-prix-concurrents.html#faq",
+  "mainEntity": [
+  {
+    "@type": "Question",
+    "name": "Comment le système extrait-il le prix depuis une page web ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Il utilise un sélecteur CSS qui cible l'élément contenant le prix sur la page. Le guide PDF explique comment identifier ce sélecteur sur n'importe quelle boutique en ligne, sans compétence technique."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Le système fonctionne-t-il si le prix est affiché en JavaScript (chargement dynamique) ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Pour les prix chargés dynamiquement, une configuration supplémentaire est nécessaire. Le guide PDF couvre les deux cas. Pour les pages complexes, contactez contact@letablia.fr."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Puis-je surveiller plus de 10 produits concurrents ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "La version de base surveille jusqu'à 10 URLs. Pour surveiller un périmètre plus large, contactez contact@letablia.fr — une version étendue est disponible."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "À quelle fréquence les prix sont-ils vérifiés ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Par défaut une fois par jour (tôt le matin). Pour une surveillance plus fréquente (toutes les 4 heures), ajustez le nœud planificateur dans votre instance n8n."
+    }
+  },
+  {
+    "@type": "Question",
+    "name": "Ce système respecte-t-il la légalité de la collecte de prix publics ?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Les prix affichés publiquement sur un site web sont librement consultables. Le système effectue une seule visite quotidienne par URL, équivalente à une consultation manuelle. Vérifiez les CGU de chaque site surveillé pour confirmer l'absence de restriction."
+    }
+  }
+]
+}
+</script>
+
 </head><body>
 <header class="le-header">
   <div class="le-header-row">
