@@ -1,5 +1,16 @@
 <!doctype html>
 <html lang="fr"><head>
+    <!-- SEO/Social meta — Item 57 -->
+    <link rel="canonical" href="https://letablia.fr/produits/produit-agent-tri-email">
+    <meta property="og:title" content="Agent Tri Email — L'établ'IA">
+    <meta property="og:description" content="Trie votre boîte de messagerie selon des règles métier.">
+    <meta property="og:url" content="https://letablia.fr/produits/produit-agent-tri-email">
+    <meta property="og:type" content="product">
+    <meta property="og:site_name" content="L'établ'IA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agent Tri Email — L'établ'IA">
+    <meta name="twitter:description" content="Trie votre boîte de messagerie selon des règles métier.">
+
 <meta charset="utf-8"/>
 <script>/* L'établ'IA — anti-FOUC */(function(){try{var t=localStorage.getItem('letablia-theme');if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t)}else if(window.matchMedia('(prefers-color-scheme:dark)').matches){document.documentElement.setAttribute('data-theme','dark')}}catch(e){}})();</script><meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Agent Tri Email — L'établ'IA</title><meta name="description" content="Trie votre boîte de messagerie selon des règles métier."/>
@@ -10,19 +21,169 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
+  "@type": "HowTo",
+  "@id": "https://letablia.fr/produits/agent-tri-email.html#howto",
+  "name": "Comment installer Agent Tri Email en moins de 45 minutes",
+  "description": "Guide pas à pas pour activer Agent Tri Email sur votre compte n8n et l'adapter à votre activité. Aucune compétence technique requise.",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://letablia.fr/assets/images/produits/agent-tri-email-cover.webp",
+    "width": 1200,
+    "height": 630
+  },
+  "totalTime": "PT45M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "EUR",
+    "value": "39"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Un compte n8n (Cloud ou auto-hébergé)"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Votre messagerie électronique (Gmail ou Outlook)"
+    },
+    {
+      "@type": "HowToSupply",
+      "name": "Vos règles métier (préparées en amont)"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Le fichier ZIP du système forgé Agent Tri Email"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "position": 1,
+      "name": "Télécharger et décompresser le système forgé",
+      "text": "Après votre achat, téléchargez le fichier ZIP depuis votre espace LemonSqueezy. Décompressez-le : vous obtenez un dossier avec le fichier JSON principal et un guide d'installation PDF."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 2,
+      "name": "Importer le fichier JSON dans n8n",
+      "text": "Dans votre interface n8n, cliquez sur « Nouveau workflow » puis « Importer depuis un fichier ». Sélectionnez le fichier JSON fourni. Le système forgé s'affiche avec tous ses nœuds pré-configurés."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 3,
+      "name": "Connecter votre messagerie électronique (Gmail ou Outlook)",
+      "text": "Cliquez sur le nœud correspondant (pastille orange). Autorisez l'accès OAuth depuis votre compte Gmail ou Outlook. Cliquez sur « Tester la connexion » pour valider."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 4,
+      "name": "Connecter vos règles métier (préparées en amont)",
+      "text": "Répétez l'opération pour le nœud vos règles métier (préparées en amont) : configurez les règles de tri dans le nœud Configuration (mots-clés, expéditeurs, étiquettes). Si vous utilisez une application différente, consultez la section « Adaptateurs » du guide PDF."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 5,
+      "name": "Personnaliser les paramètres",
+      "text": "Ouvrez le nœud « Configuration » (premier nœud jaune du schéma). Ajustez les mots-clés déclencheurs par catégorie (commercial, support, comptabilité) et les étiquettes ou dossiers de destination pour chaque catégorie selon votre activité. Ces valeurs sont expliquées dans le guide PDF."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 6,
+      "name": "Activer le système forgé",
+      "text": "Cliquez sur le bouton « Activer » en haut à droite de l'interface n8n. Une pastille verte confirme que le système est actif. Effectuez un test en déclenchant manuellement une exécution."
+    },
+    {
+      "@type": "HowToStep",
+      "position": 7,
+      "name": "Valider le fonctionnement",
+      "text": "Vérifiez que vous recevez bien vos emails triés automatiquement dans les bons dossiers, sans intervention. En cas de problème, consultez la section « Dépannage » du guide PDF ou contactez notre support via contact@letablia.fr."
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "https://letablia.fr/produits/agent-tri-email.html#faq",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Faut-il des compétences techniques pour installer Agent Tri Email ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Non. Agent Tri Email est livré avec un guide d'installation pas à pas en français. L'installation complète prend moins de 45 minutes pour un professionnel sans formation technique. Si vous bloquez sur une étape, notre équipe répond sous 24 h par email."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Agent Tri Email fonctionne-t-il avec Gmail et Outlook ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agent Tri Email est compatible avec Gmail, Outlook, et tout fournisseur supportant IMAP. Si vous utilisez un outil non listé, le système forgé propose des adaptateurs interchangeables : vous remplacez un nœud sans modifier la logique principale. La liste complète des compatibilités est dans le guide PDF inclus."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Que se passe-t-il si n8n est hors ligne ou si une connexion échoue ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Agent Tri Email intègre une gestion d'erreurs automatique : en cas d'échec, le système réessaie trois fois à intervalles croissants, puis vous envoie une alerte. Aucune donnée n'est perdue. Vous pouvez relancer manuellement l'exécution depuis votre interface n8n."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le prix de 39 € inclut-il les mises à jour ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. L'achat unique à 39 € donne accès à toutes les mises à jour majeures du système forgé. Aucun abonnement, aucun frais récurrent. Si n8n évolue et nécessite une adaptation, vous recevez la version mise à jour par email."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Puis-je obtenir un remboursement si Agent Tri Email ne correspond pas à mes besoins ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui. L'établ'IA applique la politique « Satisfait ou Forgé » : si le système ne répond pas à votre cas d'usage décrit lors de l'achat, nous l'adaptons gratuitement. Si l'adaptation s'avère impossible, vous êtes remboursé intégralement dans les 14 jours suivant l'achat."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
   "@type": "Product",
+  "@id": "https://letablia.fr/produits/agent-tri-email.html#product",
   "name": "Agent Tri Email",
-  "description": "Automate artisanal forgé pour trier votre boîte de messagerie selon vos règles métier, sans effort quotidien.",
+  "description": "Trie automatiquement votre boîte de messagerie selon vos règles métier. Compatible Gmail, Outlook. Installation en 45 minutes.",
   "brand": {
     "@type": "Brand",
-    "name": "L'établ'IA"
+    "name": "L'établ'IA",
+    "url": "https://letablia.fr"
   },
-  "url": "https://letablia.fr/produits/produit-agent-tri-email.html",
+  "image": "https://letablia.fr/assets/images/produits/agent-tri-email-cover.webp",
+  "url": "https://letablia.fr/produits/agent-tri-email.html",
+  "sku": "agent-tri-email",
+  "category": "Logiciel / Automatisation / Système forgé n8n",
+  "audience": {
+    "@type": "Audience",
+    "audienceType": "Professionnels francophones (TPE, freelances, e-commerçants)"
+  },
   "offers": {
     "@type": "Offer",
-    "price": "39",
+    "url": "https://letablia.fr/produits/agent-tri-email.html",
     "priceCurrency": "EUR",
-    "availability": "https://schema.org/InStock"
+    "price": "39",
+    "priceValidUntil": "2027-01-01",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "L'établ'IA",
+      "url": "https://letablia.fr"
+    }
   }
 }
 </script>
