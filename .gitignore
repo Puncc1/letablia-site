@@ -42,3 +42,6 @@ styles/output-dev.css
 
 # Doc export ZIP archives
 letablia-docs-export-*.zip
+
+# Backups scripts SEO/Schema 2026-05-15 — Item 99 reviewer patch
+*.bak-pre-*
