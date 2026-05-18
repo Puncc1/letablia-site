@@ -188,7 +188,8 @@
       ],
       "blurb": "Vue claire de votre trésorerie, mise à jour quotidienne.",
       "keywords": "tresorerie tpe dashboard finances pilotage",
-      "icon": "chart"
+      "icon": "chart",
+      "status": "soon"
     },
     {
       "slug": "produit/cyber-hygiene-tpe",
@@ -205,7 +206,8 @@
       ],
       "blurb": "Audit + 4 guides pour mettre votre TPE à niveau côté sécurité.",
       "keywords": "cyber securite hygiene tpe audit guides phishing rgpd",
-      "icon": "shield"
+      "icon": "shield",
+      "status": "soon"
     },
     {
       "slug": "produit/kit-facturation-2026",
@@ -223,7 +225,8 @@
       ],
       "blurb": "Tout ce qu'il faut pour basculer en facturation électronique avant l'échéance.",
       "keywords": "facturation electronique 2026 conformite tpe",
-      "icon": "file-text"
+      "icon": "file-text",
+      "status": "soon"
     },
     {
       "slug": "produit/agent-tri-email",
@@ -293,7 +296,8 @@
         "organisation",
         "freelance"
       ],
-      "icon": "calendar-clock"
+      "icon": "calendar-clock",
+      "status": "soon"
     },
     {
       "slug": "analyste-hebdomadaire",
@@ -319,7 +323,8 @@
         "métriques",
         "dashboard"
       ],
-      "icon": "chart-line"
+      "icon": "chart-line",
+      "status": "soon"
     },
     {
       "slug": "sentinelle-delais",
@@ -373,7 +378,8 @@
         "fidélisation",
         "e-commerce"
       ],
-      "icon": "package-check"
+      "icon": "package-check",
+      "status": "soon"
     },
     {
       "slug": "controleur-sauvegardes",
@@ -400,7 +406,8 @@
         "RGPD",
         "TPE"
       ],
-      "icon": "shield-check"
+      "icon": "shield-check",
+      "status": "soon"
     },
     {
       "slug": "messager-retard",
