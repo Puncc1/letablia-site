@@ -262,7 +262,8 @@
         "facture",
         "RGPD"
       ],
-      "icon": "receipt"
+      "icon": "receipt",
+      "state": "soon"
     },
     {
       "slug": "declencheur-rituels",
@@ -287,7 +288,8 @@
         "organisation",
         "freelance"
       ],
-      "icon": "calendar-clock"
+      "icon": "calendar-clock",
+      "state": "soon"
     },
     {
       "slug": "analyste-hebdomadaire",
@@ -313,7 +315,8 @@
         "métriques",
         "dashboard"
       ],
-      "icon": "chart-line"
+      "icon": "chart-line",
+      "state": "soon"
     },
     {
       "slug": "sentinelle-delais",
@@ -340,7 +343,8 @@
         "alertes",
         "freelance"
       ],
-      "icon": "clock-alert"
+      "icon": "clock-alert",
+      "state": "soon"
     },
     {
       "slug": "concierge-post-vente",
@@ -367,7 +371,8 @@
         "fidélisation",
         "e-commerce"
       ],
-      "icon": "package-check"
+      "icon": "package-check",
+      "state": "soon"
     },
     {
       "slug": "controleur-sauvegardes",
@@ -394,7 +399,8 @@
         "RGPD",
         "TPE"
       ],
-      "icon": "shield-check"
+      "icon": "shield-check",
+      "state": "soon"
     },
     {
       "slug": "messager-retard",
@@ -419,7 +425,8 @@
         "notification",
         "SAV"
       ],
-      "icon": "clock"
+      "icon": "clock",
+      "state": "soon"
     },
     {
       "slug": "chronometre-facturable",
@@ -442,7 +449,8 @@
         "freelance",
         "chrono"
       ],
-      "icon": "timer"
+      "icon": "timer",
+      "state": "soon"
     },
     {
       "slug": "guichet-faq",
@@ -465,7 +473,8 @@
         "automatique",
         "label IA"
       ],
-      "icon": "chat"
+      "icon": "chat",
+      "state": "soon"
     },
     {
       "slug": "programmateur-social",
@@ -488,7 +497,8 @@
         "contenu",
         "LinkedIn"
       ],
-      "icon": "calendar"
+      "icon": "calendar",
+      "state": "soon"
     },
     {
       "slug": "detecteur-anomalies-vente",
@@ -510,7 +520,8 @@
         "détection",
         "alerte"
       ],
-      "icon": "alert-circle"
+      "icon": "alert-circle",
+      "state": "soon"
     },
     {
       "slug": "redacteur-fiches-produit",
@@ -532,7 +543,8 @@
         "IA",
         "contenu"
       ],
-      "icon": "edit"
+      "icon": "edit",
+      "state": "soon"
     },
     {
       "slug": "recuperateur-paniers-abandonnes",
@@ -554,7 +566,8 @@
         "email",
         "relance"
       ],
-      "icon": "shopping-cart"
+      "icon": "shopping-cart",
+      "state": "soon"
     },
     {
       "slug": "depart-collaborateur-securise",
@@ -576,7 +589,8 @@
         "accès",
         "départ"
       ],
-      "icon": "shield"
+      "icon": "shield",
+      "state": "soon"
     },
     {
       "slug": "suivi-periode-essai",
@@ -598,7 +612,8 @@
         "relance",
         "échéance"
       ],
-      "icon": "check-circle"
+      "icon": "check-circle",
+      "state": "soon"
     },
     {
       "slug": "sentinelle-mots-passe",
@@ -621,7 +636,8 @@
         "rotation",
         "RGPD"
       ],
-      "icon": "lock"
+      "icon": "lock",
+      "state": "soon"
     },
     {
       "slug": "repondeur-faq-automatique",
@@ -644,7 +660,8 @@
         "automatique",
         "support"
       ],
-      "icon": "message-circle"
+      "icon": "message-circle",
+      "state": "soon"
     },
     {
       "slug": "alerteur-paiements-retard",
@@ -666,7 +683,8 @@
         "relance",
         "B2B"
       ],
-      "icon": "euro-sign"
+      "icon": "euro-sign",
+      "state": "soon"
     },
     {
       "slug": "programme-fidelite-simple",
@@ -688,7 +706,8 @@
         "récurrent",
         "e-commerce"
       ],
-      "icon": "gift"
+      "icon": "gift",
+      "state": "soon"
     },
     {
       "slug": "calculateur-marge-dynamique",
@@ -710,7 +729,8 @@
         "calcul",
         "dynamique"
       ],
-      "icon": "trending-up"
+      "icon": "trending-up",
+      "state": "soon"
     },
     {
       "slug": "gardien-acces",
@@ -733,7 +753,8 @@
         "sécurité",
         "RGPD"
       ],
-      "icon": "key"
+      "icon": "key",
+      "state": "soon"
     },
     {
       "slug": "observatoire-concurrentiel",
@@ -755,7 +776,8 @@
         "observation",
         "éthique"
       ],
-      "icon": "eye"
+      "icon": "eye",
+      "state": "soon"
     },
     {
       "slug": "veilleur-prix-concurrents",
@@ -777,7 +799,8 @@
         "veille",
         "alerte"
       ],
-      "icon": "bar-chart"
+      "icon": "bar-chart",
+      "state": "soon"
     },
     {
       "slug": "veilleur-mentions",
@@ -800,7 +823,8 @@
         "veille",
         "monitoring"
       ],
-      "icon": "radio"
+      "icon": "radio",
+      "state": "soon"
     },
     {
       "slug": "preparateur-black-friday",
@@ -822,7 +846,8 @@
         "stock",
         "email"
       ],
-      "icon": "zap"
+      "icon": "zap",
+      "state": "soon"
     },
     {
       "slug": "bilan-fin-annee",
@@ -844,7 +869,8 @@
         "annuel",
         "saisonnier"
       ],
-      "icon": "chart-pie"
+      "icon": "chart-pie",
+      "state": "soon"
     },
     {
       "slug": "lanceur-rentree",
@@ -867,7 +893,8 @@
         "prospects",
         "saisonnier"
       ],
-      "icon": "sun"
+      "icon": "sun",
+      "state": "soon"
     }
   ],
   "bundles": [
