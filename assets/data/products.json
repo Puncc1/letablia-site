@@ -1,7 +1,7 @@
 {
   "version": "2.0",
-  "updated": "2026-05-04",
-  "_note": "Source UNIQUE de vérité — prix, blurbs, tools = catégories génériques (sans marque). Toutes les pages sont régénérées depuis ce fichier.",
+  "updated": "2026-05-19",
+  "_note": "Mis à jour le 2026-05-19 — slugs nettoyés pour dashboard-tresorerie, mini-crm, kit-facturation",
   "families": [
     {
       "slug": "automatisations",
@@ -148,8 +148,8 @@
       "icon": "users"
     },
     {
-      "slug": "produit/mini-crm-notion",
-      "url": "/produits/produit-mini-crm-notion.html",
+      "slug": "mini-crm",
+      "url": "/produits/mini-crm.html",
       "title": "Mini CRM Prestataire",
       "family": "Produire",
       "tools": [
@@ -168,8 +168,8 @@
       "status_reason": "Bloqué tech permanent — export workspace API Notion impossible (décision Raphaël 2026-05-06)"
     },
     {
-      "slug": "produit/dashboard-tresorerie",
-      "url": "/produits/produit-dashboard-tresorerie.html",
+      "slug": "dashboard-tresorerie",
+      "url": "/produits/dashboard-tresorerie.html",
       "title": "Dashboard Trésorerie TPE",
       "family": "Piloter",
       "tools": [
@@ -202,8 +202,8 @@
       "icon": "shield"
     },
     {
-      "slug": "produit/kit-facturation-2026",
-      "url": "/produits/produit-kit-facturation-2026.html",
+      "slug": "kit-facturation",
+      "url": "/produits/kit-facturation.html",
       "title": "Kit Facturation Électronique 2026",
       "family": "Produire",
       "tools": [
