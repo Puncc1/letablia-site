@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://letablia.fr/assets/data/products.schema.json",
+  "title": "Catalogue produits L'établ'IA",
+  "description": "Schéma JSON du catalogue produits letablia.fr — v2.0",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "updated", "families", "products"],
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Version du format de données"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date",
+      "description": "Date de dernière mise à jour (YYYY-MM-DD)"
+    },
+    "_note": {
+      "type": "string",
+      "description": "Note interne optionnelle"
+    },
+    "families": {
+      "type": "array",
+      "description": "Familles de produits (catégories principales)",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slug", "title", "verb", "icon"],
+        "properties": {
+          "slug": { "type": "string" },
+          "title": { "type": "string" },
+          "verb": { "type": "string" },
+          "icon": { "type": "string" }
+        }
+      }
+    },
+    "products": {
+      "type": "array",
+      "description": "Liste de tous les produits du catalogue",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slug", "title", "family", "icon"],
+        "properties": {
+          "slug": {
+            "type": "string",
+            "pattern": "^[a-z0-9/-]+$",
+            "description": "Identifiant URL du produit (kebab-case ; slash autorisé pour produits legacy)"
+          },
+          "url": {
+            "type": "string",
+            "pattern": "^/produits/[a-z0-9-]+\\.html$",
+            "description": "Chemin relatif de la fiche produit"
+          },
+          "title": {
+            "type": "string",
+            "description": "Titre humain du produit"
+          },
+          "family": {
+            "type": "string",
+            "enum": ["Automatiser", "Vendre", "Piloter", "Produire", "Sécuriser", "Surveiller"],
+            "description": "Famille du produit"
+          },
+          "tools": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "price": {
+            "type": "number",
+            "minimum": 0,
+            "description": "Prix en euros HT"
+          },
+          "duree_install": {
+            "type": "string",
+            "enum": ["lt30", "30-60", "gt60"],
+            "description": "Durée d'installation estimée (lt30=<30min, 30-60=30-60min, gt60=>60min)"
+          },
+          "targets": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "blurb": {
+            "type": "string",
+            "description": "Accroche courte du produit"
+          },
+          "keywords": {
+            "type": "string",
+            "description": "Mots-clés SEO espace-séparés"
+          },
+          "icon": {
+            "type": "string",
+            "description": "Identifiant d'icône (lucide)"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["soon", "available", "deprecated"],
+            "description": "Statut du produit — CLEF CANONIQUE (jamais 'state')"
+          },
+          "status_reason": {
+            "type": "string",
+            "description": "Raison du statut (obligatoire si status != available)"
+          }
+        }
+      }
+    },
+    "bundles": {
+      "type": "array",
+      "description": "Packs/bundles groupant plusieurs produits",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slug", "title", "products", "price"],
+        "properties": {
+          "slug": { "type": "string" },
+          "url": { "type": "string" },
+          "title": { "type": "string" },
+          "subtitle": { "type": "string" },
+          "products": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Slugs des produits inclus dans le bundle"
+          },
+          "price": { "type": "number", "minimum": 0 },
+          "price_individual": { "type": "number", "minimum": 0 },
+          "savings": { "type": "number", "minimum": 0 },
+          "targets": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "blurb": { "type": "string" },
+          "keywords": { "type": "string" }
+        }
+      }
+    },
+    "best_sellers": {
+      "type": "array",
+      "description": "Slugs des produits mis en avant (best-sellers)",
+      "items": { "type": "string" }
+    },
+    "personas": {
+      "type": "array",
+      "description": "Personas d'acheteurs cibles",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slug", "title"],
+        "properties": {
+          "slug": { "type": "string" },
+          "title": { "type": "string" },
+          "subtitle": { "type": "string" },
+          "blurb": { "type": "string" },
+          "filter": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "targets": {
+                "type": "array",
+                "items": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "tools": {
+      "type": "array",
+      "description": "Référentiel des outils/plateformes compatibles",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slug", "label"],
+        "properties": {
+          "slug": { "type": "string" },
+          "label": { "type": "string" }
+        }
+      }
+    },
+    "price_buckets": {
+      "type": "array",
+      "description": "Tranches de prix pour le filtre catalogue",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["slug", "label"],
+        "properties": {
+          "slug": { "type": "string" },
+          "label": { "type": "string" },
+          "min": { "type": "number" },
+          "max": { "type": "number" }
+        }
+      }
+    }
+  }
+}
